@@ -1,3 +1,8 @@
 node_modules
+
+# We're using yarn, so no package-lock.json
+package-lock.json
+
+# Do not commit images
 images
 *.png
