@@ -28,7 +28,7 @@
 
 ## 参考リンク
 
-* [翻訳スタイルガイド]](/style-guide.md)
+* [翻訳スタイルガイド](/style-guide.md)
 * [Gatsby翻訳ガイド](https://www.gatsbyjs.org/contributing/gatsby-docs-translation-guide/)
 * [Gatsby Discord](https://gatsby.dev/discord)
 
