@@ -2,5 +2,21 @@ version: 1
 rules:
   - expected: エキスパート
     pattern: エクスパート
+
   - expected: ユーザー
     pattern: /ユーザ(?!ー)/
+
+  - expected: ください
+    pattern: 下さい
+
+  - expected: てみる
+    pattern: て見る
+
+  - expected: てくる
+    pattern: て来る
+
+  - expected: ついに
+    pattern: 遂に
+
+  - expected: すること
+    pattern: する事
