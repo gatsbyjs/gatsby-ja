@@ -6,9 +6,6 @@ rules:
   - expected: ユーザー
     pattern: /ユーザ(?!ー)/
 
-  - expected: ください
-    pattern: 下さい
-
   - expected: てみる
     pattern: て見る
 
