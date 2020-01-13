@@ -1,35 +1,36 @@
 ---
-title: Gatsby.js Documentation
+title: Gatsby.js ドキュメント
 disableTableOfContents: true
 ---
 
 import EmailCaptureForm from "../../www/src/components/email-capture-form"
 
-Gatsby is a blazing fast modern site generator for React.
+Gatsby は、React のための高速でモダンな静的サイトジェネレーターです。
 
-## Get Started
+## Gatsby ことはじめ
 
-There are two main ways to get started with Gatsby:
+Gatsby に入門するために、大きくふたつの方法が用意されています。
 
-1. [Tutorial](/tutorial/): Step-by-step instructions on how to install Gatsby and start a project: written for people without Gatsby or web development experience, though these learning resources have helped developers of all skill levels.
-2. [Quick start](/docs/quick-start): One page summary of how to install Gatsby and start a new project.
+1. [チュートリアル](/tutorial/): Gatsby をインストールして、新しいプロジェクトを始める方法をステップ・バイ・ステップ方式で学びます。Gatsby や Web 開発に詳しくないような人を念頭に書かれていますが、もちろんあらゆるレベルの開発者にとっても有用なガイドです。
+2. [クイックスタート](/docs/quick-start): Gatsby をインストールして新しいプロジェクトを作成する方法を簡潔にまとめたページです。
 
-## Go further
+## より深く
 
-1. [Recipes](/docs/recipes/): Find some quick answers for how to accomplish some specific, common tasks with Gatsby.
-2. Choose your own adventure and peruse the various sections of the Gatsby docs:
+1. [レシピ](/docs/recipes/): さまざまな典型的タスクを Gatsby で取り扱うためのレシピが揃っています。
+2. 多種多様な項目からあなたにとって必要なものを選んでください:
 
-   - [Reference Guides](/docs/guides/): Learn about the many different topics around building with Gatsby, like sourcing data, deployment, and more.
-   - [Gatsby API Reference](/docs/api-reference/): Learn more about Gatsby APIs and configuration.
-   - [Releases & Migration](/docs/releases-and-migration/): Find release notes and guides for migration between major versions.
-   - [Conceptual Guide](/docs/conceptual-guide/): Read high-level overviews of the Gatsby approach.
-   - [Gatsby Internals](/docs/gatsby-internals/): Dig into how Gatsby works behind the scenes.
-   - [Using Gatsby Professionally](/docs/using-gatsby-professionally/): Learn tips and tricks for how to explain Gatsby to others at work, so that you have more opportunities to work with Gatsby professionally.
+   - [リファレンスガイド](/docs/guides/): データの取り込み方、デプロイ方法など、Gatsby で開発する際に遭遇するさまざまなトピックについて学びます。
+   - [Gatsby API リファレンス](/docs/api-reference/): Gatsby API について知りましょう。
+   - [リリースと移行ガイド](/docs/releases-and-migration/): 各バージョンのリリースノートと、メジャーバージョン間の移行ガイドが揃っています。
+   - [コンセプト](/docs/conceptual-guide/): Gatsby の概念と哲学を知りましょう。
+   - [Gatsby Internals](/docs/gatsby-internals/): Gatsby が裏側でどのように動いているのか覗いてみましょう。
+   - [プロとして Gatsby を使う](/docs/using-gatsby-professionally/):
+     職場の同僚に Gatsby について説明する機会があるなら、このドキュメントを通して様々な Tips とテクニックを学びましょう。あなたが仕事で Gatsby を使える確率が高まります！
 
-3. Check out the [Ecosystem](/ecosystem/) libraries for Gatsby starters and plugins, as well as external community resources.
+3. Gatsby スターターライブラリとプラグイン、コミュニティリソースについては[エコシステム](/ecosystem/)をご覧ください。
 
-## Start contributing
+## 貢献する
 
-Visit the [Contributing](/contributing/) section to find guides on the Gatsby community, code of conduct, and how to get started contributing to Gatsby.
+[貢献](/contributing/)セクションで、Gatsby コミュニティ、行動規範、そして Gatsby へ貢献する方法を見つけることができます。
 
-<EmailCaptureForm signupMessage="Want to keep up with the latest tips &amp; tricks? Subscribe to our newsletter!" />
+<EmailCaptureForm signupMessage="最新のTipsやトリックについて知りたいですか？私たちのニュースレターを購読しましょう！" />
