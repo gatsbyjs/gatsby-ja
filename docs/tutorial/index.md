@@ -1,39 +1,39 @@
 ---
-title: Gatsby.js Tutorials
+title: Gatsby.js チュートリアル
 disableTableOfContents: true
 ---
 
-Welcome to Gatsby! We’re glad you’re here. The goal of this tutorial is to guide you through setting up and deploying your first Gatsby site using a starter template. As we walk through that process, we’ll introduce some more general web development topics, and go over the underlying structure of a Gatsby site.
+Gatsby へようこそ！あなたがここにいることを嬉しく思います。このチュートリアルの目的は、スターターテンプレートを使用して最初の Gatsby サイトをセットアップおよびデプロイする方法をガイドすることです。そのプロセスを順を追って説明する中で、より一般的なWeb開発のトピックをいくつか紹介し、Gatsby サイトの基本的な構造について説明します。
 
-> The full tutorial is intended to be as accessible as possible to people without much web development experience (yet!) — no need to be an expert. If you prefer to jump straight to code, feel free to skip the step-by-step tutorial and see the [quick start](/docs/quick-start/) page.
+> すべてのチュートリアルは、(まだ)Web 開発の経験があまりない方にでもできるだけわかりやすいように設計しているので、エキスパートである必要はありません。すぐにでもコードに移りたい方は、ステップバイステップのチュートリアルをスキップして、[クイックスタート](/docs/quick-start/)ページを参照してください。
 
-## Gatsby fundamentals
+## Gatsby の基礎
 
-0.  [Set up your development environment](/tutorial/part-zero/): We'll introduce you to core technologies that power Gatsby, and guide you through setting up your development environment.
-1.  [Get to know Gatsby building blocks](/tutorial/part-one/): Starting new projects, developing, and deploying sites.
-1.  [Introduction to using CSS in Gatsby](/tutorial/part-two/): Explore libraries like Typography.js and CSS Modules.
-1.  [Building nested layouts in Gatsby](/tutorial/part-three/): Layouts are sections of your site that are reused across multiple pages like headers and footers.
+0. [開発環境のセットアップ](/tutorial/part-zero/): Gatsby の力の源となるコアテクノロジーを紹介し、開発環境のセットアップを紹介します。
+1. [Gatsby の構成要素の理解](/tutorial/part-one/): 新しいプロジェクトを開始し、サイトを開発してデプロイします。
+1. [Gatsby で CSS を使用するための紹介](/tutorial/part-two/): Typography.js などのライブラリや CSS モジュールについて探索します。
+1. [Gatsby でネストしたレイアウトを構築](/tutorial/part-three/): レイアウトとは、ヘッダーやフッターなど、サイト内の複数のページで再利用されるセクションのことを指します。
 
-## Intermediate tutorials
+## 中級チュートリアル
 
-In these intermediate tutorials, you'll learn how to pull data from almost anywhere into your Gatsby site with GraphQL.
+これらの中級チュートリアルでは、GraphQL を使用し、様々なデータ元から Gatsby サイトにデータを取得する方法を学びます。
 
-4.  [Querying for data in a blog](/tutorial/part-four/): Create a blog and use a GraphQL query to pull your site title into the blog header.
-5.  [Source plugins and rendering queried data](/tutorial/part-five/): Use a source plugin to pull Markdown blog posts into your site and create an index page with a list of blog posts.
-6.  [Transformer plugins](/tutorial/part-six/): Use a transformer plugin to transform your Markdown blog posts into a form the blog can render.
-7.  [Programmatically create pages from data](/tutorial/part-seven/): Learn how to programmatically create a set of pages for your blog posts.
-8.  [Preparing a site to go live](/tutorial/part-eight/): Learn how to audit your site for performance and best practices for accessibility, SEO, and more.
+4. [ブログでデータ取得するためのクエリ](/tutorial/part-four/): ブログを作成し、GraphQL クエリを使用し、ブログヘッダーにサイトのタイトルを取り込みます。
+5. [ソースプラグインと取得したデータのレンダリング](/tutorial/part-five/): ソースプラグインを使用して、Markdown 形式のブログ投稿をサイトに取り込み、ブログ投稿の一覧のインデックスページを作成します。
+6. [トランスフォーマープラグイン](/tutorial/part-six/): トランスフォーマープラグインを使用して、Markdown 形式のブログ投稿を、ブログに表示できる形式に変換します。
+7. [データからプログラムによるページ作成](/tutorial/part-seven/): 投稿したブログから一通りのページをプログラムで作成する方法を学びます。
+8. [サイト公開の準備](/tutorial/part-eight/): サイトのパフォーマンスを監査する方法とアクセシビリティやSEOなどのベストプラクティスを学びます。
 
-## Theme tutorials
+## テーマのチュートリアル
 
-Gatsby themes abstract all of your default configuration (shared functionality, data sourcing, design) out of your site and into an installable package.
+Gatsby テーマは、すべてのデフォルト設定(共有機能、データ取得、デザイン)を抽象化して、サイトからインストール可能なパッケージにします。
 
-This means that the configuration and functionality aren’t directly written into your project, but rather versioned, centrally managed, and installed as a dependency. You can seamlessly update a theme, compose themes together, and even swap out one compatible theme for another.
+つまり、構成と機能はプロジェクトに直接書き込むのではなく、バージョン管理し、一元管理して依存関係としてインストールします。テーマをシームレスに更新したり、テーマをまとめて構成することも、互換性のあるテーマを別のものに交換することもできます。
 
-Learn more about using and building themes with the [Gatsby theme tutorials](/tutorial/theme-tutorials/).
+テーマの使用と構築に関しては[Gatsby テーマチュートリアル](/tutorial/theme-tutorials/)で詳細を参照してください。
 
-## Additional tutorials
+## 追加チュートリアル
 
-There are many use cases for Gatsby, some of which aren't covered in the first set of tutorials to keep you focused while learning. Gatsby's Additional Tutorials section is a collection of resources showing how to complete even more Gatsby tasks step-by-step, such as using source plugins for images and CMS content.
+Gatsby には多くの使い方がありますが、最初の一連のチュートリアルでは学習に集中するためにカバーしていないものがあります。Gatsby の「追加チュートリアル」セクションでは、画像や CMS コンテンツのソースプラグインの使用方法など、さらに多くの Gatsby で、できる事をステップ・バイ・ステップで達成できるようにまとめています。
 
-Go deeper with [additional Gatsby tutorials](/tutorial/additional-tutorials/).
+[追加 Gatsby チュートリアル](/tutorial/additional-tutorials/)でさらに探求してください。
