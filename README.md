@@ -13,7 +13,7 @@
 ### 環境のセットアップ
 
 - このページの右上にある Fork ボタンからこのレポジトリを Fork してください。
-- Git, Node, Yarn をそれぞれ準備して、 Fork したリポジトリをクローンしてください。
+- Git, Node.js, Yarn をそれぞれ準備して、 Fork したリポジトリをクローンしてください。
 - `yarn` を使って dependency のインストールを行ってください。
 - これで準備は完了です！ `docs` の中身の markdown を好みのテキストエディタで編集してください。
 
@@ -38,4 +38,3 @@
 * [**@hirotaka**](https://github.com/hirotaka)
 * [**@Naturalclar**](https://github.com/Naturalclar)
 * [**@uetchy**](https://github.com/uetchy)
-
