@@ -1,0 +1,6 @@
+version: 1
+rules:
+  - expected: エキスパート
+    pattern: エクスパート
+  - expected: ユーザー
+    pattern: /ユーザ(?!ー)/
