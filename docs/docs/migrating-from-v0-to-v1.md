@@ -324,5 +324,5 @@ change making `this.props.children` a function call so `this.props.children()`.
 The rational for this change is described
 [in this PR comment](https://github.com/gatsbyjs/gatsby/pull/940#issuecomment-300878300).
 
-Nested layouts (similar to the nested _template feature) are \_not_ supported yet
+Nested layouts (similar to the nested _template feature_) are **not** supported yet
 but are on the roadmap for v1.

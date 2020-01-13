@@ -51,7 +51,7 @@ When this incantation is simple and takes seconds, we can easily get lost for ho
 
 Developers, designers, demand-gen marketers, copywriters -- every stakeholder in a website project _can_ feel this -- with proper tooling.
 
-As Bret Victor suggested in _Inventing on Principle_, each creator needs "an immediate connection to what they're making.”
+As Bret Victor suggested in _Inventing on Principle_, each creator needs "an immediate connection to what they're making."
 
 These instant feedback loops are often felt near the beginning of projects. But they can quickly be drowned by project complexity.
 
@@ -91,7 +91,7 @@ For more on this, look at [the features Gatsby bundles together](/features).
 
 ### Progressively disclose complexity
 
-One concept UX designers use to make applications easier to learn and less error-prone is called “progressive disclosure".
+One concept UX designers use to make applications easier to learn and less error-prone is called "progressive disclosure".
 
 If you were designing a user interface, you might move advanced or rarely-used features to a secondary screen, such as "advanced settings".
 
