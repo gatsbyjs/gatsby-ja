@@ -11,7 +11,7 @@ title: クイックスタート
   lessonTitle="Quick Start with Gatsby: Create, Develop, and Build Gatsby Sites From the Command Line"
 />
 
-**注意**: このビデオでは`npx`を利用して、npm パッケージをインストールすることなく Gatsby サイトを作成しています。`npx gatsby new`を実行することは、gatsby-cli をコンピューターにインストールしてから`gatsby new`を実行することと同じです。
+**注意**: このビデオでは`npx`を利用して、npm パッケージをインストールすることなく Gatsby サイトを作成しています。`npx gatsby new`を実行することは、gatsby-cli をコンピュータにインストールしてから`gatsby new`を実行することと同じです。
 
 ### Gatsby CLI をインストールする
 
