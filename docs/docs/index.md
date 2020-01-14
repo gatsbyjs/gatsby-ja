@@ -31,6 +31,6 @@ Gatsby に入門する方法は、大きく分けてふたつあります。
 
 ## 貢献する
 
-[貢献](/contributing/)セクションで、Gatsby コミュニティ、行動規範、そして Gatsby へ貢献する方法を見つけることができます。
+[貢献](/contributing/)セクションで、Gatsby コミュニティー、行動規範、そして Gatsby へ貢献する方法を見つけることができます。
 
 <EmailCaptureForm signupMessage="最新のTipsやトリックについて知りたいですか？私たちのニュースレターを購読しましょう！" />
