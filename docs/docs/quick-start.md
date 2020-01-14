@@ -1,66 +1,66 @@
 ---
-title: Quick Start
+title: クイックスタート
 ---
 
-This quick start is intended for intermediate to advanced developers. For a gentler intro to Gatsby, [head to our tutorial](/tutorial/)!
+クイックスタートガイドは中上級者向けに書かれています。より易しい入門ガイドが必要であれば、[チュートリアル](/tutorial/)に進んでください！
 
-## Use the Gatsby CLI
+## Gatsby CLI の使い方
 
 <EggheadEmbed
   lessonLink="https://egghead.io/lessons/gatsby-quick-start-with-gatsby-create-develop-and-build-gatsby-sites-from-the-command-line"
   lessonTitle="Quick Start with Gatsby: Create, Develop, and Build Gatsby Sites From the Command Line"
 />
 
-**Note**: this video uses `npx`, which is a tool to execute an npm package without first installing it. Running the command `npx gatsby new` is the same as running `gatsby new` after installing the gatsby-cli on your computer.
+**注意**: このビデオでは`npx`を利用して、npm パッケージをインストールすることなく Gatsby サイトを作成しています。`npx gatsby new`を実行することは、gatsby-cli をコンピュータにインストールしてから`gatsby new`を実行することと同じです。
 
-### Install the Gatsby CLI
+### Gatsby CLI をインストールする
 
 ```shell
 npm install -g gatsby-cli
 ```
 
-### Create a new site
+### 新しいサイトを作成する
 
 ```shell
 gatsby new gatsby-site
 ```
 
-### Change directories into site folder
+### 生成されたディレクトリに移動する
 
 ```shell
 cd gatsby-site
 ```
 
-### Start development server
+### 開発サーバーを起動する
 
 ```shell
 gatsby develop
 ```
 
-Gatsby will start a hot-reloading development environment accessible by default at `localhost:8000`.
+Gatsby はホットリロード対応の開発環境を`localhost:8000`に立ち上げます。
 
-Try editing the JavaScript pages in `src/pages`. Saved changes will live reload in the browser.
+`src/pages`の中にある JavaScript で書かれたページを編集してみてください。保存された変更はブラウザ上でリアルタイムに反映されます。
 
-### Create a production build
+### プロダクションビルドを作成する
 
 ```shell
 gatsby build
 ```
 
-Gatsby will perform an optimized production build for your site, generating static HTML and per-route JavaScript code bundles.
+最適化されたプロダクションビルドを作成します。静的 HTML に加えて、ルートごとにバンドルされた JavaScript コードを生成します。
 
-### Serve the production build locally
+### プロダクションビルドをローカルで確認する
 
 ```shell
 gatsby serve
 ```
 
-Gatsby starts a local HTML server for testing your built site. Remember to build your site using `gatsby build` before using this command.
+生成されたサイトのテスト用に、ローカルで動く Web サーバーを立ち上げます。このコマンドを使う前に、`gatsby build`でサイトをビルドしておきましょう。
 
-### Access documentation for CLI commands
+### CLI コマンドのドキュメント
 
-To see detailed documentation for the CLI commands, run `gatsby --help` in the terminal.
+ターミナル上で`gatsby --help`を実行すると、詳細な CLI ドキュメントを読むことができます。
 
-For specific commands, run `gatsby COMMAND_NAME --help` e.g. `gatsby new --help`.
+特定のコマンドについて知りたい場合は、`gatsby COMMAND_NAME --help`を実行してください（例：`gatsby new --help`）。
 
-For more information on the Gatsby CLI, visit the [CLI reference](/docs/gatsby-cli/) section of the docs.
+Gatsby CLI についてより詳しく知りたい場合は、[CLI リファレンス](/docs/gatsby-cli/)を参照してください。
