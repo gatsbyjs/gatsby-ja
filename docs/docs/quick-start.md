@@ -63,4 +63,4 @@ gatsby serve
 
 特定のコマンドについて知りたい場合は、`gatsby COMMAND_NAME --help`を実行してください（例：`gatsby new --help`）。
 
-Gatsby CLI についてより詳しく知りたい場合は、[CLI reference](/docs/gatsby-cli/)を参照してください。
+Gatsby CLI についてより詳しく知りたい場合は、[CLI リファレンス](/docs/gatsby-cli/)を参照してください。
