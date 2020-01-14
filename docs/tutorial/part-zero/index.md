@@ -1,86 +1,87 @@
 ---
-title: Set Up Your Development Environment
+title: 開発環境のセットアップ
 typora-copy-images-to: ./
 disableTableOfContents: true
 ---
 
-Before you start building your first Gatsby site, you’ll need to familiarize yourself with some core web technologies and make sure that you have installed all required software tools.
+はじめての Gatsby サイトを構築しはじめる前に、いくつかのコアとなる Web テクノロジーに慣れて、必要なソフトウェアツールがすべてインストールされていることを確認する必要があります。
 
-## Familiarize yourself with the command line
+## コマンドラインに慣れる
 
-The command line is a text-based interface used to run commands on your computer. You’ll also often see it referred to as the terminal. In this tutorial, we’ll use both interchangeably. It’s a lot like using the Finder on a Mac or Explorer on Windows. Finder and Explorer are examples of graphical user interfaces (GUI). The command line is a powerful, text-based way to interact with your computer.
+コマンドラインは、コンピュータでコマンドを実行するために使用するテキストベースのインターフェイスです。またはターミナルと呼ぶこともよくあります。このチュートリアルでは、両方を同じ意味で使用します。Mac で Finder、Windows で Explorer を使用するのとよく似ています。FinderとExplorerは、グラフィカルユーザーインターフェイス(GUI)の例えです。コマンドラインは、コンピュータと対話するための強力なテキストベースの方法です。
 
-Take a moment to locate and open up the command line interface (CLI) for your computer. Depending on which operating system you are using, see [**instructions for Mac**](http://www.macworld.co.uk/feature/mac-software/how-use-terminal-on-mac-3608274/), [**instructions for Windows**](https://www.lifewire.com/how-to-open-command-prompt-2618089) or [**instructions for Linux**](https://www.howtogeek.com/140679/beginner-geek-how-to-start-using-the-linux-terminal/).
+コンピュータのコマンドラインインターフェイス(CLI)を見つけて開いてみましょう。使用しているオペレーティングシステムに応じて、[**Mac の手順**](http://www.macworld.co.uk/feature/mac-software/how-use-terminal-on-mac-3608274/)、[**Windows の手順**](https://www.quora.com/How-do-I-open-terminal-in-windows)、または[**Linux の手順**](https：/ /www.howtogeek.com/140679/beginner-geek-how-to-start-using-the-linux-terminal/)の手順を参照して下さい。
 
-_Note: If you’re new to the command line, "running" a command, means writing a given set of instructions in your command prompt, and hitting the Enter key”. Commands will be shown in a highlighted box, something like `node --version`, but not every highlighted box is a command! If something is a command it will be mentioned as something you have to run/execute._
+_メモ: もし、コマンドラインがはじめての方は、コマンドを「実行する」するとは、与えられた一連の指示をコマンドプロンプトに入力して、エンターキーを押するのを意味します。コマンドは、`note --version`のようにハイライトしたボックスの中に記載します。しかし、ハイライトしたボックスの中のすべてがコマンドというわけではありません！実行する必要があるコマンドは、それを実行するように言及します。_
 
-## Install Node.js for your appropriate operating system
+## お使いの OS に適切な Node.js をインストールする
 
-Node.js is an environment that can run JavaScript code outside of a web browser. Gatsby is built with Node.js. To get up and running with Gatsby, you’ll need to have a recent version installed on your computer. npm comes bundled with Node.js so if you don't have npm, chances are that you don't have Node.js either.
+Node.js は、Web ブラウザーの外部で JavaScript コードの実行ができる環境です。Gatsby は Node.js で構築されています。Gatsby を起動して実行するには、コンピュータに最新バージョンをインストールする必要があります。npm は Node.js にバンドリングされているので、もし npm がない場合は、おそらく Node.js もない可能性があります。
 
-### Mac instructions
+### Mac の手順
 
-To install Gatsby and Node.js on a Mac, it is recommended to use [Homebrew](https://brew.sh/). A little set-up in the beginning can save you from some headaches later on!
+Gatsby と Node.js をインストールするには、[Homebrew](https://brew.sh/) を使用することをお勧めします。最初に少しセットアップするだけで、後々の頭痛から解放してくれます！
 
-#### How to install or verify Homebrew on your computer:
+#### コンピュータに Homebrew をインストールするには:
 
-1. Open your Terminal.
-1. See if Homebrew is installed by running `brew -v`. You should see "Homebrew" and a version number.
-1. If not, download and install [Homebrew with the instructions](https://docs.brew.sh/Installation).
-1. Once you've installed Homebrew, repeat step 2 to verify.
+1. ターミナルを開きます。
+1. `brew -v`を実行して Homebrew がインストールされているか確認します。"Homebrew"という文字列とバージョン番号が表示されるはずです。
+1. もし表示されない場合は、[Homebrew の指示](https://docs.brew.sh/Installation)に従って、ダウンロードしてインストールします。
+1. Homebrew をインストールしたら、手順2を繰り返して確認します。
 
-#### Install Xcode Command Line Tools:
+#### Xcode コマンドラインツールのインストール:
 
-1. Open your Terminal.
-1. Install Xcode Command line tools by running `xcode-select --install`.
-   - If that fails, download it [directly from Apple's site](https://developer.apple.com/download/more/), after signing-in with an Apple developer account
-1. After being prompted to start the installation, you'll be prompted again to accept a software license for the tools to download.
+1. ターミナルを開きます。
+1. `xcode-select --install`を実行してXcodeコマンドラインツールをインストールします。
+   - もし失敗した場合は、Apple開発者アカウントでサインインして、[Appleのサイトから直接](https://developer.apple.com/download/more/)ダウンロードします
+1. インストール開始のプロンプトが表示された後、プロンプトが再度表示されて、ダウンロードするツールのソフトウェアライセンスに同意するように求められます。
 
-#### Install Node
+#### Node のインストール
 
-1. Open your Terminal
-2. Run `brew install node`
-   - If you don't want to install it through homebrew, download the latest Node.js version from [the official Node.js website](https://nodejs.org/en/), double click on the downloaded file and go through the installation process.
+1. ターミナルを開きます
+1. `brew install node`を実行します
+   - もし homebrew でインストールしたくない場合は、[Node.js の公式ウェブサイト](https://nodejs.org/ja/)より、最新バージョンの Node.js バをダウンロードして、ダウンロードしたファイルをダブルクリックしてインストール手順に従ってください。
 
-### Windows Instructions
+### Windows の手順
 
-- Download and install the latest Node.js version from [the official Node.js website](https://nodejs.org/en/)
+- [Node.js の公式ウェブサイト](https://nodejs.org/ja/)より最新バージョンの Node.js をダウンロードしてインストールします
 
-### Linux Instructions
+### Linux の手順
 
-Install nvm (Node Version Manager) and needed dependencies. nvm is used to manage Node.js and all its associated versions.
+nvm(Node Version Manager)と必要な依存関係をインストールします。nvm は Node.js と関連したバージョンを管理するために使用します。
 
-_💡 If when installing a package, it asks for confirmation, type `y` and press enter._
+_💡 パッケージをインストール場合、確認が求められるので、`y`を入力してエンターを押します。_
 
-#### Ubuntu, Debian, and other `apt` based distros:
+#### Ubuntu, Debianなどの `apt` ベースのディストリビューション:
 
-1. Run `sudo apt update` and then `sudo apt -y upgrade` to make sure your Linux distribution is ready to go.
-2. Run `sudo apt-get install curl` to install curl which allows you to transfer data and download additional dependencies.
-3. After it finishes installing, run `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash` to download the latest nvm version.
-4. To confirm this has worked, use the following command. `nvm --version`. The output should be a version number.
-5. [Set default Node.js version](#set-default-nodejs-version)
+1. `sudo apt update`を実行し、次に`sudo apt -y upgrade`を実行して、Linux ディストリビューションを次に進むための準備をします。
+2. `sudo apt-get install curl`を実行して curl をインストールします。これにより、データ転送と追加の依存関係をダウンロードすることができます。
+3. インストールが完了したら、`curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash`を実行して、最新バージョンの nvm をダウンロードします。
+4. 機能していることを確認するには、次のコマンドを使用します。 `nvm --version`。バージョン番号が出力されるはずです。
+5. [デフォルトの Node.js バージョンをセットします](#set-default-nodejs-version)
 
-#### Arch, Manjaro and other `pacman` based distros:
+#### Arch, Manjaroなどの `pacman` ベースのディストリビューション:
 
-1. Run `sudo pacman -Sy` to make sure your distribution is ready to go.
-2. These distros come installed with curl, so you can use that to download nvm.
+1. `sudo pacman -Sy`を実行して、ディストリビューションを次に進むための準備をします。
+2. これらのディストリビューションは curl が既にインストールされているので、それを使って nvm をダウンロードします。
    `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash`
-3. Before using nvm, you need to install additional dependencies by running `sudo pacman -S grep awk tar`.
-4. To confirm this has worked, use the following command. `nvm --version`. The output should be a version number.
-5. [Set default Node.js version](#set-default-nodejs-version)
+3. nvmを使用する前に、`sudo pacman -S grep awk tar`を実行してさらなる依存をインストールする必要があります。
+4. 機能していることを確認するには、次のコマンドを使用します。 `nvm --version`。バージョン番号が出力されるはずです。
+5. [デフォルトの Node.js バージョンをセットする](#set-default-nodejs-version)
 
-#### Fedora, RedHat, and other `dnf` based distros:
+#### Fedora, RedHatなどの`dnf`ベースのディストリビューション:
 
-1. These distros come installed with curl, so you can use that to download nvm.
-   `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash`
-2. To confirm this has worked, use the following command. `nvm --version`. The output should be a version number.
-3. [Set default Node.js version](#set-default-nodejs-version)
+1. これらのディストリビューションは curl がインストールされているので、それを使用して nvm をダウンロードします。
+2. 機能していることを確認するには、次のコマンドを使用します。 `nvm --version`。バージョン番号が出力されるはずです。
+3. [デフォルトの Node.js バージョンをセットする](#set-default-nodejs-version)
 
-If the Linux distribution you are using is not listed here, please find instructions on the web.
+もし、お使いのLinuxディストリビューションがリストにない場合は、web上で手順を探してください。
 
-#### Set default Node.js version
+#### デフォルトの Node.js バージョンをセットする
 
 When nvm is installed, it does not default to a particular node version. You’ll need to install the version you want and give nvm instructions to use it. This example uses the latest release of version 10, but more recent version numbers can be used instead.
+
+nvm をインストールしても、デフォルトでは特定の node バージョンになりません。必要なバージョンをインストールし、nvmにそれを使用するための指示を与える必要があります。この例では、現状最新のリリースであるバージョン10を使用していますが、もっと最新のバージョン番号があればそちらを使用することもできます。
 
 ```shell
 nvm install 10
@@ -89,147 +90,146 @@ nvm use 10
 
 To confirm that this worked, you can run `npm --version` and `node --version`. The output should look similar to the screenshot below, showing version numbers in response to the commands.
 
-![Check node and npm versions in terminal](01-node-npm-versions.png)
+動作を確認するには、`npm --version`と`node --version`を実行します。出力は下記のスクリーンショットのように、コマンドの応答としてバージョン番号を表示します。
 
-Once you have followed the installation steps and you have checked everything is installed properly, you can continue to the next step.
+![端末で node と npm のバージョンを確認する](01-node-npm-versions.png)
 
-## Install Git
+インストール手順が一通りできて、すべてがちゃんとインストールできたことを確認できたら、次のステップに進みましょう。
 
-Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. When you install a Gatsby "starter" site, Gatsby uses Git behind the scenes to download and install the required files for your starter. You will need to have Git installed to set up your first Gatsby site.
+## Git をインストールする
 
-The steps to download and install Git depend on your operating system. Follow the guide for your system:
+Git はフリーでオープンソースの分散バージョン管理システムです。小規模プロジェクトから大規模プロジェクトまで、すべてを迅速かつ効率的に処理するように設計されています。Gatsby の「スターター」サイトをインストールすると、Gatsby は Git を舞台裏で使用し、スターターに必要なファイルをダウンロードしてインストールします。最初の Gatsby サイトをセットアップするには、Gitをインストールする必要があります。
 
-- [Install Git on macOS](https://www.atlassian.com/git/tutorials/install-git#mac-os-x)
-- [Install Git on Windows](https://www.atlassian.com/git/tutorials/install-git#windows)
-- [Install Git on Linux](https://www.atlassian.com/git/tutorials/install-git#linux)
+Gitをダウンロードしてインストールする手順は、オペレーティングシステムによって異なります。それぞれのシステムのガイドに従ってください:
 
-## Using the Gatsby CLI
+- [macOSにGitをインストールする](https://www.atlassian.com/git/tutorials/install-git#mac-os-x)
+- [WindowsにGitをインストールする](https://www.atlassian.com/git/tutorials/install-git#windows)
+- [LinuxにGitをインストールする](https://www.atlassian.com/git/tutorials/install-git#linux)
 
-The Gatsby CLI tool lets you quickly create new Gatsby-powered sites and run commands for developing Gatsby sites. It is a published npm package.
+## Gatsby CLI の使用
 
-The Gatsby CLI is available via npm and should be installed globally by running `npm install -g gatsby-cli`.
+Gatsby CLI ツールを使用すると、新しい Gatsby を搭載したサイトをすばやく作成し、Gatsby サイトを開発するためのコマンドを実行できます。これは npm パッケージとして公開されています。
 
-_**Note**: when you install Gatsby and run it for the first time, you'll see a short message notifying you about anonymous usage data that is being collected for Gatsby commands, you can read more about how that data is pulled out and used in the [telemetry doc](/docs/telemetry)._
+Gatsby CLI は npm 経由で利用でき、 `npm install -g gatsby-cli`を実行してグローバルにインストールする必要があります。
 
-To see the commands available, run `gatsby --help`.
+_**注**: Gatsby をインストールして初めて実行すると、Gatsby コマンドが収集する匿名の使用状況データについて通知する短いメッセージを表示します。そのデータをどのように取得し、使用するのかの詳細は [テレメトリドキュメント](/docs/telemetry)で確認することができます。_
 
-![Check gatsby commands in terminal](05-gatsby-help.png)
+利用可能なコマンドを確認するには、 `gatsby --help`を実行します。
 
-> 💡 If you are unable to successfully run the Gatsby CLI due to a permissions issue, you may want to check out the [npm docs on fixing permissions](https://docs.npmjs.com/getting-started/fixing-npm-permissions), or [this guide](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md).
+![ターミナルでgatsbyコマンドを確認](05-gatsby-help.png)
 
-## Create a Gatsby site
+> 💡 権限の問題のためにGatsby CLIを正常に実行できない場合は、[権限の修正に関する npm ドキュメント](https://docs.npmjs.com/getting-started/fixing-npm-permissions)、または[このガイド](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md)を参照してみて下さい。
 
-Now you are ready to use the Gatsby CLI tool to create your first Gatsby site. Using the tool, you can download “starters” (partially built sites with some default configuration) to help you get moving faster on creating a certain type of site. The “Hello World” starter you’ll be using here is a starter with the bare essentials needed for a Gatsby site.
+## Gatsbyサイトを作成する
 
-1.  Open up your terminal.
-2.  Run `gatsby new hello-world https://github.com/gatsbyjs/gatsby-starter-hello-world`. (_Note: Depending on your download speed, the amount of time this takes will vary. For brevity's sake, the gif below was paused during part of the install_).
-3.  Run `cd hello-world`.
-4.  Run `gatsby develop`.
+これで、Gatsby CLI ツールを使用して最初の Gatsby サイトを作成する準備ができました。このツールを使用すると、「スターター」(一部のデフォルト構成の部分的に構築されたサイト)をダウンロードして、特定のタイプのサイトの作成を迅速に進めることができます。ここで使用する"Hello World"スターターは、Gatsbyサイトに必要な最低限の要素を備えたスターターです。
+
+1. ターミナルを開きます。
+2. `gatsby new hello-world https://github.com/gatsbyjs/gatsby-starter-hello-world`を実行します。(_注: ダウンロード速度に応じて、これにかかる時間は異なります。簡潔にするために、以下のgifはインストール中に一時停止しています_)。
+3. `cd hello-world`を実行します。
+4. `gatsby developer`を実行します。
+
 
 <video controls="controls" autoplay="true" loop="true">
   <source type="video/mp4" src="./03-create-site.mp4" />
-  <p>Sorry! Your browser doesn't support this video.</p>
+  <p>ごめんなさい! あなたのブラウザはこのビデオをサポートしていません。</p>
 </video>
 
-What just happened?
+何が起きたの？
 
 ```shell
 gatsby new hello-world https://github.com/gatsbyjs/gatsby-starter-hello-world
 ```
 
-- `new` is a gatsby command to create a new Gatsby project.
-- Here, `hello-world` is an arbitrary title — you could pick anything. The CLI tool will place the code for your new site in a new folder called “hello-world”.
-- Lastly, the GitHub URL specified points to a code repository that holds the starter code you want to use.
+- `new`は、新しい Gatsby プロジェクトを作成する gatsby コマンドです。
+- ここで、"hello-world"は任意のタイトルなので、お好みのタイトルを入力できます。CLI ツールは、新しいサイトのコードを"hello-world""という新しいフォルダーに配置します。
+- 最後に、指定した GitHub の URL は、使用するスターターコードを保持するコードのリポジトリを指します。
 
 ```shell
 cd hello-world
 ```
 
-- This says 'I want to change directories (`cd`) to the “hello-world” subfolder'. Whenever you want to run any commands for your site, you need to be in the context for that site (aka, your terminal needs to be pointed at the directory where your site code lives).
+- これは、"hello-world""サブフォルダにディレクトリを変更(`cd`)したい』という意味になります。サイトに対してコマンドを実行したいときはいつでも、そのサイトのコンテキスト内にいる必要があります(ようするに、ターミナルはサイトコードが存在するディレクトリを指す必要があります)。
 
 ```shell
 gatsby develop
 ```
 
-- This command starts a development server. You will be able to see and interact with your new site in a development environment — local (on your computer, not published to the internet).
+- このコマンドは、開発サーバーを起動します。開発環境またはローカル(コンピューターにあり、インターネットに公開されていない)で新しいサイトを表示し、やりとりすることができます。
 
-### View your site locally
+### サイトをローカルに表示する
 
-Open up a new tab in your browser and navigate to [**http://localhost:8000**](http://localhost:8000/).
+ブラウザで新しいタブを開き、[** http://localhost:8000 **](http://localhost:8000/)に移動します。
 
-![Check homepage](04-home-page.png)
+![ホームページを確認する](04-home-page.png)
 
-Congrats! This is the beginning of your very first Gatsby site! 🎉
+おめでとうございます！これが、最初の Gatsby サイトの始まりです！開発サーバーが実行されている限り、[**_http：// localhost:8000_**](http://localhost:8000/)でローカルのサイトにアクセスできます。これは、`gatsby develop`コマンドを実行して開始したプロセスです。そのプロセスの実行を停止(または「開発サーバーの実行を停止」)するには、ターミナルウィンドウに戻り、「コントロール」キーを押しながら「c」(ctrl-c)を押します。もう一度起動するには、再度`gatsby development`を実行してください！
 
-You’ll be able to visit the site locally at [**_http://localhost:8000_**](http://localhost:8000/) for as long as your development server is running. That’s the process you started by running the `gatsby develop` command. To stop running that process (or to “stop running the development server”), go back to your terminal window, hold down the “control” key, and then hit “c” (ctrl-c). To start it again, run `gatsby develop` again!
+**注意: ** `vagrant`のようなVMを使用してセットアップしている場合、および/またはローカルIPアドレスでリッスンしたい場合は、`gatsby development ---host=0.0.0.0`を実行します。これで、開発サーバーは「localhost」とローカル IP の両方でリッスンします。
 
-**Note:** If you are using VM setup like `vagrant` and/or would like to listen on your local IP address, run `gatsby develop --host=0.0.0.0`. Now, the development server listens on both 'localhost' and your local IP.
+## コードエディターを設定する
 
-## Set up a code editor
+コードエディターは、コンピューターコードの編集専用に設計されたプログラムです。すばらしいものがたくさんあります。
 
-A code editor is a program designed specifically for editing computer code. There are many great ones out there.
+### VS Codeのダウンロード
 
-### Download VS Code
+Gatsbyのドキュメントには、VS Codeで撮影したスクリーンショットが含まれている場合があります。そのため、まだお気に入りのコードエディターをお持ちでない場合、VS Codeを使用すると、画面がチュートリアルとドキュメントのスクリーンショットのようになりますVS Codeを使用する場合は、[VS Codeサイト](https://code.visualstudio.com/#alt-downloads)にアクセスし、プラットフォームに適したバージョンをダウンロードしてください。
 
-Gatsby documentation sometimes includes screenshots that were taken in VS Code, so if you don't have a preferred code editor yet, using VS Code will make sure that your screen looks just like the screenshots in the tutorial and docs. If you choose to use VS Code, visit the [VS Code site](https://code.visualstudio.com/#alt-downloads) and download the version appropriate for your platform.
+### Prettierプラグインをインストールする
 
-### Install the Prettier plugin
+また、エラーを回避するためにコードをフォーマットするのに役立つツールである[Prettier](https://github.com/prettier/prettier)を使用することもお勧めします。
 
-We also recommend using [Prettier](https://github.com/prettier/prettier), a tool that helps format your code to avoid errors.
+[Prettier VS Code plugin](https://github.com/prettier/prettier-vscode)を使用して、エディターでPrettierを直接使用できます。
 
-You can use Prettier directly in your editor using the [Prettier VS Code plugin](https://github.com/prettier/prettier-vscode):
+1. VS Codeで拡張機能ビューを開きます(表示=>拡張機能)。
+2. 「Prettier-Code formatter」を検索します。
+3. 「インストール」をクリックします。(インストール後、VS Codeを再起動して拡張機能を有効にするよう求められます。VS Codeの新しいバージョンでは、ダウンロード後に拡張機能が自動的に有効になります。)
 
-1.  Open the extensions view on VS Code (View => Extensions).
-2.  Search for "Prettier - Code formatter".
-3.  Click "Install". (After installation you'll be prompted to restart VS Code to enable the extension. Newer versions of VS Code will automatically enable the extension after download.)
+##➡️次は？
 
-> 💡 If you're not using VS Code, check out the Prettier docs for [install instructions](https://prettier.io/docs/en/install.html) or [other editor integrations](https://prettier.io/docs/en/editors.html).
+要約すると、このセクションでは、
 
-## ➡️ What’s Next?
+- コマンドラインとその使用方法について学びました
+- Node.jsとnpm CLIツール、バージョン管理システムのGit、およびGatsby CLIツールをインストールし学びました
+- Gatsby CLIツールを使用して新しいGatsbyサイトを生成しました
+- Gatsby開発サーバーを実行し、サイトにローカルにアクセスしました
+- コードエディターをダウンロードしました
+- Prettierというコードフォーマッターをインストールしました
 
-To summarize, in this section you:
+次は、[**Gatsbyの構成要素を理解する**](/tutorial/part-one/)に進みます。
 
-- Learned about the command line and how to use it
-- Installed and learned about Node.js and the npm CLI tool, the version control system Git, and the Gatsby CLI tool
-- Generated a new Gatsby site using the Gatsby CLI tool
-- Ran the Gatsby development server and visited your site locally
-- Downloaded a code editor
-- Installed a code formatter called Prettier
+## リファレンス
 
-Now, move on to [**getting to know Gatsby building blocks**](/tutorial/part-one/).
+### コアテクノロジーの概要
 
-## References
+すでにこれらのエクスパートである必要はありません。そうでない場合でも心配しないでください！このチュートリアルシリーズのコースを通じて多くのことを学べます。これらは、Gatsbyサイトを構築するときに使用する主なWebテクノロジーの一部です。
 
-### Overview of core technologies
+- **HTML**: すべてのWebブラウザーが理解できるマークアップ言語。HyperText Markup Languageの略です。HTMLは、Webコンテンツに普遍的な情報構造を与え、見出し、段落などを定義します。
+-** CSS**: Webコンテンツの外観(フォント、色、レイアウトなど)のスタイルを設定するために使用するプレゼンテーション言語。Cascading Style Sheetsの略です。
+-**JavaScript**: ウェブを動的かつインタラクティブにするプログラミング言語。
+-**React**: ユーザーインターフェイスを構築するためのコードライブラリ(JavaScriptで構築)。これは、Gatsbyがページの構築とコンテンツの構造化に使用しているフレームワークです。
+-**GraphQL**: データをウェブサイトに取得するためのクエリ言語。これは、Gatsbyがサイトデータの管理に使用するインターフェイスです。
 
-It’s not necessary to be an expert with these already — if you’re not, don’t worry! You’ll pick up a lot through the course of this tutorial series. These are some of the main web technologies you’ll use when building a Gatsby site:
+### ウェブサイトとは何ですか？
 
-- **HTML**: A markup language that every web browser is able to understand. It stands for HyperText Markup Language. HTML gives your web content a universal informational structure, defining things like headings, paragraphs, and more.
-- **CSS**: A presentational language used to style the appearance of your web content (fonts, colors, layout, etc). It stands for Cascading Style Sheets.
-- **JavaScript**: A programming language that helps us make the web dynamic and interactive.
-- **React**: A code library (built with JavaScript) for building user interfaces. It’s the framework that Gatsby uses to build pages and structure content.
-- **GraphQL**: A query language that allows you to pull data into your website. It’s the interface that Gatsby uses for managing site data.
+HTMLとCSSの入門を含んだWebサイトの概要については、「[**はじめてのWebページ作成**](https://learn.shayhowe.com/html-css/building-first-web-page/)」を参照して下さい。。ウェブについて学び始めるのに最適なサイトです。より実践的な紹介については、[**HTML**](https://www.codecademy.com/learn/learn-html)、[**CSS**](https://www.codecademy.com /learn/learn-css)、[**JavaScript**](https://www.codecademy.com/learn/introduction-to-javascript)、などのCodecademyのチュートリアルをご覧ください。[**React**](https://reactjs.org/tutorial/tutorial.html)および[**GraphQL**](http://graphql.org/graphql-js/)にも独自の入門チュートリアルがあります。
 
-### What is a website?
+### コマンドラインの詳細
 
-For a comprehensive introduction to what a website is--including an intro to HTML and CSS--check out “[**Building your first web page**](https://learn.shayhowe.com/html-css/building-your-first-web-page/)”. It’s a great place to start learning about the web. For a more hands-on introduction to [**HTML**](https://www.codecademy.com/learn/learn-html), [**CSS**](https://www.codecademy.com/learn/learn-css), and [**JavaScript**](https://www.codecademy.com/learn/introduction-to-javascript), check out the tutorials from Codecademy. [**React**](https://reactjs.org/tutorial/tutorial.html) and [**GraphQL**](http://graphql.org/graphql-js/) also have their own introductory tutorials.
+コマンドラインの使用に関する優れた紹介については、MacおよびLinuxユーザー向けには[**Codecademyのコマンドラインチュートリアル**](https://www.codecademy.com/courses/learn-the-command-line/lessons/navigation/exercises/your-first-command)、またはWndowsむけには[**このチュートリアル**](https://www.computerhope.com/issues/chusedos.htm)をご覧下さい。Windowsユーザーであっても、Codecademyチュートリアルの最初のページは読む価値があります。使い方だけではなく、コマンドラインとは何なのかを説明しています。
 
-### Learn more about the command line
+### npmの詳細
 
-For a great introduction to using the command line, check out [**Codecademy’s Command Line tutorial**](https://www.codecademy.com/courses/learn-the-command-line/lessons/navigation/exercises/your-first-command) for Mac and Linux users, and [**this tutorial**](https://www.computerhope.com/issues/chusedos.htm) for Windows users. Even if you are a Windows user, the first page of the Codecademy tutorial is a valuable read. It explains what the command line is, not just how to interface with it.
+npmはJavaScriptのパッケージマネージャーです。パッケージとは、プロジェクトを拡張するために選択することのできるコードのモジュールです。もし、Node.jsをダウンロードしてインストールしたばかりであれば、npmも一緒にインストールされています！
 
-### Learn more about npm
+npmは、npmウェブサイト、npmレジストリ、そしてnpmコマンドラインインターフェイス(CLI)の3つの異なるコンポーネントがあります。
 
-npm is a JavaScript package manager. A package is a module of code that you can choose to include in your projects. If you just downloaded and installed Node.js, npm was installed with it!
+- npmウェブサイトで、npmレジストリで使用可能なJavaScriptパッケージを参照できます。
+- npmレジストリは、npmで利用可能なJavaScriptパッケージに関する情報の大規模なデータベースです。
+- 必要なパッケージを特定したら、npm CLIを使用してプロジェクトにインストールするか、または他のCLIツールと同様にグローバルにインストールできます。npm CLIはレジストリとやりとりするものです。通常、npmウェブサイトまたはnpm CLIのみを操作します。
 
-npm has three distinct components: the npm website, the npm registry, and the npm command line interface (CLI).
+n npmの紹介「[**** npmとは何ですか？**]（https://docs.npmjs.com/getting-started/what-is-npm）」をご覧ください。
 
-- On the npm website, you can browse what JavaScript packages are available in the npm registry.
-- The npm registry is a large database of information about JavaScript packages available on npm.
-- Once you’ve identified a package you want, you can use the npm CLI to install it in your project or globally (like other CLI tools). The npm CLI is what talks to the registry — you generally only interact with the npm website or the npm CLI.
+### Gitの詳細
 
-> 💡 Check out npm’s introduction, “[**What is npm?**](https://docs.npmjs.com/getting-started/what-is-npm)”.
-
-### Learn more about Git
-
-You will not need to know Git to complete this tutorial, but it is a very useful tool. If you are interested in learning more about version control, Git, and GitHub, check out GitHub's [Git Handbook](https://guides.github.com/introduction/git-handbook/).
+このチュートリアルを完了するためにGitを知っている必要はありませんが、非常に便利なツールです。バージョン管理、Git、およびGitHubの詳細については、GitHubの[Gitハンドブック](https://guides.github.com/introduction/git-handbook/)をご覧ください。
