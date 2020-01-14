@@ -5,9 +5,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Setup reviewdog
+        run: |
+          mkdir -p $HOME/bin && curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s -- -b $HOME/bin
+          echo ::add-path::$HOME/bin
+          echo ::add-path::$(go env GOPATH)/bin # for Go projects
+      - name: Install dependencies
+        run: yarn install
       - name: textlint
-        uses: tsuyoshicho/action-textlint@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          reporter: github-pr-review
-          textlint_flags: "docs/**/*.md"
+        run: $(yarn bin)/textlint -f checkstyle ${FILES} | reviewdog -f=checkstyle -name="textlint" -reporter=github-pr-review -level=${LEVEL}
+        env:
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FILES: README.md docs/**/*.md
+          LEVEL: error
