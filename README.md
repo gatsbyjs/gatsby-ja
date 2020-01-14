@@ -1,10 +1,10 @@
 # Gatsby Japanese Translation
 
-このリポジトリでは Gatsby 公式ドキュメントの日本語版を作成しています。
+このリポジトリーでは Gatsby 公式ドキュメントの日本語版を作成しています。
 
 翻訳の進捗は [Translation Progress Issue](https://github.com/gatsbyjs/gatsby-ja/issues/1) を確認してください。
 
-日本語訳や日本語版特有の問題を見つけた場合はこのリポジトリの Issue / Pull Request を使って報告ないし改善を提案してください。
+日本語訳や日本語版特有の問題を見つけた場合はこのリポジトリーの Issue / Pull Request を使って報告ないし改善を提案してください。
 
 ## 翻訳・修正等に興味がある方へ
 
@@ -15,7 +15,7 @@
 - このページの右上にある Fork ボタンからこのレポジトリを Fork してください。
 - Git, Node.js, Yarn をそれぞれ準備して、 Fork したリポジトリをクローンしてください。
 - `yarn` を使って dependency のインストールを行ってください。
-- これで準備は完了です！ `docs` の中身の markdown を好みのテキストエディタで編集してください。
+- これで準備は完了です！ `docs` の中身の markdown を好みのテキストエディターで編集してください。
 
 ### 作業の重複を防ぐための宣言
 

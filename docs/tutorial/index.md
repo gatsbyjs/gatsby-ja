@@ -11,7 +11,7 @@ Gatsby へようこそ！あなたがここにいることを嬉しく思いま�
 
 0. [開発環境のセットアップ](/tutorial/part-zero/): Gatsby の力の源となるコアテクノロジーを紹介し、開発環境のセットアップを紹介します。
 1. [Gatsby の構成要素の理解](/tutorial/part-one/): 新しいプロジェクトを開始し、サイトを開発してデプロイします。
-1. [Gatsby で CSS を使用するための紹介](/tutorial/part-two/): Typography.js などのライブラリや CSS モジュールについて探索します。
+1. [Gatsby で CSS を使用するための紹介](/tutorial/part-two/): Typography.js などのライブラリーや CSS モジュールについて探索します。
 1. [Gatsby でネストしたレイアウトを構築](/tutorial/part-three/): レイアウトとは、ヘッダーやフッターなど、サイト内の複数のページで再利用されるセクションのことを指します。
 
 ## 中級チュートリアル
