@@ -1,28 +1,7 @@
 version: 1
 rules:
-  - expected: エキスパート
-    pattern: エクスパート
-
-  - expected: コンピュータ
-    pattern: コンピューター
-
-  - expected: ブラウザ
-    pattern: ブラウザー
-
-  - expected: コミュニティ
-    pattern: コミュニティー
-
-  - expected: アクティビティ
-    pattern: アクティビティー
-
-  - expected: ユーザー
-    pattern: /ユーザ(?!ー)/
-
-  - expected: コミッター
-    pattern: /コミッタ(?!ー)/
-
-  - expected: コントリビューター
-    pattern: /コントリビュータ(?!ー)/
+  - expected: ステップ・バイ・ステップ
+    pattern: ステップバイステップ
 
   - expected: てみる
     pattern: て見る

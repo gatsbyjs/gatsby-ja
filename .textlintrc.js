@@ -10,20 +10,19 @@ module.exports = {
       "1.1.3.箇条書き": false, // 箇条書きの文末に句点(。)以外を許可
       "3.1.1.全角文字と半角文字の間": false, // 全角文字と半角文字の間にスペースを入れる
       "4.2.7.コロン(：)": false, // 半角コロンを許可
+      "2.1.2.漢字": true,
+      "2.1.5.カタカナ": true,
+      "2.1.6.カタカナの長音": true, // カタカナ語の長音は基本的に伸ばす
+      "2.2.1.ひらがなと漢字の使い分け": true,
     },
     // https://github.com/textlint-rule/textlint-rule-prh
     prh: { rulePaths: ["./prh.yml"] },
     "ja-technical-writing/no-exclamation-question-mark": false, // 文末の感嘆符を許可
-    "ja-technical-writing/max-ten": {
-      // 句点の数を緩和
-      max: 5,
-    },
+    "ja-technical-writing/max-ten": { max: 5 }, // 句点の数を緩和
     "ja-technical-writing/ja-no-weak-phrase": false, // 弱い表現の許容
+    "ja-technical-writing/ja-no-mixed-period": { allowPeriodMarks: ["："] }, // 文末は。、：で終わる
     "ja-technical-writing/sentence-length": false, // 翻訳完了後に有効化
     "ja-technical-writing/max-comma": false, // 翻訳完了後に有効化
-    "ja-technical-writing/ja-no-mixed-period": {
-      allowPeriodMarks: ["："],
-    },
     "textlint-rule-ja-hiragana-hojodoushi": true, // ひらがなにしたほうが良い補助動詞
     "textlint-rule-ja-hiragana-fukushi": true, // ひらがなにしたほうが良い副詞
   },
