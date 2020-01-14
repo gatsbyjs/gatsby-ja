@@ -104,3 +104,11 @@ React について詳しくない方は、まず[こちらのガイド](https://
 | Plugin | プラグイン |
 | Theme  | テーマ     |
 | Query  | クエリ     |
+
+## textlint
+
+`gatsby-ja`では文章の校正に textlint を活用しています。
+
+### `npm run lint`
+
+`npm run lint`を実行して、ローカルで textlint による校正を受けることができます。ほとんどのエラーは`npm run format`を実行することで自動修正できます。
