@@ -14,11 +14,18 @@ module.exports = {
     // https://github.com/textlint-rule/textlint-rule-prh
     prh: { rulePaths: ["./prh.yml"] },
     "ja-technical-writing/no-exclamation-question-mark": false, // 文末の感嘆符を許可
+    "ja-technical-writing/max-ten": {
+      // 句点の数を緩和
+      max: 5,
+    },
+    "ja-technical-writing/ja-no-weak-phrase": false, // 弱い表現の許容
     "ja-technical-writing/sentence-length": false, // 翻訳完了後に有効化
     "ja-technical-writing/max-comma": false, // 翻訳完了後に有効化
-    "textlint-rule-ja-hiragana-hojodoushi": true,
-    "textlint-rule-ja-hiragana-fukushi": true,
-    "textlint-rule-ja-hiragana-keishikimeishi": true,
+    "ja-technical-writing/ja-no-mixed-period": {
+      allowPeriodMarks: ["："],
+    },
+    "textlint-rule-ja-hiragana-hojodoushi": true, // ひらがなにしたほうが良い補助動詞
+    "textlint-rule-ja-hiragana-fukushi": true, // ひらがなにしたほうが良い副詞
   },
   filters: {
     // https://github.com/textlint/textlint-filter-rule-comments

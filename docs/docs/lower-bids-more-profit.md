@@ -8,7 +8,7 @@ After identifying projects that are a good fit for Gatsby, they will bid _signif
 
 Ben Robertson, of the 80-person Mediacurrent agency, [explains this strategy](https://www.youtube.com/watch?v=QiocnDGnKfs&feature=youtu.be&t=1145) in the context of Mediacurrent's work on the citysprings.com website for the city of Sandy Springs, GA:
 
-> "This was an experimental project for us. We had done decoupled Drupal before, but this was our first project as a team that was using Gatsby and it was a budget that was actually significantly under what we would charge for a full Drupal 8 build. And that was scary!
+> "This was an experimental project for us. We had done decoupled Drupal before, but this was our first project as a team that was using Gatsby and it was a budget that was actually significantly under what we would charge for a full Drupal 8 build. And that was scary!"
 
 Not only was the team able to deliver the project on time and under budget, but the client was so happy they were able to [get additional work immediately](https://www.youtube.com/watch?v=QiocnDGnKfs&feature=youtu.be&t=1531):
 

@@ -19,7 +19,7 @@
 
 ### 作業の重複を防ぐための宣言
 
-未翻訳記事の翻訳を行いたい場合は、他の人との作業の重複を防ぐため、[この Issue](https://github.com/gatsbyjs/gatsby-ja/issues/1) での宣言をお願いします。
+未翻訳記事を翻訳したい場合は、他の人との作業の重複を防ぐため、[この Issue](https://github.com/gatsbyjs/gatsby-ja/issues/1) での宣言をお願いします。
 
 ### 翻訳スタイルガイド
 
@@ -29,12 +29,12 @@
 
 ## 参考リンク
 
-* [翻訳スタイルガイド](/style-guide.md)
-* [Gatsby翻訳ガイド](https://www.gatsbyjs.org/contributing/gatsby-docs-translation-guide/)
-* [Gatsby Discord](https://gatsby.dev/discord)
+- [翻訳スタイルガイド](/style-guide.md)
+- [Gatsby 翻訳ガイド](https://www.gatsbyjs.org/contributing/gatsby-docs-translation-guide/)
+- [Gatsby Discord](https://gatsby.dev/discord)
 
 ## メンテナー
 
-* [**@hirotaka**](https://github.com/hirotaka)
-* [**@Naturalclar**](https://github.com/Naturalclar)
-* [**@uetchy**](https://github.com/uetchy)
+- [**@hirotaka**](https://github.com/hirotaka)
+- [**@Naturalclar**](https://github.com/Naturalclar)
+- [**@uetchy**](https://github.com/uetchy)

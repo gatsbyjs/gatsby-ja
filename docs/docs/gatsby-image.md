@@ -176,7 +176,7 @@ In a query, you can specify options for fluid images.
 - `maxWidth` (int, default: 800)
 - `maxHeight`(int)
 - `quality` (int, default: 50)
-- `srcSetBreakpoints` (array of int, default: [])
+- `srcSetBreakpoints` (array of int, default: `[]`)
 - `fit` (string, default: `[sharp.fit.cover][6]`)
 - `background` (string, default: `rgba(0,0,0,1)`)
 
