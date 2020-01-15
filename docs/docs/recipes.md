@@ -29,7 +29,7 @@ tableOfContentsDepth: 2
 より詳しくは[ドキュメントテンプレート](/docs/docs-templates/)を見てください。
 -->
 
-[フルサイズのチュートリアル](/tutorial/)を踏破するのでもなく、大量の[ドキュメント](/docs/)の海に潜るのでもなく、その中間に位置する"ちょうど良い"リソースが必要ですか？
+[フルサイズのチュートリアル](/tutorial/)を踏破するのでもなく、大量の[ドキュメント](/docs/)の海に潜るのでもなく、その中間に位置する"ちょうど良い"リソースが必要だと思ったことはありませんか？
 ここには、Gatsby スタイルやその他つくりたいものに合わせた様々なレシピが揃っています。
 
 ## [1. ページとレイアウト](/docs/recipes/pages-layouts)
@@ -46,8 +46,8 @@ tableOfContentsDepth: 2
 
 あなたのウェブサイトにスタイルを追加する手段はたくさんあります。公式チームとコミュニティーが提供するプラグインのおかげで、ほとんどすべての方法が Gatsby で使えます。
 
-- [Using global CSS files without a Layout component](/docs/recipes/styling-css#using-global-css-files-without-a-layout-component)
-- [Using global styles in a layout component](/docs/recipes/styling-css#using-global-styles-in-a-layout-component)
+- [レイアウトコンポーネントを使わないグローバル CSS の使用](/docs/recipes/styling-css#using-global-css-files-without-a-layout-component)
+- [レイアウトコンポーネント内のグローバルなスタイル](/docs/recipes/styling-css#using-global-styles-in-a-layout-component)
 - [Styled Components](/docs/recipes/styling-css#using-styled-components)
 - [CSS Modules](/docs/recipes/styling-css#using-css-modules)
 - [Sass/SCSS](/docs/recipes/styling-css#using-sassscss)
@@ -57,20 +57,20 @@ tableOfContentsDepth: 2
 
 ## [3. スターターを活用する](/docs/recipes/working-with-starters)
 
-[スターター](/docs/starters/) は公式チームやコミュニティーによってメンテナンスされている、Gatsby サイトの雛形です。
+[スターター](/docs/starters/) は、公式チームやコミュニティーによってメンテナンスされている Gatsby サイトの雛形です。
 
 - [スターターを使う](/docs/recipes/working-with-starters#using-a-starter)
 
 ## [4. テーマを使う](/docs/recipes/working-with-themes)
 
-A Gatsby theme lets you centralize the look-and-feel of your site. You can seamlessly update a theme, compose themes together, and even swap out one compatible theme for another.
+Gatsby テーマを使用するとサイトの見た目を統一できます。 テーマをシームレスに更新したり、まとめて作成したり、あるいは互換性のあるテーマを別のものに交換したりすることもできます。
 
 - [テーマスターターを使って新しいサイトをつくる](/docs/recipes/working-with-themes#creating-a-new-site-using-a-theme-starter)
 - [新しいテーマをつくる](/docs/recipes/working-with-themes#building-a-new-theme)
 
 ## [5. データの取得](/docs/recipes/sourcing-data)
 
-ファイルシステムやデータベースなど複数の場所からデータを取得し、Gatsby サイトに取り込みます。
+ファイルシステムやデータベースなど、複数の場所からデータを取得し Gatsby サイトに取り込みます。
 
 - [GraphQL にデータを追加する](/docs/recipes/sourcing-data#adding-data-to-graphql)
 - [Sourcing Markdown data for blog posts and pages with GraphQL](/docs/recipes/sourcing-data#sourcing-markdown-data-for-blog-posts-and-pages-with-graphql)
@@ -81,11 +81,11 @@ A Gatsby theme lets you centralize the look-and-feel of your site. You can seaml
 
 ## [6. データを要求する](/docs/recipes/querying-data)
 
-Gatsby では、単一の GraphQL インターフェイスを通じて、あらゆるソースからデータにアクセスできます。
+Gatsby では、単一の GraphQL インターフェイスを通じてあらゆるソースからデータにアクセスできます。
 
-- [Page Query を使ってデータを要求する](/docs/recipes/querying-data#querying-data-with-a-page-query)
-- [StaticQuery Component を使ってデータを要求する](/docs/recipes/querying-data#querying-data-with-the-staticquery-component)
-- [useStaticQuery hook を使ってデータを要求する](/docs/recipes/querying-data/#querying-data-with-the-usestaticquery-hook)
+- [Page Query を用いたデータ要求](/docs/recipes/querying-data#querying-data-with-a-page-query)
+- [StaticQuery Component を用いたデータ要求](/docs/recipes/querying-data#querying-data-with-the-staticquery-component)
+- [useStaticQuery hook を用いたデータ要求](/docs/recipes/querying-data/#querying-data-with-the-usestaticquery-hook)
 - [GraphQL で数に制限をかける](/docs/recipes/querying-data#limiting-with-graphql)
 - [GraphQL でソートする](/docs/recipes/querying-data#sorting-with-graphql)
 - [GraphQL でフィルターをかける](/docs/recipes/querying-data#filtering-with-graphql)
@@ -95,11 +95,10 @@ Gatsby では、単一の GraphQL インターフェイスを通じて、あら�
 
 ## [7. 画像を取り扱う](/docs/recipes/working-with-images)
 
-Access images as static resources, or automate the process of optimizing them through powerful plugins.
-イメージを静的なリソースとして使う。あるいはプラグインを通じて最適化プロセスを自動化する。
+イメージを静的なリソースとして使ったり、あるいはプラグインを通じて最適化プロセスを自動化しましょう。
 
 - [webpack を使って画像をコンポーネントに埋め込む](/docs/recipes/working-with-images#import-an-image-into-a-component-with-webpack)
-- [静的フォルダにある画像を参照する](/docs/recipes/working-with-images#reference-an-image-from-the-static-folder)
+- [静的フォルダにある画像への参照](/docs/recipes/working-with-images#reference-an-image-from-the-static-folder)
 - [gatsby-image を使って画像を最適化するクエリを書く](/docs/recipes/working-with-images#optimizing-and-querying-local-images-with-gatsby-image)
 - [Front-matter で gatsby-image による最適化を指示する](/docs/recipes/working-with-images#optimizing-and-querying-images-in-post-frontmatter-with-gatsby-image)
 
@@ -114,5 +113,5 @@ Gatsby でのデータ変換はプラグインによって実現されていま�
 お披露目の時間です。サイトの出来栄えに満足したら、全世界に公開しましょう！
 
 - [デプロイの準備](/docs/recipes/deploying-your-site#preparing-for-deployment)
-- [Netlify でデプロイ](/docs/recipes/deploying-your-site#deploying-to-netlify)
-- [ZEIT Now でデプロイ](/docs/recipes/deploying-your-site#deploying-to-zeit-now)
+- [Netlify によるデプロイ](/docs/recipes/deploying-your-site#deploying-to-netlify)
+- [ZEIT Now によるデプロイ](/docs/recipes/deploying-your-site#deploying-to-zeit-now)
