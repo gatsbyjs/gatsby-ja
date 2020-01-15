@@ -16,9 +16,9 @@ disableTableOfContents: true
 
 Gatsby はトランスフォーマープラグインを利用して、ソースプラグインで取得したデータをブログで表示する形式へ変換します。
 
-ここではマークダウンを例とします。マークダウンは簡潔に記述できますが Web ページとして表示する場合は HTML へ変換する必要があります。
+ここでは Markdown を例とします。Markdown は簡潔に記述できますが Web ページとして表示する場合は HTML へ変換する必要があります。
 
-`src/pages/sweet-pandas-eating-sweets.md`に以下のマークダウンファイルを追加して、トランスフォーマープラグインと GraphQL を使って HTML へ変換する方法を学びましょう。
+`src/pages/sweet-pandas-eating-sweets.md`に以下の Markdown ファイルを追加して、トランスフォーマープラグインと GraphQL を使って HTML へ変換する方法を学びましょう。
 
 ```markdown:title=src/pages/sweet-pandas-eating-sweets.md
 ---
@@ -33,9 +33,9 @@ Here's a video of a panda eating sweets.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4n0xNbfJLR8" frameborder="0" allowfullscreen></iframe>
 ```
 
-ファイルを保存して`/my-files/`を確認します。表に新しいマークダウンファイルが追加されています。これは Gatsby の非常に便利な機能です。先程の`siteMetadata`の例のように、ソースプラグインはデータをライブリロードします。`gatsby-source-filesystem`はファイルを常に監視して、ファイルが追加されるとクエリを再実行します。
+ファイルを保存して`/my-files/`を確認します。表に新しい Markdown が追加されています。これは Gatsby の非常に便利な機能です。先程の`siteMetadata`の例のように、ソースプラグインはデータをライブリロードします。`gatsby-source-filesystem`はファイルを常に監視して、ファイルが追加されるとクエリを再実行します。
 
-マークダウンファイルを変換できるトランスフォーマープラグインを追加します。
+Markdown を変換できるトランスフォーマープラグインを追加します。
 
 ```shell
 npm install --save gatsby-transformer-remark
@@ -72,15 +72,15 @@ module.exports = {
 
 ![markdown-autocomplete](markdown-autocomplete.png)
 
-`allMarkdownRemark`を選択し、`allFile`のときと同様にクエリを実行します。先程追加したマークダウンファイルが表示されるはずです。`MarkdownRemark`ノードで使用可能なフィールドを探します。
+`allMarkdownRemark`を選択し、`allFile`のときと同様にクエリを実行します。先程追加した Markdown が表示されるはずです。`MarkdownRemark`ノードで使用可能なフィールドを探します。
 
 ![markdown-query](markdown-query.png)
 
 Gatsby の基本的な設定ができ始めています。ソースプラグインはデータを Gatsby のデータシステムに取り込み、トランスフォーマープラグインはソースプラグインが取得したデータを変換します。このパターンは Gatsby でサイトを構築するために必要なすべてのデータ取得と変換を処理できます。
 
-## マークダウンファイルのリストを`src/pages/index.js`に作成する
+## Markdown のリストを`src/pages/index.js`に作成する
 
-次に、フロントページにマークダウンファイルのリストを作成します。多くのブログのように、各投稿へのリンクをリストにしてフロントページに表示します。GraphQL を利用すればマークダウンの投稿を取得できるため、手動でリストを管理する必要はありません。
+次に、フロントページに Markdown のリストを作成します。多くのブログのように、各投稿へのリンクをリストにしてフロントページに表示します。GraphQL を利用すれば Markdown の投稿を取得できるため、手動でリストを管理する必要はありません。
 
 `src/pages/index.js` に GraphQL クエリと HTML とスタイルを追加して次のように書き換えます。`src/pages/my-files.js`と同様です。
 
@@ -186,7 +186,7 @@ GraphiQL を開いていろいろな sort オプションを試しましょう�
 
 ## 次は？
 
-よくできました！あなたはマークダウンファイルを取得し、投稿のタイトルと抜粋をリストにして表示する index ページを作成しました。しかし、抜粋ではなくマークダウンファイルの内容を表示するページが必要です。
+よくできました！あなたは Markdown を取得し、投稿のタイトルと抜粋をリストにして表示する index ページを作成しました。しかし、抜粋ではなく Markdown の内容を表示するページが必要です。
 
 React コンポーネントを `src/pages`に配置することで引き続きページを作成できます。次はプログラムによってデータからページを生成する方法を学びます。
 Gatsby は多くの静的サイトジェネレーターと異なり、ファイルからのページ作成に限定されません。
