@@ -8,6 +8,10 @@ rules:
   - expected: ステップ・バイ・ステップ
     pattern: ステップバイステップ
 
+  - expected: はじめに
+    pattern:
+      - イントロダクション
+
   - expected: 貢献
     pattern:
       - コントリビュート
