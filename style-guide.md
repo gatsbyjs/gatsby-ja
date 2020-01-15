@@ -139,6 +139,7 @@ React について詳しくない方は、まず[こちらのガイド](https://
 | swag                     | 景品         |
 | issue                    | Issue        |
 | pull request             | Pull Request |
+| intro, introduction      | はじめに     |
 
 <!-- textlint-enable -->
 
