@@ -3,15 +3,16 @@ title: webpack
 disableTableOfContents: true
 ---
 
-Learn what webpack is, how it works, and how Gatsby uses it to accelerate web site development.
+webpack がどんなもので、どう動き、Gatsby がウェブサイト開発を加速するためにどのように使っているかを学びましょう。
 
-## What is webpack?
 
-[webpack](/docs/glossary#webpack) is a <q>static module bundler,</q> or software that collects chunks or modules of JavaScript and compiles them into one or more optimized bundles. webpack is one of the core software packages that underpins Gatsby.
+## webpack とは?
 
-webpack works by creating a _dependency graph_. In other words, webpack determines which modules depend on other modules to make your site work. A _module_ is a chunk of code that encapsulates some functionality. It may be as small as a single JavaScript function, or it may be an entire library such as [React](/docs/glossary#react).
+[webpack](/docs/glossary#webpack) は<q>静的モジュールバンドラー</q>、つまり JavaScript のかたまりやモジュールを集めて、それらを1つ以上の最適化されたバンドルにコンパイルするソフトウェアです。webpack は Gatsby を支えるコアソフトウェアパッケージのひとつです。
 
-webpack determines dependencies from the contents of `webpack.config.js`. `webpack.config.js` can contain one or more _entry points_, which tell webpack which file or files to use as the starting point (or points) for a dependency graph. See the following example.
+webpack は<strong>依存関係グラフ</strong>を構築することで動きます。言いかえると、webpack はどのモジュールがあなたのサイトを動かすために他のモジュールに依存しているかを割り出します。<strong>モジュール</strong>とは、何らかの機能をカプセル化したコードのかたまりです。1つの JavaScript 関数のように小さいかもしれませんし、[React](/docs/glossary#react) のように色々備えたライブラリかもしれません。
+
+webpack は `webpack.config.js` のコンテンツから依存関係を割り出します。`webpack.config.js` は1つ以上の<strong>エントリーポイント</strong>を持ちます。エントリーポイントとは、どのファイルを依存関係の開始点（複数あることも）として使うかを webpack に伝えます。以下の例を見てみましょう。
 
 ```javascript
 module.exports = {
@@ -19,13 +20,13 @@ module.exports = {
 }
 ```
 
-webpack processes JavaScript and JSON files by default, but you can add support for CSS and media files with additional software and configuration. For example, Gatsby ships with its own [`webpack.config.js`](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/utils/webpack.config.js) file that supports [global CSS files](/docs/global-css/), [component-scoped CSS modules](/docs/css-modules/), and [CSS-in-JS](/docs/css-in-js/).
+webpack は JavaScript と JSON ファイルをデフォルトで処理しますが、追加のソフトウェアと設定により CSS やメディアファイルのサポートを追加できます。例えば、Gatsby は[グローバルな CSS ファイル](/docs/global-css/)、 [コンポーネントスコープの CSS モジュール](/docs/css-modules/)、[CSS-in-JS](/docs/css-in-js/) をサポートする自身の [`webpack.config.js`](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/utils/webpack.config.js) ファイルとともに出荷されています。
 
-You can also use webpack to optimize how CSS and JavaScript are delivered to the browser. webpack supports a feature known as [_code splitting_](https://webpack.js.org/guides/code-splitting/). Code splitting allows you to divide your code across a few bundles that are loaded as needed or as requested. Gatsby is already configured to use this feature. You do not have to do any additional set up to reap the benefits.
+また、webpack を使うことで CSS や JavaScript をブラウザにどのように届けるかも最適化できます。webpack は<strong>[コード分割](https://webpack.js.org/guides/code-splitting/)</strong>として知られる仕組みをサポートしています。コード分割により、コードを必要時またはリクエスト時に読み込まれる数個のバンドルに分割できます。Gatsby はこの仕組みを使うようにすでに設定されています。この恩恵を受けるのに追加のセットアップは必要ありません。
 
-If you want to add support for features such as [Sass/SCSS](/docs/sass/), that Gatsby does not support out of the box, you can also [add a custom webpack configuration](/docs/add-custom-webpack-config/), or use one of the [Gatsby plugins](/docs/plugins/) contributed by the community.
+もし [Sass/SCSS](/docs/sass/) のような仕組みのサポートを追加したい場合は、Gatsby はそのままではサポートしていませんが、[webpack にカスタム設定を追加したり](/docs/add-custom-webpack-config/)、あるいはコミュニティによって貢献された [Gatsby プラグイン](/docs/plugins/)のひとつを使えます。
+ 
+### webpack についてさらに学ぶ
 
-### Learn more about webpack
-
-- [webpack](https://webpack.js.org/) official site
-- [Custom Configuration](/docs/customization/) from the Gatsby Docs
+- [webpack](https://webpack.js.org/) 公式サイト
+- [カスタム設定](/docs/customization/) Gatsby ドキュメント
