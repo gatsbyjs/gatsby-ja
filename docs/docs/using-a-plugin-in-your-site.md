@@ -1,12 +1,12 @@
 ---
-title: Using a Plugin in Your Site
+title: サイトでプラグインを利用する
 ---
 
-Gatsby plugins are Node.js packages, so you can install them like other packages in node using NPM.
+Gatsby プラグインは、Node.js パッケージです。 NPM を利用して他の node パッケージと同様にインストールできます。
 
-For example, `gatsby-transformer-json` is a package that adds support for JSON files to the Gatsby data layer.
+例えば、`gatsby-transformer-json` は JSON ファイルのサポートを Gatsby データレイヤーに追加するパッケージです。
 
-To install it, in the root of your site you run:
+インストールするには、サイトのルートディレクトリーで下記のコマンドを実行します。
 
 ```shell
 npm install --save gatsby-transformer-json
