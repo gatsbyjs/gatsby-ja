@@ -2,7 +2,7 @@
 title: GraphQL Playgroundの利用
 ---
 
-## イントロダクション
+## はじめに
 
 このページでは、現在あなたが GraphQL クエリのために使用している IDE の代替となる、[GraphQL Playground](https://github.com/prisma/graphql-playground)を紹介します。
 
