@@ -1,25 +1,25 @@
 ---
-title: Using the GraphQL Playground
+title: GraphQL Playgroundの利用
 ---
 
-## Intro
+## はじめに
 
-This page will introduce you to an alternative to the current IDE for your GraphQL queries: [GraphQL Playground](https://github.com/prisma/graphql-playground).
+このページでは、現在あなたが GraphQL クエリのために使用している IDE の代替となる、[GraphQL Playground](https://github.com/prisma/graphql-playground)を紹介します。
 
-## What is Prisma's GraphQL Playground?
+## Prisma's GraphQL Playground とは？
 
-GraphQL Playground is a way for you to interact with the data your sources and plugins add as schemas. You will be interacting with this data a lot and the Playground will help you greatly with exploring this data.
+GraphQL Playground は、ソースコードやプラグインがスキーマとして与えたデータを取り扱う場所です。あなたは今後そのようなデータをたくさん探索することになります。その際に Playground は大きな助けとなるでしょう。
 
-## Accessing the playground
+## GraphQL Playground へのアクセス
 
-To access this experimental feature utilizing GraphQL Playground with Gatsby, add `GATSBY_GRAPHQL_IDE` to your `develop` script in your `package.json`, like this:
+Gatsby で GraphQL Playground にアクセスするためには、以下のように `GATSBY_GRAPHQL_IDE` を `package.json` の `develop` スクリプトに追加します。
 
 ```json
 "develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
 ```
 
-Use `npm run develop` instead of `gatsby develop` and access it when the development server is running on <https://localhost:8000/___graphql>
+`gatsby develop` の代わりに `npm run develop` を使用し、立ち上がったサーバー <https://localhost:8000/___graphql> へアクセスすることで利用できます。
 
-To still be able to use `gatsby develop` you would require the dotenv package to your gatsby-config.js file and add an [environment variable](/docs/environment-variables/) file, typically called `.env.development`. Finally, add `GATSBY_GRAPHQL_IDE=playground` to the `.env.development` file.
+`gatsby develop` を引き続き使用するためには、gatsby-config.js で dotenv パッケージを使用する必要があります。`.env.development` といった名前で[environment variable](/docs/environment-variables/)ファイルを作成し、`.env.development` へ `GATSBY_GRAPHQL_IDE=playground` と記入します。
 
-![An image pointing out where to find the GraphQl schema](./images/playground-schema.png)
+![GraphQLスキーマの場所を示す画像](./images/playground-schema.png)
