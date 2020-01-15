@@ -2,7 +2,7 @@
 title: ユーザー認証を使用したサイトの作成
 ---
 
-往々にして、認証済みユーザーのみ閲覧可能なコンテンツを含むサイトを構築しないといけないことがあります。Gatsby を使用すると、[クライアントサイドルーティング](/docs/client-only-routes-and-user-authentication/)を用いて、ユーザーがログイン後にのみ閲覧できるページを作成できます。
+往々にして、認証されたユーザーのみが閲覧可能なコンテンツを含むサイトを構築しないといけないことがあります。Gatsby なら、[クライアントサイドルーティング](/docs/client-only-routes-and-user-authentication/)を用いてユーザーがログイン後にのみ閲覧できるページを作成できます。
 
 ## 前提条件
 
@@ -410,6 +410,6 @@ export default Profile
 - React Context API を使用して認証処理を行う [Gatsby メール _アプリケーション_](https://github.com/DSchau/gatsby-mail)
 - [景品や Gatsby グッズの Gatsby ストア](https://github.com/gatsbyjs/store.gatsbyjs.org)
 - [Gatsby、React、Webtask.io でブログを構築しよう！](https://auth0.com/blog/building-a-blog-with-gatsby-react-and-webtask/)
-- [JAMstack PWA — Gatsby.js、Firebase、Styled-components でポーリングアプリを構築しよう パート 2](https://medium.com/@UnicornAgency/jamstack-pwa-lets-build-a-polling-app-with-gatsby-js-firebase-and-styled-components-pt-2-9044534ea6bc)
-- [JAMstack Hackathon Starter - Netlify Identity を使用した認証済み Gatsby アプリスターター](/starters/sw-yx/jamstack-hackathon-starter)
+- [JAMstack PWA — Gatsby.js、Firebase、Styled-components で投票アプリをつくろう パート 2](https://medium.com/@UnicornAgency/jamstack-pwa-lets-build-a-polling-app-with-gatsby-js-firebase-and-styled-components-pt-2-9044534ea6bc)
+- [JAMstack Hackathon Starter - Netlify Identity を使用した認証機能付き Gatsby アプリスターター](/starters/sw-yx/jamstack-hackathon-starter)
 - [Learn With Jason Livestream: Netlify Identity および Netlify Functions の使い方 (with Shawn Wang)](https://www.youtube.com/watch?v=vrSoLMmQ46k&feature=youtu.be)
