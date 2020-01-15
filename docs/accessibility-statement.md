@@ -18,7 +18,7 @@ Gatsbyjs.com は、Gatsby を作っているスタートアップ Gatsby, Inc. �
 
 私たちはこれらのサイトと Gatsby フレームワーク自体をできるだけアクセシブルなものにしようと努力しています。私たちのゴールは [WCAG 2.0 AA](https://www.w3.org/TR/WCAG20/)（訳注: [WCAG 2.0 AA 邦訳](https://waic.jp/docs/WCAG20/Overview.html)）を満たすことですが、まだある程度しか準拠していません。私たちはまず Gatsby エコシステムが作成途中の未完成品であると認めて、状況を改善していけるようにあらゆるフィードバックについてオープンです。
 
-アクセシビリティへのフィードバックや異議をコアチームに伝えるには、[GitHub で issue を作成](https://github.com/gatsbyjs/gatsby/issues/new/choose)してください。
+アクセシビリティへのフィードバックや異議をコアチームに伝えるには、[GitHub で Issue を作成](https://github.com/gatsbyjs/gatsby/issues/new/choose)してください。
 
 別の方法として、Gatsby の学習部門のトップである Marcy Sutton [marcy@gatsbyjs.com](mailto:marcy@gatsbyjs.com) へ直接連絡するのも歓迎しています。
 
