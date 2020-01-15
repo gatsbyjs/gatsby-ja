@@ -24,6 +24,10 @@ module.exports = {
     "ja-technical-writing/max-comma": false, // 翻訳完了後に有効化
     "textlint-rule-ja-hiragana-hojodoushi": true, // ひらがなにしたほうが良い補助動詞
     "textlint-rule-ja-hiragana-fukushi": true, // ひらがなにしたほうが良い副詞
+    "ja-space-between-half-and-full-width": {
+      space: "always",
+      exceptPunctuation: true,
+    }, // 半角文字と全角文字の切替時にスペースを入れる
   },
   filters: {
     // https://github.com/textlint/textlint-filter-rule-comments
