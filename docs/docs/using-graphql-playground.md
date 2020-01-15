@@ -8,7 +8,7 @@ title: GraphQL Playgroundの利用
 
 ## Prisma's GraphQL Playground とは？
 
-GraphQL Playground は、ソースコードやプラグインがスキーマとして追加するデータを操作する手段です。このデータをたくさん操作することになるので、Playground はデータを探索する大きな助けとなるでしょう。
+GraphQL Playground は、ソースコードやプラグインがスキーマとして与えたデータを取り扱う場所です。あなたは今後そのようなデータをたくさん探索することになります。その際に Playground は大きな助けとなるでしょう。
 
 ## GraphQL Playground へのアクセス
 
