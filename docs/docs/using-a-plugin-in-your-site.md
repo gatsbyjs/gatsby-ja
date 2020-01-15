@@ -2,7 +2,7 @@
 title: サイトでプラグインを利用する
 ---
 
-Gatsby プラグインは、Node.js パッケージです。 NPM を利用して他の node パッケージと同様にインストールできます。
+Gatsby プラグインは、Node.js のパッケージです。 NPM を利用して他の node パッケージと同様にインストールできます。
 
 例えば、`gatsby-transformer-json` は JSON ファイルのサポートを Gatsby データレイヤーに追加するパッケージです。
 
@@ -20,7 +20,7 @@ module.exports = {
 }
 ```
 
-プラグインはオプションを取ることができます。例を記載します。
+プラグインは以下のようにしてオプションを受け取ることができます。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
