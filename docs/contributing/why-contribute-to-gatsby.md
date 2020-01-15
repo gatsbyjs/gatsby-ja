@@ -1,17 +1,18 @@
 ---
-title: Why Contribute to Gatsby.js?
+title: どうして Gatsby に貢献すべきなのでしょうか？
 ---
 
-There are many reasons to contribute to Gatsby.js and open source software in general. Here are some of the benefits of participating:
+Gatsby をはじめとするオープンソースのソフトウェアに貢献すべき理由はたくさんあります。ここでは貢献することでどのような恩恵を受けられるか見ていきましょう。
 
-- **Growing your community.** Working with Gatsby.js in open source can connect you with people working on similar things. You can get help or give help, and you might even make an IRL acquaintance! It has happened.
+- **コミュニティーの広がり** オープンソースである Gatsby に貢献することで似たようなことをしている人と繋がることができます。そうして繋がった人々と助け合い、もしかすると現実世界での知り合いになるかもしれません！実際にそういう出来事が起こっています。
 
-- **Improving your skills.** When you work on a Gatsby issue or pull request, inevitably you'll learn more about how something works in the project; either by asking questions and gathering info or by digging deeper into the code yourself. Gatsby.js also offers free [pair programming sessions](/contributing/pair-programming/) to the community, if there's something you'd like to work on together. There's a skill-building benefit to contributing to OSS!
+- **スキルの向上** Gatsby に Issue を立てたり Pull Request を投げたりすることで必然的にあなたはどのような仕組みでプロジェクトが動作しているのかを学ぶことができます。また、質問をしたり情報を集めたりソースコードを自分で掘り下げることによっても学びが深まるでしょう。もし、何か協力して行いたい事があるのであれば、 Gatsby が無料で提供する [pair programming sessions](/contributing/pair-programming/) を使用できます。
 
-- **Getting free swag!** By participating in the repo on GitHub, you can become eligible for free swag that the Gatsby team offers as a way to say thank you. With 5 contributions, you can advance to a second level with even more swag options! Learn more about this [sweet swag deal](/contributing/contributor-swag/).
+- **無料の景品**  GitHub のリポジトリーに貢献することで Gatsby チームからの感謝の気持ちとして景品を無料で受け取ることができます。また、5 回目以降の貢献であれば、より豪華な景品を受け取ることができるようになります！これについて詳しくはこちらの [sweet swag deal](/contributing/contributor-swag/) をご覧ください。
 
-- **Becoming an expert.** You might start off totally new to a project like Gatsby or React.js, and by building things and [opening issues](/contributing/how-to-file-an-issue/) when you encounter a new challenge or a bug, you'll learn a ton over time. Staying current with your favorite framework through its open source repo can also give you a leading edge on forthcoming changes. Eventually, you could find your knowledge of said project has grown so much that you've become an expert. Celebrate by updating your resumé!
+- **エキスパートになる** Gatsby や React.js などに似た新しいプロジェクトを立ち上げることがあるかもしれません。そのビルドを行ったり、新たな試みやバグの修正のために [Issue を立てる](/contributing/how-to-file-an-issue/)ことなどを通して多くのことを学ぶことができます。好みのフレームワークをそのオープンソースのリポジトリーを通して最新の状態に保つ事で、今後の変化についても最前線に立つことができます。最終的にあなたは前述のプロジェクトへの知識を増やし続け、エキスパートとなるでしょう。これであなたの履歴書に書くべきことが 1 つ増えましたね！
 
-- **Speaking at conferences.** With those skills you've earned yourself working in open source, why not share that knowledge with the world? Web platform conferences the world over are continually looking for speakers and fresh takes on popular topics. Did you build something with Gatsby.js that you're excited about? The [industry would love to hear from you](http://weareallaweso.me/)!
+- **カンファレンスでの登壇** オープンソースへの貢献で得たこれら多くの技術を世界に共有しましょう！世界中の Web プラットホームに関するカンファレンスは登壇者と人気トピックに関する最新の情報を求めています。 Gatsby を使って何か理想の物を作りましたか？[あなたの話を技術者たちは楽しみに待っています](http://weareallaweso.me/)
 
-There are undoubtedly more benefits than those listed here. Has Gatsby.js and open source software made your life better somehow? We'd love to hear about it. Reach out to us [on Twitter](https://twitter.com/gatsbyjs)!
+間違いなくここに挙げたこと以外にも貢献を行うことで得られる恩恵はたくさんあります。 Gatsby をはじめとするオープンソースのソフトウェアであなたの暮らしは豊かになりましたか？ [Twitter](https://twitter.com/gatsbyjs) でぜひその話を聞かせてください！
+
