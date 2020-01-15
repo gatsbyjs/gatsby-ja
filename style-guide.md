@@ -99,27 +99,52 @@ React エレメントは[イミュータブル](https://ja.wikipedia.org/wiki/�
 React について詳しくない方は、まず[こちらのガイド](https://reactjs.org)を参照してください。
 ```
 
+#### 箇条書き
+
+ある程度まとまった文章になっている場合は「敬体」、それ以外は「体言止め」を使用します。体言止めの場合は文末の句点を省略します。
+
+✅ 良い：
+
+```md
+コンピュータに Homebrew をインストールするには:
+
+1. ターミナルを開きます。
+1. `brew -v`を実行して Homebrew がインストールされているか確認します。"Homebrew"という文字列とバージョン番号が表示されるはずです。
+1. もし表示されない場合は、[Homebrew の指示](https://docs.brew.sh/Installation)に従って、ダウンロードしてインストールします。
+1. Homebrew をインストールしたら、手順 2 を繰り返して確認します。
+```
+
+✅ 良い：
+
+```md
+たとえば、プラグインを使うことで以下のようなことができます。
+
+- 外部データまたはコンテンツの取得
+- データの変換
+```
+
 ## 用語集
 
 頻出する用語は合意を得た上でリストに加えてください。さらに[prh.yml](/prh.yml)にルールを追加することで、CI にチェックを任せることができます。
 
 <!-- textlint-disable -->
 
-| 用語                | 和訳         |
-| ------------------- | ------------ |
-| Plugin              | プラグイン   |
-| Theme               | テーマ       |
-| Query               | クエリー     |
-| swag                | 景品         |
-| issue               | Issue        |
-| pull request        | Pull Request |
-| Gatsby.js, GatsbyJS | Gatsby       |
+| 用語                     | 和訳         |
+| ------------------------ | ------------ |
+| Gatsby.js, GatsbyJS      | Gatsby       |
+| Plugin                   | プラグイン   |
+| Theme                    | テーマ       |
+| Query                    | クエリー     |
+| contribute, contribution | 貢献         |
+| swag                     | 景品         |
+| issue                    | Issue        |
+| pull request             | Pull Request |
 
 <!-- textlint-enable -->
 
 ## 校正
 
-`gatsby-ja`では文章の校正に textlint を活用しています。
+`gatsby-ja`では文章の校正に textlint を活用しています。どのようなルールがあるのか知りたい場合は[.textlintrc.js](/.textlintrc.js)を見てください。
 
 ### `npm run lint`
 

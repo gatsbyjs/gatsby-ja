@@ -1,7 +1,9 @@
 {
   "scripts": {
-    "lint": "textlint README.md docs/**/*.md -f pretty-error",
-    "format": "pretty-quick && textlint README.md docs/**/*.md --fix"
+    "lint": "textlint $(git diff master --name-only) -f pretty-error",
+    "lint:full": "textlint README.md docs/**/*.md -f pretty-error",
+    "format": "pretty-quick && textlint $(git diff master --name-only) --fix",
+    "format:full": "pretty-quick && textlint README.md docs/**/*.md --fix"
   },
   "devDependencies": {
     "husky": "^4.0.7",
