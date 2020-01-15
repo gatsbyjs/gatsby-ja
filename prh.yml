@@ -1,7 +1,9 @@
 version: 1
 rules:
   - expected: Gatsby
-    pattern: /(Gatsby\.js|GatsbyJS)/
+    pattern:
+      - Gatsby.js
+      - GatsbyJS
 
   - expected: ステップ・バイ・ステップ
     pattern: ステップバイステップ
@@ -17,3 +19,24 @@ rules:
 
   - expected: すること
     pattern: する事
+
+  - expected: 私たち
+    pattern:
+      - わたしたち
+      - 私達
+
+  - expected: プラットフォーム
+    pattern: プラットホーム
+
+  - expected: Issue
+    pattern: /issue/
+
+  - expected: Pull Request
+    pattern: /[Pp]ull[- ][Rr]equest/
+    specs:
+      - from: pull request
+        to: Pull Request
+      - from: Pull request
+        to: Pull Request
+      - from: pull-request
+        to: Pull Request

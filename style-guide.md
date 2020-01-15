@@ -105,21 +105,22 @@ React について詳しくない方は、まず[こちらのガイド](https://
 
 <!-- textlint-disable -->
 
-| 用語                | 和訳         |
-| ------------------- | ------------ |
-| Plugin              | プラグイン   |
-| Theme               | テーマ       |
-| Query               | クエリー     |
-| swag                | 景品         |
-| issue               | Issue        |
-| pull request        | Pull Request |
-| Gatsby.js, GatsbyJS | Gatsby       |
+| 用語                     | 和訳         |
+| ------------------------ | ------------ |
+| Gatsby.js, GatsbyJS      | Gatsby       |
+| Plugin                   | プラグイン   |
+| Theme                    | テーマ       |
+| Query                    | クエリー     |
+| contribute, contribution | 貢献         |
+| swag                     | 景品         |
+| issue                    | Issue        |
+| pull request             | Pull Request |
 
 <!-- textlint-enable -->
 
 ## 校正
 
-`gatsby-ja`では文章の校正に textlint を活用しています。
+`gatsby-ja`では文章の校正に textlint を活用しています。どのようなルールがあるのか知りたい場合は[.textlintrc.js](/.textlintrc.js)を見てください。
 
 ### `npm run lint`
 
