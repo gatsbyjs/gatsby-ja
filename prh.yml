@@ -1,28 +1,21 @@
 version: 1
 rules:
-  - expected: エキスパート
-    pattern: エクスパート
+  - expected: Gatsby
+    pattern:
+      - Gatsby.js
+      - GatsbyJS
 
-  - expected: コンピュータ
-    pattern: コンピューター
+  - expected: ステップ・バイ・ステップ
+    pattern: ステップバイステップ
 
-  - expected: ブラウザ
-    pattern: ブラウザー
+  - expected: はじめに
+    pattern:
+      - イントロダクション
 
-  - expected: コミュニティ
-    pattern: コミュニティー
-
-  - expected: アクティビティ
-    pattern: アクティビティー
-
-  - expected: ユーザー
-    pattern: /ユーザ(?!ー)/
-
-  - expected: コミッター
-    pattern: /コミッタ(?!ー)/
-
-  - expected: コントリビューター
-    pattern: /コントリビュータ(?!ー)/
+  - expected: 貢献
+    pattern:
+      - コントリビュート
+      - コントリビューション
 
   - expected: てみる
     pattern: て見る
@@ -35,3 +28,24 @@ rules:
 
   - expected: すること
     pattern: する事
+
+  - expected: 私たち
+    pattern:
+      - わたしたち
+      - 私達
+
+  - expected: プラットフォーム
+    pattern: プラットホーム
+
+  - expected: Issue
+    pattern: /issue/
+
+  - expected: Pull Request
+    pattern: /[Pp]ull[- ][Rr]equest/
+    specs:
+      - from: pull request
+        to: Pull Request
+      - from: Pull request
+        to: Pull Request
+      - from: pull-request
+        to: Pull Request
