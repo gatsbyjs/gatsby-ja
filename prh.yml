@@ -37,6 +37,18 @@ rules:
   - expected: プラットフォーム
     pattern: プラットホーム
 
+  - expected: リポジトリ
+    pattern: レポジトリ
+
+  - expected: ウェブサイト
+    pattern: /Web\s?サイト/i
+
+  - expected: ブログ記事
+    pattern: ブログポスト
+
+  - expected: Markdown
+    pattern: マークダウン
+
   - expected: Issue
     pattern: /issue/
 
