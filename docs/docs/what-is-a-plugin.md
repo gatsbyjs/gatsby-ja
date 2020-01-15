@@ -8,8 +8,8 @@ Gatsby に機能を追加するもっとも良い方法の 1 つは、プラグ�
 
 たとえば、プラグインを使うことで以下のようなことができます。
 
-- 外部データまたはコンテンツ（CMS、静的ファイル、REST API など）を Gatsby GraphQL データに追加します。
-- データを他の形式（Markdown、YAML、CSV など）から JSON オブジェクトに変換します。
-- サードパーティのサービス（Google Analytics、Instagram など）をサイトに追加します。
-- [テーマ](docs/themes) を使用して、バンドルされている事前に設定した機能を追加します。
+- Gatsby GraphQL のデータに外部データまたはコンテンツ（CMS、静的ファイル、REST API など）を追加。
+- データを他の形式（Markdown、YAML、CSV など）から JSON オブジェクトに変換。
+- サイトにサードパーティのサービス（Google Analytics、Instagram など）を追加。
+- [テーマ](docs/themes) を使用して、バンドルされている事前に設定した機能を追加。
 - 思いつく限りのことをしてください！
