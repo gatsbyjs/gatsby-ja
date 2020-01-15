@@ -103,11 +103,19 @@ React について詳しくない方は、まず[こちらのガイド](https://
 
 頻出する用語は合意を得た上でリストに加えてください。さらに[prh.yml](/prh.yml)にルールを追加することで、CI にチェックを任せることができます。
 
-| 用語   | 和訳       |
-| ------ | ---------- |
-| Plugin | プラグイン |
-| Theme  | テーマ     |
-| Query  | クエリー   |
+<!-- textlint-disable -->
+
+| 用語                | 和訳         |
+| ------------------- | ------------ |
+| Plugin              | プラグイン   |
+| Theme               | テーマ       |
+| Query               | クエリー     |
+| swag                | 景品         |
+| issue               | Issue        |
+| pull request        | Pull Request |
+| Gatsby.js, GatsbyJS | Gatsby       |
+
+<!-- textlint-enable -->
 
 ## 校正
 
