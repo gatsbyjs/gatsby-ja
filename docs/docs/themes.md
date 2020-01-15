@@ -4,19 +4,19 @@ overview: true
 disableTableOfContents: true
 ---
 
-Using a Gatsby theme, all of your default configuration (shared functionality, data sourcing, design) is abstracted out of your site, and into an installable package.
+Gatsby テーマを使うことで、すべてのデフォルトの設定（共通機能・データソース・デザイン）はあなたのウェブサイトではなく、インストール可能なパッケージに抽象化されます。
 
-This means that the configuration and functionality isn’t directly written into your project, but rather versioned, centrally managed, and installed as a dependency. You can seamlessly update a theme, compose themes together, and even swap out one compatible theme for another.
+つまり、設定や機能があなたのプロジェクトに直接書かれるのではなく、バージョニングされ、中央で管理され、依存関係としてインストールされるということです。テーマはシームレスにアップデートしたり、異なるテーマを合わせたり、互換性がある他のテーマに入れ替えたりすることもできます。
 
 <GuideList slug={props.slug} />
 
-## Browse themes
+## テーマを探す
 
-- [Themes in Plugin Library](/plugins/?=gatsby-theme)
-- [Theme Jam Showcase](https://themejam.gatsbyjs.org/showcase)
+- [プラグインライブラリのテーマ](/plugins/?=gatsby-theme)
+- [Theme Jam Showcase（英語）](https://themejam.gatsbyjs.org/showcase)
 
-## Other resources
+## その他の資料
 
-- [Gatsby theme tutorials](/tutorial/theme-tutorials/)
-- [Gatsby blog posts on themes](/blog/tags/themes)
-- [Plugins, Themes, and Starters](/docs/plugins-themes-and-starters/)
+- [Gatsby テーマのチュートリアル](/tutorial/theme-tutorials/)
+- [テーマに関する Gatsby の記事](/blog/tags/themes)
+- [プラグイン・テーマ・スターター](/docs/plugins-themes-and-starters/)
