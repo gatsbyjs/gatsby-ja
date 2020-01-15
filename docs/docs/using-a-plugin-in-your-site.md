@@ -12,7 +12,7 @@ Gatsby プラグインは、Node.js パッケージです。 NPM を利用して
 npm install --save gatsby-transformer-json
 ```
 
-Then in your site's `gatsby-config.js` you add `gatsby-transformer-json` to the plugins array like:
+次にサイトの `gatsby-config.js` にある plugins というキーの配列に `gatsby-transformer-json` を追加します。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -20,15 +20,15 @@ module.exports = {
 }
 ```
 
-Plugins can take options. For example:
+プラグインはオプションを取ることができます。例を記載します。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
   plugins: [
-    // Shortcut for adding plugins without options.
+    // オプションなしでプラグインを追加するためのショートカット
     "gatsby-plugin-react-helmet",
     {
-      // Standard plugin with options example
+      // オプション付きで標準的なプラグインを追加するための例
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/data/`,
@@ -37,7 +37,7 @@ module.exports = {
     },
     {
       resolve: "gatsby-plugin-offline",
-      // Blank options, equivalent to string-only plugin
+      // options が空の場合、文字列だけでプラグインを指定したときと同等です
       options: {
         plugins: [],
       },
@@ -45,7 +45,7 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        // plugins inside plugins
+        // プラグイン内のプラグイン
         plugins: [`gatsby-remark-smartypants`],
       },
     },
@@ -53,4 +53,4 @@ module.exports = {
 }
 ```
 
-Note that plugin options will be stringified by Gatsby, so they cannot be functions.
+プラグインのオプションは Gatsby によって文字列化されるため、関数にすることはできません。
