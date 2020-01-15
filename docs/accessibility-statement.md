@@ -1,5 +1,5 @@
 ---
-title: アクセシビリティステートメント
+title: アクセシビリティ方針
 ---
 
 _Last updated: April 8, 2019_
@@ -20,7 +20,7 @@ Gatsbyjs.com は、Gatsby を作っているスタートアップ Gatsby, Inc. �
 
 アクセシビリティへのフィードバックや異議をコアチームに伝えるには、[GitHub で Issue を作成](https://github.com/gatsbyjs/gatsby/issues/new/choose)してください。
 
-別の方法として、Gatsby の学習部門のトップである Marcy Sutton [marcy@gatsbyjs.com](mailto:marcy@gatsbyjs.com) へ直接連絡するのも歓迎しています。
+別の方法として、Gatsby の学習部門のトップである Marcy Sutton [marcy@gatsbyjs.com](mailto:marcy@gatsbyjs.com) に直接するのも歓迎しています。
 
 ## Gatsby で構築する
 
