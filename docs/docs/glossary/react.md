@@ -3,24 +3,24 @@ title: React
 disableTableOfContents: true
 ---
 
-Learn about React, including what it is, why you might use it, and how it fits into the Gatsby ecosystem.
+React の概要、存在意義、Gatsby エコシステムへの適応について学びます。
 
-## What is React?
+## React とは?
 
-React is a code library for building web-based user interfaces. It's written using [JavaScript](/docs/glossary#javascript), one of the programming languages used to create web pages.
+React は Web ベースの UI を構築するためのライブラリです。Web ページの作成に使用されるプログラミング言語の 1 つである[JavaScript](/docs/glossary#javascript)で記述されています。
 
-Facebook first released React in 2013. The company still maintains the project, along with a community of contributors. It's free to use and open source under the terms of the [MIT License](https://github.com/facebook/react/blob/master/LICENSE).
+Facebook は 2013 年に初めて React を公開しました。同社は貢献者のコミュニティと共にプロジェクトを維持しています。[MIT ライセンス](https://github.com/facebook/react/blob/master/LICENSE)の条件下で、無料で使用およびソースコードの公開をすることができます。
 
-Where publishing tools such as WordPress and Jekyll rely on a system of template files to create a UI, React uses [components](/docs/glossary#component). Components are contained chunks of JavaScript, CSS, and HTML or SVG that can be reused, shared, and combined to create a web site or application.
+WordPress や Jekyll のような公開用ツールはテンプレートファイルのシステムに依存していますが、React は[コンポーネント]](/docs/glossary#component)を使用します。コンポーネントは JavaScript、CSS、HTML、SVG などのアセット一式を内包し、これらを再利用、共有、結合することで Web サイトやアプリケーションを作成することができます。
 
-Components may be purely presentational. For example, you might create a `Logo` component that's just an SVG image. Or a component may encapsulate functionality. An `InputBox` component might include an input control, a label, and some simple validation.
+コンポーネントは純粋に視覚表現を担うこともあります。たとえば、単なる SVG 画像である `Logo` コンポーネントを作成できます。また、機能をカプセル化することも可能です。`InputBox` コンポーネントは入力コントロール、ラベル、シンプルなバリデーションなどを含むこともありえます。
 
-Components are also _composable_, which is a fancy way of saying that you can use multiple child components to create a parent component or view. This is how you will build Gatsby pages and templates.
+コンポーネントは組み合わせ可能であり、この特性によって複数の子コンポーネントを使って親コンポーネントやビューを作成する素晴らしい開発手法が実現されます。これが Gatsby でページとテンプレートを構築する方法です。
 
-React components respond to changes in _state_. In React, _state_ is a set of properties and values that determine how a component looks or behaves. State can change in response to user activity, such as a click or key press. State can also change as the result of a completed network request. When a value in a component's state changes, the component is the only part of the UI that changes. In other words, React can update part of a page or an entire view without requiring a full page reload.
+React コンポーネントは state の更新に反応します。React では、state はコンポーネントの見た目と振る舞いを定めるプロパティと値のセットです。state はクリックやキー入力などのユーザー操作に応じて更新されます。また、ネットワークリクエスト完了の結果としても更新されます。コンポーネントの state の値が更新されると、そのコンポーネントだけが UI の更新部分となります。言い換えると、React はページ全体をリロードすることなく、ページの一部またはビュー全体を更新することができます。
 
-Gatsby bundles React, [webpack](/docs/glossary#webpack), [GraphQL](/docs/glossary#graphql), and other tools into a single framework for building web sites. With Gatsby, you get a head start on meeting your SEO, accessibility, and performance requirements. Rather than installing and configuring a development environment from scratch, you can install Gatsby and start building.
+Gatsby は、React、 [webpack](/docs/glossary#webpack)、[GraphQL](/docs/glossary#graphql)および他のツールを Web サイト構築用の単一のフレームワークにバンドルします。Gatsby を使うと、SEO、アクセシビリテおよびパフォーマンス上の恩恵を受けながら要件を満たすことができます。開発環境をインストールして設定するよりも、Gatsby をインストールして構築を始めましょう。
 
-### Learn more about React
+### React についてもっと学ぶ
 
-- [React](https://reactjs.org/) Official web site
+- [React](https://reactjs.org/) 公式 Web サイト
