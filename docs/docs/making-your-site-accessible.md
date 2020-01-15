@@ -1,43 +1,43 @@
 ---
-title: Making Your Site Accessible
+title: アクセシブルなサイトを作る方法
 ---
 
-The Gatsby team is passionate about helping you create websites that work for everyone, with helpful defaults that bake in web accessibility as well as performance optimizations. By making your website accessible to people with disabilities, you can make more inclusive sites that reach and remove barriers for more people on the Internet.
+Gatsby チームは、Web アクセシビリティとパフォーマンスの最適化を考慮した便利なデフォルト設定を使用して、誰もが利用できる Web サイトを作成するお手伝いをします。障害を持つ人々のために Web サイトをアクセシブルにすることで、インターネット上のより多くの人々の障壁をなくして、より包括的なサイトを作ることができます。
 
-## What is accessibility?
+## アクセシビリティとは何ですか？
 
-Back in the early days of the Web, Tim Berners-Lee, inventor of the World Wide Web, [said](https://www.w3.org/Press/IPO-announce):
+Web 草創期に、ワールド・ワイド・ウェブを発明したティム・バーナーズ=リー氏は[次のように語る](https://www.w3.org/Press/IPO-announce)。
 
-> "The power of the Web is in its universality.
-> Access by everyone regardless of disability is an essential aspect."
+> 「ウェブの力はその普遍性にある。
+> 障害の有無にかかわらず、誰もが利用できることは不可欠な要素である。」
 
-The web of today is an important resource in many aspects of life such as health care, education, or commerce. Accessibility is an important consideration when building for the web.
+今日の Web は、医療、教育、商業など、生活の多くの側面において重要な資源となっています。アクセシビリティは、そんな Web を構築する際の重要な考慮事項です。
 
-[Web accessibility](https://www.w3.org/WAI/fundamentals/accessibility-intro/#what) means that websites, tools, and technologies are designed and developed so that people with disabilities can use them. But not only people with permanent disabilities benefit from it. Accessibility also benefits people with temporary disabilities. For example, imagine being in an environment where you cannot listen to audio or you can't use a computer because of a broken arm.
+[Web アクセシビリティ](https://www.w3.org/WAI/fundamentals/accessibility-intro/#what)とは、Web サイト、ツール、およびテクノロジーによって、障害を持つユーザーが利用できるように設計および開発されていることを意味します。しかし、恒久的な障害を持つ人々だけがその恩恵を受けるものではありません。アクセシビリティは一時的な障害を持つ人々にも恩恵をもたらします。たとえば、音声を聴くことができない環境や、腕が折れてコンピューターを使用できない環境を想像してみてください。
 
-Accessibility supports [social inclusion for everyone](https://www.w3.org/standards/webdesign/accessibility#case), and has a strong [business case](https://www.w3.org/WAI/business-case/).
+アクセシビリティは[すべての人のための包摂的な社会](https://www.w3.org/standards/webdesign/accessibility#case)をサポートし、強力な[ビジネス・ケース](https://www.w3.org/WAI/business-case/)も持っています。
 
-## Gatsby helps build in accessibility
+## Gatsby はアクセシビリティの構築をサポートします
 
-While ultimately it's up to you to develop your site with accessibility in mind, Gatsby aims to provide as much out-of-the-box support as possible.
+アクセシビリティを念頭に置いてサイトを開発するかどうかは最終的にはあなた次第ですが、Gatsby では可能な限り多くサポートすることを目指しています。
 
-### Accessible routing
+### アクセシブルなルーティング
 
-One of the most common features of every site is navigation. People should be able to navigate across your pages and content in an intuitive and accessible way.
+すべてのサイトで、もっとも一般的な機能の 1 つはナビゲーションです。ユーザーは、直感的でアクセスしやすい方法でページやコンテンツ間を移動できる必要があります。
 
-That's why every Gatsby site aims to have an accessible navigation experience by default. Thanks to [@reach/router](https://reach.tech/router), a routing library for React, Gatsby handles page announcements for screen readers on page change. We're actively making improvements to this experience, and we [welcome your feedback](/accessibility-statement/).
+だから、すべての Gatsby のサイトでは、デフォルトでアクセシブルなナビゲーション体験を提供することを目指しています。React.js のルーティングライブラリーである[@reach/router](https://reach.tech/router)のおかげで、Gatsby はページ変更時のスクリーンリーダーへのページ通知を処理しています。私たちは積極的にこの使用感について改善しており、[あなたのフィードバックを歓迎しています](/accessibility-statement/)。
 
-Since the [second major release](/blog/2018-09-17-gatsby-v2/), your Gatsby sites use `@reach/router` under the hood. While additional accessibility testing is always a good idea, the [Gatsby Link Component](/docs/gatsby-link/) wraps [@reach/router's Link component](https://reach.tech/router/api/Link) to improve accessibility without you having to think about it.
+[2 度目のメジャーリリース](/blog/2018-09-17-gatsby-v2/)以降、Gatsby のサイトは内部で`@reach/router`を使用しています。常に Z アクセシビリティテストを追加することはよい考えですが、[Gatsby のリンクコンポーネント](/docs/gatsby-link/)では[@reach/router のリンクコンポーネント](https://reach.tech/router/api/Link)をラップしているので、アクセシビリティテストのことを考えずともアクセシビリティを向上させられます。
 
-### Gatsby builds HTML pages by default
+### Gatsby はデフォルトで HTML ページを作成する
 
-For websites, rendering [static HTML](/docs/glossary#static) pages means that JavaScript isn't required to access and navigate through content. Gatsby [compiles](/docs/glossary#compiler) HTML pages by default from React components using [Node.js](/docs/glossary#nodejs), meaning you don't have to worry about setting up server-rendering yourself to support [progressive enhancement](/docs/glossary#progressive-enhancement). With Gatsby's static support out of the box, you can build dynamic sites that still enable user access without requiring [client-side](/docs/glossary#client-side) scripting.
+Web サイトでは、[静的な HTML](/docs/glossary#static)ページをレンダリングするということは、JavaScript でコンテンツにアクセスしたりナビゲーションする必要がなくなりますことを意味します。Gatsby はデフォルトで、[Node.js](/docs/glossary#nodejs)を使用して React コンポーネントを HTML ページにコンパイルしています。つまり、[プログレッシブ・エンハンスメント](/docs/glossary#progressive-enhancement)に対応するため、自分でサーバー・レンダリングを準備する必要はありません。Gatsby の静的サポートを使うと、[クライアントサイド](/docs/glossary#client-side)のスクリプトを生成することなく、ユーザーがアクセスできる動的サイトを構築できます。
 
-### Linting with eslint-plugin-jsx-a11y
+### eslint-plugin-jsx-a11y による静的解析
 
-Gatsby ships with the `eslint-plugin-jsx-a11y` package and warnings for all of its rules enabled by default. [eslint-plugin-jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y) is an accessibility [linting](/docs/glossary#linting) tool for your code, helping you develop more inclusive Gatsby projects by reducing the time to find accessibility errors. This plugin encourages you to include alternative text for image tags, validates [ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) props, and eliminates redundant role properties, among other things.
+Gatsby は、`eslint-plugin-jsx-a11y`パッケージとともにリリースされ、すべてのルールに対する警告がデフォルトで有効になっています。[eslint-plugin-jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y)は、コードのアクセシビリティ[静的解析](/docs/glossary#linting)ツールで、アクセシビリティのエラーを検出する時間を短縮することで、より包括的な Gatsby プロジェクトの開発を支援してくれます。このプラグインは、画像タグに代替テキストを含めることを推奨し、[ARIA](https://developer.mozilla.org/ja/docs/Web/Accessibility/ARIA) props を検証し、重複するロールプロパティを排除します。
 
-For more on supported rules, check out the docs for [`eslint-plugin-jsx-a11y`](https://github.com/evcohen/eslint-plugin-jsx-a11y). You can customize those rules in your [`.eslintrc`](/docs/eslint/#configuring-eslint).
+サポートされているルールの詳細については、[`eslint-plugin-jsx-a11y`](https://github.com/evcohen/eslint-plugin-jsx-a11y)のドキュメントを参照してください。これらのルールは、[`.eslintrc`](/docs/eslint/#configuring-eslint)でカスタマイズできます。
 
 ```json:title=.eslintrc
 {
@@ -49,35 +49,35 @@ For more on supported rules, check out the docs for [`eslint-plugin-jsx-a11y`](h
 }
 ```
 
-Note: Including a local `.eslintrc` file will [override](/docs/eslint/#configuring-eslint) all of Gatsby's default linting and disable the built-in `eslint-loader`, meaning your tweaked rules won't make it to your browser's developer console or your terminal window but will still be displayed if you have ESLint plugins enabled in your IDE. If you would like to change this behavior and make sure the `eslint-loader` pulls in your customizations, you'll need to enable the loader yourself. One way to do this is by using the Community plugin [`gatsby-plugin-eslint`](https://www.gatsbyjs.org/packages/gatsby-plugin-eslint/). Additionally, if you would still like to take advantage of some subset of the default [ESLint config Gatsby ships with](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/utils/eslint-config.js), you'll need to copy them manually to your local `.eslintrc` file.
+注釈: ローカルの `.eslintrc` ファイルを読み込むと、Gatsby のデフォルトの静的解析がすべて[上書き](/docs/eslint/#configuring-eslint)され、内蔵の `eslint-loader` が無効になります。つまり、変更されたルールはブラウザーの開発コンソールやターミナルウィンドウには反映されませんが、IDE で ESLint プラグインが有効になっている場合は表示されます。この挙動を変更し、`eslint-loader` のカスタマイズを反映するようにするには、ローダーを自分で有効にする必要があります。これを実行する 1 つの方法は、コミュニティプラグインにある [`gatsby-plugin-eslint`](https://www.gatsbyjs.org/packages/gatsby-plugin-eslint/) を使用することです。さらに、[Gatsby に同梱されているデフォルトの ESLint 設定](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/utils/eslint-config.js)の一部サブセットを利用する場合は、ローカルの `.eslintrc` ファイルに手動でコピーする必要があります。
 
-This is a start to testing for accessibility: [further recommendations](#how-to-improve-accessibility) can be found below.
+これは、アクセシビリティテストをするためのスタート地点です。[その他の推奨事項](#アクセシビリティを向上させるには?)については、以下を参照してください。
 
-## How to improve accessibility?
+## アクセシビリティを向上させるには？
 
-Accessibility by default is a win for everyone. Here's a starting point for accessibility testing when making a Gatsby site or theme:
+アクセシビリティがデフォルトであることは、誰にとってもメリットがあります。以下は、Gatsby のサイトやテーマを作成するときのアクセシビリティ・テストの開始点です。
 
-- [Use your keyboard](https://webaim.org/techniques/keyboard/) to tab through the pages. Can you reach and operate every interactive control (links, buttons, form inputs, etc.) and see a focus indicator on the screen?
-- Use [Lighthouse](https://developers.google.com/web/tools/lighthouse/), [axe](https://www.deque.com/axe/) or [Accessibility Insights](https://accessibilityinsights.io/) to find and fix common accessibility issues in development
-- Test for [adequate color contrast](https://dequeuniversity.com/tips/color-contrast) with the [accessibility color picker in Chrome Developer Tools](https://developers.google.com/web/updates/2018/01/devtools#contrast)
-- Create inclusive and [accessible forms](/docs/building-a-contact-form#creating-an-accessible-form)
-- Employ accessible [headings, landmarks, and semantic structure](https://webaim.org/techniques/semanticstructure/)
-- Include [image, video, and audio text alternatives](https://a11y-style-guide.com/style-guide/section-media.html)
-- Test for [screen magnification and zoom](https://axesslab.com/make-site-accessible-screen-magnifiers/)
-- Ensure accessibility of [interactive menus, modals, and custom widgets](https://developer.mozilla.org/en-US/docs/Web/Accessibility/An_overview_of_accessible_web_applications_and_widgets)
-- Create safe [animations and motion](https://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity/)
-- Write [Cypress accessibility tests](/docs/end-to-end-testing/#writing-tests) for your site or application
+- [タブキーボードを使用して](https://webaim.org/techniques/keyboard/)ページを移動します。すべてのインタラクティブコントロール（リンク、ボタン、フォーム入力など）をキーボードだけで操作できたり、フォーカスインジケーターを画面に表示できますか？
+- 開発において[Lighthouse](https://developers.google.com/web/tools/lighthouse/)、[axe](https://www.deque.com/axe/)、もしくは、[Accessibility Insights](https://accessibilityinsights.io/)を用いてよくあるアクセシビリティの問題を検出して修正する
+- [Chrome 開発者ツールのアクセシビリティカラーピッカー](https://developers.google.com/web/updates/2018/01/devtools#contrast)を用いて、[適切なカラーコントラスト比](https://dequeuniversity.com/tips/color-contrast)を検証します
+- 包括的で[アクセシブルなフォーム](/docs/building-a-contact-form#creating-an-accessible-form)を作る
+- アクセシブルな[見出し、ランドマーク、セマンティックな構造](https://webaim.org/techniques/semanticstructure/)を作る
+- [画像、映像、音声にテキストによる代替手段](https://a11y-style-guide.com/style-guide/section-media.html)を含める
+- [画面の拡大とズーム](https://axesslab.com/make-site-accessible-screen-magnifiers/)のテストをする
+- [インタラクティブなメニュー、モーダル、カスタム・ウィジェット](https://developer.mozilla.org/en-US/docs/Web/Accessibility/An_overview_of_accessible_web_applications_and_widgets)のアクセシビリティを担保する
+- 安全な[アニメーションやモーション](https://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity/)を作る
+- サイトやアプリケーションのための [Cypress アクセシビリティテスト](/docs/end-to-end-testing/#writing-tests)を書く
 
-## Accessibility resources
+## アクセシビリティの参考資料
 
-- [React accessibility](https://reactjs.org/docs/accessibility.html)
-- [Gatsby’s commitment to accessibility](/blog/2019-04-18-gatsby-commitment-to-accessibility/)
-- [How to do an accessibility review](https://developers.google.com/web/fundamentals/accessibility/how-to-review) from Google Web Fundamentals
-- [A11y Project's Quick Tests](https://a11yproject.com/#Quick-tests)
-- [The importance of manual accessibility testing](https://www.smashingmagazine.com/2018/09/importance-manual-accessibility-testing/) from Smashing Magazine
-- [Writing Automated Tests for Accessibility](https://www.24a11y.com/2017/writing-automated-tests-accessibility/)
-- [Free web accessibility course](https://www.udacity.com/course/web-accessibility--ud891) by Google and Udacity
-- [WebAIM introduction](https://webaim.org/intro/) to web accessibility
-- [Deque University](https://dequeuniversity.com), with free online accessibility training for people with disabilities
-- [Web.dev accessibility docs](https://web.dev/accessible)
-- [All Gatsby accessibility blog posts](/blog/tags/accessibility/)
+- [アクセシビリティ - React](https://ja.reactjs.org/docs/accessibility.html)
+- [Gatsby によるアクセシビリティの取り組み](/blog/2019-04-18-gatsby-commitment-to-accessibility/)
+- Google Web Fundamentals による[アクセシビリティレビューをする方法](https://developers.google.com/web/fundamentals/accessibility/how-to-review)
+- [アクセシビリティプロジェクトのクイックテスト](https://a11yproject.com/#Quick-tests)
+- Smashing Magazine による[手動でするアクセシビリティテストの重要性](https://www.smashingmagazine.com/2018/09/importance-manual-accessibility-testing/)
+- [アクセシビリティのための自動テストの記述](https://www.24a11y.com/2017/writing-automated-tests-accessibility/)
+- Google と Udacity の[無料の Web アクセシビリティコース](https://www.udacity.com/course/web-accessibility--ud891)
+- [WebAIM - Web アクセシビリティの概要](https://webaim.org/intro/)
+- 障害者のための無料オンライン・アクセシビリティ・トレーニングを提供する[Deque University](https://dequeuniversity.com)
+- [Web.dev のアクセシビリティドキュメント](https://web.dev/accessible)
+- [Gatsby のすべてのアクセシビリティブログ記事](/blog/tags/accessibility/)
