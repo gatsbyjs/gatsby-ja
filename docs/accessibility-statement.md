@@ -1,48 +1,48 @@
 ---
-title: Accessibility Statement
+title: アクセシビリティ方針
 ---
 
 _Last updated: April 8, 2019_
 
-We want everyone who uses Gatsby to feel welcome and find the experience rewarding: this includes developers with disabilities and users with disabilities for Gatsby sites, docs, and resources.
+私たちは、Gatsby を使うすべての人が歓迎されていると感じ、やりがいのある経験を見つけてほしいと願っています。これには、Gatsby のサイト、ドキュメント、リソースの開発者や利用者で、障害のお持ちの方を含みます。
 
-This page was created to collect accessibility information about the Gatsby ecosystem in one place and provide communication channels for people with disabilities to get help with Gatsby.
+このページは、Gatsby エコシステムについてのアクセシビリティ情報をひとつに集め、障害をお持ちの人々が Gatsby についての助けを得られるコミュニケーション手段を提供するために作られました。
 
-## Gatsby products and services
+## Gatsby プロダクトとサービス
 
-Gatsbyjs.org is the online home of the open source Gatsby website framework; it includes documentation, tutorials, and guides on how and why to build with Gatsby, as well as a blog, site showcase, and information on how to contribute to the project.
+Gatsbyjs.org は、オープンソースである Gatsby ウェブサイトフレームワークのオンライン上の本拠地です。どのようにそしてなぜ Gatsby でサイトを構築するかについてのドキュメント、チュートリアル、ガイドはもちろんのこと、ブログ、サイトショーケース、本プロジェクトへの貢献方法についての情報も含んでいます。
 
-Gatsbyjs.com is the business website for Gatsby, Inc. the startup building Gatsby, including our first product, Gatsby Preview: a cloud service allowing team members to collaborate on a Gatsby site in development.
+Gatsbyjs.com は、Gatsby を作っているスタートアップ Gatsby, Inc. のビジネスウェブサイトであり、私たちの最初のプロダクトである Gatsby Preview（開発中の Gatsby サイト上でチームメンバーが共同作業できるようにするクラウドサービス）を含んでいます。
 
-## Providing feedback and getting accessibility help
+## フィードバックを伝え、アクセシビリティの助けを得る
 
-We strive to make these websites and the Gatsby framework itself as accessible as possible. Our goal is to meet [WCAG 2.0 AA](https://www.w3.org/TR/WCAG20/), with which we are partially compliant. We’ll be the first to admit the Gatsby ecosystem is a work in progress, and we are open to all feedback to make things better.
+私たちはこれらのサイトと Gatsby フレームワーク自体をできるだけアクセシブルなものにしようと努力しています。私たちのゴールは [WCAG 2.0 AA](https://www.w3.org/TR/WCAG20/)（訳注: [WCAG 2.0 AA 邦訳](https://waic.jp/docs/WCAG20/Overview.html)）を満たすことですが、まだある程度しか準拠していません。私たちはまず Gatsby エコシステムが作成途中の未完成品であると認めて、状況を改善していけるようにあらゆるフィードバックについてオープンです。
 
-To contact the core team with your accessibility feedback or challenges, please [file an issue on GitHub](https://github.com/gatsbyjs/gatsby/issues/new/choose).
+アクセシビリティへのフィードバックや異議をコアチームに伝えるには、[GitHub で Issue を作成](https://github.com/gatsbyjs/gatsby/issues/new/choose)してください。
 
-Alternatively, we welcome you to reach out directly to Marcy Sutton, Head of Learning at Gatsby: [marcy@gatsbyjs.com](mailto:marcy@gatsbyjs.com)
+別の方法として、Gatsby の学習部門のトップである Marcy Sutton [marcy@gatsbyjs.com](mailto:marcy@gatsbyjs.com) に直接連絡を取ることも歓迎しています。
 
-## Building with Gatsby
+## Gatsby で構築する
 
-To learn how to build an accessible website with Gatsby, visit our guide [Making Your Site Accessible](/docs/making-your-site-accessible/). Contributions are very welcome as this page evolves.
+アクセシブルなウェブサイトを Gatsby で構築する方法を学ぶには、私たちのガイド [あなたのサイトをアクセシブルにする](/docs/making-your-site-accessible/) を見てみましょう。このページを発展させていけるように貢献は大歓迎です。
 
-## Third-party platforms, products and services
+## サードパーティのプラットフォーム、製品、サービス
 
-Common Gatsby workflows involve third-party products and services, such as sourcing from Content Management Systems, and managing and deploying sites with hosting platforms. Some of these platforms appear to have been designed and/or built without accessibility in mind; we encourage those vendors to improve their accessibility along with us.
+Gatsby を使った仕事の流れとしてよくあるものは、サードパーティの製品やサービスを含んでいます。たとえばコンテンツマネジメントシステム（CMS）をソースに使い、ホスティングプラットフォームでサイトを管理・構築するようなやり方です。これらプラットフォームのいくつかは、アクセシビリティを考慮せずに設計ないし構築されているように見えるものがあります。私たちは、これらの提供者に一緒にアクセシビリティを向上させていこうと働きかけています。
 
-Our current recommendations for accessible CMS platforms are:
+アクセシブルな CMS として、以下のようなプラットフォームの使用をおすすめしています。
 
-- WordPress with the Classic Editor Plugin
+- Classic Editor プラグインを導入した WordPress
 - Drupal
 
-For managing and deploying Gatsby sites with accessible tools, we recommend:
+アクセシブルツールを使ってサイトを管理やデプロイするには、以下をおすすめしています。
 
 - Netlify
 
-To provide feedback for third-party services, you can contact those vendors directly or [write to us](mailto:marcy@gatsbyjs.com), and we will do our best to pass the information along. We're also interested in hearing about your successes with third-party platforms!
+サードパーティのサービスについてフィードバックを伝えるには、これらの提供者に直接連絡するか、または[私たちにメールをくだされば](mailto:marcy@gatsbyjs.com)情報を伝えられるよう最大限努力します。私たちはサードパーティプラットフォームでのあなたの成功を耳にするのを楽しみにしています！
 
-## Surveys and research projects
+## 調査と研究のプロジェクト
 
-The Gatsby team conducts surveys and research projects from time to time. We highly value feedback from all Gatsby users, and particularly those with experience applicable to the research being conducted.
+Gatsby チームはときどき調査や研究のプロジェクトを行っています。私たちは、すべての Gatsby ユーザーからのフィードバック、とりわけ、行おうとしている調査に当てはまる経験についてのものを、高く評価します。
 
-To be considered for these initiatives, please contact [marcy@gatsbyjs.com](mailto:marcy@gatsbyjs.com).
+これらの取り組みについて考えるべきことがあれば、[marcy@gatsbyjs.com](mailto:marcy@gatsbyjs.com) にご連絡ください。
