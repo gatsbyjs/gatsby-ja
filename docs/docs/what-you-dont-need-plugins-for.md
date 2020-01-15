@@ -1,14 +1,16 @@
 ---
-title: What You Don't Need Plugins For
+title: プラグインを必要としないのはどのような時か
 ---
 
-Most third-party functionality you want to add to your website will follow standard JavaScript and React.js patterns for importing packages and composing UIs. These do not require a Gatsby plugin!
+あなたのウェブサイトに追加したいサードパーティー機能のほとんどは、標準の Javascript や React.js と同じやり方でパッケージのインポートや UI の構成を行えます。これらは Gatsby のプラグインを必要としません！
 
-Some examples:
+いくつかの例を挙げます。
 
-- Importing JavaScript packages that provide general functionality, such as `lodash` or `axios`
-- Integrating visualization libraries, such as `Highcharts` or `d3`.
+- `lodash`や`axios`のような一般的な機能を提供している Javascript のパッケージをインポートする場合
+- `Highcharts`や`d3`のような視覚に関するライブラリーを統合する場合
 
-As a general rule, any npm package you might use while working on another JavaScript or React application can also be used ,with a Gatsby application. What plugins offer is a prepackaged integration into the core Gatsby APIs to save you time and energy, with minimal configuration.
+一般に、あなたが Javascript や React アプリケーションに取り組んでいる間に使用する npm パッケージは、 Gatsby アプリケーションと共に使用できます。
+プラグインが提供するものは、複数の Gatsby コア API をあらかじめまとめておいたものです。これは、最小の設定で利用できるので、あなたの時間とエネルギーの節約になります。
 
-A good use case would be using `Styled Components`, you could manually render the `Provider` component near the root of your application, or you could use [gatsby-plugin-styled-components ](https://www.gatsbyjs.org/packages/gatsby-plugin-styled-components/) which takes care of this step for you in addition to any other difficulties when configuring Styled Components to work with server-side rendering.
+プラグインの良い使用例は、`Styled Components`でしょう。あなたはアプリケーションの root 近くにある`Provider`コンポーネントを自分でレンダーできます。
+また、あなたは[gatsby-plugin-styled-components ](https://www.gatsbyjs.org/packages/gatsby-plugin-styled-components/)を使用することもできます。このプラグインは、Styled Components をサーバーサイドレンダリングで使用するための設定に必要なあらゆる難題を代わりに行ってくれます。
