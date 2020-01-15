@@ -1,5 +1,8 @@
 version: 1
 rules:
+  - expected: Gatsby
+    pattern: /(Gatsby\.js|GatsbyJS)/
+
   - expected: ステップ・バイ・ステップ
     pattern: ステップバイステップ
 
