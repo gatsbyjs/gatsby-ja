@@ -43,7 +43,7 @@ Gatsby テーマを開発することは、あなたが複数のテーマとサ�
 
 > 💡 もし必要であれば、テーマを [ローカルプラグイン](https://www.gatsbyjs.org/docs/creating-a-local-plugin/) として開発できます。その代わりに `yarn link` もしくは `npm link` を使うことも可能です。一般的に Gatsby はテーマ作成のために yarn ワークスペースを使用することを推奨しており、スターターやこのチュートリアルでも使用しています。
 
-> 💡 スターターは yarn ワークスペースを使用し、てテーマ開発のためのすべての設定を管理しています。もし詳細を知りたい場合は [こちらのブログポスト](/blog/2019-05-22-setting-up-yarn-workspaces-for-theme-development/) をご覧ください。
+> 💡 スターターは yarn ワークスペースを使用し、てテーマ開発のためのすべての設定を管理しています。もし詳細を知りたい場合は[こちらのブログ記事](/blog/2019-05-22-setting-up-yarn-workspaces-for-theme-development/)をご覧ください。
 
 ### `package.json`
 
