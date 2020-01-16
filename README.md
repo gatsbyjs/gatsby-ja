@@ -12,10 +12,10 @@
 
 ### 環境のセットアップ
 
-- このページの右上にある Fork ボタンからこのレポジトリを Fork してください。
-- Git, Node.js, Yarn をそれぞれ準備して、 Fork したリポジトリをクローンしてください。
+- このページの右上にある Fork ボタンからこのリポジトリーを Fork してください。
+- Git, Node.js, Yarn をそれぞれ準備して、 Fork したリポジトリーをクローンしてください。
 - `yarn` を使って dependency のインストールを行ってください。
-- これで準備は完了です！ `docs` の中身の markdown を好みのテキストエディターで編集してください。
+- これで準備は完了です！ `docs` の中身の Markdown を好みのテキストエディターで編集してください。
 
 ### 作業の重複を防ぐための宣言
 
@@ -29,6 +29,7 @@
 
 ## 参考リンク
 
+- [Japanese Translation Progress](https://github.com/gatsbyjs/gatsby-ja/issues/1)
 - [翻訳スタイルガイド](/style-guide.md)
 - [Gatsby 翻訳ガイド](https://www.gatsbyjs.org/contributing/gatsby-docs-translation-guide/)
 - [Gatsby Discord](https://gatsby.dev/discord)
