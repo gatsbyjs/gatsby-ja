@@ -106,7 +106,7 @@ n
 
 ### nodejs.org からインストールする
 
-ここまで紹介したインストール手順のいずれにも従わない場合は、[nodejs.org から直接 Node.js のインストーラをダウンロードする](https://nodejs.org/en/) ことができます。
+ここまで紹介したインストール手段のいずれも使っていない場合、[nodejs.org から直接 Node.js のインストーラをダウンロードする](https://nodejs.org/en/) ことができます。
 
 Gatsby が推奨するのは Homebrew を使って Node.js をインストールする方法です。詳しくは、[すでに説明した Homebrew のセクション](#using-homebrew) を参照してください。
 
