@@ -1,27 +1,29 @@
 ---
-title: Working with Video
+title: 映像を使用する
 ---
 
-- [Sourcing video from a host](#sourcing-video-from-a-host)
-- [Embedding hosted videos in Markdown](#embedding-hosted-videos-in-markdown)
-- [Writing custom components for hosted video](#writing-custom-components-for-hosted-video)
-- [Querying video data from Markdown with GraphQL](#querying-video-data-from-markdown-with-graphql)
-- [Hosting your own HTML5 video files](#hosting-your-own-html5-video-files)
-- [Using custom video players](#using-custom-video-players)
+- [ホストから映像を取得する](#ホストから映像を取得する)
+- [ホストされた映像をマークダウンに埋め込む](#ホストされた映像をマークダウンに埋め込む)
+- [ホストされた映像をコンポーネントで表示する](#ホストされた映像をコンポーネントで表示する)
+- [GraphQL を使ってマークダウンから映像を要求する](#GraphQL-を使ってマークダウンから映像を要求する)
+- [独自の HTML5 映像ファイルをホスティングする](#独自の-HTML5-映像ファイルをホスティングする)
+- [カスタム映像プレイヤーを使う](#カスタム映像プレイヤーを使う)
 
-## Sourcing video from a host
+## ホストから映像を取得する
 
-The easiest method for including video on a Gatsby site is to source an uploaded file from a site like YouTube, Vimeo, or Twitch. Using the source URL from one of those hosts, you can use Remark plugins or create a custom `<iframe>` solution to embed videos into your Gatsby site.
+Gatsby サイトに映像を埋め込むもっとも簡単な方法は、YouTube や Vimeo、Twitch のようなサイトにアップロードされた映像を取得することです。
 
-## Embedding hosted videos in Markdown
+ホストされた映像の URL をもとに、Remark Plugins を使用するか、カスタム`<iframe>`を作成することで、Gatsby サイトに映像を埋め込むことができます。
 
-There are numerous Gatsby plugins for working with hosted video in your Markdown posts and pages. We recommend checking out the [gatsby-remark-embed-video](/packages/gatsby-remark-embed-video/?=video) plugin for sourcing from a variety of hosts like YouTube or vimeo.
+## ホストされた映像をマークダウンに埋め込む
 
-### Writing custom components for hosted video
+ホストされた映像をマークダウンの投稿やページから使用できるようにする Gatsby プラグインが多数あります。 YouTube や Vimeo などのさまざまなホストから取得するには、[gatsby-remark-embed-video](/packages/gatsby-remark-embed-video/?=video)プラグインを確認することをお勧めします。
 
-If you would like more control over how YouTube (or similar) videos are embedded into your Gatsby posts and pages, you can write a reusable custom `iframe` component and include it in a JSX template or in your content [with MDX](/docs/mdx/).
+### ホストされた映像をコンポーネントで表示する
 
-In this reusable sample component, you could include props for video data like URL or title, any necessary markup for styling purposes, and the common `iframe` embed code:
+YouTube（または同様の）映像を Gatsby の投稿やページに埋め込む方法をさらに詳細に制御したい場合は、再利用可能なカスタム`iframe`コンポーネントを作成し、JSX テンプレートまたは[MDX の中で](/docs/mdx/)使用します。
+
+次に示す再利用可能なサンプルコンポーネントには、URL やタイトルなどの映像データの props や、スタイル設定に必要なマークアップ、および一般的な`iframe`埋め込みコードが含まれています。
 
 ```jsx:title=src/components/video.js
 import React from "react"
@@ -41,7 +43,7 @@ const Video = ({ videoSrcURL, videoTitle, ...props }) => (
 export default Video
 ```
 
-You would then include this component in a template or page with a video source URL and title passed in as props. The data for video URLs and titles can be sourced in multiple ways, such as importing JSON or [querying data from Markdown with GraphQL](#querying-data-from-markdown-with-graphql). You can also hard-code video data for something fun, like a custom 404 page with an Easter egg YouTube video:
+次に、このコンポーネントを、映像の URL とタイトルの props と共にテンプレートまたはページへ加えます。URL およびタイトルなどの映像のデータは、JSON のインポートや[GraphQL を使ってマークダウンの中で映像を取得する](#GraphQL-を使ってマークダウンの中で映像を取得する)など、複数の方法で取得できます。また、404 ページでイースターエッグとして YouTube 映像を表示するなど、映像を何か面白いものに使用することもできます。
 
 ```jsx:title=src/pages/404.js
 import React from "react"
@@ -68,9 +70,9 @@ const NotFoundPage = () => (
 export default NotFoundPage
 ```
 
-## Querying video data from Markdown with GraphQL
+## GraphQL を使ってマークダウンから映像を要求する
 
-If a Markdown page or post has a featured video, you might want to include a video URL and title in [its frontmatter](/docs/adding-markdown-pages#note-on-creating-markdown-files). This allows you to pass those values into your custom component:
+マークダウンページまたは投稿が特定の映像を含む場合は、[その frontmatter]（/docs/adding-markdown-pages＃note-on-creating-markdown-files）に映像の URL とタイトルを含めることができます。これにより、これらの値をカスタムコンポーネントに渡すことができます。
 
 ```markdown:title=my-first-post.md
 ---
@@ -82,7 +84,7 @@ videoTitle: "Gatsby is Never Gonna Give You Up"
 ---
 ```
 
-To include a video component in a template, you could start with something like this:
+映像コンポーネントをテンプレートに加えるには、次のようなことから始めることができます。
 
 ```jsx:title=vlog-template.js
 import React from "react"
@@ -129,15 +131,15 @@ export const pageQuery = graphql`
 `
 ```
 
-## Hosting your own HTML5 video files
+## 独自の HTML5 映像ファイルをホスティングする
 
-It's super common to source video from YouTube, Twitch or Vimeo. But what if you want to host your own video and include it as HTML5 video?
+YouTube、Twitch または Vimeo から映像を取得することは非常に一般的な方法です。しかし、独自の映像をホストし、それを HTML5 に埋め込みたい場合はどうしたらいいでしょうか？
 
-To include your own video files that will work in multiple web browsers and platforms, you'll need to read up a bit on video extensions and codecs. We recommend MDN as a resource: [Media formats for HTML audio and video](https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats). You may need video converter software to produce the necessary formats -- such as `.webm` and `.mp4` -- to support a range of devices and environments.
+独自の映像ファイルを複数の Web ブラウザーやプラットフォームで動作させるためには、映像拡張機能とコーデックについて少し学ぶ必要があります。情報源として MDN をお勧めします：[HTML5 に音声や映像を埋め込むためのメディアフォーマット](https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats)。さまざまなデバイスや環境をサポートするための、必要な形式（「.webm」や「.mp4」など）を生成するには、映像変換ソフトが必要になる場合があります。
 
-HTML5 provides the `<video>` media element for working with videos. Inside the `<video>` element, you can provide multiple `<source>` elements that serve as different file formats the video player can use, with each browser electing to use a format it supports.
+HTML5 は、映像を使用するための `<video>`メディア要素を提供します。 `<video>`要素の中では、映像プレーヤーが使用できる異なるファイル形式を複数の `<source>`要素を使って提供できます。各ブラウザーは、その中からサポートしている形式の映像を使用します。
 
-If you have a video called `dog.mp4` in your site under `src/assets/dog.mp4`, you can [include that video in your page with webpack](/docs/importing-assets-into-files) like you would other assets. Then reference it in a `<source>` element, which is wrapped by a `<video>` element:
+もし、あなたのサイトの `src/assets/dog.mp4`に`dog.mp4`という映像がある場合、他のアセットを使用する時と同じように[webpack を使って映像をあなたのページに含める](/docs/importing-assets-into-files)ことができます。そして、それを `<video>`要素にラップされた `<source>`要素で参照します。
 
 <!-- prettier-ignore -->
 ```jsx:title=src/pages/index.js
@@ -152,11 +154,12 @@ export default () => (
 
 ```
 
-The `controls` attribute on the `<video>` will provide a default set of buttons overlaid on the video to play/pause, adjust volume, and go full screen. Other attributes like `muted` can set audio to silent, or `poster` can display an image when the video isn't playing. Common attributes that you'd want to apply to multiple videos could be extracted into a custom React video component. A full list of `<video>` attributes can be found on [the MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#Attributes).
+`<video>`要素の `controls`属性は、映像にオーバーレイされる再生/一時停止ボタンや、音量調整、全画面表示ボタンなどのデフォルトのボタンセットを提供します。また、`muted`属性なら、音声をミュートに設定できますし、`poster`属性では映像が再生されていないときに画像を表示したりできます。複数のビデオに適用したい一般的な属性は、React のカスタム映像コンポーネントで抽出できます。 `<video>`属性の完全な一覧は[MDN のドキュメント](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#Attributes)で見られます。
 
-### Supporting multiple browsers and formats
+### 複数のブラウザーとフォーマットのサポート
 
-Adding more source tags for additional formats will allow the browser to find a source type that it supports, if there are no matching source types the video will fail to load. You can see what formats are supported in different browsers on [MDN's docs about supported media formats](https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats#Browser_compatibility).
+ブラウザーがサポートしている形式を`<source>`要素で加えることにより、ブラウザーはその形式を見つけることができます。もしサポートしている形式の映像がなければ読み込みは失敗します。
+異なるブラウザーでどの形式がサポートされているのかは[サポートされてるメディアフォーマットについての MDN ドキュメント](https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats#Browser_compatibility)で見ることできます。
 
 <!-- prettier-ignore -->
 ```jsx:title=src/pages/index.js
@@ -173,24 +176,26 @@ export default () => (
 
 ```
 
+2 つの`<source>`要素がありますが 1 つの映像のみが表示されます。もしサポートされてれば`mp4`、次に`.ogg`が表示されます。
+
 Even though there are two `<source>` elements, only one video will be displayed, first `mp4` if it is supported, then `.ogg`.
 
-**Note**: This requires importing a video in the format of the type specified, i.e. adding a `<source>` element with `type=video/ogg` would also need a file import with a format of `.ogg`. Alternatively, you can specify a URL to where a video is remotely hosted as the `src` instead of importing a local file.
+**注意**: このとき、指定されたタイプの形式で映像をインポートする必要があります。つまり、 `type=video/ogg`で`<source>`要素を追加するには、`.ogg`の形式でファイルをインポートする必要があるということです。もしくは、ローカルファイルをインポートする代わりに、映像がリモートでホストされる場所の URL を`src`として指定できます。
 
-[See an example repository using `<video>` elements](https://github.com/gatsbyjs/gatsby/blob/master/examples/using-video/)
+[`<video>`要素を使ったサンプルリポジトリを見てみてください](https://github.com/gatsbyjs/gatsby/blob/master/examples/using-video/)
 
-### Accessibility with custom video players
+### カスタム映像プレイヤーとアクセシビリティ
 
-One advantage of integrating a custom component with your own hosted video is it can give you more control over the video player, including its accessibility. Elements of accessible video and audio include:
+カスタムコンポーネントを独自にホストした映像と統合する利点の 1 つは、アクセシビリティなど、映像プレーヤーをより詳細に制御できることです。映像と音声の操作性を高める要素は次のとおりです。
 
-- captions: a text version of the audio, synchronized with the video
-- transcript (or subtitles): a text version of the audio and visual content, like captions but also including descriptions of key visual elements in the video
-- audio description: an audio version of visual information not conveyed in dialogue
-- accessible controls: buttons to operate the video that can be operated without a mouse, are labeled, and work across environments and browsers
+- キャプション：映像の音声のテキストバージョン
+- トランスクリプト（またはサブタイトル）：キャプションのような音声や視覚コンテンツのテキストバージョンですが、映像の重要な視覚要素の説明も含まれます
+- 音声解説：ダイアログでカバーされない視覚情報の音声バージョン
+- アクセシブルコントロール：マウスなしで操作できる映像を操作するためのボタン。ラベルが付けられてたり、環境やブラウザーを越えて機能する。
 
-Though captions, transcripts, and audio descriptions primarily aim to assist those with greater difficulty seeing or hearing, they benefit many other users who prefer reading to listening. Captions can also help people watching videos when they can't have the sound turned on for whatever reason.
+キャプション、トランスクリプト、および音声解説は、主に見ること、聞くことが困難な人を支援することを目的としていますが、聞くことよりも読むことを好む他の多くのユーザーにとって有益です。キャプションは、何らかの理由で音声を有効にできない時に映像を視聴したい人々にも役立ちます。
 
-HTML5 provides support for these types of assistive content through the `<track>` element. The track element is nested under a `<video`> element as an empty tag. An example usage of the `<track>` element with a video looks like this:
+HTML5 は、 `<track>`要素を通してこれらのタイプの支援コンテンツのサポートを提供します。 `<track>`要素は、空のタグとして `<video>`要素の下にネストされます。ビデオでの `<track>`要素の使用例は次のようになります。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -207,8 +212,8 @@ export default () => (
 )
 ```
 
-The kind attribute can be of a variety of different types including `captions`, `subtitles`, and `descriptions`, among others. The `srcLang` defines English as the language used in the captions in the example, and the captions file imported is used as the source. You can read about the specific attributes of a [`<track>` on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track).
+`kind`属性では、`captions`や、`subtitles`、`descriptions`などのさまざまなタイプを指定できます。 `srcLang`では、英語をキャプションで使用される言語として定義します。そして、インポートされたキャプションファイルがソースとして使用されます。`<track>`の詳しい属性については[MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track)で読むことができます。
 
-**Note**: The filepath to import the captions in the above code snippet includes the `file-loader!` prefix, which helps webpack import the `.vtt` caption file.
+**注意**: 上記のコードスニペットのキャプションをインポートするファイルパスには、 `file-loader！`プレフィックスが含まれています。これは、webpack が`.vtt`キャプションファイルをインポートするのを助けます。
 
-Check out the accessible [HTML5 video player from PayPal](https://github.com/paypal/accessible-html5-video-player#react-version) for an example compatible with Gatsby and React.
+Gatsby と React を使用した例については、操作性の高い[PayPal の HTML5 映像プレイヤー](https://github.com/paypal/accessible-html5-video-player#react-version)をご覧ください。
