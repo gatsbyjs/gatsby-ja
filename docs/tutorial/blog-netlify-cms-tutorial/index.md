@@ -4,7 +4,7 @@ title: Netlify CMSでGatsbyブログを作成する
 
 https://youtu.be/JeTqxCJC56Q
 
-このチュートリアルでは、公式の [gatsby-starter-blog](/starters/gatsbyjs/gatsby-starter-blog/) をベースとした [gatsby-personal-starter-blog](http://t.wang.sh/gatsby-personal-starter-blog) Gatsby スターターを使用します。 `gatsby-personal-starter-blog` は `/blog` サブディレクトリーでブログを動作させるように設定されているという点と、コンテンツ編集のために [Netlify CMS](https://www.netlifycms.org/) があらかじめインストールされているという点が異なります。
+このチュートリアルでは、公式の [gatsby-starter-blog](/starters/gatsbyjs/gatsby-starter-blog/) をベースとした [gatsby-personal-starter-blog](http://t.wang.sh/gatsby-personal-starter-blog) スターターを使用します。 `gatsby-personal-starter-blog` は `/blog` サブディレクトリーでブログを動作させるように設定されているという点と、コンテンツ編集のために [Netlify CMS](https://www.netlifycms.org/) があらかじめインストールされているという点が異なります。
 
 ## 前提条件
 
