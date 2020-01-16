@@ -1,31 +1,24 @@
 ---
-title: Transformer plugins
+title: トランスフォーマープラグイン
 typora-copy-images-to: ./
 disableTableOfContents: true
 ---
 
-> This tutorial is part of a series about Gatsby’s data layer. Make sure you’ve gone through [part 4](/tutorial/part-four/) and [part 5](/tutorial/part-five/) before continuing here.
+> このチュートリアルは Gatsby のデータ層に関する解説の一部です。先に [part 4](/tutorial/part-four/) と [part 5](/tutorial/part-five/) の内容を完了してください。
 
-## What's in this tutorial?
+## 概要
 
-The previous tutorial showed how source plugins bring data _into_ Gatsby’s data system. In this tutorial, you'll learn how transformer plugins _transform_ the raw content brought by source plugins. The combination of source plugins and transformer plugins can handle all data sourcing and data transformation you might need when building a Gatsby site.
+前回はソースプラグインを使って Gatsby のデータシステムにデータを**取り込む**方法を説明しました。今回はソースプラグインが取得したデータを、トランスフォーマープラグインで**変換**する方法を学びます。ソースプラグインとトランスフォーマープラグインの組み合わせによって、Gatsby でサイトを構築するために必要なすべてのデータ取得と変換を処理できます。
 
-## Transformer plugins
+## トランスフォーマープラグイン
 
-Often, the format of the data you get from source plugins isn't what you want to
-use to build your website. The filesystem source plugin lets you query data
-_about_ files but what if you want to query data _inside_ files?
+多くの場合、ソースプラグインで取得したデータ形式は Web サイトの構築に使用されるものではありません。ファイルシステムソースプラグインを使用すればファイルの**メタデータ**を取得できますが、ファイル内に**入力されているデータ**は取得できません。
 
-To make this possible, Gatsby supports transformer plugins which take raw
-content from source plugins and _transform_ it into something more usable.
+Gatsby はトランスフォーマープラグインを利用して、ソースプラグインで取得したデータをブログで表示する形式へ**変換**します。
 
-For example, markdown files. Markdown is nice to write in but when you build a
-page with it, you need the markdown to be HTML.
+ここでは Markdown を例とします。Markdown は簡潔に記述できますが Web ページとして表示する場合は HTML へ変換する必要があります。
 
-Add a markdown file to your site at
-`src/pages/sweet-pandas-eating-sweets.md` (This will become your first markdown
-blog post) and learn how to _transform_ it to HTML using transformer plugins and
-GraphQL.
+`src/pages/sweet-pandas-eating-sweets.md`に以下の Markdown ファイルを追加して、トランスフォーマープラグインと GraphQL を使って HTML へ**変換**する方法を学びましょう。
 
 ```markdown:title=src/pages/sweet-pandas-eating-sweets.md
 ---
@@ -40,19 +33,15 @@ Here's a video of a panda eating sweets.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4n0xNbfJLR8" frameborder="0" allowfullscreen></iframe>
 ```
 
-Once you save the file, look at `/my-files/` again—the new markdown file is in
-the table. This is a very powerful feature of Gatsby. Like the earlier
-`siteMetadata` example, source plugins can live-reload data.
-`gatsby-source-filesystem` is always scanning for new files to be added and when
-they are, re-runs your queries.
+ファイルを保存して`/my-files/`を確認します。表に新しい Markdown が追加されています。これは Gatsby の非常に便利な機能です。先程の`siteMetadata`の例のように、ソースプラグインはデータをライブリロードします。`gatsby-source-filesystem`はファイルを常に監視して、ファイルが追加されるとクエリを再実行します。
 
-Add a transformer plugin that can transform markdown files:
+Markdown を変換できるトランスフォーマープラグインを追加します。
 
 ```shell
 npm install --save gatsby-transformer-remark
 ```
 
-Then add it to the `gatsby-config.js` like normal:
+次にプラグインを`gatsby-config.js`に追加します。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -79,31 +68,21 @@ module.exports = {
 }
 ```
 
-Restart the development server then refresh (or open again) GraphiQL and look
-at the autocomplete:
+サーバーを再起動し GraphiQL を新しく開いてオートコンプリートを確認します。
 
 ![markdown-autocomplete](markdown-autocomplete.png)
 
-Select `allMarkdownRemark` again and run it as you did for `allFile`. You'll
-see there the markdown file you recently added. Explore the fields that are
-available on the `MarkdownRemark` node.
+`allMarkdownRemark`を選択し、`allFile`のときと同様にクエリを実行します。先程追加した Markdown が表示されるはずです。`MarkdownRemark`ノードで使用可能なフィールドを探します。
 
 ![markdown-query](markdown-query.png)
 
-Ok! Hopefully, some basics are starting to fall into place. Source plugins bring
-data _into_ Gatsby's data system and _transformer_ plugins transform raw content
-brought by source plugins. This pattern can handle all data sourcing and
-data transformation you might need when building a Gatsby site.
+Gatsby の基本的な設定ができ始めています。ソースプラグインはデータを Gatsby のデータシステムに**取り込み**、トランスフォーマープラグインはソースプラグインが取得したデータを**変換**します。このパターンは Gatsby でサイトを構築するために必要なすべてのデータ取得と変換を処理できます。
 
-## Create a list of your site's markdown files in `src/pages/index.js`
+## Markdown のリストを`src/pages/index.js`に作成する
 
-Now you'll have to create a list of your markdown files on the front page. Like many
-blogs, you want to end up with a list of links on the front page pointing to each
-blog post. With GraphQL you can _query_ for the current list of markdown blog
-posts so you won't need to maintain the list manually.
+次に、フロントページに Markdown のリストを作成します。多くのブログのように、各投稿へのリンクをリストにしてフロントページに表示します。GraphQL を利用すれば Markdown の投稿を**取得**できるため、手動でリストを管理する必要はありません。
 
-Like with the `src/pages/my-files.js` page, replace `src/pages/index.js` with
-the following to add a GraphQL query with some initial HTML and styling.
+`src/pages/index.js` に GraphQL クエリと HTML とスタイルを追加して次のように書き換えます。`src/pages/my-files.js`と同様です。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -169,12 +148,11 @@ export const query = graphql`
 `
 ```
 
-Now the frontpage should look like:
+これでフロントページは次のようになります。
 
 ![frontpage](frontpage.png)
 
-But your one blog post looks a bit lonely. So let's add another one at
-`src/pages/pandas-and-bananas.md`
+しかし、投稿が 1 件のみではリストとは呼べません。`src/pages/pandas-and-bananas.md`にもう 1 件投稿を追加しましょう。
 
 ```markdown:title=src/pages/pandas-and-bananas.md
 ---
@@ -190,35 +168,27 @@ seem to really enjoy bananas!
 
 ![two-posts](two-posts.png)
 
-Which looks great! Except… the order of the posts is wrong.
+良い感じです！しかし、投稿の表示順が間違っています。
 
-But this is easy to fix. When querying a connection of some type, you can pass a
-variety of arguments to the GraphQL query. You can `sort` and `filter` nodes, set how
-many nodes to `skip`, and choose the `limit` of how many nodes to retrieve. With
-this powerful set of operators, you can select any data you want—in the format you
-need.
+修正は簡単です。クエリでデータを取得する時、GraphQL クエリにさまざまな引数を渡すことができます。例えば、ノードの`sort`や`filter`、数を指定した`skip`、`limit`で数の制限などができます。この強力な演算子を利用して必要なデータを必要な形式で選択できます。
 
-In your index page's GraphQL query, change `allMarkdownRemark` to
-`allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC })`. _Note: There are 3 underscores between `frontmatter` and `date`._ Save
-this and the sort order should be fixed.
+index ページの GraphQL クエリで`allMarkdownRemark`を`allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC })`に変更します。
+これを保存すればソート順が修正されます。  
+_注: frontmatter と date の間はアンダースコアが 3 つです。_
 
-Try opening GraphiQL and playing with different sort options. You can sort the
-`allFile` connection along with other connections.
+GraphiQL を開いていろいろな sort オプションを試しましょう。`allFile`コネクションに加えて他のコネクションでも並び替えることができます。
 
-For more documentation on our query operators, explore our [GraphQL reference guide.](/docs/graphql-reference/)
+クエリ演算子の詳細について知りたい場合は、[GraphQL reference guide.](/docs/graphql-reference/)をご確認ください。
 
-## Challenge
+## やってみよう
 
-Try creating a new page containing a blog post and see what happens to the list of blog posts on the homepage!
+新しい投稿ページを作成して、フロントページの投稿リストがどう変わるか確認してみましょう。
 
-## What's coming next?
+## 次は？
 
-This is great! You've just created a nice index page where you're querying your markdown
-files and producing a list of blog post titles and excerpts. But you don't want to just see excerpts, you want actual pages for your markdown files.
+よくできました！あなたは Markdown を取得し、投稿のタイトルと抜粋をリストにして表示する index ページを作成しました。しかし、抜粋ではなく Markdown の内容を表示するページが必要です。
 
-You could continue to create pages by placing React components in `src/pages`. However, you'll
-next learn how to _programmatically_ create pages from _data_. Gatsby is _not_
-limited to making pages from files like many static site generators. Gatsby lets
-you use GraphQL to query your _data_ and _map_ the query results to _pages_—all at build
-time. This is a really powerful idea. You'll be exploring its implications and
-ways to use it in the next tutorial, where you'll learn how to [programmatically create pages from data](/tutorial/part-seven/).
+React コンポーネントを `src/pages`に配置することで引き続きページを作成できます。次は**プログラム**によって**データ**からページを生成する方法を学びます。
+Gatsby は多くの静的サイトジェネレーターと異なり、ファイルからのページ作成に**限定されません**。
+Gatsby はビルド時に GraphQL を使用してデータを取得し、クエリのすべての**結果**を**ページ**へ**マッピング**します。
+これはとても強力なアイデアです。次のチュートリアルではその意味と使い方を説明し、[データからプログラムによるページ作成](/tutorial/part-seven/)を学びます。
