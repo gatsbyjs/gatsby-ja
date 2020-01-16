@@ -1,0 +1,17 @@
+name: Label created pull requests
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  labelWhenCreated:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Label when created
+        uses: actions/github@v1.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: label awaiting%20review
