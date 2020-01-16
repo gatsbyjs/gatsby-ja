@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Add label when one approval
+      - name: Add and/or remove labels when PR state changes
         uses: actions/github-script@0.4.0
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
