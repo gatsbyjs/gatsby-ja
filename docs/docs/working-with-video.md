@@ -175,8 +175,6 @@ export default () => (
 
 2 つの`<source>`要素がありますが、この中から 1 つだけが使用されます。サポートされていれば`mp4`、`.ogg`の順で使用されます。
 
-Even though there are two `<source>` elements, only one video will be displayed, first `mp4` if it is supported, then `.ogg`.
-
 **注意**: このとき、指定されたタイプの形式で映像をインポートする必要があります。つまり、 `type=video/ogg`で`<source>`要素を追加するには、`.ogg`の形式でファイルをインポートする必要があるということです。もしくは、ローカルファイルをインポートする代わりに、映像がリモートでホストされる場所の URL を`src`として指定できます。
 
 [`<video>`要素を使ったサンプルリポジトリを見てみてください](https://github.com/gatsbyjs/gatsby/blob/master/examples/using-video/)
