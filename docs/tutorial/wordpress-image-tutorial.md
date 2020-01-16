@@ -95,7 +95,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         /*
-         * ベースとなるURLは、プロトコルと末尾のスラッシュを省略してください。これは必須です。
+         * ベースとなる URL は、プロトコルと末尾のスラッシュを省略してください。これは必須です。
          * 例： 'dev-gatbsyjswp.pantheonsite.io' あるいは 'www.example-site.com'
          */
         baseUrl: `dev-gatbsyjswp.pantheonsite.io`,
