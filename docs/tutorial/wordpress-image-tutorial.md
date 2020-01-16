@@ -142,7 +142,7 @@ localhost:8000 と localhost:8000/\_\_\_graphql を開いてください。
           photo {
             localFile {
               childImageSharp {
-                # 「width」と「height」の値を変更してみてください。
+                # "width" と "height"の値を変更してみてください。
                 resolutions(width: 200, height: 200) {
                   # GraphQL エクスプローラーでは、「src」のようなフィールド名を
                   # 使用してください。あなたのサイトのコードでは、それらは削除し、
