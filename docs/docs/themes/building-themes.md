@@ -9,7 +9,7 @@ title: テーマの作成
   lessonTitle="Use the Gatsby Theme Workspace Starter to Begin Building a New Theme"
 />
 
-始めるためには以下を実行します。
+始めるためには以下のコマンドを実行します。
 
 ```shell
 gatsby new gatsby-theme-my-theme gatsbyjs/gatsby-starter-theme-workspace
