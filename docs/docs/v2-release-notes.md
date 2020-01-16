@@ -2,7 +2,7 @@
 title: v2 リリースノート
 ---
 
-Gatsby v2 に関して次の便利なリンクをご覧ください。:
+Gatsby v2 に関して次の便利なリンクをご覧ください：
 
 - [v2 リリースのお知らせ](/blog/2018-09-17-gatsby-v2/)
 - [v1 から v2 への移行](/docs/migrating-from-v1-to-v2/)
