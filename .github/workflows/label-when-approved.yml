@@ -1,0 +1,16 @@
+name: Label approved pull requests
+
+on: pull_request_review
+
+jobs:
+  labelWhenApproved:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Label when approved
+        uses: pullreminders/label-when-approved-action@v1.0.7
+        env:
+          ADD_LABEL: "approved"
+          APPROVALS: "2"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REMOVE_LABEL: "awaiting%20review"
