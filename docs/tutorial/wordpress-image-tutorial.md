@@ -70,7 +70,7 @@ module.exports = {
 
 ### 画像に役立つプラグインのインストール
 
-次に、`gatsby-config.js`に`gatsby-transformer-sharp`と`gatsby-plugin-sharp`プラグインをインストールして、GraphQL クエリをページに追加し、ページに画像を追加してから、ブラウザーで結果を表示する必要があります。
+次に、`gatsby-config.js` に `gatsby-transformer-sharp` と `gatsby-plugin-sharp` プラグインをインストールして、GraphQL クエリをページに追加し、ページに画像を追加してから、ブラウザーで結果を表示する必要があります。
 
 はじめに、いくつかのプラグインとその依存関係をインストールする必要があります。
 
