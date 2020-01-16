@@ -1,5 +1,5 @@
 ---
-title: Netlify CMSでGatsbyブログを作成する
+title: Netlify CMS で Gatsby ブログを作成する
 ---
 
 https://youtu.be/JeTqxCJC56Q
