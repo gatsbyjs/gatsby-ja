@@ -16,7 +16,7 @@ React コンポーネントで、 [StaticQuery](/docs/static-query/) コンポ�
 
 `useStaticQuery` は React Hook です。[Rules of Hooks](https://reactjs.org/docs/hooks-rules.html) のルールがすべて適用されます。
 
-GraphQL クエリを受け取って、要求されたデータを返します。それだけです。
+GraphQL クエリを受け取って、要求されたデータを返します。それだけです！
 
 ### 基本の例
 
