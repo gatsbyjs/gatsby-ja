@@ -14,7 +14,7 @@ jobs:
           script: |
             const owner = context.owner;
             const repo = context.repo;
-            const number = context.issue;
+            const number = context.issue.number;
 
             const { data: reviews } = await github.pulls.listReviews({
               owner,
