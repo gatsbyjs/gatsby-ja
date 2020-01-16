@@ -55,7 +55,7 @@ module.exports = {
         protocol: `http`,
         // サイトが wordpress.com でホストされているかを示します。
         // false の場合、サイトは自ホストであると想定されます。
-        // true の場合、プラグインは JSON REST API V2 を使用してwordpress.comから取得します。
+        // true の場合、プラグインは JSON REST API V2 を使用して wordpress.com から取得します。
         // もし、あなたのサイトが wordpress.org でホストされている場合、false を選択してください。
         hostingWPCOM: false,
         // useACFがtrueの場合、ソースプラグインは WordPress ACF プラグインのコンテンツをインポートしようとします。
