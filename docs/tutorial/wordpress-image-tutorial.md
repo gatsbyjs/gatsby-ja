@@ -12,7 +12,7 @@ title: "WordPress サイトに画像を追加する"
 
 画像を生成する Gatsby Way™ は、画像のパフォーマンスと応答性を最適化して、サイトの速度を低下させることなく画像の持つ素晴らしいメリットを得るための、一連のベストプラクティスを提供します。この[Gatsbygram サイト](https://gatsbygram.gatsbyjs.org/)（Gatsby を介して表示される Instagram フィード）は、svg 画像へのベクトル化の例を示しています。[画像処理デモサイト](https://image-processing.gatsbyjs.org/)では、Gatsby サイトで画像を楽しむ方法を探すことができます。
 
-### `gatsby-source-wordpress` プラグインをインストールする
+### `gatsby-source-wordpress` プラグインのインストール
 
 はじめに、サイトに画像を取り込む準備ができている画像を含む `gatsby-source-wordpress` プラグインをインストールする必要があります。
 
