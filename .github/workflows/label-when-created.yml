@@ -14,9 +14,9 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            const owner = context.owner;
-            const repo = context.repo;
-            const issue_number = context.issue;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const issue_number = context.issue.number;
 
             github.issues.addLabels({
               owner,
