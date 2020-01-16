@@ -1,0 +1,29 @@
+name: Label created pull requests
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  labelWhenCreated:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Label when created
+        uses: actions/github-script@0.4.0
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const owner = context.owner;
+            const repo = context.repo;
+            const issue_number = context.issue;
+
+            github.issues.addLabels({
+              owner,
+              repo,
+              issue_number,
+              labels: [
+                "status: awaiting more approval",
+                "status: awaiting review"
+              ]
+            });

@@ -1,0 +1,57 @@
+name: Label approved pull requests
+
+on: pull_request_review
+
+jobs:
+  labelWhenApproved:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Add and/or remove labels when PR state changes
+        uses: actions/github-script@0.4.0
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const owner = context.owner;
+            const repo = context.repo;
+            const number = context.issue;
+
+            const { data: reviews } = await github.pulls.listReviews({
+              owner,
+              repo,
+              pull_number: number
+            });
+
+            let approvals = 0;
+
+            for (const review of reviews) {
+              if (review.state === "APPROVED") {
+                approvals++;
+              }
+            }
+
+            if (reviews.length === 1) {
+              github.issues.removeLabels({
+                owner,
+                repo,
+                issue_number: number,
+                labels: ["status: awaiting review"]
+              });
+            }
+
+            switch (approvals) {
+              case 1:
+                github.issues.addLabels({
+                  owner,
+                  repo,
+                  issue_number: number,
+                  labels: ["status: awaiting more approval"]
+                });
+              case count >= 2:
+                github.issues.removeLabels({
+                  owner,
+                  repo,
+                  issue_number: number,
+                  labels: ["status: awaiting more approval"]
+                });
+            }
