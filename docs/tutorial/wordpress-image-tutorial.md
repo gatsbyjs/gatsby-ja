@@ -53,7 +53,7 @@ module.exports = {
         baseUrl: `dev-gatbsyjswp.pantheonsite.io`,
         // 使用するプロトコル。http もしくは https が使用可能です。
         protocol: `http`,
-        // サイトがwordpress.comでホストされているかを示します。
+        // サイトが wordpress.com でホストされているかを示します。
         // false の場合、サイトは自ホストであると想定されます。
         // true の場合、プラグインは JSON REST API V2 を使用してwordpress.comから取得します。
         // もし、あなたのサイトが wordpress.org でホストされている場合、false を選択してください。
