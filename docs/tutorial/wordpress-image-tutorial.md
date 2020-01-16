@@ -1,35 +1,35 @@
 ---
-title: "Adding Images to a WordPress Site"
+title: "WordPress サイトに画像を追加する"
 ---
 
-### What this tutorial covers:
+### このチュートリアルの対象：
 
-In this tutorial, you will install the several image plugins and components in order to pull image data from a WordPress account into your Gatsby site and render that data. This [Gatsby + WordPress demo site](https://using-wordpress.gatsbyjs.org/sample-post-1) shows you a sample of what you’re going to be building in this tutorial, although in this tutorial you’ll just focus on adding images.
+このチュートリアルでは、WordPress アカウントにある画像を自分の Gatsby サイトに取り込み、表示させるために、いくつかの画像プラグインとコンポーネントをインストールします。[Gatsby + WordPress デモサイト](https://using-wordpress.gatsbyjs.org/sample-post-1)では、チュートリアルを通して作ることができるサンプルを示しますが、このチュートリアルでは画像の追加に焦点を当てています。
 
-### Why go through this tutorial?
+### なぜこのチュートリアルを行うのですか？
 
-Images are one of the most beautiful and striking ways to communicate to people, and are a key part of creating an effective and positive user experience; at the same time, high quality images can load slowly and cause text boxes to jump around, both of which make it difficult for people to be patient with visiting your website.
+画像は、人とコミュニケーションをとるためのもっとも美しく印象的な方法の 1 つであり、そして効果的で前向きなユーザーエクスペリエンスを作成するための重要な鍵になります。同時に、高品質の画像の読み込みは遅くなることがあり、それによってテキストボックスが飛び回って見えることもあります。どちらの場合も、訪問者はあなたのサイトへアクセスすることに抵抗を覚えてしまいます。
 
-The Gatsby Way™ of creating images describes a set of best practices that help you optimize performance and responsiveness of images so that you can get the benefits of awesome images that don't slow down your site. This [Gatsbygram site](https://gatsbygram.gatsbyjs.org/) (an Instagram feed fed through Gatsby) shows off the svg image tracing effect. Here’s an [image processing demo site](https://image-processing.gatsbyjs.org/) exploring how to have fun with images in your Gatsby site.
+画像を生成する Gatsby Way™ は、画像のパフォーマンスと応答性を最適化して、サイトの速度を低下させることなく画像の持つ素晴らしいメリットを得るための、一連のベストプラクティスを提供します。この[Gatsbygram サイト](https://gatsbygram.gatsbyjs.org/)（Gatsby を介して表示される Instagram フィード）は、svg 画像へのベクトル化の例を示しています。[画像処理デモサイト](https://image-processing.gatsbyjs.org/)では、Gatyby サイトで画像を楽しむ方法を探すことができます。
 
-### Installing the `gatsby-source-wordpress` plugin
+### `gatsby-source-wordpress` プラグインをインストールする
 
-First you’ll need to install the `gatsby-source-wordpress` plugin that has images ready for you to pull into your site.
+はじめに、サイトに画像を取り込む準備ができている画像を含む `gatsby-source-wordpress` プラグインをインストールする必要があります。
 
-Create a new Gatsby project and change directories into the new project you just created:
+新しい Gatsby プロジェクトを作成し、作成したディレクトリーに移動します。
 
 ```shell
 gatsby new images-tutorial-site
 cd images-tutorial-site
 ```
 
-Install the `gatsby-source-wordpress` plugin. For extra reading on the plugin’s features and examples of GraphQL queries not included in this tutorial, see the [`gatsby-source-wordpress` plugin’s README file](/packages/gatsby-source-wordpress/?=wordpress).
+`gatsby-source-wordpress` プラグインをインストールします。このチュートリアルに含まれていない GraphQL クエリのプラグインの機能と使用例に関する情報は、[`gatsby-source-wordpress` プラグインの README ファイル](/packages/gatsby-source-wordpress/?=wordpress)を参照してください。
 
 ```shell
 npm install --save gatsby-source-wordpress
 ```
 
-Add the `gatsby-source-wordpress` plugin to `gatsby-config.js` using the following code, which you can also find in the [demo site’s source code](https://github.com/gatsbyjs/gatsby/blob/master/examples/using-wordpress/gatsby-config.js).
+次のコードを使用して、`gatsby-config.js` に `gatsby-source-wordpress` を追加します。このコードは、[デモサイトのソースコード](https://github.com/gatsbyjs/gatsby/blob/master/examples/using-wordpress/gatsby-config.js)にもあります。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -39,27 +39,27 @@ module.exports = {
   plugins: [
     // https://public-api.wordpress.com/wp/v2/sites/gatsbyjsexamplewordpress.wordpress.com/pages/
     /*
-     * Gatsby's data processing layer begins with “source”
-     * plugins. Here the site sources its data from WordPress.
+     * Gatsby のデータ処理レイヤープラグインは、「source」という文字で始まります。
+     * ここでは、WordPress からデータを取得しています。
      */
     // highlight-start
     {
       resolve: `gatsby-source-wordpress`,
       options: {
         /*
-         * The base URL of the WordPress site without the trailingslash and the protocol. This is required.
-         * Example : 'dev-gatbsyjswp.pantheonsite.io' or 'www.example-site.com'
+         * ベースとなるURLは、プロトコルと末尾のスラッシュを省略してください。これは必須です。
+         * 例： 'dev-gatbsyjswp.pantheonsite.io' あるいは 'www.example-site.com'
          */
         baseUrl: `dev-gatbsyjswp.pantheonsite.io`,
-        // The protocol. This can be http or https.
+        // プロトコル。http もしくは https が可能です。
         protocol: `http`,
-        // Indicates whether the site is hosted on wordpress.com.
-        // If false, then the assumption is made that the site is self hosted.
-        // If true, then the plugin will source its content on wordpress.com using the JSON REST API V2.
-        // If your site is hosted on wordpress.org, then set this to false.
+        // サイトがwordpress.comでホストされているかを示します。
+        // false の場合、サイトは自ホストであると想定されます。
+        // true の場合、プラグインは JSON REST API V2 を使用してwordpress.comから取得します。
+        // もし、あなたのサイトが wordpress.org でホストされている場合、false を選択してください。
         hostingWPCOM: false,
-        // If useACF is true, then the source plugin will try to import the WordPress ACF Plugin contents.
-        // This feature is untested for sites hosted on WordPress.com
+        // useACFがtrueの場合、ソースプラグインは WordPress ACF プラグインのコンテンツをインポートしようとします。
+        // この機能は、wordpress.com でホストされているサイトではテストされていません。
         useACF: true,
       },
     },
@@ -68,17 +68,17 @@ module.exports = {
 }
 ```
 
-### Installing plugins to help with images
+### 画像に役立つプラグインのインストール
 
-Now you will need to add the `gatsby-transformer-sharp` and `gatsby-plugin-sharp` plugins to `gatsby-config.js`, add a GraphQL query to a page, add an image to the page, and then view the result in the browser.
+次に、`gatsby-config.js`に`gatsby-transformer-sharp`と`gatsby-plugin-sharp`プラグインをインストールして、GraphQL クエリをページに追加し、ページに画像を追加してから、ブラウザーで結果を表示する必要があります。
 
-First, you’ll need to install a few plugins and their dependencies:
+はじめに、いくつかのプラグインとその依存関係をインストールする必要があります。
 
 ```shell
 npm install --save gatsby-transformer-sharp gatsby-plugin-sharp gatsby-image
 ```
 
-Place these plugins in your `gatsby-config.js` like this:
+これらのプラグインを次の`gatsby-config.js`のように記述します。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -88,26 +88,26 @@ module.exports = {
   plugins: [
     // https://public-api.wordpress.com/wp/v2/sites/gatsbyjsexamplewordpress.wordpress.com/pages/
     /*
-     * Gatsby's data processing layer begins with “source”
-     * plugins. Here the site sources its data from WordPress.
+     * Gatsby のデータ処理レイヤープラグインは、「source」という文字で始まります。
+     * ここでは、WordPress からデータを取得しています。
      */
     {
       resolve: `gatsby-source-wordpress`,
       options: {
         /*
-         * The base URL of the WordPress site without the trailing slash and the protocol. This is required.
-         * Example : 'dev-gatbsyjswp.pantheonsite.io' or 'www.example-site.com'
+         * ベースとなるURLは、プロトコルと末尾のスラッシュを省略してください。これは必須です。
+         * 例： 'dev-gatbsyjswp.pantheonsite.io' あるいは 'www.example-site.com'
          */
         baseUrl: `dev-gatbsyjswp.pantheonsite.io`,
-        // The protocol. This can be http or https.
+        // プロトコル。http もしくは https が可能です。
         protocol: `http`,
-        // Indicates whether the site is hosted on wordpress.com.
-        // If false, then the assumption is made that the site is self hosted.
-        // If true, then the plugin will source its content on wordpress.com using the JSON REST API V2.
-        // If your site is hosted on wordpress.org, then set this to false.
+        // サイトが wordpress.com でホストされているかを示します。
+        // false の場合、サイトは自ホストであると想定されます。
+        // true の場合、プラグインは JSON REST API V2 を使用して wordpress.com から取得します。
+        // もし、あなたのサイトが wordpress.org でホストされている場合、falseを選択してください。
         hostingWPCOM: false,
-        // If useACF is true, then the source plugin will try to import the WordPress ACF Plugin contents.
-        // This feature is untested for sites hosted on WordPress.com
+        // useACF が true の場合、ソースプラグインは WordPress ACF プラグインのコンテンツをインポートしようとします。
+        // この機能は、wordpress.com でホストされているサイトではテストされていません。
         useACF: true,
       },
     },
@@ -119,19 +119,19 @@ module.exports = {
 }
 ```
 
-### Creating GraphQL queries that pull in images from WordPress
+### WordPress から画像を取り込む GraphQL クエリを作成する
 
-Now you are ready to create a GraphQL query to pull in some images from the WordPress site.
+これで、GraphPress クエリを作成して、WordPress サイトから画像を取り込む準備ができました。
 
-Run:
+起動：
 
 ```shell
 npm run develop
 ```
 
-Open localhost:8000 and localhost:8000/\_\_\_graphql.
+localhost:8000 と localhost:8000/\_\_\_graphql を開いてください。
 
-Here’s an example of creating specific widths and heights for images:
+特定の幅と高さの画像を生成する例を次に示します。
 
 ```graphql
 {
@@ -142,15 +142,15 @@ Here’s an example of creating specific widths and heights for images:
           photo {
             localFile {
               childImageSharp {
-                # Try editing the "width" and "height" values.
+                # 「width」と「height」の値を変更してみてください。
                 resolutions(width: 200, height: 200) {
-                  # In the GraphQL explorer, use field names
-                  # like "src". In your site's code, remove them
-                  # and use the fragments provided by Gatsby.
+                  # GraphQL エクスプローラーでは、「src」のようなフィールド名を
+                  # 使用してください。あなたのサイトのコードでは、それらは削除し、
+                  # Gatsby から提供されているフラグメントを使用してください。
                   src
 
-                  # This fragment won't work in the GraphQL
-                  # explorer, but you can use it in your site.
+                  # このフラグメントは GraphQL エクスプローラーでは動きませんが、
+                  # あなたのサイトでは利用することができます。
                   # ...GatsbyImageSharpResolutions_withWebp
                 }
               }
@@ -163,7 +163,7 @@ Here’s an example of creating specific widths and heights for images:
 }
 ```
 
-Here’s an example query for generating different sizes of an image:
+さまざまなサイズの画像を生成するためのクエリの例を次に示します。
 
 ```graphql
 {
@@ -174,16 +174,16 @@ Here’s an example query for generating different sizes of an image:
           photo {
             localFile {
               childImageSharp {
-                # Try editing the "maxWidth" value to generate resized images.
+                # サイズが変更された画像を生成するために、「maxWidth」の値を編集してみてください。
                 fluid(maxWidth: 500) {
-                  # In the GraphQL explorer, use field names
-                  # like "src". In your site's code, remove them
-                  # and use the fragments provided by Gatsby.
+                  # GraphQL エクスプローラーでは、「src」のようなフィールド名を
+                  # 使用してください。あなたのサイトのコードでは、それらは削除し、
+                  # Gatsby から提供されているフラグメントを使用してください。
                   src
 
-                  # This fragment won't work in the GraphQL
-                  # explorer, but you can use it in your site
-                  # ...GatsbyImageSharpFluid_withWebp
+                  # このフラグメントは GraphQL エクスプローラーでは動きませんが、
+                  # あなたのサイトでは利用することができます。
+                  # ...GatsbyImageSharpResolutions_withWebp
                 }
               }
             }
@@ -195,11 +195,11 @@ Here’s an example query for generating different sizes of an image:
 }
 ```
 
-In either case, you can add traced SVG support by adding `_tracedSVG` to the end of each fragment. _Note this won’t work in the GraphQL explorer._
+どちらの場合でも、それぞれのフラグメントの末尾に`_tracedSVG`を追加することで、ベクトル化された SVG サポートを追加できます。_これは GraphQL エクスプローラーでは機能しないことに注意してください。_
 
-### Rendering the images to `index.js`
+### `index.js`に画像を表示させる
 
-Here is what your `index.js` should look like with the query added:
+`index.js`に次のようにクエリを追加します。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -236,7 +236,7 @@ export const query = graphql`
             photo {
               localFile {
                 childImageSharp {
-                  # edit the maxWidth value to generate resized images
+                  # サイズが変更された画像を生成するために「maxWidth」の値を編集してください。
                   resolutions(width: 500, height: 500) {
                     ...GatsbyImageSharpResolutions_withWebp_tracedSVG
                   }
@@ -251,15 +251,15 @@ export const query = graphql`
 `
 ```
 
-Your demo site should look something like this:
+デモサイトは次のようになります。
 
-![Demo site example](./images/wordpress-image-tutorial.gif)
+![デモサイトの例](./images/wordpress-image-tutorial.gif)
 
-### Testing your image loading speed and effects
+### 画像の読み込み速度とエフェクトをテストする
 
-It is useful and can be fun to purposefully slow down your browser to see image effects animate more slowly.
+ブラウザーを意図的に遅くして、イメージエフェクトのアニメーションをよりゆっくりと表示するのは便利で面白い場合があります。
 
-Open your browser console and change the network speed to something slower. In Chrome, you can click on the “network” tab, then on the drop down arrow next to the word “Online.” Then click “Slow 3G.” Now, reload your page and watch the blur-up and SVG effects in action. The network tab also shows statistics on when each image loaded and how much time it took them to load.
+ブラウザーコンソールを開き、ネットワーク速度をより遅い速度に変更します。Chrome では、「Network」タブをクリックして、「Online」という文字の横にあるドロップダウンアイコンをクリックします。次に「Slow 3G」をクリックします。Network タブには、各イメージがロードされた時間とロードにかかった時間に関する統計も表示されます。
 
 ![Network](./images/network.png)
 
