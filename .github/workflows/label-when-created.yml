@@ -10,8 +10,20 @@ jobs:
 
     steps:
       - name: Label when created
-        uses: actions/github@v1.0.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: actions/github-script@0.4.0
         with:
-          args: label awaiting%20review
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const owner = context.owner;
+            const repo = context.repo;
+            const issue_number = context.issue;
+
+            github.issues.addLabels({
+              owner,
+              repo,
+              issue_number,
+              labels: [
+                "status: awaiting more approval",
+                "status: awaiting review"
+              ]
+            });
