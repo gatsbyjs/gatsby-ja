@@ -1,21 +1,21 @@
 ---
-title: Querying Data in Components using StaticQuery
+title: StaticQueryを使用したコンポーネントのデータクエリー
 ---
 
-Gatsby v2 introduces `StaticQuery`, a new API that allows components to retrieve data via a GraphQL query.
+Gatsby v2 では、`StaticQuery` という GraphQL クエリーを介してコンポーネントがデータを取得できる新しい API が導入されました。
 
-In this guide, you'll see an example using `StaticQuery`, and learn about [the difference between a StaticQuery and a page query](#how-staticquery-differs-from-page-query).
+このガイドでは、`StaticQuery` を使用した例を参照し、[StaticQuery とページクエリーの違い](#how-staticquery-differs-from-page-query)について学習します。
 
-## How to use `StaticQuery` in components
+## コンポーネントでの `StaticQuery` の使用例
 
 <EggheadEmbed
   lessonLink="https://egghead.io/lessons/gatsby-load-data-using-graphql-queries-directly-in-a-gatsby-v2-component-with-staticquery"
-  lessonTitle="Load Data using GraphQL Queries Directly in a Gatsby v2 Component with StaticQuery"
+  lessonTitle="StaticQuery を備えた Gatsby v2 コンポーネントで GraphQL クエリを用いたダイレクトなデータのロード"
 />
 
-### Basic example
+### 基本的な例
 
-Here is an example of a `Header` component using `StaticQuery`:
+`StaticQuery` を使用した `Header` コンポーネントの例を次に示します。
 
 ```jsx:title=src/components/header.js
 import React from "react"
@@ -41,15 +41,16 @@ export default () => (
 )
 ```
 
-By using `StaticQuery`, you can colocate a component with its data. It is no longer required to, say, pass data down from `Layout` to `Header`.
+`StaticQuery` を使用することで、コンポーネントとそのデータを同じ場所に配置できます。たとえば、`Layout` から `Header` にデータを渡す必要はなくなります。
 
 ### useStaticQuery
 
-There's also a React hooks version of StaticQuery: check out the documentation on [`useStaticQuery`](/docs/use-static-query/)
+StaticQuery には React フック（hook）バージョンもあります。詳しくは、[`useStaticQuery`](/docs/use-static-query/) をご覧ください。
 
-### Typechecking
+### 型チェック
 
 With the above pattern, you lose the ability to typecheck with PropTypes. To regain typechecking while achieving the same result, you can change the component to:
+上記のパターンを使用すると、PropTypes で型チェックする機能が失われます。同じ結果を得ながら、型チェックを行うには、コンポーネントを次のように変更します。
 
 ```jsx:title=src/components/header.js
 import React from "react"
@@ -88,10 +89,10 @@ Header.propTypes = {
 }
 ```
 
-## How StaticQuery differs from page query
+## StaticQuery とページクエリーの違い
 
-StaticQuery can do most of the things that page query can, including fragments. The main differences are:
+StaticQuery は、フラグメントを含む、ページクエリーが行えることのほとんどを行えます。主な違いは次のとおりです。
 
-- page queries can accept variables (via `pageContext`) but can only be added to _page_ components
-- StaticQuery does not accept variables (hence the name "static"), but can be used in _any_ component, including pages
-- StaticQuery does not work with raw React.createElement calls; please use JSX, e.g. `<StaticQuery />`
+- ページクエリーは（`pageContext` を介して）変数を受け入れることができますが、追加できるのは*ページ*コンポーネントだけです。
+- StaticQuery は変数を受け入れません（そのため「static」という名前です）が、ページを含む*任意の*コンポーネントで使用できます。
+- StaticQuery は、そのままの React.createElement 呼び出しでは機能しません。たとえば、JSX を使用してください。例：`<StaticQuery />`
