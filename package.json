@@ -7,10 +7,10 @@
   ],
   "license": "MIT",
   "scripts": {
-    "format": "pretty-quick && textlint $(git diff master --name-only) --fix",
-    "format:full": "pretty-quick && textlint README.md docs/**/*.md --fix",
-    "lint": "textlint $(git diff master --name-only) -f pretty-error",
-    "lint:full": "textlint README.md docs/**/*.md -f pretty-error"
+    "format": "pretty-quick && textlint --cache $(git diff master --name-only) --fix",
+    "format:full": "pretty-quick && textlint --cache README.md docs/**/*.md --fix",
+    "lint": "textlint --cache $(git diff master --name-only) -f pretty-error",
+    "lint:full": "textlint --cache README.md docs/**/*.md -f pretty-error"
   },
   "husky": {
     "hooks": {
