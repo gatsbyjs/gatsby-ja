@@ -1,18 +1,18 @@
 ---
-title: Using a Plugin in Your Site
+title: サイトでプラグインを利用する
 ---
 
-Gatsby plugins are Node.js packages, so you can install them like other packages in node using NPM.
+Gatsby プラグインは、Node.js のパッケージです。 NPM を利用して他の node パッケージと同様にインストールできます。
 
-For example, `gatsby-transformer-json` is a package that adds support for JSON files to the Gatsby data layer.
+例えば、`gatsby-transformer-json` は JSON ファイルのサポートを Gatsby データレイヤーに追加するパッケージです。
 
-To install it, in the root of your site you run:
+インストールするには、サイトのルートディレクトリーで下記のコマンドを実行します。
 
 ```shell
 npm install --save gatsby-transformer-json
 ```
 
-Then in your site's `gatsby-config.js` you add `gatsby-transformer-json` to the plugins array like:
+次にサイトの `gatsby-config.js` にある plugins というキーの配列に `gatsby-transformer-json` を追加します。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -20,15 +20,15 @@ module.exports = {
 }
 ```
 
-Plugins can take options. For example:
+プラグインは以下のようにしてオプションを受け取ることができます。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
   plugins: [
-    // Shortcut for adding plugins without options.
+    // オプションなしでプラグインを追加するためのショートカット
     "gatsby-plugin-react-helmet",
     {
-      // Standard plugin with options example
+      // オプション付きで標準的なプラグインを追加するための例
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/data/`,
@@ -37,7 +37,7 @@ module.exports = {
     },
     {
       resolve: "gatsby-plugin-offline",
-      // Blank options, equivalent to string-only plugin
+      // options が空の場合、文字列だけでプラグインを指定したときと同等です
       options: {
         plugins: [],
       },
@@ -45,7 +45,7 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        // plugins inside plugins
+        // プラグイン内のプラグイン
         plugins: [`gatsby-remark-smartypants`],
       },
     },
@@ -53,4 +53,4 @@ module.exports = {
 }
 ```
 
-Note that plugin options will be stringified by Gatsby, so they cannot be functions.
+プラグインのオプションは Gatsby によって文字列化されるため、関数にすることはできません。
