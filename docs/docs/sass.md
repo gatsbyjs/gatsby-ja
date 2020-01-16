@@ -6,7 +6,7 @@ title: Gatsby で Sass を使用する
 
 Sass は `.sass` もしくは `.scss` ファイルを `.css` にコンパイルすることで、より高度な機能を備えたスタイルシートを作成できます。
 
-> **メモ**: `.sass` と `.scss` ファイルはスタイルを記述する文法が異なります。全ての有効な CSS 記法は SCSS でも使用可能であるため、もっとも使いやすく人気があります。これらの違いについては、[Sass documentation](https://sass-lang.com/documentation/syntax) をご覧ください。
+> **ヒント**: `.sass` と `.scss` ファイルはスタイルを記述する文法が異なります。全ての有効な CSS 記法は SCSS でも使用可能であるため、もっとも使いやすく人気があります。これらの違いについては、[Sass documentation](https://sass-lang.com/documentation/syntax) をご覧ください。
 
 ## Sass のインストールと設定
 
@@ -22,7 +22,7 @@ Sass は `.sass` もしくは `.scss` ファイルを `.css` にコンパイル�
 plugins: [`gatsby-plugin-sass`],
 ```
 
-> **メモ**: パスや `css-loader` のオプションなど、[追加のプラグインオプション](/packages/gatsby-plugin-sass/#other-options)を設定できます。
+> **ヒント**: パスや `css-loader` のオプションなど、[追加のプラグインオプション](/packages/gatsby-plugin-sass/#other-options)を設定できます。
 
 3.  スタイルシートを `.sass` もしくは `.scss` ファイルに記述し、require もしくは import で取り込みます。
 
