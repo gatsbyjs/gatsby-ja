@@ -86,6 +86,6 @@ Netlify CMS が GitHub リポジトリーにアクセスできることを確認
 
 #### Netlify CMS や GitHub、Netlify Workflow を使用する利点
 
-おめでとうございます！これで Netlify CMS がプロジェクトに正しく設定されました。Netlify CMS は Git をベースとしているため、新しい記事を作成するたびに、そのコンテンツは GitHub 上のリポジトリーに保存されます。また、 [Netlify's Continuous Deployment](https://www.netlify.com/docs/continuous-deployment/) のおかげで、あなたが記事を追加したり編集したりするたびに、最新のバージョンが自動でデプロイされることになります。
+おめでとうございます！これで Netlify CMS がプロジェクトに正しく設定されました。Netlify CMS は Git をベースとしているため、新しい記事を作成するたびに、そのコンテンツは GitHub 上のリポジトリーに保存されます。また、[Netlify's Continuous Deployment](https://www.netlify.com/docs/continuous-deployment/) のおかげで、あなたが記事を追加したり編集したりするたびに、最新のバージョンが自動でデプロイされることになります。
 
 Netlify CMS の詳しい情報と設定方法については、[Netlify CMS documentation](https://www.netlifycms.org/docs/intro/) で学ぶことができます。
