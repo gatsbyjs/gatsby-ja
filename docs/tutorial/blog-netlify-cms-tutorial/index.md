@@ -50,7 +50,7 @@ backend:
 
 `gatsby-config.js` を変更することで、サイトのメタデータ、Google アナリティクスのトラッキング ID や icon/favicon を設定できます。編集がビルドに与える変更を確認するためには、開発サーバーを終了し、`gatsby build && gatsby serve` を実行してください。
 
-また、 `README.md` や `package.json` を編集することでプロジェクトの詳細情報を含めることもできます。
+また、`README.md` や `package.json` を編集することでプロジェクトの詳細情報を含めることもできます。
 
 ### ステップ 4
 
