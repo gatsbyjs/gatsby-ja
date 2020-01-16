@@ -49,3 +49,6 @@ rules:
         to: Pull Request
       - from: pull-request
         to: Pull Request
+
+  - expected: ご覧
+    pattern: 御覧
