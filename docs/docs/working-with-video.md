@@ -52,14 +52,14 @@ import Video from "../components/video"
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="404: Not found" />
+    <SEO title="404: 見つかりません" />
     <section>
-      <h1>NOT FOUND</h1>
-      <p>You just hit a page that doesn't exist... the sadness.</p>
-      <p>May I suggest a video instead?</p>
+      <h1>ページが見つかりません</h1>
+      <p>残念ですが...検索されたページは存在しません。</p>
+      <p>代わりに映像を提案してもいいですか？</p>
       <Video
         videoSrcURL="https://www.youtube.com/embed/dQw4w9WgXcQ"
-        videoTitle="Official Music Video on YouTube"
+        videoTitle="YouTubeの公式ミュージックビデオ"
       />
     </section>
   </Layout>
@@ -76,9 +76,9 @@ export default NotFoundPage
 ---
 path: "/blog/my-first-post"
 date: "2019-03-27"
-title: "My first blog post"
+title: "私の最初のブログ投稿"
 videoSourceURL: https://www.youtube.com/embed/dQw4w9WgXcQ
-videoTitle: "Gatsby is Never Gonna Give You Up"
+videoTitle: "Gatsbyは決してあなたをあきらめない"
 ---
 ```
 
@@ -91,9 +91,9 @@ import { graphql } from "gatsby"
 import Video from "../components/video"
 
 export default function VlogTemplate({
-  data, // this prop will be injected by the GraphQL query below.
+  data, // このpropは下のGraphQLのクエリーによって注入されます。
 }) {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
+  const { markdownRemark } = data // data.markdownRemarkはあなたの投稿データを持っています
   const { frontmatter, html } = markdownRemark
   return (
     <div className="blog-post-container">
