@@ -80,7 +80,7 @@ Netlify CMS が GitHub リポジトリーにアクセスできることを確認
 
 ![Netlify and GitHub Authorization](https://cdn.netlify.com/67edd5b656c432888d736cd40125cb61376905bb/c1cba/img/docs/github-oauth-config.png)
 
-[GitHub oAuth Apps](https://github.com/settings/developers) のリストからあなたのアプリの資格情報をコピーし、それを使って認証プロバイダーを Netlify 上に作成してください。
+[GitHub OAuth Apps](https://github.com/settings/developers) のリストからあなたのアプリの資格情報をコピーし、それを使って認証プロバイダーを Netlify 上に作成してください。
 
 ![Setting up access control](netlify-install-oauth-provider.png)
 
