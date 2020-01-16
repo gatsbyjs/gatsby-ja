@@ -92,7 +92,7 @@ Gatsby テーマを開発することは、あなたが複数のテーマとサ�
 
 ### Gatsby Theme Authoring（動画コース）
 
-最新の[Gatsby テーマの開発についての Egghead コース](https://egghead.io/courses/gatsby-theme-authoring)をご覧ください。
+最新の [Gatsby テーマの開発についての Egghead コース](https://egghead.io/courses/gatsby-theme-authoring)をご覧ください。
 
 ### Building a Gatsby Theme（チュートリアル）
 
