@@ -36,7 +36,7 @@ gatsby develop
 
 ### ステップ 3
 
-コードエディターでプロジェクトを開き、 `static/admin/config.yml` を開いてください。 `your-username/your-repo-name` をあなたの GitHub のユーザー名とプロジェクト名に置き換えてください。このステップは Netlify CMS インターフェースを管理・デプロイするために重要です。
+コードエディターでプロジェクトを開き、 `static/admin/config.yml` を開いてください。`your-username/your-repo-name` をあなたの GitHub のユーザー名とプロジェクト名に置き換えてください。このステップは Netlify CMS インターフェースを管理・デプロイするために重要です。
 
 ```diff
 backend:
