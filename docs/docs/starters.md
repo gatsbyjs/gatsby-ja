@@ -2,17 +2,15 @@
 title: Gatsby スターター
 ---
 
-The Gatsby CLI tool lets you install **starters**, which are boilerplate Gatsby sites maintained by the community and intended for jump-starting development quickly.
 Gatsby CLI ツールでは、**スターター**をインストールできます。これは、コミュニティーによってメンテナンスされ、迅速に開発を開始することを目的とした定型の Gatsby サイトです。
 
 ## スターターのインストール
 
-Execute the `gatsby new` command to clone a boilerplate starter, install its dependencies, and clear Git history.
 `gatsby new` コマンドを実行して、定型のスターターのクローンし、依存関係のインストールして、Git 履歴をクリアします。
 
-### Git リポジトリー URL を使用する
+### Git リポジトリー URL の使用
 
-新しい Gatsby サイトを作成する場合、オプションで、新しいサイトのベースとなるスターターを指定できます。GitHub、GitLab、Bitbucket といった、Git 公開リポジトリーから取得できます。`[URL_OF_STARTER_GIT_REPO]` から直接取り込むことができます。
+新しい Gatsby サイトを作成する場合、オプションで、新しいサイトのベースとなるスターターを指定できます。GitHub 、GitLab 、Bitbucket といった、Git 公開リポジトリーから取得できます。`[URL_OF_STARTER_GIT_REPO]` から直接取り込むことができます。
 
 ```shell
 gatsby new [SITE_DIRECTORY] [URL_OF_STARTER_GIT_REPO]
@@ -24,10 +22,9 @@ gatsby new [SITE_DIRECTORY] [URL_OF_STARTER_GIT_REPO]
 gatsby new blog https://github.com/gatsbyjs/gatsby-starter-blog
 ```
 
-This downloads the files and initializes the site by running `npm install`.
 これにより、ファイルがダウンロードされ、`npm install` を実行することでサイトの初期化が行われます。
 
-### URL ではなく GitHub ユーザー名とリポジトリーを使用する
+### URL ではなく GitHub ユーザー名とリポジトリーの使用
 
 その他の方法として、GitHub ユーザー名とリポジトリーを指定することもできます。
 
@@ -35,7 +32,7 @@ This downloads the files and initializes the site by running `npm install`.
 gatsby new [SITE_DIRECTORY] [GITHUB_USER_NAME/REPO]
 ```
 
-`[GITHUB_USER_NAME/REPO]` の形式を次に示します。
+`[GITHUB_USER_NAME/REPO]` の使用例を次に示します。
 
 ```shell
 gatsby new blog gatsbyjs/gatsby-starter-blog
@@ -45,9 +42,9 @@ gatsby new blog gatsbyjs/gatsby-starter-blog
 
 カスタムスターターを仕様しない場合、サイトは[デフォルトスターター](https://github.com/gatsbyjs/gatsby-starter-default)から生成されます。
 
-> **注：** GitHub 公開レポジトリから Pull できないエンタープライズレベルの会社で働いている場合でも、Gatsby をセットアップできます。詳細については[ドキュメント](/docs/setting-up-gatsby-without-gatsby-new/)を御覧ください。
+> **注：** GitHub 公開レポジトリから Pull できないエンタープライズレベルの会社で働いている場合でも Gatsby をセットアップできます。詳細については[ドキュメント](/docs/setting-up-gatsby-without-gatsby-new/)を御覧ください。
 
-### ローカルスターターを使用する
+### ローカルスターターの使用
 
 もう 1 つのオプションは、スターターを含むローカルフォルダーへのパス（相対または絶対パス）を指定することです。
 
@@ -55,7 +52,7 @@ gatsby new blog gatsbyjs/gatsby-starter-blog
 gatsby new [SITE_DIRECTORY] [LOCAL_PATH_TO_STARTER]
 ```
 
-`./Code/my-local-starter`というパスが存在することを前提として、例を次に示します。
+`./Code/my-local-starter` というパスが存在することを前提として、例を次に示します。
 
 ```shell
 gatsby new blog ./Code/my-local-starter
@@ -77,7 +74,7 @@ gatsby new blog ./Code/my-local-starter
 
 Gatsby ドキュメントで[スターターを変更する方法](/docs/modifying-a-starter/)を学んでください。公式およびコミュニティのスターターをそのまま使用できますが、スタイルと機能をカスタマイズすることもできます。
 
-## スターターを作成する
+## スターターの作成
 
 Gatsby ドキュメントで[スターターを作成する方法](/docs/creating-a-starter/)を学んでください。スターターはあなたのチーム専用に作成することもできますし、より広くのコミュニティーに配布することもできます。どのようにするかはあなた次第です！
 
@@ -85,5 +82,5 @@ Gatsby ドキュメントで[スターターを作成する方法](/docs/creatin
 
 コミュニティースターターは、Gatsby コミュニティーメンバーによって作成およびメンテナンスされます。
 
-- 特定のユースケースのスターターをお探しですか？[スターターライブラリー](/starters/)に投稿されたスターターを参照してください。
+- 特定の目的のスターターをお探しですか？[スターターライブラリー](/starters/)に投稿されたスターターを参照してください。
 - 作成したスターターを共有したいですか？スターターライブラリーに[スターターを投稿する手順](/contributing/submit-to-starter-library/)を参照してください。
