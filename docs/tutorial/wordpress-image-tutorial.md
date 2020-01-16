@@ -58,7 +58,7 @@ module.exports = {
         // true の場合、プラグインは JSON REST API V2 を使用して wordpress.com から取得します。
         // もし、あなたのサイトが wordpress.org でホストされている場合、false を選択してください。
         hostingWPCOM: false,
-        // useACFがtrueの場合、ソースプラグインは WordPress ACF プラグインのコンテンツをインポートしようとします。
+        // useACF が true の場合、ソースプラグインは WordPress ACF プラグインのコンテンツをインポートしようとします。
         // この機能は、wordpress.com でホストされているサイトではテストされていません。
         useACF: true,
       },
