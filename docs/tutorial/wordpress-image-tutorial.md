@@ -78,7 +78,7 @@ module.exports = {
 npm install --save gatsby-transformer-sharp gatsby-plugin-sharp gatsby-image
 ```
 
-これらのプラグインを次の`gatsby-config.js`のように記述します。
+これらのプラグインを次の `gatsby-config.js` のように記述します。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
