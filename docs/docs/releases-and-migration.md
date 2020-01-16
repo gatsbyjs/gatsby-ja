@@ -1,8 +1,8 @@
 ---
-title: Releases & Migration
+title: リリースとマイグレーション
 overview: true
 ---
 
-Find release notes and guides on how to upgrade Gatsby along with third-party packages.
+Gatsby をサードパーティのパッケージとともにアップグレードする方法をリリースノートとガイドから検索します。
 
 <GuideList slug={props.slug} />
