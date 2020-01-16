@@ -23,20 +23,20 @@
     ]
   },
   "devDependencies": {
-    "husky": "^4.0.7",
-    "lint-staged": "^9.5.0",
+    "husky": "4.0.7",
+    "lint-staged": "9.5.0",
     "prettier": "1.19.1",
-    "pretty-quick": "^2.0.1",
-    "textlint": "^11.6.1",
-    "textlint-filter-rule-comments": "^1.2.2",
-    "textlint-filter-rule-whitelist": "^2.0.0",
-    "textlint-rule-ja-hiragana-fukushi": "^1.2.0",
-    "textlint-rule-ja-hiragana-hojodoushi": "^1.0.4",
-    "textlint-rule-ja-hiragana-keishikimeishi": "^1.0.2",
-    "textlint-rule-ja-no-space-around-parentheses": "^2.0.1",
-    "textlint-rule-ja-space-around-code": "^2.0.1",
-    "textlint-rule-preset-ja-spacing": "^2.0.1",
-    "textlint-rule-preset-ja-technical-writing": "^3.1.3",
-    "textlint-rule-preset-jtf-style": "^2.3.4"
+    "pretty-quick": "2.0.1",
+    "textlint": "11.6.1",
+    "textlint-filter-rule-comments": "1.2.2",
+    "textlint-filter-rule-whitelist": "2.0.0",
+    "textlint-rule-ja-hiragana-fukushi": "1.2.0",
+    "textlint-rule-ja-hiragana-hojodoushi": "1.0.4",
+    "textlint-rule-ja-hiragana-keishikimeishi": "1.0.2",
+    "textlint-rule-ja-no-space-around-parentheses": "2.0.1",
+    "textlint-rule-ja-space-around-code": "2.0.1",
+    "textlint-rule-preset-ja-spacing": "2.0.1",
+    "textlint-rule-preset-ja-technical-writing": "3.1.3",
+    "textlint-rule-preset-jtf-style": "2.3.4"
   }
 }
