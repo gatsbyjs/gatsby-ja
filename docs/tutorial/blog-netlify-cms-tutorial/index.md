@@ -66,7 +66,7 @@ git push -u origin master
 
 その後 [app.netlify.com](http://app.netlify.com) にアクセスし、"New site from Git" ボタンをクリックしてください。先ほど作成したリポジトリーを選択し、デフォルトの開発設定のまま "Deploy site" をクリックしてください。
 
-> \_Note: もしあなたのリポジトリーがリストに現れない場合、GitHub 上の Netlify アプリケーションをインストールもしくは再設定する必要があるかもしれません。
+> \_ヒント: もしあなたのリポジトリーがリストに現れない場合、GitHub 上の Netlify アプリケーションをインストールもしくは再設定する必要があるかもしれません。
 
 ![Netlify Dashboard for Creating a new site](netlify-dashboard.png)
 
