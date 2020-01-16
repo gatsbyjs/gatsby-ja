@@ -96,7 +96,7 @@ Gatsby テーマを開発することは、あなたが複数のテーマとサ�
 
 ### Building a Gatsby Theme（チュートリアル）
 
-[Gatsby テーマの構築チュートリアル](/tutorial/building-a-theme)をご覧ください。ステップ・バイ・ステップでこのドキュメントよりもずっと詳細に解説しています。これは[Egghead のテーマ開発コース](https://egghead.io/courses/gatsby-theme-authoring)に沿うように書かれているので、どちらも参考にできます。
+[Gatsby テーマの構築チュートリアル](/tutorial/building-a-theme)をご覧ください。ステップ・バイ・ステップでこのドキュメントよりもずっと詳細に解説しています。これは [Egghead のテーマ開発コース](https://egghead.io/courses/gatsby-theme-authoring)に沿うように書かれているので、どちらも参考にできます。
 
 ### テーマ API リファレンス
 
