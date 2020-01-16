@@ -52,5 +52,5 @@ export const query = graphql`
 
 ### 追加の資料
 
-- `gatsby-transformer-remark`を使用して、[Markdown を HTML に変換するチュートリアル](/tutorial/part-six/#transformer-plugins)
-- [Gatsby プラグインライブラリ](/plugins/?=transformer)で利用できる Transformer プラグインを探す
+- `gatsby-transformer-remark`を使用して、[Markdown を HTML に変換するチュートリアル](/tutorial/part-six/#transformer-plugins)。
+- [Gatsby プラグインライブラリ](/plugins/?=transformer)で利用できる Transformer プラグインを探す。
