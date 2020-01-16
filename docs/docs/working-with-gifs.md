@@ -41,7 +41,7 @@ export default AboutPage;
 
 ## アニメーション GIF のアクセシビリティに関する問題
 
-GIF の点滅と自動再生は、動きに敏感なユーザーの問題を引き起こす可能性があることに注意してください。安全上の理由から可能な限り GIF の自動再生をするべきではありません。方法の 1 つとしては、[react-gif-player](https://www.npmjs.com/package/react-gif-player) のようなパッケージを[クライアントサイド専用パッケージ](/docs/using-client-side-only-packages/)として使用して、GIF にコントロールを追加することです。
+GIF の点滅と自動再生は、動きに敏感なユーザーの問題を引き起こす可能性があることに注意してください。安全上の理由から可能な限り GIF の自動再生をするべきではありません。対処法の 1 つとしては、[react-gif-player](https://www.npmjs.com/package/react-gif-player) のようなパッケージを[クライアントサイド専用パッケージ](/docs/using-client-side-only-packages/)として使用して、GIF にコントロールを追加すると良いでしょう。
 
 アクセシビリティにおけるモーションの詳細については以下を参照してください。
 
