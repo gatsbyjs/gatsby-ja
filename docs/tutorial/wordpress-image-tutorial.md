@@ -48,7 +48,7 @@ module.exports = {
       options: {
         /*
          * ベースとなるURLは、プロトコルと末尾のスラッシュを省略してください。これは必須です。
-         * 例： 'dev-gatbsyjswp.pantheonsite.io' あるいは 'www.example-site.com'
+         * 例：'dev-gatbsyjswp.pantheonsite.io' あるいは 'www.example-site.com'
          */
         baseUrl: `dev-gatbsyjswp.pantheonsite.io`,
         // プロトコル。http もしくは https が可能です。
