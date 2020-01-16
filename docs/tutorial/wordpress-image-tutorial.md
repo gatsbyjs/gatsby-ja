@@ -99,7 +99,7 @@ module.exports = {
          * 例：'dev-gatbsyjswp.pantheonsite.io' あるいは 'www.example-site.com'
          */
         baseUrl: `dev-gatbsyjswp.pantheonsite.io`,
-        // プロトコル。http もしくは https が可能です。
+        // 使用するプロトコル。http もしくは https が使用可能です。
         protocol: `http`,
         // サイトが wordpress.com でホストされているかを示します。
         // false の場合、サイトは自ホストであると想定されます。
