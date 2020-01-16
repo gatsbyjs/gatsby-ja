@@ -10,7 +10,7 @@ Gatsby でのデータ変換はプラグインによって実現されていま�
 
 ### 前提条件
 
-- `gatsby-config.js`と`index.js`ページがあること。
+- `gatsby-config.js`と`index.js`ページがある。
 - `src`ディレクトリーに Markdown ファイルが保存されている。
 - `gatsby-source-filesystem`のようなソースプラグインがインストールされている。
 - `gatsby-transformer-remark`プラグインがインストールされている。
@@ -21,12 +21,12 @@ Gatsby でのデータ変換はプラグインによって実現されていま�
 
 ```js:title=gatsby-config.js
 plugins: [
-  // 省略: gatsby-source-filesystem 変換するノードを作成するため
+  // gatsby-source-filesystem を省略: 変換するノードを作成するため
   `gatsby-transformer-remark`
 ],
 ```
 
-2. MarkdownRemark ノードを取得するため、`index.js`に GraphQL クエリーを追加します。
+2. `MarkdownRemark` ノードを取得するため、`index.js`に GraphQL クエリーを追加します。
 
 ```jsx:title=src/pages/index.js
 export const query = graphql`
