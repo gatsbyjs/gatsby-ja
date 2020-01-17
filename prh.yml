@@ -64,3 +64,6 @@ rules:
 
   - expected: ご覧
     pattern: 御覧
+
+  - expected: 雛形
+    pattern: ボイラープレート
