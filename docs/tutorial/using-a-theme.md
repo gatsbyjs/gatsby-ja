@@ -91,7 +91,7 @@ my-blog
 
 > 💡 ディレクトリーの名前（ここでは`gatsby-theme-blog`）は、公開されたテーマパッケージの名前を正確に反映する必要があります。この場合は[`gatsby-theme-blog`](https://www.npmjs.com/package/gatsby-theme-blog)になります。
 
-`bio-content.js`ファイルを開き、コンテンツを編集します。
+`bio-content.js` ファイルを開き、コンテンツを編集します。
 
 ```jsx:title=bio-content.js
 import React, { Fragment } from "react"
