@@ -1,12 +1,12 @@
 ---
-title: プログラムでデータからページを作成する
+title: データからプログラムによるページを作成する
 typora-copy-images-to: ./
 disableTableOfContents: true
 ---
 
 > This tutorial is part of a series about Gatsby’s data layer. Make sure you’ve gone through [part 4](/tutorial/part-four/), [part 5](/tutorial/part-five/), and [part 6](/tutorial/part-six/) before continuing here.
 
-> このチュートリアルは、 Gatsby のデータ層についての解説のひとつです。チュートリアルを続ける前に、[パート 4](/tutorial/part-four/)、[パート 5](/tutorial/part-five/)、[パート 6](/tutorial/part-six/)を完了していることを確認してください。
+> このチュートリアルは Gatsby のデータ層に関する解説の一部です。先に、[パート 4](/tutorial/part-four/)、[パート 5](/tutorial/part-five/)、[パート 6](/tutorial/part-six/)の内容を確認してください。
 
 ## このチュートリアルは何ですか？
 
@@ -14,7 +14,7 @@ In the previous tutorial, you created a nice index page that queries markdown
 files and produces a list of blog post titles and excerpts. But you don't want to just see excerpts, you want actual pages for your
 markdown files.
 
-前回のチュートリアルでは、 Markdown を取得して、ブログ投稿のタイトルと抜粋のリストを作成する、すばらしい index ページを作成しました。しかし、抜粋だけではなく、実際の Markdown を表示するページが必要です。
+前回は Markdown を取得して、ブログ投稿のタイトルと抜粋のリストを作成し、すばらしい index ページを作成しました。しかし、抜粋だけではなく、実際の Markdown を表示するページが必要です。
 
 You could continue to create pages by placing React components in `src/pages`. However, you'll
 now learn how to _programmatically_ create pages from _data_. Gatsby is _not_
@@ -29,7 +29,7 @@ ways to use it for the remainder of this part of the tutorial.
 
 ## ページのスラッグの作成
 
-新しいページの作成には 2 つのステップがあります。
+新しいページの作成には 2 つの手順があります。
 
 1.  Generate the "path" or "slug" for the page.
 2.  Create the page.
@@ -58,7 +58,7 @@ with the name of the API from `gatsby-node.js`.
 So, here's where you'll do that. In the root of your site, create a file named
 `gatsby-node.js`. Then add the following.
 
-そのため、ここでそれを行います。サイトのルートで、`gatsby-node.js`ファイルを作成し、次のように記述します。
+サイトのルートフォルダーに、`gatsby-node.js`を作成し、次のように記述します。
 
 ```javascript:title=gatsby-node.js
 exports.onCreateNode = ({ node }) => {
@@ -82,7 +82,7 @@ nodes.
 
 Change your function so it now only logs `MarkdownRemark` nodes.
 
-`MarkdownRemark`ノードのみログを記録するように、関数を変更します。
+`MarkdownRemark`ノードだけのログを記録するように、関数を変更します。
 
 ```javascript:title=gatsby-node.js
 exports.onCreateNode = ({ node }) => {
@@ -100,7 +100,6 @@ the file name from the `MarkdownRemark` node? To get it, you need to _traverse_
 the "node graph" to its _parent_ `File` node, as `File` nodes contain data you
 need about files on disk. To do that, modify your function again:
 
-TODO
 ページのスラッグを作成するためには、各 Markdown の名前が必要です。 `pandas-and-bananas.md` は `/pandas-and-bananas/` になります。しかし、どうすれば`MarkdownRemark`ノードからファイル名を取得できるのでしょうか？`File`ノードにはあなたが必要としているファイルの情報が含まれています。
 そのために、関数を再度変更します。
 
@@ -119,7 +118,7 @@ exports.onCreateNode = ({ node, getNode }) => {
 After restarting your development server, you should see the relative paths for your two markdown
 files print to the terminal screen.
 
-開発用サーバーを再起動すると、2 つの Markdown の相対パスがターミナルの画面に表示されます。
+開発用サーバーを再起動すると、2 つの Markdown の相対パスがターミナルに表示されます。
 
 ![markdown-relative-path](markdown-relative-path.png)
 
@@ -149,7 +148,7 @@ Now you can add your new slugs directly onto the `MarkdownRemark` nodes. This is
 powerful, as any data you add to nodes is available to query later with GraphQL.
 So, it'll be easy to get the slug when it comes time to create the pages.
 
-これで新しいスラッグを `MarkdownRemark` ノードに直接追加できます。これは、 後から GraphQL でクエリーを実行できるので、強力です。そのため、ページを作成する時に、スラッグを取得するのが簡単です。
+これで新しいスラッグを `MarkdownRemark` ノードに直接追加できます。これは、 後から GraphQL でクエリーを実行できるので、強力です。そのため、ページを作成する時、スラッグを簡単に取得できます。
 
 To do so, you'll use a function passed to your API implementation called
 [`createNodeField`](/docs/actions/#createNodeField). This function
@@ -181,7 +180,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 Restart the development server and open or refresh GraphiQL. Then run this
 GraphQL query to see your new slugs.
 
-開発用サーバーを再起動して、GraphiQL を開くか更新します。次に、以下の GraphQL クエリーを実行し、新しいスラッグを確認します。
+サーバーを再起動して、GraphiQL を開くか更新します。次に、以下の GraphQL クエリーを実行して、新しいスラッグを確認します。
 
 ```graphql
 {
@@ -199,7 +198,7 @@ GraphQL query to see your new slugs.
 
 Now that the slugs are created, you can create the pages.
 
-スラッグが作成されたので、ページを作成できます。
+スラッグが作成され、ページを作成できます。
 
 ## Creating pages
 
@@ -255,20 +254,20 @@ pages.
 
 As mentioned in the intro to this part of the tutorial, the steps to programmatically creating pages are:
 
-チュートリアルの冒頭で述べたように、プログラムでページを作成するステップは次の通りです。
+冒頭で述べたように、プログラムでページを作成するステップは次の通りです。
 
 1.  Query data with GraphQL
 2.  Map the query results to pages
 
-3.  GraphQL のクエリーデータ
-4.  クエリーの結果をページにマップする
+3.  GraphQL でデータを取得する
+4.  結果をページにマッピングする
 
 The above code is the first step for creating pages from your markdown as you're
 using the supplied `graphql` function to query the markdown slugs you created.
 Then you're logging out the result of the query which should look like:
 
 上記のコードは、提供された `graphql` 関数を使用して作成された Markdown のスラッグを取得するため、 Markdown からページを作成する最初のステップです。
-次に、todo です。
+それから。
 
 ![query-markdown-slugs](query-markdown-slugs.png)
 
@@ -276,12 +275,12 @@ You need one additional thing beyond a slug to create pages: a page template
 component. Like everything in Gatsby, programmatic pages are powered by React
 components. When creating a page, you need to specify which component to use.
 
-ページを作成するために、スラッグの他にもう 1 つ追加する必要があります。ページテンプレートコンポーネントです。Gatsby の全てのように、プログラムされるページは React コンポーネントによって強化されます。ページを作成する時、使用するコンポーネントを指定する必要があります。
+ページを作成するためには、スラッグの他にもう 1 つ追加する必要があります。ページテンプレートコンポーネントです。Gatsby の他のページと同じく、プログラムされるページは React コンポーネントによって強化されます。ページを作成する時、使用するコンポーネントを指定する必要があります。
 
 Create a directory at `src/templates`, and then add the following in a file named
 `src/templates/blog-post.js`.
 
-`src/templates` ディレクトリーを作成し、 `src/templates/blog-post.js` という名前のファイルを作成して以下を追加します。
+`src/templates`ディレクトリーを追加し、`src/templates/blog-post.js`を作成して以下を追加します。
 
 ```jsx:title=src/templates/blog-post.js
 import React from "react"
@@ -296,7 +295,7 @@ export default () => {
 }
 ```
 
-`gatsby-node.js` を更新します。
+`gatsby-node.js`を更新します。
 
 ```javascript:title=gatsby-node.js
 const path = require(`path`) // highlight-line
@@ -351,20 +350,20 @@ find new pages you create while developing is to go to a random path where
 Gatsby will helpfully show you a list of pages on the site. If you go to
 <http://localhost:8000/sdf>, you'll see the new pages you created.
 
-開発用サーバーを再起動すると、ページが作成されます！開発中に作成したページを見つける簡単な方法は、Gatsby がサイトのページリストを表示してくれるランダムなパスに移動することです。<http://localhost:8000/sdf> に移動すると、作成した新しいページが表示されます。
+サーバーを再起動すると、ページが作成されました！開発中に作成したページを見つける簡単な方法は、Gatsby がサイトのページリストを表示してくれるランダムなパスに移動することです。<http://localhost:8000/sdf> に移動すると、作成した新しいページが表示されます。
 
 ![new-pages](new-pages.png)
 
 Visit one of them and you see:
 
-それらにアクセスすると、以下のように表示されます。
+それらにアクセスすると、次のように表示されます。
 
 ![hello-world-blog-post](hello-world-blog-post.png)
 
 Which is a bit boring and not what you want. Now you can pull in data from your markdown post. Change
 `src/templates/blog-post.js` to:
 
-これは少し退屈で、あなたが望むものではありません。 Markdown からデータを取得できます。 `src/templates/blog-post.js` を以下のように変更します。
+少し退屈で、あなたが望むものではありません。 Markdown の投稿からデータを取得できます。 `src/templates/blog-post.js` を次のように変更します。
 
 ```jsx:title=src/templates/blog-post.js
 import React from "react"
@@ -511,13 +510,13 @@ Gatsby's data layer. You've learned how to _source_ and _transform_ data using
 plugins, how to use GraphQL to _map_ data to pages, and then how to build _page
 template components_ where you query for data for each page.
 
-このパートでは、Gatsby のデータ層で構築する基礎を学びました。*ソース*とプラグインを使用して*変換*する方法、GraphQL 　を使ってページのデータを*マップ*する方法、各ページのデータを取得する*ページ*テンプレートコンポーネントを構築する方法を学びました。
+このパートでは、Gatsby のデータ層で構築する基礎を学びました。**ソース**とプラグインを使用して**変換**する方法、GraphQL を使ってページのデータを**マッピング**する方法、各ページのデータを取得する**ページ**テンプレート**コンポーネント**を構築する方法を学びました。
 
 ## 次は？
 
 Now that you've built a Gatsby site, where do you go next?
 
-あなたは Gatsby のサイトを構築しました。次はどこへ行きますか？
+あなたは Gatsby のサイトを構築しました。次はどうしますか？
 
 - Share your Gatsby site on Twitter and see what other people have created by searching for #gatsbytutorial! Make sure to mention @gatsbyjs in your Tweet and include the hashtag #gatsbytutorial :)
 - You could take a look at some [example sites](https://github.com/gatsbyjs/gatsby/tree/master/examples#gatsby-example-websites)
@@ -525,8 +524,9 @@ Now that you've built a Gatsby site, where do you go next?
 - See what [other people are building with Gatsby](/showcase/)
 - Check out the documentation on [Gatsby's APIs](/docs/api-specification/), [nodes](/docs/node-interface/), or [GraphQL](/docs/graphql-reference/)
 
-- Gatsby のサイトを Twitter で共有し、 #gatsbytutorial で検索して他の人が作成したものを見てみましょう！
-- あなたはいくつかの[サンプルページ](https://github.com/gatsbyjs/gatsby/tree/master/examples#gatsby-example-websites)を見ることができます。
-- より多くの[プラグイン](/docs/plugins/)を調べる
+- Gatsby のサイトを Twitter で共有し、 #gatsbytutorial で検索して、他の人が作成したサイトを見てみましょう！
+  ツイートには @gatsbyjs と、 #gatsbytutorial 　のハッシュタグを含めてください :)
+- いくつかの[サンプルページ](https://github.com/gatsbyjs/gatsby/tree/master/examples#gatsby-example-websites)を見ることができます。
+- [プラグイン](/docs/plugins/)を調べる
 - [Gatsby によって構築されたページ](/showcase/)を見る
 - [Gatsby の API](/docs/api-specification/)、[ノード](/docs/node-interface/)、[GraphQL](/docs/graphql-reference/)を調べる
