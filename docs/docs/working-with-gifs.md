@@ -27,9 +27,9 @@ const AboutPage = () => (
 export default AboutPage;
 ```
 
-## マークダウンに GIF を含める
+## Markdown に GIF を含める
 
-マークダウンによる投稿とページにアニメーション GIF を含める場合は静止画像と同じ方法になります。
+Markdown による投稿とページにアニメーション GIF を含める場合は静止画像と同じ方法になります。
 
 ```markdown
 ![otter dancing with a fish](./images/dancing-ofter.gif)
