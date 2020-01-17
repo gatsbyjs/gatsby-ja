@@ -24,25 +24,25 @@ gatsby new [SITE_DIRECTORY_NAME] [URL_OF_STARTER_GITHUB_REPO]
 
 ### ✋ コードを読む
 
-コードエディターで、"Hello World"サイト用に生成されたコードを開き、"hello-world"ディレクトリーに含まれるさまざまなディレクトリとファイルを確認します。次のようになっていることでしょう。
+コードエディターで、"Hello World" サイト用に生成されたコードを開き、"hello-world" ディレクトリーに含まれるさまざまなディレクトリとファイルを確認します。次のようになっていることでしょう。
 
-![VS Code上でのHello Worldプロジェクト](01-hello-world-vscode.png)
+![VS Code 上での Hello World プロジェクト](01-hello-world-vscode.png)
 
 _ヒント: 繰り返しますが、ここに示すエディターは Visual Studio Code です。別のエディターを使用している場合は、外観が少し異なります。_
 
 ホームページを動かしているコードを見ていきましょう。
 
-> 💡 前のセクションで`gatsby develop`を実行した後、開発サーバを止めている場合はもう一度立ち上げてください。それでは、hello-word サイトに変更を加えていきましょう！
+> 💡 前のセクションで `gatsby develop` を実行した後、開発サーバを止めている場合はもう一度立ち上げてください。それでは、hello-word サイトに変更を加えていきましょう！
 
 ## Gatsby ページに慣れる
 
-コードエディターで`/src`ディレクトリーを開きます。中に`/pages`というディレクトリーが 1 つあります。
+コードエディターで `/src` ディレクトリーを開きます。中に `/pages` というディレクトリーが 1 つあります。
 
-`src/pages/index.js`ファイルを開きます。このファイルのコードは、ひとつの div といくつかのテキスト（"Hello world!"という文字列）を含んだコンポーネントを作成します。
+`src/pages/index.js` ファイルを開きます。このファイルのコードは、ひとつの div といくつかのテキスト（"Hello world!" という文字列）を含んだコンポーネントを作成します。
 
-### ✋ "Hello World"ホームページに変更を加える
+### ✋ "Hello World" ホームページに変更を加える
 
-1. "Hello World!"という文字列を"Hello Gatsby!"に変更して、ファイルを保存します。ウィンドウを横に並べている場合、ファイルを保存すると、コードとコンテンツの変更がブラウザーへほぼ即座に反映されることがわかります。
+1. "Hello World!" という文字列を "Hello Gatsby!" に変更して、ファイルを保存します。ウィンドウを横に並べている場合、ファイルを保存すると、コードとコンテンツの変更がブラウザーへほぼ即座に反映されることがわかります。
 
 <video controls="controls" autoplay="true" loop="true">
   <source type="video/mp4" src="./02-demo-hot-reloading.mp4"></source>
@@ -51,7 +51,7 @@ _ヒント: 繰り返しますが、ここに示すエディターは Visual Stu
 
 > 💡 Gatsby は**ホットリローディング**を使用して開発プロセスをスピードアップします。基本的に、Gatsby 開発サーバーを実行している場合、Gatsby サイトのファイルをバックグラウンドで「監視」しています。ファイルを保存すると、変更がすぐにブラウザへ反映されます。ページをハードリフレッシュしたり、開発サーバーを再起動したりする必要はありません。変更はすぐに表示されます。
 
-2. 変更した内容をもう少し見やすくすることができます。`src/pages/index.js`のコードを以下のコードに置き換えて、もう一度保存してください。変更されたテキストが表示されます。テキストの色が紫色になり、フォントサイズが大きくなります。
+2. 変更した内容をもう少し見やすくすることができます。`src/pages/index.js` のコードを以下のコードに置き換えて、もう一度保存してください。変更されたテキストが表示されます。テキストの色が紫色になり、フォントサイズが大きくなります。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -61,9 +61,9 @@ export default () => (
 )
 ```
 
-> 💡 Gatsby のスタイルについてはこのチュートリアルの[**パート 2**](/tutorial/part-two/)で詳しく説明します。
+> 💡 Gatsby のスタイルについてはこのチュートリアルの[**パート 2**](/tutorial/part-two/) で詳しく説明します。
 
-3. フォントサイズのスタイルを削除し、"Hello Gatsby!"テキストをレベル 1 のヘッダーに変更し、ヘッダーの下に段落を追加します。
+3. フォントサイズのスタイルを削除し、"Hello Gatsby!" テキストをレベル 1 のヘッダーに変更し、ヘッダーの下に段落を追加します。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -99,7 +99,7 @@ export default () => (
 
 ### ちょっと待って… JavaScript に HTML？
 
-_React と JSX に精通している場合は、このセクションをスキップしてください。_React フレームワークを使用したことがない場合、JavaScript 関数の中で HTML が何をしているのか疑問に思うかもしれません。また、最初の行で"react"をインポートしているのに、どこでも使用していないのはなぜでしょう。このハイブリッドな"HTML-in-JS"は、実際には JSX と呼ばれる React 用の JavaScript の構文拡張です。React を使用した経験がなくても、このチュートリアルを進めることはできますが、興味がある方のために、簡単な解説をしましょう。
+_React と JSX に精通している場合は、このセクションをスキップしてください。_React フレームワークを使用したことがない場合、JavaScript 関数の中で HTML が何をしているのか疑問に思うかもしれません。また、最初の行で "react" をインポートしているのに、どこでも使用していないのはなぜでしょう。このハイブリッドな "HTML-in-JS" は、実際には JSX と呼ばれる React 用の JavaScript の構文拡張です。React を使用した経験がなくても、このチュートリアルを進めることはできますが、興味がある方のために、簡単な解説をしましょう。
 
 `src/pages/index.js` ファイルの元の内容をみてみましょう。
 
@@ -117,7 +117,7 @@ import React from "react"
 export default () => React.createElement("div", null, "Hello world!")
 ```
 
-これで、 `'react'`のインポートが使われているのを見つけることができます！ちょっと待って。あなたは純粋な HTML や JavaScript ではなく、JSX を書いています。ブラウザーはそれをどのように読み込むのでしょうか？短い答えとしては、読み込みません。Gatsby サイトには、ソースコードをブラウザーが解釈できるものに変換するためのツールがすでに設定されているのです。
+これで、 `'react'` のインポートが使われているのを見つけることができます！でも、ちょっと待って。あなたは純粋な HTML や JavaScript ではなく、JSX を書いています。ブラウザーはそれをどのように読み込むのでしょうか？短い答えとしては、読み込みません。Gatsby サイトには、ソースコードをブラウザーが解釈できるものに変換するためのツールがすでに設定されているのです。
 
 ## コンポーネントを使用して構築
 
@@ -125,7 +125,7 @@ export default () => React.createElement("div", null, "Hello world!")
 
 大まかに定義すると、コンポーネントはサイトを構成する要素です。 UI（ユーザーインターフェイス）部分を記述する自己完結型なコードです。
 
-Gatsby は React 上に構築されています。本文書の中で**コンポーネント**という言葉を使用したり定義する場合、私たちは**React コンポーネント**のことを指します。React コンポーネントとは、入力を受け付けて、UI 部分を記述する React エレメントを返す自己完結型のコード（通常 JSX で記述）のことです。
+Gatsby は React 上に構築されています。本文書の中で**コンポーネント**という言葉を使用したり定義する場合、私たちは **React コンポーネント**のことを指します。React コンポーネントとは、入力を受け付けて、UI 部分を記述する React エレメントを返す自己完結型のコード（通常 JSX で記述）のことです。
 
 特にあなたが開発者であるならば、コンポーネントを使用して構築しはじめる際に、CSS、HTML、JavaScript が密結合（時には1つのファイルにさえ）されることに大きな心理的変化を経験するでしょう。
 
@@ -137,7 +137,7 @@ Gatsby は React 上に構築されています。本文書の中で**コンポ�
 <button class="primary-button">Click me</button>
 ```
 
-コンポーネントの世界では、ボタンのスタイルの代わりに`PrimaryButton`コンポーネントを作成し、サイト全体で次のように使用します。
+コンポーネントの世界では、ボタンのスタイルの代わりに `PrimaryButton` コンポーネントを作成し、サイト全体で次のように使用します。
 
 <!-- prettier-ignore -->
 ```jsx
@@ -148,11 +148,11 @@ Gatsby は React 上に構築されています。本文書の中で**コンポ�
 
 ### ✋ ページコンポーネントの使用
 
-`src/pages/*.js`で定義した React コンポーネントは自動的にページになります。これを実際に見てみましょう。
+`src/pages/*.js` で定義した React コンポーネントは自動的にページになります。これを実際に見てみましょう。
 
-すでに"Hello World"スターターに付属する`src/pages/index.js`ファイルがあります。about ページを作成しましょう。
+すでに "Hello World" スターターに付属する `src/pages/index.js` ファイルがあります。about ページを作成しましょう。
 
-1. `src/pages/about.js`に新しいファイルを作成し、次のコードを新しいファイルにコピーして保存します。
+1. `src/pages/about.js` に新しいファイルを作成し、次のコードを新しいファイルにコピーして保存します。
 
 ```jsx:title=src/pages/about.js
 import React from "react"
@@ -169,14 +169,14 @@ export default () => (
 
 ![新しい about ページ](05-about-page.png)
 
-React コンポーネントを'src/pages/about.js`ファイルに配置するだけで、`/about`でアクセス可能なページを作成します。
+React コンポーネントを 'src/pages/about.js` ファイルに配置するだけで、`/about` でアクセス可能なページを作成します。
 
 ### ✋ サブコンポーネントの使用
 
-ホームページと about ページの両方が非常に大きくなってくると、多くのことを書き直す必要があります。サブコンポーネントを使用して、UI を再利用可能なパーツに分割できます。どちらのページにも`<h1>`があるので、それらを`Header`というコンポーネントとして作成しましょう。
+ホームページと about ページの両方が非常に大きくなってくると、多くのことを書き直す必要があります。サブコンポーネントを使用して、UI を再利用可能なパーツに分割できます。どちらのページにも `<h1>` があるので、それらを `Header` というコンポーネントとして作成しましょう。
 
-1. `src/components`に新しいディレクトリーを作成し、そのディレクトリー内に`header.js`というファイルを作成します。
-2. 次のコードを新しい`src/components/header.js`ファイルに追加します。
+1. `src/components` に新しいディレクトリーを作成し、そのディレクトリー内に `header.js` というファイルを作成します。
+2. 次のコードを新しい `src/components/header.js` ファイルに追加します。
 
 ```jsx:title=src/components/header.js
 import React from "react"
@@ -184,7 +184,7 @@ import React from "react"
 export default () => <h1>This is a header.</h1>
 ```
 
-3. `about.js`ファイルを変更して、`Header`コンポーネントをインポートします。`h1`のマークアップを `<Header />'に置き換えます。
+3. `about.js` ファイルを変更して、`Header` コンポーネントをインポートします。`h1` のマークアップを `<Header />' に置き換えます。
 
 ```jsx:title=src/pages/about.js
 import React from "react"
@@ -200,7 +200,7 @@ export default () => (
 
 ![Header コンポーネントの追加](06-header-component.png)
 
-ブラウザーでは、"About Gatsby"となっていたヘッダーテキストが"This is a header"に置き換えられます。ただし、"About"ページでは、"This is a header"と表示するのではなく、"About Gatsby"と表示したいことでしょう。
+ブラウザーでは、"About Gatsby" となっていたヘッダーテキストが "This is a header" に置き換えられます。ただし、"About" ページでは、"This is a header" と表示するのではなく、"About Gatsby" と表示したいことでしょう。
 
 4. `src/components/header.js` に戻り、次の変更を行います。
 
@@ -210,7 +210,7 @@ import React from "react"
 export default props => <h1>{props.headerText}</h1> {/* highlight-line */}
 ```
 
-5. `src/pages/about.js`に戻り、次の変更を行います。
+5. `src/pages/about.js` に戻り、次の変更を行います。
 
 ```jsx:title=src/pages/about.js
 import React from "react"
@@ -224,29 +224,29 @@ export default () => (
 )
 ```
 
-![Headerにデータを渡す](07-pass-data-header.png)
+![Header にデータを渡す](07-pass-data-header.png)
 
-また、ヘッダーテキストに"About Gatsby"が表示されました！
+また、ヘッダーテキストに "About Gatsby" が表示されました！
 
-### "props"とは何ですか？
+### "props" とは何ですか？
 
-先ほど、UI を描写する再利用可能なコードとして React コンポーネントを定義しました。これらの再利用可能な部品を動的にするには、それらに異なるデータを与えられるようにする必要があります。"props"と呼ばれる入力でそれを行います。Props は、React コンポーネントにプロパティを与えるためのものです。
+先ほど、UI を描写する再利用可能なコードとして React コンポーネントを定義しました。これらの再利用可能な部品を動的にするには、それらに異なるデータを与えられるようにする必要があります。"props" と呼ばれる入力でそれを行います。Props は、React コンポーネントにプロパティを与えるためのものです。
 
-`about.js`では、インポートした`Header`サブコンポーネントに`"About Gatsby"`の値を持つ`headerText`属性を渡しました。
+`about.js` では、インポートした `Header` サブコンポーネントに `"About Gatsby"` の値を持つ `headerText` 属性を渡しました。
 
 ```jsx:title=src/pages/about.js
 <Header headerText="About Gatsby" />
 ```
 
-`header.js`で、Header コンポーネントは`headerText`属性を受け取ることを期待しています（それを期待するように記述しているので）。そのため、次のようにアクセスできます。
+`header.js` で、Header コンポーネントは `headerText` 属性を受け取ることを期待しています（それを期待するように記述しているので）。そのため、次のようにアクセスできます。
 
 ```jsx:title=src/components/header.js
 <h1>{props.headerText}</h1>
 ```
 
-> 💡 JSX では、`{}`で囲むことでどのような JavaScript の構文も埋めこむことができます。これにより"props"オブジェクトから`headerText`属性にアクセスすることができるようになります。
+> 💡 JSX では、`{}`で囲むことでどのような JavaScript の構文も埋めこむことができます。これにより "props" オブジェクトから `headerText` 属性にアクセスすることができるようになります。
 
-`<Header />`コンポーネントに別の属性を渡した場合、以下のようになります。
+`<Header />` コンポーネントに別の属性を渡した場合、以下のようになります。
 
 ```jsx:title=src/pages/about.js
 <Header headerText="About Gatsby" arbitraryPhrase="is arbitrary" />
@@ -254,7 +254,7 @@ export default () => (
 
 `arbitraryPhrase` 属性には `{props.arbitraryPhrase}` でアクセスできます。
 
-6. これまで述べてきたことにより、コンポーネントが再利用可能になることを強調するにため、追加の`<Header />`コンポーネントを about ページに追加し、次のコードを`src/pages/about.js`ファイルに追加して保存します。
+6. これまで述べてきたことにより、コンポーネントが再利用可能になることを強調するにため、追加の`<Header />` コンポーネントを about ページに追加し、次のコードを `src/pages/about.js` ファイルに追加して保存します。
 
 ```jsx:title=src/pages/about.js
 import React from "react"
@@ -277,15 +277,15 @@ props を使用して異なるデータを渡すことで、コードを一切�
 
 レイアウトコンポーネントは、サイト内で複数のページで共有するためのセクションです。たとえば、Gatsby サイトには通常、共有ヘッダーとフッターを持つレイアウトコンポーネントがあります。その他、一般的にレイアウトへ追加するものとして、サイドバーやナビゲーションメニューがあります。
 
-[**パート 3**](/tutorial/part-three/)でレイアウトコンポーネントについて詳しく掘り下げます。
+[**パート 3**](/tutorial/part-three/) でレイアウトコンポーネントについて詳しく掘り下げます。
 
 ## ページ間のリンク
 
 多くの場合、ページ間をリンクする必要があります。Gatsby サイトでのルーティングを見てみましょう。
 
-### ✋ `<Link />`コンポーネントの使用
+### ✋ `<Link />` コンポーネントの使用
 
-1. インデックスページコンポーネント（`src/pages/index.js`)を開き、Gatsby の`<Link />`コンポーネントをインポートし、ヘッダーの上に追加し、パス名として`"/contact/"`の値を持つ`to`属性を指定します。
+1. インデックスページコンポーネント（`src/pages/index.js`)を開き、Gatsby の `<Link />` コンポーネントをインポートし、ヘッダーの上に追加し、パス名として `"/contact/"` の値を持つ `to` 属性を指定します。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -302,13 +302,13 @@ export default () => (
 )
 ```
 
-ホームページで新しく追加した"Contact"リンクをクリックすると、次が表示されるはずです。
+ホームページで新しく追加した "Contact" リンクをクリックすると、次が表示されるはずです。
 
 ![Gatsby dev 404 page](09-dev-404.png)
 
 Gatsby development 404 page。どうして？まだ存在しないページにリンクしようとしているからです。
 
-2. ここで、新しく"Contact"ページ用に`src/pages/contact.js`としてページコンポーネントを作成し、ホームページにリンクする必要があります。
+2. ここで、新しく "Contact" ページ用に `src/pages/contact.js` としてページコンポーネントを作成し、ホームページにリンクする必要があります。
 
 ```jsx:title=src/pages/contact.js
 import React from "react"
@@ -324,20 +324,20 @@ export default () => (
 )
 ```
 
-ファイルを保存すると、"Contact"ページを表示し、ホームページへのリンクをたどることができます。
+ファイルを保存すると、"Contact" ページを表示し、ホームページへのリンクをたどることができます。
 
 <video controls="controls" loop="true">
   <source type="video/mp4" src="./10-linking-between-pages.mp4"></source>
   <p>ごめんなさい！あなたのブラウザはこのビデオをサポートしていません。</p>
 </video>
 
-Gatsby の`<Link />`コンポーネントは、サイト内のページ間をリンクするためのものです。Gatsby サイトで処理しない外部へのリンクは、通常の HTML の`<a>`タグを使用します。
+Gatsby の `<Link />` コンポーネントは、サイト内のページ間をリンクするためのものです。Gatsby  サイトで処理しない外部へのリンクは、通常の HTML の `<a>` タグを使用します。
 
 ## Gatsby サイトのデプロイ
 
 Gatsby は**モダンなサイトジェネレーター**です。つまり、デプロイするためにセットアップするサーバーや複雑なデータベースは必要ありません。代わりに、Gatsby の`build`コマンドで、静的なサイトホスティングサービスにデプロイできるように、静的な HTML および JavaScript ファイルのディレクトリーを生成します。
 
-もし Gatsby でつくった Web サイトをはじめてデプロイするなら、[Surge](http://surge.sh/)を試してみてください。Surge は、Gatsby サイトをデプロイするための数ある「静的サイトホスティングサービス」の 1 つです。
+もし Gatsby でつくった Web サイトをはじめてデプロイするなら、[Surge](http://surge.sh/) を試してみてください。Surge は、Gatsby サイトをデプロイするための数ある「静的サイトホスティングサービス」の 1 つです。
 
 以前 Surge をセットアップしたことがない場合は、新しいターミナルウィンドウを開いてコマンドラインツールをインストールします。
 
@@ -348,13 +348,13 @@ npm install --global surge
 surge login
 ```
 
-次に、ターミナルで次のコマンドをサイトのルート上で実行してサイトをビルドします（ヒント: このコマンドをサイトのルート、この場合は hello-world フォルダーで実行していることを確認してください。`gatsby develop`を実行するために使用したのと同じウィンドウで新しいタブを開くことによって行うことができます）。
+次に、ターミナルで次のコマンドをサイトのルート上で実行してサイトをビルドします（ヒント: このコマンドをサイトのルート、この場合は hello-world フォルダーで実行していることを確認してください。`gatsby develop` を実行するために使用したのと同じウィンドウで新しいタブを開くことによって行うことができます）。
 
 ```shell
 gatsby build
 ```
 
-ビルドには 15〜30 秒かかります。ビルドが終了したら、`gatsby build`コマンドでデプロイするための準備ができたばかりのファイルを見てみるのもいいでしょう。
+ビルドには 15〜30 秒かかります。ビルドが終了したら、`gatsby build` コマンドでデプロイするための準備ができたばかりのファイルを見てみるのもいいでしょう。
 
 サイトのルートに次のターミナルコマンドを入力して、生成されたファイルのリストを確認します。これにより、`public`ディレクトリーを確認できます。
 
@@ -370,7 +370,7 @@ surge public/
 
 実行が終了すると、ターミナルに次のように表示されます。
 
-![Surgeを使用してGatsbyサイトを公開したスクリーンショット](surge-deployment.png)
+![Surge を使用して Gatsby サイトを公開したスクリーンショット](surge-deployment.png)
 
 一番下の行にリストしている Web アドレス（この場合 `lowly-pain.surge.sh`)を開いて、新しく公開したサイトを見ることができます！すばらしい！
 
