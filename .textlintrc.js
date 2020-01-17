@@ -26,6 +26,11 @@ module.exports = {
       space: "always",
       exceptPunctuation: true,
     }, // 半角文字と全角文字の切替時にスペースを入れる
+    "ja-space-around-code": {
+      before: true,
+      after: true,
+    }, // インラインコードの周りにスペースを入れる
+    "ja-no-space-around-parentheses": true, // かっこの外側、内側ともにスペースを入れない
   },
   filters: {
     // https://github.com/textlint/textlint-filter-rule-comments
