@@ -1,26 +1,26 @@
 ---
-title: Using a Gatsby Theme
+title: Gatsbyテーマを利用する
 ---
 
-While you can [get started quickly with a Gatsby theme starter](/docs/themes/getting-started/), you can also install a Gatsby theme directly to an existing Gatsby site. Gatsby themes are plugins, so you can [install and use them like any other Gatsby plugin](/docs/using-a-plugin-in-your-site/).
+[Gatsby テーマスターターを使えば簡単に開始できます](/docs/themes/getting-started/)が、Gatsby テーマはプラグインなので、[他のプラグインと同様に既存の Gatsby サイトに直接インストールする](/docs/using-a-plugin-in-your-site/)こともできます。
 
-## Installing a Theme
+## テーマのインストール
 
-Like any Gatsby plugin, Gatsby themes are Node.js packages, so you can install them like other published packages in Node using npm or [yarn, including local workspaces](#using-yarn-workspaces).
+他の Gatsby プラグインと同様に、Gatsby テーマは Node.js パッケージです。そのため、他の公開された Node パッケージのように、npm または[ローカルワークスペースを含む yarn](#Yarn-ワークスペースを利用する)でインストールできます。
 
-For example, `gatsby-theme-blog` is the official Gatsby theme for creating a blog.
+例えば、`gatsby-theme-blog`は、ブログ作成のための公式 Gatsby テーマです。
 
-To install it, run in the root of your site:
+インストールするためには、サイトのルートで以下を実行します。
 
 ```shell
 npm install --save gatsby-theme-blog
 ```
 
-## Theme options
+## テーマオプション
 
-Depending on the theme, there may be theme options that can be configured via `gatsby-config.js`.
+テーマによっては、`gatsby-config.js`でテーマオプションを設定できます。
 
-For example, `gatsby-theme-blog` can take in 4 potential options: `basePath`, `contentPath`, `assetPath`, and `mdx`. These options are also documented in the [theme's README](/packages/gatsby-theme-blog/) file.
+例えば、`gatsby-theme-blog`は、4 つのオプションを指定できます: `basePath`、`contentPath`、`assetPath`、`mdx`。これらのオプションは、[テーマの README](/packages/gatsby-theme-blog/)にも記載されています。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -29,10 +29,10 @@ module.exports = {
       resolve: `gatsby-theme-blog`,
       options: {
         /*
-        - basePath defaults to `/`
-        - contentPath defaults to `content/posts`
-        - assetPath defaults to `content/assets`
-        - mdx defaults to `true`
+        - basePathのデフォルト値は、`/`
+        - contentPathのデフォルト値は、`content/posts`
+        - assetPathのデフォルト値は、`content/assets`
+        - mdxのデフォルト値は、`true`
         */
         basePath: `/blog`,
         contentPath: `content/blogPosts`,
@@ -44,12 +44,12 @@ module.exports = {
 }
 ```
 
-To learn how to further customize a theme, check out the docs on [Gatsby theme shadowing](/docs/themes/shadowing/).
+テーマのカスタマイズ方法をさらに学ぶには、[Gatsby テーマシャドーイング](/docs/themes/shadowing/)を確認しましょう。
 
-## Published Themes
+## 公開されたテーマ
 
-Public Gatsby themes are published on npm for anyone to use. You can also publish private themes for use by your organization. Examples of private theme package hosting include the [npm registry](https://docs.npmjs.com/about-private-packages) and [GitHub Package Registry](https://help.github.com/en/github/managing-packages-with-github-package-registry/about-github-package-registry).
+パブリックな Gatsby テーマは、誰でも使えるように npm などに公開されています。組織で利用するプライベートなテーマを公開することもできます。プライベートなテーマパッケージは、例えば、[npm レジストリ](https://docs.npmjs.com/about-private-packages)や[GitHub パッケージレジストリ](https://help.github.com/en/github/managing-packages-with-github-package-registry/about-github-package-registry)にホスティングされます。
 
-## Using Yarn Workspaces
+## Yarn ワークスペースを利用する
 
-If you would like to work with unpublished themes, consider [setting up Yarn Workspaces for theme development](/blog/2019-05-22-setting-up-yarn-workspaces-for-theme-development/) and [using Yarn](/docs/gatsby-cli/#how-to-change-your-default-package-manager-for-your-next-project) instead of npm.
+公開せずにテーマを使いたい場合、npm の代わりに、[テーマ開発のための Yarn ワークスペース設定](/blog/2019-05-22-setting-up-yarn-workspaces-for-theme-development/)や[Yarn の利用](/docs/gatsby-cli/#how-to-change-your-default-package-manager-for-your-next-project)を検討しましょう。
