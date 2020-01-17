@@ -175,7 +175,7 @@ export default merge(defaultThemeColors, {
 
 上記の変更により、紫色のテーマの代わりに青色のテーマに変わりました。
 
-![Screenshot of project with updated color theme](./images/starter-blog-theme-updated-colors.png)
+![テーマカラーを更新下プロジェクトのスクリーンショット](./images/starter-blog-theme-updated-colors.png)
 
 このファイルでは、デフォルトのカラーテーマ（ここでは`defaultThemeColors`）を取り込み、特定の色を使うスタイルを置き換えています。
 
