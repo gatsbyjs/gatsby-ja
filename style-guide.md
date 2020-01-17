@@ -155,6 +155,26 @@ Homebrew をインストールするには:
 
 `yarn lint` を実行して、ローカルで textlint による校正を受けることができます。ほとんどのエラーは `yarn format` を実行することで自動修正できますが、すべてのエラーが修正されるわけではありません。必ず `yarn lint` を再度実行して残りのエラーを確認し、修正しましょう。
 
+### 最新のルールにアップデートする
+
+校正ルールをアップデートすることで、最新の基準で校正を行うことができるようになります。
+
+`git remote add` を使用して `gatsbyjs/gatsby-ja` を `upstream` リモートとして登録します。このコマンドは一度だけ実行します。`git remote` を実行して `upstream` が表示された場合は、このコマンドを実行する必要はありません。
+
+```shell
+git remote add upstream https://github.com/gatsbyjs/gatsby-ja.git
+```
+
+以下のコマンドを実行して、現在の作業ブランチを `gatsbyjs/gatsby-ja` の `master` ブランチに「接ぎ木」します。これにより最新のルール、ドキュメント、設定ファイルを手に入れることができます。
+
+```shell
+# コミットしていない変更がある場合は `git stash` で一旦退避させる。
+git fetch --prune upstream
+git rebase upstream/master
+git push -f
+# `git stash` を実行していた場合は、`git stash pop` を実行して作業データを元に戻す。
+```
+
 ## よくある質問
 
 ### 画像のリンクが切れている
