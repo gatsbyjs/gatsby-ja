@@ -87,7 +87,7 @@ my-blog
 └── package.json
 ```
 
-サイトの`src`ディレクトリーに`gatsby-theme-blog`ディレクトリーがあります。ブログテーマのディレクトリー（`node_modules/gatsby-theme-blog`）のファイルのパスと一致するパスを持つそのディレクトリーに配置されたファイルは、デフォルトのテーマより優先して読み込まれます。
+サイトの `src` ディレクトリーに `gatsby-theme-blog` ディレクトリーがあります。ブログテーマのディレクトリー（`node_modules/gatsby-theme-blog`）のファイルのパスと一致するパスを持つそのディレクトリーに配置されたファイルは、元のテーマより優先して読み込まれます。
 
 > 💡 ディレクトリーの名前（ここでは`gatsby-theme-blog`）は、公開されたテーマパッケージの名前を正確に反映する必要があります。この場合は[`gatsby-theme-blog`](https://www.npmjs.com/package/gatsby-theme-blog)になります。
 
