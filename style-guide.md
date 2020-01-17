@@ -143,6 +143,7 @@ Homebrew をインストールするには:
 | issue                    | Issue        |
 | pull request             | Pull Request |
 | intro, introduction      | はじめに     |
+| scaffold                 | 雛形         |
 
 <!-- textlint-enable -->
 
