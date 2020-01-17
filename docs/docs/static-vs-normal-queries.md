@@ -1,22 +1,22 @@
 ---
-title: Static vs Normal Queries
+title: 静的クエリーと通常クエリー
 ---
 
-Gatsby handles three varieties of GraphQL queries: Page queries (sometimes for simplicity referred to as "normal queries"), static queries using the `<StaticQuery />` component, and static queries using the `useStaticQuery` hook.
+Gatsby は、次の 3 種類の GraphQL クエリーを取り扱っています。ページクエリー（簡単のため、「通常クエリー」と呼ぶこともあります）、`<StaticQuery />` コンポーネントを使用する静的クエリー、そして `useStaticQuery` フックを使用する静的クエリーです。
 
-## Differences between varieties of GraphQL queries
+## それぞれの GraphQL クエリーの違い
 
-Static queries differ from Gatsby page queries in a number of ways. For pages, Gatsby is capable of handling queries with variables because of its awareness of page context. However, **page queries can only be made in top-level page components**.
+静的クエリーは、いくつかの点で　 Gatsby 　ページクエリーと異なります。ページクエリーの場合、Gatsby はページコンテキストを認識しているため、変数を含むクエリーを処理できます。**ただし、ページクエリはトップレベルのページコンポーネントでのみ作成できます。**
 
-In contrast, static queries do not take variables. This is because static queries are used inside specific components, and can appear lower in the component tree. Data fetched with a static query won't be dynamic (i.e. **they can't use variables**, hence the name "static" query), but they can be called at any level in the component tree.
+これに対して、静的クエリーは変数を処理できません。これは、静的クエリーが特定のコンポーネント内で使用され、そのコンポーネントツリーの下位に表示されることがあるためです。静的クエリーでフェッチされたデータは、動的ではありませんが（つまり、**変数を使用できない**ため、「静的」クエリーという名前です）が、コンポーネントツリーのどのレベルでも呼びだすことができます。
 
-_For more information on the practical differences in usage between static and normal queries, refer to the guide on [static query](/docs/static-query/#how-staticquery-differs-from-page-query). This guide discusses the differences in how they are handled internally by Gatsby_
+_静的クエリーと通常のクエリーの実際の使用法の違いに関する詳細は、[静的クエリー](/docs/static-query/#how-staticquery-differs-from-page-query)に関するガイドをご覧ください。このガイドでは、Gatsby が内部で処理する方法の違いについて説明しています。_
 
-## Keeping track of site queries during build in Redux stores
+## Redux Store でのビルド中のサイトクエリーの追跡
 
-Gatsby stores the queries from your site in Redux stores called `components` and `staticQueryComponents`. This process and a flowchart illustrating it are explained in the [query extraction](/docs/query-extraction/#store-queries-in-redux) guide.
+Gatsby は `components` や `staticQueryComponents` と呼ばれる Redux Store 内でサイトのクエリーを保持します。このプロセスとそれを説明するフローチャートは、[クエリー抽出](/docs/query-extraction/#store-queries-in-redux)ガイドで説明されています。
 
-In Redux, `staticQueryComponents` is a `Map` from component `jsonName` to `StaticQueryObject`. An example entry in that data structure looks like this:
+Redux では、`staticQueryComponents` は `Map` であり、`jsonName` コンポーネントから `StaticQueryObject` までを扱います。そのデータ構造はたとえば次のようなものです。
 
 ```javascript
 {
@@ -31,27 +31,27 @@ In Redux, `staticQueryComponents` is a `Map` from component `jsonName` to `Stati
 }
 ```
 
-In the example above, `blog-2018-07-17-announcing-gatsby-preview-995` is the key, with the object as its value in the `Map`.
+上記の例では、`Map` の `blog-2018-07-17-announcing-gatsby-preview-995` は key であり、value としてオブジェクトを持っています。
 
-The `staticQueryComponents` Redux namespace watches for updates to queries while you are developing, and adds new data to your cache when queries change.
+`staticQueryComponents` という Redux の名前空間は、開発中のクエリーの更新を監視し、クエリーが変更されるとキャッシュに新しいデータを追加します。
 
-## Replacing queries with JSON imports
+## クエリーの JSON インポートへの置き換え
 
-With the final build, there isn't a GraphQL server running to query for data. Gatsby has already [extracted](/docs/query-extraction/) and [run](/docs/query-execution/) the queries, [storing](/docs/query-execution/#save-query-results-to-redux-and-disk) them in files based on hashes in `/public/static/d/<hash>.json`. It can now remove code for GraphQL queries, because the data is already available.
+最終ビルドでは、データを参照するために起動中の GraphQL サーバーはありません。Gatsby はすでにクエリーを[抽出](/docs/query-extraction/)して[実行](/docs/query-execution/)し、`/public/static/d/<hash>.json` のハッシュに基づいてファイルに[保存](/docs/query-execution/#save-query-results-to-redux-and-disk)しています。データがすでに利用できる状態にあるため、GraphQL クエリーは削除できます。
 
-### Distinguishing between static and normal queries
+### 静的クエリーと通常クエリーの区別
 
-Babel traverses all of your source code looking for queries during query extraction. In order for Gatsby to handle static and normal queries differently, it looks for 3 specific cases in [`babel-plugin-remove-graphql-queries`](https://github.com/gatsbyjs/gatsby/blob/master/packages/babel-plugin-remove-graphql-queries/src/index.js):
+Babel はすべてのソースコードを走査して、クエリー抽出中に対象となるクエリーを探します。Gatsby が静的クエリーと通常クエリーを異なる方法で処理するために、[`babel-plugin-remove-graphql-queries`](https://github.com/gatsbyjs/gatsby/blob/master/packages/babel-plugin-remove-graphql-queries/src/index.js) にあるように次の 3 つの特定のケースを探します。
 
-1. JSX nodes with the name `StaticQuery`
-2. Calls to functions with the name `useStaticQuery`
-3. Tagged template expressions using the `gql` tag
+1. `StaticQuery` という名前を持つ JSX ノード
+2. `useStaticQuery` という名前を持つ関数の呼び出し
+3. `gql` タグが使用されているタグ付けされたテンプレート表現
 
-### Adding imports for page data
+### ページデータのインポートの追加
 
-Code that is specific for querying the GraphQL server set up during build time is no longer relevant, and can be swapped out in exchange for the JSON data that has been extracted for each query.
+GraphQL サーバーへ問い合わせるためビルド時に設定していた特定のコードは、この時点で関係なくなり、それぞれのクエリーで抽出された JSON データに置き換えることができます。
 
-The imports related to GraphQL and query declarations are changed to imports for the JSON that correspond to the query result that Gatsby found when it ran the query. Consider the following component with with a static query written using the `useStaticQuery` hook:
+GraphQL とクエリー宣言に関連するインポートは、クエリーが実行されたときに Gatsby が見つけたクエリー結果に対応する JSON のインポートに置き換えられます。`useStaticQuery` フックを使用して記述された静的クエリーを持つ次のコンポーネントを考えてみます。
 
 ```jsx
 import { useStaticQuery, graphql } from "gatsby"
@@ -72,9 +72,9 @@ export () => {
 }
 ```
 
-This component will have the query string removed and replaced with an import for the JSON file created and named with its specific hash. The Redux stores tracking the queries link the correct data to the page they correspond to.
+このコンポーネントでは、クエリー文字列が削除され、特定のハッシュ名で作成された JSON ファイルのインポートに置き換えられます。Redux Store は、クエリーを追跡して、正しいデータを対応するページにリンクします。
 
-The above component is rewritten like this:
+上記のコンポーネントは次のように書き換えられます。
 
 ```diff
 - import { useStaticQuery, graphql } from "gatsby"
@@ -98,7 +98,7 @@ export () => {
 }
 ```
 
-A page query would be updated in a similar fashion. Alhough the exact specifics of what has to change are different, the idea is the same:
+ページクエリーも同様の方法で更新されます。変更されたものの厳密な特徴は異なりますが、考え方は同じです。
 
 ```diff
 - import { graphql } from "gatsby"
@@ -124,4 +124,4 @@ A page query would be updated in a similar fashion. Alhough the exact specifics 
   }
 ```
 
-Gatsby will remove unnecessary imports like `useStaticQuery` and `graphql` from your pages along with the strings containing queries as well.
+Gatsby はクエリーを含む文字列とともに、ページから `useStaticQuery` や `graphql` といったインポートも削除します。
