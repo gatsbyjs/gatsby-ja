@@ -21,7 +21,7 @@ cd my-blog
 gatsby develop
 ```
 
-![Default screen when starting a project using gatsby blog starter](./images/starter-blog-theme-default.png)
+![Gatsbyのブログスターターを使用したプロジェクトを起動した時のデフォルト画面](./images/starter-blog-theme-default.png)
 
 ## アバターの変更
 
