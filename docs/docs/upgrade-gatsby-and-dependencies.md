@@ -1,41 +1,41 @@
 ---
-title: Upgrade for Minor or Patch Releases
+title: マイナーリリースまたはパッチリリースのアップグレード
 ---
 
-To keep up with the latest bug fixes, security patches, and minor releases from both Gatsby and its dependencies, you should upgrade often to the latest version of each one.
+Gatsby とそれに依存するパッケージの両方の最新のバグ修正、セキュリティパッチ、およびマイナーリリースに追従するには、それぞれを最新バージョンに頻繁にアップグレードする必要があります。
 
-## Semantic versioning
+## セマンティックバージョニング
 
-Like many other packages, Gatsby uses [semantic versioning](https://semver.org/) to tag new versions and indicate what kind of changes are introduced in every new release.
+他の多くのパッケージと同様に、Gatsby は[セマンティックバージョニング](https://semver.org/)を使用して新しいバージョンを付けることで、新しいリリースで導入された各種の変更を示します。
 
-This guide is meant to teach you how to upgrade Gatsby for minor or patch releases. For major changes you can refer to the [Release and Migrations](/docs/releases-and-migration/) reference guide overview for the corresponding guide to upgrade.
+このガイドは、Gatsby をマイナーリリースまたはパッチリリースについてアップグレードする方法を解説します。メジャーアップグレードに対するガイドは、[リリースと移行](/docs/releases-and-migration/)リファレンスガイドの概要をご覧ください。
 
-## Why you should upgrade Gatsby and its dependencies
+## Gatsby とそれに依存するパッケージをアップグレードすべき理由
 
-Every new version of every package comes with improvements on multiple categories from performance, accessibility, security, bug fixes, and more, so it is important to upgrade both Gatsby and its dependencies to get the latest improvements in every one of these categories.
+それぞれのパッケージの新しいバージョンには、パフォーマンス、アクセシビリティ、セキュリティ、バグ修正など、多方面での改善がなされているため、Gatsby とそれに依存するパッケージの両方をアップグレードすることは、これらの最新の改善を反映させる上で重要です。
 
-Upgrading your dependencies often on minor or patch releases also helps you to make major upgrades easier and to identify soon-to-be-deprecated functionality or APIs.
+マイナーリリースまたはパッチリリースの依存パッケージを頻繁にアップグレードすることで、メジャーアップグレードを容易にし、廃止予定の機能または API を特定するのにも役立ちます。
 
-## How to identify possible upgrades
+## 利用可能なアップグレードを特定する方法
 
-To start, you can run the `outdated` command to identify new releases for all your dependencies.
+まず、`outdated`コマンドを実行して、すべての依存パッケージに対する最新のリリースを特定できます。
 
 ```shell
 npm outdated
 ```
 
-This will output a table indicating which packages have new versions available and what is the latest version for each one.
+これにより、最新のバージョンが利用可能なパッケージ名とその最新バージョンを示すテーブルが出力されます。
 
 ```shell
 Package                            Current   Wanted   Latest  Location
 gatsby                             2.15.13  2.15.13  2.15.20
 ```
 
-## Configure your dependencies for upgrades
+## アップグレードしたい依存パッケージを設定する
 
-Depending on whether you want to update Gatsby and its dependencies for minor or patch releases you need to modify your `package.json` accordingly.
+Gatsby とそれに依存するパッケージのマイナーリリースもしくはパッチリリースのどちらをアップグレードするかによって、`package.json`を適宜変更する必要があります。
 
-If you only want to update **for patch releases**, you can add a tilde (`~`) before the version of your package:
+**パッチリリース**のみを更新したい場合は、パッケージのバージョンの前にチルダ（`〜`）を追加します。
 
 ```json:title=package.json
 "dependencies"{
@@ -43,7 +43,7 @@ If you only want to update **for patch releases**, you can add a tilde (`~`) bef
 }
 ```
 
-**For both patch and minor updates**, add a caret (`^`) before the version of your package:
+**マイナーリリースとパッチリリースの両方**を更新したい場合は、パッケージのバージョンの前にキャレット（`^`）を追加します。
 
 ```json:title=package.json
 "dependencies"{
@@ -51,45 +51,45 @@ If you only want to update **for patch releases**, you can add a tilde (`~`) bef
 }
 ```
 
-For major updates follow up with the corresponding guide from the [Release and Migrations](/docs/releases-and-migration/) reference guide overview.
+メジャーアップデートについては、[リリースと移行](/docs/releases-and-migration/)リファレンスガイドの概要から対応するガイドをご覧ください。
 
-If you are updating Gatsby, you'll likely also need to update Gatsby related plugins, you can identify them by their names starting with `gatsby-`. This only applies to plugins managed in the [gatsbyjs/gatsby](https://github.com/gatsbyjs/gatsby) repo; for community plugins check beforehand if there is a new version available for upgrading.
+Gatsby を更新する場合は、Gatsby 関連のプラグインも更新する必要があります。`gatsby-`で始まる名前から Gatsby 関連のプラグインであるどうか識別できます。このルールは、[gatsbyjs/gatsby](https://github.com/gatsbyjs/gatsby)リポジトリーで管理されているプラグインにのみ適用されます。サードパーティー製のプラグインの場合、アップグレード可能な新しいバージョンがあるかどうかを事前に確認してください。
 
-## Updating all your dependencies at once
+## すべての依存パッケージを一度に更新する
 
-After adding the corresponding annotations into your `package.json` file, you can run the update command:
+対応するアノテーションを `package.json`ファイルに追加した後、更新コマンドを実行します。
 
 ```shell
 npm update
 ```
 
-This will upgrade all your packages to the latest [wanted version](https://docs.npmjs.com/cli/outdated), such as the latest patch, minor, or major update depending on your annotations in `package.json`.
+これにより、最新のパッチリリース、マイナーリリース、メジャーリリースについて、`package.json`のアノテーションに応じて、すべてのパッケージが最新の[任意のバージョン](https://docs.npmjs.com/cli/outdated)にアップグレードされます。
 
-## Upgrade individual dependencies
+## 個々の依存パッケージをアップグレードする
 
-You can also update one package at the time with the `install` command in npm, alongside the version that you want to install:
+npm の `install`コマンドを使うことで、インストールしたいバージョンで特定のパッケージを個別に更新することもできます。
 
 ```shell
 npm install <package-name>@<version> --save
 ```
 
-You can specify the version you want to install or upgrade to, in the following formats:
+インストールまたはアップグレードするバージョンを、次の形式で指定できます。
 
-- A specific version after the `@`
-- An annotated version with `*`,`^`,`~` to indicate that you want the latest major, minor or patch release respectively.
-- Use an `x` instead of a number to indicate that you want the latest major (`x`), minor (`<major>.x`) or patch release (`<major>.<minor>.x`). For example, to install the latest patch release for a given major and minor version: `npm install package-name@2.1.x --save`
+- `@`の後に特定のバージョンを指定します。
+- 最新のメジャーリリース、マイナーリリース、またはパッチリリースを、それぞれ`*`、 `^`、 `〜`のアノテーション付きバージョンで指定します。
+- バージョンを数字ではなく `x`を使用して、最新のメジャーリリース（`x`）、マイナーリリース（`<major>.x`）、またはパッチリリース（`<major>.<minor>.x`）のバージョンを指定することもできます。たとえば、特定のメジャーバージョンとマイナーバージョンの最新のパッチリリースをインストールする場合、`npm install package-name@2.1.x --save`となります。
 
-For major upgrades, remember to follow up with the corresponding guide from the [Release and Migrations](/docs/releases-and-migration/) reference guide overview.
+メジャーアップグレードについては、[リリースと移行](/docs/releases-and-migration/)リファレンスガイドの概要から対応するガイドを必ず確認してください。
 
-## Upgrade Interactively
+## インタラクティブなアップグレード
 
-You can manually select which dependencies you want to update through the [npm-check](https://www.npmjs.com/package/npm-check) module. To do that, start by installing the module:
+[npm-check](https://www.npmjs.com/package/npm-check)モジュールを使用して、更新対象の依存パッケージを手動で選択できます。これを行うには、まずモジュールをインストールすることから始めましょう。
 
 ```shell
 npm install npm-check --save-dev
 ```
 
-Then add the corresponding script to your package.json file:
+次に、下記のコマンドを package.json ファイルに追加します。
 
 ```json:title=package.json
 {
@@ -99,21 +99,21 @@ Then add the corresponding script to your package.json file:
 }
 ```
 
-And finally, run the recently added command:
+最後に、先ほど追加したコマンドを実行します。
 
 ```shell
 npm run upgrade-interactive
 ```
 
-## Troubleshooting
+## トラブルシューティング
 
-Aside from some specific cases, such as [Gatsby's dropping of support for Node 6](/blog/2019-06-18-dropping-support-for-node-6/), upgrading for minor or patch releases should not require you to make changes to your code. It is recommended to run your suite of tests (in case you have one) after upgrading Gatsby or its dependencies.
+[Gatsby における Node 6 サポートの終了](/blog/2019-06-18-dropping-support-for-node-6/)などの特定のケースを除き、マイナーリリースもしくはパッチリリースのアップグレードでは、コードを修正する必要はありません。Gatsby またはその依存ライブラリをアップグレードした後、テストスイートがある場合は実行することをお勧めします。
 
-In case you get stuck in dependencies conflicts, you can use the [npm-force-resolutions package](https://www.npmjs.com/package/npm-force-resolutions?activeTab=readme) on npm.
+依存関係の競合が発生した場合は、[npm-force-resolutions パッケージ](https://www.npmjs.com/package/npm-force-resolutions?activeTab=readme)を使用して問題を解決できます。
 
-## Related content
+## 関連資料
 
-Check out these related guides for major upgrades of Gatsby:
+Gatsby のメジャーアップグレードについては、これらのガイドをご覧ください。
 
-- [Migrating from v1 to v2](/docs/migrating-from-v1-to-v2/)
-- [Migrating from v0 to v1](/docs/migrating-from-v0-to-v1/)
+- [v1 から v2 への移行](/docs/migrating-from-v1-to-v2/)
+- [v0 から v1 への移行](/docs/migrating-from-v0-to-v1/)
