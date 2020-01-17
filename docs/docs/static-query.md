@@ -1,8 +1,8 @@
 ---
-title: StaticQueryを使用したコンポーネントのデータクエリー
+title: StaticQueryを使用したコンポーネントでのデータ取得
 ---
 
-Gatsby v2 では、`StaticQuery` という GraphQL クエリーを介してコンポーネントがデータを取得できる新しい API が導入されました。
+Gatsby v2 では、`StaticQuery` という GraphQL クエリーを介して、コンポーネントがデータを取得できる新しい API が導入されました。
 
 このガイドでは、`StaticQuery` を使用した例を参照し、[StaticQuery とページクエリーの違い](#how-staticquery-differs-from-page-query)について学習します。
 
@@ -10,7 +10,7 @@ Gatsby v2 では、`StaticQuery` という GraphQL クエリーを介してコ�
 
 <EggheadEmbed
   lessonLink="https://egghead.io/lessons/gatsby-load-data-using-graphql-queries-directly-in-a-gatsby-v2-component-with-staticquery"
-  lessonTitle="StaticQuery を備えた Gatsby v2 コンポーネントで GraphQL クエリを用いたダイレクトなデータのロード"
+  lessonTitle="Load Data using GraphQL Queries Directly in a Gatsby v2 Component with StaticQuery（英語版）"
 />
 
 ### 基本的な例
@@ -45,12 +45,12 @@ export default () => (
 
 ### useStaticQuery
 
-StaticQuery には React フック（hook）バージョンもあります。詳しくは、[`useStaticQuery`](/docs/use-static-query/) をご覧ください。
+StaticQuery には React Hooks バージョンもあります。詳しくは、[`useStaticQuery`](/docs/use-static-query/) をご覧ください。
 
 ### 型チェック
 
 With the above pattern, you lose the ability to typecheck with PropTypes. To regain typechecking while achieving the same result, you can change the component to:
-上記のパターンを使用すると、PropTypes で型チェックする機能が失われます。同じ結果を得ながら、型チェックを行うには、コンポーネントを次のように変更します。
+上記のパターンを使用すると、PropTypes で型チェックする機能が失われます。同じ結果を得ながら型チェックを行うには、コンポーネントを次のように変更します。
 
 ```jsx:title=src/components/header.js
 import React from "react"
@@ -91,8 +91,8 @@ Header.propTypes = {
 
 ## StaticQuery とページクエリーの違い
 
-StaticQuery は、フラグメントを含む、ページクエリーが行えることのほとんどを行えます。主な違いは次のとおりです。
+StaticQuery は（フラグメントを含む）ページクエリーが行えることのほとんどを行えます。主な違いは次のとおりです。
 
-- ページクエリーは（`pageContext` を介して）変数を受け入れることができますが、追加できるのは*ページ*コンポーネントだけです。
-- StaticQuery は変数を受け入れません（そのため「static」という名前です）が、ページを含む*任意の*コンポーネントで使用できます。
+- ページクエリーは（`pageContext` を介して）変数を受け入れることができますが、追加できるのは**ページ**コンポーネントだけです。
+- StaticQuery は変数を受け入れません（そのため「static」という名前です）が、ページを含む**任意の**コンポーネントで使用できます。
 - StaticQuery は、そのままの React.createElement 呼び出しでは機能しません。たとえば、JSX を使用してください。例：`<StaticQuery />`
