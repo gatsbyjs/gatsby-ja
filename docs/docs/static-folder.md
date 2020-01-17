@@ -1,29 +1,28 @@
 ---
-title: Using the Static Folder
+title: staticフォルダを使う
 ---
 
-In general, every website needs assets: images, stylesheets, scripts, etc. When using Gatsby, we recommend
-[Importing Assets Directly](/docs/importing-assets-into-files/) in JavaScript files, because of the benefits it provides:
+通常、すべてのウェブサイトにはアセット（画像・スタイルシート・スクリプトなど）が必要です。Gatsby を使うときは、JavaScript フィイルで[アセットを直接インポートする](/docs/importing-assets-into-files/)ことをおすすめします。それは次のような利点があるからです。
 
-- Scripts and stylesheets are minified and bundled together to avoid extra network requests.
-- Missing files cause compilation errors instead of 404 errors for your users.
-- Result filenames include content hashes so you don’t need to worry about browsers caching their old versions.
+- スクリプトやスタイルシートが最小化されバンドルされます。これにより、余分なリクエストを防ぐことができます。
+- 存在しないファイルがユーザーに 404 エラーを引き起こすのではなく、コンパイルエラーを引き起こします。
+- ファイル名に中身に基づくハッシュが付加されるので、ブラウザの古いバージョンのキャッシュについて心配する必要がなくなります。
 
-However, there is an **escape hatch** that you can use to add an asset outside of the module system.
+しかし、モジュールシステムを使わずにアセットを追加することもできます。
 
-## Adding assets outside of the module system
+## モジュールシステムを使わずにアセットを追加する
 
-You can create a folder named `static` at the root of your project. Every file you put into that folder will be copied into the `public` folder. E.g. if you add a file named `sun.jpg` to the static folder, it'll be copied to `public/sun.jpg`
+あなたのプロジェクトのルートに`static`という名前のフォルダを作ると、その中のすべてのファイルは`public`フォルダにコピーされます。例えば、あなたが`sun.jpg`というファイルを static フォルダに追加したなら、それは`public/sun.jpg`にコピーされます。
 
-### Referencing your static asset
+### static アセットを参照する
 
-You can reference assets from the `static` folder in your code without anything special required:
+`static`フォルダのアセットは簡単に参照できます:
 
 ```jsx
 render() {
-  // Note: this is an escape hatch and should be used sparingly!
-  // Normally we recommend using `import` for getting asset URLs
-  // as described in the “Importing Assets Directly Into Files” page.
+  // 注意: これは非推奨の方法で、節度を持って利用されるべきです。
+  // 通常は、`import`を利用してアセットURLを取得することをおすすめします。
+  // その方法は、"アセットをファイルに直接インポートする"ページで説明されています。
   return <img src={'/logo.png'} alt="Logo" />;
 }
 ```
@@ -33,24 +32,21 @@ render() {
   lessonTitle="Use a local image from the static folder in a Gatsby component"
 />
 
-### Downsides
+### デメリット
 
-Keep in mind the downsides of this approach:
+この方法には以下のようなデメリットがあることを念頭に置いてください:
 
-- None of the files in the `static` folder will be post-processed or minified.
-- Missing files will not be called at compilation time, and will cause 404 errors for your users.
-- Result filenames won’t include content hashes, so you’ll need to add query arguments or rename them every time they change.
+- `static`フォルダの中のファイルは後処理されたり最小化されることはありません。
+- 存在しないファイルはコンパイルエラーを起こすことなく、ユーザーに対して 404 エラーを発生させます。
+- 最終的なファイル名には内容に基づくハッシュが含まれないので、中身が変わるたびにクエリ引数を加えたり、ファイル名を変更する必要があります。
 
-## When to use the `static` folder
+## いつ `static` フォルダを使うべきか
 
-Normally we recommend importing [stylesheets, images, and font assets](/docs/importing-assets-into-files/) from JavaScript. The `static`
-folder is useful as a workaround for a number of less common cases:
+通常、私たちは [スタイルシート・画像・フォントアセット](/docs/importing-assets-into-files/)を JavaScript からインポートすることを推奨します。`static`フォルダは多くのあまり典型的でないケースにおいて、抜け道として有効です。
 
-- You need a file with a specific name in the build output, such as
-  [`manifest.webmanifest`](https://developer.mozilla.org/en-US/docs/Web/Manifest).
-- You have thousands of images and need to dynamically reference their paths.
-- You want to include a small script like
-  [`pace.js`](http://github.hubspot.com/pace/docs/welcome/) outside of the
-  bundled code.
-- Some libraries may be incompatible with Webpack and you have no other option but to include it as a `<script>` tag.
-- You need to import JSON file that doesn't have a consistent schema, like [TopoJSON files](https://en.wikipedia.org/wiki/GeoJSON#TopoJSON), which is difficult to handle with GraphQL. Note that importing JSON files directly inside a page, a template, or a component using `import` syntax results in adding that file to the app bundle and increasing the size of all site's pages. Instead, it's better to place your JSON file inside the `static` folder and use the dynamic import syntax (`import('/static/myjson.json')`) within the `componentDidMount` lifecycle or the `useEffect` hook.
+- ビルド出力に特定の名前のファイルが必要なとき。例えば、[`manifest.webmanifest`](https://developer.mozilla.org/en-US/docs/Web/Manifest)
+- 数千の画像があり動的に参照しなければならないとき。
+- 小さいスクリプト（[`pace.js`](http://github.hubspot.com/pace/docs/welcome/)など）をバンドルされたコードの外で含めたいとき。
+- Webpack と互換性のないライブラリを使用しており、`<script>`タグを使用して読み込む以外の方法がないとき
+- 一貫性のないスキーマを持つ JSON ファイル（[TopoJSON files](https://en.wikipedia.org/wiki/GeoJSON#TopoJSON)）をインポートしたいとき
+  You need to import JSON file that doesn't have a consistent schema, like [TopoJSON files](https://en.wikipedia.org/wiki/GeoJSON#TopoJSON), which is difficult to handle with GraphQL. Note that importing JSON files directly inside a page, a template, or a component using `import` syntax results in adding that file to the app bundle and increasing the size of all site's pages. Instead, it's better to place your JSON file inside the `static` folder and use the dynamic import syntax (`import('/static/myjson.json')`) within the `componentDidMount` lifecycle or the `useEffect` hook.
