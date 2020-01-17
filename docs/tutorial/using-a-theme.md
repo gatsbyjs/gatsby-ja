@@ -23,7 +23,7 @@ gatsby develop
 
 ![Gatsbyのブログスターターを使用したプロジェクトを起動した時のデフォルト画面](./images/starter-blog-theme-default.png)
 
-## アバターの変更
+## アバターを変更する
 
 ブログテーマスターターには、アバター用の灰色の無地の画像が付属しています。アバター画像を選び、`/content/assets/avatar.png`の画像を上書きすることで、独自のアバターに変更できます。
 
