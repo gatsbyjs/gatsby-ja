@@ -5,15 +5,15 @@ tableOfContentsDepth: 2
 
 Gatsby コマンドラインツール (CLI) は Gatsby のアプリを起動して実行したり、デプロイのために Gatsby アプリをビルドして出力するなどの機能を使うためのエントリーポイントです。
 
-_私達はこのドキュメントと同じようなドキュメントを gatsby-cli の [README](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-cli/README.md)や、印刷するためによく使う CLI のコマンドを[チートシート](/docs/cheat-sheet/)として提供してします。_
+_私達はこのドキュメントと同じようなドキュメントを gatsby-cli の [README](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-cli/README.md) や、印刷するためによく使う CLI のコマンドを[チートシート](/docs/cheat-sheet/)として提供してします。_
 
 ## gatsby-cli の使い方
 
-Gatsby CLI (`gatsby-cli`) はグローバルにインストールして使える実行可能なプログラムです。 Gatsby CLI は [npm](https://www.npmjs.com/) から利用できます。ローカルで使用するために`npm install -g gatsby-cli`コマンドを入力してグローバルインストールしてみましょう。
+Gatsby CLI (`gatsby-cli`) はグローバルにインストールして使える実行可能なプログラムです。 Gatsby CLI は [npm](https://www.npmjs.com/) から利用できます。ローカルで使用するために `npm install -g gatsby-cli` コマンドを入力してグローバルインストールしてみましょう。
 
 `gatsby --help` を入力するとヘルプが表示されます。
 
-ほとんどの[starters](/docs/starters/)で設定されているように、これらのコマンドを`package.json`のスクリプトフィールドで使うこともできます。例えば、もし[`gatsby develop`](#develop) コマンドがアプリで使いたい場合、`package.json`を開き、以下のようなスクリプトを追加してみてください。
+ほとんどの [starters](/docs/starters/) で設定されているように、これらのコマンドを `package.json` のスクリプトフィールドで使うこともできます。例えば、もし [`gatsby develop`](#develop) コマンドがアプリで使いたい場合、`package.json` を開き、以下のようなスクリプトを追加してみてください。
 
 ```json:title=package.json
 {
