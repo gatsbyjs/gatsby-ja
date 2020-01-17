@@ -10,7 +10,7 @@ title: Gatsbyテーマを利用する
 
 例えば、`gatsby-theme-blog`は、ブログ作成のための公式 Gatsby テーマです。
 
-インストールするためには、サイトのルートで以下を実行します。
+インストールするためには、サイトのルートディレクトリーで以下を実行します。
 
 ```shell
 npm install --save gatsby-theme-blog
