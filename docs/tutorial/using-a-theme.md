@@ -179,7 +179,7 @@ export default merge(defaultThemeColors, {
 
 このファイルでは、デフォルトのカラーテーマ（ここでは `defaultThemeColors`）を取り込み、特定の色を使うスタイルを置き換えています。
 
-カスタマイズできる他のテーマの色を確認するには、公式ブログテーマ（`node_modules/gatsby-theme-blog/src/gatsby-plugin-theme-ui/colors.js`)の`colors.js`ファイルを確認してください。
+カスタマイズできる他のテーマの色を確認するには、公式ブログテーマ（`node_modules/gatsby-theme-blog/src/gatsby-plugin-theme-ui/colors.js`)の `colors.js` ファイルを確認してください。
 
 ## まとめ
 
