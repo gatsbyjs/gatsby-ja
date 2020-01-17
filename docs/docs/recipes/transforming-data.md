@@ -12,7 +12,7 @@ Gatsby でのデータ変換はプラグインによって実現されていま�
 
 - `gatsby-config.js`と`index.js`ページがある。
 - `src`ディレクトリーに Markdown ファイルが保存されている。
-- `gatsby-source-filesystem`のようなソースプラグインがインストールされている。
+- `gatsby-source-filesystem` のようなソースプラグインがインストールされている。
 - `gatsby-transformer-remark`プラグインがインストールされている。
 
 ### 進め方
