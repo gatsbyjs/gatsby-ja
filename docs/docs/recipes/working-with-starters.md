@@ -20,7 +20,7 @@ title: "レシピ: スターターを使用する"
 gatsby new {your-project-name} {link-to-starter}
 ```
 
-> _上記のコマンドをそのまま流さないでください。 -- {your-project-name} と {link-to-starter} を置き換えるのを忘れないでください!_
+> _上記のコマンドをそのまま実行しないでください。 -- {your-project-name} と {link-to-starter} を置き換えるのを忘れないでください!_
 
 3. 新しく作られたサイトを起動します。
 
