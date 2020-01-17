@@ -32,14 +32,14 @@ Gatsby チュートリアルのパート 2 へようこそ！
 
 新しい Gatsby サイトを作成することから始めます。[パート 1](/tutorial/part-one/)で使用したターミナルウィンドウを閉じて、パート 2 の新しいターミナルセッションを開始するのがよいでしょう（特にコマンドラインを初めて使う方の場合）。
 
-新しいターミナルウィンドウを開き、新しい"hello world"という gatsby サイトを作成して、開発サーバーを起動します。
+新しいターミナルウィンドウを開き、新しい「hello world」という gatsby サイトを作成して、開発サーバーを起動します。
 
 ```shell
 gatsby new tutorial-part-two https://github.com/gatsbyjs/gatsby-starter-hello-world
 cd tutorial-part-two
 ```
 
-次の構成の新しい Gatsby サイト（Gatsby の "hello world" スターターに基づいた）が作成されました。
+次の構成の新しい Gatsby サイト（Gatsby の「hello world」スターターに基づいた）が作成されました。
 
 ```text
 ├── package.json
@@ -122,7 +122,7 @@ import "./src/styles/global.css"
 gatsby develop
 ```
 
-ブラウザーでプロジェクトを表示すると、ラベンダーの背景が適用された "hello world" スターターを確認できます。
+ブラウザーでプロジェクトを表示すると、ラベンダーの背景が適用された「hello world」スターターを確認できます。
 
 ![Lavender Hello World!](global-css.png)
 
@@ -248,7 +248,7 @@ import Container from "../components/container"
 console.log(styles)
 ```
 
-`console.log(styles)`コードはインポートした結果をログ出力するので、`./about-css-modules.module.css` ファイルの処理結果を見ることができます。ブラウザーで開発者コンソール（Firefox や Chrome のデベロッパーツールを使用）を開くと、次のように表示されます。
+`console.log(styles)` コードはインポートした結果をログ出力するので、`./about-css-modules.module.css` ファイルの処理結果を見ることができます。ブラウザーで開発者コンソール（Firefox や Chrome のデベロッパーツールを使用）を開くと、次のように表示されます。
 
 ![コンソールでの CSS Module のインポート結果](css-modules-console.png)
 
@@ -307,11 +307,11 @@ CSS-in-JS は、コンポーネント指向なスタイリングのためのア�
 
 #### Gatsby で CSS-in-JS を使用する
 
-多くの様々な CSS-in-JS ライブラリーがあり、それらの多くにはすでに Gatsby プラグインがあります。この最初のチュートリアルでは CSS-in-JS の例を取り上げませんが、コミュニティーが提供しているドキュメントの[詳細をみる](/docs/styling/)ことをお勧めします。その中に、[Emotion](/docs/emotion/)と[Styled Components](/docs/styled-components/)の 2 つのライブラリのミニチュートリアルがあります。
+多くの様々な CSS-in-JS ライブラリーがあり、それらの多くにはすでに Gatsby プラグインがあります。この最初のチュートリアルでは CSS-in-JS の例を取り上げませんが、コミュニティーが提供しているドキュメントの[詳細をみる](/docs/styling/)ことをお勧めします。その中に、[Emotion](/docs/emotion/) と [Styled Components](/docs/styled-components/) の 2 つのライブラリのミニチュートリアルがあります。
 
 #### CSS-in-JS に関するお勧めの読み物
 
-さらに詳しものを読んでみたい場合は、[このムーブメントを引き起こした Christopher "vjeux" Chedeau の 2014 年のプレゼンテーション](https://speakerdeck.com/vjeux/react-css-in-js)と[Mark Dalgleish の最近の投稿"A Unified Styling Language"](https://medium.com/seek-blog/a-unified-styling-language-d0c208de2660)を参考にしてください。
+さらに詳しものを読んでみたい場合は、[このムーブメントを引き起こした Christopher "vjeux" Chedeau の 2014 年のプレゼンテーション](https://speakerdeck.com/vjeux/react-css-in-js)と [Mark Dalgleish の最近の投稿「A Unified Styling Language」](https://medium.com/seek-blog/a-unified-styling-language-d0c208de2660)を参考にしてください。
 
 ### その他の CSS の選択肢
 
