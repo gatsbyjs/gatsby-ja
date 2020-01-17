@@ -145,7 +145,7 @@ This will be my very first post on this blog!
 
 ブログのテーマには、Gatsby デフォルトの紫色のテーマが付属していますが、サイトのテーマを置き換えることで、心ゆくまで色をカスタマイズできます。このチュートリアルでは、いくつかの色を変更します。
 
-`/src/gatsby-theme-blog/gatsby-plugin-theme-ui/colors.js`を開き、ファイルのコメントアウトを外します。
+`/src/gatsby-theme-blog/gatsby-plugin-theme-ui/colors.js` を開き、ファイルのコメントアウトを外します。
 
 ```javascript:title=colors.js
 import merge from "deepmerge"
