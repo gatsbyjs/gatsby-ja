@@ -1,12 +1,12 @@
 ---
-title: useStaticQuery フックを使ったコンポーネントからのクエリ
+title: useStaticQuery フックを使ったコンポーネントからのクエリー
 ---
 
-Gatsby v2.1.0 で `useStaticQuery` が導入されました。これはビルド時に [React Hook](https://reactjs.org/docs/hooks-intro.html) を使って GraphQL のクエリを実行する新しい機能です。
+Gatsby v2.1.0 で `useStaticQuery` が導入されました。これはビルド時に [React Hook](https://reactjs.org/docs/hooks-intro.html) を使って GraphQL のクエリーを実行する新しい機能です。
 
-React コンポーネントで、 [StaticQuery](/docs/static-query/) コンポーネントと同じように GraphQL クエリを介したデータの取得とコンポーネントへの注入を行えます。
+React コンポーネントで、 [StaticQuery](/docs/static-query/) コンポーネントと同じように GraphQL クエリーを介したデータの取得とコンポーネントへの注入を行えます。
 
-このガイドでは、 `useStaticQuery` を使った例を紹介します。もし Gatsby の StaticQuery について詳しくなければ、まずは [StaticQuery とページクエリの違い](/docs/static-query/#how-staticquery-differs-from-page-query)をご覧ください。
+このガイドでは、 `useStaticQuery` を使った例を紹介します。もし Gatsby の StaticQuery について詳しくなければ、まずは [StaticQuery とページクエリーの違い](/docs/static-query/#how-staticquery-differs-from-page-query)をご覧ください。
 
 ## コンポーネントでの useStaticQuery の使い方
 
@@ -16,7 +16,7 @@ React コンポーネントで、 [StaticQuery](/docs/static-query/) コンポ�
 
 `useStaticQuery` は React Hook です。[Rules of Hooks](https://reactjs.org/docs/hooks-rules.html) のルールがすべて適用されます。
 
-GraphQL クエリを受け取って、要求されたデータを返します。それだけです！
+GraphQL クエリーを受け取って、要求されたデータを返します。それだけです！
 
 ### 基本の例
 
@@ -93,4 +93,4 @@ export default () => {
 ## 既知の制限事項
 
 - `useStaticQuery` は値を受け取れません（なので `static` という名前になっています）。しかし、ページを含む**どのような**コンポーネントでも使えます。
-- `useStaticQuery` はファイル内で単一での使用のみをサポートしています。これは Gatsby の現状のクエリの仕組みによる制限です。
+- `useStaticQuery` はファイル内で単一での使用のみをサポートしています。これは Gatsby の現状のクエリーの仕組みによる制限です。
