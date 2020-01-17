@@ -26,7 +26,7 @@ Gatsby チュートリアルのパート 2 へようこそ！
 
 ### 標準的な CSS ファイルを使用してグローバルスタイルを作成する
 
-グローバルなスタイルをサイトに追加するもっとも簡単な方法の 1 つは、グローバルな `.css`スタイルシートを使用することです。
+グローバルなスタイルをサイトに追加するもっとも簡単な方法の 1 つは、グローバルな `.css` スタイルシートを使用することです。
 
 #### ✋ 新しい Gatsby サイトの作成
 
@@ -39,7 +39,7 @@ gatsby new tutorial-part-two https://github.com/gatsbyjs/gatsby-starter-hello-wo
 cd tutorial-part-two
 ```
 
-次の構成の新しい Gatsby サイト（Gatsby の"hello world"スターターに基づいた）が作成されました。
+次の構成の新しい Gatsby サイト（Gatsby の "hello world" スターターに基づいた）が作成されました。
 
 ```text
 ├── package.json
@@ -50,7 +50,7 @@ cd tutorial-part-two
 
 #### ✋ CSS ファイルにスタイルを追加する
 
-1. 新しいプロジェクトに`.css`ファイルを作成します。
+1. 新しいプロジェクトに `.css` ファイルを作成します。
 
 ```shell
 cd src
@@ -72,7 +72,7 @@ touch global.css
 │       └── global.css
 ```
 
-2. `global.css`ファイルにいくつかのスタイルを定義します。
+2. `global.css` ファイルにいくつかのスタイルを定義します。
 
 ```css:title=src/styles/global.css
 html {
@@ -82,9 +82,9 @@ html {
 
 > ヒント: 例の css ファイルを `/src/styles/` フォルダーに配置するのは任意です。
 
-#### ✋️ `gatsby-browser.js`にスタイルシートをインクルード
+#### ✋️ `gatsby-browser.js` にスタイルシートをインクルード
 
-1. `gatsby-browser.js`を作成
+1. `gatsby-browser.js` を作成
 
 ```shell
 cd ../..
@@ -103,9 +103,9 @@ touch gatsby-browser.js
 ├── gatsby-browser.js
 ```
 
-> 💡 `gatsby-browser.js`とは何でしょうか？まだこのファイルについてあまり気にする必要はありません。今のところ、`gatsby-browser.js`は（存在する場合）Gatsby が探して使用するいくつかの特別なファイルの 1 つであるということだけ留意しておいてください。ここでは、ファイルの命名が**重要**です。もっと詳しく知りたい場合は、[ドキュメント](/docs/browser-apis/)をご覧ください。
+> 💡 `gatsby-browser.js` とは何でしょうか？まだこのファイルについてあまり気にする必要はありません。今のところ、`gatsby-browser.js` は（存在する場合）Gatsby が探して使用するいくつかの特別なファイルの 1 つであるということだけ留意しておいてください。ここでは、ファイルの命名が**重要**です。もっと詳しく知りたい場合は、[ドキュメント](/docs/browser-apis/)をご覧ください。
 
-2. 先ほど作成したスタイルシートを`gatsby-browser.js`ファイルにインポートします。
+2. 先ほど作成したスタイルシートを `gatsby-browser.js` ファイルにインポートします。
 
 ```javascript:title=gatsby-browser.js
 import "./src/styles/global.css"
@@ -114,7 +114,7 @@ import "./src/styles/global.css"
 // require('./src/styles/global.css')
 ```
 
-> ヒント: CommonJS（`require`）と ES モジュール（`import`）の両方の構文がここで機能します。どちらを選択するかわからない場合は、通常、 `import`がデフォルトとして適切です。ただし、Node.js 環境でのみ実行するファイル（`gatsby-node.js`など）を使用する場合は、`require`を使用する必要があります。
+> ヒント: CommonJS（`require`）と ES モジュール（`import`）の両方の構文がここで機能します。どちらを選択するかわからない場合は、通常、 `import` がデフォルトとして適切です。ただし、Node.js 環境でのみ実行するファイル（`gatsby-node.js` など）を使用する場合は、`require` を使用する必要があります。
 
 3. 開発サーバーを起動します。
 
@@ -122,11 +122,11 @@ import "./src/styles/global.css"
 gatsby develop
 ```
 
-ブラウザーでプロジェクトを表示すると、ラベンダーの背景が適用された"hello world"スターターを確認できます。
+ブラウザーでプロジェクトを表示すると、ラベンダーの背景が適用された "hello world" スターターを確認できます。
 
 ![Lavender Hello World!](global-css.png)
 
-> Tip: チュートリアルのこのパートでは、Gatsby サイトのスタイリングを開始するためにもっとも早く、もっとも簡単な方法に焦点を当てています。つまり、 `gatsby-browser.js`を使用して標準 CSS ファイルを直接インポートします。ほとんどの場合、グローバルスタイルを追加する最良の方法は、共有レイアウトコンポーネントを使用します。そのアプローチの詳細について[ドキュメントをご覧ください](/docs/global-css/)。
+> Tip: チュートリアルのこのパートでは、Gatsby サイトのスタイリングを開始するためにもっとも早く、もっとも簡単な方法に焦点を当てています。つまり、 `gatsby-browser.js` を使用して標準 CSS ファイルを直接インポートします。ほとんどの場合、グローバルスタイルを追加する最良の方法は、共有レイアウトコンポーネントを使用します。そのアプローチの詳細について[ドキュメントをご覧ください](/docs/global-css/)。
 
 ## コンポーネントスコープの CSS の使用
 
@@ -134,10 +134,10 @@ gatsby develop
 
 ### CSS Modules
 
-**CSS Modules**を詳細にみてみましょう。以下から引用します。
+**CSS Modules** を詳細にみてみましょう。以下から引用します。
 [CSS Modules のホームページ](https://github.com/css-modules/):
 
-> **CSS Module モジュール**は、すべてのクラス名とアニメーション名を含む CSS ファイルで、
+> **CSS Module** は、すべてのクラス名とアニメーション名を含む CSS ファイルで、
 > デフォルトでスコープをローカルにします。
 
 CSS Modules は非常に人気があります。CSS Modules を使用すると、CSS を通常どおり作成でき、はるかに安全性が高いからです。このツールは、一意のクラス名とアニメーション名を自動的に生成するため、セレクター名の衝突を心配する必要がありません。
@@ -148,9 +148,9 @@ Gatsby は、CSS Modules をすぐに使用できます。このアプローチ�
 
 このセクションでは、CSS Modules を使用して、新しいページコンポーネントを作成し、そのページコンポーネントのスタイルを設定します。
 
-最初に、新しい`Container`コンポーネントを作成します。
+最初に、新しい `Container` コンポーネントを作成します。
 
-1. `src/components`に新しいディレクトリーを作成し、この新しいディレクトリーに`container.js`という名前のファイルを作成して、次を貼り付けます。
+1. `src/components` に新しいディレクトリーを作成し、この新しいディレクトリーに `container.js` という名前のファイルを作成して、次を貼り付けます。
 
 ```jsx:title=src/components/container.js
 import React from "react"
@@ -161,9 +161,9 @@ export default ({ children }) => (
 )
 ```
 
-`container.module.css`という名前の css module ファイルをインポートしていることに気づいたことでしょう。そのファイルを作成しましょう。
+`container.module.css` という名前の css module ファイルをインポートしていることに気づいたことでしょう。そのファイルを作成しましょう。
 
-2. 同じディレクトリ（`src/components`）で、`container.module.css`ファイルを作成し、以下をコピーして貼り付けします。
+2. 同じディレクトリ（`src/components`）で、`container.module.css` ファイルを作成し、以下をコピーして貼り付けします。
 
 ```css:title=src/components/container.module.css
 .container {
@@ -172,7 +172,7 @@ export default ({ children }) => (
 }
 ```
 
-ファイル名が通常の`.css`ではなく`.module.css`で終わっていることに気付いたことでしょう。これは、この CSS ファイルをプレーンな CSS ではなく CSS module として処理する必要があることを Gatsby に伝えます。
+ファイル名が通常の `.css` ではなく `.module.css` で終わっていることに気付いたことでしょう。これは、この CSS ファイルをプレーンな CSS ではなく CSS module として処理する必要があることを Gatsby に伝えます。
 
 3. 次のファイルに新しいページコンポーネント作成します。
    `src/pages/about-css-modules.js`:
@@ -190,15 +190,15 @@ export default () => (
 )
 ```
 
-これで、`http://localhost:8000/about-css-modules/`にアクセスすると、ページは次のようになります。
+これで、`http://localhost:8000/about-css-modules/` にアクセスすると、ページは次のようになります。
 
 ![CSS module スタイルのページ](css-modules-basic.png)
 
 #### ✋ CSS Modules を使用してコンポーネントのスタイルを設定
 
-このセクションでは、名前、アバターと短いラテン語の経歴（Lorem Ipsum - ダミーテキスト）を含む人々のリストを作成します。`<User />`コンポーネントと CSS モジュールを使用したスタイルを作成します。
+このセクションでは、名前、アバターと短いラテン語の経歴（Lorem Ipsum - ダミーテキスト）を含む人々のリストを作成します。`<User />` コンポーネントと CSS モジュールを使用したスタイルを作成します。
 
-1. `src/pages/about-css-modules.module.css`という CSS のファイルを作成します。
+1. `src/pages/about-css-modules.module.css` という CSS のファイルを作成します。
 
 2. 新しいファイルに次を貼り付けます。
 
@@ -236,7 +236,7 @@ export default () => (
 }
 ```
 
-3. ファイルの最初の数行を次のように編集して、以前作成した`about-css-modules.js`ページに新しく`src/pages/about-css-modules.module.css`ファイルをインポートします。
+3. ファイルの最初の数行を次のように編集して、以前作成した `about-css-modules.js` ページに新しく `src/pages/about-css-modules.module.css` ファイルをインポートします。
 
 ```javascript:title=src/pages/about-css-modules.js
 import React from "react"
@@ -248,13 +248,13 @@ import Container from "../components/container"
 console.log(styles)
 ```
 
-`console.log(styles)`コードはインポートした結果をログ出力するので、`./about-css-modules.module.css`ファイルの処理結果を見ることができます。ブラウザーで開発者コンソール（Firefox や Chrome のデベロッパーツールを使用）を開くと、次のように表示されます。
+`console.log(styles)`コードはインポートした結果をログ出力するので、`./about-css-modules.module.css` ファイルの処理結果を見ることができます。ブラウザーで開発者コンソール（Firefox や Chrome のデベロッパーツールを使用）を開くと、次のように表示されます。
 
 ![コンソールでの CSS Module のインポート結果](css-modules-console.png)
 
-これを CSS ファイルと比較すると、それぞれのクラス名がインポートしたオブジェクトの長い文字列になっていることがわかります。例えば、`avatar`は`src-pages----about-css-modules-module---avatar---2lRF7`になっています。これらは、CSS Modules が生成するクラス名です。サイト全体で一意になることを保証しています。また、クラスを使用するのに、それらをインポートする必要があるため、CSS がどこで使用されているかが明白になります。
+これを CSS ファイルと比較すると、それぞれのクラス名がインポートしたオブジェクトの長い文字列になっていることがわかります。例えば、`avatar` は `src-pages----about-css-modules-module---avatar---2lRF7` になっています。これらは、CSS Modules が生成するクラス名です。サイト全体で一意になることを保証しています。また、クラスを使用するのに、それらをインポートする必要があるため、CSS がどこで使用されているかが明白になります。
 
-4. `about-css-modules.js`ページコンポーネントにインラインで`<User />`コンポーネントを新しく作成します。`about-css-modules.js`を次のように変更します。
+4. `about-css-modules.js` ページコンポーネントにインラインで `<User />` コンポーネントを新しく作成します。`about-css-modules.js` を次のように変更します。
 
 ```jsx:title=src/pages/about-css-modules.js
 import React from "react"
@@ -295,7 +295,7 @@ export default () => (
 )
 ```
 
-> Tip: 一般に、サイト内の複数箇所でコンポーネントを使用する場合、 `components`ディレクトリに独自のモジュールファイルを配置する必要があります。ただし、1 つのファイルでのみ使用する場合は、インラインで作成します。
+> Tip: 一般に、サイト内の複数箇所でコンポーネントを使用する場合、 `components` ディレクトリに独自のモジュールファイルを配置する必要があります。ただし、1 つのファイルでのみ使用する場合は、インラインで作成します。
 
 完成したページは次のようになります。
 
