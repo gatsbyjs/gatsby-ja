@@ -63,9 +63,9 @@ module.exports = {
 
 ## 自己紹介を変更する
 
-Gatsby テーマを使用すると、`Component Shadowing`と呼ばれるものを利用できます。これによりテーマに含まれるデフォルトのコンポーネントの内容を、作成したカスタムコンポーネントの内容で置き換えることができます。
+Gatsby テーマを使用すると、コンポーネントシャドウイングと呼ばれるものを利用できます。これによりテーマに含まれるデフォルトのコンポーネントの内容を、作成したカスタムコンポーネントの内容で置き換えることができます。
 
-Gatsby の公式ブログテーマのパッケージには、サイト作成者の自己紹介のコンテンツを含むコンポーネントがあります。そのコンポーネントへのファイルパス（サイトのパスではなくブログテーマ内）は、`gatsby-theme-blog/src/components/bio-content.js`です。このファイルパスは、サイトの `node_modules/gatsby-theme-blog`ディレクトリのテーマを調べることで見つけることができます。
+Gatsby の公式ブログテーマのパッケージには、サイト作成者の自己紹介のコンテンツを含むコンポーネントがあります。そのコンポーネントへのファイルパス（サイトのパスではなくブログテーマ内）は、`gatsby-theme-blog/src/components/bio-content.js`です。このファイルパスは、サイトの `node_modules/gatsby-theme-blog`ディレクトリーのテーマを調べることで見つけることができます。
 
 ファイルツリーを見ると、次のように表示されます。
 
@@ -87,9 +87,9 @@ my-blog
 └── package.json
 ```
 
-サイトの`src`ディレクトリに`gatsby-theme-blog`ディレクトリがあります。ブログテーマのディレクトリ（`node_modules/gatsby-theme-blog`）のファイルのパスと一致するパスを持つそのディレクトリに配置されたファイルは、デフォルトのテーマより優先して読み込まれます。
+サイトの`src`ディレクトリーに`gatsby-theme-blog`ディレクトリーがあります。ブログテーマのディレクトリー（`node_modules/gatsby-theme-blog`）のファイルのパスと一致するパスを持つそのディレクトリーに配置されたファイルは、デフォルトのテーマより優先して読み込まれます。
 
-> 💡 ディレクトリの名前（ここでは`gatsby-theme-blog`）は、公開されたテーマパッケージの名前を正確に反映する必要があります。この場合は[`gatsby-theme-blog`](https://www.npmjs.com/package/gatsby-theme-blog)になります。
+> 💡 ディレクトリーの名前（ここでは`gatsby-theme-blog`）は、公開されたテーマパッケージの名前を正確に反映する必要があります。この場合は[`gatsby-theme-blog`](https://www.npmjs.com/package/gatsby-theme-blog)になります。
 
 `bio-content.js`ファイルを開き、コンテンツを編集します。
 
@@ -132,7 +132,7 @@ This will be my very first post on this blog!
 
 ### デモコンテンツを削除する
 
-`/content/posts`ディレクトリにある 2 つのデモコンテンツを削除します。
+`/content/posts`ディレクトリーにある 2 つのデモコンテンツを削除します。
 
 - `my-blog/content/posts/hello-world.mdx`
 - `my-blog/content/posts/my-second-post.mdx`
@@ -179,7 +179,7 @@ export default merge(defaultThemeColors, {
 
 このファイルでは、デフォルトのカラーテーマ（ここでは`defaultThemeColors`）を取り込み、特定の色を使うスタイルを置き換えています。
 
-カスタマイズできる他のテーマの色を確認するには、公式ブログテーマ（`node_modules/gatsby-theme-blog/src/gatsby-plugin-theme-ui/colors.js`)の`colors.js`ファイルを確認してください
+カスタマイズできる他のテーマの色を確認するには、公式ブログテーマ（`node_modules/gatsby-theme-blog/src/gatsby-plugin-theme-ui/colors.js`)の`colors.js`ファイルを確認してください。
 
 ## まとめ
 
