@@ -109,7 +109,7 @@ export default () => (
 
 アバター、サイトの情報、自身の自己紹介を更新することで、以下のようなサイトの見た目になります。
 
-![Screenshot of project with current tutorial edits](./images/starter-blog-theme-edited.png)
+![現在のチュートリアルで編集したプロジェクトのスクリーンショット](./images/starter-blog-theme-edited.png)
 
 ## 独自のブログコンテンツを追加する
 
