@@ -3,9 +3,9 @@ title: 映像を使用する
 ---
 
 - [ホストから映像を取得する](#ホストから映像を取得する)
-- [ホストされた映像をマークダウンに埋め込む](#ホストされた映像をマークダウンに埋め込む)
+- [ホストされた映像を Markdown に埋め込む](#ホストされた映像を-Markdown-に埋め込む)
 - [ホストされた映像のためのコンポーネントを作成する](#ホストされた映像のためのコンポーネントを作成する)
-- [GraphQL を使用してマークダウンから映像を要求する](#GraphQL-を使用してマークダウンから映像を要求する)
+- [GraphQL を使用して Markdown から映像を要求する](#GraphQL-を使用して-Markdown-から映像を要求する)
 - [独自の映像ファイルをホスティングする](#独自の映像ファイルをホスティングする)
 - [カスタム映像プレイヤーを使用する](#カスタム映像プレイヤーを使用する)
 
@@ -13,9 +13,9 @@ title: 映像を使用する
 
 Gatsby サイトに映像を埋め込むもっとも簡単な方法は、YouTube や Vimeo、Twitch のようなサイトにアップロードされた映像を取得することです。ホストされた映像の URL をもとに、Remark のプラグインを使用するか、`<iframe>`を使用することで、Gatsby サイトに映像を埋め込むことができます。
 
-## ホストされた映像をマークダウンに埋め込む
+## ホストされた映像を Markdown に埋め込む
 
-ホストされた映像をマークダウンの投稿やページから使用できるようにする Gatsby プラグインが多数あります。 YouTube や Vimeo などのさまざまなホストから取得するには、[gatsby-remark-embed-video](/packages/gatsby-remark-embed-video/?=video)プラグインを確認することをお勧めします。
+ホストされた映像を Markdown の投稿やページから使用できるようにする Gatsby プラグインが多数あります。 YouTube や Vimeo などのさまざまなホストから取得するには、[gatsby-remark-embed-video](/packages/gatsby-remark-embed-video/?=video)プラグインを確認することをお勧めします。
 
 ### ホストされた映像のためのコンポーネントを作成する
 
@@ -41,7 +41,7 @@ const Video = ({ videoSrcURL, videoTitle, ...props }) => (
 export default Video
 ```
 
-次に、このコンポーネントを、映像の URL とタイトルの props と共にテンプレートまたはページへ加えます。URL およびタイトルなどの映像のデータは、JSON のインポートや[GraphQL を使用してマークダウンから映像を要求する](#GraphQL-を使用してマークダウンから映像を要求する)など、複数の方法で取得できます。また、404 ページでイースターエッグとして YouTube 映像を表示するなど、映像を何か面白いものに使用することもできます。
+次に、このコンポーネントを、映像の URL とタイトルの props と共にテンプレートまたはページへ加えます。URL およびタイトルなどの映像のデータは、JSON のインポートや[GraphQL を使用して Markdown から映像を要求する](#GraphQL-を使用してMarkdownから映像を要求する)など、複数の方法で取得できます。また、404 ページでイースターエッグとして YouTube 映像を表示するなど、映像を何か面白いものに使用することもできます。
 
 ```jsx:title=src/pages/404.js
 import React from "react"
@@ -68,9 +68,9 @@ const NotFoundPage = () => (
 export default NotFoundPage
 ```
 
-## GraphQL を使用してマークダウンから映像を要求する
+## GraphQL を使用して Markdown から映像を要求する
 
-マークダウンのページまたは投稿が特定の映像を含む場合は、[その frontmatter]（/docs/adding-markdown-pages＃note-on-creating-markdown-files）に映像の URL とタイトルを含めることができます。これにより、これらの値をカスタムコンポーネントに渡すことができます。
+Markdown のページまたは投稿が特定の映像を含む場合は、[その frontmatter]（/docs/adding-markdown-pages＃note-on-creating-markdown-files）に映像の URL とタイトルを含めることができます。これにより、これらの値をカスタムコンポーネントに渡すことができます。
 
 ```markdown:title=my-first-post.md
 ---
