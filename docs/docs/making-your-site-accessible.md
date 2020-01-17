@@ -55,18 +55,18 @@ Gatsby は、`eslint-plugin-jsx-a11y`パッケージとともにリリースさ�
 
 ## アクセシビリティを向上させるには？
 
-アクセシビリティがデフォルトであることは、誰にとってもメリットがあります。以下は、Gatsby のサイトやテーマを作成するときのアクセシビリティ・テストの開始点です。
+アクセシビリティがデフォルトであることは、誰にとってもメリットがあります。以下は、Gatsby のサイトやテーマを作成するときのアクセシビリティテストの開始点です。
 
-- [タブキーボードを使用して](https://webaim.org/techniques/keyboard/)ページを移動します。すべてのインタラクティブコントロール（リンク、ボタン、フォーム入力など）をキーボードだけで操作できたり、フォーカスインジケーターを画面に表示できますか？
-- 開発において[Lighthouse](https://developers.google.com/web/tools/lighthouse/)、[axe](https://www.deque.com/axe/)、もしくは、[Accessibility Insights](https://accessibilityinsights.io/)を用いてよくあるアクセシビリティの問題を検出して修正する
-- [Chrome 開発者ツールのアクセシビリティカラーピッカー](https://developers.google.com/web/updates/2018/01/devtools#contrast)を用いて、[適切なカラーコントラスト比](https://dequeuniversity.com/tips/color-contrast)を検証します
-- 包括的で[アクセシブルなフォーム](/docs/building-a-contact-form#creating-an-accessible-form)を作る
-- アクセシブルな[見出し、ランドマーク、セマンティックな構造](https://webaim.org/techniques/semanticstructure/)を作る
-- [画像、映像、音声にテキストによる代替手段](https://a11y-style-guide.com/style-guide/section-media.html)を含める
-- [画面の拡大とズーム](https://axesslab.com/make-site-accessible-screen-magnifiers/)のテストをする
-- [インタラクティブなメニュー、モーダル、カスタム・ウィジェット](https://developer.mozilla.org/en-US/docs/Web/Accessibility/An_overview_of_accessible_web_applications_and_widgets)のアクセシビリティを担保する
-- 安全な[アニメーションやモーション](https://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity/)を作る
-- サイトやアプリケーションのための [Cypress アクセシビリティテスト](/docs/end-to-end-testing/#writing-tests)を書く
+- [キーボードを使用して](https://webaim.org/techniques/keyboard/)タブでページを移動します。すべてのインタラクティブなコントロール（リンク、ボタン、フォーム入力など）をキーボードだけで操作できたり、フォーカスインジケーターを表示できますか？
+- 開発において[Lighthouse](https://developers.google.com/web/tools/lighthouse/?hl=ja)、[axe](https://www.deque.com/axe/)、もしくは、[Accessibility Insights](https://accessibilityinsights.io/)を用いてよくあるアクセシビリティの問題を検出して修正
+- [Chrome 開発者ツールのアクセシビリティカラーピッカー](https://developers.google.com/web/updates/2018/01/devtools?hl=ja#contrast)を用いて、[適切なカラーコントラスト比](https://dequeuniversity.com/tips/color-contrast)を検証
+- 包括的で[アクセシブルなフォーム](/docs/building-a-contact-form#creating-an-accessible-form)の作成
+- アクセシブルな[見出し、ランドマーク、セマンティックな構造](https://webaim.org/techniques/semanticstructure/)を作成
+- [画像、映像、音声にテキストによる代替手段](https://a11y-style-guide.com/style-guide/section-media.html)を
+- [画面の拡大とズーム](https://axesslab.com/make-site-accessible-screen-magnifiers/)のテスト
+- [インタラクティブなメニュー、モーダル、カスタム・ウィジェット](https://developer.mozilla.org/ja/docs/Web/Accessibility/An_overview_of_accessible_web_applications_and_widgets)のアクセシビリティ担保
+- 安全な[アニメーションやモーション](https://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity/)の作成
+- サイトやアプリケーションのための [Cypress アクセシビリティテスト](/docs/end-to-end-testing/#writing-tests)の記述
 
 ## アクセシビリティの参考資料
 
