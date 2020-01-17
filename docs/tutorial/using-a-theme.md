@@ -132,7 +132,7 @@ This will be my very first post on this blog!
 
 ### デモコンテンツを削除する
 
-`/content/posts`ディレクトリーにある 2 つのデモコンテンツを削除します。
+`/content/posts` ディレクトリーにある 2 つのデモコンテンツを削除します。
 
 - `my-blog/content/posts/hello-world.mdx`
 - `my-blog/content/posts/my-second-post.mdx`
