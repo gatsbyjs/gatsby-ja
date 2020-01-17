@@ -29,7 +29,7 @@ gatsby develop
 
 ## サイトのメタデータを更新する
 
-`gatsby-config.js`ファイルにあるサイトのメタデータを書き換えることにより、サイトの情報をカスタマイズできます。
+`gatsby-config.js` ファイルにあるサイトのメタデータを書き換えることにより、サイトの情報をカスタマイズできます。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
