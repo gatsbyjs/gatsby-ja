@@ -1,17 +1,16 @@
 ---
-title: Themes Conventions
+title: テーマの規則
 ---
 
-As methodologies for building Gatsby Themes begin to formalize and standardize, documentation will be added here. These aren't intended to be the only way to solve things, but are recommended approaches. If you have other ideas and best practices please open up a PR to update this page.
+Gatsby テーマを作成する方法が定式化および標準化されるようになるとドキュメントがここに追記されます。これらは、守らなければならないただ 1 つの方法という意図ではなく、推奨のアプローチ方法であるということです。他のアイデアやベストプラクティスがある場合は、Pull Request を開いてこのページを更新してください。
 
-## Naming
+## 命名
 
-It's required to prefix themes with `gatsby-theme-`. So if you'd like to name your theme "awesome" you
-can name it `gatsby-theme-awesome` and place that as the `name` key in your `package.json`. Prefixing themes with `gatsby-theme` enables Gatsby in identifying theme packages for compilation.
+テーマのプレフィックスとして `gatsby-theme-` をつける必要があります。したがって、テーマに「awesome」という名前を付けたい場合、`gatsby-theme-awesome` と命名し、`package.json` の `name` キーに配置します。`gatsby-theme` で始まるテーマ名を付けることで、Gatsby がコンパイルするテーマパッケージを識別できます。
 
-## Initializing required directories
+## 必要なディレクトリーの初期化
 
-If your theme relies on the presence of particular directories, like `posts` for `gatsby-source-filesystem`, you can use the `onPreBootstrap` hook to initialize them to avoid a crash when Gatsby tries to build the site.
+新しく作るテーマが `posts` や `gatsby-source-filesystem` などの特定のディレクトリーに依存している場合、`onPreBootstrap` フックを使うことで Gatsby がサイトの構築時にクラッシュするのを防いで初期化できます。
 
 ```js:title=gatsby-node.js
 exports.onPreBootstrap = ({ store, reporter }) => {
@@ -32,13 +31,13 @@ exports.onPreBootstrap = ({ store, reporter }) => {
 }
 ```
 
-## Separating queries and presentational components
+## クエリと presentational components の分離
 
-As a theme author, it's preferable to separate your data gathering and the components that render the data. This makes it easier for end users to be able to override a component like `PostList` or `AuthorCard` without having to write a [pageQuery](/docs/page-query) or [StaticQuery](/docs/static-query).
+テーマの作成者として、データの収集とデータをレンダリングするコンポーネントは分離することが望ましいです。これにより、エンドユーザーは [PageQuery](/docs/page-query) や [StaticQuery](/docs/static-query) を記述することなく、`PostList` や `AuthorCard` といったコンポーネントを簡単にオーバーライドできます。
 
-### Page queries
+### PageQuery
 
-You can use a template for top-level data collection with a page query that passes the data to a `PostList` component:
+`PostList` コンポーネントにデータを渡す PageQuery で、トップレベルのデータ収集用テンプレートを使用できます。
 
 ```jsx:title=src/templates/post-list.js
 import React from "react"
@@ -75,9 +74,9 @@ export const query = graphql`
 `
 ```
 
-### Static queries
+### StaticQuery
 
-You can use static queries at the top level template as well and pass the data to other presentational components as props:
+最上位のテンプレートでも StaticQuery を使用し、props として別の presentational components にデータを渡すことができます。
 
 ```jsx:title=src/components/layout.js
 import React from "react"
@@ -119,11 +118,9 @@ const Layout = ({ children }) => {
 export default Layout
 ```
 
-## Site metadata
+## サイトのメタデータ
 
-For commonly customized things, such as site title and social media handles, you
-can have the user set site metadata in their `gatsby-config.js`. Then, throughout
-your theme you can create a StaticQuery to access it:
+サイトのタイトルやソーシャルメディアのハンドル名などの一般的にカスタマイズされたものについては、`gatsby-config.js` 内でユーザーにサイトメタデータを設定させることができます。そして、次のようにしてテーマ全体でメタデータにアクセスするための StaticQuery を作成できます。
 
 ```js:title=src/hooks/use-site-metadata.js
 import { graphql, useStaticQuery } from "gatsby"
@@ -148,7 +145,7 @@ export default () => {
 }
 ```
 
-Then use it in components like the a header:
+次に、ヘッダーなどのコンポーネントで利用する例です。
 
 ```jsx:title=src/components/header.js
 import React from "react"
@@ -172,58 +169,48 @@ export default () => {
 }
 ```
 
-## Breaking changes
+## 重要な変更
 
-Since themes will typically be installed by an end user from npm, it's
-important to follow [semantic versioning](https://semver.org/), commonly
-referred to as semver.
+テーマは通常、npm からエンドユーザーによってインストールされるため、一般に semver とよばれる[セマンティックバージョニング](https://semver.org/)に従うことが重要です。
 
-This will allow your users to quickly discern how a dependency update might
-affect them. Patches and minor versions are not considered breaking changes,
-major versions are.
+これにより、ユーザーは依存関係の更新がユーザーにどのような影響を与える可能性があるかをすばやく識別できます。パッチおよびマイナーバージョンは重大な変更とはみなされませんが、メジャーバージョンは重大な変更とみなされます。
 
-### Patch _(0.0.X)_
+### パッチ _(0.0.X)_
 
-Patches are defined as bug fixes that are done in a backwards-compatible way. This
-means that public facing APIs are unaffected.
+パッチは、下位互換性のある方法で行われるバグ修正として定義されます。これは、公開 API が影響を受けないということを意味します。
 
-#### Examples of patch versions
+#### パッチバージョンの例
 
-- **Fixing a bug** in a component, such as fixing a warning or adding a fallback value.
-- **Upgrading dependencies** to their latest minor and patch versions.
+- ワーニングの修正やフォールバック値の追加といった、コンポーネント内での**バグ修正**
+- 最新のマイナーバージョン、パッチバージョンへの**依存関係のアップグレード**
 
-### Minor _(0.X.0)_
+### マイナー _(0.X.0)_
 
-Minor versions are defined as new features or functionality that are added in a
-backwards-compatible way. This means that _existing_ public facing APIs are unaffected.
+マイナーバージョンは、下位互換性のある方法で追加される新しい機能として定義されます。これは、**既存の**公開 API が影響を受けないことを意味します。
 
-#### Examples of minor versions
+#### マイナーバージョンの例
 
-- **Adding new pages or queries** to your theme. For example, adding tag pages to a blog.
-- **Adding new configuration options** to further customize a theme.
-- **Displaying additional data** such as displaying excerpts to a post list.
-- **Adding additional props to a component** for new functionality.
-- **Adding a new MDX shortcode** that users can opt into.
+- テーマへの**新しいページまたはクエリーの追加**。例：ブログにタグページを追加
+- テーマをさらにカスタマイズするための**新しい構成オプションの追加**
+- **追加データの表示**。例：投稿リストへの抜粋表示
+- 新しい機能のための **props やコンポーネントの追加**
+- ユーザーがオプトインできる**新しい MDX ショートコードの追加**
 
-### Major _(X.0.0)_
+### メジャー _(X.0.0)_
 
-Major versions are any bugfixes or new features that have been added without full
-backwards-compatibility. These are often called "breaking changes".
+メジャーバージョンは、完全に下位互換性なしに追加されたバグ修正または新機能です。これらはしばしば「重大な変更」とよばれます。
 
-These changes should be accompanied with a migration guide that users can follow along
-for performing a theme upgrade.
+これらの変更には、ユーザーがテーマのアップグレードを実行するために、参照することのできる移行ガイドが必要です。
 
-#### Examples of major versions
+#### メジャーバージョンの例
 
-- **Changing a filename in `src`** will always be a breaking change due to shadowing.
-  - Moving where a query occurs
-  - Renaming a component
-  - Renaming a directory
-- **Removing or changing the props a component accepts** since it will affect component extending.
-- **Changing queries** since a user could be using the original data in shadowed components.
-- **Removing or changing the behaviour** of your theme's configuration.
-- **Removing attributes in schema definitions** because it can break end user queries.
-- **Removing default data** this could change your generated schema and break a user's site if they
-  depend on some part of that generated schema.
-- **Changing plugins or plugin configuration** such as removing a remark plugin as it will change
-  the behavior of MD/MDX rendering.
+- シャドウイングにより常に重大な変更になる **`src` 内のファイル名変更**
+  - クエリーが発生する場所の移動
+  - コンポーネントの名前変更
+  - ディレクトリーの名前変更
+- コンポーネントの拡張に影響する**コンポーネントが受け入れる props の削除や変更**
+- ユーザーがシャドウコンポーネントの元のデータを使用している可能性がある**クエリーの変更**
+- テーマ構成の**動作の削除または変更**
+- エンドユーザークエリーを壊す可能性がある**スキーマ定義の属性の削除**
+- **デフォルトデータの削除**。ユーザーのサイトが生成されたスキーマの一部に依存している場合、生成されるスキーマが変更され、ユーザーのサイトが壊れるかもしれません。
+- **プラグインまたはプラグイン構成の変更**。例：注釈プラグインの変更は MD/MDX レンダリングの動作が変更されます。
