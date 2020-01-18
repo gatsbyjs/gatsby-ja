@@ -10,4 +10,4 @@ Gatsby のエコシステムでは、いくつかのデータベースシステ�
 - [MongoDB](/packages/gatsby-source-mongodb/)
 - [Firebase](/packages/gatsby-source-firebase/)/[Firestore](/packages/gatsby-source-firestore/)
 
-これらのプラグインを使う事で、あなたのデータベースからデータを取り込み、ページコンポーネント上からクエリを送る事ができるようになります。
+これらのプラグインを使う事で、あなたのデータベースからデータを取り込み、ページコンポーネント上からクエリーを送る事ができるようになります。
