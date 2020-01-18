@@ -1,18 +1,18 @@
 ---
-title: Using Third-party GraphQL APIs
+title: サードパーティー製GraphQL APIの使用
 ---
 
-Gatsby v2 introduces a simple way to integrate any GraphQL API into Gatsby's GraphQL. You can integrate both third-party APIs, like GitHub's, APIs of services like GraphCMS or your custom GraphQL API.
+Gatsby v2 は、簡単な方法でどんな GraphQL API でも Gatsby の GraphQL に統合できます。 たとえば、GitHub などのサードパーティー API、GraphCMS などのサービスの API、あるいは独自の GraphQL API などです。
 
-## Basic example
+## 基本的な例
 
-First install the plugin.
+最初に、プラグインをインストールします。
 
 ```shell
 npm install gatsby-source-graphql
 ```
 
-Provided there is a GraphQL API under a `url`, adding it to an API just requires adding this to the config.
+`url`の下に GraphQL API がある場合、それを API に追加するには以下を設定に追加するだけです。
 
 ```js:title=gatsby-config.js
 module.exports = {
@@ -20,11 +20,11 @@ module.exports = {
     {
       resolve: "gatsby-source-graphql",
       options: {
-        // This type will contain remote schema Query type
+        // このタイプには、リモートスキーマのクエリタイプが含まれます
         typeName: "SWAPI",
-        // This is the field under which it's accessible
+        // これはアクセス可能なフィールドです
         fieldName: "swapi",
-        // URL to query from
+        // クエリ元のURLです
         url: "https://api.graphcms.com/simple/v1/swapi",
       },
     },
@@ -32,13 +32,13 @@ module.exports = {
 }
 ```
 
-See all configuration options in the [plugin docs](/packages/gatsby-source-graphql)
+すべての設定ファイルのオプションは[プラグインドキュメント](/packages/gatsby-source-graphql)をご覧ください。
 
-Third-party APIs will be available under the `fieldName` specified, so you can query through it normally.
+サードパーティーの API は、指定された`fieldName`で使用できるため、通常どおりクエリを実行できます。
 
 ```graphql
 {
-  # Field name parameter defines how you can access a third-party API
+  # フィールド名パラメーターは、サードパーティーのAPIにアクセスする方法を指定します
   swapi {
     allSpecies {
       name
@@ -47,11 +47,11 @@ Third-party APIs will be available under the `fieldName` specified, so you can q
 }
 ```
 
-Note that types of the third-party API will be prefixed with `${typeName}_`. You need to prefix it too, e.g. when using variables or fragments.
+サードパーティー API のタイプには、`${typeName}_`という接頭辞が付きます。変数またはフラグメントを使用する場合などにも、接頭辞が必要です。
 
 ```graphql
 {
-  # Field name parameter defines how you can access third-party API
+  # フィールド名パラメーターは、サードパーティーAPIにアクセスする方法を指定します
   swapi {
     allSpecies {
       ... on SWAPI_Species {
@@ -62,9 +62,9 @@ Note that types of the third-party API will be prefixed with `${typeName}_`. You
 }
 ```
 
-## Creating pages dynamically through third-party APIs
+## サードパーティー API を使用してページを動的に作成する
 
-You can also create pages dynamically by adding a `createPages` callback in `gatsby-node.js`. For example you can create a page for every Star Wars species.
+`gatsby-node.js`に`createPages`コールバックを追加して、ページを動的に作成することもできます。たとえば、スターウォーズに登場する全ての種族のページを作成できます。
 
 ```js:title=gatsby-node.js
 const path = require(`path`)
@@ -93,10 +93,10 @@ exports.createPages = async ({ actions, graphql }) => {
 }
 ```
 
-## Further reading
+## もっと詳しく
 
-- [gatsby-source-graphql docs](/packages/gatsby-source-graphql)
-- [Example with GitHub API](https://github.com/freiksenet/gatsby-github-displayer)
-- [Example with GraphCMS](https://github.com/freiksenet/gatsby-graphcms)
-- [Example with Hasura](https://github.com/hasura/graphql-engine/tree/master/community/sample-apps/gatsby-postgres-graphql)
-- [Example with AWS AppSync](https://github.com/aws-samples/aws-appsync-gatsby-sample)
+- [gatsby-source-graphql ドキュメント](/packages/gatsby-source-graphql)
+- [GitHub API を使用した例](https://github.com/freiksenet/gatsby-github-displayer)
+- [GraphCMS を使用した例](https://github.com/freiksenet/gatsby-graphcms)
+- [Hasura を使用した例](https://github.com/hasura/graphql-engine/tree/master/community/sample-apps/gatsby-postgres-graphql)
+- [AWS AppSync を使用した例](https://github.com/aws-samples/aws-appsync-gatsby-sample)
