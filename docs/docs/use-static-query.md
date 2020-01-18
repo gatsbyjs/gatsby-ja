@@ -6,7 +6,7 @@ Gatsby v2.1.0 で `useStaticQuery` が導入されました。これはビルド
 
 React コンポーネントで、 [StaticQuery](/docs/static-query/) コンポーネントと同じように GraphQL クエリーを介したデータの取得とコンポーネントへの注入を行えます。ただし、 `useStaticQuery` はレンダープロップを受け取るコンポーネントではなく、フックです。
 
-このガイドでは、 `useStaticQuery` を使った例を紹介します。もし Gatsby の StaticQuery について詳しくなければ、まずは [StaticQuery とページクエリーの違い](/docs/static-query/#how-staticquery-differs-from-page-query)をご覧ください。
+このガイドでは、 `useStaticQuery` を使った例を紹介します。もし Gatsby の `StaticQuery` について詳しくなければ、まずは [StaticQuery とページクエリーの違い](/docs/static-query/#how-staticquery-differs-from-page-query)をご覧ください。
 
 ## コンポーネントでの useStaticQuery の使い方
 
