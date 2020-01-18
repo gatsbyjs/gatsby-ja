@@ -1,16 +1,16 @@
 ---
-title: Using Multiple Gatsby Themes
+title: 複数のGatsbyテーマを利用する
 ---
 
-Gatsby themes are intended to be composable. This means you can install multiple themes alongside each other.
+Gatsby テーマは組み合わせて利用されることを想定しています。つまり、複数のテーマを同時にインストール可能ということです。
 
-For example, `gatsby-starter-theme` composes two Gatsby themes: `gatsby-theme-blog` and `gatsby-theme-notes`
+例えば、 `gatsby-starter-theme` は 2 つの Gatsby テーマ（`gatsby-theme-blog` と `gatsby-theme-notes`）から成ります。
 
 ```shell
 gatsby new my-notes-blog https://github.com/gatsbyjs/gatsby-starter-theme
 ```
 
-You can include multiple theme packages in your `gatsby-config.js`. `gatsby-starter-theme` includes both theme packages: `gatsby-theme-blog` and `gatsby-theme-notes`.
+`gatsby-config.js` 内に複数のテーマパッケージを記述できます。 `gatsby-starter-theme` は `gatsby-theme-blog` と `gatsby-theme-notes` 両方のテーマパッケージを含んでいます。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -22,8 +22,8 @@ module.exports = {
         basePath: `/notes`,
       },
     },
-    // with gatsby-plugin-theme-ui, the last theme in the config
-    // will override the theme-ui context from other themes
+    // gatsby-plugin-theme-ui を用いる場合、コンフィグ内の最後のテーマによって
+    // 他のテーマの theme-ui の記述がオーバーライドされることがあります
     { resolve: `gatsby-theme-blog` },
   ],
   siteMetadata: {
@@ -32,14 +32,14 @@ module.exports = {
 }
 ```
 
-In the default setup, a blog will be served from the root path (`/`), and the notes content will be served from `/notes`.
+デフォルトの設定では、ブログはルートパス（`/`）から配信され、ノートの内容は `/notes`から配信されます。
 
-Run `gatsby develop` to start a development server and view your the site:
+ローカル開発サーバーを起動し、サイトを確認するには `gatsby develop` を実行します。
 
 ![The homepage of the site created by gatsby-theme-starter](../images/gatsby-theme-starter-home.png)
 
 ![The `notes` route of a site created by gatsby-theme starter](../images/gatsby-theme-starter-notes.png)
 
-## Tutorial
+## チュートリアル
 
-For a step-by-step tutorial, see the ["Using Multiple Themes Together" tutorial](/tutorial/using-multiple-themes-together).
+順を追ったチュートリアルを確認するには、["複数のテーマを同時に利用する" チュートリアル](/tutorial/using-multiple-themes-together)を見ましょう。
