@@ -11,7 +11,7 @@ title: 映像を使用する
 
 ## ホストから映像を取得する
 
-Gatsby サイトに映像を埋め込むもっとも簡単な方法は、YouTube や Vimeo、Twitch のようなサイトにアップロードされた映像を取得することです。ホストされた映像の URL をもとに、Remark のプラグインを使用するか、`<iframe>`を使用することで、Gatsby サイトに映像を埋め込むことができます。
+Gatsby サイトに映像を埋め込むもっとも簡単な方法は、YouTube や Vimeo、Twitch のようなサイトにアップロードされた映像を取得することです。ホストされた映像の URL をもとに、Remark のプラグインを使用するか、 `<iframe>` を使用することで、Gatsby サイトに映像を埋め込むことができます。
 
 ## ホストされた映像を Markdown に埋め込む
 
@@ -19,9 +19,9 @@ Gatsby サイトに映像を埋め込むもっとも簡単な方法は、YouTube
 
 ### ホストされた映像のためのコンポーネントを作成する
 
-YouTube（または同様の）映像を Gatsby の投稿やページに埋め込む方法をさらに詳細に制御したい場合は、再利用可能なカスタム`iframe`コンポーネントを作成し、JSX テンプレートまたは[MDX の中で](/docs/mdx/)使用します。
+YouTube（または同様の）映像を Gatsby の投稿やページに埋め込む方法をさらに詳細に制御したい場合は、再利用可能なカスタム `iframe` コンポーネントを作成し、JSX テンプレートまたは[MDX の中で](/docs/mdx/)使用します。
 
-次に示す再利用可能なサンプルコンポーネントには、URL やタイトルなどの映像データの props や、スタイル設定に必要なマークアップ、および一般的な`iframe`埋め込みコードが含まれています。
+次に示す再利用可能なサンプルコンポーネントには、URL やタイトルなどの映像データの props や、スタイル設定に必要なマークアップ、および一般的な `iframe` 埋め込みコードが含まれています。
 
 ```jsx:title=src/components/video.js
 import React from "react"
@@ -135,9 +135,9 @@ YouTube、Twitch または Vimeo から映像を取得することは非常に�
 
 独自の映像ファイルを複数の Web ブラウザーやプラットフォームで動作させるためには、映像拡張機能とコーデックについて少し学ぶ必要があります。情報源として MDN をお勧めします：[HTML の音声と動画のメディア形式](https://developer.mozilla.org/ja/docs/Web/HTML/Supported_media_formats)。さまざまなデバイスや環境をサポートするための、必要な形式（「.webm」や「.mp4」など）を生成するには、映像変換ソフトが必要になる場合があります。
 
-HTML5 は、映像を使用するための `<video>`メディア要素を提供します。 `<video>`要素の中では、映像プレーヤーが使用できる異なるファイル形式を複数の `<source>`要素を使用して提供できます。各ブラウザーは、その中からサポートしている形式の映像を使用します。
+HTML5 は、映像を使用するための `<video>` メディア要素を提供します。 `<video>` 要素の中では、映像プレーヤーが使用できる異なるファイル形式を複数の `<source>` 要素を使用して提供できます。各ブラウザーは、その中からサポートしている形式の映像を使用します。
 
-もし、あなたのサイトの `src/assets/dog.mp4`に`dog.mp4`という映像がある場合、他のアセットを使用する時と同様に[webpack を使用して映像をあなたのページに含める](/docs/importing-assets-into-files)ことができます。そして、それを `<video>`要素にラップされた `<source>`要素で参照します。
+もし、あなたのサイトの `src/assets/dog.mp4` に `dog.mp4` という映像がある場合、他のアセットを使用する時と同様に[webpack を使用して映像をあなたのページに含める](/docs/importing-assets-into-files)ことができます。そして、それを `<video>` 要素にラップされた `<source>` 要素で参照します。
 
 <!-- prettier-ignore -->
 ```jsx:title=src/pages/index.js
@@ -152,11 +152,11 @@ export default () => (
 
 ```
 
-`<video>`要素の `controls`属性は、映像にオーバーレイされる再生/一時停止ボタンや、音量調整、全画面表示ボタンなどのデフォルトのボタンセットを提供します。また、`muted`属性なら、音声をミュートに設定できますし、`poster`属性では映像が再生されていないときに画像を表示したりできます。複数のビデオに適用したい一般的な属性は、React のカスタム映像コンポーネントで抽出できます。 `<video>`属性の完全な一覧は[MDN のドキュメント](https://developer.mozilla.org/ja/docs/Web/HTML/Element/video#Attributes)で見られます。
+`<video>` 要素の `controls` 属性は、映像にオーバーレイされる再生/一時停止ボタンや、音量調整、全画面表示ボタンなどのデフォルトのボタンセットを提供します。また、 `muted` 属性なら、音声をミュートに設定できますし、 `poster` 属性では映像が再生されていないときに画像を表示したりできます。複数のビデオに適用したい一般的な属性は、React のカスタム映像コンポーネントで抽出できます。 `<video>` 属性の完全な一覧は[MDN のドキュメント](https://developer.mozilla.org/ja/docs/Web/HTML/Element/video#Attributes)で見られます。
 
 ### 複数のブラウザーとフォーマットのサポート
 
-ブラウザーがサポートしている形式を`<source>`要素で加えることにより、ブラウザーはその形式を見つけることができます。もしサポートしている形式の映像がなければ読み込みは失敗します。異なるブラウザーでどの形式がサポートされているのかは[ブラウザーの互換性](https://developer.mozilla.org/ja/docs/Web/HTML/Supported_media_formats#Browser_compatibility)で見ることできます。
+ブラウザーがサポートしている形式を `<source>` 要素で加えることにより、ブラウザーはその形式を見つけることができます。もしサポートしている形式の映像がなければ読み込みは失敗します。異なるブラウザーでどの形式がサポートされているのかは[ブラウザーの互換性](https://developer.mozilla.org/ja/docs/Web/HTML/Supported_media_formats#Browser_compatibility)で見ることできます。
 
 <!-- prettier-ignore -->
 ```jsx:title=src/pages/index.js
@@ -173,11 +173,11 @@ export default () => (
 
 ```
 
-2 つの`<source>`要素がありますが、この中から 1 つだけが使用されます。サポートされていれば`mp4`、`.ogg`の順で使用されます。
+2 つの `<source>` 要素がありますが、この中から 1 つだけが使用されます。サポートされていれば `mp4` 、 `.ogg` の順で使用されます。
 
-**注意**: このとき、指定されたタイプの形式で映像をインポートする必要があります。つまり、 `type=video/ogg`で`<source>`要素を追加するには、`.ogg`の形式でファイルをインポートする必要があるということです。もしくは、ローカルファイルをインポートする代わりに、映像がリモートでホストされる場所の URL を`src`として指定できます。
+**注意**: このとき、指定されたタイプの形式で映像をインポートする必要があります。つまり、 `type=video/ogg` で `<source>` 要素を追加するには、 `.ogg` の形式でファイルをインポートする必要があるということです。もしくは、ローカルファイルをインポートする代わりに、映像がリモートでホストされる場所の URL を `src` として指定できます。
 
-[`<video>`要素を使ったサンプルリポジトリを見てみてください](https://github.com/gatsbyjs/gatsby/blob/master/examples/using-video/)
+[ `<video>` 要素を使ったサンプルリポジトリを見てみてください](https://github.com/gatsbyjs/gatsby/blob/master/examples/using-video/)
 
 ### カスタム映像プレイヤーのアクセシビリティ
 
@@ -190,7 +190,7 @@ export default () => (
 
 キャプション、トランスクリプト、および音声解説は、主に見ること、聞くことが困難な人を支援することを目的としていますが、聞くことよりも読むことを好む他の多くのユーザーにとって有益です。キャプションは、何らかの理由で音声を有効にできない時に映像を視聴したい人々にも役立ちます。
 
-HTML5 は、 `<track>`要素を通してこれらのタイプの支援コンテンツのサポートを提供します。 `<track>`要素は、空のタグとして `<video>`要素の下にネストされます。ビデオでの `<track>`要素の使用例は次のようになります。
+HTML5 は、 `<track>` 要素を通してこれらのタイプの支援コンテンツのサポートを提供します。 `<track>` 要素は、空のタグとして `<video>` 要素の下にネストされます。ビデオでの `<track>` 要素の使用例は次のようになります。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -207,8 +207,8 @@ export default () => (
 )
 ```
 
-`kind`属性では、`captions`や、`subtitles`、`descriptions`などのさまざまなタイプを指定できます。 `srcLang`で、この例では英語をキャプションで使用される言語として定義しています。そして、インポートされたキャプションファイルがソースとして使用されます。`<track>`要素の詳しい属性については[track についての MDN のドキュメント](https://developer.mozilla.org/ja/docs/Web/HTML/Element/track)で読むことができます。
+`kind` 属性では、 `captions` や、 `subtitles` 、 `descriptions` などのさまざまなタイプを指定できます。 `srcLang` で、この例では英語をキャプションで使用される言語として定義しています。そして、インポートされたキャプションファイルがソースとして使用されます。 `<track>` 要素の詳しい属性については[track についての MDN のドキュメント](https://developer.mozilla.org/ja/docs/Web/HTML/Element/track)で読むことができます。
 
-**注意**: 上記のコードスニペットのキャプションをインポートするファイルパスには、 `file-loader！`プレフィックスが含まれています。これは、webpack が`.vtt`キャプションファイルをインポートするのを助けます。
+**注意**: 上記のコードスニペットのキャプションをインポートするファイルパスには、 `file-loader！` プレフィックスが含まれています。これは、webpack が `.vtt` キャプションファイルをインポートするのを助けます。
 
 Gatsby と React を使用した例については、操作性の高い[PayPal の HTML5 映像プレイヤー](https://github.com/paypal/accessible-html5-video-player#react-version)をご覧ください。
