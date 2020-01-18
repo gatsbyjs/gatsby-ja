@@ -2,11 +2,11 @@
 title: "Gatsby E-Commerce Tutorial"
 ---
 
-# Table of Contents
+# 目次
 
-- [Table of Contents](#table-of-contents)
+- [目次](#目次)
 - [Why use Gatsby for an e-commerce site?](#why-use-gatsby-for-an-e-commerce-site)
-- [Prerequisites](#prerequisites)
+- [前提条件](#前提条件)
   - [How does Gatsby work with Stripe?](#how-does-gatsby-work-with-stripe)
 - [Setting up a Gatsby site](#setting-up-a-gatsby-site)
 - [Installing the StripeJS plugin](#installing-the-stripejs-plugin)
@@ -16,31 +16,46 @@ title: "Gatsby E-Commerce Tutorial"
 - [Examples](#examples)
   - [Easy: One Button](#easy-one-button)
   - [Advanced: Import SKUs via source plugin](#advanced-import-skus-via-source-plugin)
-- [Testing Payments](#testing-payments)
+- [支払いテスト](#支払いテスト)
 
-In this advanced tutorial, you’ll learn how to use Gatsby to build the UI for a basic e-commerce site that can accept payments, with [Stripe](https://stripe.com) as the backend for processing payments.
-
+この発展的ななチュートリアルでは, Gatsbyを用いて支払いができる基本的なeコマースサイトのUIを構築を学びます。[Stripe](https://stripe.com)は支払い処理のバックエンドとして用います。
+you’ll learn how to use Gatsby to build the UI for a basic e-commerce site that can accept payments, with [Stripe](https://stripe.com) as the backend for processing payments.
 ## Why use Gatsby for an e-commerce site?
 
+Gatsbyをe-コマースのサイトに使うメリットは以下の通りです:
 Benefits of using Gatsby for e-commerce sites include the following:
 
+- 静的サイト固有のセキュリティ
 - Security inherent in static sites
+
+- ページをReactから静的ファイルに変換する際の超高速パフォーマンス
 - Blazing fast performance when your pages are converted from React into static files
+
+- 簡単にホストできる
 - Easy to host
 
+こちらからホストされたデモを見れます: https://gatsby-ecommerce-stripe.netlify.com/
 You can see the working demo hosted here: https://gatsby-ecommerce-stripe.netlify.com/
 
-## Prerequisites
+## 前提条件
 
+- これはより高度なチュートリアルなので、以前にGatsbyでサイトを構築したことがある場合は、このチュートリアルの時間が短縮できる可能性があります。([基本チュートリアルはこちら](/tutorial/))
 - Since this is a more advanced tutorial, building a site with Gatsby before will likely make this tutorial less time-consuming ([see the main tutorial here](/tutorial/))
+- Stripe アカウント: [アカウント登録はこちら](https://dashboard.stripe.com/register)
 - Stripe account: [register for an account here](https://dashboard.stripe.com/register)
 
+### StripeでGatsbyはどのように動作するのか
 ### How does Gatsby work with Stripe?
+
+Stripeは顧客から情報を安全に収集して処理できる支払い処理サービスです。
+Stripeを試すにはこちらにアクセスしてください。[Stripeクイックスタートガイド](https://stripe.com/docs/payments/checkout#tryout)
 
 Stripe is a payment processing service that allows you to securely collect and process payment information from your customers. To try out Stripe for yourself, go to [Stripe’s Quick Start Guide](https://stripe.com/docs/payments/checkout#tryout).
 
+Stripeの代わりとしては、SquareやBraintreeなどがあります。これらの仕組みはStripeと非常に似ています。
 There are alternatives to Stripe, like Square and Braintree, and their setup is very similar to Stripe.
 
+Stripe
 Stripe offers a [hosted checkout](https://stripe.com/docs/payments/checkout) that doesn't require any backend component. You can configure products, SKUs, and subscription plans in the [Stripe Dashboard](https://stripe.com/docs/payments/checkout#configure). If you're selling a single product or subscription (like an eBook) you can hardcode the product's SKU ID in your Gatsby site. If you're selling multiple products, you can use the [Stripe source plugin](https://www.gatsbyjs.org/packages/gatsby-source-stripe/) to retrieve all SKUs at build time. If you want your Gatsby site to automatically update, you can use the Stripe webhook event to [trigger a redeploy](https://www.netlify.com/docs/webhooks/) when a new product or SKU is added.
 
 # Setting up a Gatsby site
