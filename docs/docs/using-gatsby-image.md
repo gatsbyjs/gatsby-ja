@@ -1,53 +1,53 @@
 ---
-title: Using Gatsby Image to Prevent Image Bloat
+title: Gatsby Image を使用して画像の膨張を防ぎましょう。
 ---
 
-`gatsby-image` is a React component designed to work seamlessly with Gatsby’s GraphQL queries ([`gatsby-image` plugin README](/packages/gatsby-image/)). It combines [Gatsby’s native image processing](https://image-processing.gatsbyjs.org/) capabilities with advanced image loading techniques to easily and completely optimize image loading for your sites. `gatsby-image` uses [gatsby-plugin-sharp](/packages/gatsby-plugin-sharp/) to power its image transformations.
+`gatsby-image` は Gatsby の GraphQL クエリー([`gatsby-image` プラグインの README](/packages/gatsby-image/))とシームレスに連携するように設計された React コンポーネントです。 [Gatsby のネイティブ画像処理機能](https://image-processing.gatsbyjs.org/) と高度な画像の読み込み技術を組み合わせて、サイトの画像の読み込みを簡単かつ完全に最適化してくれます。 `gatsby-image` は [gatsby-plugin-sharp（画像圧縮ライブラリ）](/packages/gatsby-plugin-sharp/) を使用して強力に画像を変換します。
 
-> _Warning: gatsby-image is **not** a drop-in replacement for `<img />`. It’s optimized for fixed width/height images and images that stretch the full width of a container. Some ways you can use `<img />` won’t work with gatsby-image._
+> _警告: gatsby-image は `<img />` と**完全に互換性があるわけではありません**。 gatsby-image は 固定された幅/高さの画像および、コンテナの幅全体に広がる画像に最適化されています。 `<img />` で使用できるいくつかの方法は gatsby-image では機能しません。_
 
-[Demo](https://using-gatsby-image.gatsbyjs.org/)
+[デモ](https://using-gatsby-image.gatsbyjs.org/)
 
-`gatsby-image` includes the tricks you’d expect from a modern image component. It:
+`gatsby-image` には最新の画像コンポーネントに期待されるような仕組みが含まれています。 それは：
 
-- uses the new [IntersectionObserver API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) to cheaply lazy load images
-- holds an image’s position so your page doesn’t jump around as images load
-- makes it easy to add a placeholder—either a gray background or a blurry version of the image.
+- 新しい [IntersectionObserver API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) を使用して安価に画像の遅延読み込みを行います。
+- 画像の位置を保持して、画像の読み込み時にページが飛び回らないようにします。
+- 灰色の背景や、画像のぼやけたバージョンのプレースホルダーを簡単に追加できます。
 
-_For more complete API information, check out the [Gatsby Image API](/docs/gatsby-image/) docs._
+_より完全な API 情報については、 [Gatsby Image API](/docs/gatsby-image/) のドキュメントをご覧ください。_
 
-## Problem
+## 問題
 
-Large, unoptimized images dramatically slow down your site.
+最適化されていない大きな画像は、サイトの速度を劇的に低下させてしまいます。
 
-But creating optimized images for websites has long been a thorny problem. Ideally, you would:
+しかし、ウェブサイト向けに最適化された画像を作成することは、長い間、厄介な問題とされてきました。理想的には：
 
-- Resize large images to the size needed by your design
-- Generate multiple smaller images so smartphones and tablets don’t download desktop-sized images
-- Strip all unnecessary metadata and optimize JPEG and PNG compression
-- Efficiently lazy load images to speed initial page load and save bandwidth
-- Use the “blur-up” technique or a “traced placeholder” SVG to show a preview of the image while it loads
-- Hold the image position so your page doesn’t jump while the images load
+- 大きなサイズの画像をデザインに必要なサイズへ変更します。
+- スマートフォンやタブレットがデスクトップサイズの画像をダウンロードしないように、複数の小さな画像を生成します。
+- 不要なメタデータをすべて取り除き、JPEG および PNG 圧縮を最適化します。
+- 初期ページの読み込みを高速化し、帯域幅を節約するために効率的な画像の遅延読み込みをします。
+- 「Blur-Up」手法やトレースされたプレースホルダー SVG を使用して、読み込み中に画像のプレビューを表示します。
+- 画像のロード中にページがジャンプしないように画像の位置を保持します。
 
-Doing this consistently across a site feels like Sisyphean labor. You manually optimize your images and then… several images are swapped in at the last minute or a design-tweak shaves 100px of width off your images.
+画像を手動で最適化してから、直前で画像の差し替えを行ったり、デザインを微調整して画像の幅を 100px 削る、といった作業をサイト全体で一貫して行うことは、徒労のように感じられます。
 
-Most solutions involve a lot of manual labor and bookkeeping to ensure every image is optimized.
+ほとんどのソリューションでは、すべての画像が最適化されるようにするためには多くの手作業を必要とします。
 
-This isn’t ideal. Optimized images should be easy and the default.
+これは理想的な状況ではありません。最適化された画像は簡単かつ、デフォルトである必要があります。
 
-## Solution
+## 解決策
 
-With Gatsby, you can make the experience of working with images way, way better.
+Gatsby を使用することで、画像に関する作業体験を大幅に改善できます。
 
-`gatsby-image` is designed to work seamlessly with Gatsby’s native image processing capabilities powered by GraphQL and Sharp. To produce perfect images with minimal effort, you can:
+`gatsby-image` は GraphQL と Sharp を搭載した Gatsby のネイティブ画像処理機能とシームレスに連携するように設計されています。次の手順を実行することで、最小限の労力で完璧な画像を作成できます。
 
-1. Install `gatsby-image` and other, necessary dependencies like `gatsby-plugin-sharp` and `gatsby-transformer-sharp`
+1. `gatsby-image` と依存関係にあるプラグイン（`gatsby-plugin-sharp` と `gatsby-transformer-sharp`）をインストールします。
 
 ```shell
   npm install --save gatsby-image gatsby-transformer-sharp gatsby-plugin-sharp
 ```
 
-2. Add the newly installed plugins and transformer plugins to your `gatsby-config.js`
+2. `gatsby-config.js` に新しくインストールしたプラグインを追記します。
 
 ```js:title=gatsby-config.js
 module.exports = {
@@ -55,7 +55,7 @@ module.exports = {
 }
 ```
 
-3. Configure `gatsby-source-filesystem` to load images from a folder. In order to use GraphQL to query the image files, the files need to be in a location that is known to Gatsby. This requires an update to `gatsby-config.js` to configure the plugin. Feel free to replace the `path` option to reference wherever your images are located in your project.
+3. `gatsby-source-filesystem` がフォルダーから画像を読み込めるように構成します。 GraphQL を使用して画像ファイルを照会するためには、 Gatsby の認識している場所に画像ファイルが置かれている必要があります。 プラグインを構成するには、 `gatsby-config.js` の更新が必要です。 プロジェクト内の画像がどこにあるのかを参照するために、 options の中にある `path` を置き換えてください。
 
 ```js:title=gatsby-config.js
 module.exports = {
@@ -79,7 +79,7 @@ module.exports = {
   lessonTitle="Install gatsby-image and source local images from the filesystem"
 />
 
-4. Write a GraphQL query using one of the included [GraphQL “fragments”](/packages/gatsby-image/#fragments) which specify the fields needed by `gatsby-image` to create a responsive, optimized image. This example queries for an image at a path relative to the location specified in the `gatsby-source-filesystem` options using the `GatsbyImageSharpFluid` fragment.
+4. [GraphQL フラグメント](/packages/gatsby-image/#fragments) のいずれかを使用して GraphQL クエリーを作成します。これは `gatsby-image` がレスポンシブで最適化された画像を作成するために必要なフィールドを指定します。この例では、 `GatsbyImageSharpFluid` フラグメントを使用して、 `gatsby-source-filesystem` オプションで指定された場所に相対パスで画像を照会しています。
 
 ```jsx:title=src/pages/my-dogs.js
 import React from "react"
@@ -114,7 +114,7 @@ export default () => {
   lessonTitle="Use gatsby-image with an image from a relative path"
 />
 
-5. Import `Img` to display the fragment in JSX. There are additional features available with the `Img` tag as well, such as the `alt` attribute for accessibility.
+5. `Img` をインポートして、JSX にフラグメントを表示します。この `Img` タグには、アクセシビリティのための `alt` 属性などの追加機能も利用できます。
 
 ```jsx:title=src/pages/my-dogs.js
 import React from "react"
@@ -154,16 +154,16 @@ export default () => {
   lessonTitle="Use gatsby-image's GraphQL fragments for blurred-up and traced SVG images"
 />
 
-This GraphQL query creates multiple sizes of the image and when the page is rendered the image that is appropriate for the current screen resolution (e.g. desktop, mobile, and everything in between) is used. The `gatsby-image` component automatically enables a blur-up effect as well as lazy loading images that are not currently on screen.
+この GraphQL クエリーは、複数のサイズの画像を作成し、ページがレンダリングされるときに、現在の画面解像度（デスクトップからモバイルまで全て）に適した画像が使用されます。 `gatsby-image` コンポーネントは自動的にぼかし効果と、現在画面上にない画像の遅延読み込みを有効にします。
 
-So this is all very nice and it’s far better to be able to use this from npm vs. implementing it yourself or cobbling together several standalone libraries.
+これは全てにおいて非常に優れており、したがって、npm からこれを使用する方が、自分で実装したり、いくつかのスタンドアロンライブラリーを一緒に使用するよりもはるかに優れています。
 
-### Additional resources
+### 追加のリソース
 
-- [Gatsby Image API docs](/docs/gatsby-image/)
-- [gatsby-image plugin README file](/packages/gatsby-image/)
-- [Source code for an example site using gatsby-image](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-gatsby-image)
-- [Blog articles about gatsby-image](/blog/tags/gatsby-image/)
-- [Starters that use gatsby-image](/starters/?d=gatsby-image&v=2)
-- [Other image plugins](/plugins/?=image)
-- ["Ridiculously easy image optimization with gatsby-image" by Kyle Gill](https://medium.com/@kyle.robert.gill/ridiculously-easy-image-optimization-with-gatsby-js-59d48e15db6e)
+- [Gatsby Image API ドキュメント](/docs/gatsby-image/)
+- [gatsby-image プラグインの README ファイル](/packages/gatsby-image/)
+- [gatsby-image を使用したサンプルサイトのソースコード](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-gatsby-image)
+- [gatsby-image に関するブログ記事](/blog/tags/gatsby-image/)
+- [gatsby-image を使用するスターター](/starters/?d=gatsby-image&v=2)
+- [その他の画像プラグイン](/plugins/?=image)
+- [カイル・ギルによる「gatsby-image を使用した非常に簡単な画像の最適化」　](https://medium.com/@kyle.robert.gill/ridiculously-easy-image-optimization-with-gatsby-js-59d48e15db6e)
