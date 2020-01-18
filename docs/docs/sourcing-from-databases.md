@@ -1,8 +1,8 @@
 ---
-title: Sourcing from Databases
+title: データベースから情報を取得する
 ---
 
-The Gatsby ecosystem includes built-in connectors to several database systems. These include:
+Gatsby のエコシステムでは、いくつかのデータベースシステムへのコネクターも備え付けで用意されています。
 
 - [PostgreSQL](/packages/gatsby-source-pg/?=pg)
 - [MySQL](/packages/gatsby-source-mysql/?=mysql)
@@ -10,4 +10,4 @@ The Gatsby ecosystem includes built-in connectors to several database systems. T
 - [MongoDB](/packages/gatsby-source-mongodb/)
 - [Firebase](/packages/gatsby-source-firebase/)/[Firestore](/packages/gatsby-source-firestore/)
 
-These plugins will ingest data from your DB and make it available for your page components to query.
+これらのプラグインを使う事で、あなたのデータベースからデータを取り込み、ページコンポーネント上からクエリを送る事ができるようになります。
