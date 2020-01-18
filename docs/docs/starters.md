@@ -42,7 +42,7 @@ gatsby new blog gatsbyjs/gatsby-starter-blog
 
 カスタムスターターを仕様しない場合、サイトは[デフォルトスターター](https://github.com/gatsbyjs/gatsby-starter-default)から生成されます。
 
-> **注：** GitHub 公開レポジトリから Pull できないエンタープライズレベルの会社で働いている場合でも Gatsby をセットアップできます。詳細については[ドキュメント](/docs/setting-up-gatsby-without-gatsby-new/)を御覧ください。
+> **ヒント：** GitHub 公開レポジトリから Pull できないエンタープライズレベルの会社で働いている場合でも Gatsby をセットアップできます。詳細については[ドキュメント](/docs/setting-up-gatsby-without-gatsby-new/)を御覧ください。
 
 ### ローカルスターターの使用
 
