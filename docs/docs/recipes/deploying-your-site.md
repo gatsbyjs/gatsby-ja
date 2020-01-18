@@ -1,105 +1,106 @@
 ---
-title: "Recipes: Deploying Your Site"
+title: "レシピ: サイトをデプロイする"
 ---
 
-Showtime. Once you are happy with your site, you are ready to go live with it!
+ショータイム。満足ゆくサイトができたら、あとはそれをデプロイするだけです。
 
-## Preparing for deployment
+## デプロイの準備
 
-### Prerequisites
+### 前提条件
 
-- A [Gatsby site](/docs/quick-start)
-- The [Gatsby CLI](/docs/gatsby-cli) installed
+- [Gatsby サイト](/docs/quick-start)
+- [Gatsby CLI](/docs/gatsby-cli)がインストールされていること
 
-### Directions
+### 手順
 
-1. Stop your development server if it is running (`Ctrl + C` on your command line in most cases)
+1. 開発サーバーが起動している場合は停止します。（多くの場合はコマンドラインで`Ctrl + C`）
 
-2. For the standard site path at the root directory (`/`), run `gatsby build` using the Gatsby CLI on the command line. The built files will now be in the `public` folder.
+2. ルートディレクトリー（`/`）の標準のサイトパスをビルドするには、Gatsby CLI の`gatsby build`を使います。ビルドされたファイルは`public`フォルダーに置かれます。
 
 ```shell
 gatsby build
 ```
 
-3. To include a site path other than `/` (such as `/site-name/`), set a path prefix by adding the following to your `gatsby-config.js` and replacing `yourpathprefix` with your desired path prefix:
+3. `/`以外のサイトパス（`/site-name/`など）をビルドするには、`gatsby-config.js`に次のようにパスのプレフィックスを追記してください。
 
 ```js:title=gatsby-config.js
 module.exports = {
+  // `/yourpathprefix`を任意のパスに置換
   pathPrefix: `/yourpathprefix`,
 }
 ```
 
-There are a few reasons to do this -- for instance, hosting a blog built with Gatsby on a domain with another site not built on Gatsby. The main site would direct to `example.com`, and the Gatsby site with a path prefix could live at `example.com/blog`.
+これにはいくつかの用途があります -- 例えば、Gatsby 製のブログサイトを Gatsby 製でないサイトと同じドメインでホストする場合です。サイト本体を`example.com`で動かし、パスプレフィックスを設定した Gatsby サイトは`example.com/blog`以下に置くことができます。
 
-4. With a path prefix set in `gatsby-config.js`, run `gatsby build` with the `--prefix-paths` flag to automatically add the prefix to the beginning of all Gatsby site URLs and `<Link>` tags.
+4. パスのプレフィクスを`gatsby-config.js`に設定した後、`gatsby build`を`--prefix-paths`フラグをつけて実行することで、Gatsby サイトの URL と`<Link>`タグのはじめに設定したプレフィクスを自動的に追加できます。
 
 ```shell
 gatsby build --prefix-paths
 ```
 
-5. Make sure that your site looks the same when running `gatsby build` as with `gatsby develop`. By running `gatsby serve` when you build your site, you can test out (and debug if necessary) the finished product before deploying it live.
+5. `gatsby build`でビルドした時と`gatsby develop`で動作させた時とでサイトの見た目が変わらないことを確認しましょう。ビルド後に`gatsby serve`をすることで、本番環境へデプロイする前にビルド成果物を確認（またはデバッグ）できます。
 
 ```shell
 gatsby build && gatsby serve
 ```
 
-### Additional resources
+### 追加資料
 
-- Walk through building and deploying an example site in [tutorial part one](/tutorial/part-one/#deploying-a-gatsby-site)
-- Learn about [performance optimization](/docs/performance/)
-- Read about [other deployment related topics](/docs/preparing-for-deployment/)
-- Check out the [deployment docs](/docs/deploying-and-hosting/) for specific hosting platforms and how to deploy to them
+- サイトを作成しデプロイするまでの一連の[チュートリアル（その 1）]（/tutorial/part-one/#deploying-a-gatsby-site）
+- [パフォーマンス最適化](/docs/performance/)について学ぶ
+- [他のデプロイ関連のトピックス](/docs/preparing-for-deployment/)について読む
+- その他ホスティングサービスへのデプロイ方法についての[ドキュメント](/docs/deploying-and-hosting/)
 
-## Deploying to Netlify
+## Netlify にデプロイする
 
-Use [`netlify-cli`](https://www.netlify.com/docs/cli/) to deploy your Gatsby application without leaving the command-line interface.
+[`netlify-cli`]（https://www.netlify.com/docs/cli/）を使ってGatsbyアプリケーションをコマンドラインからデプロイできます。
 
-### Prerequisites
+### 前提条件
 
-- A [Gatsby site](/docs/quick-start) with a single component `index.js`
-- The [netlify-cli](https://www.npmjs.com/package/netlify-cli) package installed
-- The [Gatsby CLI](/docs/gatsby-cli) installed
+- `index.js`コンポーネントを持った [Gatsby サイト](/docs/quick-start)
+- [netlify-cli](https://www.npmjs.com/package/netlify-cli)パッケージがインストールされていること
+- [Gatsby CLI](/docs/gatsby-cli)がインストールされていること
 
-### Directions
+### 手順
 
-1. Build your gatsby application using `gatsby build`
+1. `gatsby build`で gatsby アプリケーションをビルドします。
 
-2. Login into Netlify using `netlify login`
+2. `netlify login`で netlify にログインします。
 
-3. Run the command `netlify init`. Select the "Create & configure a new site" option.
+3. `netlify init`. を実行し、"Create & configure a new site"（新規サイトを作成/設定）オプションを選択します。
 
-4. Choose a custom website name if you want or press enter to receive a random one.
+4. あなたのサイト名を入力します。しない場合は空欄のまま Enter を押すとランダムな名前が付けられます。
 
-5. Choose your [Team](https://www.netlify.com/docs/teams/).
+5. [チーム](https://www.netlify.com/docs/teams/)を選択します。
 
-6. Change the deploy path to `public/`
+6. デプロイパスを`public/`に変更します。
 
-7. Make sure that everything looks fine before deploying to production using `netlify deploy --prod`
+7. 正常に動作していることを確認できたら`netlify deploy --prod`で本番環境にデプロイします。
 
-### Additional resources
+### 追加資料
 
-- [Hosting on Netlify](/docs/hosting-on-netlify)
+- [Netlify でホストする](/docs/hosting-on-netlify)
 - [gatsby-plugin-netlify](/packages/gatsby-plugin-netlify)
 
-## Deploying to ZEIT Now
+## ZEIT Now にデプロイする
 
-Use [Now CLI](https://zeit.co/download) to deploy your Gatsby application without leaving the command-line interface.
+[Now CLI](https://zeit.co/download)を使って Gatsby アプリケーションをコマンドラインからデプロイできます。
 
-### Prerequisites
+### 前提条件
 
-- A [ZEIT Now](https://zeit.co/signup) account
-- A [Gatsby site](/docs/quick-start) with a single component `index.js`
-- [Now CLI](https://zeit.co/download) package installed
-- [Gatsby CLI](/docs/gatsby-cli) installed
+- [ZEIT Now](https://zeit.co/signup)アカウント
+- `index.js`コンポーネントを持った [Gatsby サイト](/docs/quick-start)
+- [Now CLI](https://zeit.co/download)パッケージがインストールされていること
+- [Gatsby CLI](/docs/gatsby-cli)がインストールされていること
 
-### Directions
+### 手順
 
-1. Login into Now CLI using `now login`
+1. `now login`で NOW CLI にログインします。
 
-2. Change to the directory of your Gatsby.js application in the Terminal if you aren't already there
+2. Gatsby アプリケーションディレクトリーに移動します。
 
-3. Run `now` to deploy it
+3. `now`でデプロイ。
 
-### Additional resources
+### 追加資料
 
-- [Deploying to ZEIT Now](/docs/deploying-to-zeit-now/)
+- [ZEIT Now にデプロイする](/docs/deploying-to-zeit-now/)
