@@ -1,35 +1,35 @@
 ---
-title: Using a Theme
+title: テーマを使う
 ---
 
-In this tutorial, you'll learn how to use Gatsby themes by creating a new site using the official Gatsby blog theme.
+このチュートリアルでは、Gatsby の公式ブログテーマを使用して新しいサイトを作成することにより、Gatsby テーマの使用方法を学習します。
 
-## Create a new site using the blog theme starter
+## ブログテーマスターターを使用して新しいサイトを作成する
 
-Creating a site using a theme starter starts the same way as using a regular Gatsby starter:
+テーマスターターを使用してサイトを作成する方法は、通常の Gatsby スターターを使用する方法と同じです。
 
 ```shell
 gatsby new my-blog https://github.com/gatsbyjs/gatsby-starter-blog-theme
 ```
 
-## Run the site
+## サイトを立ち上げる
 
-Creating a new site from the starter installed all of the blog theme's dependencies for you. Next, run the site and see what you have:
+スターターから新しいサイトを作成するとブログテーマの依存関係がすべてインストールされます。次に、サイトを立ち上げて、どのようなサイトが立ち上がったのか確認しましょう。
 
 ```shell
 cd my-blog
 gatsby develop
 ```
 
-![Default screen when starting a project using gatsby blog starter](./images/starter-blog-theme-default.png)
+![Gatsbyのブログスターターを使用したプロジェクトを起動した時のデフォルト画面](./images/starter-blog-theme-default.png)
 
-## Replace your avatar
+## アバターを変更する
 
-The blog theme starter ships with a solid gray image for the avatar. Add your own avatar by choosing the image you want, and overwriting the file located at `/content/assets/avatar.png`.
+ブログテーマスターターには、アバター用の灰色の無地の画像が付属しています。アバター画像を選び、`/content/assets/avatar.png` の画像を上書きすることで、独自のアバターに変更できます。
 
-## Update your site metadata
+## サイトのメタデータを更新する
 
-Customize the information on your site by replacing the site metadata in the `gatsby-config.js` file.
+`gatsby-config.js` ファイルにあるサイトのメタデータを書き換えることにより、サイトの情報をカスタマイズできます。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -39,7 +39,7 @@ module.exports = {
       options: {},
     },
   ],
-  // Customize your site metadata:
+  // 以下を変更することでサイトのメタデータをカスタマイズできます。
   {/* highlight-start */}
   siteMetadata: {
     title: "My Blog",
@@ -61,13 +61,13 @@ module.exports = {
 }
 ```
 
-## Replace the content of the bio
+## 自己紹介を変更する
 
-When using Gatsby themes, you can take advantage of something called component shadowing. This allows you to override the default component included in the theme with a custom one you've created.
+Gatsby テーマを使用すると、コンポーネントシャドウイングと呼ばれるものを利用できます。これによりテーマに含まれるデフォルトのコンポーネントの内容を、作成したカスタムコンポーネントの内容で置き換えることができます。
 
-The Gatsby blog theme package has a component that contains the content of the site author's biography. The file path to that component (in the blog theme package, not your site) is `gatsby-theme-blog/src/components/bio-content.js`. You can find this path by looking through the theme in your site's `node_modules/gatsby-theme-blog` directory.
+Gatsby の公式ブログテーマのパッケージには、サイト作成者の自己紹介のコンテンツを含むコンポーネントがあります。そのコンポーネントへのファイルパス（サイトのパスではなくブログテーマ内）は、`gatsby-theme-blog/src/components/bio-content.js` です。このファイルパスは、サイトの `node_modules/gatsby-theme-blog` ディレクトリーのテーマを調べることで見つけることができます。
 
-If you look at the file tree of your site, you'll see it looks like this:
+ファイルツリーを見ると、次のように表示されます。
 
 ```text
 my-blog
@@ -87,11 +87,11 @@ my-blog
 └── package.json
 ```
 
-In the `src` directory of the site, there's a `gatsby-theme-blog` directory. Any file placed in that directory with a path that matches the path of a file in the blog theme directory will completely shadow the theme.
+サイトの `src` ディレクトリーに `gatsby-theme-blog` ディレクトリーがあります。ブログテーマのディレクトリー（`node_modules/gatsby-theme-blog`）のファイルのパスと一致するパスを持つそのディレクトリーに配置されたファイルは、元のテーマより優先して読み込まれます。
 
-> 💡 The name of the directory (here `gatsby-theme-blog`) must exactly mirror the name of the published theme package, which in this case is [`gatsby-theme-blog`](https://www.npmjs.com/package/gatsby-theme-blog).
+> 💡 ディレクトリーの名前（ここでは`gatsby-theme-blog`）は、公開されたテーマパッケージの名前を正確に反映する必要があります。この場合は[`gatsby-theme-blog`](https://www.npmjs.com/package/gatsby-theme-blog)になります。
 
-Open up the `bio-content.js` file and make some content edits:
+`bio-content.js` ファイルを開き、コンテンツを編集します。
 
 ```jsx:title=bio-content.js
 import React, { Fragment } from "react"
@@ -107,17 +107,19 @@ export default () => (
 )
 ```
 
-At this point, you should have an updated avatar, updated site details, and an updated bio:
+アバター、サイトの情報、自身の自己紹介を更新することで、以下のようなサイトの見た目になります。
 
-![Screenshot of project with current tutorial edits](./images/starter-blog-theme-edited.png)
+![現在のチュートリアルで編集したプロジェクトのスクリーンショット](./images/starter-blog-theme-edited.png)
 
-## Add your own blog content
+## 独自のブログコンテンツを追加する
 
-Now you can add your first blog post, and get rid of the demo content in the starter.
+以下を行うことで、スターターのデモコンテンツを削除し、最初のブログ投稿を投稿できます。
 
-### Create a new blog post
+### 新しいブログ投稿を作成する
 
-Create a new file in `my-blog/content/posts`. Name it whatever you'd like (with a `.md` or `.mdx` file extension), and add some content! Here's an example:
+`my-blog/content/posts` に新しいファイルを作成します。 好きな名前（拡張子は `.md` または `.mdx`）を付けて、コンテンツを追加してください！
+
+以下が例です。
 
 ```mdx:title=my-blog/content/posts/my-first-post.mdx
 ---
@@ -128,22 +130,22 @@ date: 2019-07-03
 This will be my very first post on this blog!
 ```
 
-### Delete the demo posts
+### デモコンテンツを削除する
 
-Delete the two demo posts in the `/content/posts` directory:
+`/content/posts` ディレクトリーにある 2 つのデモコンテンツを削除します。
 
 - `my-blog/content/posts/hello-world.mdx`
 - `my-blog/content/posts/my-second-post.mdx`
 
-Restart the dev server, and you'll see your updated blog content:
+開発環境を再起動したら、ブログコンテンツが更新されていることを確認できます。
 
 ![Screenshot of project with updated post content](./images/starter-blog-theme-updated-content.png)
 
-## Change the color theme
+## テーマの色を変更する
 
-The blog theme ships with a default Gatsby purple theme, but you can override and customize the theming of your site to your heart's content. In this tutorial, you'll change a few colors.
+ブログのテーマには、Gatsby デフォルトの紫色のテーマが付属していますが、サイトのテーマを置き換えることで、心ゆくまで色をカスタマイズできます。このチュートリアルでは、いくつかの色を変更します。
 
-Open up `/src/gatsby-theme-blog/gatsby-plugin-theme-ui/colors.js`, and uncomment the code in that file.
+`/src/gatsby-theme-blog/gatsby-plugin-theme-ui/colors.js` を開き、ファイルのコメントアウトを外します。
 
 ```javascript:title=colors.js
 import merge from "deepmerge"
@@ -171,14 +173,14 @@ export default merge(defaultThemeColors, {
 })
 ```
 
-Now, instead of a purple theme, you have a blue theme instead:
+上記の変更により、紫色のテーマの代わりに青色のテーマに変わりました。
 
-![Screenshot of project with updated color theme](./images/starter-blog-theme-updated-colors.png)
+![テーマカラーを更新下プロジェクトのスクリーンショット](./images/starter-blog-theme-updated-colors.png)
 
-In this file, you're pulling in the default color theme (imported as `defaultThemeColors` here), and overriding certain color keys.
+このファイルでは、デフォルトのカラーテーマ（ここでは `defaultThemeColors`）を取り込み、特定の色を使うスタイルを置き換えています。
 
-To see what other theme colors you can customize, check out the `colors.js` file in the official blog theme (`node_modules/gatsby-theme-blog/src/gatsby-plugin-theme-ui/colors.js`)
+カスタマイズできる他のテーマの色を確認するには、公式ブログテーマ（`node_modules/gatsby-theme-blog/src/gatsby-plugin-theme-ui/colors.js`)の `colors.js` ファイルを確認してください。
 
-## Wrapping up
+## まとめ
 
-This was a step-by-step introduction to using a Gatsby theme through looking at a specific example. Note that different themes will be built differently, to accept different customization options. To dive deeper, check out the [Gatsby Theme docs](/docs/themes/).
+今回紹介した内容は、特定の Gatsby テーマを用いてテーマを使用するための順を追った内容でした。テーマにより異なるカスタマイズオプションが存在し、異なるテーマが異なる方法で構築されることに注意してください。さらに深く掘り下げるには、[Gatsby テーマについてのドキュメント](/docs/themes/)をご覧ください。
