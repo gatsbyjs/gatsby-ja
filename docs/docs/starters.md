@@ -10,7 +10,7 @@ Gatsby CLI ツールでは、**スターター**をインストールできま�
 
 ### Git リポジトリー URL の使用
 
-新しい Gatsby サイトを作成する場合、オプションで、新しいサイトのベースとなるスターターを指定できます。GitHub 、GitLab 、Bitbucket といった、Git 公開リポジトリーから取得できます。`[URL_OF_STARTER_GIT_REPO]` から直接取り込むことができます。
+新しい Gatsby サイトを作成する場合、オプションで、新しいサイトのベースとなるスターターを指定できます。GitHub、GitLab、Bitbucket といった、Git 公開リポジトリーから取得できます。`[URL_OF_STARTER_GIT_REPO]` から直接取り込むことができます。
 
 ```shell
 gatsby new [SITE_DIRECTORY] [URL_OF_STARTER_GIT_REPO]
