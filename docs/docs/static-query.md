@@ -49,7 +49,6 @@ StaticQuery には React Hooks バージョンもあります。詳しくは、[
 
 ### 型チェック
 
-With the above pattern, you lose the ability to typecheck with PropTypes. To regain typechecking while achieving the same result, you can change the component to:
 上記のパターンを使用すると、PropTypes で型チェックする機能が失われます。同じ結果を得ながら型チェックを行うには、コンポーネントを次のように変更します。
 
 ```jsx:title=src/components/header.js
