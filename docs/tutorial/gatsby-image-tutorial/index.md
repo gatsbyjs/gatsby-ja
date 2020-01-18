@@ -1,63 +1,67 @@
 ---
-title: Using Gatsby-Image With Your Site
+タイトル:　Gatsby-Image をサイトで使う
 ---
 
-## What’s contained in this tutorial?
+##このチュートリアルには何が含まれていますか？
 
-By the end of this tutorial, you’ll have done the following:
+このチュートリアルを終わりには、以下のことが出来るようになります：
 
-- learned how to use `gatsby-image` for responsive images
-- queried for a single image with GraphQL
-- sourced multiple images through YAML files
-- learned how to troubleshoot common errors
+- レスポンシブ画像に対応した　`gatsby-image` の使い方について学ぶ。
+- GraphQLを用いて単一の画像を照会する。
+- YAMLファイルを通して複数の画像を取得する。
+- 一般的なエラーのトラブルシューティングの方法について学ぶ。
 
-## Prerequisites
+## 前提条件
 
-This tutorial assumes you already have a Gatsby project up and running as well as images you'd like to render on your page. To set up a Gatsby site, check out the [main tutorial](/tutorial/) or the [quick start](/docs/quick-start/).
+このチュートリアルはすでにGatsbyのプロジェクトが実行されていて、そのページにレンダリングしたい画像があることを前提としています。Gatsbyサイトをセットアップする方法は [メインチュートリアル](/tutorial/) または [クイックスタート](/docs/quick-start/) をご覧ください。
 
-In this tutorial you'll learn how to set up `gatsby-image`, a React component that optimizes responsive images using GraphQL and Gatsby's data layer. You'll be informed of a number of ways to use `gatsby-image` and some gotchas.
+このチュートリアルでは、`gatsby-image` 、GraphQLやGatsbyのデータレイヤーを用いてレスポンシブ画像を最適化するReactコンポーネントをセットアップする方法を学びます。
 
-> _Note: this tutorial uses examples of static content stored in YAML files, but similar methods can be used for Markdown files._
+> _ノート: このチュートリアルでは、YAMLファイルに保存されている静的なコンテンツを使用していますが、同様の方法がマークダウンファイルでも使用することが出来ます。_
 
-## Getting started
+## 入門
 
-Image optimization in Gatsby is provided by a plugin called `gatsby-image` which is incredibly performant.
+Gatsbyの画像最適化は信じられないパフォーマンスの `gatsby-image` と呼ばれるプラグインによって提供されます。
 
-### Step 1
+### ステップ 1
 
-Start by using npm to install the `gatsby-image` plugin and its associated dependencies.
+npmを使って、 `gatsby-image` プラグインとその依存関係にあるプラグインをインストールします。
+
 
 ```bash
 npm install gatsby-image gatsby-transformer-sharp gatsby-plugin-sharp
 ```
 
 ### Step 2
+### ステップ　2
 
-Add the newly installed plugins to your `gatsby-config.js` file. The config file ends up looking like this (other plugins already in use have been removed from this snippet for simplicity).
+新たにインストールしたプラグインを　`gatsby-config.js` ファイルに追加します。ファイルは最終的に以下のようになります（すでに使用されている他のプラグインは簡単にするために省略しています）。
 
-> _Note: once `gatsby-image` has been installed, it does not need to be included in the `gatsby-config.js` file._
+> ＿ノート;  `gatsby-image` はインストールしたら、`gatsby-config.js` に追加する必要はありません。
 
 ```javascript:title=gatsby-config.js
 plugins: [`gatsby-transformer-sharp`, `gatsby-plugin-sharp`]
 ```
 
 ## Gatsby-image configuration
+## Gatsby-image の構成
 
-Now you're set up to use `gatsby-image`.
+これで、`gatsby-image` を使えるように設定されました。
 
-### Step 3
+### ステップ　3
 
-Determine where your image files are located. In this example they're in `src/data`.
+画像ファイルを置く場所を決めてください。この例では、`src/data` に置いてあります。
 
-If you haven't already, make sure that your project is set up to see content inside that directory. That means doing two things:
+もし、プロジェクトがこのディレクトリ内のコンテンツを表示させる設定をまだ行なっていない場合は、次の2つを実行してください:
 
-1.  Install `gatsby-source-filesystem`. Note: If you created your project using `gatsby new <name>`, this first step should already be done for you via the default starter.
+
+1.  `gatsby-source-filesystem` をインストールしてください。　ノート: プロジェクトを　`gatsby new <name>` を使用して作成した場合は、この最初の手順はすでにデフォルトスターターを経由して実行されています。
 
 ```bash
 npm install gatsby-source-filesystem
 ```
 
-2. The next step is to make sure your `gatsby-config.js` file specifies the correct folder. In this example it would look like this:
+2. 次に　`gatsby-config.js` で正しくフォルダの指定がされているかを確認してください。この例では、以下のようになります:
 
 ```javascript:title=gatsby-config.js
 plugins: [
@@ -67,15 +71,15 @@ plugins: [
 ]
 ```
 
-Now you're ready to start working with `gatsby-image`!
+これで、 `gatsby-image` を使って作業を始める準備が整いました!
 
-## Step 4
+## ステップ 4
 
-The next step can vary depending on what you're trying to accomplish.
+次のステップはあなたが達成しようとしていることによって異なります。
 
-## Querying data for a single image
+## 単一画像のデータのクエリ
 
-Use `graphql` to query an image file directly. You can include the relative path to the image file and determine how you want `gatsby-image` to process the file.
+画像ファイルを直接クエリするために　`graphql` を使用します。画像ファイルを相対パスに含めることで、 `gatsby-image` によってそのファイルを処理する方法を指定することが出来ます。
 
 ```jsx:title=src/pages/index.js
 export const query = graphql`
@@ -91,25 +95,27 @@ export const query = graphql`
 `
 ```
 
-There are a couple of things to note here.
+ここで注意することがいくつかあります。
 
-### Relative image paths and `gatsby-config.js`
 
-You might expect the relative path to be relative to the file the code sits in, in this case that's index.js. However, that doesn't work. The relative path is actually based on the line of code you put in the `gatsby-source-filesystem` config, which points to `src/data`.
+### 相対画像パスと　`gatsby-config.js`
 
-### Image fragments
+あなたは相対パスと聞いて、コードが置かれているファイルに対応する相対パス（この場合はindex.js）であると予想するかもしれません。しかし、それは違います。相対パスは実際には `gatsby-source-filesystem` に配置したコードの設定に基づき、ここでは `src/data` を指します。
 
-Another thing to note about this query is how it uses the fragment `GatsbyImageSharpFixed` to return a fixed width and height image. You could also use the fragment `GatsbyImageSharpFluid` which produces scalable images that fill their container instead of fitting specific dimensions. In `gatsby-image`, _fluid_ images are meant for images that don’t have a finite size depending on the screen, where as other images are _fixed_.
+### 画像のフラグメント
 
-The query will return a data object including the processed image in a format usable by the `gatsby-image` component. The returned result will be automatically passed into the component and attached to the `data` prop. You can then display the image using JSX to automatically output responsive, highly performant HTML.
+このクエリについてもう1つ注意すべき点は、固定されたwidthとheightを持つ画像を返すフラグメント　`GatsbyImageSharpFluid` の使い方についてです。この特定の大きさに合わせる方法の代わりに、コンテナを埋めるスケーラブルな画像を作るフラグメント　`GatsbyImageSharpFluid` を使う事が出来ます。`gatsby-image` では、_fluid_ な画像は、_fixed_ な画像が固定されているのに対して、画面に応じたサイズを持っていない画像を意味します。
 
-To display the image, start by importing the component provided by `gatsby-image`.
+クエリは、`gatsby-image` コンポーネントで利用可能な形式に処理された画像を含むデータオブジェクトを返します。その結果は自動的にコンポーネントに渡され、`data` propに添付されます。それから、JSXを用いて画像を表示し、レスポンシブで高いパフォーマンスのHTMLを自動的に出力します。
+
+画像を表示するためには　まず、`gatsby-image` が提供するコンポーネントをインポートします。
 
 ```jsx
 import Img from "gatsby-image"
 ```
 
-Now you can use it. Note that the key for pointing to the image corresponds to the way in which the image was processed. In this example that is `fixed`.
+これで使用する事が出来ます。画像のキーは、画像が処理された方法と一致させることに注意してください。この例では `fixed`を用いています。
+
 
 ```jsx
 <Img
@@ -119,7 +125,7 @@ Now you can use it. Note that the key for pointing to the image corresponds to t
 />
 ```
 
-Here is the query and usage all put together:
+こちらはクエリと使用方法を全てまとめたものです:
 
 ```jsx:title=src/pages/index.js
 import React from "react"
