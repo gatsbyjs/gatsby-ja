@@ -10,7 +10,7 @@ title: Gatsbyテーマの使い方
 
 **Gatsby テーマスターター**は Gatsby テーマが 1 つ以上インストールされた Gatsby サイトを新規に作成します。スターターがテーマをインストールする際、スタンドアローンの npm パッケージとしてテーマへの接続が維持されます。
 
-Gatsby ブログテーマスターターのインストール手順は通常の Gatsby スターターと同様です。：
+Gatsby ブログテーマスターターのインストール手順は通常の Gatsby スターターと同様です。
 
 ```shell
 gatsby new my-blog https://github.com/gatsbyjs/gatsby-starter-blog-theme
@@ -18,7 +18,7 @@ gatsby new my-blog https://github.com/gatsbyjs/gatsby-starter-blog-theme
 
 ## テーマスターターは何をする？
 
-公式の Gatsby ブログテーマ用スターターは以下を実行します。：
+公式の Gatsby ブログテーマ用スターターは以下を実行します。
 
 ### 1. テーマをインストールし設定する
 
