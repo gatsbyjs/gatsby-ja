@@ -1,86 +1,86 @@
 ---
-title: Gatsby Starters
+title: Gatsby スターター
 ---
 
-The Gatsby CLI tool lets you install **starters**, which are boilerplate Gatsby sites maintained by the community and intended for jump-starting development quickly.
+Gatsby CLI ツールでは、**スターター**をインストールできます。これは、コミュニティーによってメンテナンスされ、迅速に開発を開始することを目的とした雛形の Gatsby サイトです。
 
-## Installing starters
+## スターターのインストール
 
-Execute the `gatsby new` command to clone a boilerplate starter, install its dependencies, and clear Git history.
+`gatsby new` コマンドを実行して、雛形のスターターをクローンし、依存関係のインストールして、Git 履歴をクリアします。
 
-### Using Git repo URLs
+### Git リポジトリー URL の使用
 
-When creating a new Gatsby site, you can optionally specify a starter to base your new site on; they can come from any publicly available Git repo, such as GitHub, GitLab, or Bitbucket. You can supply the `[URL_OF_STARTER_GIT_REPO]` directly:
+新しい Gatsby サイトを作成する場合、オプションで、新しいサイトのベースとなるスターターを指定できます。GitHub、GitLab、Bitbucket といった、Git 公開リポジトリーから取得できます。`[URL_OF_STARTER_GIT_REPO]` から直接取り込むことができます。
 
 ```shell
 gatsby new [SITE_DIRECTORY] [URL_OF_STARTER_GIT_REPO]
 ```
 
-For example, to create a site in a `blog` directory with Gatsby Starter Blog from its GitHub URL:
+たとえば、Gatsby スターターブログのある GitHub URL から直接 `blog` ディレクトリーにサイトを作成するには、次のようにします。
 
 ```shell
 gatsby new blog https://github.com/gatsbyjs/gatsby-starter-blog
 ```
 
-This downloads the files and initializes the site by running `npm install`.
+これにより、ファイルがダウンロードされ、`npm install` を実行することでサイトの初期化が行われます。
 
-### Using GitHub usernames and repos instead of URLs
+### URL ではなく GitHub ユーザー名とリポジトリーの使用
 
-Alternatively, you can also supply a GitHub user name and repository:
+その他の方法として、GitHub ユーザー名とリポジトリーを指定することもできます。
 
 ```shell
 gatsby new [SITE_DIRECTORY] [GITHUB_USER_NAME/REPO]
 ```
 
-Here is an example with the `[GITHUB_USER_NAME/REPO]` format:
+`[GITHUB_USER_NAME/REPO]` の使用例を次に示します。
 
 ```shell
 gatsby new blog gatsbyjs/gatsby-starter-blog
 ```
 
-This also downloads the files and initializes the site by running `npm install`.
+ここでまた、ファイルがダウンロードされ、`npm install` を実行することでサイトの初期化が行われます。
 
-If you don't specify a custom starter, your site will be created from the [default starter](https://github.com/gatsbyjs/gatsby-starter-default).
+カスタムスターターを仕様しない場合、サイトは[デフォルトスターター](https://github.com/gatsbyjs/gatsby-starter-default)から生成されます。
 
-> **Note:** If you work for an Enterprise-level company where you are unable to pull from public GitHub repositories, you can still set up Gatsby. Check out the [docs to learn more](/docs/setting-up-gatsby-without-gatsby-new/).
+> **ヒント：** GitHub 公開レポジトリから Pull できないエンタープライズレベルの会社で働いている場合でも Gatsby をセットアップできます。詳細については[ドキュメント](/docs/setting-up-gatsby-without-gatsby-new/)を御覧ください。
 
-### Using a local starter
+### ローカルスターターの使用
 
-Another option is to supply a path (relative or absolute) to a local folder containing a starter:
+もう 1 つのオプションは、スターターを含むローカルフォルダーへのパス（相対または絶対パス）を指定することです。
 
 ```shell
 gatsby new [SITE_DIRECTORY] [LOCAL_PATH_TO_STARTER]
 ```
 
-Here is an example assuming a starter exists on the path `./Code/my-local-starter`:
+`./Code/my-local-starter` というパスが存在することを前提として、例を次に示します。
 
 ```shell
 gatsby new blog ./Code/my-local-starter
 ```
 
-## Official starters
+## 公式スターター
 
-Official starters are maintained by Gatsby.
+公式スターターは Gatsby によってメンテナンスされています。
 
-| Starter                                                                                      | Demo/Docs                                                    | Use case                       | Features                     |
-| -------------------------------------------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------ | ---------------------------- |
-| [gatsby-starter-default](https://github.com/gatsbyjs/gatsby-starter-default)                 | [Demo](https://gatsby-starter-default-demo.netlify.com/)     | Appropriate for most use cases | General Gatsby site          |
-| [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog)                       | [Demo](https://gatsby-starter-blog-demo.netlify.com/)        | Create a basic blog            | Blog post pages and listings |
-| [gatsby-starter-hello-world](https://github.com/gatsbyjs/gatsby-starter-hello-world)         | [Demo](https://gatsby-starter-hello-world-demo.netlify.com/) | Learn Gatsby                   | Gatsby bare essentials       |
-| [gatsby-starter-blog-theme](https://github.com/gatsbyjs/gatsby-starter-blog-theme)           | [Docs](/docs/themes/getting-started/)                        | Blog posts and pages           | Gatsby themes                |
-| [gatsby-starter-theme-workspace](https://github.com/gatsbyjs/gatsby-starter-theme-workspace) | [Docs](/docs/themes/building-themes/)                        | Building Gatsby Themes         | Minimal theme workspace      |
+| スターター                                                                                   | デモ/ドキュメント                                            | 使用例               | 特徴                         |
+| -------------------------------------------------------------------------------------------- | ------------------------------------------------------------ | -------------------- | ---------------------------- |
+| [gatsby-starter-default](https://github.com/gatsbyjs/gatsby-starter-default)                 | [デモ](https://gatsby-starter-default-demo.netlify.com/)     | ほとんどの場合で適切 | 一般的な Gatsby サイト       |
+| [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog)                       | [デモ](https://gatsby-starter-blog-demo.netlify.com/)        | 基本的なブログの作成 | ブログ投稿ページとリスト     |
+| [gatsby-starter-hello-world](https://github.com/gatsbyjs/gatsby-starter-hello-world)         | [デモ](https://gatsby-starter-hello-world-demo.netlify.com/) | Gatsby を学ぶ        | Gatsby の必須事項            |
+| [gatsby-starter-blog-theme](https://github.com/gatsbyjs/gatsby-starter-blog-theme)           | [ドキュメント](/docs/themes/getting-started/)                | ブログの投稿とページ | Gatsby テーマ                |
+| [gatsby-starter-theme-workspace](https://github.com/gatsbyjs/gatsby-starter-theme-workspace) | [ドキュメント](/docs/themes/building-themes/)                | Gatsby テーマの構築  | 最小限のテーマワークスペース |
 
-## Modifying starters
+## スターターの変更
 
-Learn [how to modify a starter](/docs/modifying-a-starter/) in the Gatsby docs. You can use official and community starters out of the box but you may want to customize their style and functionality.
+Gatsby ドキュメントで[スターターを変更する方法](/docs/modifying-a-starter/)を学んでください。公式およびコミュニティのスターターをそのまま使用できますが、スタイルと機能をカスタマイズすることもできます。
 
-## Making starters
+## スターターの作成
 
-Learn [how to make a starter](/docs/creating-a-starter/) in the Gatsby docs. Starters can be created for your team(s) only or distributed to the broader community. It's up to you!
+Gatsby ドキュメントで[スターターを作成する方法](/docs/creating-a-starter/)を学んでください。スターターはあなたのチーム専用に作成することもできますし、より広くのコミュニティーに配布することもできます。どのようにするかはあなた次第です！
 
-## Community starters
+## コミュニティースターター
 
-Community starters are created and maintained by Gatsby community members.
+コミュニティースターターは、Gatsby コミュニティーメンバーによって作成およびメンテナンスされます。
 
-- Looking for a starter for a particular use case? Browse starters that have been submitted to the [Starter Library](/starters/).
-- Created a starter you'd like to share? Follow [these steps to submit your starter](/contributing/submit-to-starter-library/) to the Starter Library.
+- 特定の目的のスターターをお探しですか？[スターターライブラリー](/starters/)に投稿されたスターターを参照してください。
+- 作成したスターターを共有したいですか？スターターライブラリーに[スターターを投稿する手順](/contributing/submit-to-starter-library/)を参照してください。
