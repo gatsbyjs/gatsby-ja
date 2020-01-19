@@ -12,7 +12,7 @@ Gatsby v2 は、簡単な方法でどんな GraphQL API でも Gatsby の GraphQ
 npm install gatsby-source-graphql
 ```
 
-`url`の下に GraphQL API がある場合、それを API に追加するには以下を設定に追加するだけです。
+`url` の下に GraphQL API がある場合、それを API に追加するには以下を設定に追加するだけです。
 
 ```js:title=gatsby-config.js
 module.exports = {
