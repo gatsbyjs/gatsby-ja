@@ -1,8 +1,8 @@
 ---
-title: サードパーティー製GraphQL APIの使用
+title: サードパーティー GraphQL APIの使用
 ---
 
-Gatsby v2 は、簡単な方法でどんな GraphQL API でも Gatsby の GraphQL に統合できます。 たとえば、GitHub などのサードパーティー API、GraphCMS などのサービスの API、あるいは独自の GraphQL API などです。
+Gatsby v2 は、簡単な方法でどんな GraphQL API でも Gatsby の GraphQL に統合できます。 たとえば、GitHub などのサードパーティー API 、 GraphCMS などのサービスの API 、あるいは独自の GraphQL API などです。
 
 ## 基本的な例
 
@@ -47,7 +47,7 @@ module.exports = {
 }
 ```
 
-サードパーティー API のタイプには、`${typeName}_` という接頭辞が付きます。変数またはフラグメントを使用する場合などにも、接頭辞が必要です。
+サードパーティー API のタイプには、 `${typeName}_` という接頭辞が付きます。変数またはフラグメントを使用する場合などにも、接頭辞が必要です。
 
 ```graphql
 {
