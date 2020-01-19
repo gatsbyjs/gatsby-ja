@@ -24,7 +24,7 @@ module.exports = {
         typeName: "SWAPI",
         // これはアクセス可能なフィールドです
         fieldName: "swapi",
-        // クエリ元のURLです
+        // クエリ元の URL です
         url: "https://api.graphcms.com/simple/v1/swapi",
       },
     },
