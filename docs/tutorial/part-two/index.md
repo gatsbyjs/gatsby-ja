@@ -44,8 +44,8 @@ cd tutorial-part-two
 ```text
 ├── package.json
 ├── src
-│└── pages
-│└── index.js
+│   └── pages
+│       └── index.js
 ```
 
 #### ✋ CSS ファイルにスタイルを追加する
