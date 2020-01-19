@@ -22,7 +22,7 @@ module.exports = {
         basePath: `/notes`,
       },
     },
-    // gatsby-plugin-theme-ui を用いる場合、コンフィグ内の最後のテーマによって
+    // gatsby-plugin-theme-ui を用いる場合、設定内の最後のテーマによって
     // 他のテーマの theme-ui の記述がオーバーライドされることがあります
     { resolve: `gatsby-theme-blog` },
   ],
