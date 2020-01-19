@@ -38,7 +38,7 @@ module.exports = {
 
 ```graphql
 {
-  # フィールド名パラメーターは、サードパーティーのAPIにアクセスする方法を指定します
+  # フィールド名パラメーターは、サードパーティーの API にアクセスする方法を指定します
   swapi {
     allSpecies {
       name
