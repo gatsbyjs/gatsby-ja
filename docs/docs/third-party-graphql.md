@@ -34,7 +34,7 @@ module.exports = {
 
 すべての設定ファイルのオプションは[プラグインドキュメント](/packages/gatsby-source-graphql)をご覧ください。
 
-サードパーティーの API は、指定された`fieldName`で使用できるため、通常どおりクエリを実行できます。
+サードパーティーの API は、指定された `fieldName` で使用できるため、通常どおりクエリを実行できます。
 
 ```graphql
 {
