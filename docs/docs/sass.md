@@ -4,7 +4,7 @@ title: Gatsby で Sass を使用する
 
 [Sass](https://sass-lang.com) は CSS にネストや変数、ミックスイン、セレクターの継承などを追加して拡張したものです。Gatsby では、プラグインを使用して Sass を適切な形式の CSS に変換できます。
 
-Sass はより高度な機能を使用したスタイルシートを `.sass` もしくは `.scss` ファイルに記述し、それらを `.css` ファイルにコンパイルできます。
+Sass はより高度な機能を使用したスタイルシートを `.sass` もしくは `.scss` ファイルに記述し、それらを `.css` ファイルにコンパイルします。
 
 > **ヒント**: `.sass` と `.scss` ファイルはスタイルを記述する文法が異なります。全ての有効な CSS 記法は SCSS でも使用可能であるため、もっとも使いやすく人気があります。これらの違いについては、[Sass documentation](https://sass-lang.com/documentation/syntax) をご覧ください。
 
