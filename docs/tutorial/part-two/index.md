@@ -80,9 +80,9 @@ html {
 }
 ```
 
-> ヒント: 例の css ファイルを `/src/styles/` フォルダーに配置するのは任意です。
+> ヒント: 例で使用している css ファイルを `/src/styles/` フォルダーに配置するのは任意です。
 
-#### ✋️ `gatsby-browser.js` にスタイルシートをインクルード
+#### ✋ `gatsby-browser.js` にスタイルシートを含める
 
 1. `gatsby-browser.js` を作成
 
