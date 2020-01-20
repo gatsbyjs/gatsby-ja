@@ -20,7 +20,7 @@ gatsby new hello-world https://github.com/gatsbyjs/gatsby-starter-hello-world
 gatsby new [SITE_DIRECTORY_NAME] [URL_OF_STARTER_GITHUB_REPO]
 ```
 
-末尾の URL_OF_STARTER_GITHUB_REPO（スターターの GitHub リポジトリ URL）を省略すると、Gatsby は[**デフォルトスターター**](https://github.com/gatsbyjs/gatsby-starter-default)に基づいてサイトを自動的に生成します。チュートリアルのこのセクションでは、チュートリアル・パート 0 ですでに作成した"Hello World"サイトを引き続き使用します。詳細については、[スターターの変更](/docs/modifying-a-starter)のドキュメントをご覧ください。
+末尾の URL_OF_STARTER_GITHUB_REPO（スターターの GitHub リポジトリー URL）を省略すると、Gatsby は[**デフォルトスターター**](https://github.com/gatsbyjs/gatsby-starter-default)に基づいてサイトを自動的に生成します。チュートリアルのこのセクションでは、チュートリアル・パート 0 ですでに作成した"Hello World"サイトを引き続き使用します。詳細については、[スターターの変更](/docs/modifying-a-starter)のドキュメントをご覧ください。
 
 ### ✋ コードを読む
 
