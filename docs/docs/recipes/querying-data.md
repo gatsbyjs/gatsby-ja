@@ -420,7 +420,7 @@ export const pageQuery = graphql`
 `
 ```
 
-**注意**: フラグメントは Gatsby にインポートされる必要はありません。クエリをフラグメントでエクスポートすることでプロジェクト内の _全ての_ クエリが使えるようになります。
+**注意**: フラグメントは Gatsby にインポートされる必要はありません。クエリをフラグメントとしてエクスポートすることでプロジェクト内の _全ての_ クエリが使えるようになります。
 
 フラグメントは他のフラグメント内にネストでき、同じクエリ内で複数のフラグメントを使うことができます。
 
@@ -448,7 +448,7 @@ export const pageQuery = graphql`
 import React, { useState, useEffect } from "react"
 ```
 
-2. コンポーネントの中で `useEffect` hook からデータを取得するために関数を囲むことで、ブラウザークライアント内でコンポーネントがマウント時に非同期にデータを取得します。その後 `fetch` API の `await` で結果を取得し、`useState` hook のセット関数を呼び (ここでは `setStarsCount`) ステートの変数 (`starsCount`) を `fetch` で返ってくるデータに保存します。
+2. コンポーネントの中で `useEffect` hook からデータを取得するため関数で囲み、ブラウザークライアント内でコンポーネントがマウント時に非同期でデータを取得します。その後 `fetch` API の `await` で結果を取得し、`useState` hook のセット関数を呼び (ここでは `setStarsCount`) ステートの変数 (`starsCount`) を `fetch` で返ってくるデータに保存します。
 
 ```jsx:title=src/pages/index.js
 import React, { useState, useEffect } from "react"
