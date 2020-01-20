@@ -1,24 +1,24 @@
 ---
-title: Sourcing Content from JSON or YAML
+title: JSON または YAML ファイルからデータを取得する
 ---
 
-As you work with Gatsby, you might want to source data from a JSON or YAML file directly into a page or component. This guide will cover approaches for those techniques, as well as architecting a Gatsby site from a YAML file.
+Gatsby では、JSON または YAML ファイルからデータを取得しページまたはコンポーネントで直接使用できます。このガイドでは、これらのやり方と YAML ファイルから Gatsby サイトを構築する方法について説明します。
 
-To follow along with the JSON or YAML data sourcing tips outlined in this guide, you can start by creating a new Gatsby site based on the official [hello world starter](https://github.com/gatsbyjs/gatsby-starter-hello-world).
+このガイドで概説されている JSON または YAML からデータ取得をする方法に従うには、公式の [hello world スターター](https://github.com/gatsbyjs/gatsby-starter-hello-world) を使用して Gatsby サイトを作成することから始めます。
 
-Open up a terminal and run the following command:
+ターミナルを開き、次のコマンドを実行します：
 
 ```bash
 gatsby new gatsby-YAML-JSON-at-buildtime https://github.com/gatsbyjs/gatsby-starter-hello-world
 ```
 
-## Directly import data with YAML
+## YAML からデータを直接インポートする
 
-This section starts with YAML data sourcing. If you want to see how to do it using JSON instead, jump to the [next section](#Directly-importing-data-with-JSON).
+この項では YAML からデータを取得します。代わりに JSON を使用してインポートする方法を確認するには、 [次の項](#Directly-importing-data-with-JSON) に移動してください。
 
-### Add the YAML content
+### YAML コンテンツを追加する
 
-In your Gatsby project folder, create a directory called `content` and inside, add a file called `My-YAML-Content.yaml` with the following content:
+Gatsby プロジェクトフォルダーで、`content` ディレクトリーを作成し、その中に次の内容を記述した `My-YAML-Content.yaml` ファイルを作成してください：
 
 ```yaml:title=content/My-YAML-Content.yaml
 title: YAML content used at build time with Gatsby
@@ -42,11 +42,11 @@ content:
   - item: 111111
 ```
 
-### Import YAML into the page component
+### YAML をページコンポーネントにインポートする
 
-Now that you have something you want to show, the only thing missing is to create a page that will consume the data.
+表示したいデータができたので、あとはデータを表示するページを作るだけです。
 
-Add a new file called `yml-at-buildtime.js` inside the `pages` folder, with the following code:
+`yml-at-buildtime.js` というページを `pages` というフォルダーの中に作成し、次のコードを記述してください：
 
 ```jsx:title=src/pages/yml-at-buildtime.js
 import React from "react"
@@ -65,15 +65,15 @@ const YAMLbuildtime = () => (
 export default YAMLbuildtime
 ```
 
-The above code imports YAML source data as an array, iterates over it with the `Array.map` method, and renders the data-filled markup through a functional stateless React component.
+上記のコードは YAML データを配列としてインポートし、`Array.map`メソッドでそれを反復処理し、ファンクショナルステートレス React コンポーネントを使用してデータが埋められたマークアップをレンダリングします。
 
-## Directly import data with JSON
+## JSON からデータを直接インポートする
 
-In addition to (or instead of) sourcing from YAML, you can use JSON as a data source in a Gatsby site.
+YAML からのデータに加えて（または、その代わりに）JSON を Gatsby サイトのデータソースとして使用できます。
 
-### Add the JSON content
+### JSON コンテンツを追加する
 
-In your Gatsby project folder, create a directory named `content` if it doesn't exist, and then add a new file inside called `My-JSON-Content.json` with the following content:
+Gatsby プロジェクトフォルダーで、（存在しなければ）`content` ディレクトリーを作成し、その中に次の内容を記述した `My-JSON-Content.json` ファイルを作成してください：
 
 ```json:title=content/My-JSON-Content.json
 {
@@ -95,11 +95,11 @@ In your Gatsby project folder, create a directory named `content` if it doesn't 
 }
 ```
 
-### Import JSON into the page component
+### JSON をページコンポーネントにインポートする
 
-Now that you have JSON data that needs to be shown, all that's missing is a page to consume it.
+表示したいデータができたので、あとはデータを表示するページを作るだけです。
 
-Add a new file called `json-at-buildtime.js` inside the `pages` folder with the following code:
+`json-at-buildtime.js` というページを `pages` というフォルダーの中に作成し、次のコードを記述してください：
 
 ```jsx:title=src/pages/json-at-buildtime.js
 import React from "react"
@@ -118,29 +118,29 @@ const JSONbuildtime = () => (
 export default JSONbuildtime
 ```
 
-Similar to the YAML example above, this code snippet shows how to import a JSON file for sourcing data. When imported, the data can be iterated upon with the `Array.map` method and rendered in a React component.
+上記の YAML サンプルと同様に、このコードはデータを取得するために JSON ファイルをインポートする方法を示しています。インポートすると、データを `Array.map`メソッドで反復処理し、React コンポーネントでレンダリングできます。
 
-Out of the box and without any extra configuration, the page will show content sourced from a JSON file.
+追加設定なしで、ページに JSON ファイルからのコンテンツが表示されます。
 
-## Build a Gatsby site sourced from YAML
+## YAML をソースとする Gatsby サイトを構築する
 
-You can also build a fully functional Gatsby site with a page structure sourced from a YAML file.
+YAML ファイルをソースとするページ構造を使用して、完全に機能する Gatsby サイトを構築することもできます。
 
-### Add necessary dependencies
+### 必要な依存関係を追加する
 
-For this example, you will need to add an extra dependency so that the file containing the site structure and its contents can be loaded and interpreted safely.
+この例では、サイト構造とそのコンテンツを含むファイルを安全に読み込んで解釈できるように、依存関係を追加する必要があります。
 
-Open your terminal, navigate to the folder containing the Gatsby site, and issue the following command:
+ターミナルを開き、Gatsby サイトのフォルダーに移動して、次のコマンドを実行します：
 
 ```bash
 npm install --save js-yaml
 ```
 
-This newly added package will be responsible for loading and parsing the YAML file safely.
+この新しく追加されたパッケージは、YAML ファイルを安全に読み込んで解析する役割を果たします。
 
-### Add some content
+### いくつかのコンテンツを追加する
 
-Create a folder named `content` if it doesn't exist, and then add a new file inside called `index.yaml` with the following contents:
+（存在しなければ）`content` ディレクトリーを作成し、その中に次の内容を記述した `index.yaml` ファイルを作成してください：
 
 ```yaml:title=content/index.yaml
 - path: "/page1"
@@ -206,17 +206,17 @@ Create a folder named `content` if it doesn't exist, and then add a new file ins
     - to: "/page1"
 ```
 
-The code block above creates a YAML object in which:
+上記のコードブロックは、次の YAML オブジェクトを作成します。
 
-- Each `path` is a page's endpoint (the relevant part of its URL).
-- The `contents` list holds some data to be displayed.
-- The `links` list holds some endpoints to other pages.
+- それぞれの `path` がページのエンドポイントです。 (URL の関連部分）
+- `contents` リストは表示されるデータを保持しています。
+- `links`　リストは他ページへのエンドポイントを保持しています。
 
-### Configure Gatsby pages
+### Gatsby ページを設定する
 
-Once the dynamic site structure and content exists, you need to tell Gatsby to generate the appropriate pages and display the contents for each one.
+動的なサイト構造とコンテンツが準備できたら、Gatsby に適切なページを生成し、それぞれのコンテンツを表示するように指示する必要があります。
 
-If you don't already have one, create a `gatsby-node.js` file at the root of the project. Add the following code inside the file:
+もし `gatsby-node.js` ファイルが無ければプロジェクトのルートに作成します。そして、次のコードを記述します：
 
 ```js:title=gatsby-node.js
 const fs = require("fs")
@@ -237,18 +237,18 @@ exports.createPages = ({ actions }) => {
 }
 ```
 
-Breaking down this code excerpt into smaller parts:
+このコードは何をしているのか解説します：
 
-1. Import the `js-yaml` package you installed earlier.
-2. Load the `index.yaml` file and parse the content.
-3. Using Gatsby's [`createPage()` API](/docs/actions/#createPage), create some pages programmatically from the parsed file.
-4. Use the `context` property to pass your data into the page as a special prop named `pageContext`, allowing it to be consumed. You can read more about `context` in [creating and modifying pages](/docs/creating-and-modifying-pages/).
+1. 以前インストールした `js-yaml` パッケージをインポートします。
+2. `index.yaml` ファイルを読み込み、コンテンツを解析します。
+3. Gatsby の [`createPage()` API](/docs/actions/#createPage)を使用して、解析されたファイルからプログラムでいくつかのページを作成します。
+4. `context` プロパティを使用して、 `pageContext` という特別な prop としてデータをページに渡し、それを使用できるようにします。 `context`の詳細については [ページの作成と変更](/docs/creating-and-modifying-pages/) を参照してください。
 
-### Create a template
+### テンプレートを作成する
 
-To complete the process of rendering the sourced content, you'll need to create a template for producing dynamic pages from data.
+ソースコンテンツのレンダリングプロセスを完了するには、データから動的ページを作成するためのテンプレートを作成する必要があります。
 
-To match the component referenced in `gatsby-config.js`, create a file called `basicTemplate.js` in the `src/templates/` folder and add the following:
+`gatsby-config.js` で参照されるコンポーネントと一致させるには、`src/templates/` フォルダー内に `basicTemplate.js` というファイルを作成して次のコードを記述してください：
 
 ```jsx:title=src/templates/basicTemplate.js
 import React from "react"
@@ -279,9 +279,9 @@ const basicTemplate = props => {
 export default basicTemplate
 ```
 
-### Join the pieces
+### 部品を繋ぐ
 
-After parsing a YAML file into data and configuring Gatsby to produce pages with a template, you should have the following file and folder structure:
+YAML ファイルを解析し、Gatsby を設定してテンプレートでページを生成した後、次のファイルとフォルダーの構造が必要です：
 
 ```text
   |gatsby-YAML-JSON-at-buildtime
@@ -293,10 +293,10 @@ After parsing a YAML file into data and configuring Gatsby to produce pages with
     - gatsby-node.js
 ```
 
-Running `gatsby develop` in the terminal and opening a browser window to <http://localhost:8000/page1> you'll see a page with content that was sourced from a YAML file used to generate your site.
+ターミナルで `gatsby develop` を実行し、ブラウザーで <http://localhost:8000/page1> にアクセスすると、 サイトの生成に使用された YAML ファイルを元とするコンテンツを含んだページが表示されます。
 
-To make this work on your existing Gatsby site, you would need to:
+これを既存の Gatsby サイトで機能させるには、次の物が必要です：
 
-- Copy over the `gatsby-node.js` file contents: https://github.com/gatsbyjs/gatsby/blob/master/examples/using-gatsby-with-json-yaml/gatsby-node.js
-- Create a basic template: https://github.com/gatsbyjs/gatsby/blob/master/examples/using-gatsby-with-json-yaml/src/templates/basicTemplate.js
-- And grab the YAML file: https://github.com/gatsbyjs/gatsby/blob/master/examples/using-gatsby-with-json-yaml/content/index.yaml
+- `gatsby-node.js` ファイルの内容をコピーします： https://github.com/gatsbyjs/gatsby/blob/master/examples/using-gatsby-with-json-yaml/gatsby-node.js
+- ベーシックテンプレートを作成します： https://github.com/gatsbyjs/gatsby/blob/master/examples/using-gatsby-with-json-yaml/src/templates/basicTemplate.js
+- YAML ファイルを取得します： https://github.com/gatsbyjs/gatsby/blob/master/examples/using-gatsby-with-json-yaml/content/index.yaml
