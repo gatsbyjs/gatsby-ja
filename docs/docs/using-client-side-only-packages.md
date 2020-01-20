@@ -2,7 +2,7 @@
 title: クライアントサイドでしか実行できないパッケージの利用
 ---
 
-場合によっては、クライアントサイドでしか実行できない処理やライブラリーを使う必要があるでしょう。そのような事は大抵、その処理あるいはライブラリーが [ブラウザーDOM](https://developer.mozilla.org/ja/docs/Web/API/Document_Object_Model) のメソッドなどの、サーバーサイドレンダリング（SSR）を実行する際には利用できないものを扱おうとするために生じます。
+場合によっては、クライアントサイドでしか実行できない処理やライブラリーを使う必要があるでしょう。そのような事は大抵、その処理あるいはライブラリーが [ブラウザー DOM](https://developer.mozilla.org/ja/docs/Web/API/Document_Object_Model) のメソッドなどの、サーバーサイドレンダリング（SSR）を実行する際には利用できないものを扱おうとするために生じます。
 
 もし `gatsby develop` や `gatsby build` といったコマンドで以下のようなエラーが出力されてコンパイルに失敗したのであれば、以下で概説されている諸々の回避策の内のどれかを打つ必要があるでしょう。
 
@@ -10,11 +10,11 @@ title: クライアントサイドでしか実行できないパッケージの�
 Reference error: Window is not Defined
 ```
 
-## 1 つ目の回避策: 別のライブラリー、手法を用いる
+## 1 つ目の回避策： 別のライブラリー、手法を用いる
 
 問題そのものを回避してしまうということは、時にもっとも簡潔なアプローチとなります。もし SSR をエラーによって失敗させてしまうことの**ない**プラグインを用いてコンポーネントを再実装できるのであれば、それが最善の策でしょう。
 
-## 2 つ目の回避策: クライアントサイドのパッケージを CDN を介して読み込む
+## 2 つ目の回避策： クライアントサイドのパッケージを CDN を介して読み込む
 
 クライアントサイドで実行するパッケージが求められるコンポーネントの中で、そのパッケージを [`<script />`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/script) タグを使って CDN を介して読み込みましょう。
 
@@ -50,7 +50,7 @@ class MyComponent extends Component {
 }
 ```
 
-## 3 つ目の回避策: react-loadable を用いてクライアントサイドに依存するコンポーネントを読み込む
+## 3 つ目の回避策： react-loadable を用いてクライアントサイドに依存するコンポーネントを読み込む
 
 [loadable-components](https://github.com/smooth-code/loadable-components) をインストールして、クライアントサイドでしか実行できないパッケージを利用したいコンポーネントをラップしましょう。
 
@@ -80,7 +80,7 @@ const LoadableBuyButton = Loadable(() => import("./ShopifyBuyButton"))
 export default LoadableBuyButton
 ```
 
-## 4 つ目の回避策: クライアントサイドのみで実行される React.lazy と Suspense を用いる
+## 4 つ目の回避策： クライアントサイドのみで実行される React.lazy と Suspense を用いる
 
 React.lazy と Suspense はサーバーサイドレンダリングではまだ利用できませんが、コードがクライアントサイドでのみ実行されているかどうかの確認に利用できます。
 この解決法はサーバーサイド、クライアントサイドの双方で働く `loadable-components` に劣ったものでありますが、依存関係を追加することなしにクライアントサイドでのみ実行されるパッケージを処理するための代替手段を提供してくれます。
