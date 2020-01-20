@@ -159,7 +159,11 @@ gatsby develop
 
 ![ホームページを確認する](04-home-page.png)
 
-おめでとうございます！🎉 これが、最初の Gatsby サイトの始まりです！
+<!-- textlint-disable ja-technical-writing/ja-no-mixed-period -->
+
+おめでとうございます！これが、最初の Gatsby サイトの始まりです！🎉
+
+<!-- textlint-enable ja-technical-writing/ja-no-mixed-period -->
 
 開発サーバーが実行されている限り、[**_http://localhost:8000_**](http://localhost:8000/)でローカルのサイトにアクセスできます。これは、`gatsby develop`コマンドを実行して開始したプロセスです。そのプロセスの実行を停止（または「開発サーバーの実行を停止」）するには、ターミナルウィンドウに戻り、「コントロール」キーを押しながら「c」(ctrl-c)を押します。もう一度起動するには、再度 `gatsby develop` を実行してください！
 
