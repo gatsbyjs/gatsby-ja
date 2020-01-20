@@ -20,7 +20,7 @@ gatsby new hello-world https://github.com/gatsbyjs/gatsby-starter-hello-world
 gatsby new [SITE_DIRECTORY_NAME] [URL_OF_STARTER_GITHUB_REPO]
 ```
 
-末尾の URL_OF_STARTER_GITHUB_REPO（スターターの GitHub レポジトリ URL）を省略すると、Gatsby は[**デフォルトスターター**](https://github.com/gatsbyjs/gatsby-starter-default)に基づいてサイトを自動的に生成します。チュートリアルのこのセクションでは、チュートリアル・パート 0 ですでに作成した"Hello World"サイトを引き続き使用します。詳細については、[スターターの変更](/docs/modifying-a-starter)のドキュメントをご覧ください。
+末尾の URL_OF_STARTER_GITHUB_REPO（スターターの GitHub リポジトリ URL）を省略すると、Gatsby は[**デフォルトスターター**](https://github.com/gatsbyjs/gatsby-starter-default)に基づいてサイトを自動的に生成します。チュートリアルのこのセクションでは、チュートリアル・パート 0 ですでに作成した"Hello World"サイトを引き続き使用します。詳細については、[スターターの変更](/docs/modifying-a-starter)のドキュメントをご覧ください。
 
 ### ✋ コードを読む
 
@@ -129,9 +129,9 @@ Gatsby は React 上に構築されています。本文書の中で**コンポ�
 
 特にあなたが開発者であるならば、コンポーネントを使用して構築しはじめる際に、CSS、HTML、JavaScript が密結合（時には 1 つのファイルにさえ）されることに大きな心理的変化を経験するでしょう。
 
-一見単純な変更ですが、これは Web サイトを構築する上での考え方に深い意味を持ちます。
+一見単純な変更ですが、これはウェブサイトを構築する上での考え方に深い意味を持ちます。
 
-カスタムしたボタンを作成する例を見てみましょう。この前までは、CSS クラス（例えば`.primary-button`）を作成しスタイルをカスタムし、それらのスタイルを適用したいときにカスタムしたスタイルを使用していました。以下が例です。
+カスタムしたボタンを作成する例を見てみましょう。この前までは、CSS クラス（例えば `.primary-button`）を作成しスタイルをカスタムし、それらのスタイルを適用したいときにカスタムしたスタイルを使用していました。以下が例です。
 
 ```html
 <button class="primary-button">Click me</button>
@@ -254,7 +254,7 @@ export default () => (
 
 `arbitraryPhrase` 属性には `{props.arbitraryPhrase}` でアクセスできます。
 
-6. これまで述べてきたことにより、コンポーネントが再利用可能になることを強調するにため、追加の`<Header />` コンポーネントを about ページに追加し、次のコードを `src/pages/about.js` ファイルに追加して保存します。
+6. これまで述べてきたことにより、コンポーネントが再利用可能になることを強調するにため、追加の `<Header />` コンポーネントを about ページに追加し、次のコードを `src/pages/about.js` ファイルに追加して保存します。
 
 ```jsx:title=src/pages/about.js
 import React from "react"
@@ -335,9 +335,9 @@ Gatsby の `<Link />` コンポーネントは、サイト内のページ間を�
 
 ## Gatsby サイトのデプロイ
 
-Gatsby は**モダンなサイトジェネレーター**です。つまり、デプロイするためにセットアップするサーバーや複雑なデータベースは必要ありません。代わりに、Gatsby の`build`コマンドで、静的なサイトホスティングサービスにデプロイできるように、静的な HTML および JavaScript ファイルのディレクトリーを生成します。
+Gatsby は**モダンなサイトジェネレーター**です。つまり、デプロイするためにセットアップするサーバーや複雑なデータベースは必要ありません。代わりに、Gatsby の `build` コマンドで、静的なサイトホスティングサービスにデプロイできるように、静的な HTML および JavaScript ファイルのディレクトリーを生成します。
 
-もし Gatsby でつくった Web サイトをはじめてデプロイするなら、[Surge](http://surge.sh/) を試してみてください。Surge は、Gatsby サイトをデプロイするための数ある「静的サイトホスティングサービス」の 1 つです。
+もし Gatsby でつくったウェブサイトをはじめてデプロイするなら、[Surge](http://surge.sh/) を試してみてください。Surge は、Gatsby サイトをデプロイするための数ある「静的サイトホスティングサービス」の 1 つです。
 
 以前 Surge をセットアップしたことがない場合は、新しいターミナルウィンドウを開いてコマンドラインツールをインストールします。
 
@@ -348,7 +348,7 @@ npm install --global surge
 surge login
 ```
 
-次に、ターミナルで次のコマンドをサイトのルート上で実行してサイトをビルドします（ヒント: このコマンドをサイトのルート、この場合は hello-world フォルダーで実行していることを確認してください。`gatsby develop` を実行するために使用したのと同じウィンドウで新しいタブを開くことによって行うことができます）。
+次に、ターミナルで次のコマンドをサイトのルート上で実行してサイトをビルドします（ヒント： このコマンドをサイトのルート、この場合は hello-world フォルダーで実行していることを確認してください。`gatsby develop` を実行するために使用したのと同じウィンドウで新しいタブを開くことによって行うことができます）。
 
 ```shell
 gatsby build

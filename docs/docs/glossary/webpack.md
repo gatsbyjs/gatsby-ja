@@ -5,7 +5,7 @@ disableTableOfContents: true
 
 webpack がどんなもので、どう動き、Gatsby がウェブサイト開発を加速するためにどのように使っているかを学びましょう。
 
-## webpack とは?
+## webpack とは？
 
 [webpack](/docs/glossary#webpack) は<q>静的モジュールバンドラー</q>、つまり JavaScript のかたまりやモジュールを集めて、それらを 1 つ以上の最適化されたバンドルにコンパイルするソフトウェアです。webpack は Gatsby を支えるコアソフトウェアパッケージのひとつです。
 

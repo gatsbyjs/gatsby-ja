@@ -22,14 +22,14 @@ Node.js は、Web ブラウザの外部で JavaScript コードの実行がで�
 
 Gatsby と Node.js をインストールするには、[Homebrew](https://brew.sh/) を使用することをお勧めします。最初に少しセットアップするだけで、後々の頭痛から解放してくれます！
 
-#### コンピュータに Homebrew をインストールするには:
+#### コンピュータに Homebrew をインストールするには：
 
 1. ターミナルを開きます。
 1. `brew -v`を実行して Homebrew がインストールされているか確認します。"Homebrew"という文字列とバージョン番号が表示されるはずです。
 1. もし表示されない場合は、[Homebrew の指示](https://docs.brew.sh/Installation)に従って、ダウンロードしてインストールします。
 1. Homebrew をインストールしたら、手順 2 を繰り返して確認します。
 
-#### Xcode コマンドラインツールのインストール:
+#### Xcode コマンドラインツールのインストール：
 
 1. ターミナルを開きます。
 1. `xcode-select --install`を実行して Xcode コマンドラインツールをインストールします。
@@ -52,15 +52,15 @@ nvm (Node Version Manager) と必要な依存関係をインストールしま�
 
 _💡 パッケージをインストールしている際、確認が求められるので、`y`を入力してエンターを押します。_
 
-#### Ubuntu, Debian などの `apt` ベースのディストリビューションの場合:
+#### Ubuntu, Debian などの `apt` ベースのディストリビューションの場合：
 
-1. 次の手順へ進む前に、`sudo apt update`を実行し、次に`sudo apt -y upgrade`を実行して、Linux ディストリビューションを万全の状態にしておきます。
+1. 次の手順へ進む前に、`sudo apt update`を実行し、次に `sudo apt -y upgrade` を実行して、Linux ディストリビューションを万全の状態にしておきます。
 2. `sudo apt-get install curl`を実行して curl をインストールします。これにより、データ転送と追加の依存関係のダウンロードができます。
 3. インストールが完了したら、`curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash`を実行して、最新バージョンの nvm をダウンロードします。
 4. 動作を確認するには、次のコマンドを使用します。 `nvm --version`。バージョン番号が出力されるはずです。
 5. [デフォルトの Node.js バージョンをセットします](#set-default-nodejs-version)
 
-#### Arch, Manjaro などの `pacman` ベースのディストリビューションの場合:
+#### Arch, Manjaro などの `pacman` ベースのディストリビューションの場合：
 
 1. `sudo pacman -Sy`を実行して、環境を万全の状態にしておきます。
 2. これらのディストリビューションには curl がすでにインストールされているので、それを使って nvm をダウンロードできます。
@@ -69,7 +69,7 @@ _💡 パッケージをインストールしている際、確認が求めら�
 4. 動作を確認するには、次のコマンドを使用します。 `nvm --version`。バージョン番号が出力されるはずです。
 5. [デフォルトの Node.js バージョンをセットする](#set-default-nodejs-version)
 
-#### Fedora, RedHat などの`dnf`ベースのディストリビューションの場合:
+#### Fedora, RedHat などの `dnf` ベースのディストリビューションの場合：
 
 1. これらのディストリビューションには curl がインストールされているので、それを使用して nvm をダウンロードできます。
    `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash`
@@ -87,7 +87,7 @@ nvm install 10
 nvm use 10
 ```
 
-動作を確認するには、`npm --version`と`node --version`を実行します。出力は下記のスクリーンショットのように、コマンドの応答としてバージョン番号を表示します。
+動作を確認するには、`npm --version`と `node --version` を実行します。出力は下記のスクリーンショットのように、コマンドの応答としてバージョン番号を表示します。
 
 ![ターミナルで node と npm のバージョンを確認する](01-node-npm-versions.png)
 
@@ -161,9 +161,9 @@ gatsby develop
 
 おめでとうございます！これが、最初の Gatsby サイトの始まりです！🎉
 
-開発サーバーが実行されている限り、[**_http://localhost:8000_**](http://localhost:8000/)でローカルのサイトにアクセスできます。これは、`gatsby develop`コマンドを実行して開始したプロセスです。そのプロセスの実行を停止（または「開発サーバーの実行を停止」）するには、ターミナルウィンドウに戻り、「コントロール」キーを押しながら「c」(ctrl-c)を押します。もう一度起動するには、再度`gatsby develop`を実行してください！
+開発サーバーが実行されている限り、[**_http://localhost:8000_**](http://localhost:8000/)でローカルのサイトにアクセスできます。これは、`gatsby develop`コマンドを実行して開始したプロセスです。そのプロセスの実行を停止（または「開発サーバーの実行を停止」）するには、ターミナルウィンドウに戻り、「コントロール」キーを押しながら「c」(ctrl-c)を押します。もう一度起動するには、再度 `gatsby develop` を実行してください！
 
-**ヒント:** `vagrant`のような VM を使用してセットアップしている場合、および/またはローカル IP アドレスでリッスンしたい場合は、`gatsby develop ---host=0.0.0.0`を実行します。これで、開発サーバーは"localhost"とローカル IP の両方でリッスンします。
+**ヒント：** `vagrant`のような VM を使用してセットアップしている場合、および/またはローカル IP アドレスでリッスンしたい場合は、`gatsby develop ---host=0.0.0.0`を実行します。これで、開発サーバーは"localhost"とローカル IP の両方でリッスンします。
 
 ## コードエディターを設定する
 
@@ -212,7 +212,7 @@ Gatsby のドキュメントには、VS Code で撮影したスクリーンシ�
 
 ### ウェブサイトとは何ですか？
 
-HTML と CSS の入門を含んだ Web サイトの概要については、「[**はじめての Web ページ作成**](https://learn.shayhowe.com/html-css/building-first-web-page/)」を参照してください。ウェブについて学び始めるのに最適なサイトです。より実践的な紹介については、[**HTML**](https://www.codecademy.com/learn/learn-html)、[**CSS**](https://www.codecademy.com /learn/learn-css)、[**JavaScript**](https://www.codecademy.com/learn/introduction-to-javascript)、などの Codecademy のチュートリアルをご覧ください。[**React**](https://reactjs.org/tutorial/tutorial.html)および[**GraphQL**](http://graphql.org/graphql-js/)にも独自の入門チュートリアルがあります。
+HTML と CSS の入門を含んだウェブサイトの概要については、「[**はじめての Web ページ作成**](https://learn.shayhowe.com/html-css/building-first-web-page/)」を参照してください。ウェブについて学び始めるのに最適なサイトです。より実践的な紹介については、[**HTML**](https://www.codecademy.com/learn/learn-html)、[**CSS**](https://www.codecademy.com /learn/learn-css)、[**JavaScript**](https://www.codecademy.com/learn/introduction-to-javascript)、などの Codecademy のチュートリアルをご覧ください。[**React**](https://reactjs.org/tutorial/tutorial.html)および[**GraphQL**](http://graphql.org/graphql-js/)にも独自の入門チュートリアルがあります。
 
 ### さらにコマンドラインを学ぶ
 
