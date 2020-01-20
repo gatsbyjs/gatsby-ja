@@ -8,9 +8,9 @@ Tailwind は、カスタムユーザーインターフェイスを迅速に構�
 
 Tailwind を Gatsby で使用するには、次の 3 つの方法があります：
 
-1. 標準: PostCSS を使用して Tailwind クラスを生成し、 `className`を使用してそれらのクラスを適用できます。
+1. 標準： PostCSS を使用して Tailwind クラスを生成し、 `className`を使用してそれらのクラスを適用できます。
 2. CSS-in-JS: Tailwind クラスを Styled Components に統合します。
-3. SCSS: [gatsby-plugin-sass](/packages/gatsby-plugin-sass) を使用して、 SCSS ファイルで Tailwind クラスをサポートします。
+3. SCSS： [gatsby-plugin-sass](/packages/gatsby-plugin-sass) を使用して、 SCSS ファイルで Tailwind クラスをサポートします。
 
 これらのすべての方法に対して Tailwind をインストールおよび構成する必要があるため、このガイドでは最初にその手順を説明し、その後、PostCSS、CSS-in-JS、または SCSS の解説をします。
 
