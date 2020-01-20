@@ -7,9 +7,9 @@ React の概要、存在意義、Gatsby エコシステムへの適応につい�
 
 ## React とは？
 
-React は Web ベースの UI を構築するためのライブラリです。Web ページの作成に使用されるプログラミング言語の 1 つである[JavaScript](/docs/glossary#javascript)で記述されています。
+React は Web ベースの UI を構築するためのライブラリーです。Web ページの作成に使用されるプログラミング言語の 1 つである[JavaScript](/docs/glossary#javascript)で記述されています。
 
-Facebook は 2013 年に初めて React を公開しました。同社は貢献者のコミュニティと共にプロジェクトを維持しています。[MIT ライセンス](https://github.com/facebook/react/blob/master/LICENSE)の条件下で、無料で使用およびソースコードの公開をできます。
+Facebook は 2013 年に初めて React を公開しました。同社は貢献者のコミュニティーと共にプロジェクトを維持しています。[MIT ライセンス](https://github.com/facebook/react/blob/master/LICENSE)の条件下で、無料で使用およびソースコードの公開をできます。
 
 WordPress や Jekyll のような公開用ツールはテンプレートファイルのシステムに依存していますが、React は[コンポーネント](/docs/glossary#component)を使用します。コンポーネントは JavaScript、CSS、HTML、SVG などのアセット一式を内包し、これらを再利用、共有、結合することでウェブサイトやアプリケーションを作成できます。
 
@@ -19,7 +19,7 @@ WordPress や Jekyll のような公開用ツールはテンプレートファ�
 
 React コンポーネントは state の更新に反応します。React では、state はコンポーネントの見た目と振る舞いを定めるプロパティと値のセットです。state はクリックやキー入力などのユーザー操作に応じて更新されます。また、ネットワークリクエスト完了の結果としても更新されます。コンポーネントの state の値が更新されると、そのコンポーネントだけが UI の更新部分となります。言い換えると、React はページ全体をリロードすることなく、ページの一部またはビュー全体を更新できます。
 
-Gatsby は、React、 [webpack](/docs/glossary#webpack)、[GraphQL](/docs/glossary#graphql)および他のツールをウェブサイト構築用の単一のフレームワークにバンドルします。Gatsby を使うと、SEO、アクセシビリテおよびパフォーマンス上の恩恵を受けながら要件を満たすことができます。一から開発環境をインストールして設定するよりも、Gatsby をインストールして開発を始めましょう。
+Gatsby は、React、 [webpack](/docs/glossary#webpack)、[GraphQL](/docs/glossary#graphql)および他のツールをウェブサイト構築用の単一のフレームワークにバンドルします。Gatsby を使うと、SEO、アクセシビリティやパフォーマンス上の恩恵を受けながら要件を満たすことができます。一から開発環境をインストールして設定するよりも、Gatsby をインストールして開発を始めましょう。
 
 ### React についてもっと学ぶ
 
