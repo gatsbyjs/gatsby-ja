@@ -195,7 +195,7 @@ Here’s an example query for generating different sizes of an image:
 }
 ```
 
-In either case, you can add traced SVG support by adding `_tracedSVG` to the end of each fragment. _注： this won’t work in the GraphQL explorer._
+In either case, you can add traced SVG support by adding `_tracedSVG` to the end of each fragment. _Note this won’t work in the GraphQL explorer._
 
 ### Rendering the images to `index.js`
 
