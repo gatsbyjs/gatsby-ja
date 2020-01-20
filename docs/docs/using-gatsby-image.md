@@ -55,7 +55,7 @@ module.exports = {
 }
 ```
 
-3. `gatsby-source-filesystem` がフォルダーから画像を読み込めるように構成します。 GraphQL を使用して画像ファイルを照会するためには、 Gatsby の認識している場所に画像ファイルが置かれている必要があります。 プラグインを構成するには、 `gatsby-config.js` の更新が必要です。 プロジェクト内の画像を参照できるように `path` を書き換えて下さい。
+3. `gatsby-source-filesystem` がフォルダーから画像を読み込めるように構成します。 GraphQL を使用して画像ファイルを照会するためには、 Gatsby の認識している場所に画像ファイルが置かれている必要があります。 プラグインを構成するには、 `gatsby-config.js` の更新が必要です。 プロジェクト内の画像を参照できるように `path` を書き換えてください。
 
 ```js:title=gatsby-config.js
 module.exports = {
