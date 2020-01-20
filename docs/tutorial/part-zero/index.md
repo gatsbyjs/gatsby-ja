@@ -183,7 +183,7 @@ Gatsby のドキュメントには、VS Code で撮影したスクリーンシ�
 2. 「Prettier - Code formatter」を検索します。
 3. 「インストール」をクリックします。（インストール後、VS Code を再起動して拡張機能を有効にするよう求められます。VS Code の新しいバージョンでは、ダウンロード後に拡張機能が自動的に有効になります）
 
-> 💡 VS Codeを使用していない場合は、Prettier ドキュメントの[インストール手順](https://prettier.io/docs/en/install.html)、または[他のエディタでの連携](https://prettier.io/docs/en/editors.html)をチェックしてみてください。
+> 💡 VS Code を使用していない場合は、Prettier ドキュメントの[インストール手順](https://prettier.io/docs/en/install.html)、または[他のエディタでの連携](https://prettier.io/docs/en/editors.html)をチェックしてみてください。
 
 ## ➡️ 次は？
 
