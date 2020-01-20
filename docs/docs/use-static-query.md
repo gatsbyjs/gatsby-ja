@@ -4,7 +4,7 @@ title: useStaticQuery フックを使ったコンポーネントからのクエ�
 
 Gatsby v2.1.0 で `useStaticQuery` が導入されました。これはビルド時に [React Hook](https://reactjs.org/docs/hooks-intro.html) を使って GraphQL のクエリーを実行する新しい機能です。
 
-React コンポーネントで、 [StaticQuery](/docs/static-query/) コンポーネントと同じように GraphQL クエリーを介したデータの取得とコンポーネントへの注入を行えます。ただし、 `useStaticQuery` はレンダープロップを受け取るコンポーネントではなく、フックです。
+React コンポーネントで、 [StaticQuery](/docs/static-query/) コンポーネントと同じように GraphQL クエリーを介したデータの取得とコンポーネントへの注入を行えます。ただし、`useStaticQuery` はコンポーネントがレンダープロップを取り込むというよりも、フックによって行います。
 
 このガイドでは、 `useStaticQuery` を使った例を紹介します。もし Gatsby の `StaticQuery` について詳しくなければ、まずは [StaticQuery とページクエリーの違い](/docs/static-query/#how-staticquery-differs-from-page-query)をご覧ください。
 
