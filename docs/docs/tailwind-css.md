@@ -26,7 +26,7 @@ npm install tailwindcss --save-dev
 
 2. Tailwind の設定ファイル生成（オプション）
 
-**Note**: Tailwind 1.0.0+ には設定ファイルは必要ありません。
+**ヒント**: Tailwind 1.0.0+ には設定ファイルは必要ありません。
 
 Tailwind を構成するには、Tailwind 設定ファイルを追加する必要があります。幸いなことに、Tailwind にはこれを行うための組み込みスクリプトがあります。次のコマンドを実行するだけです：
 
@@ -70,7 +70,7 @@ CSS で Tailwind を使用する方法の詳細については、[Tailwind ド�
 
 1. Tailwind Babel Macro のインストール
 
-**注**： `tailwind.macro` は現在 Tailwind 1.0.0+ と互換性がありません。しかし、互換性のあるベータ版は　`tailwind.macro@next` で入手できます。ベータ版を使用するか、 Tailwind 0.7.4 に戻してください。
+**ヒント**： `tailwind.macro` は現在 Tailwind 1.0.0+ と互換性がありません。しかし、互換性のあるベータ版は　`tailwind.macro@next` で入手できます。ベータ版を使用するか、 Tailwind 0.7.4 に戻してください。
 
 **オプション 1**: `tailwind.macro@next` をインストールし、 Tailwind 1.0.0+ を使う。
 
@@ -130,7 +130,7 @@ plugins: [
 ],
 ```
 
-**注：**オプションで、対応する構成ファイルを追加できます（デフォルトでは、 `tailwind.config.js` です）。
+**ヒント：**オプションで、対応する構成ファイルを追加できます（デフォルトでは、 `tailwind.config.js` です）。
 カスタム設定を追加する場合、 `tailwindcss` の後に読み込む必要があります。
 
 ## その他の資料
