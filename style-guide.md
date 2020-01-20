@@ -139,6 +139,14 @@ Google 翻訳など、機械翻訳サービスを利用して得られた文章�
 
 - 文章を機械翻訳サービスにそのまま入力し、出力された内容をそのまま提出すること。
 
+## 翻訳の助けになるリソース
+
+- [Grammarly](https://www.grammarly.com/): 機械校正ツール
+- [Cambridge Dictionary](https://dictionary.cambridge.org/us/): 英語辞書
+- [Thesaurus](https://www.thesaurus.com/): 類語辞典
+- [Hyper Collocation](https://hypcol.marutank.net/): 共起表現検索エンジン（学術論文ベース）
+- [Do People Say](https://dopeoplesay.com/): 共起表現検索エンジン（オンライン掲示板ベース）
+
 ## 用語集
 
 頻出する用語は合意を得た上でリストに加えてください。さらに[prh.yml](/prh.yml)にルールを追加することで、CI にチェックを任せることができます。
