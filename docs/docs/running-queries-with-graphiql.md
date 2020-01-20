@@ -36,7 +36,7 @@ GraphiQL Explorer を使用すれば、使用可能なフィールドと入力�
 
 <EggheadEmbed
   lessonLink="https://egghead.io/lessons/gatsby-build-a-graphql-query-using-gatsby-s-graphiql-explorer"
-  lessonTitle="Build a GraphQL Query using Gatsbyâ€™s GraphiQL Explorer"
+  lessonTitle="Build a GraphQL Query using Gatsby's GraphiQL Explorer"
 />
 
 GraphiQL Explorer についてもっと知りたい場合は、Gatsby ブログの[GraphiQL Explorer についての記事](/blog/2019-06-03-integrating-graphiql-explorer/)をご覧ください。
