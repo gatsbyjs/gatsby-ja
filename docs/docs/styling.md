@@ -1,14 +1,14 @@
 ---
-title: Styling
+title: スタイリング
 overview: true
 ---
 
-There are many ways to style your website. They can roughly be grouped into three styling approaches:
+ウェブサイトのスタイルを設定する様々な方法があります。これらは次の 3 つのスタイリング手法に大別できます。
 
-- [**Global CSS Files**](/docs/global-css/): the traditional way to style a website. CSS rules are declared globally and styles are applied depending on specificity and inheritance.
-- [**Modular Stylesheets**](/docs/css-modules): CSS rules are written traditionally but consumed with JavaScript and scoped locally to avoid unintended side-effects elsewhere. Works out-of-the-box with Gatsby.
-- [**CSS-in-JS**](/docs/css-in-js/): locally-scoped CSS written and consumed in JavaScript, enabling the easier use of dynamic styling and other features. Requires the use of third-party libraries.
+- [**グローバル CSS ファイル**](/docs/global-css/): ウェブサイトのスタイルを設定する昔ながらの方法です。CSS のルールはグローバルに宣言され、スタイルは詳細度と継承に応じて適用されます。
+- [**モジュール方式のスタイルシート**](/docs/css-modules): CSS のルールは昔ながらの方法で記述されますが、JavaScript によって使用され、スコープ外からの意図しない副作用を避けるために、ローカルにスコープされます。Gatsby ですぐに使用開始できます。
+- [**CSS-in-JS**](/docs/css-in-js/): JavaScript で記述および使用されるローカルにスコープされた CSS です。動的なスタイリングやその他の機能をより簡単に使用できます。これを実現するには、サードパーティライブラリーを使用する必要があります。
 
-Gatsby doesn't have an opinion about which styling approach you choose. Almost every possible option is supported through official and community plugins. _(If there isn’t a plugin yet for your favorite option, consider [contributing](/docs/creating-plugins) one!)_
+Gatsby では、どのスタイリング手法を選択すべきかについての意見はありません。公式およびコミュニティのプラグインによってほぼ全ての方法がサポートされています。 _（最適なプラグインが見つからない場合は、[貢献](/docs/creating-plugins)することを検討してください！）_
 
 <GuideList slug={props.slug} />
