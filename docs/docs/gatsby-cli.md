@@ -102,7 +102,7 @@ You can now view gatsbyjs.org in the browser.
   On Your Network:  http://192.168.0.212:8000/ // highlight-line
 ```
 
-**注釈**: Windows では 0.0.0.0:8000 にアクセスできません。(ただし、localhost:8000 または「ネットワークの URL」を使うと問題なくアクセスできます）
+**ヒント**: Windows では 0.0.0.0:8000 にアクセスできません。(ただし、localhost:8000 または「ネットワークの URL」を使うと問題なくアクセスできます）
 
 ### `build`
 
@@ -119,7 +119,7 @@ Gatsby サイトのルートディレクトリーにて、アプリをコンパ�
 | `--open-tracing-config-file` | トレーサー設定ファイル（OpenTracing 互換）。詳細は[Performance Tracing](/docs/performance-tracing/) をご覧ください。 |
 | `--no-color`, `--no-colors`  | ターミナルの出力の色付けを無効にします。                                                                             |
 
-上記に加えて、ビルドを最適化するためのより高度な設定のためにいくつかの [build environment variables](/docs/environment-variables/#build-variables) があります。例えば、`CI=true`を環境変数として設定すると[ダム端末](https://ja.wikipedia.org/wiki/%E7%AB%AF%E6%9C%AB#%E3%83%80%E3%83%A0%E7%AB%AF%E6%9C%AB)向けに出力を調整できます。
+上記に加えて、ビルドを最適化するためのより高度な設定のためにいくつかの [build environment variables](/docs/environment-variables/#build-variables) があります。例えば、　`CI=true` を環境変数として設定すると[ダム端末](https://ja.wikipedia.org/wiki/%E7%AB%AF%E6%9C%AB#%E3%83%80%E3%83%A0%E7%AB%AF%E6%9C%AB)向けに出力を調整できます。
 
 ### `serve`
 
@@ -177,7 +177,7 @@ Gatsby 環境のコンテキストを用いて、Node.js REPL（インタラク�
 
 `gatsby repl`
 
-Gatsby はコマンドを入力して閲覧できるように促してくれます。REPL のときには `gatsby >`が表示されます。
+Gatsby はコマンドを入力して閲覧できるように促してくれます。REPL のときには `gatsby >` が表示されます。
 
 次のいずれかのようなコマンドを入力できます。
 
@@ -205,7 +205,7 @@ Gatsby はコマンドを入力して閲覧できるように促してくれま�
 
 ### 出力の色付けを無効にする
 
-`--no-color`を使う他に、`NO_COLOR`という環境変数を用いることもできます。(詳細は [no-color.org](https://no-color.org/) をご覧ください）
+`--no-color` を使う他に、`NO_COLOR` という環境変数を用いることもできます。(詳細は [no-color.org](https://no-color.org/) をご覧ください）
 
 ## デフォルトのパッケージマネージャーを次のプロジェクトで変更する方法
 
@@ -232,4 +232,4 @@ Which package manager would you like to use ? › - Use arrow-keys. Return to su
 }
 ```
 
-`packageManager`の値を変更し、保存すると、次のプロジェクトから`gatsby new`で使用されるパッケージマネージャーが変更されています。
+`packageManager` の値を変更し、保存すると、次のプロジェクトから `gatsby new` で使用されるパッケージマネージャーが変更されています。
