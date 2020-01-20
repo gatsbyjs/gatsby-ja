@@ -203,7 +203,7 @@ export default props => (
 )
 ```
 
-**ノート:** このアプローチが機能するために、NewsletterCTA は、 CSS prop が Emotion babel プラグインによって変換された後、 `className` プロパティを受け入れてスタイルを適用する必要があります。
+**ヒント:** このアプローチが機能するために、NewsletterCTA は、 CSS prop が Emotion babel プラグインによって変換された後、 `className` プロパティを受け入れてスタイルを適用する必要があります。
 
 ```js:title=src/gatsby-plugin-theme-ui/index.js
 import theme from "gatsby-plugin-theme-ui/src"
