@@ -4,7 +4,7 @@ typora-copy-images-to: ./
 disableTableOfContents: true
 ---
 
-<!-- アイデア: 参照する用語集を作成します。これらの用語の多くは混乱します -->
+<!-- アイデア: 参照する用語集を作成するのはどうでしょう。これらの用語の多くは混乱します。 -->
 
 <!--
   - グローバルスタイル
@@ -18,11 +18,11 @@ Gatsby チュートリアルのパート 2 へようこそ！
 
 ## このチュートリアルの内容は？
 
-このパートでは、Gatsby Web サイトのスタイリングのオプションを詳しくみていき、React コンポーネントを使用してサイトを構築する方法について詳しく説明していきます。
+このパートでは、Gatsby ウェブサイトのスタイリングオプションの詳細をみていき、React コンポーネントを使用してサイトを構築する方法について詳しく説明していきます。
 
 ## グローバルスタイルの使用
 
-すべてのサイトには、ある種のグローバルなスタイルがあります。これには、サイトのタイポグラフィや背景色などを含みます。これらのスタイルは、サイト全体の雰囲気を設定します。壁の色や質感が部屋の全体的な雰囲気を設定するのに似ています。
+すべてのサイトには、ある種のグローバルなスタイルがあります。これには、サイトのタイポグラフィや背景色などを含みます。これらのスタイルは、サイト全体の雰囲気を決定します。壁の色や質感が部屋の全体的な雰囲気を決定するのに似ています。
 
 ### 標準的な CSS ファイルを使用してグローバルスタイルを作成する
 
@@ -39,7 +39,7 @@ gatsby new tutorial-part-two https://github.com/gatsbyjs/gatsby-starter-hello-wo
 cd tutorial-part-two
 ```
 
-次の構成の新しい Gatsby サイト（Gatsby の「hello world」スターターに基づいた）が作成されました。
+Gatsby の「hello world」スターターに基づいた新しい Gatsby が作成されました。
 
 ```text
 ├── package.json
@@ -174,7 +174,7 @@ export default ({ children }) => (
 
 ファイル名が通常の `.css` ではなく `.module.css` で終わっていることに気付いたことでしょう。これは、この CSS ファイルをプレーンな CSS ではなく CSS module として処理する必要があることを Gatsby に伝えます。
 
-3. 次のファイルに新しいページコンポーネント作成します。
+3. 次のファイルに新しいページコンポーネントを作成します。
    `src/pages/about-css-modules.js`:
 
 ```jsx:title=src/pages/about-css-modules.js
@@ -196,11 +196,11 @@ export default () => (
 
 #### ✋ CSS Modules を使用してコンポーネントのスタイルを設定
 
-このセクションでは、名前、アバターと短いラテン語の経歴（Lorem Ipsum - ダミーテキスト）を含む人々のリストを作成します。`<User />` コンポーネントと CSS モジュールを使用したスタイルを作成します。
+このセクションでは、名前、アバターと短いラテン語のプロフィール（Lorem Ipsum - ダミーテキストのこと）を含む人々のリストを作成します。`<User />` コンポーネントと CSS モジュールを使用したスタイルを作成します。
 
-1. `src/pages/about-css-modules.module.css` という CSS のファイルを作成します。
+1. `src/pages/about-css-modules.module.css` という名前で CSS ファイルを作成します。
 
-2. 新しいファイルに次を貼り付けます。
+2. 新しいファイルに次のコードを貼り付けます。
 
 ```css:title=src/pages/about-css-modules.module.css
 .user {
@@ -311,7 +311,7 @@ CSS-in-JS は、コンポーネント指向なスタイリングのためのア�
 
 #### CSS-in-JS に関するお勧めの読み物
 
-さらに詳しものを読んでみたい場合は、[このムーブメントを引き起こした Christopher "vjeux" Chedeau の 2014 年のプレゼンテーション](https://speakerdeck.com/vjeux/react-css-in-js)と [Mark Dalgleish の最近の投稿「A Unified Styling Language」](https://medium.com/seek-blog/a-unified-styling-language-d0c208de2660)を参考にしてください。
+さらに詳しく読んでみたい場合は、[このムーブメントを引き起こした Christopher "vjeux" Chedeau の 2014 年のプレゼンテーション](https://speakerdeck.com/vjeux/react-css-in-js)と [Mark Dalgleish の最近の投稿「A Unified Styling Language」](https://medium.com/seek-blog/a-unified-styling-language-d0c208de2660)を参考にしてください。
 
 ### その他の CSS の選択肢
 
