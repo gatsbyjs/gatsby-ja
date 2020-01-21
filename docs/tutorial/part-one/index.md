@@ -8,7 +8,7 @@ disableTableOfContents: true
 
 ## Gatsby スターターの使用
 
-[**チュートリアル・パート 0**](/tutorial/part-zero/)で、次のコマンドを使用して"hello world""スターターに基づいて新しいサイトを作成しました。
+[**チュートリアル・パート 0**](/tutorial/part-zero/)で、次のコマンドを使用して"hello world"スターターに基づいて新しいサイトを作成しました。
 
 ```shell
 gatsby new hello-world https://github.com/gatsbyjs/gatsby-starter-hello-world
