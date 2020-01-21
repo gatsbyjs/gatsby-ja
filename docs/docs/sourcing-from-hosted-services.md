@@ -14,7 +14,7 @@ title: ホスティングサービスからデータを取得する
 
 これらのプラグインはホスティングサービスからデータを取得し、GraphQL を介して Gatsby サイトで利用できるようにします。
 
-その他のサンプルは Gatsby ブログで解説しています：
+その他の例は Gatsby ブログで解説しています：
 
 - [Google スプレッドシート](/blog/2019-07-23-google-sheets-gatsby-acroyoga-video-explorer/)
 
