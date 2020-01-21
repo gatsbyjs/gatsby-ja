@@ -169,7 +169,7 @@ export default () => (
 
 ![新しい about ページ](05-about-page.png)
 
-React コンポーネントを 'src/pages/about.js`ファイルに配置するだけで、`/about` でアクセス可能なページを作成します。
+React コンポーネントを `src/pages/about.js` ファイルに配置するだけで、`/about` でアクセス可能なページを作成します。
 
 ### ✋ サブコンポーネントの使用
 
