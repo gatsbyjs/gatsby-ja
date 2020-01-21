@@ -2,7 +2,7 @@
 title: GraphiQLの紹介
 ---
 
-このガイドでは、正しい構成の GraphiQL クエリーを作ることができる GraphiQL というツールの使用方法を学習します。
+このガイドでは、正しい構成の GraphQL クエリーを作ることができる GraphiQL というツールの使用方法を学習します。
 
 ## GraphiQL とは？
 
