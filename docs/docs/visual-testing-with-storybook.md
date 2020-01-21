@@ -62,7 +62,7 @@ window.___navigate = pathname => {
 
 Storybook CLI で作成された `.storybook` フォルダーに `webpack.config.js` ファイルを作成します。そして、そのファイルに以下のコードを配置します (使用している Storybook のバージョンによって異なります）。
 
-**Storybook v5 の場合:**
+**Storybook v5 の場合**
 
 ```js:title=.storybook/webpack.config.js
 module.exports = ({ config }) => {
@@ -118,7 +118,7 @@ config.resolve.mainFields = ["browser", "module", "main"]
 return config
 ```
 
-**Storybook v4 の場合:**
+**Storybook v4 の場合**
 
 ```js:title=.storybook/webpack.config.js
 module.exports = (baseConfig, env, defaultConfig) => {
