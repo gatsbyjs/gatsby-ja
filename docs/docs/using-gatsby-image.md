@@ -12,7 +12,7 @@ title: Gatsby Image を使用して画像の膨張を防ぎましょう。
 
 - [IntersectionObserver API](https://developer.mozilla.org/ja/docs/Web/API/Intersection_Observer_API) を使用して画像の遅延読み込みを行います。
 - 画像の読み込み時にページが飛び回らないように画像の位置を保持します。
-- 灰色の背景や、画像のぼやけたプレースホルダーを簡単に追加できます。
+- 画像の読み込み中に表示するための灰色の背景や、ぼかした画像のプレースホルダーを簡単に追加できます。
 
 _より完全な API 情報については、 [Gatsby Image API](/docs/gatsby-image/) のドキュメントをご覧ください。_
 
