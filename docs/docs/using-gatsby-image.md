@@ -12,7 +12,7 @@ title: Gatsby Image を使用して画像の膨張を防ぎましょう。
 
 - [IntersectionObserver API](https://developer.mozilla.org/ja/docs/Web/API/Intersection_Observer_API) を使用して画像の遅延読み込みを行います。
 - 画像の読み込み時にページが飛び回らないように画像の位置を保持します。
-- 画像の読み込み中に表示するための灰色の背景や、ぼかした画像のプレースホルダーを簡単に追加できます。
+- 画像の読み込み中に表示する灰色の背景や、ぼかし効果のある画像のプレースホルダーを簡単に追加できます。
 
 _より完全な API 情報については、 [Gatsby Image API](/docs/gatsby-image/) のドキュメントをご覧ください。_
 
@@ -20,13 +20,13 @@ _より完全な API 情報については、 [Gatsby Image API](/docs/gatsby-im
 
 最適化されていない大きなサイズの画像は、サイトの速度を劇的に低下させてしまいます。
 
-しかし、ウェブサイト向けに最適化された画像を作成することは、長い間、厄介な問題とされてきました。理想をあげると次のようになります。
+しかし、ウェブサイト向けに最適化された画像を作成することは、長い間、厄介な問題とされてきました。理想的なことを言えば以下のようになります。
 
 - 大きなサイズの画像をデザインに必要なサイズへ変更します。
 - スマートフォンやタブレットがデスクトップサイズの画像をダウンロードしないように、複数の小さな画像を生成します。
 - 不要なメタデータをすべて取り除き、JPEG および PNG 圧縮を最適化します。
 - 初期ページの読み込みを高速化し、帯域幅を節約するために効率的な画像の遅延読み込みを行います。
-- 「Blur-Up」手法やトレースされたプレースホルダー SVG を使用して、読み込み中に画像のプレビューを表示します。
+- ぼかし効果やトレースされたプレースホルダー SVG を使用して、読み込み中に画像のプレビューを表示します。
 - 画像の読み込み中にページが飛び回らないように画像の位置を保持します。
 
 画像を手動で最適化してから、読み込みの直前で画像の差し替えを行ったり、デザインを微調整して画像の幅を 100px 削る、といった作業をサイト全体で一貫して行うことは、徒労のように感じられます。
@@ -39,7 +39,7 @@ _より完全な API 情報については、 [Gatsby Image API](/docs/gatsby-im
 
 Gatsby を使用することで、画像に関する作業体験を大幅に改善できます。
 
-`gatsby-image` は GraphQL と Sharp を搭載した Gatsby のネイティブ画像処理機能とシームレスに連携するように設計されています。次の手順を実行することで、最小限の労力で完璧な画像を作成できます。
+`gatsby-image` は GraphQL と Sharp を搭載した Gatsby のネイティブ画像処理機能とシームレスに連携するように設計されています。以下の手順を実行することで、最小限の労力で完璧な画像を作成できます。
 
 1. `gatsby-image` と依存関係にあるプラグイン（`gatsby-plugin-sharp` と `gatsby-transformer-sharp`）をインストールします。
 
@@ -55,7 +55,7 @@ module.exports = {
 }
 ```
 
-3. `gatsby-source-filesystem` がフォルダーから画像を読み込めるように構成します。 GraphQL を使用して画像ファイルを照会するためには、 Gatsby の認識している場所に画像ファイルが置かれている必要があります。 プラグインを構成するには、 `gatsby-config.js` の更新が必要です。 プロジェクト内の画像を参照できるように `path` を書き換えてください。
+3. `gatsby-source-filesystem` がフォルダーから画像を読み込めるように構成します。 GraphQL を使用して画像ファイルを取得するためには、 Gatsby の認識している場所に画像ファイルが置かれている必要があります。 プラグインを構成するには、 `gatsby-config.js` の更新が必要です。 プロジェクト内の画像を参照できるように `path` を書き換えてください。
 
 ```js:title=gatsby-config.js
 module.exports = {
@@ -79,7 +79,7 @@ module.exports = {
   lessonTitle="Install gatsby-image and source local images from the filesystem"
 />
 
-4. [GraphQL フラグメント](/packages/gatsby-image/#fragments) のいずれかを使用して GraphQL クエリーを作成します。これは `gatsby-image` がレスポンシブで最適化された画像を作成するために必要なフィールドを指定します。この例では、 `GatsbyImageSharpFluid` フラグメントを使用して、 `gatsby-source-filesystem` オプションで指定された場所に相対パスで画像を照会しています。
+4. [GraphQL フラグメント](/packages/gatsby-image/#fragments) のいずれかを使用して GraphQL クエリーを作成します。これは `gatsby-image` がレスポンシブで最適化された画像を作成するために必要なフィールドを指定します。この例では、 `GatsbyImageSharpFluid` フラグメントを使用して、 `gatsby-source-filesystem` オプションで指定された場所に相対パスで画像を取得しています。
 
 ```jsx:title=src/pages/my-dogs.js
 import React from "react"
