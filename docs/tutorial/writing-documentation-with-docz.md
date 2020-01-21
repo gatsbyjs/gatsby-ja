@@ -41,7 +41,7 @@ module.exports = {
   plugins: [
     //highlight-next-line
     `gatsby-theme-docz`,
-    // Your plugins go here
+    // プラグインはここに記述します。
   ],
 }
 ```
