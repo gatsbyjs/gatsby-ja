@@ -1,21 +1,21 @@
 ---
-title: Sourcing from Hosted Services
+title: ホスティングサービスからデータを取得する
 ---
 
-There are many Gatsby plugins that integrate with hosted cloud services, also known as SaaS (Software as a Service). You can search for [Gatsby plugins](/plugins/) as well as [Gatsby starters](/starters/) that integrate with hosted services to source content and functionality. Some examples include:
+ホストされたクラウドサービスと統合する Gatsby プラグインは多数あり、それらは SaaS（Software as a Service）とも呼ばれます。コンテンツや機能をホスティングサービスと統合する [Gatsby プラグイン](/plugins/) や [Gatsby スターター](/starters/) を探す事ができます。下記がその例です：
 
 - [Airtable](/packages/gatsby-source-airtable)
 - [AWS DynamoDB](/packages/gatsby-source-dynamodb)
 - [Contentful](/packages/gatsby-source-contentful/)
 - [Firebase](/packages/gatsby-source-firebase)
-- [Google Docs](/packages/gatsby-source-google-docs)
+- [Google ドキュメント](/packages/gatsby-source-google-docs)
 - [Prismic](/packages/gatsby-source-prismic-graphql)
 - [Shopify](/packages/gatsby-source-shopify)
 
-These plugins will pull data from a hosted service and make it available to your Gatsby site via GraphQL.
+これらのプラグインはホスティングサービスからデータを取得し、GraphQL を介して Gatsby サイトで利用できるようにします。
 
-More examples are described on the Gatsby blog:
+その他のサンプルは Gatsby ブログで解説しています：
 
-- [Google Sheets](/blog/2019-07-23-google-sheets-gatsby-acroyoga-video-explorer/)
+- [Google スプレッドシート](/blog/2019-07-23-google-sheets-gatsby-acroyoga-video-explorer/)
 
-You can also [write your own source plugin](/docs/creating-a-source-plugin/) to integrate with a service that isn't already represented.
+もしあなたのサービスのプラグインが見つからなければ、[独自のソースプラグインを作成して](/docs/creating-a-source-plugin/)統合することもできます。
