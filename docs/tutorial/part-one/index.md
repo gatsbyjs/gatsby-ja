@@ -8,7 +8,7 @@ disableTableOfContents: true
 
 ## Gatsby スターターの使用
 
-[**チュートリアル・パート 0**](/tutorial/part-zero/)で、次のコマンドを使用して"hello world""スターターに基づいて新しいサイトを作成しました。
+[**チュートリアル・パート 0**](/tutorial/part-zero/)で、次のコマンドを使用して"hello world"スターターに基づいて新しいサイトを作成しました。
 
 ```shell
 gatsby new hello-world https://github.com/gatsbyjs/gatsby-starter-hello-world
@@ -169,7 +169,7 @@ export default () => (
 
 ![新しい about ページ](05-about-page.png)
 
-React コンポーネントを 'src/pages/about.js`ファイルに配置するだけで、`/about` でアクセス可能なページを作成します。
+React コンポーネントを `src/pages/about.js` ファイルに配置するだけで、`/about` でアクセス可能なページを作成します。
 
 ### ✋ サブコンポーネントの使用
 
