@@ -2,7 +2,7 @@
 title: ホスティングサービスからデータを取得する
 ---
 
-ホストされたクラウドサービスと統合する Gatsby プラグインは多数あり、それらは SaaS（Software as a Service）とも呼ばれます。コンテンツや機能をホスティングサービスと統合する [Gatsby プラグイン](/plugins/) や [Gatsby スターター](/starters/) を探す事ができます。下記がその例です：
+ホストされたクラウドサービスと統合する Gatsby プラグインは多数あり、それらは SaaS（Software as a Service）とも呼ばれます。コンテンツや機能をホスティングサービスと統合する [Gatsby プラグイン](/plugins/)や [Gatsby スターター](/starters/)を探す事ができます。下記がその例です：
 
 - [Airtable](/packages/gatsby-source-airtable)
 - [AWS DynamoDB](/packages/gatsby-source-dynamodb)
