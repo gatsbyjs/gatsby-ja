@@ -2,7 +2,7 @@
 title: Tailwind CSS
 ---
 
-Tailwind は、カスタムユーザーインターフェイスを迅速に構築するためのユーティリティー初の CSS フレームワークです。このガイドでは、 Gatsby と[Tailwind CSS]（https://tailwindcss.com/）の使用方法を紹介します。
+Tailwind は、カスタムユーザーインターフェイスを迅速に構築するためのユーティリティー初の CSS フレームワークです。このガイドでは、 Gatsby と[Tailwind CSS](https://tailwindcss.com/)の使用方法を紹介します。
 
 ## 概要
 
