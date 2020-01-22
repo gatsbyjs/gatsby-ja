@@ -1,63 +1,63 @@
 ---
-title: "Recipes: Working with Themes"
+title: "レシピ集: テーマを使う"
 ---
 
-A [Gatsby theme](/docs/themes/what-are-gatsby-themes) abstracts Gatsby configuration (shared functionality, data sourcing, design) into an installable package. This means that the configuration and functionality isn’t directly written into your project, but rather versioned, centrally managed, and installed as a dependency. You can seamlessly update a theme, compose themes together, and even swap out one compatible theme for another.
+[Gatsby テーマ](/docs/themes/what-are-gatsby-themes) は Gatsby を構成するもの（共有の機能、データの取得、デザイン）をインストール可能なパッケージとして抽象化したものです。つまり、テーマの設定や機能は直接あなたのプロジェクト内に書かれるのではなく、一元的にバージョン管理された依存パッケージという形でインストールされるということです。テーマをシームレスに更新したり、まとめて作成したり、あるいは互換性のあるテーマを別のものに交換したりすることもできます。
 
-## Creating a new site using a theme starter
+## テーマスターターを使用して新しくサイトを作成する
 
-Creating a site based on a starter that configures a theme follows the same process as creating a site based on a starter that **doesn't** configure a theme. In this example you can use the [starter for creating a new site that uses the official Gatsby blog theme](https://github.com/gatsbyjs/gatsby-starter-blog-theme).
+テーマを利用するスターターでサイトを作る手順は、テーマを**利用しない**スターターでサイトを作る手順と同じです。今回の例では [Gatsby 公式ブログのテーマから新しいサイトを作成するスターター](https://github.com/gatsbyjs/gatsby-starter-blog-theme) を使います。
 
-### Prerequisites
+### 前提条件
 
-- The [Gatsby CLI](/docs/gatsby-cli) installed
+- [Gatsby CLI](/docs/gatsby-cli) がインストールされていること。
 
-### Directions
+### 進め方
 
-1. Generate a new site based on the blog theme starter:
+1. ブログテーマスターターを元に新しいサイトを作成します。
 
 ```shell
 gatsby new {your-project-name} https://github.com/gatsbyjs/gatsby-starter-blog-theme
 ```
 
-2. Run your new site:
+2. サイトを立ち上げます。
 
 ```shell
 cd {your-project-name}
 gatsby develop
 ```
 
-### Additional resources
+### 追加の資料
 
-- Learn how to use an existing Gatsby theme in the [shorter conceptual guide](/docs/themes/using-a-gatsby-theme) or the more detailed [step-by-step tutorial](/tutorial/using-a-theme).
+- [短い基本的なガイド](/docs/themes/using-a-gatsby-theme) またはより詳しい [段階的なチュートリアル](/tutorial/using-a-theme) で既存の Gatsby テーマの使い方を学ぶことができます。
 
-## Building a new theme
+## 新しくテーマを作成する
 
 <EggheadEmbed
   lessonLink="https://egghead.io/lessons/gatsby-use-the-gatsby-theme-workspace-starter-to-begin-building-a-new-theme"
   lessonTitle="Use the Gatsby Theme Workspace Starter to Begin Building a New Theme"
 />
 
-### Prerequisites
+### 前提条件
 
-- The [Gatsby CLI](/docs/gatsby-cli) installed
-- [Yarn](https://yarnpkg.com/lang/en/docs/install/#mac-stable) installed
+- [Gatsby CLI](/docs/gatsby-cli) がインストールされていること。
+- [Yarn](https://yarnpkg.com/ja/docs/install#mac-stable) がインストールされていること。
 
-### Directions
+### 進め方
 
-1. Generate a new theme workspace using the [Gatsby theme workspace starter](https://github.com/gatsbyjs/gatsby-starter-theme-workspace):
+1. [Gatsby テーマワークスペーススターター](https://github.com/gatsbyjs/gatsby-starter-theme-workspace) を利用して新しいテーマワークスペースを作成します。
 
 ```shell
 gatsby new {your-project-name} https://github.com/gatsbyjs/gatsby-starter-theme-workspace
 ```
 
-2. Run the example site in the workspace:
+2. ワークスペース内でサンプルサイトを立ち上げます。
 
 ```shell
 yarn workspace example develop
 ```
 
-### Additional resources
+### 追加の資料
 
-- Follow a [more detailed guide](/docs/themes/building-themes/) on using the Gatsby theme workspace starter.
-- Learn how to build your own theme in the [Gatsby Theme Authoring video course on Egghead](https://egghead.io/courses/gatsby-theme-authoring), or in the [video course's complementary written tutorial companion](/tutorial/building-a-theme).
+- Gatsby テーマワークスペーススターターの使い方については [より詳しいガイド](/docs/themes/building-themes/) をご覧ください。
+- [Egghead のテーマ開発動画コース](https://egghead.io/courses/gatsby-theme-authoring) または [動画に沿った形でより補足的に詳しく書かれたチュートリアル](/tutorial/building-a-theme) にて、独自のテーマの作り方を学ぶことができます。
