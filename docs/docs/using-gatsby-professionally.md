@@ -1,5 +1,5 @@
 ---
-title: プロとしてGatsbyを使う
+title: プロとして Gatsby を使う
 overview: true
 ---
 
