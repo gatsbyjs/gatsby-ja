@@ -2,7 +2,7 @@
 title: データベースから情報を取得する
 ---
 
-Gatsby のエコシステムでは、いくつかのデータベースシステムへのコネクターも備え付けで用意されています。
+Gatsby エコシステムには、いくつかのデータベースシステムへのコネクターが標準で含まれています。
 
 - [PostgreSQL](/packages/gatsby-source-pg/?=pg)
 - [MySQL](/packages/gatsby-source-mysql/?=mysql)
