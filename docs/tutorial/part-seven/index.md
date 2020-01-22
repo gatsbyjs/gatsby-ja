@@ -29,7 +29,7 @@ Markdown のページを作成するために、2 つの Gatsby API を学びま
 
 私達は、Gatsby の API をシンプルに実装できるようベストを尽くします。API を実装するには、`gatsby-node.js`で、 API の名前を用いた関数をエクスポートします。
 
-サイトのルートフォルダーに、`gatsby-node.js`を作成し、次のように記述します。
+試しに API を実装してみましょう。サイトのルートフォルダーに、`gatsby-node.js`を作成し、次のように記述してください。
 
 ```javascript:title=gatsby-node.js
 exports.onCreateNode = ({ node }) => {
@@ -37,13 +37,13 @@ exports.onCreateNode = ({ node }) => {
 }
 ```
 
-`onCreateNode`関数は、新しいノードが作成（または更新）されたるたびに Gatsby によって呼び出されます。
+`onCreateNode` 関数は、新しいノードが作成（または更新）されたるたびに Gatsby によって呼び出されます。
 
-開発用のサーバーを再起動します。すると、多数のノードがターミナルのコンソールに記録されます。
+開発用のサーバーを再起動してください。すると、多数のノードがターミナルのコンソールに記録されます。
 
 次は、この API を使用して、`MarkdownRemark`ノードに Markdown のスラッグを追加します。
 
-`MarkdownRemark`ノードだけのログを記録するように、関数の処理を変更します。
+`MarkdownRemark` ノードだけのログを記録するように、関数の処理を変更します。
 
 ```javascript:title=gatsby-node.js
 exports.onCreateNode = ({ node }) => {
@@ -85,7 +85,7 @@ exports.onCreateNode = ({ node, getNode }) => {
 }
 ```
 
-この関数はスラッグの作成とともに、 親の`File`ノードの探索を処理します。サーバーを再起動すると、Markdown ごとに 1 つずつ、計 2 つのスラッグがターミナルに表示されます。
+この関数はスラッグの作成とともに、 親の `File` ノードの探索を処理します。サーバーを再起動すると、Markdown ごとに 1 つずつ、計 2 つのスラッグがターミナルに表示されます。
 
 これで新しいスラッグを `MarkdownRemark` ノードに直接追加できます。これは、ノードに追加したデータを後から GraphQL で取得できるので、強力です。新しくページを作成する時に、スラッグを簡単に取得できます。
 
@@ -197,7 +197,7 @@ export default () => {
 }
 ```
 
-`gatsby-node.js`を更新します。
+`gatsby-node.js` を更新します。
 
 ```javascript:title=gatsby-node.js
 const path = require(`path`) // highlight-line
@@ -392,8 +392,8 @@ export const query = graphql`
 
 あなたは Gatsby のサイトを構築しました。次はどうしますか？
 
-- Gatsby のサイトを Twitter で共有し、 #gatsbytutorial で検索して、他の人が作成したサイトを見てみましょう！
-  ツイートには @gatsbyjs を記載して、 #gatsbytutorial 　のハッシュタグを含めてください :)
+- Gatsby のサイトを Twitter で共有し、#gatsbytutorial で検索して、他の人が作成したサイトを見てみましょう！
+  ツイートには @gatsbyjs を記載して、#gatsbytutorial のハッシュタグを含めてください :)
 - いくつかの[サンプルページ](https://github.com/gatsbyjs/gatsby/tree/master/examples#gatsby-example-websites)を見ることができます。
 - [プラグイン](/docs/plugins/)を調べる
 - [Gatsby によって構築されたページ](/showcase/)を見る
