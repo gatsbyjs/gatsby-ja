@@ -1,30 +1,30 @@
 ---
-title: Using Sass in Gatsby
+title: Gatsby で Sass を使用する
 ---
 
-[Sass](https://sass-lang.com) is an extension of CSS, adding nested rules, variables, mixins, selector inheritance, and more. In Gatsby, Sass code can be translated to well-formatted, standard CSS using a plugin.
+[Sass](https://sass-lang.com) は CSS にネストや変数、ミックスイン、セレクターの継承などを追加して拡張したものです。Gatsby では、プラグインを使用して Sass を適切な形式の CSS に変換できます。
 
-Sass will compile `.sass` and `.scss` files to `.css` files for you, so you can write your stylesheets with more advanced features.
+Sass はより高度な機能を使用したスタイルシートを `.sass` もしくは `.scss` ファイルに記述し、それらを `.css` ファイルにコンパイルします。
 
-> **Note**: the difference between using a `.sass` or `.scss` file is the syntax that you write your styles in. All valid CSS is valid SCSS as well so it is the easiest to use and most popular. You can read more about the differences in the [Sass documentation](https://sass-lang.com/documentation/syntax).
+> **ヒント**: `.sass` と `.scss` ファイルはスタイルを記述する文法が異なります。全ての有効な CSS 記法は SCSS でも使用可能であるため、もっとも使いやすく人気があります。これらの違いについては、[Sass documentation](https://sass-lang.com/documentation/syntax) をご覧ください。
 
-## Installing and configuring Sass
+## Sass のインストールと設定
 
-This guide assumes that you have a Gatsby project set up. If you need to set up a project, head to the [**Quick Start guide**](/docs/quick-start/), then come back.
+このガイドでは、Gatsby プロジェクトが準備されている必要があります。もしプロジェクトの準備が完了していない場合は、[**クイックスタートガイド**](/docs/quick-start/)を参照しましょう。
 
-1.  Install the Gatsby plugin [**gatsby-plugin-sass**](/packages/gatsby-plugin-sass/) and `node-sass`, a required peer dependency as of v2.0.0.
+1.  Gatsby プラグイン [**gatsby-plugin-sass**](/packages/gatsby-plugin-sass/) および v2.0.0 以降の `node-sass` をインストールします。
 
 `npm install --save node-sass gatsby-plugin-sass`
 
-2.  Include the plugin in your `gatsby-config.js` file.
+2.  プラグインを `gatsby-config.js` ファイルに追記します。
 
 ```javascript:title=gatsby-config.js
 plugins: [`gatsby-plugin-sass`],
 ```
 
-> **Note**: You can configure [additional plugin options](/packages/gatsby-plugin-sass/#other-options) like paths to include and options for `css-loader`.
+> **ヒント**: パスや `css-loader` のオプションなど、[追加のプラグインオプション](/packages/gatsby-plugin-sass/#other-options)を設定できます。
 
-3.  Write your stylesheets as `.sass` or `.scss` files and require or import them as normal.
+3.  スタイルシートを `.sass` もしくは `.scss` ファイルに記述し、require もしくは import で取り込みます。
 
 ```css:title=styles.scss
 $font-stack: Helvetica, sans-serif;
@@ -50,7 +50,7 @@ import "./styles.scss"
 import "./styles.sass"
 ```
 
-## Other resources
+## その他の参照文献
 
 - [Introduction to Sass](https://designmodo.com/introduction-sass/)
 - [Sass documentation](https://sass-lang.com/documentation)
