@@ -3,30 +3,24 @@ title: クライアントを説得する
 issue: https://github.com/gatsbyjs/gatsby/issues/14040
 ---
 
-クライアントにとってもっとも重要なことは、ウェブサイトが品質基準を満たして、時間通り、予算内に出来上がることです。
+クライアントにとってもっとも重要なことは、ウェブサイトが品質基準を満たし、時間通りに、予算内で納品されることです。
 
 さらに、クライアントはコンテンツの作成、編集、公開に際して、しばしば使い慣れた CMS ベースのワークフローを使いたがります。
 
-クライアントに Gatsby を使うように説得するには次のようなメリットが役立つでしょう。
+クライアントに Gatsby を使うように説得するには、Gatsby の次のようなメリットが役立つでしょう。
 
-- クライアントの CMS と一緒に動くこと
-- 開発スピードが速いので、プロジェクトが時間通りに進むのを助けること
--
-- Ease of making development changes helps keep project under budget
-- 低コストでホストできるので予算内に収めやすい
-- Lower hosting cost helps keep project under budget
-- ページロードや応答時間が少ない高速なウェブサイト
-- Fast performing websites which reduce page load and response time
-- スケーラブルで動的なアプリケーションの作成が可能
-- Supports creation of highly scalable and dynamic apps
-- プラグインのエコシステムが豊かなので、複雑なコードを助けること
-- Rich plugin ecosystem which helps tackle complex code
+- クライアントの使っている CMS と一緒に動くこと
+- 開発スピードが速いので、プロジェクトが時間通りに進めやすくすること
+- 開発時に変更が容易なので予算内に収めやすいこと
+- 低コストでホストできるので予算内に収めやすいこと
+- ページロードや応答時間が少なく高速なウェブサイトを作れること
+- スケーラブルで動的なアプリケーションの作成が可能なこと
+- 複雑なコードの取り扱いを助ける豊かなプラグインのエコシステムがあること
 
-[This one-pager](/gatsby-one-pager.pdf) may also be useful for clients -- it explains Gatsby in their language.
+[この 1 枚にまとまった資料](/gatsby-one-pager.pdf) もクライアントの役に立つかもしれません。クライアントにも分かりやすい言葉で、Gatsby について説明しています。
 
 --
 
-This is a stub. Help our community expand it.
+これはスタブです。私たちのコミュニティーが内容を充実させるのを手伝ってください。
 
-Please use the [Gatsby Style Guide](/contributing/gatsby-style-guide/) to ensure your
-Pull Request gets accepted.
+あなたの Pull Request が承認されるために、[Gatsby Style Guide](/contributing/gatsby-style-guide/)を利用してください。
