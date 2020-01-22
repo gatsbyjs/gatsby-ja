@@ -1,5 +1,5 @@
 ---
-title: Gatsbyにおけるデータ
+title: Gatsby におけるデータ
 typora-copy-images-to: ./
 disableTableOfContents: true
 ---
@@ -55,7 +55,7 @@ disableTableOfContents: true
 
 ### GraphQL を用いた Gatsby のデータ層でコンポーネントにデータを取り込む方法
 
-React コンポーネントにデータを取り込む方法にはさまざまな選択肢があります。そのうちのもっとも人気でパワフルな技術のひとつに[GraphQL](http://graphql.org/)があります。
+React コンポーネントにデータを取り込む方法にはさまざまな選択肢があります。そのうちのもっとも人気でパワフルな技術のひとつに [GraphQL](http://graphql.org/) があります。
 
 GraphQL は、必要なデータをプロダクトエンジニアがコンポーネントに取り込むのを助けるために Facebook によって開発されました。
 
@@ -75,7 +75,7 @@ gatsby new tutorial-part-four https://github.com/gatsbyjs/gatsby-starter-hello-w
 cd tutorial-part-four
 ```
 
-次に必要な依存ライブラリをプロジェクトルートにインストールします。タイポグラフィーテーマの"Kirkham"を使用し、["Emotion"](https://emotion.sh/)という CSS-in-JS ライブラリを試します。
+次に必要な依存ライブラリをプロジェクトルートにインストールします。タイポグラフィーテーマの "Kirkham" を使用し、["Emotion"](https://emotion.sh/) という CSS-in-JS ライブラリを試します。
 
 ```shell
 npm install --save gatsby-plugin-typography typography react-typography typography-theme-kirkham gatsby-plugin-emotion @emotion/core
@@ -181,7 +181,7 @@ module.exports = {
 }
 ```
 
-上記のファイルを追加し、 いつも通り`gatsby develop` を実行すると以下のものが表示されるでしょう。
+上記のファイルを追加し、いつも通り `gatsby develop` を実行すると以下のものが表示されるでしょう。
 
 ![start](start.png)
 
@@ -195,7 +195,7 @@ module.exports = {
 
 しかし、将来サイトのタイトルを変更したくなった場合はどうでしょうか？全てのコンポーネントのタイトルを検索してそれぞれの中身を書き換える必要があります。特に大規模で複雑なサイトであれば、面倒な上エラーが発生しやすくなります。代わりに、タイトルを一箇所に保管して他のファイルから参照できます。一箇所のタイトルを変更すれば、Gatsby はそれを参照しているファイルに更新されたタイトルを _取り込み_ ます。
 
-これらの一般的なデータの場所は、 `gatsby-config.js` ファイル内の `siteMetadata` オブジェクトです。サイトのタイトルを `gatsby-config.js` に追加します。
+これらの一般的なデータの場所は、`gatsby-config.js` ファイル内の `siteMetadata` オブジェクトです。サイトのタイトルを `gatsby-config.js` に追加します。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
