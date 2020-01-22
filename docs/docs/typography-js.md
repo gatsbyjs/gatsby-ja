@@ -40,10 +40,10 @@ module.exports = {
 
 ## Typography の設定の作成
 
-ここまででプラグインを追加したので、もし`src/utils/`ディレクトリーがなかった場合は作成し、`typography.js`という名前のファイルを追加してください。
-このファイルに Typography の設定を書き、このファイルへのパスを`pathToConfigModule`オプションに設定します。
+ここまででプラグインを追加したので、もし `src/utils/` ディレクトリーがなかった場合は作成し、`typography.js`という名前のファイルを追加してください。
+このファイルに Typography の設定を書き、このファイルへのパスを `pathToConfigModule` オプションに設定します。
 
-作成した`typography.js`ファイルの中には、サイトのタイプデザインの設定を書きます。基本的な設定は次のようになっています。
+作成した `typography.js` ファイルの中には、サイトのタイプデザインの設定を書きます。基本的な設定は次のようになっています。
 
 ```js:title=src/utils/typography.js
 import Typography from "typography"
@@ -78,7 +78,7 @@ Typography.js にはサイトのフォントスタイルを決める時間を節
 Funston というテーマは Typography によってメンテナンスされているビルトインテーマの 1 つです。
 この Funston を npm からインストールするには、`npm install typography-theme-funston --save`というコマンドを打ってください。
 
-このテーマを使うには、先程作成した`typography.js`ファイルを次のように編集します。
+このテーマを使うには、先程作成した `typography.js` ファイルを次のように編集します。
 
 ```diff:title=src/utils/typography.js
 import Typography from "typography";
@@ -103,6 +103,6 @@ export default typography;
 上記の手順が終わったら、`gatsby develop`というコマンドで開発サーバーを立ち上げ、<http://localhost:8000>にアクセスしてください。
 もしすべての手順が上手くいっていたら、サイトのタイプデザインが Funston テーマになっているはずです。
 
-**注意**: もし以前のフォントが変更されずに残っている場合、CSS からすべての`font-family`を削除し、再度チェックしてください。
+**注意**: もし以前のフォントが変更されずに残っている場合、CSS からすべての `font-family` を削除し、再度チェックしてください。
 
 インストールしたいテーマをもっと探す場合は、[Typography.js](https://kyleamathews.github.io/typography.js/)の公式サイトを見てください。
