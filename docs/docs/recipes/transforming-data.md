@@ -10,14 +10,14 @@ Gatsby でのデータ変換はプラグインによって実現されていま�
 
 ### 前提条件
 
-- `gatsby-config.js`と`index.js`ページがある。
+- `gatsby-config.js`と `index.js` ページがある。
 - `src`ディレクトリーに Markdown ファイルが保存されている。
 - `gatsby-source-filesystem` のようなソースプラグインがインストールされている。
 - `gatsby-transformer-remark`プラグインがインストールされている。
 
 ### 進め方
 
-1. トランスフォーマープラグインを`gatsby-config.js`に追加します。
+1. トランスフォーマープラグインを `gatsby-config.js` に追加します。
 
 ```js:title=gatsby-config.js
 plugins: [

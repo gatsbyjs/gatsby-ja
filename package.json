@@ -1,9 +1,26 @@
 {
+  "maintainers": [
+    "hirotaka (https://github.com/hirotaka)",
+    "Naturalclar (https://github.com/Naturalclar)",
+    "uetchy (https://github.com/uetchy)",
+    "imbsky (https://github.com/imbsky)"
+  ],
+  "license": "MIT",
   "scripts": {
-    "lint": "textlint $(git diff master --name-only) -f pretty-error",
-    "lint:full": "textlint README.md docs/**/*.md -f pretty-error",
     "format": "pretty-quick && textlint $(git diff master --name-only) --fix",
-    "format:full": "pretty-quick && textlint README.md docs/**/*.md --fix"
+    "format:full": "pretty-quick && textlint README.md docs/**/*.md --fix",
+    "lint": "textlint $(git diff master --name-only) -f pretty-error",
+    "lint:full": "textlint README.md docs/**/*.md -f pretty-error"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.md": [
+      "textlint"
+    ]
   },
   "devDependencies": {
     "husky": "^4.0.7",
@@ -16,18 +33,10 @@
     "textlint-rule-ja-hiragana-fukushi": "^1.2.0",
     "textlint-rule-ja-hiragana-hojodoushi": "^1.0.4",
     "textlint-rule-ja-hiragana-keishikimeishi": "^1.0.2",
+    "textlint-rule-ja-no-space-around-parentheses": "^2.0.1",
+    "textlint-rule-ja-space-around-code": "^2.0.1",
     "textlint-rule-preset-ja-spacing": "^2.0.1",
     "textlint-rule-preset-ja-technical-writing": "^3.1.3",
     "textlint-rule-preset-jtf-style": "^2.3.4"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged && lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.md": [
-      "textlint"
-    ]
   }
 }

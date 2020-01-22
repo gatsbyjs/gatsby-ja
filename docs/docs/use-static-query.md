@@ -1,26 +1,26 @@
 ---
-title: Querying Data in Components with the useStaticQuery Hook
+title: useStaticQuery フックを使ったコンポーネントからのクエリー
 ---
 
-Gatsby v2.1.0 introduces `useStaticQuery`, a new Gatsby feature that provides the ability to use a [React Hook](https://reactjs.org/docs/hooks-intro.html) to query with GraphQL at _build time_.
+Gatsby v2.1.0 で `useStaticQuery` が導入されました。これはビルド時に [React Hook](https://reactjs.org/docs/hooks-intro.html) を使って GraphQL のクエリーを実行する新しい機能です。
 
-Just like the [StaticQuery](/docs/static-query/) component, it allows your React components to retrieve data via a GraphQL query that will be parsed, evaluated, and injected into the component. However, `useStaticQuery` is a hook rather than a component that takes a render prop!
+React コンポーネントで、 [StaticQuery](/docs/static-query/) コンポーネントと同じように GraphQL クエリーを介したデータの取得とコンポーネントへの注入を行えます。ただし、`useStaticQuery` はコンポーネントがレンダープロップを取り込むというよりも、フックによって行います。
 
-In this guide, you will walk through an example using `useStaticQuery`. If you're not familiar with static queries in Gatsby, you might want to check out [the difference between a static query and a page query](/docs/static-query/#how-staticquery-differs-from-page-query).
+このガイドでは、 `useStaticQuery` を使った例を紹介します。もし Gatsby の `StaticQuery` について詳しくなければ、まずは [StaticQuery とページクエリーの違い](/docs/static-query/#how-staticquery-differs-from-page-query)をご覧ください。
 
-## How to use useStaticQuery in components
+## コンポーネントでの useStaticQuery の使い方
 
-> 💡 You'll need React and ReactDOM 16.8.0 or later to use `useStaticQuery`.
+> 💡 `useStaticQuery` を使うには React と ReactDOM の 16.8.0 以上が必要です。
 >
 > 📦 `npm install react@^16.8.0 react-dom@^16.8.0`
 
-`useStaticQuery` is a React Hook. All the [Rules of Hooks](https://reactjs.org/docs/hooks-rules.html) apply.
+`useStaticQuery` は React Hook です。[Rules of Hooks](https://reactjs.org/docs/hooks-rules.html) のルールがすべて適用されます。
 
-It takes your GraphQL query and returns the requested data. That's it!
+GraphQL クエリーを受け取って、要求されたデータを返します。それだけです！
 
-### Basic example
+### 基本の例
 
-Let's create a `Header` component that queries for the site title from `gatsby-config.js`:
+`gatsby-config.js` からサイトのタイトルを取得する `Header` コンポーネントを作ってみましょう。
 
 ```jsx:title=src/components/header.js
 import React from "react"
@@ -45,11 +45,11 @@ export default () => {
 }
 ```
 
-### Composing custom `useStaticQuery` hooks
+### カスタム `useStaticQuery` フックを作る
 
-One of the most compelling features of hooks is the ability to compose and re-use these blocks of functionality. `useStaticQuery` is a hook. Therefore, using `useStaticQuery` allows us to compose and re-use blocks of reusable functionality. Perfect!
+フックのもっとも魅力的な機能のひとつは、再利用可能な機能のまとまりを作成できることです。 `useStaticQuery` はフックです。したがって、 `useStaticQuery` を使うと再利用可能な機能のまとまりを作成できます。完璧ですね！
 
-A classic example is to create a `useSiteMetadata` hook which will provide the `siteMetadata` to be re-used in any component. It looks something like:
+典型的な例は、どのコンポーネントでも再利用できるように `siteMetadata` を提供する `useSiteMetadata` フックを作成することです。これは次のようになります。
 
 ```jsx:title=src/hooks/use-site-metadata.js
 import { useStaticQuery, graphql } from "gatsby"
@@ -78,7 +78,7 @@ export const useSiteMetadata = () => {
 }
 ```
 
-Then just import your newly created hook, like so:
+そして、次のように新しく作成したフックをインポートします。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -90,7 +90,7 @@ export default () => {
 }
 ```
 
-## Known Limitations
+## 既知の制限事項
 
-- `useStaticQuery` does not accept variables (hence the name "static"), but can be used in _any_ component, including pages
-- Because of how queries currently work in Gatsby, we support only a single instance of `useStaticQuery` in a file
+- `useStaticQuery` は値を受け取れません（なので `static` という名前になっています）。しかし、ページを含む**どのような**コンポーネントでも使えます。
+- `useStaticQuery` はファイル内で単一での使用のみをサポートしています。これは Gatsby の現状のクエリーの仕組みによる制限です。
