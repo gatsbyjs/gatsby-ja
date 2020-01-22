@@ -1,11 +1,11 @@
 ---
-title: "Gatsby E-Commerce Tutorial"
+title: "Gatsby Eコマースチュートリアル"
 ---
 
 # 目次
 
 - [目次](#目次)
-- [Why use Gatsby for an e-commerce site?](#why-use-gatsby-for-an-e-commerce-site)
+- [なぜEコマースサイトでGatsbyを使うのか](#なぜEコマースサイトでGatsbyを使うのか)
 - [前提条件](#前提条件)
   - [How does Gatsby work with Stripe?](#how-does-gatsby-work-with-stripe)
 - [Setting up a Gatsby site](#setting-up-a-gatsby-site)
@@ -20,6 +20,7 @@ title: "Gatsby E-Commerce Tutorial"
 
 この発展的ななチュートリアルでは, Gatsbyを用いて支払いができる基本的なeコマースサイトのUIを構築を学びます。[Stripe](https://stripe.com)は支払い処理のバックエンドとして用います。
 you’ll learn how to use Gatsby to build the UI for a basic e-commerce site that can accept payments, with [Stripe](https://stripe.com) as the backend for processing payments.
+## なぜEコマースサイトでGatsbyを使うのか
 ## Why use Gatsby for an e-commerce site?
 
 Gatsbyをe-コマースのサイトに使うメリットは以下の通りです:
@@ -44,7 +45,7 @@ You can see the working demo hosted here: https://gatsby-ecommerce-stripe.netlif
 - Stripe アカウント: [アカウント登録はこちら](https://dashboard.stripe.com/register)
 - Stripe account: [register for an account here](https://dashboard.stripe.com/register)
 
-### StripeでGatsbyはどのように動作するのか
+### StripeとGatsbyはどのように連携させるのか
 ### How does Gatsby work with Stripe?
 
 Stripeは顧客から情報を安全に収集して処理できる支払い処理サービスです。
@@ -55,10 +56,16 @@ Stripe is a payment processing service that allows you to securely collect and p
 Stripeの代わりとしては、SquareやBraintreeなどがあります。これらの仕組みはStripeと非常に似ています。
 There are alternatives to Stripe, like Square and Braintree, and their setup is very similar to Stripe.
 
-Stripe
+Stripeはいかなるバックエンドコンポーネントも必要としない[hosted checkout](https://stripe.com/docs/payments/checkout)を提供します。
+製品やSKU、定期利用プランの設定を[Stripe ダッシュボード](https://stripe.com/docs/payments/checkout#configure)で行えます。
+(e-Bookのような)単一の商品か定期利用を販売している場合、Gatsbyのサイト内で商品のSKU IDをコード化することができます。
+複数の商品を販売している場合、[Stripe ソースプラグイン](https://www.gatsbyjs.org/packages/gatsby-source-stripe/)を利用して、ビルド時に全てのSKUを取得できます。
+Gatsbyのサイトを自動的に更新する場合は、Stripe webhookイベントを利用して新しい商品やSKUが追加されたときに再デプロイをトリガー[trigger a redeploy](https://www.netlify.com/docs/webhooks/)とすることができます。
 Stripe offers a [hosted checkout](https://stripe.com/docs/payments/checkout) that doesn't require any backend component. You can configure products, SKUs, and subscription plans in the [Stripe Dashboard](https://stripe.com/docs/payments/checkout#configure). If you're selling a single product or subscription (like an eBook) you can hardcode the product's SKU ID in your Gatsby site. If you're selling multiple products, you can use the [Stripe source plugin](https://www.gatsbyjs.org/packages/gatsby-source-stripe/) to retrieve all SKUs at build time. If you want your Gatsby site to automatically update, you can use the Stripe webhook event to [trigger a redeploy](https://www.netlify.com/docs/webhooks/) when a new product or SKU is added.
 
 # Setting up a Gatsby site
+# Gatsbyサイトの設定
+
 
 Create a new Gatsby project by running the `gatsby new` command in the terminal and change directories into the new project you just started:
 
