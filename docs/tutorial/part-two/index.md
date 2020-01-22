@@ -236,7 +236,7 @@ export default () => (
 }
 ```
 
-3. 以前作成したページ、`about-css-modules.js` ファイルの最初の数行を次のように編集して、`src/pages/about-css-modules.module.css` ファイルをインポートします。
+3. 以前作成した、`about-css-modules.js` ページの最初の数行を次のように編集して、`src/pages/about-css-modules.module.css` ファイルをインポートします。
 
 ```javascript:title=src/pages/about-css-modules.js
 import React from "react"
@@ -299,7 +299,7 @@ export default () => (
 
 完成したページは次のようになります。
 
-![CSS Modules を含むユーザーリストページ](css-modules-userlist.png)
+![CSS Modules によるユーザーリストページ](css-modules-userlist.png)
 
 ### CSS-in-JS
 
