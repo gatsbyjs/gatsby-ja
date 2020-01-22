@@ -343,7 +343,7 @@ export default ({ children }) => {
 
 では、本来のタイトルに戻しましょう。
 
-Gatsby の基本原則のひとつに、 _クリエイターは自分が作ったものとすぐに繋がる必要がある_ というものがあります ([hat tip to Bret Victor](http://blog.ezyang.com/2012/02/transcript-of-inventing-on-principle/))。つまり、コードを変更すればその変更の効果がすぐにわかるはずです。 Gatsby の入力を操作すれば、画面に新しい出力が表示されます。
+Gatsby の基本原則のひとつに、_クリエイターは自分が作ったものとすぐに繋がる必要がある_というものがあります ([hat tip to Bret Victor](http://blog.ezyang.com/2012/02/transcript-of-inventing-on-principle/))。つまり、コードを変更すればその変更の効果がすぐにわかるはずです。 Gatsby の入力を操作すれば、画面に新しい出力が表示されます。
 
 そのため、加えた変更がほとんどすべての場所ですぐに有効になります。 `gatsby-config.js` ファイルを再度編集し、今回は `title` を「Pandas Eating Lots」に戻します。変更はサイトのページにすぐに表示されるはずです。
 
@@ -351,4 +351,4 @@ Gatsby の基本原則のひとつに、 _クリエイターは自分が作っ�
 
 ## 次は何を？
 
-次に、チュートリアルの [5 章](/tutorial/part-five/)でソースプラグインを使用した GraphQL を使用して Gatsby サイトにデータを取り込む方法について学習します。
+チュートリアルの [5 章](/tutorial/part-five/)では、ソースプラグインを使用した GraphQL を使用して Gatsby サイトにデータを取り込む方法について学習します。
