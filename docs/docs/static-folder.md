@@ -16,7 +16,7 @@ title: static フォルダーを使う
 
 ### static アセットを参照する
 
-`static` フォルダーのアセットはそのまま参照することができます。
+`static` フォルダーのアセットはそのまま参照できます。
 
 ```jsx
 render() {
@@ -43,10 +43,10 @@ render() {
 ## いつ `static` フォルダーを使うべきか
 
 通常、私たちは [スタイルシート・画像・フォントアセット](/docs/importing-assets-into-files/)を JavaScript からインポートすることを推奨します。
-しかし、`static`フォルダーは多くのあまり典型的でないケースにおいて、抜け道として有効です。
+しかし、 `static` フォルダーは多くのあまり典型的でないケースにおいて、抜け道として有効です。
 
 - ビルド出力に特定の名前のファイル、例えば [`manifest.webmanifest`](https://developer.mozilla.org/en-US/docs/Web/Manifest) が必要なとき。
 - 数千の画像があり、それらを動的に参照しなければならないとき。
 - 小さなスクリプト（[`pace.js`](http://github.hubspot.com/pace/docs/welcome/) など）をバンドル外で含めたいとき。
-- Webpack と互換性のないライブラリーを使用しており、`<script>` タグを使用して読み込む以外の方法がないとき。
-- GraphQL で扱うのが難しい一貫性のないスキーマを持つ JSON ファイル（[TopoJSON files](https://en.wikipedia.org/wiki/GeoJSON#TopoJSON)など）をインポートしたいとき。JSON ファイルを`import`文を用いてページ、テンプレート、コンポーネント内に直接インポートすると、そのファイルがバンドルに追加されるので、全てのページのサイズが増加することに注意してください。代わりに、JSON ファイルを`staic`フォルダーに置いて、`componentDidMount`ライフサイクルや`useEffect` hook 内で動的 import 文（`import('/static/myjson.json')`)を用いると良いでしょう。
+- Webpack と互換性のないライブラリーを使用しており、 `<script>` タグを使用して読み込む以外の方法がないとき。
+- GraphQL で扱うのが難しい一貫性のないスキーマを持つ JSON ファイル（[TopoJSON files](https://en.wikipedia.org/wiki/GeoJSON#TopoJSON)など）をインポートしたいとき。JSON ファイルを `import` 文を用いてページ、テンプレート、コンポーネント内に直接インポートすると、そのファイルがバンドルに追加されるので、全てのページのサイズが増加することに注意してください。代わりに、JSON ファイルを `staic` フォルダーに置いて、 `componentDidMount` ライフサイクルや `useEffect` hook 内で動的 import 文（`import('/static/myjson.json')`)を用いると良いでしょう。
