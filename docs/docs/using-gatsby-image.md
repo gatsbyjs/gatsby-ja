@@ -2,7 +2,7 @@
 title: Gatsby Image を使用して画像の膨張を防ぎましょう。
 ---
 
-`gatsby-image` ([gatsby-image プラグインの README](/packages/gatsby-image/))は Gatsby の GraphQL クエリーとシームレスに連携するように設計された React コンポーネントです。 [Gatsby のネイティブ画像処理機能](https://image-processing.gatsbyjs.org/) と高度な画像の読み込み技術を組み合わせて、サイトの画像の読み込みを簡単かつ完全に最適化してくれます。 `gatsby-image` は [gatsby-plugin-sharp（画像圧縮ライブラリ）](/packages/gatsby-plugin-sharp/) を使用して強力に画像を変換します。
+`gatsby-image` ([gatsby-image プラグインの README](/packages/gatsby-image/))は Gatsby の GraphQL クエリーとシームレスに連携するように設計された React コンポーネントです。 [Gatsby のネイティブ画像処理機能](https://image-processing.gatsbyjs.org/)と高度な画像の読み込み技術を組み合わせて、サイトの画像の読み込みを簡単かつ完全に最適化してくれます。`gatsby-image` は [gatsby-plugin-sharp（画像圧縮ライブラリ）](/packages/gatsby-plugin-sharp/) を使用して画像を変換します。
 
 > _警告: gatsby-image は `<img />` と**完全に互換性があるわけではありません**。 gatsby-image は 固定された幅/高さの画像および、コンテナの幅全体に広がる画像に最適化されています。 `<img />` で使用できるいくつかの方法は gatsby-image では機能しません。_
 
