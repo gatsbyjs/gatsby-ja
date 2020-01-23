@@ -68,7 +68,7 @@ Typography.js のすべての要素のフォントサイズは上記で設定し
 
 ## Typography テーマのインストール
 
-Typography.js にはサイトのフォントスタイルを決める時間を節約してくれるビルトインテーマがあります。Funston というテーマは Typography によってメンテナンスされているビルトインテーマの 1 つです。この Funston を npm からインストールするには、 `npm install typography-theme-funston --save` というコマンドを打ってください。
+Typography.js にはサイトのフォントスタイルを決める時間を節約してくれるビルトインテーマがあります。Funston というテーマは Typography によってメンテナンスされているビルトインテーマの 1 つです。この Funston を npm からインストールするには、`npm install typography-theme-funston --save` というコマンドを打ってください。
 
 このテーマを使うには、先程作成した `typography.js` ファイルを次のように編集します。
 
@@ -92,7 +92,7 @@ const typography = new Typography(
 export default typography;
 ```
 
-上記の手順が終わったら、 `gatsby develop` というコマンドで開発サーバーを立ち上げ、<http://localhost:8000>にアクセスしてください。もしすべての手順が上手くいっていたら、サイトのタイプデザインが Funston テーマになっているはずです。
+上記の手順が終わったら、`gatsby develop` というコマンドで開発サーバーを立ち上げ、<http://localhost:8000>にアクセスしてください。もしすべての手順が上手くいっていたら、サイトのタイプデザインが Funston テーマになっているはずです。
 
 **ヒント**: もし以前のフォントが変更されずに残っている場合、CSS からすべての `font-family` を削除し、再度チェックしてください。
 
