@@ -10,13 +10,13 @@ Gatsby から GraphQL のインターフェースで様々なデータソース�
 
 ### 使い方
 
-1. `graphql` from `gatsby` から `graphql` をインポート。
+1. `gatsby` から `graphql` をインポート。
 
-2. Export a 定数の `query` をエクスポートして、`graphql` テンプレートのクエリをつのバックティック（`)の中の値にセットします。
+2. 定数の `query` をエクスポートして、`graphql` テンプレートのクエリをふたつのバックティック（`)の中の値にセットします。
 
 3. `data` をコンポーネントの prop として渡します。
 
-4. この `data` 変数の中に参照されたデータが入り、 JSX の中から参照でき　 HTML 　で出力されます。
+4. この `data` 変数の中に参照されたデータが入り、 JSX の中から参照でき HTML で出力されます。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -50,9 +50,9 @@ export default IndexPage
 
 ### 追加リソース
 
-- [GraphQL と Gatsby](/docs/graphql/): 返されたデータの内容を理解
-- [More on querying data in pages with GraphQL](/docs/page-query/)
-- [MDN on Tagged Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) GraphQL で使われるものと同様
+- [GraphQL と Gatsby](/docs/graphql/): 期待されたデータの形を理解
+- [GraphQL でページ内のデータ参照についてさらに](/docs/page-query/)
+- [MDN で Tagged Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) GraphQL で使われるものと同様
 
 ## StaticQuery コンポーネントを使ってのデータの参照
 
@@ -60,7 +60,7 @@ export default IndexPage
 
 ### 使い方
 
-1. The `StaticQuery` コンポーネントには `query` と `render` というつの render props が必要です。
+1. `StaticQuery` コンポーネントには `query` と `render` というつの render props が必要です。
 
 ```jsx:title=src/components/NonPageComponent.js
 import React from "react"
@@ -91,18 +91,18 @@ const NonPageComponent = () => (
 export default NonPageComponent
 ```
 
-2. このコンポーネントを JSX コンポーネントや　 HTML 　マークアップの入ったより大きなページにインポートして [他のどの様なコンポーネント](/docs/building-with-components#non-page-components) のように使うことができます。
+2. このコンポーネントを JSX コンポーネントや　 HTML 　マークアップの入ったより大きなページにインポートして [他のどの様なコンポーネント](/docs/building-with-components#non-page-components) のようにも使うことができます。
 
 ## useStaticQuery フックを使ってデータ参照
 
-Gatsby v2.1.0 から `useStaticQuery` フックを使ってコンポーネントの代わりに Javascript の関数を使ってデータの参照ができます。この文法を使うことで `<StaticQuery>` コンポーネントで全てを包む必要が無くなるのでさらにシンプルに書けると思う人もいます。
+Gatsby v2.1.0 から `useStaticQuery` hook を使ってコンポーネントの代わりに Javascript の関数を使ってデータの参照ができます。この文法を使うことで `<StaticQuery>` コンポーネントで全てを包む必要が無くなるのでさらにシンプルに書けると思う人もいます。
 
-この `useStaticQuery` フックは GraphQL クエリを使い、リクエストされたデータを返します。これは変数に保存され、後で JSX のテンプレート内で使うことができます。
+この `useStaticQuery` hook は GraphQL クエリを使い、リクエストされたデータを返します。これは変数に保存され、後で JSX のテンプレート内で使うことができます。
 
 ### 前提条件
 
 - React and ReactDOM 16.8.0 以降のバーション（最新版の Gatsby を使えばこれは自動的に行われます）
-- おすすめの記事： [Rules of React Hooks](https://reactjs.org/docs/hooks-rules.html)
+- おすすめの記事： [React Hooks のルール](https://reactjs.org/docs/hooks-rules.html)
 
 ### 使い方
 
@@ -158,7 +158,7 @@ GraphQL でデータを参照する場合は、番号を指定して返すデー
 
 ### 使い方
 
-1. `gatsby develop` を実行して、開発サーバーを始めます。
+1. `gatsby develop` を実行して、開発サーバーを起動します。
 2. Open a tab in your browser at: `http://localhost:8000/___graphql` をブラウザーのタブ内で開きます。
 3. エディターで `allSitePage` 内の項目にあるクエリを追加して始めます：
 
@@ -235,7 +235,7 @@ GraphQL でデータを参照する場合は、番号を指定して返すデー
 }
 ```
 
-4. `sort` 引数を `allSitePage` の項目に追加して、`fields` や `order` 属性にたいしてオブジェクトを指定します。`fields` への値はソートしたの項目か項目の配列を指定します。（この例では `path` フィールドが使われています）`order` は `ASC` か `DESC` を指定して昇り順か降り順を指定します。
+4. `sort` 引数を `allSitePage` の項目に追加して、`fields` や `order` 属性にオブジェクトを指定します。`fields` への値はソートしたの項目か項目の配列を指定します。（この例では `path` フィールドが使われています）`order` は `ASC` か `DESC` を指定して昇り順か降り順を指定します。
 
 ```graphql
 {
@@ -268,9 +268,9 @@ GraphQL でデータを参照する場合は、番号を指定して返すデー
 
 ## GraphQL でのフィルター
 
-参照された結果は `eq`（イコール）, `ne`（イコールでは無い）, `in` や `regex` などのオペレーターでフィルターをかける事ができます。
+参照された結果には `eq`（イコール）, `ne`（イコールでは無い）, `in` や `regex` などのオペレーターでフィルターをかける事ができます。
 
-このレシピではフィルターをかける GraphQL のデータレイヤーに複数のノードが付いている Gatsby サイトが必要です。どのサイトにも `allSitePage` の様なノードが自動的に作られています。`gatsby-config.js`　の　`gatsby-source-filesystem` や `gatsby-transformer-remark` から `allMarkdownRemark` を作ってソースやトランスフォーマープラグインをインストールすることで、追加できます。
+このレシピではフィルターをかける GraphQL のデータレイヤーに複数のノードが付いている Gatsby サイトが必要です。どのサイトにも `allSitePage` の様なノードが自動的に作られています。`gatsby-config.js` の `gatsby-source-filesystem` や `gatsby-transformer-remark` から `allMarkdownRemark` を作ってソースやトランスフォーマープラグインをインストールすることで、追加できます。
 
 ### 前提条件
 
@@ -281,7 +281,7 @@ GraphQL でデータを参照する場合は、番号を指定して返すデー
 
 1. `gatsby develop` を実行して開発サーバーを起動します。
 2. `http://localhost:8000/___graphql` から GraphiQL エクスプローラーをブラウザーで開きます。
-3. 'all' が先に付いたフィールドをクエリに追加します、例 `allMarkdownRemark`（全てのノードを返します）
+3. `all` が先に付いたフィールドをクエリに追加します、例 `allMarkdownRemark`（全てのノードを返します）
 
 ```graphql
 {
@@ -341,7 +341,7 @@ GraphQL クエリをエイリアスで名前を変えることができます。
 
 1. `gatsby develop` を実行して開発サーバーを起動します。
 2. `http://localhost:8000/___graphql` から GraphiQL エクスプローラーをブラウザーで開きます。
-3. エディターで `allFile`　の様な名前を付けてクエリを追加します。
+3. エディターで `allFile` の様な名前を付けてクエリを追加します。
 
 ```graphql
 {
