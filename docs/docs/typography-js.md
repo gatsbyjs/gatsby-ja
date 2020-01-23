@@ -32,11 +32,11 @@ module.exports = {
 `gatsby-plugin-typography` には 2 つのオプションを指定できます。
 
 - **pathToConfigModule** (string): Typography の設定ファイルへのパス
-- **omitGoogleFont** (boolean, `default: false`): デフォルトでは Typography は必要なフォントを Google Font の CDN にリクエストを送るヘルパーを含んでいます。自分で用意したフォントを使いたい場合、もしくは自分でフォントを読み込む CDN を選択する場合は、`omitGoogleFont: true`, `gatsby-plugin-typography`を指定することでフォントヘルパーを追加する工程をスキップできます。その代わり、適切なフォントを自身で読み込まないといけません。[Adding a Local Font](/docs/recipes/styling-css#adding-a-local-font) を参照してください。
+- **omitGoogleFont** (boolean, `default: false`): デフォルトでは Typography は必要なフォントを Google Font の CDN にリクエストを送るヘルパーを含んでいます。自分で用意したフォントを使いたい場合、もしくは自分でフォントを読み込む CDN を選択する場合は、`omitGoogleFont: true`, `gatsby-plugin-typography` を指定することでフォントヘルパーを追加する工程をスキップできます。その代わり、適切なフォントを自身で読み込まないといけません。[Adding a Local Font](/docs/recipes/styling-css#adding-a-local-font) を参照してください。
 
 ## Typography の設定の作成
 
-ここまででプラグインを追加したので、もし `src/utils/` ディレクトリーがなかった場合は作成し、`typography.js`という名前のファイルを追加してください。このファイルに Typography の設定を書き、このファイルへのパスを `pathToConfigModule` オプションに設定します。
+ここまででプラグインを追加したので、もし `src/utils/` ディレクトリーがなかった場合は作成し、`typography.js` という名前のファイルを追加してください。このファイルに Typography の設定を書き、このファイルへのパスを `pathToConfigModule` オプションに設定します。
 
 作成した `typography.js` ファイルの中には、サイトのタイプデザインの設定を書きます。基本的な設定は次のようになっています。
 
@@ -68,7 +68,7 @@ Typography.js のすべての要素のフォントサイズは上記で設定し
 
 ## Typography テーマのインストール
 
-Typography.js にはサイトのフォントスタイルを決める時間を節約してくれるビルトインテーマがあります。Funston というテーマは Typography によってメンテナンスされているビルトインテーマの 1 つです。この Funston を npm からインストールするには、`npm install typography-theme-funston --save`というコマンドを打ってください。
+Typography.js にはサイトのフォントスタイルを決める時間を節約してくれるビルトインテーマがあります。Funston というテーマは Typography によってメンテナンスされているビルトインテーマの 1 つです。この Funston を npm からインストールするには、 `npm install typography-theme-funston --save` というコマンドを打ってください。
 
 このテーマを使うには、先程作成した `typography.js` ファイルを次のように編集します。
 
@@ -92,7 +92,7 @@ const typography = new Typography(
 export default typography;
 ```
 
-上記の手順が終わったら、`gatsby develop`というコマンドで開発サーバーを立ち上げ、<http://localhost:8000>にアクセスしてください。もしすべての手順が上手くいっていたら、サイトのタイプデザインが Funston テーマになっているはずです。
+上記の手順が終わったら、 `gatsby develop` というコマンドで開発サーバーを立ち上げ、<http://localhost:8000>にアクセスしてください。もしすべての手順が上手くいっていたら、サイトのタイプデザインが Funston テーマになっているはずです。
 
 **注意**: もし以前のフォントが変更されずに残っている場合、CSS からすべての `font-family` を削除し、再度チェックしてください。
 
