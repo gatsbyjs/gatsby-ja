@@ -4,7 +4,7 @@ typora-copy-images-to: ./
 disableTableOfContents: true
 ---
 
-ああ！長い道のりでしたね！あなたは以下の内容を学びました。
+お疲れさまでした！ここまでで以下の内容を学びましたね。
 
 - 新しい Gatsby サイトの作成
 - ページとコンポーネントの作成
@@ -36,7 +36,7 @@ Lighthouse は Chrome DevTools に含まれています。評価を実施し、�
 gatsby build
 ```
 
-> 💡 [パート 1](/tutorial/part-one/)で学習したように、これによりサイトのプロダクション用ビルドが実行され、ビルドされた静的ファイルが `public` ディレクトリーに出力されます。
+> 💡 [パート 1](/tutorial/part-one/) で学習したように、これによりサイトのプロダクション用ビルドが実行され、ビルドされた静的ファイルが `public` ディレクトリーに出力されます。
 
 2.  プロダクションサイトをローカルで閲覧します。次のコマンドを実行してください。
 
@@ -331,11 +331,11 @@ export const query = graphql`
 `
 ```
 
-上記の例は [Gatsby スターターブログ](/starters/gatsbyjs/gatsby-starter-blog/) に基づいています。`<SEO>` コンポーネントに props を渡すことで、ブログ記事のメタデータを動的に変更できます。この場合、`siteMetadatagatsby-config.js` ファイルのデフォルトの `siteMetadata` プロパティの代わりに、投稿ブログの `title` と `excerpt`（ブログ記事のマークダウンファイルに存在する場合）が使用されます。
+上記の例は [Gatsby スターターブログ](/starters/gatsbyjs/gatsby-starter-blog/)に基づいています。`<SEO>` コンポーネントに props を渡すことで、ブログ記事のメタデータを動的に変更できます。この場合、`siteMetadatagatsby-config.js` ファイルのデフォルトの `siteMetadata` プロパティの代わりに、投稿ブログの `title` と `excerpt`（ブログ記事のマークダウンファイルに存在する場合）が使用されます。
 
 さて、この状態で Lighthouse の評価を再度実施すると、完全ではないにしてもスコア 100 に近づくはずです！
 
-> 💡 さらに読むと例については、[SEO コンポーネントの追加](/docs/add-seo-component/)と [React Helmet のドキュメント](https://github.com/nfl/react-helmet#example) をご覧ください！
+> 💡 さらなる例については、[SEO コンポーネントの追加](/docs/add-seo-component/)と [React Helmet のドキュメント](https://github.com/nfl/react-helmet#example) をご覧ください！
 
 ## 改善し続ける
 
@@ -359,9 +359,9 @@ Lighthouse は、サイトの改善と学習に最適なツールです。Lighth
 2.  [Gatsby のブログスターター](https://github.com/gatsbyjs/gatsby-starter-blog): 驚くほど高速なブログを作成するための Gatsby スターター。 _[実施例](http://gatsbyjs.github.io/gatsby-starter-blog/)_
 3.  [Gatsby の"hello world"スターター](https://github.com/gatsbyjs/gatsby-starter-hello-world): Gatsby サイトに必要な最低限の要素を備えた Gatsby スターター。 _[実施例](https://gatsby-starter-hello-world-demo.netlify.com/)_
 
-## こちらで以上です、みなさん！
+## みなさん、これで以上です！
 
-このチュートリアルに限っては、ということです。様々なユースケースを[追加のチュートリアル](/tutorial/additional-tutorials/)で紹介しています。
+基本的なチュートリアルはこれで終了です。その他、様々なユースケースを[追加のチュートリアル](/tutorial/additional-tutorials/)で紹介していますので、ぜひご覧ください。
 
 これはあくまでチュートリアルです。継続して学習してください！
 
