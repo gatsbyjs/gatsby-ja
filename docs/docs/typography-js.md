@@ -10,7 +10,7 @@ Typography.js はサイトに合うタイプデザインを調査し、カスタ
 
 Gatsby はプロジェクトに Typography.js を導入するため、`gatsby-plugin-typography` というプラグインを用意しています。
 
-`npm install gatsby-plugin-typography react-typography typography --save` というコマンドを打つことで、プラグインのインストールと peer dependencies への追加を行うことができます。
+`npm install gatsby-plugin-typography react-typography typography --save` というコマンドを打つことで、プラグインとその peer dependencies のインストールを行うことができます。
 
 インストールが完了したら、プロジェクトルートにある `gatsby-config.js` ファイルを開き、以下のようにプラグインの設定を足します。
 
@@ -94,6 +94,6 @@ export default typography;
 
 上記の手順が終わったら、 `gatsby develop` というコマンドで開発サーバーを立ち上げ、<http://localhost:8000>にアクセスしてください。もしすべての手順が上手くいっていたら、サイトのタイプデザインが Funston テーマになっているはずです。
 
-**注意**: もし以前のフォントが変更されずに残っている場合、CSS からすべての `font-family` を削除し、再度チェックしてください。
+**ヒント**: もし以前のフォントが変更されずに残っている場合、CSS からすべての `font-family` を削除し、再度チェックしてください。
 
 インストールしたいテーマをもっと探す場合は、[Typography.js](https://kyleamathews.github.io/typography.js/)の公式サイトを見てください。
