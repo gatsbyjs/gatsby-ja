@@ -255,7 +255,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
 ![hello-world-blog-post](hello-world-blog-post.png)
 
-これは少し退屈で、あなたが望むものではありません。 Markdown の投稿からデータを取得するために、 `src/templates/blog-post.js` を次のように変更します。
+これだけでは少し退屈なページですね。 Markdown の投稿からデータを取得するために、 `src/templates/blog-post.js` を次のように変更します。
 
 ```jsx:title=src/templates/blog-post.js
 import React from "react"
