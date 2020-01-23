@@ -27,7 +27,7 @@ Markdown のページを作成するために、2 つの Gatsby API を学びま
 [`onCreateNode`](/docs/node-apis/#onCreateNode) と
 [`createPages`](/docs/node-apis/#createPages) です。この 2 つは、多くのサイトやプラグインで使用されている主力の API です。
 
-私達は、Gatsby の API をシンプルに実装できるようベストを尽くします。API を実装するには、`gatsby-node.js`で、 API の名前を用いた関数をエクスポートします。
+私たちは Gatsby API をシンプルに実装できるようベストを尽くします。API を使って実装するには、`gatsby-node.js` で API 関数名をエクスポートします。
 
 試しに API を実装してみましょう。サイトのルートフォルダーに、`gatsby-node.js`を作成し、次のように記述してください。
 
@@ -89,7 +89,7 @@ exports.onCreateNode = ({ node, getNode }) => {
 
 これで新しいスラッグを `MarkdownRemark` ノードに直接追加できます。これは、ノードに追加したデータを後から GraphQL で取得できるので、強力です。新しくページを作成する時に、スラッグを簡単に取得できます。
 
-そのためには、[`createNodeField`](/docs/actions/#createNodeField) と呼ばれる関数を使用します。この関数を使用すると、他のプラグインにより作成されたノードに、追加のフィールドを作成できます。ノードを変更できるのは元の作成者のみです。他のプラグイン（`gatsby-node.js`を含む）は、フィールドを追加するためにこの関数を用いる必要があります。
+そのためには、[`createNodeField`](/docs/actions/#createNodeField) と呼ばれる関数を使用します。この関数を使用すると、他のプラグインにより作成されたノードに、追加のフィールドを作成できます。ノードを変更できるのは元の作成者のみなので、他のプラグイン（`gatsby-node.js`を含む）は、フィールドを追加するためにこの関数を用いる必要があります。
 
 ```javascript:title=gatsby-node.js
 const { createFilePath } = require(`gatsby-source-filesystem`)
