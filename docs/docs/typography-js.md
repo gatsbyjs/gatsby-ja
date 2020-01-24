@@ -4,7 +4,7 @@ title: Typography.js
 
 ## Typography.js を Gatsby で使う
 
-Typography.js はサイトに合うタイプデザインを調査し、カスタマイズ可能な既存の美しいテーマを設定する Javascript ライブラリーです。これを使えば、簡単にあなたのサイトのフォントを変更できます。Typography.js では現在、30 以上のテーマが使えるようにメンテナンスされています。欲しいテーマがなければ、自分でテーマを作ることもできます。Typography をプロジェクトで使うためには、[Gatsby プラグイン](https://www.gatsbyjs.org/packages/gatsby-plugin-typography/) をインストールし、Typography 用の設定を書く必要があります。
+Typography.js はサイトに合うタイプデザインを調査し、カスタマイズ可能な既存の美しいテーマを設定する Javascript ライブラリーです。これを使えば、簡単にあなたのサイトのフォントを変更できます。Typography.js では現在、30 以上のテーマが使えるようにメンテナンスされています。欲しいテーマがなければ、自分でテーマを作ることもできます。Typography をプロジェクトで使うためには、[Gatsby プラグイン](https://www.gatsbyjs.org/packages/gatsby-plugin-typography/)をインストールし、Typography 用の設定を書く必要があります。
 
 ## Typography プラグインのインストール
 
@@ -92,8 +92,8 @@ const typography = new Typography(
 export default typography;
 ```
 
-上記の手順が終わったら、`gatsby develop` というコマンドで開発サーバーを立ち上げ、<http://localhost:8000>にアクセスしてください。もしすべての手順が上手くいっていたら、サイトのタイプデザインが Funston テーマになっているはずです。
+上記の手順が終わったら、`gatsby develop` というコマンドで開発サーバーを立ち上げ、<http://localhost:8000> にアクセスしてください。もしすべての手順が上手くいっていたら、サイトのタイプデザインが Funston テーマになっているはずです。
 
 **ヒント**: もし以前のフォントが変更されずに残っている場合、CSS からすべての `font-family` を削除し、再度チェックしてください。
 
-インストールしたいテーマをもっと探す場合は、[Typography.js](https://kyleamathews.github.io/typography.js/)の公式サイトを見てください。
+インストールしたいテーマをもっと探す場合は、[Typography.js](https://kyleamathews.github.io/typography.js/) の公式サイトを見てください。
