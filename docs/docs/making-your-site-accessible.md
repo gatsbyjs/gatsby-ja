@@ -6,7 +6,7 @@ Gatsby チームは、Web アクセシビリティとパフォーマンスの最
 
 ## アクセシビリティとは何ですか？
 
-Web 草創期に、ワールド・ワイド・ウェブを発明したティム・バーナーズ=リー氏は[次のように語る](https://www.w3.org/Press/IPO-announce)。
+Web 草創期に、ワールド・ワイド・ウェブを発明したティム・バーナーズ=リー氏は[次のように語りました](https://www.w3.org/Press/IPO-announce)。
 
 > 「Web の力はその普遍性にあります。
 > 障害の有無にかかわらず、誰もがアクセスできるということが Web の本質的な側面なのです。」
@@ -27,11 +27,11 @@ Web 草創期に、ワールド・ワイド・ウェブを発明したティム�
 
 だから、すべての Gatsby のサイトでは、デフォルトでアクセシブルなナビゲーション体験を提供することを目指しています。React.js のルーティングライブラリーである[@reach/router](https://reach.tech/router)のおかげで、Gatsby はページ変更時のスクリーンリーダーへのページ通知を処理しています。私たちは積極的にこの使用感について改善しており、[あなたのフィードバックを歓迎しています](/accessibility-statement/)。
 
-[2 度目のメジャーリリース](/blog/2018-09-17-gatsby-v2/)以降、Gatsby のサイトは内部で`@reach/router`を使用しています。常に Z アクセシビリティテストを追加することはよい考えですが、[Gatsby のリンクコンポーネント](/docs/gatsby-link/)では[@reach/router のリンクコンポーネント](https://reach.tech/router/api/Link)をラップしているので、アクセシビリティテストのことを考えずともアクセシビリティを向上させられます。
+[2 度目のメジャーリリース](/blog/2018-09-17-gatsby-v2/)以降、Gatsby のサイトは内部で`@reach/router`を使用しています。常にアクセシビリティテストを追加することはよい考えですが、[Gatsby のリンクコンポーネント](/docs/gatsby-link/)では[@reach/router のリンクコンポーネント](https://reach.tech/router/api/Link)をラップしているので、アクセシビリティテストのことを考えずともアクセシビリティを向上させられます。
 
 ### Gatsby はデフォルトで HTML ページを作成する
 
-Web サイトでは、[静的な HTML](/docs/glossary#static)ページをレンダリングするということは、JavaScript でコンテンツにアクセスしたりナビゲーションする必要がなくなりますことを意味します。Gatsby はデフォルトで、[Node.js](/docs/glossary#nodejs)を使用して React コンポーネントを HTML ページにコンパイルしています。つまり、[プログレッシブ・エンハンスメント](/docs/glossary#progressive-enhancement)に対応するため、自分でサーバー・レンダリングを準備する必要はありません。Gatsby の静的サポートを使うと、[クライアントサイド](/docs/glossary#client-side)のスクリプトを生成することなく、ユーザーがアクセスできる動的サイトを構築できます。
+Web サイトでは、[静的な HTML](/docs/glossary#static)ページをレンダリングするということは、JavaScript でコンテンツにアクセスしたりナビゲーションする必要がなくなることを意味します。Gatsby はデフォルトで、[Node.js](/docs/glossary#nodejs)を使用して React コンポーネントを HTML ページにコンパイルしています。つまり、[プログレッシブ・エンハンスメント](/docs/glossary#progressive-enhancement)に対応するため、自分でサーバー・レンダリングを準備する必要はありません。Gatsby の静的サポートを使うと、[クライアントサイド](/docs/glossary#client-side)のスクリプトを生成することなく、ユーザーがアクセスできる動的サイトを構築できます。
 
 ### eslint-plugin-jsx-a11y による静的解析
 
