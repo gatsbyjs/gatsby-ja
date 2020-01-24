@@ -2,7 +2,7 @@
 title: アクセシブルなサイトを作る方法
 ---
 
-Gatsby チームは、Web アクセシビリティとパフォーマンスの最適化を考慮した便利なデフォルト設定を使用して、誰もが利用できる Web サイトを作成するお手伝いをします。障害を持つ人々のために Web サイトをアクセシブルにすることで、インターネット上のより多くの人々の障壁をなくして、より包括的なサイトを作ることができます。
+Gatsby チームは、Web アクセシビリティとパフォーマンスの最適化を考慮した便利なデフォルト設定を使用して、誰もが利用できるウェブサイトを作成するお手伝いをします。障害を持つ人々のためにウェブサイトをアクセシブルにすることで、インターネット上のより多くの人々の障壁をなくして、より包括的なサイトを作ることができます。
 
 ## アクセシビリティとは何ですか？
 
@@ -13,7 +13,7 @@ Web 草創期に、ワールド・ワイド・ウェブを発明したティム�
 
 今日の Web は、医療、教育、商業など、生活の多くの側面において重要な資源となっています。アクセシビリティは、そんな Web を構築する際の重要な考慮事項です。
 
-[Web アクセシビリティ](https://www.w3.org/WAI/fundamentals/accessibility-intro/#what)とは、Web サイト、ツール、およびテクノロジーによって、障害を持つユーザーが利用できるように設計および開発されていることを意味します。しかし、恒久的な障害を持つ人々だけがその恩恵を受けるものではありません。アクセシビリティは一時的な障害を持つ人々にも恩恵をもたらします。たとえば、音声を聴くことができない環境や、腕が折れてコンピューターを使用できない環境を想像してみてください。
+[Web アクセシビリティ](https://www.w3.org/WAI/fundamentals/accessibility-intro/#what)とは、ウェブサイト、ツール、およびテクノロジーによって、障害を持つユーザーが利用できるように設計および開発されていることを意味します。しかし、恒久的な障害を持つ人々だけがその恩恵を受けるものではありません。アクセシビリティは一時的な障害を持つ人々にも恩恵をもたらします。たとえば、音声を聴くことができない環境や、腕が折れてコンピューターを使用できない環境を想像してみてください。
 
 アクセシビリティは[すべての人のための包摂的な社会](https://www.w3.org/standards/webdesign/accessibility#case)をサポートし、強力な[ビジネス・ケース](https://www.w3.org/WAI/business-case/)も持っています。
 
@@ -27,11 +27,11 @@ Web 草創期に、ワールド・ワイド・ウェブを発明したティム�
 
 だから、すべての Gatsby のサイトでは、デフォルトでアクセシブルなナビゲーション体験を提供することを目指しています。React.js のルーティングライブラリーである[@reach/router](https://reach.tech/router)のおかげで、Gatsby はページ変更時のスクリーンリーダーへのページ通知を処理しています。私たちは積極的にこの使用感について改善しており、[あなたのフィードバックを歓迎しています](/accessibility-statement/)。
 
-[2 度目のメジャーリリース](/blog/2018-09-17-gatsby-v2/)以降、Gatsby のサイトは内部で`@reach/router`を使用しています。常にアクセシビリティテストを追加することはよい考えですが、[Gatsby のリンクコンポーネント](/docs/gatsby-link/)では[@reach/router のリンクコンポーネント](https://reach.tech/router/api/Link)をラップしているので、アクセシビリティテストのことを考えずともアクセシビリティを向上させられます。
+[2 度目のメジャーリリース](/blog/2018-09-17-gatsby-v2/)以降、Gatsby のサイトは内部で `@reach/router` を使用しています。常にアクセシビリティテストを追加することはよい考えですが、[Gatsby のリンクコンポーネント](/docs/gatsby-link/)では[@reach/router のリンクコンポーネント](https://reach.tech/router/api/Link)をラップしているので、アクセシビリティテストのことを考えずともアクセシビリティを向上させられます。
 
 ### Gatsby はデフォルトで HTML ページを作成する
 
-Web サイトでは、[静的な HTML](/docs/glossary#static)ページをレンダリングするということは、JavaScript でコンテンツにアクセスしたりナビゲーションする必要がなくなることを意味します。Gatsby はデフォルトで、[Node.js](/docs/glossary#nodejs)を使用して React コンポーネントを HTML ページにコンパイルしています。つまり、[プログレッシブ・エンハンスメント](/docs/glossary#progressive-enhancement)に対応するため、自分でサーバー・レンダリングを準備する必要はありません。Gatsby の静的サポートを使うと、[クライアントサイド](/docs/glossary#client-side)のスクリプトを生成することなく、ユーザーがアクセスできる動的サイトを構築できます。
+ウェブサイトでは、[静的な HTML](/docs/glossary#static)ページをレンダリングするということは、JavaScript でコンテンツにアクセスしたりナビゲーションする必要がなくなることを意味します。Gatsby はデフォルトで、[Node.js](/docs/glossary#nodejs)を使用して React コンポーネントを HTML ページにコンパイルしています。つまり、[プログレッシブ・エンハンスメント](/docs/glossary#progressive-enhancement)に対応するため、自分でサーバー・レンダリングを準備する必要はありません。Gatsby の静的サポートを使うと、[クライアントサイド](/docs/glossary#client-side)のスクリプトを生成することなく、ユーザーがアクセスできる動的サイトを構築できます。
 
 ### eslint-plugin-jsx-a11y による静的解析
 
@@ -49,7 +49,7 @@ Gatsby は、`eslint-plugin-jsx-a11y`パッケージとともにリリースさ�
 }
 ```
 
-注釈: ローカルの `.eslintrc` ファイルを読み込むと、Gatsby のデフォルトの静的解析がすべて[上書き](/docs/eslint/#configuring-eslint)され、内蔵の `eslint-loader` が無効になります。つまり、変更されたルールはブラウザーの開発コンソールやターミナルウィンドウには反映されませんが、IDE で ESLint プラグインが有効になっている場合は表示されます。この挙動を変更し、`eslint-loader` のカスタマイズを反映するようにするには、ローダーを自分で有効にする必要があります。これを実行する 1 つの方法は、コミュニティプラグインにある [`gatsby-plugin-eslint`](https://www.gatsbyjs.org/packages/gatsby-plugin-eslint/) を使用することです。さらに、[Gatsby に同梱されているデフォルトの ESLint 設定](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/utils/eslint-config.js)の一部サブセットを利用する場合は、ローカルの `.eslintrc` ファイルに手動でコピーする必要があります。
+注釈：ローカルの `.eslintrc` ファイルを読み込むと、Gatsby のデフォルトの静的解析がすべて[上書き](/docs/eslint/#configuring-eslint)され、内蔵の `eslint-loader` が無効になります。つまり、変更されたルールはブラウザーの開発コンソールやターミナルウィンドウには反映されませんが、IDE で ESLint プラグインが有効になっている場合は表示されます。この挙動を変更し、`eslint-loader` のカスタマイズを反映するようにするには、ローダーを自分で有効にする必要があります。これを実行する 1 つの方法は、コミュニティプラグインにある [`gatsby-plugin-eslint`](https://www.gatsbyjs.org/packages/gatsby-plugin-eslint/) を使用することです。さらに、[Gatsby に同梱されているデフォルトの ESLint 設定](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/utils/eslint-config.js)の一部サブセットを利用する場合は、ローカルの `.eslintrc` ファイルに手動でコピーする必要があります。
 
 これは、アクセシビリティテストをするためのスタート地点です。[その他の推奨事項](#アクセシビリティを向上させるには?)については、以下を参照してください。
 
