@@ -64,7 +64,7 @@ module.exports = {
 
 ## サードパーティー API を使用してページを動的に作成する
 
-`gatsby-node.js` に `createPages` コールバックを追加して、ページを動的に作成することもできます。たとえば、スターウォーズに登場する全ての種族のページを作成できます。
+`gatsby-node.js` に `createPages` コールバックを追加して、ページを動的に作成することもできます。たとえば、下記の例ではスターウォーズに登場する全ての種族のページを作成できます。
 
 ```js:title=gatsby-node.js
 const path = require(`path`)
