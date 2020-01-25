@@ -2,7 +2,7 @@
 title: サードパーティー GraphQL APIの使用
 ---
 
-Gatsby v2 では、プラグイン一つでどんな GraphQL API でも Gatsby の GraphQL に統合できます。これは、GitHub などのサードパーティー API、GraphCMS などのサービスの API、あるいは独自の GraphQL API なども含みます。
+Gatsby v2 では、プラグイン 1 つでどんな GraphQL API でも Gatsby の GraphQL に統合できます。これは、GitHub などのサードパーティー API、GraphCMS などのサービスの API、あるいは独自の GraphQL API なども含みます。
 
 ## 基本的な例
 
