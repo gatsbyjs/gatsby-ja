@@ -23,4 +23,4 @@ issue: https://github.com/gatsbyjs/gatsby/issues/14040
 
 これはスタブです。私たちのコミュニティーが内容を充実させるのを手伝ってください。
 
-あなたの Pull Request が承認されるために、[Gatsby Style Guide](/contributing/gatsby-style-guide/)を利用してください。
+あなたの Pull Request が無事承認されるためにも、是非[Gatsby Style Guide](/contributing/gatsby-style-guide/)をお読みください。
