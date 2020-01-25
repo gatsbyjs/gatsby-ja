@@ -1,29 +1,29 @@
 ---
-title: Using Client-Side Only Packages
+title: クライアントサイドでしか実行できないパッケージの利用
 ---
 
-On occasion, you may need to use a function or library that only works client-side. This usually is because the library in question accesses something that isn't available during server-side rendering (SSR), like [browser DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) methods.
+場合によっては、クライアントサイドでしか実行できない処理やライブラリーを使う必要があるでしょう。そのような事は大抵、その処理あるいはライブラリーが [ブラウザー DOM](https://developer.mozilla.org/ja/docs/Web/API/Document_Object_Model) のメソッドなどの、サーバーサイドレンダリング（SSR）を実行する際には利用できないものを扱おうとするために生じます。
 
-You'll need to use one of the workarounds outlined below if your project fails to compile with `gatsby develop` or `gatsby build` with an error like:
+もし `gatsby develop` や `gatsby build` といったコマンドで以下のようなエラーが出力されてコンパイルに失敗したのであれば、以下で概説されている諸々の回避策の内のどれかを打つ必要があるでしょう。
 
 ```bash
 Reference error: Window is not Defined
 ```
 
-## Workaround 1: Use a different library or approach
+## 1 つ目の回避策： 別のライブラリー、手法を用いる
 
-Sometimes the simplest approach is to work around the problem. If you can re-implement your component using a plugin which _doesn't_ break SSR, that's probably best.
+問題そのものを回避してしまうということは、時にもっとも簡潔なアプローチとなります。もし SSR をエラーによって失敗させてしまうことの**ない**プラグインを用いてコンポーネントを再実装できるのであれば、それが最善の策でしょう。
 
-## Workaround 2: Add client-side package via CDN
+## 2 つ目の回避策： クライアントサイドのパッケージを CDN を介して読み込む
 
-In the component where you need it, load the package via CDN using a [`<script />`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script) tag.
+クライアントサイドで実行するパッケージが求められるコンポーネントの中で、そのパッケージを [`<script />`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/script) タグを使って CDN を介して読み込みましょう。
 
-To embed your script, you can:
+このようにスクリプトを埋め込みたければ、以下の方法で埋め込めます。
 
-- Include it in a custom component as needed using [`react-helmet`](https://github.com/nfl/react-helmet).
-- Add the script tag directly in your base HTML using Gatsby's [html.js](/docs/custom-html/)
+- [`react-helmet`](https://github.com/nfl/react-helmet) を用いてパッケージが求められるコンポーネントのなかに `<script />` タグを含める
+- Gatsby の [html.js](/docs/custom-html/) を用いて `<script />` タグをベースとなる HTML に直接足す
 
-You should then follow React's guidelines for [Integrating with DOM Manipulation Plugins](https://reactjs.org/docs/integrating-with-other-libraries.html#integrating-with-dom-manipulation-plugins), using the methods available in the [React Component Lifecycle](https://reactjs.org/docs/react-component.html#the-component-lifecycle) to interact with the library you're using.
+この時、 React とその使用しているライブラリーとの間のやり取りのために、[他のライブラリーとのインテグレーション](https://ja.reactjs.org/docs/integrating-with-other-libraries.html#integrating-with-dom-manipulation-plugins)のための React のガイドラインに則って [React Component Lifecycle](https://ja.reactjs.org/docs/react-component.html#the-component-lifecycle) の中の利用可能なメソッドを利用しましょう。
 
 ```jsx
 import React, { Component } from "react"
@@ -50,9 +50,9 @@ class MyComponent extends Component {
 }
 ```
 
-## Workaround 3: Load client-side dependent components with react-loadable
+## 3 つ目の回避策： react-loadable を用いてクライアントサイドに依存するコンポーネントを読み込む
 
-Install [loadable-components](https://github.com/smooth-code/loadable-components) and use it as a wrapper for a component that wants to use a client-side only package.
+[loadable-components](https://github.com/smooth-code/loadable-components) をインストールして、クライアントサイドでしか実行できないパッケージを利用したいコンポーネントをラップしましょう。
 
 ```bash
 npm install @loadable/component
@@ -80,11 +80,11 @@ const LoadableBuyButton = Loadable(() => import("./ShopifyBuyButton"))
 export default LoadableBuyButton
 ```
 
-## Workaround 4: Use React.lazy and Suspense on client-side only
+## 4 つ目の回避策： クライアントサイドのみで実行される React.lazy と Suspense を用いる
 
-React.lazy and Suspense are still not ready for server-side rendering, but they can still be used by checking that the code is executed only on the client.
-While this solution is inferior to `loadable-components`, that works both on server side and client, it still provides an alternative for dealing with client-side only packages, without an added dependency.
-Remember that the following code could break if executed without the `isSSR` guard.
+React.lazy と Suspense はサーバーサイドレンダリングではまだ利用できませんが、コードがクライアントサイドでのみ実行されているかどうかの確認に利用できます。
+この解決法はサーバーサイド、クライアントサイドの双方で働く `loadable-components` に劣ったものでありますが、依存関係を追加することなしにクライアントサイドでのみ実行されるパッケージを処理するための代替手段を提供してくれます。
+以下のコードは、 `isSSR` 変数によって window の存在の担保をしないまま実行しようとすると、エラーが起こるということを忘れないでください。
 
 ```jsx
 import React from "react"
@@ -107,6 +107,6 @@ const MyPage = () => {
 }
 ```
 
-> **Note:** There are other potential workarounds than those listed here. If you've had success with another method, check out the [contributing docs](/contributing/docs-contributions/) and add yours!
+> **ヒント:** このページで紹介したものとは別の回避策も存在しえます。もし他の上手く行く回避策を見つけた時は、 [ドキュメントに貢献する](/contributing/docs-contributions/) を確認してその回避策をここに追加してください！
 
-If all else fails, you may also want to check out the documentation on [Debugging HTML Builds](/docs/debugging-html-builds/).
+もしそれでもダメなら、[HTML のビルドにおいてのデバッグ](/docs/debugging-html-builds/)に関してのドキュメントを参照してみてください。

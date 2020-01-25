@@ -1,32 +1,32 @@
 ---
-title: "Recipes: Transforming Data"
+title: "レシピ集: データの変換"
 ---
 
-Transforming data in Gatsby is plugin-driven. Transformer plugins take data fetched using source plugins, and process it into something more usable (e.g. JSON into JavaScript objects, and more).
+Gatsby でのデータ変換はプラグインによって実現されています。トランスフォーマープラグインは source プラグインを通じてデータを取得し、実際に使う形式へ変換します（例：JSON を JavaScript オブジェクトにする等）。
 
-## Transforming Markdown into HTML
+## Markdown を HTML に変換する
 
-The `gatsby-transformer-remark` plugin can transform Markdown files to HTML.
+`gatsby-transformer-remark`プラグインは、Markdown ファイルを HTML に変換できます。
 
-### Prerequisites
+### 前提条件
 
-- A Gatsby site with `gatsby-config.js` and an `index.js` page
-- A Markdown file saved in your Gatsby site `src` directory
-- A source plugin installed, such as `gatsby-source-filesystem`
-- The `gatsby-transformer-remark` plugin installed
+- `gatsby-config.js`と `index.js` ページがある。
+- `src`ディレクトリーに Markdown ファイルが保存されている。
+- `gatsby-source-filesystem` のようなソースプラグインがインストールされている。
+- `gatsby-transformer-remark`プラグインがインストールされている。
 
-### Directions
+### 進め方
 
-1. Add the transformer plugin in your `gatsby-config.js`:
+1. トランスフォーマープラグインを `gatsby-config.js` に追加します。
 
 ```js:title=gatsby-config.js
 plugins: [
-  // not shown: gatsby-source-filesystem for creating nodes to transform
+  // gatsby-source-filesystem を省略: 変換するノードを作成するため
   `gatsby-transformer-remark`
 ],
 ```
 
-2. Add a GraphQL query to the `index.js` file of your Gatsby site to fetch `MarkdownRemark` nodes:
+2. `MarkdownRemark` ノードを取得するため、`index.js` に GraphQL クエリーを追加します。
 
 ```jsx:title=src/pages/index.js
 export const query = graphql`
@@ -48,9 +48,9 @@ export const query = graphql`
 `
 ```
 
-3. Restart the development server and open GraphiQL at `http://localhost:8000/___graphql`. Explore the fields available on the `MarkdownRemark` node.
+3. 開発用サーバーを再起動して、`http://localhost:8000/___graphql` で GraphiQL を開きます。`MarkdownRemark` ノードで使用できるフィールドを探します。
 
-### Additional resources
+### 追加の資料
 
-- [Tutorial on transforming Markdown to HTML](/tutorial/part-six/#transformer-plugins) using `gatsby-transformer-remark`
-- Browse available transformer plugins in the [Gatsby plugin library](/plugins/?=transformer)
+- `gatsby-transformer-remark` を使用して、[Markdown を HTML に変換するチュートリアル](/tutorial/part-six/#transformer-plugins)。
+- [Gatsby プラグインライブラリ](/plugins/?=transformer)で利用できるトランスフォーマープラグインを探す。
