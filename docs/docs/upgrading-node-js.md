@@ -1,49 +1,49 @@
 ---
-title: Upgrading Your Node.js Version
+title: Node.js のバージョンを更新する
 ---
 
-## Gatsby's Node.js support policy
+## Gatsby の Node.js サポートポリシー
 
-Gatsby aims to support any version of Node that has a release status of _Current_, _Active_, or _Maintenance_. Once a major version of Node reaches _End of Life_ status Gatsby will stop supporting that version.
+Gatsby は _Current_、_Active_、_Maintenance_ のいずれのリリースステータスの Node.js もサポートすることを目指しています。Node.js のメジャーバージョンが _End of Life_ に達すると、Gatsby はそのメジャーバージョンのサポートを終了します。
 
-Gatsby will stop supporting the _End of Life_ Node release in a minor version.
+マイナーバージョンが _End of Life_ になると、そのバージョンのサポートを終了します。
 
-Check [Node's releases document](https://github.com/nodejs/Release#nodejs-release-working-group) for version statuses.
+現在のリリースステータスを確認したい場合は [Node.js のリリースノート](https://github.com/nodejs/Release#nodejs-release-working-group) をご覧ください。
 
-## What version of Node.js do I have?
+## 私はどのバージョンの Node.js を使っているのでしょうか？
 
-Run `node -v` in a terminal to see which version of Node.js you have.
+ターミナル上で `node -v` を実行すると、現在使用している Node.js のバージョンを確認できます。
 
 ```shell
 node -v
 v10.18.0
 ```
 
-This example shows Node.js version 10, specifically v10.18.0.
+上記の例では Node.js 10 を、具体的には v10.18.0 を使っていることが分かります。
 
-## Upgrading from Node.js version 8
+## Node.js のバージョンを 8 より上にアップグレードする
 
-Node.js version 8 reached _End-of-life_ status on December 31, 2019. Many of Gatsby's dependencies are updating to Node.js version 10 and above. Gatsby must also update in order to deliver new features and bug fixes more quickly.
+Node.js 8 は 2019 年 12 月 31 日にステータスが _End-of-life_ に達しました。Gatsby の依存モジュールの多くは Node.js のバージョンを 10 以上にアップグレードしているところです。Gatsby も新機能やバグ修正をより迅速に提供するためにアップデートする必要があります。
 
-Generally, it's recommended to use [the Node version whose status is _Active LTS_](https://github.com/nodejs/Release#nodejs-release-working-group) (Node 10 at time of writing).
+一般的には、[リリースステータスが _Active LTS_ になっているバージョンの Node.js](https://github.com/nodejs/Release#nodejs-release-working-group) を使うことが推奨されます（このドキュメントの執筆時点では Node.js 10 です）。
 
-> What about Node.js 9? Stable versions of Node.js are evenly numbered releases - Node.js 6, Node.js 8, Node.js 10 etc. Only use uneven release numbers if you'd like to try cutting-edge and experimental features.
+> Node.js 9 はどこへ行ったのでしょうか？ 実は Node.js の安定したバージョンはリリース番号が偶数なのです— Node.js 6、Node.js 8、Node.js 10 というように。奇数番号の Node.js を使うのは最先端の実験的な機能を試したい場合のみにしましょう。
 
-There are multiple ways to update your version of Node.js depending on how you originally installed it. Read on to find the best approach for you.
+Node.js のバージョンを更新する方法は、最初に Node.js をインストールした方法に応じて複数あります。これを読んで、あなたにとってもっとも適切な方法を見つけてください。
 
-### Using Homebrew
+### Homebrew を使う
 
-This is the recommended way to install a newer version of Node.
+新しいバージョンの Node.js をインストールするおすすめの方法です。
 
-You will have homebrew installed on your computer if you [followed part zero of the Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-zero/#-install-nodejs-and-npm). Homebrew is a program that allows you to install specific versions of Node.js (and other software).
+もし [チュートリアルの Part 0](https://www.gatsbyjs.org/tutorial/part-zero/#-install-nodejs-and-npm) にしたがっていれば、すでに Homebrew をインストールしているはずです。Homebrew は Node.js（およびその他のソフトウェア）の特定のバージョンをインストールできるプログラムです。
 
-To update from Node.js 8 to Node.js 10 using Homebrew, open a terminal and run the following commands:
+Node.js 8 から 10 に更新するためには、ターミナルを起動して以下のコマンドを実行してください。
 
 ```shell
 brew search node
 ```
 
-You should see output similar to this:
+すると以下のような出力が表示されるはずです。
 
 ```shell
 brew search node
@@ -53,44 +53,44 @@ leafnode                         node ✔                           node@8      
 libbitcoin-node                  node-build                       node_exporter                    nodenv
 ```
 
-You're interested in the next stable version of Node.js after Node.js 8, which is Node.js 10. Homebrew makes this available in a package called `node@10`. Run:
+あなたが Node.js 8 より新しい安定バージョンの Node.js 10 を使いたいとします。Homebrew では `node@10` という名前のパッケージをインストールすることで利用可能になります。以下を実行してください。
 
 ```shell
 brew install node@10
 ```
 
-Once that's complete, run:
+インストールが完了したら以下を実行してください。
 
 ```shell
 node -v
 ```
 
-to confirm that you've upgraded from Node.js version 8 up to version 10.
+これで、Node.js 8 から 10 への更新が完了したことを確認できます。
 
-### Using a Node.js version management package
+### バージョン管理ツールを使う
 
 There are two popular packages used for managing multiple versions of Node.js on your system. Use one of these to update to a newer version of Node.js if they're already available on your computer.
 
-These packages are very useful for people that regularly work with different versions of Node.js.
+複数の Node.js のバージョンをシステム上で管理するために使用される人気のツールが 2 つあります。もしすでにコンピュータがバージョン管理ツールを使える状態にあるなら、それを使って新しいバージョンの Node.js に更新しましょう。
+
+このようなバージョン管理ツールは、日常的に様々なバージョンの Node.js を使って作業をする人にとって非常に便利です。
 
 #### nvm
-
-Run
 
 ```shell
 nvm
 ```
 
-in a terminal to see if nvm is installed on your system. If it's installed, you can run:
+このコマンドを実行して、nvm がインストール済みかどうかを確認します。もしインストールされていれば、以下のコマンドを実行できます。
 
 ```shell
 nvm install 10
 nvm alias default 10
 ```
 
-to install and use Node.js version 10.
+これで、Node.js 10 をインストールし、使うことができるようになります。
 
-[Check nvm's documentation for further instructions](https://github.com/nvm-sh/nvm).
+詳細な手順は [nvm のドキュメント](https://github.com/nvm-sh/nvm) をご覧ください。
 
 #### n
 
@@ -100,20 +100,20 @@ Run:
 n
 ```
 
-in a terminal to see if n is installed on your system. If it's installed, you can run `n 10` to install and use Node.js version 10.
+このコマンドを実行して、n がインストール済みかどうかを確認します。もしインストールされていれば、`n 10` を実行することで Node.js 10 をインストールし、使うことができるようになります。
 
-[Check n's documentation for further instructions](https://github.com/tj/n).
+詳細な手順は [n のドキュメント](https://github.com/tj/n) をご覧ください。
 
-### Installing from nodejs.org
+### nodejs.org からインストールする
 
-If you aren't using any of the previously listed installation methods, you can [download a Node.js installer directly from nodejs.org](https://nodejs.org/en/).
+ここまで紹介したインストール手段のいずれも使っていない場合、[nodejs.org から直接 Node.js のインストーラをダウンロードする](https://nodejs.org/en/) ことができます。
 
-Gatsby's recommended way to install Node.js is by using Homebrew. Refer to the previous [Homebrew section of this document](#using-homebrew) for more info.
+Gatsby が推奨するのは Homebrew を使って Node.js をインストールする方法です。詳しくは、[すでに説明した Homebrew のセクション](#using-homebrew) を参照してください。
 
-## Conclusion
+## まとめ
 
-Gatsby takes backwards compatibility seriously and aims to support older versions of Node.js for as long as possible. We understand that juggling different software versions is not a productive way to spend your day.
+Gatsby は後方互換性を重視しており、可能な限り古いバージョンの Node.js をサポートすることを目指しています。私たちは、異なるバージョンのソフトウェアに翻弄されるのは生産的な過ごし方ではないことを理解しています。
 
-Gatsby also relies on a huge ecosystem of JavaScript dependencies. As the ecosystem moves away from older, unsupported Node.js versions we have to keep pace to ensure that bugs can be fixed and new features can be released.
+また、Gatsby は JavaScript の依存モジュール関係からなる巨大なエコシステムにも依存しています。そのようなエコシステムが、過去のサポートされていない Node.js のバージョンから離れていくのに合わせて、Gatsby 自身もアップデートしていくことで、バグを修正し、新機能をリリースできるようにする必要があります。
 
-In this document, you learned how you upgrade from Node.js version 8 (which has reached _End of Life_ status) to Node.js version 10.
+このドキュメントでは（すでにステータスが _End of Life_ に達した）Node.js 8 から Node.js 10 へとアップグレードする方法を紹介しました。
