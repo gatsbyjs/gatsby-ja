@@ -44,7 +44,7 @@ Gatsby では、ビルドとはあなたのコードやコンテンツを 1 つ�
 
 ### キャッシュ (Cache)
 
-一度読み込んだ情報を、再利用するためローカルに保存されたもの。保存される事によって、次回の計算や検索結果をより早く提供できるようになります。Gatsby はキャッシュを使ってあなたのサイトのビルドを高速で行うために使用しています。
+一度読み込んだ情報を、再利用するためローカルに保存されたもの。保存される事によって、次回の計算や検索結果をより早く提供できるようになります。Gatsby はあなたのサイトを高速でビルドするためにキャッシュを使用しています。
 
 ### CLI
 
@@ -62,7 +62,7 @@ CMS とはコンテンツ・マネジメント・システム (Content Managemen
 
 ### コマンドライン (Command Line)
 
-コンピューター上でコマンドを実行するためのテキストベースのインターフェースです。Mac では `Terminal`、Windows では `Command Prompt` がそれぞれデフォルトで設定されているコマンドラインアプリです。
+コンピューター上でコマンドを実行するためのテキストベースのインターフェースです。デフォルトで設定されているコマンドラインアプリは、Mac では `Terminal`、Windows では `Command Prompt` です。
 
 ### コンパイラー (Compiler)
 
@@ -70,23 +70,23 @@ CMS とはコンテンツ・マネジメント・システム (Content Managemen
 
 ### コンポーネント (Component)
 
-コンポーネントとは [React](#react) で作成された、再利用可能な独立したコード。コンポーネントを組み合わせることであなたのウェブサイトやアプリが構成されます。
+コンポーネントとは [React](#react) で作成された、再利用可能な独立したコードです。コンポーネントを組み合わせることであなたのウェブサイトやアプリが構成されます。
 
 コンポーネントは他のコンポーネントを含むことができます。例えば、[ページ](#page)や[テンプレート](#template)はコンポーネントの 1 つです。
 
 ### コンフィグ (Config)
 
-設定ファイルのこと。Gatsby では `gatsby-config.js` を使って Gatsby にあなたのサイトの設定を行います。よく使われる設定はサイトの metadata を設定してあなたのサイトの SEO を向上するための設定です。
+設定ファイルのこと。Gatsby では `gatsby-config.js` を使って Gatsby にあなたのサイトの設定を行います。よく使われる設定としては、サイトの metadata を設定してあなたのサイトの SEO を向上させるものがあります。
 
 ### CSS
 
-[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) は Cascading Style Sheets の略であり、[HTML](#html) と [JavaScript](#javascript) と共に、サイトを構成する主戦物です。CSS はウェブサイトのデザインを変更する為に設計された言語です。後方互換性の保守に優れており、新しい機能が実装されても、[CSS パーサー](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#CSS_parsing)はサポートされていない機能を安全に無視して、サポートしている機能だけを提供できます。[CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_and_Progressive_Enhancement) のような新しい技術をブラウザーに提供しつつ、古いブラウザーにはフォールバックを提供しています。Gatsby では様々な[スタイリングに対するアプローチ](/docs/styling/)に対応しています。これは、通常の CSS ファイルや、CSS modules、CSS-in-JS を含みます。
+[CSS](https://developer.mozilla.org/ja/docs/Web/CSS) は Cascading Style Sheets の略であり、[HTML](#html) と [JavaScript](#javascript) と共に、サイトを構成する主戦物です。CSS はウェブサイトのデザインを変更する為に設計された言語です。後方互換性の保守に優れており、新しい機能が実装されても、[CSS パーサー](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#CSS_parsing)はサポートされていない機能を安全に無視して、サポートしている機能だけを提供できます。[CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_and_Progressive_Enhancement) のような新しい技術をブラウザーに提供しつつ、古いブラウザーにはフォールバックを提供しています。Gatsby では様々な[スタイリングに対するアプローチ](/docs/styling/)に対応しています。これは、通常の CSS ファイルや、CSS modules、CSS-in-JS を含みます。
 
 ## D
 
 ### データソース (Data Source)
 
-コンテンツやデータの元となるもので、多くの場合、[ソースプラグイン](#source-plugin)を用いて Gatsby に組み込まれます。データソースは、多くの場合は[ヘッドレス CMS](#headless-cms) のことを指しますが、Markdown、JSON、YAML 等のファイルのことを指す場合もあります。
+コンテンツやデータの元となるもので、多くの場合、[ソースプラグイン](#source-plugin)を用いて Gatsby に組み込まれます。データソースは、多くの場合は[ヘッドレス CMS](#headless-cms) のことを指しますが、Markdown、JSON、YAML 等のファイルを指す場合もあります。
 
 ### データベース (Database)
 
@@ -98,7 +98,7 @@ CMS とはコンテンツ・マネジメント・システム (Content Managemen
 
 ### デプロイ (Deploy)
 
-あなたのウェブサイトを[ビルド](#build)し、[ホストプロバイダ](#hosting)にアップロードする一連の動作のこと。
+あなたのウェブサイトを[ビルド](#build)し、[ホストプロバイダー](#hosting)にアップロードする一連の動作のこと。
 
 ### 開発環境 (Development Environment)
 
@@ -106,7 +106,7 @@ CMS とはコンテンツ・マネジメント・システム (Content Managemen
 
 ### DOM
 
-Document Object Model の略。DOM とは、HTML の構造をメモリーに持たせる事によって、ウェブページとスクリプトやプログラム言語を繋げる為のスタンダードなブラウザーの API です。開発者は主に、[HTML](#html) マークアップ（Gatsby では [JSX](#jsx) で書かれる）や [React](https://reactjs.org/docs/react-dom.html)、[バニラな JavaScript](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction#DOM_and_JavaScript) を通して DOM を操作します。DOM をフル活用する上でもう 1 つ大事なことは、[アクセシブル](#accessibility)な HTML マークアップを書いて、ページの構造をアシスト技術に対応させることです。
+Document Object Model の略。DOM とは、HTML の構造をメモリーに持たせる事によって、ウェブページとスクリプトやプログラム言語を繋げる為のスタンダードなブラウザーの API です。開発者は主に、[HTML](#html) マークアップ（Gatsby では [JSX](#jsx) で書かれる）や [React](https://ja.reactjs.org/docs/react-dom.html)、[バニラな JavaScript](https://developer.mozilla.org/ja/docs/Web/API/Document_Object_Model/Introduction#DOM_and_JavaScript) を通して DOM を操作します。DOM をフル活用する上でもう 1 つ大事なことは、[アクセシブル](#accessibility)な HTML マークアップを書いて、ページの構造をアシスト技術に対応させることです。
 
 ## E
 
@@ -116,7 +116,7 @@ ECMAScript（ES と略されることが多い）はスクリプト言語の仕�
 
 ### 環境 (Environment)
 
-Gatsby が動作するうための環境のこと。例えば、開発中は多くのデバッグをしたくなるでしょう。ただ、公開中のウェブサイトやアプリ上でのデバッグは行いたくありません。そういう時の為に Gatsby はそれぞれのケースの環境を用意しています。
+Gatsby が動作する環境のこと。例えば、開発中は多くのデバッグをしたくなるでしょう。ただ、公開中のウェブサイトやアプリ上でデバッグは行いたくありません。そういう時の為に Gatsby はそれぞれのケースの環境を用意しています。
 
 Gatsby ではデフォルトで 2 つの環境を提供しています。[開発環境](#development-environment)と[本番環境](#production-environment)です。
 
@@ -128,11 +128,11 @@ Gatsby ではデフォルトで 2 つの環境を提供しています。[開発
 
 ### ファイルシステム (Filesystem)
 
-ファイルがどのように構成されているかのこと。Gatsby では、あなたのウェブサイトやアプリのコードと同じ箇所に含まれている、外部の[ソース](#data-source)とは別にあるファイルのことを指します。Gatby においてファイルシステムに含まれている主なものは Markdown のコンテンツ、画像、データファイル、その他のアセットなどです。
+ファイルの構成を管理する方法。Gatsby では、あなたのウェブサイトやアプリのコードと同じ箇所に含まれている、外部の[ソース](#data-source)とは別にあるファイルのことを指します。Gatby においてファイルシステムに含まれている主なものは Markdown コンテンツ、画像、データファイル、その他のアセットなどです。
 
 ### フロントエンド (Frontend)
 
-フロントエンドとは、あなたのウェブサイトやアプリの[表に見える部分](#public)を作成する技術、HTML や CSS、JavaScript のことを指します。ウェブプラットフォームがこれらの技術をどう組み合わせているかについては[ブラウザーの仕組み](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/)という記事を参照してください。
+フロントエンドとは、あなたのウェブサイトやアプリの[表に見える部分](#public)を作成する技術、HTML や CSS、JavaScript のことを指します。ウェブプラットフォームがこれらの技術をどう組み合わせているかについては[ブラウザーの仕組み](https://www.html5rocks.com/ja/tutorials/internals/howbrowserswork/)という記事を参照してください。
 
 ## G
 
@@ -148,7 +148,7 @@ Gatsby は [React](#react)、[GraphQL](#graphql)、モダンな [JavaScript](#ja
 
 ### HTML
 
-すべてのブラウザーが理解可能なマークアップ言語。Hypertext Markup Language の略。[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) はウェブコンテンツに見出しや段落などを定義して、ユニバーサルな構造を与えます。アクセシビリティ対応のウェブサイトを構築する上でも大事です。
+すべてのブラウザーが理解可能なマークアップ言語。Hypertext Markup Language の略。[HTML](https://developer.mozilla.org/ja/docs/Web/HTML) はウェブコンテンツに見出しや段落などを定義して、ユニバーサルな構造を与えます。アクセシビリティ対応のウェブサイトを構築する上でも大事です。
 
 ### Headless CMS
 
@@ -162,9 +162,9 @@ Gatsby は [React](#react)、[GraphQL](#graphql)、モダンな [JavaScript](#ja
 
 `gatsby develop` を起動したときに走る機能で、テキストエディタでコードを保存した時に開いているブラウザーのモジュールやコードを置き換えて即時にサイトをアップデートします。
 
-### 生成 (Hydration)
+### ハイドレーション (Hydration)
 
-Gatsby によってサイトが[ビルド](#build)され、ブラウザー上に読み込まれた際、[クライアントサイド](#client-side)の JavaScript のコードはあなたのサイトを [DOM](#dom) 操作が行える完全なる React のアプリケーションとして立ち上げます。このプロセスはよく再生性（re-hydration)と呼ばれます。Gatsby のページを生成するのと同じコードを使われており、その上に `window` のようなブラウザーの DOM API を追加しています。
+Gatsby によってサイトが[ビルド](#build)され、ブラウザー上に読み込まれた際、[クライアントサイド](#client-side)の JavaScript のコードはあなたのサイトを [DOM](#dom) 操作が行える完全なる React のアプリケーションとして立ち上げます。このプロセスはよくリハイドレーション（re-hydration)と呼ばれます。Gatsby のページを生成するのと同じコードを使われており、その上に `window` のようなブラウザーの DOM API を追加しています。
 
 ## I
 
@@ -180,11 +180,11 @@ JAMStack とは [JavaScript](#javascript)、[APIs](#api)、そして（[HTML](#h
 
 ### JavaScript
 
-ウェブサイトに動きを追加し、インタラクティブなコンテンツを作成するためのプログラミング言語。 [JavaScript](https://developer.mozilla.org/en-US/docs/Web/Javascript) はブラウザーに幅広く使われている Web 技術です。[Node.js](#node) を用いてサーバーサイドでも使用されています。[ECMAScript](#ECMAScript) の仕様を実装したものです。
+ウェブサイトに動きを追加し、インタラクティブなコンテンツを作成するためのプログラミング言語。 [JavaScript](https://developer.mozilla.org/ja/docs/Web/JavaScript) はブラウザーに幅広く使われている Web 技術です。[Node.js](#node) を用いてサーバーサイドでも使用されています。[ECMAScript](#ECMAScript) の仕様を実装したものです。
 
 ### JSX
 
-JSX は JavaScript が拡張されたもので、同じコードに HTML やカスタムコンポーネントを含める事ができる拡張子です。JSX は [UI](#UI) を表現する為に [React チームが使うことを推奨](https://reactjs.org/docs/introducing-jsx.html)しています。 JSX は他のテンプレート言語を想起するかもしれませんが、JavaScript をフル活用できる機能です。JSX を使うにあたって重要なのは、JavaScript を使っているため、HTML で使用する一部の attributes は JavaScript の予約語を避けるために他の単語に置き換えられていると言う事です (例えば `htmlFor` や `className` など）。
+JSX は JavaScript が拡張されたもので、同じコードに HTML やカスタムコンポーネントを含める事ができる拡張子です。JSX は [UI](#UI) を表現する為に [React チームが使うことを推奨](https://ja.reactjs.org/docs/introducing-jsx.html)しています。 JSX は他のテンプレート言語を想起するかもしれませんが、JavaScript をフル活用できる機能です。JSX を使うにあたって重要なのは、JavaScript を使っているため、HTML で使用する一部の attributes は JavaScript の予約語を避けるために他の単語に置き換えられていると言う事です (例えば `htmlFor` や `className` など）。
 
 ## K
 
@@ -192,7 +192,7 @@ JSX は JavaScript が拡張されたもので、同じコードに HTML やカ�
 
 ### Linting
 
-Linting はコードを解析し、構文エラー等を検出するためのプロセスです。Gatsby プロジェクトは [prettier](https://prettier.io/) を使ってよくあるスタイルミスを識別し、修正しています。ほかの React プロジェクトでよく使われている linter の 1 つは [eslint-jsx-plugin-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y) を使ったもので、[アクセシビリティ](#accessibility)対応されてない箇所を検出されるのに使われています。
+Linting はコードを解析し、構文エラー等を検出するためのプロセスです。Gatsby プロジェクトは [prettier](https://prettier.io/) を使ってよくあるスタイルミスを識別し、修正しています。ほかの React プロジェクトでよく使われている linter の 1 つは [eslint-jsx-plugin-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y) を使ったもので、[アクセシビリティ](#accessibility)対応されてない箇所を検出するのに使われています。
 
 ## M
 
@@ -202,7 +202,7 @@ Linting はコードを解析し、構文エラー等を検出するためのプ
 
 ### Markdown
 
-HTML のコンテンツをプレーンテキストで書くための手法です。コンテンツのタイプを特別な文字列を使って表します。例えば、ハッシュ（#)を使って[見出し](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements)を表したり、下線（\_)やアスタリスク（\*)を使ってテキストの強調を表したりします。
+HTML のコンテンツをプレーンテキストで書くための手法です。コンテンツのタイプを特別な文字列を使って表します。例えば、ハッシュ（#)を使って[見出し](https://developer.mozilla.org/ja/docs/Web/HTML/Element/Heading_Elements)を表したり、下線（\_)やアスタリスク（\*)を使ってテキストの強調を表したりします。
 
 ## N
 
@@ -216,7 +216,7 @@ Gatsby は[データノード](/docs/node-interface/)を 1 つのデータを表
 
 ### [Node.js](/docs/glossary/node)
 
-[JavaScript](#javascript) をコンピューター上で実行するためのプログラムです。Gatsby は Node によって実装されています。
+[JavaScript](#javascript) をコンピューター上で実行するためのプログラムです。Gatsby は Node.js によって実装されています。
 
 ## O
 
@@ -234,7 +234,7 @@ Gatsby は[データノード](/docs/node-interface/)を 1 つのデータを表
 
 ### プラグイン (Plugin)
 
-Gatsby に元から用意されてなかった機能を追加するためのコード。よく使われる [Gatsby プラグイン](/plugins/)はデータを取得するための[ソースプラグイン](#source-plugins)、およびデータの変換を行うための[トランスフォーマープラグイン](#transformer)などがある。
+Gatsby に元から用意されてなかった機能を追加するためのコード。よく使われる [Gatsby プラグイン](/plugins/)はデータを取得するための[ソースプラグイン](#source-plugins)、およびデータの変換を行うための[トランスフォーマープラグイン](#transformer)などがあります。
 
 ### 本番環境 (Production Environment)
 
@@ -246,7 +246,7 @@ Gatsby に元から用意されてなかった機能を追加するためのコ�
 
 ### プログレッシブ・エンハンスメント (Progressive enhancement)
 
-プログレッシブ・エンハンスメントとは、ウェブ上に置いてページのコアとなるコンテンツをサーバーから何よりも先に読み込むための設計哲学です。その後、段階的により複雑なプレゼンテーション層や機能をユーザーのブラウザやネットワークが可能な限りコンテンツの上に重ねていきます。Gatsby がページを[ビルド]](#build)する上で活用するデフォルトのアプローチは、AOT (ahead-of-time) で読み込むこと、つまり、コンテンツは先に読み込まれ、その後スクリプトが読み込まれて実行されていきます。
+プログレッシブ・エンハンスメントとは、ウェブ上に置いてページのコアとなるコンテンツをサーバーから何よりも先に読み込むための設計哲学です。その後、段階的により複雑なプレゼンテーション層や機能をユーザーのブラウザやネットワークが可能な限りコンテンツの上に重ねていきます。Gatsby がページを[ビルド](#build)する上で活用するデフォルトのアプローチは、AOT (ahead-of-time) で読み込むこと、つまり、コンテンツは先に読み込まれ、その後スクリプトが読み込まれて実行されていきます。
 
 ### パブリック (Public)
 
@@ -254,15 +254,15 @@ Gatsby に元から用意されてなかった機能を追加するためのコ�
 
 ## Q
 
-### クエリ (Query)
+### クエリー (Query)
 
-データをどこかからリクエストするための行為。Gatsby では通常 [GraphQL](#graphql) を用いてクエリを行います。
+データをどこかからリクエストするための行為。Gatsby では通常 [GraphQL](#graphql) を用いてクエリーを行います。
 
 ## R
 
 ### [React](/docs/glossary/react)
 
-[JavaScript](#javascript) によって書かれた、ユーザーインターフェースを作成するためのライブラリーです。[Gatsby](#gatsby) がページをビルドしてコンテンツを構造するために使用するフレームワーク。
+[JavaScript](#javascript) によって書かれた、ユーザーインターフェースを作成するためのライブラリーで、[Gatsby](#gatsby) がページをビルドしてコンテンツを構造するために使用するフレームワークです。
 
 ### Remark
 
@@ -270,11 +270,11 @@ Gatsby に元から用意されてなかった機能を追加するためのコ�
 
 ### ランタイム (Runtime)
 
-ランタイムとはプログラムが実行されている時、もしくは実行可能なもののことを指します。これは複数の事象に当てはまります。例えば、[Node.js](#nodejs) は JavaScript のコードを実行するための[サーバーサイド](#server-side)のランタイムです。逆に、[クライアントサイド JavaScript](#client-side) は、従来の JavaScript が実行されるブラウザー上のランタイムです。さらに、Gatsby はユーザーに素早く、インタラクティブで動的な体験を与えるために、[ビルド時](#build)にあなたのサイトをコンパイルし、[React ランタイムによって再生性](#hydration)しています。
+ランタイムとはプログラムが実行されている時、もしくは実行可能なもののことを指します。これは複数の事象に当てはまります。例えば、[Node.js](#nodejs) は JavaScript のコードを実行するための[サーバーサイド](#server-side)のランタイムです。逆に、[クライアントサイド JavaScript](#client-side) は、従来の JavaScript が実行されるブラウザー上のランタイムです。さらに、Gatsby はユーザーに素早く、インタラクティブで動的な体験を与えるために、[ビルド時](#build)にあなたのサイトをコンパイルし、[React ランタイムによってリハイドレーション](#hydration)しています。
 
 ### ルーティング (Routing)
 
-ルーティングとは受け取ったネットワークリクエストから正しいコンテンツをウェブサイトやアプリ上に読み込むためのメカニズムです。主に URL が使われます。例えば、`/about-us` という URL にアクセスしたとき、正しい[ページ](#page)、[テンプレート](#template)、もしくは[コンポーネント](#component)を表示するための仕組みです。
+ルーティングとは受け取ったネットワークリクエストから正しいコンテンツをウェブサイトやアプリ上に読み込むためのメカニズムです。主に URL が使われます。例えば、`/about-us` という URL にアクセスしたとき、対応した[ページ](#page)、[テンプレート](#template)、もしくは[コンポーネント](#component)を表示するための仕組みです。
 
 ## S
 
@@ -294,7 +294,7 @@ The source code gets [built](#build) into the site the [public](#public) will se
 
 ### ソースプラグイン (Source Plugin)
 
-Gatsby に新たな[データソース](#data-source)を加えるための[プラグイン](#plugin)。これによって、新たなデータをあなたの[ページ](#page)や [コンポーネント](#component)によって[クエリ](#query)可能となります。
+Gatsby に新たな[データソース](#data-source)を加えるための[プラグイン](#plugin)。これによって、新たなデータをあなたの[ページ](#page)や [コンポーネント](#component)によって[クエリー](#query)可能となります。
 
 ### スターター (Starter)
 
@@ -304,7 +304,7 @@ Gatsby のスターターとは、あなたのプロジェクトを始めるの�
 
 Gatsby はあなたのサイトを静的に[ビルド](#build)し、コマンド 1 つで[ホスト](#hosting)できます。これは、その場でページを生成する動的なシステムと違うところです。静的であるということは各コンテンツやコード変更の度に一度の読み込みしか必要がなくなるので、良いパフォーマンスを見込む事ができます。
 
-このサイトでは、他に Gatsby のプロジェクトで用意される `/static` フォルダーのことを指します。これは、[ビルド時](#build)に `/public` フォルダーへと自動的にコピーされるフォルダーのことで、Gatsby によって変換する必要は無いが、[public](#public) フォルダーにある必要があるファイル群を入れるフォルダーです。
+このサイトでは、他に Gatsby のプロジェクトで用意される `/static` フォルダーのことを指します。これは、[ビルド時](#build)に `/public` フォルダーへと自動的にコピーされるフォルダーのことです。Gatsby によって変換する必要はない一方で [public](#public) フォルダーに入れる必要があるファイル群を入れるフォルダーです。
 
 ## T
 
@@ -314,17 +314,17 @@ Gatsby において、[プログラムを用いて](#programmatically)ページ�
 
 ### テーマ (Theme)
 
-Gatsby のテーマは組み合わせ可能、拡張可能、置き換え可能 ([shadowing](/blog/2019-04-29-component-shadowing/)) な WordPress のテーマのようなものです。Gatsby テーマは Gatsby アプリのどんな側面もパッケージ可能であり、テーマ内で使いたい機能やオフにしたい機能の切り替えが可能です。
+Gatsby のテーマは組み合わせ可能、拡張可能、置き換え可能 ([shadowing](/blog/2019-04-29-component-shadowing/)) なワードプレスのテーマのようなものです。Gatsby テーマは Gatsby アプリのどんな側面もパッケージ可能であり、テーマ内で使いたい機能やオフにしたい機能の切り替えが可能です。
 
 ### トランスフォーマー (Transformer)
 
-特定のタイプのデータを他のタイプのデータに変換するための[プラグイン](#plugin)。例えば、spreadsheet 内のデータを [JavaScript](#javascript) の配列へと変換する際に使用します。
+特定のタイプのデータを他のタイプのデータに変換するための[プラグイン](#plugin)。例えば、スプレッドシート内のデータを [JavaScript](#javascript) の配列へと変換する際に使用します。
 
 ## U
 
 ### UI
 
-UI とはユーザーインターフェースの事を指します。HCI (Human Computer Interaction) の分野では、UI は人間と機械間のインタラクションが発生する場です。このインタラクションの目的はユーザーが機械を効果的に活用可能とし、同時に機械がメッセージや通知など、ユーザーが判断するのに必要な情報をフィードバックすることです。
+UI とはユーザーインターフェースの事を指します。HCI (Human Computer Interaction) の分野では、UI は人間と機械間のインタラクションが発生する場です。このインタラクションの目的は、ユーザーが機械を効果的に活用可能とし、同時に機械がメッセージや通知など、ユーザーが判断するのに必要な情報をフィードバックすることです。
 
 ## V
 
