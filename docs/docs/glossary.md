@@ -24,7 +24,7 @@ API とは Application Programming Interface の略で、アプリ間の連絡�
 
 ### アクセシビリティ (Accessibility)
 
-The inclusive practice of removing barriers that prevent interaction with, or access to websites, by people with disabilities. When sites are correctly designed, developed and edited for accessibility, generally all users have equal access to information and functionality. Read about [Gatsby's Commitment to Accessibility](/blog/2019-04-18-gatsby-commitment-to-accessibility/).
+障がいを持つ人などを含むすべての人がアクセス、インタラクションを可能とするウェブサイトの構築方法。ウェブサイトがアクセシビリティを意識してデザイン、実装、編集されている場合、全てのユーザーが等しく情報や機能へのアクセスが可能となります。詳しくは [Gatsby のアクセシビリティへの注力](/blog/2019-04-18-gatsby-commitment-to-accessibility/)に関する記事を参照。
 
 ## B
 
@@ -34,11 +34,11 @@ The inclusive practice of removing barriers that prevent interaction with, or ac
 
 ### バックエンド (Backend)
 
-The behind the scenes that the [表](#public) does not see. This often refers to the control panel of your [CMS](#cms). These are often powered by server-side programming languages such as Node.js, PHP, Go, ASP.net, Ruby, or Java.
+サイトの[表](#public)には出ない、裏で走っている機能のこと。このサイトでは、主に [CMS](#cms) のコントロールパネルのことを指す。これらは、Node.js, PHP, Go, ASP.net, Ruby, Java 等のサーバーサイド言語によって実装されています。
 
 ### ビルド (Build)
 
-Gatsby では、ビルドはあなたのコードやコンテンツを this is the process of taking your code and content and packaging it into a website that can be hosted and accessed. Commonly referred to as _build time_. 参照： [バックエンド](#backend)、[サーバサイド](#server-side)。
+Gatsby では、ビルドとはあなたのコードやコンテンツを 1 つのパッケージとして、ホストしてアクセスるウェブサイトに仕上げる行為を指します。「_ビルド時_」とも呼ばれます。参照： [バックエンド](#backend)、[サーバサイド](#server-side)。
 
 ## C
 
@@ -50,23 +50,23 @@ Gatsby では、ビルドはあなたのコードやコンテンツを this is t
 
 Command Line Interface (コマンドラインインターフェース）: あなたのパソコンの[コマンドライン](#command-line)上で動作し、あなたのキーボードと Interact するアプリ。
 
-Gatsby には 2 つのコマンドラインインターフェースがあります。 One, [`gatsby`](/docs/gatsby-cli/), for day-to-day development with Gatsby and another, [`gatsby-dev`](/contributing/setting-up-your-local-dev-environment/#gatsby-repo-install-instructions), for those who contribute to the Gatsby project.
+Gatsby には 2 つのコマンドラインインターフェースがあります。 1 つは [`gatsby`](/docs/gatsby-cli/)、Gatsby の開発時に使います。もう 1 つは [`gatsby-dev`](/contributing/setting-up-your-local-dev-environment/#gatsby-repo-install-instructions)、こちらは Gatsby 本体の開発をする時に使います。
 
 ### クライアントサイド (Client-side)
 
-Client-side refers to operations that are performed by the user's browser in a [client–server relationship](https://en.wikipedia.org/wiki/Client%E2%80%93server_model) in a computer network. In Gatsby, this is important when [working with packages](/docs/using-client-side-only-packages/) that rely on objects in the [browser DOM](#dom), such as `window` or `navigator`. See also: [server-side](#server-side), [frontend](#frontend), and [backend](#backend).
+ネットワーク上の[クライアントサーバモデル](https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%88%E3%82%B5%E3%83%BC%E3%83%90%E3%83%A2%E3%83%87%E3%83%AB)において、クライアントサイドとは、ユーザーのブラウザー上で行われる操作のことを指します。Gatsby では、これは `window` or `navigator` などの[ブラウザ DOM](#dom) に依存する[パッケージの開発](/docs/using-client-side-only-packages/)に置いて重要です。参照： [サーバーサイド](#server-side)、 [フロントエンド](#frontend)、[バックエンド](#backend)。
 
 ### CMS
 
-Content Management System: an application where you can manage your content and have it saved to a database or file for accessing later. Examples of Content Management Systems include WordPress, Drupal, Contentful, and Netlify CMS.
+CMS とはコンテンツ・マネジメント・システム (Content Management System) の略です。CMS はサイト上のコンテンツをデータベースやファイルに保存して、アクセス可能にするためのアプリケーションです。ワードプレス、Drupal、Contentful、Netlify CMS などが CMS の一例です。
 
 ### コマンドライン (Command Line)
 
-A text-based interface to run commands on your computer. The default Command Line applications for Mac and Windows are `Terminal` and `Command Prompt` respectively.
+コンピューター上でコマンドを実行するためのテキストベースのインターフェースです。Mac では `Terminal`、Windows では `Command Prompt` がそれぞれデフォルトで設定されているコマンドラインアプリです。
 
 ### コンパイラー (Compiler)
 
-A compiler is a program that translates code written in one language to another language. 例えば、 [Gatsby](#gatsby) は [React](#react) のアプリを静的 [HTML](#html) ファイルにコンパイルできます。
+コンパイラーとは、1 つの言語で書かれたコードを、他のコードに変換するものです。例えば、 [Gatsby](#gatsby) は [React](#react) のアプリを静的 [HTML](#html) ファイルにコンパイルできます。
 
 ### コンポーネント (Component)
 
@@ -80,17 +80,17 @@ A compiler is a program that translates code written in one language to another 
 
 ### CSS
 
-[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) は Cascading Style Sheets の事を指します。[HTML](#html) と [JavaScript](#javascript) と共に、サイトを構成する主戦物です。 CSS is a language for styling webpages designed to be highly backwards-compatible. As new features are rolled out to end users, [CSS parsers](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#CSS_parsing) can safely ignore unsupported features and enhance with the properties they do support. CSS accomplishes this with its _cascading_ design, fundamental to styling with new techniques like [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_and_Progressive_Enhancement) while providing fallbacks for older browsers. Gatsby supports multiple [approaches to styling](/docs/styling/), including regular CSS files, CSS modules, and CSS-in-JS.
+[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) は Cascading Style Sheets の事を指します。[HTML](#html) と [JavaScript](#javascript) と共に、サイトを構成する主戦物です。 CSS はウェブサイトのデザインを後方互換性を保ちながら変更する為に設計された言語です。エンドユーザーに新しい機能が運ばれるたび、[CSS パーサー](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#CSS_parsing)はサポートされていない機能を安全に無視して、サポートしている機能だけを提供できます。CSS はこれを _cascading_ design により実現しています。 fundamental to styling with new techniques like [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_and_Progressive_Enhancement) while providing fallbacks for older browsers. Gatsby supports multiple [approaches to styling](/docs/styling/), including regular CSS files, CSS modules, and CSS-in-JS.
 
 ## D
 
 ### データソース (Data Source)
 
-Content and data's origin point, typically integrated into Gatsby with [source plugins](#source-plugin). A data source is often a [Headless CMS](#headless-cms), but it could also include Markdown, JSON, or YAML files.
+コンテンツやデータの元となるもので、多くの場合、[ソースプラグイン](#source-plugin)を用いて Gatsby に組み込まれます。データソースは、多くの場合は[ヘッドレス CMS](#headless-cms) のことを指しますが、 Markdown、 JSON、 YAML 等のファイルのことを指す場合もあります。
 
 ### データベース (Database)
 
-データベースとは is a structured collection of data or content. Often a [CMS](#cms) will save to a database using [backend technologies](#backend). They're often accessed in Gatsby via a [source plugin](#source-plugin)
+データベースとは構造化されたデータやコンテンツのこと。多くの場合、[CMS](#cms) が[バックエンドの技術](#backend)を用いることでコンテンツはデータベースに保存されます。これらは[ソースプラグイン](#source-plugin)を用いて Gatsby からアクセスされます。
 
 ### Decoupled
 
@@ -294,7 +294,7 @@ The source code gets [built](#build) into the site the [public](#public) will se
 
 ### ソースプラグイン (Source Plugin)
 
-A [plugin](#plugin) that adds additional [data sources](#data-source) to Gatsby that can then be [queried](#query) by your [pages](#page) and [components](#component).
+Gatsby に新たな[データソース](#data-source)を加えるための[プラグイン](#plugin)。これによって、新たなデータをあなたの[ページ](#page)や [コンポーネント](#component)によって[クエリ](#query)することが可能となります。
 
 ### スターター (Starter)
 
@@ -310,7 +310,7 @@ Gatsby はあなたのサイトを静的に[ビルド](#build)し、コマンド
 
 ### テンプレート (Template)
 
-A [component](#component) that is [programmatically](#programmatically) turned into a page by Gatsby.
+Gatsby において、[プログラムを用いて](#programmatically)ページに変換される[コンポーネント](#component)のこと。
 
 ### テーマ (Theme)
 
@@ -324,7 +324,7 @@ Gatsby のテーマは組み合わせ可能、拡張可能、置き換え可能 
 
 ### UI
 
-UI とはユーザーインターフェースの事を指します。In the field of human-computer interaction, a UI is a space where interactions between humans and machines occur. The goal of this interaction is to allow effective operation and control of the machine from the human end, while the machine simultaneously feeds back information that aids the user's decision-making process (such as error messages or notifications)。
+UI とはユーザーインターフェースの事を指します。HCI (Human Computer Interaction) の分野では、UI は人間と機械間のインタラクションが発生する場です。このインタラクションの目的はユーザーが機械を効果的に活用可能とし、同時に機械がメッセージや通知など、ユーザーが判断するのに必要な情報をフィードバックすることです。
 
 ## V
 
