@@ -50,7 +50,7 @@ Gatsby の最新情報を取得するために、
 
 ### Discord
 
-すぐに答えが欲しい場合は、 [Gatsby Discord](https://gatsby.dev/discord) をチェックしてください。
+すぐに答えが欲しい場合は、[Gatsby Discord](https://gatsby.dev/discord) をチェックしてください。
 コミュニティーとチームのメンバーは、喜んであなたを助けるか有用なリソースを紹介してくれます。
 
 ### Hashnode
