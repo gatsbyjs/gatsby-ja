@@ -4,7 +4,7 @@ title: Gatsbyテーマの使い方
 
 あらかじめテーマ環境が設定されているスターターを使うことで、Gatsby テーマを直ちに使うことができます。
 
-例えば、`gatsby-starter-blog-theme`は`gatsby-theme-blog`パッケージのテーマスターターです。
+例えば、`gatsby-starter-blog-theme`は `gatsby-theme-blog` パッケージのテーマスターターです。
 
 **通常の Gatsby スターター**は特定の用途に合わせて設定してある Gatsby サイトを新規に作成します。出来上がったサイトはスターターからフォークされるため、スターターへの接続は維持されません。
 
@@ -22,7 +22,7 @@ gatsby new my-blog https://github.com/gatsbyjs/gatsby-starter-blog-theme
 
 ### 1. テーマをインストールし設定する
 
-テーマを使用して作られたスターターの`gatsby-config.js`は最初軽く見えることが多くあります。テーマはプラグイン配列からインストールされたときに真価を発揮します。
+テーマを使用して作られたスターターの `gatsby-config.js` は最初軽く見えることが多くあります。テーマは `plugins` 配列からインストールされたときに真価を発揮します。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -67,6 +67,6 @@ I'm an example post!
 
 ## テーマをアップデートする
 
-自分のサイトの`package.json`内にある`gatsby-theme-blog`のバージョンをアップデートすることで、テーマを最新のものにできます。
+自分のサイトの `package.json` 内にある `gatsby-theme-blog` のバージョンをアップデートすることで、テーマを最新のものにできます。
 
 `npm install --save gatsby-theme-blog`を再度実行することによりアップデートが行なえます。
