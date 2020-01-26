@@ -6,7 +6,7 @@ Gatsby では、JSON または YAML ファイルからデータを取得し、�
 
 このガイドで概説されている JSON または YAML からデータ取得をする方法に従うには、公式の [hello world スターター](https://github.com/gatsbyjs/gatsby-starter-hello-world) を使用して Gatsby サイトを作成することから始めます。
 
-ターミナルを開き、次のコマンドを実行します：
+ターミナルを開き、次のコマンドを実行します。
 
 ```bash
 gatsby new gatsby-YAML-JSON-at-buildtime https://github.com/gatsbyjs/gatsby-starter-hello-world
@@ -216,7 +216,7 @@ npm install --save js-yaml
 
 動的なサイト構造とコンテンツが準備できたら、Gatsby に適切なページを生成し、それぞれのコンテンツを表示するように指示する必要があります。
 
-もし `gatsby-node.js` ファイルが無ければプロジェクトのルートに作成します。そして、次のコードを記述します：
+もし `gatsby-node.js` ファイルが無ければプロジェクトのルートに作成します。そして、次のコードを記述します。
 
 ```js:title=gatsby-node.js
 const fs = require("fs")
@@ -248,7 +248,7 @@ exports.createPages = ({ actions }) => {
 
 ソースコンテンツのレンダリングプロセスを完了するには、データから動的ページを作成するためのテンプレートを作成する必要があります。
 
-`gatsby-config.js` で参照されるコンポーネントと一致させるには、`src/templates/` フォルダー内に `basicTemplate.js` というファイルを作成して次のコードを記述してください：
+`gatsby-config.js` で参照されるコンポーネントと一致させるには、`src/templates/` フォルダー内に `basicTemplate.js` というファイルを作成して次のコードを記述してください。
 
 ```jsx:title=src/templates/basicTemplate.js
 import React from "react"
@@ -281,7 +281,7 @@ export default basicTemplate
 
 ### 部品を繋ぐ
 
-YAML ファイルを解析し、Gatsby を設定してテンプレートでページを生成した後、次のファイルとフォルダーの構造が必要です：
+YAML ファイルを解析し、Gatsby を設定してテンプレートでページを生成した後、次のファイルとフォルダーの構造が必要です。
 
 ```text
   |gatsby-YAML-JSON-at-buildtime
@@ -295,7 +295,7 @@ YAML ファイルを解析し、Gatsby を設定してテンプレートでペ�
 
 ターミナルで `gatsby develop` を実行し、ブラウザーで <http://localhost:8000/page1> にアクセスすると、サイトの生成に使用された YAML ファイルを元とするコンテンツを含んだページが表示されます。
 
-これを既存の Gatsby サイトで機能させるには、次の物が必要です：
+これを既存の Gatsby サイトで機能させるには、次の物が必要です。
 
 - `gatsby-node.js` ファイルの内容をコピーします： https://github.com/gatsbyjs/gatsby/blob/master/examples/using-gatsby-with-json-yaml/gatsby-node.js
 - ベーシックテンプレートを作成します： https://github.com/gatsbyjs/gatsby/blob/master/examples/using-gatsby-with-json-yaml/src/templates/basicTemplate.js
