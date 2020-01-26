@@ -18,64 +18,49 @@ title: "Gatsby Eコマースチュートリアル"
   - [Advanced: Import SKUs via source plugin](#advanced-import-skus-via-source-plugin)
 - [支払いテスト](#支払いテスト)
 
-この発展的ななチュートリアルでは, Gatsbyを用いて支払いができる基本的なeコマースサイトのUIを構築を学びます。[Stripe](https://stripe.com)は支払い処理のバックエンドとして用います。
-you’ll learn how to use Gatsby to build the UI for a basic e-commerce site that can accept payments, with [Stripe](https://stripe.com) as the backend for processing payments.
+この発展的ななチュートリアルでは, Gatsbyを用いて支払いができる基本的なeコマースサイトのUIを構築を学ぶことができます。[Stripe](https://stripe.com)は支払い処理のバックエンドとして用います。
+
 ## なぜEコマースサイトでGatsbyを使うのか
-## Why use Gatsby for an e-commerce site?
 
 Gatsbyをe-コマースのサイトに使うメリットは以下の通りです:
-Benefits of using Gatsby for e-commerce sites include the following:
 
 - 静的サイト固有のセキュリティ
-- Security inherent in static sites
-
 - ページをReactから静的ファイルに変換する際の超高速パフォーマンス
-- Blazing fast performance when your pages are converted from React into static files
-
 - 簡単にホストできる
-- Easy to host
 
 こちらからホストされたデモを見れます: https://gatsby-ecommerce-stripe.netlify.com/
-You can see the working demo hosted here: https://gatsby-ecommerce-stripe.netlify.com/
 
 ## 前提条件
 
-- これはより高度なチュートリアルなので、以前にGatsbyでサイトを構築したことがある場合は、このチュートリアルの時間が短縮できる可能性があります。([基本チュートリアルはこちら](/tutorial/))
-- Since this is a more advanced tutorial, building a site with Gatsby before will likely make this tutorial less time-consuming ([see the main tutorial here](/tutorial/))
+- これはより高度なチュートリアルなので、以前にGatsbyでサイトを構築したことがある場合は、このチュートリアルの時間が短縮できそうです。([基本チュートリアルはこちら](/tutorial/))
 - Stripe アカウント: [アカウント登録はこちら](https://dashboard.stripe.com/register)
-- Stripe account: [register for an account here](https://dashboard.stripe.com/register)
 
 ### StripeとGatsbyはどのように連携させるのか
-### How does Gatsby work with Stripe?
 
 Stripeは顧客から情報を安全に収集して処理できる支払い処理サービスです。
 Stripeを試すにはこちらにアクセスしてください。[Stripeクイックスタートガイド](https://stripe.com/docs/payments/checkout#tryout)
 
-Stripe is a payment processing service that allows you to securely collect and process payment information from your customers. To try out Stripe for yourself, go to [Stripe’s Quick Start Guide](https://stripe.com/docs/payments/checkout#tryout).
-
 Stripeの代わりとしては、SquareやBraintreeなどがあります。これらの仕組みはStripeと非常に似ています。
-There are alternatives to Stripe, like Square and Braintree, and their setup is very similar to Stripe.
 
-Stripeはいかなるバックエンドコンポーネントも必要としない[hosted checkout](https://stripe.com/docs/payments/checkout)を提供します。
-製品やSKU、定期利用プランの設定を[Stripe ダッシュボード](https://stripe.com/docs/payments/checkout#configure)で行えます。
-(e-Bookのような)単一の商品か定期利用を販売している場合、Gatsbyのサイト内で商品のSKU IDをコード化することができます。
+Stripeはバックエンドコンポーネントを必要としない[hosted checkout](https://stripe.com/docs/payments/checkout)を提供します。
+製品やSKU、サブスクリプションプランの設定を[Stripe Dashboard](https://stripe.com/docs/payments/checkout#configure)で行うことができます。
+単一の製品やサブスクリプション(電子書籍)を販売している場合、Gatsbyサイトで商品のSKU IDをハードコーディングできます。
 複数の商品を販売している場合、[Stripe ソースプラグイン](https://www.gatsbyjs.org/packages/gatsby-source-stripe/)を利用して、ビルド時に全てのSKUを取得できます。
-Gatsbyのサイトを自動的に更新する場合は、Stripe webhookイベントを利用して新しい商品やSKUが追加されたときに再デプロイをトリガー[trigger a redeploy](https://www.netlify.com/docs/webhooks/)とすることができます。
-Stripe offers a [hosted checkout](https://stripe.com/docs/payments/checkout) that doesn't require any backend component. You can configure products, SKUs, and subscription plans in the [Stripe Dashboard](https://stripe.com/docs/payments/checkout#configure). If you're selling a single product or subscription (like an eBook) you can hardcode the product's SKU ID in your Gatsby site. If you're selling multiple products, you can use the [Stripe source plugin](https://www.gatsbyjs.org/packages/gatsby-source-stripe/) to retrieve all SKUs at build time. If you want your Gatsby site to automatically update, you can use the Stripe webhook event to [trigger a redeploy](https://www.netlify.com/docs/webhooks/) when a new product or SKU is added.
+Gatsbyのサイトを自動的に更新する場合は、Stripe webhookイベントを利用して新しい商品やSKUが追加されたときに再デプロイをトリガー[trigger a redeploy](https://www.netlify.com/docs/
 
-# Setting up a Gatsby site
 # Gatsbyサイトの設定
 
-
-Create a new Gatsby project by running the `gatsby new` command in the terminal and change directories into the new project you just started:
+ターミナルで`gatsby new`を実行して新しいGatsbyのプロジェクトを作成し、ディレクトリを先程作成した新しいプロジェクトに変更します
 
 ```shell
 gatsby new ecommerce-gatsby-tutorial
 cd ecommerce-gatsby-tutorial
 ```
 
+StripeJSプラグインのインストール
 ## Installing the StripeJS plugin
 
+プラグインでデフォルトスタータの機能性を拡張できます
 You can extend the functionality of this default starter with plugins. One such plugin is `gatsby-plugin-stripe`, which you’ll install in this project:
 
 ```shell
