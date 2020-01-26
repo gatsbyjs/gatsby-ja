@@ -138,7 +138,7 @@ Gatsby ではデフォルトで 2 つの環境を提供しています。[開発
 
 ### Gatsby
 
-Gatsby は [React](#react)、 [GraphQL](#graphql)、やモダンな [JavaScript](#javascript) など、最新のウェブ技術を取り入れたモダンなウェブサイト作成やウェブアプリ制作のためのフレームワークです。Gatsby はパフォーマンスの達人でなくとも、素早い Web 体験をユーザーに届けることが可能です。
+Gatsby は [React](#react)、[GraphQL](#graphql)、モダンな [JavaScript](#javascript) など、最新のウェブ技術を取り入れたウェブサイトやウェブアプリ制作のためのフレームワークです。Gatsby はパフォーマンスの達人でなくとも、素早い Web 体験をユーザーに届けることが可能です。
 
 ### [GraphQL](/docs/glossary/graphql)
 
@@ -152,15 +152,15 @@ Gatsby は [React](#react)、 [GraphQL](#graphql)、やモダンな [JavaScript]
 
 ### Headless CMS
 
-[バックエンド](#backend)と[フロントエンド](#frontend)の両方を管理するのではなく、バックエンドのコンテンツ管理だけを行うための [CMS](#cms)。このセットアップは [Decoupled](#decoupled) とも呼ばれる。
+[バックエンド](#backend)と[フロントエンド](#frontend)の両方を管理するのではなく、バックエンドのコンテンツ管理だけを行うための [CMS](#cms)。このセットアップは [Decoupled](#decoupled) とも呼ばれます。
 
 ### ホスティング (Hosting)
 
-ホスティング プロバイダーはあなたの ウェブサイトやアプリのコピーを持ち、世の中に[公開](#public)ための場所を提供しています。 [Gatsby のサイトをホストできる主なホスティングプロバイダ](/docs/deploying-and-hosting/)は Netlify, AWS, S3, Surge, Heroku 等です。
+ホスティング・プロバイダーはあなたのウェブサイトやアプリのコピーを持ち、世の中に[公開](#public)ための場所を提供しているサービスです。 [Gatsby のサイトをホストできる主なホスティング・プロバイダ・サービス](/docs/deploying-and-hosting/)は Netlify, AWS, S3, Surge, Heroku 等があります。
 
 ### ホット・モジュール・リプレイスメント
 
-`gatsby develop` を起動したときに走る機能で、テキストエディタでコードを保存した時に開いているブラウザーのモジュールやコードを置き換えて即時にサイトをアップデートする機能です。
+`gatsby develop` を起動したときに走る機能で、テキストエディタでコードを保存した時に開いているブラウザーのモジュールやコードを置き換えて即時にサイトをアップデートします。
 
 ### 生成 (Hydration)
 
@@ -170,7 +170,7 @@ Gatsby によってサイトが[ビルド](#build)され、ブラウザー上に
 
 ### インターフェース (Inference)
 
-データ層と[ビルド](#build)プロセスの一部として、Gatsby はデータソース（例：Markdown ファイル、ワードプレス記事、等）から自動的に[スキーマ](#schema)を**推論**できます。Gatsby の[カスタムスキーマ API](/docs/schema-customization/) を使うことで、この構造にさらなるコントロールを付与できます。
+データ層と[ビルド](#build)プロセスの一部として、Gatsby はデータソース（例：Markdown ファイル、ワードプレス記事など）から自動的に[スキーマ](#schema)を**推論**できます。Gatsby の[カスタムスキーマ API](/docs/schema-customization/) を使うことで、この構造にさらなるコントロールを付与できます。
 
 ## J
 
@@ -180,11 +180,11 @@ JAMStack とは [JavaScript](#javascript)、[APIs](#api)、そして（[HTML](#h
 
 ### JavaScript
 
-ウェブサイトに動きを追加し、インタラクティブなコンテンツを作成するためのプログラミング言語。 [JavaScript](https://developer.mozilla.org/en-US/docs/Web/Javascript) はブラウザーに幅広く使われている Web 技術です。[Node.js](#node) を用いてサーバーサイドでも使用されています。[ECMAScript](#ECMAScript) の仕様を実装したもの。
+ウェブサイトに動きを追加し、インタラクティブなコンテンツを作成するためのプログラミング言語。 [JavaScript](https://developer.mozilla.org/en-US/docs/Web/Javascript) はブラウザーに幅広く使われている Web 技術です。[Node.js](#node) を用いてサーバーサイドでも使用されています。[ECMAScript](#ECMAScript) の仕様を実装したものです。
 
 ### JSX
 
-JSX は JavaScript が拡張されたもので、同じコードに HTML やカスタムコンポーネントを含める事ができる拡張子です。 JSX は [UI](#UI) を表現する為に [React チームが使うことを推奨](https://reactjs.org/docs/introducing-jsx.html)しています。 JSX は他のテンプレート言語を想起するかもしれませんが、JavaScript をフル活用できる機能です。JSX を使うにあたって重要なのは、JSX は JavaScript を使うため、HTML で使用する一部の attributes は JavaScript の予約語を避けるために他の単語に置き換えられていると言う事です (例えば `htmlFor` や `className` 等）。
+JSX は JavaScript が拡張されたもので、同じコードに HTML やカスタムコンポーネントを含める事ができる拡張子です。JSX は [UI](#UI) を表現する為に [React チームが使うことを推奨](https://reactjs.org/docs/introducing-jsx.html)しています。 JSX は他のテンプレート言語を想起するかもしれませんが、JavaScript をフル活用できる機能です。JSX を使うにあたって重要なのは、JavaScript を使っているため、HTML で使用する一部の attributes は JavaScript の予約語を避けるために他の単語に置き換えられていると言う事です (例えば `htmlFor` や `className` など）。
 
 ## K
 
@@ -192,13 +192,13 @@ JSX は JavaScript が拡張されたもので、同じコードに HTML やカ�
 
 ### Linting
 
-Linting はコードを解析し、構文エラー等を検出するためのプロセスです。 Gatsby プロジェクトは [prettier](https://prettier.io/) を使ってよくあるスタイルミスを識別し、修正しています。ほかの React プロジェクトでよく使われている linter の 1 つは [eslint-jsx-plugin-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y) を使ったもので、よくある[アクセシビリティ](#accessibility)対応されてない箇所を検出されるのに使われています。
+Linting はコードを解析し、構文エラー等を検出するためのプロセスです。Gatsby プロジェクトは [prettier](https://prettier.io/) を使ってよくあるスタイルミスを識別し、修正しています。ほかの React プロジェクトでよく使われている linter の 1 つは [eslint-jsx-plugin-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y) を使ったもので、[アクセシビリティ](#accessibility)対応されてない箇所を検出されるのに使われています。
 
 ## M
 
 ### MDX
 
-[React](#react) の[コンポーネント](#component)を [Markdown](#markdown) 上でそのまま使用できるようにするための拡張機能。
+[React](#react) の[コンポーネント](#component)を [Markdown](#markdown) 上でそのまま使用するための拡張機能。
 
 ### Markdown
 
@@ -208,11 +208,11 @@ HTML のコンテンツをプレーンテキストで書くための手法です
 
 ### NPM
 
-[Node](#node) [Package](#package) Manager のこと。プロジェクトが依存する他のパッケージのインストールやアップデートを可能とします。[Gatsby](#gatsby) や [React](#react) はプロジェクトが依存するパッケージの一例です。 参照：[Yarn](#yarn)。
+[Node](#node) [Package](#package) Manager の略で、プロジェクトが依存する他のパッケージのインストールやアップデートを可能とするツールです。[Gatsby](#gatsby) や [React](#react) もプロジェクトが依存するパッケージの一例です。参照：[Yarn](#yarn)。
 
 ### ノード (Node)
 
-Gatsby は 1 つのデータを表す[データノード](/docs/node-interface/) to represent a single piece of data. A [data source](#data-source) will create multiple nodes.
+Gatsby は[データノード](/docs/node-interface/)を 1 つのデータを表すのに使います。[データソース](#data-source)は複数のデータノードを作成します。
 
 ### [Node.js](/docs/glossary/node)
 
@@ -224,13 +224,13 @@ Gatsby は 1 つのデータを表す[データノード](/docs/node-interface/)
 
 ### パッケージ (Package)
 
-パッケージは多くの場合、配布されて使い方が説明されていたりするバージョン管理されている [JavaScript](#javascript) のプログラムです。[NPM](#npm) や [Yarn](#yarn) を使うことでプロジェクトが使うパッケージのインストール、管理が行えます。[Gatsby](#gatsby) もまたパッケージの 1 つです。
+パッケージは多くの場合、使い方の説明が含まれていてバージョン管理されている、配布されている [JavaScript](#javascript) のプログラムです。[NPM](#npm) や [Yarn](#yarn) を使うことでプロジェクトが使うパッケージのインストール、管理が行えます。[Gatsby](#gatsby) もまたパッケージの 1 つです。
 
 ### ページ (Page)
 
 [HTML](#html) のページ。
 
-[Gatsby](#gatsby) では `/src/pages/` フォルダーに含まれる、ビルド時にページへと変換される[コンポーネント](#component)のことや、 `gatsby-node.js` ファイルから[動的に作成されるページ](/docs/creating-and-modifying-pages/#creating-pages-in-gatsby-nodejs)のことを指します。
+[Gatsby](#gatsby) では `/src/pages/` フォルダーに含まれる、ビルド時にページへと変換される[コンポーネント](#component)のことや、`gatsby-node.js` ファイルから[動的に作成されるページ](/docs/creating-and-modifying-pages/#creating-pages-in-gatsby-nodejs)のことを指します。
 
 ### プラグイン (Plugin)
 
@@ -250,7 +250,7 @@ Gatsby に元から用意されてなかった機能を追加するためのコ�
 
 ### パブリック (Public)
 
-This usually refers to either a member of the public (as opposed to your team) or the folder[ビルド](#build)されたウェブサイトやアプリが保存された `/public` フォルダーの事を指します。
+パブリックと言う単語は、主に（あなたのチームとは別の）一般人のことか、[ビルド](#build)されたウェブサイトやアプリが保存されている `/public` フォルダーのことを指します。
 
 ## Q
 
@@ -274,7 +274,7 @@ This usually refers to either a member of the public (as opposed to your team) o
 
 ### ルーティング (Routing)
 
-ルーティングとは受け取ったネットワークリクエストから正しいコンテンツをウェブサイトやアプリ上に読み込むためのメカニズムです。主に URL が使われます。例えば、`/about-us` という URL にアクセスしたとき、正しい[ページ](#page)、 [テンプレート](#template)、 もしくは[コンポーネント](#component)を表示するための仕組みです。
+ルーティングとは受け取ったネットワークリクエストから正しいコンテンツをウェブサイトやアプリ上に読み込むためのメカニズムです。主に URL が使われます。例えば、`/about-us` という URL にアクセスしたとき、正しい[ページ](#page)、[テンプレート](#template)、もしくは[コンポーネント](#component)を表示するための仕組みです。
 
 ## S
 
@@ -288,7 +288,7 @@ This usually refers to either a member of the public (as opposed to your team) o
 
 ### ソースコード (Source Code)
 
-ソースコードは `/src/` フォルダーに保管される、あなたのサイトやアプリを構成するためのコードです。主に [JavaScript](#javascript) で書かれたコードで構成されています。and sometimes [CSS](#css) and other files.
+ソースコードは `/src/` フォルダーに保管される、あなたのサイトやアプリを構成するためのコードです。主に [JavaScript](#javascript) で書かれたコードで構成されており、時には [CSS](#css) や他の言語で書かれたファイルも含まれています。
 
 The source code gets [built](#build) into the site the [public](#public) will see.
 
