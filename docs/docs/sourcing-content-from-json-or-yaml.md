@@ -46,7 +46,7 @@ content:
 
 表示したいデータができたので、あとはデータを表示するページを作るだけです。
 
-`yml-at-buildtime.js` というページを `pages` というフォルダーの中に作成し、次のコードを記述してください：
+`yml-at-buildtime.js` というファイルを `pages` というフォルダーの中に作成し、次のコードを記述してください。
 
 ```jsx:title=src/pages/yml-at-buildtime.js
 import React from "react"
