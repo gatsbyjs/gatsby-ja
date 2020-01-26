@@ -75,11 +75,12 @@ module.exports = {
 }
 ```
 
-### See your site hot reload in the browser!
+### ブラウザでホットリロードされることを確認しよう
 
-Run `npm run develop` in the terminal, which starts a development server and reloads changes you make to your site so you can preview them in the browser. Open up your browser to [localhost:8000](http://localhost:8000/) and you should see a default homepage.
+ターミナルで`npm run develop`を実行しましす。これにより、開発サーバが起動し、サイトに加えた変更がリロードされるので、ブラウザで変更がプレビューできます。
+ブラウザを[localhost:8000](http://localhost:8000/)で開くと、デフォルトのホームページが表示されます。
 
-> **NOTE**: If you have already started your Gatsby development server using `npm run develop`, you will need to restart the server by pressing CTRL + C in the terminal where the command was run and running `npm run develop` again to see changes in your `gatsby-config.js` reflected on [localhost:8000](http://localhost:8000/)
+> **NOTE**:もし、既にGatsbyの開発サーバを`npm run develop`で起動していた場合、コマンドを実行したターミナルで CTRL + C を押してサーバを再起動し、`npm run develop`コマンドを再度実行することで[localhost:8000](http://localhost:8000/)に反映された`gatsby-config.js`の変更を確認するできます。
 
 ### How does the StripeJS plugin work?
 
