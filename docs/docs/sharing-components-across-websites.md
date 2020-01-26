@@ -7,7 +7,7 @@ issue: https://github.com/gatsbyjs/gatsby/issues/14042
 
 共有する方法はいくつかあります。
 
-**コンポーネントライブラリー**は明確で純粋なやり方です。しかし、しばしば追加のツールや変更によって複数のサイトへプルリクエストが必要となります。
+**コンポーネントライブラリー**は明確で純粋なやり方です。しかし、しばしば追加のツールや変更によって複数のサイトへプルリクエストする必要があります。
 
 あるいは、サイトごとに [Storybook](https://github.com/storybookjs/storybook) や [Styleguidist](https://github.com/styleguidist/react-styleguidist) などの**コンポーネントを見つけやすくするツール**を導入することで、リポジトリーをまたがって簡単に目的のコードをコピー＆ペーストできます。
 
