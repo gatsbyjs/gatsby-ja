@@ -57,7 +57,7 @@ Gatsby の最新情報を取得するために、
 
 コミュニティーの多くのメンバーは質問したりティップスを投稿するために Hashnode も使っています。
 `gatsby` でタグ付けされた[すでにある質問や投稿](https://hashnode.com/n/gatsby)についてよく読むか、
-[自分で質問を投稿](https://hashnode.com/create/question) したり [あなたの経験をシェア](https://hashnode.com/create/story)
+[自分で質問を投稿](https://hashnode.com/create/question)したり[あなたの経験をシェア](https://hashnode.com/create/story)
 したりして、 `gatsby` タグを付けてください。
 
 ### DEV コミュニティー
