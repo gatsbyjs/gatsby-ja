@@ -37,16 +37,14 @@ Gatsby ニュースレターにサインアップし、 Gatsby コミュニテ�
 
 ### Twitter
 
-Gatsby の最新情報を取得するために、
-[Twitter で **@gatsbyjs** をフォローしてください](https://twitter.com/gatsbyjs)。
+Gatsby の最新情報を取得するために、[Twitter で **@gatsbyjs** をフォローしてください](https://twitter.com/gatsbyjs)。
 
 ## どこでサポートを受けるのか
 
 ### スタック・オーバーフロー
 
 たくさんのコミュニティーがスタック・オーバーフローを質問するために使っています。
-`gatsby` でタグ付けされた[すでにある質問](https://ja.stackoverflow.com/questions/tagged/gatsby) をよく読むか、
-[自分で質問を投稿してください](http://stackoverflow.com/questions/ask?tags=gatsby)！
+`gatsby` でタグ付けされた[すでにある質問](https://ja.stackoverflow.com/questions/tagged/gatsby) をよく読むか、[自分で質問を投稿してください](http://stackoverflow.com/questions/ask?tags=gatsby)！
 
 ### Discord
 
@@ -56,15 +54,13 @@ Gatsby の最新情報を取得するために、
 ### Hashnode
 
 コミュニティーの多くのメンバーは質問したりティップスを投稿するために Hashnode も使っています。
-`gatsby` でタグ付けされた[すでにある質問や投稿](https://hashnode.com/n/gatsby)についてよく読むか、
-[自分で質問を投稿](https://hashnode.com/create/question)したり[あなたの経験をシェア](https://hashnode.com/create/story)
+`gatsby` でタグ付けされた[すでにある質問や投稿](https://hashnode.com/n/gatsby)についてよく読むか、[自分で質問を投稿](https://hashnode.com/create/question)したり[あなたの経験をシェア](https://hashnode.com/create/story)
 したりして、 `gatsby` タグを付けてください。
 
 ### DEV コミュニティー
 
 DEV コミュニティーもまた、質問したりティップスをシェアするために有益なプラットフォームです。
-`gatsby` でタグ付けされた[すでにある質問や投稿](https://dev.to/t/gatsby) をよく読むか、
-[助けを求めてください](https://dev.to/new/help)。 また、 `gatsby` タグの付いた[自分の投稿を書く](https://dev.to/new/gatsby) こともできます。
+`gatsby` でタグ付けされた[すでにある質問や投稿](https://dev.to/t/gatsby) をよく読むか、[助けを求めてください](https://dev.to/new/help)。また、 `gatsby` タグの付いた[自分の投稿を書く](https://dev.to/new/gatsby) こともできます。
 
 ## Gatsby についてもっと学ぶ：
 
