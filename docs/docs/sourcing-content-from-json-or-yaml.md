@@ -2,7 +2,7 @@
 title: JSON または YAML ファイルからデータを取得する
 ---
 
-Gatsby では、JSON または YAML ファイルからデータを取得しページまたはコンポーネントで直接使用できます。このガイドでは、これらのやり方と YAML ファイルから Gatsby サイトを構築する方法について説明します。
+Gatsby では、JSON または YAML ファイルからデータを取得し、ページまたはコンポーネントで直接使用できます。このガイドでは、これらのやり方と YAML ファイルから Gatsby サイトを構築する方法について説明します。
 
 このガイドで概説されている JSON または YAML からデータ取得をする方法に従うには、公式の [hello world スターター](https://github.com/gatsbyjs/gatsby-starter-hello-world) を使用して Gatsby サイトを作成することから始めます。
 
