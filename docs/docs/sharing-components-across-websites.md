@@ -11,10 +11,10 @@ issue: https://github.com/gatsbyjs/gatsby/issues/14042
 
 あるいは、サイトごとに [Storybook](https://github.com/storybookjs/storybook) や [Styleguidist](https://github.com/styleguidist/react-styleguidist) などの**コンポーネントを見つけやすくするツール**を導入することで、リポジトリーをまたがって簡単に目的のコードをコピー＆ペーストできます。
 
-[Bit](https://github.com/teambit/bit) などの**コンポーネント共有ツール**を使うことで、コピー＆ペーストせずに Web サイト間でコンポーネントの再利用と同期を行えます。
+[Bit](https://github.com/teambit/bit) などの**コンポーネント共有ツール**を使うことで、コピー＆ペーストせずにウェブサイト間でコンポーネントの再利用と同期を行えます。
 
 <GuideList slug={props.slug} />
 
 --
 
-**ヒント:** この他に、 Web サイト間でコンポーネントを共有するアイデアをご存知ですか？Gatsby ドキュメントへの貢献をお待ちしています。[貢献する方法](/contributing/docs-contributions/)をご覧ください。
+**ヒント:** この他に、ウェブサイト間でコンポーネントを共有するアイデアをご存知ですか？Gatsby ドキュメントへの貢献をお待ちしています。[貢献する方法](/contributing/docs-contributions/)をご覧ください。
