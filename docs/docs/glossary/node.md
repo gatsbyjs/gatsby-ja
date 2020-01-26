@@ -3,7 +3,7 @@ title: Node.js
 disableTableOfContents: true
 ---
 
-Gatsby を可能にするソフトウェアの 1 つである Node.js について学びましょう。
+Gatsby に必要なソフトウェアの 1 つである Node.js について学びましょう。
 
 ## Node.js とは？
 
@@ -19,16 +19,15 @@ Node.js は JavaScript のランタイムで、Google Chrome でも同様のエ�
 
 Node.js をインストールすると、JavaScript を[コマンドライン](/docs/glossary#command-line)
 から実行できます。
-コマンドプロンプトで`node`と入力すると Node.js のシェルが立ち上がります。スクリプトを実行するには JavaScript ファイルへのパスを含めて入力します。例：`node /Users/gatsbyfan/hello-world.js`
+コマンドラインで `node` と入力すると Node.js のシェルが立ち上がります。スクリプトを実行するには JavaScript ファイルへのパスを含めて入力します。例： `node /Users/gatsbyfan/hello-world.js`
 
 Gatsby を使用する前にまず、[Node.js をインストール](/tutorial/part-zero/#-install-nodejs-and-npm)
 する必要があります。
 
-Node.js をインストールすると、Node.js の _パッケージマネージャー_ である [npm](/docs/glossary#npm) も合わせてインストールされます。パッケージマネージャー
-とはモジュールやパッケージをあなたのプロジェクトにインストールしたり更新したりするための特別なソフトウェアです。
+Node.js をインストールすると、Node.js の **パッケージマネージャー** である [npm](/docs/glossary#npm) もあわせてインストールされます。パッケージマネージャーとはモジュールやパッケージをあなたのプロジェクトにインストールしたり更新したりするための特別なソフトウェアです。
 
-Gatsby とその依存パッケージをインストールするためには npm を使います。Gatsby CLI をインストールするにはコマンドラインプロンプトで`npm install -g gatsby-cli`と入力してください。`-g`のフラグを付けると Gatsby がグローバルにインストールされ、コマンドプロンプトで`gatsby`と入力して Gatsby を使用できるようになります。
-例えば`gatsby new`と入力すると新規の Gatsby サイトを作成できます。
+Gatsby とその依存パッケージをインストールするためには npm を使います。Gatsby CLI をインストールするにはコマンドラインに `npm install -g gatsby-cli` と入力してください。`-g` フラグを付けると Gatsby がグローバルにインストールされ、コマンドラインで `gatsby` と入力することで Gatsby を使用できるようになります。
+例えば `gatsby new` と入力すると新規の Gatsby サイトを作成できます。
 
 ## Node.js についてもっと知るには
 
