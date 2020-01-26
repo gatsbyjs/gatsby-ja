@@ -390,7 +390,7 @@ export const query = graphql`
 
 ## 次は？
 
-あなたは Gatsby のサイトを構築しました。次はどうしますか？
+無事、Gatsby のサイトを構築できましたね！次はどうしますか？
 
 - Gatsby のサイトを Twitter で共有し、#gatsbytutorial で検索して、他の人が作成したサイトを見てみましょう！
   ツイートには @gatsbyjs を記載して、#gatsbytutorial のハッシュタグを含めてください :)
