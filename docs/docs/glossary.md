@@ -30,11 +30,11 @@ API とは Application Programming Interface の略で、アプリ間の連絡�
 
 ### Babel
 
-最新の [JavaScript](#javascript) をかけるようにするためのツールです。[ビルド時](#build) にほとんどの Web ブラウザーが読めるように[コンパイル](#compiler)されます。
+最新の [JavaScript](#javascript) をかけるようにするためのツールです。[ビルド時](#build)にほとんどの Web ブラウザーが読めるように[コンパイル](#compiler)されます。
 
 ### バックエンド (Backend)
 
-サイトの[表](#public)には出ない、裏で走っている機能のこと。このサイトでは、主に [CMS](#cms) のコントロールパネルのことを指す。これらは、Node.js, PHP, Go, ASP.net, Ruby, Java 等のサーバーサイド言語によって実装されています。
+サイトの[表](#public)には出ない、裏で走っている機能のことです。このサイトでは、主に [CMS](#cms) のコントロールパネルのことを指します。これらは、Node.js, PHP, Go, ASP.net, Ruby, Java 等のサーバーサイド言語によって実装されています。
 
 ### ビルド (Build)
 
@@ -44,17 +44,17 @@ Gatsby では、ビルドとはあなたのコードやコンテンツを 1 つ�
 
 ### キャッシュ (Cache)
 
-一度読み込んだ情報を、再利用するためローカルに保存されたもの。保存される事によって、次回の計算や検索結果をより早く提供できるようになります。 Gatsby はキャッシュを使ってあなたのサイトのビルドを高速で行うために使用しています。
+一度読み込んだ情報を、再利用するためローカルに保存されたもの。保存される事によって、次回の計算や検索結果をより早く提供できるようになります。Gatsby はキャッシュを使ってあなたのサイトのビルドを高速で行うために使用しています。
 
 ### CLI
 
-Command Line Interface (コマンドラインインターフェース）: あなたのパソコンの[コマンドライン](#command-line)上で動作し、あなたのキーボードと Interact するアプリ。
+Command Line Interface (コマンドラインインターフェース）の略で、あなたのパソコンの[コマンドライン](#command-line)上で動作し、あなたのキーボードで操作するアプリのことを指します。
 
 Gatsby には 2 つのコマンドラインインターフェースがあります。 1 つは [`gatsby`](/docs/gatsby-cli/)、Gatsby の開発時に使います。もう 1 つは [`gatsby-dev`](/contributing/setting-up-your-local-dev-environment/#gatsby-repo-install-instructions)、こちらは Gatsby 本体の開発をする時に使います。
 
 ### クライアントサイド (Client-side)
 
-[クライアント・サーバモデル](https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%88%E3%82%B5%E3%83%BC%E3%83%90%E3%83%A2%E3%83%87%E3%83%AB)におけるクライアントサイドとは、ユーザーのブラウザー上で行われる操作のことを指します。Gatsby では、これは `window` or `navigator` などの[ブラウザ DOM](#dom) に依存する[パッケージの開発](/docs/using-client-side-only-packages/)に置いて重要です。参照： [サーバーサイド](#server-side)、 [フロントエンド](#frontend)、[バックエンド](#backend)。
+[クライアント・サーバモデル](https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%88%E3%82%B5%E3%83%BC%E3%83%90%E3%83%A2%E3%83%87%E3%83%AB)におけるクライアントサイドとは、ユーザーのブラウザー上で行われる操作のことを指します。Gatsby では、これは `window` or `navigator` などの[ブラウザ DOM](#dom) に依存する[パッケージの開発](/docs/using-client-side-only-packages/)に置いて重要です。参照：[サーバーサイド](#server-side)、[フロントエンド](#frontend)、[バックエンド](#backend)。
 
 ### CMS
 
@@ -340,6 +340,6 @@ Gatsby が使用する [JavaScript](#javascript) アプリで、ウェブサイ�
 
 ### Yarn
 
-[NPM](#npm) と同じような[パッケージマネージャ](#package)で、一部の人は NPM より好んで使っています。 [Gatsby 自体の開発](/contributing/setting-up-your-local-dev-environment/#using-yarn)にも必要になります。
+[NPM](#npm) と同じような[パッケージマネージャ](#package)で、一部の人は NPM より好んで使っています。[Gatsby 自体の開発](/contributing/setting-up-your-local-dev-environment/#using-yarn)にも必要になります。
 
 ## Z
