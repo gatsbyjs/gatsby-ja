@@ -86,7 +86,7 @@ export default () => <Layout>Hello world!</Layout>
 - [グローバル CSS ファイルを使ったスタンダードなスタイリング](/docs/global-css/)
 - [レイアウトコンポーネントについてもっと詳しく](/tutorial/part-three)
 
-## Styled コンポーネントを使う
+## Styled Components を使う
 
 ### 必要事項
 
@@ -107,7 +107,7 @@ module.exports = {
 
 3. スタイルブロックを各要素タイプ毎に作成することでコンポーネントをスタイルします。
 
-4. JSX に Styled コンポーネントを含めることでページに適用します。
+4. JSX に styled components を含めることでページに適用します。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -161,7 +161,7 @@ export default () => (
 
 ### 追加のリソース
 
-- [Styled コンポーネント についてより詳しく](/docs/styled-components/)
+- [Styled Components についてより詳しく](/docs/styled-components/)
 - [Egghead のレッスン](https://egghead.io/lessons/gatsby-style-gatsby-sites-with-styled-components)
 
 ## CSS モジュールを使う
@@ -307,7 +307,7 @@ HTML の `body` 要素を対象にすることで、 あなたのフォントは
 
 ## Emotion を使う
 
-[Emotion](https://emotion.sh) とは強力な CSS-in-JS のライブラリーでインライン CSS スタイルに加え、 styled コンポーネントもサポートします。同じファイルで各々の機能をバラバラに使うことも、一緒に使うこともできます。
+[Emotion](https://emotion.sh) とは強力な CSS-in-JS のライブラリーでインライン CSS スタイルに加え、 styled components もサポートします。同じファイルで各々の機能をバラバラに使うことも、一緒に使うこともできます。
 
 ### 必要事項
 
@@ -351,7 +351,7 @@ export default () => (
 )
 ```
 
-4. Emotion の [styled コンポーネント](https://emotion.sh/docs/styled) を使うには、パッケージをインポートし `styled` 関数を使って定義します。
+4. Emotion の [styled components](https://emotion.sh/docs/styled) を使うには、パッケージをインポートし `styled` 関数を使って定義します。
 
 ```jsx:title=src/pages/emotion-sample.js
 import React from "react"
