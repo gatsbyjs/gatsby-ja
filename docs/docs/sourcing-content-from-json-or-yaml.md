@@ -73,7 +73,7 @@ YAML からのデータに加えて（または、その代わりに）JSON を 
 
 ### JSON コンテンツを追加する
 
-Gatsby プロジェクトフォルダーで、（存在しなければ）`content` ディレクトリーを作成し、その中に次の内容を記述した `My-JSON-Content.json` ファイルを作成してください：
+Gatsby プロジェクトフォルダーで、（存在しなければ）`content` ディレクトリーを作成し、その中に次の内容を記述した `My-JSON-Content.json` ファイルを作成してください。
 
 ```json:title=content/My-JSON-Content.json
 {
