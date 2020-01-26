@@ -54,7 +54,7 @@ Gatsby には 2 つのコマンドラインインターフェースがありま�
 
 ### クライアントサイド (Client-side)
 
-ネットワーク上の[クライアントサーバモデル](https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%88%E3%82%B5%E3%83%BC%E3%83%90%E3%83%A2%E3%83%87%E3%83%AB)において、クライアントサイドとは、ユーザーのブラウザー上で行われる操作のことを指します。Gatsby では、これは `window` or `navigator` などの[ブラウザ DOM](#dom) に依存する[パッケージの開発](/docs/using-client-side-only-packages/)に置いて重要です。参照： [サーバーサイド](#server-side)、 [フロントエンド](#frontend)、[バックエンド](#backend)。
+[クライアント・サーバモデル](https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%88%E3%82%B5%E3%83%BC%E3%83%90%E3%83%A2%E3%83%87%E3%83%AB)におけるクライアントサイドとは、ユーザーのブラウザー上で行われる操作のことを指します。Gatsby では、これは `window` or `navigator` などの[ブラウザ DOM](#dom) に依存する[パッケージの開発](/docs/using-client-side-only-packages/)に置いて重要です。参照： [サーバーサイド](#server-side)、 [フロントエンド](#frontend)、[バックエンド](#backend)。
 
 ### CMS
 
@@ -80,7 +80,7 @@ CMS とはコンテンツ・マネジメント・システム (Content Managemen
 
 ### CSS
 
-[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) は Cascading Style Sheets の事を指します。[HTML](#html) と [JavaScript](#javascript) と共に、サイトを構成する主戦物です。 CSS はウェブサイトのデザインを後方互換性を保ちながら変更する為に設計された言語です。エンドユーザーに新しい機能が運ばれるたび、[CSS パーサー](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#CSS_parsing)はサポートされていない機能を安全に無視して、サポートしている機能だけを提供できます。CSS はこれを _cascading_ design により実現しています。 fundamental to styling with new techniques like [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_and_Progressive_Enhancement) while providing fallbacks for older browsers. Gatsby supports multiple [approaches to styling](/docs/styling/), including regular CSS files, CSS modules, and CSS-in-JS.
+[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) は Cascading Style Sheets の略であり、[HTML](#html) と [JavaScript](#javascript) と共に、サイトを構成する主戦物です。CSS はウェブサイトのデザインを変更する為に設計された言語です。後方互換性の保守に優れており、新しい機能が実装されても、[CSS パーサー](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#CSS_parsing)はサポートされていない機能を安全に無視して、サポートしている機能だけを提供できます。[CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_and_Progressive_Enhancement) のような新しい技術をブラウザーに提供しつつ、古いブラウザーにはフォールバックを提供しています。Gatsby では様々な[スタイリングに対するアプローチ]](/docs/styling/)に対応しています。これは、通常の CSS ファイルや、CSS modules、CSS-in-JS を含みます。
 
 ## D
 
@@ -92,9 +92,9 @@ CMS とはコンテンツ・マネジメント・システム (Content Managemen
 
 データベースとは構造化されたデータやコンテンツのこと。多くの場合、[CMS](#cms) が[バックエンドの技術](#backend)を用いることでコンテンツはデータベースに保存されます。これらは[ソースプラグイン](#source-plugin)を用いて Gatsby からアクセスされます。
 
-### Decoupled
+### 分離 (Decoupled)
 
-Decoupling describes the separation of different concerns. With [Gatsby](#gatsby) this most commonly means decoupling the [frontend](#frontend) from the [backend](#backend), like with [Decoupled Drupal](https://dri.es/how-to-decouple-drupal-in-2019) or [Headless WordPress](https://www.smashingmagazine.com/2018/10/headless-wordpress-decoupled/).
+[Gatsby](#gatsby) において、分離とは関心の分離のことを指します。多くの場合、[フロントエンド](#frontend)と[バックエンド](#backend)を分離することを指しています。例として、[Decoupled Drupal](https://dri.es/how-to-decouple-drupal-in-2019) や [Headless WordPress](https://www.smashingmagazine.com/2018/10/headless-wordpress-decoupled/) が挙げられます。
 
 ### デプロイ (Deploy)
 
@@ -102,43 +102,43 @@ Decoupling describes the separation of different concerns. With [Gatsby](#gatsby
 
 ### 開発環境 (Development Environment)
 
-The [環境](#environment) when you're developing your code. It's accessed through the [CLI](#cli) using `gatsby develop`, and provides extra error reporting and things to help you debug before building for [production](#production-environment).
+コードを開発するための[環境](#environment)。[CLI](#cli) から `gatsby develop` を叩いてアクセスし、エラー報告や、[本番環境](#production-environment)をビルドするために必要なデバッグ情報について伝えます。
 
 ### DOM
 
-The Document Object Model, commonly referred to as "the DOM", is a standard browser API that connects web pages to scripts or programming languages by representing the structure of an HTML document in memory. Developers commonly interact with the DOM through [HTML](#html) markup (written in [JSX](#jsx) in Gatsby), as well as both [React](https://reactjs.org/docs/react-dom.html) and [vanilla JavaScript](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction#DOM_and_JavaScript) code. Another important aspect of utilizing the DOM to its full potential is writing [accessible](#accessibility) HTML markup to expose a page's structure to assistive technology.
+Document Object Model の略。DOM とは、HTML の構造をメモリーに持たせる事によって、ウェブページとスクリプトやプログラム言語を繋げる為のスタンダードなブラウザーの API です。開発者は主に、[HTML](#html) マークアップ（Gatsby では [JSX](#jsx) で書かれる）や [React](https://reactjs.org/docs/react-dom.html)、[バニラな JavaScript](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction#DOM_and_JavaScript)を通して DOM を操作します。DOM をフル活用する上でもう 1 つ大事なことは、[アクセシブル](#accessibility)な HTML マークアップを書いて、ページの構造をアシスト技術に対応させることです。
 
 ## E
 
 ### ECMAScript
 
-ECMAScript (often referred to as ES) is a specification for scripting languages. [JavaScript](#javascript) is an implementation of ECMAScript. Often developers will use [Babel](#babel) to [compile](#compiler) the latest ECMAScript code into more widely supported JavaScript.
+ECMAScript(ES と略されることが多い）はスクリプト言語の仕様です。[JavaScript](#javascript) は ECMAScript の仕様を実装したものです。 開発者は [Babel](#babel) を使って最新の ECMAScript をどの環境でも動作する JavaScript に[コンパイル](#compiler)することが多いです。
 
 ### 環境 (Environment)
 
-Gatsby が動作するうための環境のこと。例えば、when you are writing your code you probably want as much debugging as possible, but that's undesirable on the live website or app. As such, Gatsby can change its behavior depending on the environment it's in。
+Gatsby が動作するうための環境のこと。例えば、開発中は多くのデバッグをしたくなるでしょう。ただ、公開中のウェブサイトやアプリ上でのデバッグは行いたくありません。そういう時の為に Gatsby はそれぞれのケースの環境を用意しています。
 
 Gatsby ではデフォルトで 2 つの環境を提供しています。[開発環境](#development-environment)と[本番環境](#production-environment)です。
 
 ### 環境変数 (Environment Variables)
 
-[環境変数](/docs/environment-variables/)は[環境](#environment)によってあなたのアプリの動作を変更するためのもの。例えば、 For instance, you may wish to get content from a staging CMS during development and connect to your production CMS when you [build](#build) your site. With environment variables you can set a different URL for each environment.
+[環境変数](/docs/environment-variables/)は[環境](#environment)によってあなたのアプリの動作を変更するためのもの。例えば、開発中には staging に上がっている CMS からコンテンツを受け取りたくて、[ビルド](#build)された本番環境では本番の CMS からコンテンツを受け取りたい場合、環境変数を使って、それぞれの環境で別々の URL を設定できます。
 
 ## F
 
 ### ファイルシステム (Filesystem)
 
-ファイルがどのように構成されているかのこと。Gatsby では、 it means having files in the same place as your website's or app's code instead of pulling data from an external [source](#data-source). Common filesystem usage in Gatsby includes Markdown content, images, data files, and other assets.
+ファイルがどのように構成されているかのこと。Gatsby では、あなたのウェブサイトやアプリのコードと同じ箇所に含まれている、外部の[ソース](#data-source)とは別にあるファイルのことを指します。Gatby においてファイルシステムに含まれている主なものは Markdown のコンテンツ、画像、データファイル、その他のアセットなどです。
 
 ### フロントエンド (Frontend)
 
-The [public-facing](#public) interface for your website or app, delivered using web technologies: HTML, CSS, and JavaScript. For more insight into how the Web Platform brings these technologies together, check out this article on [How Browsers Work](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/).
+フロントエンドとは、あなたのウェブサイトやアプリの[表に見える部分](#public)を作成する技術、HTML や CSS、 JavaScript のことを指します。ウェブプラットフォームがこれらの技術をどう組み合わせているかについては[ブラウザーの仕組み](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/)という記事を参照してください。
 
 ## G
 
 ### Gatsby
 
-Gatsby はモダンなウェブサイト作成のフレームワーク。 a modern website framework that builds performance into every website or app by leveraging the latest web technologies such as [React](#react), [GraphQL](#graphql), and modern [JavaScript](#javascript). Gatsby makes it easy to create blazing fast, compelling web experiences without needing to become a performance expert.
+Gatsby は [React](#react)、 [GraphQL](#graphql)、やモダンな [JavaScript](#javascript) など、最新のウェブ技術を取り入れたモダンなウェブサイト作成やウェブアプリ制作のためのフレームワークです。Gatsby はパフォーマンスの達人でなくとも、素早い Web 体験をユーザーに届けることが可能です。
 
 ### [GraphQL](/docs/glossary/graphql)
 
@@ -148,7 +148,7 @@ Gatsby はモダンなウェブサイト作成のフレームワーク。 a mode
 
 ### HTML
 
-すべてのブラウザーが理解可能なマークアップ言語。Hypertext Markup Language の略。 [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) gives your web content a universal informational structure, defining things like headings, paragraphs, and more. It is also key to providing an accessible website.
+すべてのブラウザーが理解可能なマークアップ言語。Hypertext Markup Language の略。 [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) はウェブコンテンツに見出しや段落などを定義して、ユニバーサルな構造を与えます。アクセシビリティ対応のウェブサイトを構築する上でも大事です。
 
 ### Headless CMS
 
@@ -162,21 +162,21 @@ Gatsby はモダンなウェブサイト作成のフレームワーク。 a mode
 
 `gatsby develop` を起動したときに走る機能で、テキストエディタでコードを保存した時に開いているブラウザーのモジュールやコードを置き換えて即時にサイトをアップデートする機能です。
 
-### Hydration
+### 生成 (Hydration)
 
-Once a site has been [built](#build) by Gatsby and loaded in a web browser, [client-side](#client-side) JavaScript assets will download and turn the site into a full React application that can manipulate the [DOM](#dom). This process is often called re-hydration as it runs some of the same JavaScript code used to generate Gatsby pages, but this time with browser DOM APIs like `window` available.
+Gatsby によってサイトが[ビルド](#build)され、ブラウザー上に読み込まれた際、[クライアントサイド](#client-side)の JavaScript のコードはあなたのサイトを [DOM](#dom) 操作が行える完全なる React のアプリケーションとして立ち上げます。このプロセスはよく再生性（re-hydration)と呼ばれます。Gatsby のページを生成するのと同じコードを使われており、その上に `window` のようなブラウザーの DOM API を追加しています。
 
 ## I
 
 ### インターフェース (Inference)
 
-As part of its data layer and [build](#build) process, Gatsby will automatically **infer** a [schema](#schema), or type-based structure, based on available data sources (e.g. Markdown file nodes, WordPress posts, etc.). More control can be gained over this structure by using Gatsby's [Schema Customization API](/docs/schema-customization/).
+データ層と[ビルド](#build)プロセスの一部として、Gatsby はデータソース（例：Markdown ファイル、ワードプレス記事、等）から自動的に[スキーマ](#schema)を**推論**できます。Gatsby の[カスタムスキーマ API](/docs/schema-customization/) を使うことで、この構造にさらなるコントロールを付与できます。
 
 ## J
 
 ### JAMStack
 
-JAMStack refers to a modern web architecture using [JavaScript](#javascript), [APIs](#api), and ([HTML](#html)) markup. From [JAMStack.org](https://jamstack.org): "It’s a new way of building websites and apps that delivers better performance, higher security, lower cost of scaling, and a better developer experience."
+JAMStack とは [JavaScript](#javascript)、[APIs](#api)、そして（[HTML](#html) の）Markup から構成されたモダンなウェブアーキテクチャのことです。 [JAMStack.org](https://jamstack.org) から引用。"JAM Stack とは、優れたパフォーマンス、セキュリティ、スケーリングのコスト、開発体験を提供するウェブサイトやアプリを構築する新しい手法です"。
 
 ### JavaScript
 
@@ -202,7 +202,7 @@ Linting はコードを解析し、構文エラー等を検出するためのプ
 
 ### Markdown
 
-A way of writing HTML content with plain text, using special characters to denote content types such as hash symbols for [headings](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements), and underscores and asterisks for text emphasis.
+HTML のコンテンツをプレーンテキストで書くための手法です。コンテンツのタイプを特別な文字列を使って表します。例えば、ハッシュ（#)を使って[見出し](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements)を表したり、下線（\_)やアスタリスク（\*)を使ってテキストの強調を表したりします。
 
 ## N
 
@@ -216,7 +216,7 @@ Gatsby は 1 つのデータを表す[データノード](/docs/node-interface/)
 
 ### [Node.js](/docs/glossary/node)
 
-A program that lets you run [JavaScript](#javascript) on your computer. Gatsby は Node によって実装されています。
+[JavaScript](#javascript) をコンピューター上で実行するためのプログラムです。Gatsby は Node によって実装されています。
 
 ## O
 
@@ -224,29 +224,29 @@ A program that lets you run [JavaScript](#javascript) on your computer. Gatsby �
 
 ### パッケージ (Package)
 
-A package usually describes a [JavaScript](#javascript) program that has additional information about how it should be distributed and used, such as its version number. [NPM](#npm) and [Yarn](#yarn) manages and installs the packages your project uses. [Gatsby](#gatsby) itself is a package.
+パッケージは多くの場合、配布されて使い方が説明されていたりするバージョン管理されている [JavaScript](#javascript) のプログラムです。[NPM](#npm) や [Yarn](#yarn) を使うことでプロジェクトが使うパッケージのインストール、管理が行えます。[Gatsby](#gatsby) もまたパッケージの 1 つです。
 
 ### ページ (Page)
 
-An [HTML](#html) page.
+[HTML](#html) のページ。
 
-This also often refers to [components](#component) that live in `/src/pages/` and are converted to pages by [Gatsby](#gatsby), as well as [pages created dynamically](/docs/creating-and-modifying-pages/#creating-pages-in-gatsby-nodejs) in your `gatsby-node.js` file.
+[Gatsby](#gatsby) では `/src/pages/` フォルダーに含まれる、ビルド時にページへと変換される[コンポーネント](#component)のことや、 `gatsby-node.js` ファイルから[動的に作成されるページ](/docs/creating-and-modifying-pages/#creating-pages-in-gatsby-nodejs)のことを指します。
 
 ### プラグイン (Plugin)
 
-Additional code that adds functionality to Gatsby that wasn't included out-of-the-box. Common [Gatsby plugins](/plugins/) include [source](#source-plugins) and [transformer](#transformer) plugins for pulling in and manipulating data, respectively.
+Gatsby に元から用意されてなかった機能を追加するためのコード。よく使われる [Gatsby プラグイン](/plugins/)はデータを取得するための[ソースプラグイン](#source-plugins)、およびデータの変換を行うための[トランスフォーマープラグイン](#transformer)などがある。
 
 ### 本番環境 (Production Environment)
 
-The [environment](#environment) for the [built](#build) website or app that users will experience when [deployed](#deploy). It can be accessed through the [CLI](#cli) using `gatsby build` or `gatsby serve`.
+[ビルド](#build)されたウェブサイトやアプリが動作している[環境](#environment)のことを指し、[デプロイ](#deploy)された時にユーザーが体験するのはこの環境となります。[CLI](#cli) からは `gatsby build` や `gatsby serve` を実行することでアクセスできます。
 
-### Programmatically
+### プログラム (Programmatically)
 
-Something that automatically happens based on your code and configuration. For example, you might [configure](#config) your project to create a [page](#page) for every blog post written, or read and display the current year as part of a copyright in your site footer.
+プログラムされていることとは、あなたのコードと設定を元として自動的に実行されることを指します。例えば、あなたがすべてのブログ記事に対してページを作成するようプロジェクトに[設定](#config)してあったり、サイトのフッターに著作権と現在の年を表示するように設定している場合、Gatsby はそれを実行するようにプログラムされています。
 
-### Progressive enhancement
+### プログレッシブ・エンハンスメント (Progressive enhancement)
 
-Progressive enhancement is a strategy for the web that emphasizes core page content is loaded from a server before anything else, without [JavaScript](#javascript) as a requirement to load. This strategy then progressively adds more complex layers of presentation and features on top of the content as the end user's browser/network connection allow. Gatsby's default approach to [building](#build) pages ahead-of-time means content will load first and enhance as scripts download and execute.
+プログレッシブ・エンハンスメントとは、ウェブ上に置いてページのコアとなるコンテンツをサーバーから何よりも先に読み込むための設計哲学です。その後、段階的により複雑なプレゼンテーション層や機能をユーザーのブラウザやネットワークが可能な限りコンテンツの上に重ねていきます。Gatsby がページを[ビルド]](#build)する上で活用するデフォルトのアプローチは、AOT (ahead-of-time) で読み込むこと、つまり、コンテンツは先に読み込まれ、その後スクリプトが読み込まれて実行されていきます。
 
 ### パブリック (Public)
 
@@ -256,35 +256,35 @@ This usually refers to either a member of the public (as opposed to your team) o
 
 ### クエリ (Query)
 
-The process of requesting specific data from somewhere. With Gatsby you normally query with [GraphQL](#graphql).
+データをどこかからリクエストするための行為。Gatsby では通常 [GraphQL](#graphql) を用いてクエリを行います。
 
 ## R
 
 ### [React](/docs/glossary/react)
 
-A code library (written with [JavaScript](#javascript)) for building user interfaces. It’s the framework that [Gatsby](#gatsby) uses to build pages and structure content.
+[JavaScript](#javascript) によって書かれた、ユーザーインターフェースを作成するためのライブラリーです。[Gatsby](#gatsby) がページをビルドしてコンテンツを構造するために使用するフレームワーク。
 
 ### Remark
 
-[Markdown](#markdown) を [HTML](#html) や [React](#react) のコードに変換するためのパーサーライブラリ。
+[Markdown](#markdown) を [HTML](#html) や [React](#react) のコードに変換するためのパーサーライブラリー。
 
 ### ランタイム (Runtime)
 
-Runtime is when a program is running (or being executable); it can refer to a few things. [Node.js](#nodejs) is a [server-side](#server-side) runtime that executes JavaScript code. [Client-side JavaScript](#client-side), on the other hand, refers to the browser runtime where traditional JavaScript code executes. Gatsby compiles your site at [build time](#build) and [rehydrates with a React runtime](#hydration) to provide a fast, interactive, and dynamic user experience.
+ランタイムとはプログラムが実行されている時、もしくは実行可能なもののことを指します。これは複数の事象に当てはまります。例えば、[Node.js](#nodejs) は JavaScript のコードを実行するための[サーバーサイド](#server-side)のランタイムです。逆に、[クライアントサイド JavaScript](#client-side) は、従来の JavaScript が実行されるブラウザー上のランタイムです。さらに、Gatsby はユーザーに素早く、インタラクティブで動的な体験を与えるために、[ビルド時](#build)にあなたのサイトをコンパイルし、[React ランタイムによって再生性](#hydration)しています。
 
 ### ルーティング (Routing)
 
-Routing is the mechanism for loading the correct content in a website or app based on a network request - usually a URL. For example, it allows for routing URLs like `/about-us` to the appropriate [page](#page), [template](#template), or [component](#component).
+ルーティングとは受け取ったネットワークリクエストから正しいコンテンツをウェブサイトやアプリ上に読み込むためのメカニズムです。主に URL が使われます。例えば、`/about-us` という URL にアクセスしたとき、正しい[ページ](#page)、 [テンプレート](#template)、 もしくは[コンポーネント](#component)を表示するための仕組みです。
 
 ## S
 
 ### スキーマ (Schema)
 
-An exact representation of how data is stored in a system, such as tables and fields in a database or a JSON file structure. In Gatsby, the GraphQL schema expresses all queryable data - or data that components can ask about as part of Gatsby's data layer.
+スキーマとは、データがシステム上でどのように保管されているかをデータベースのテーブルやフィールド、または JSON で表現したものです。Gatsby では、GraphQL のスキーマがすべてのクエリ可能なデータ、もしくは Gatsby のデータ層の一部としてコンポーネントが取得できるデータを表現しています。
 
 ### サーバーサイド (Server-side)
 
-The server-side part of the [client-server relationship](https://en.wikipedia.org/wiki/Client%E2%80%93server_model) refers to operations performed by a computer program which manages access to a centralized resource or service in a computer network. Gatsby uses the server-side technology [Node.js](#nodejs) to compile pages at build time, as opposed to serving them at [browser runtime](#runtime) with [client-side](#client-side) JavaScript. See also: [frontend](#frontend) and [backend](#backend).
+[クライアント・サーバモデル](https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%88%E3%82%B5%E3%83%BC%E3%83%90%E3%83%A2%E3%83%87%E3%83%AB)におけるサーバーサイドとは、ネットワーク上のサービスやリソースへとアクセスする為にプログラムによって実行された操作のことです。Gatsby では [Node.js](#nodejs) というサーバーサイドの技術を使ってビルド時にページをコンパイルしています。他のサービスでは[クライアントサイド](#client-side) JavaScript を用いて[ブラウザーのランタイム](#runtime)でページを提供しているサービスもあります。参照：[フロントエンド](#frontend)、 [バックエンド](#backend).
 
 ### ソースコード (Source Code)
 
@@ -294,11 +294,11 @@ The source code gets [built](#build) into the site the [public](#public) will se
 
 ### ソースプラグイン (Source Plugin)
 
-Gatsby に新たな[データソース](#data-source)を加えるための[プラグイン](#plugin)。これによって、新たなデータをあなたの[ページ](#page)や [コンポーネント](#component)によって[クエリ](#query)することが可能となります。
+Gatsby に新たな[データソース](#data-source)を加えるための[プラグイン](#plugin)。これによって、新たなデータをあなたの[ページ](#page)や [コンポーネント](#component)によって[クエリ](#query)可能となります。
 
 ### スターター (Starter)
 
-A pre-configured Gatsby project that can be used as a starting point for your project. They can be discovered using the [Gatsby Starter Library](/starters/) and installed using the [Gatsby CLI](/docs/starters/).
+Gatsby のスターターとは、あなたのプロジェクトを始めるのに必要なものがあらかじめ設定された雛形です。[Gatsby スターター集](/starters/)に一覧が用意されており、[Gatsby CLI](/docs/starters/) を使ってインストール可能です。
 
 ### 静的 (Static)
 
