@@ -16,7 +16,7 @@ slug={props.slug}
 
 ### 抽象構文木 (AST)
 
-抽象構文木 (Abstract Syntax Tree、AST) とは、言語から別の言語へ[コンパイル](#compiler)する際、その中間を繋ぎ、ソースコードを木構造で表現したものです。例えば、[gatsby-transformer-remark](/packages/gatsby-transformer-remark/) プラグインは [Remark](#remark) パーサーを使用し、 [Markdown](#markdown) からその内容を表す AST を作成します。
+抽象構文木 (Abstract Syntax Tree、AST) とは、言語から別の言語へ[コンパイル](#compiler)する際、その中間を繋ぎ、ソースコードを木構造で表現したものです。例えば、[gatsby-transformer-remark](/packages/gatsby-transformer-remark/) プラグインは [Remark](#remark) パーサーを使用し、[Markdown](#markdown) からその内容を表す AST を作成します。
 
 ### API
 
@@ -38,7 +38,7 @@ API とは Application Programming Interface の略で、アプリ間の連絡�
 
 ### ビルド (Build)
 
-Gatsby では、ビルドとはあなたのコードやコンテンツを 1 つのパッケージとして、ホストしてアクセスるウェブサイトに仕上げる行為を指します。「_ビルド時_」とも呼ばれます。参照： [バックエンド](#backend)、[サーバサイド](#server-side)。
+Gatsby では、ビルドとはあなたのコードやコンテンツを 1 つのパッケージとして、ホストしてアクセスるウェブサイトに仕上げる行為を指します。「_ビルド時_」とも呼ばれます。参照：[バックエンド](#backend)、[サーバサイド](#server-side)。
 
 ## C
 
@@ -66,7 +66,7 @@ CMS とはコンテンツ・マネジメント・システム (Content Managemen
 
 ### コンパイラー (Compiler)
 
-コンパイラーとは、1 つの言語で書かれたコードを、他のコードに変換するものです。例えば、 [Gatsby](#gatsby) は [React](#react) のアプリを静的 [HTML](#html) ファイルにコンパイルできます。
+コンパイラーとは、1 つの言語で書かれたコードを、他のコードに変換するものです。例えば、[Gatsby](#gatsby) は [React](#react) のアプリを静的 [HTML](#html) ファイルにコンパイルできます。
 
 ### コンポーネント (Component)
 
@@ -80,13 +80,13 @@ CMS とはコンテンツ・マネジメント・システム (Content Managemen
 
 ### CSS
 
-[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) は Cascading Style Sheets の略であり、[HTML](#html) と [JavaScript](#javascript) と共に、サイトを構成する主戦物です。CSS はウェブサイトのデザインを変更する為に設計された言語です。後方互換性の保守に優れており、新しい機能が実装されても、[CSS パーサー](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#CSS_parsing)はサポートされていない機能を安全に無視して、サポートしている機能だけを提供できます。[CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_and_Progressive_Enhancement) のような新しい技術をブラウザーに提供しつつ、古いブラウザーにはフォールバックを提供しています。Gatsby では様々な[スタイリングに対するアプローチ]](/docs/styling/)に対応しています。これは、通常の CSS ファイルや、CSS modules、CSS-in-JS を含みます。
+[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) は Cascading Style Sheets の略であり、[HTML](#html) と [JavaScript](#javascript) と共に、サイトを構成する主戦物です。CSS はウェブサイトのデザインを変更する為に設計された言語です。後方互換性の保守に優れており、新しい機能が実装されても、[CSS パーサー](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#CSS_parsing)はサポートされていない機能を安全に無視して、サポートしている機能だけを提供できます。[CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_and_Progressive_Enhancement) のような新しい技術をブラウザーに提供しつつ、古いブラウザーにはフォールバックを提供しています。Gatsby では様々な[スタイリングに対するアプローチ](/docs/styling/)に対応しています。これは、通常の CSS ファイルや、CSS modules、CSS-in-JS を含みます。
 
 ## D
 
 ### データソース (Data Source)
 
-コンテンツやデータの元となるもので、多くの場合、[ソースプラグイン](#source-plugin)を用いて Gatsby に組み込まれます。データソースは、多くの場合は[ヘッドレス CMS](#headless-cms) のことを指しますが、 Markdown、 JSON、 YAML 等のファイルのことを指す場合もあります。
+コンテンツやデータの元となるもので、多くの場合、[ソースプラグイン](#source-plugin)を用いて Gatsby に組み込まれます。データソースは、多くの場合は[ヘッドレス CMS](#headless-cms) のことを指しますが、Markdown、JSON、YAML 等のファイルのことを指す場合もあります。
 
 ### データベース (Database)
 
@@ -106,13 +106,13 @@ CMS とはコンテンツ・マネジメント・システム (Content Managemen
 
 ### DOM
 
-Document Object Model の略。DOM とは、HTML の構造をメモリーに持たせる事によって、ウェブページとスクリプトやプログラム言語を繋げる為のスタンダードなブラウザーの API です。開発者は主に、[HTML](#html) マークアップ（Gatsby では [JSX](#jsx) で書かれる）や [React](https://reactjs.org/docs/react-dom.html)、[バニラな JavaScript](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction#DOM_and_JavaScript)を通して DOM を操作します。DOM をフル活用する上でもう 1 つ大事なことは、[アクセシブル](#accessibility)な HTML マークアップを書いて、ページの構造をアシスト技術に対応させることです。
+Document Object Model の略。DOM とは、HTML の構造をメモリーに持たせる事によって、ウェブページとスクリプトやプログラム言語を繋げる為のスタンダードなブラウザーの API です。開発者は主に、[HTML](#html) マークアップ（Gatsby では [JSX](#jsx) で書かれる）や [React](https://reactjs.org/docs/react-dom.html)、[バニラな JavaScript](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction#DOM_and_JavaScript) を通して DOM を操作します。DOM をフル活用する上でもう 1 つ大事なことは、[アクセシブル](#accessibility)な HTML マークアップを書いて、ページの構造をアシスト技術に対応させることです。
 
 ## E
 
 ### ECMAScript
 
-ECMAScript(ES と略されることが多い）はスクリプト言語の仕様です。[JavaScript](#javascript) は ECMAScript の仕様を実装したものです。 開発者は [Babel](#babel) を使って最新の ECMAScript をどの環境でも動作する JavaScript に[コンパイル](#compiler)することが多いです。
+ECMAScript（ES と略されることが多い）はスクリプト言語の仕様です。[JavaScript](#javascript) は ECMAScript の仕様を実装したものです。開発者は [Babel](#babel) を使って最新の ECMAScript をどの環境でも動作する JavaScript に[コンパイル](#compiler)することが多いです。
 
 ### 環境 (Environment)
 
@@ -132,7 +132,7 @@ Gatsby ではデフォルトで 2 つの環境を提供しています。[開発
 
 ### フロントエンド (Frontend)
 
-フロントエンドとは、あなたのウェブサイトやアプリの[表に見える部分](#public)を作成する技術、HTML や CSS、 JavaScript のことを指します。ウェブプラットフォームがこれらの技術をどう組み合わせているかについては[ブラウザーの仕組み](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/)という記事を参照してください。
+フロントエンドとは、あなたのウェブサイトやアプリの[表に見える部分](#public)を作成する技術、HTML や CSS、JavaScript のことを指します。ウェブプラットフォームがこれらの技術をどう組み合わせているかについては[ブラウザーの仕組み](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/)という記事を参照してください。
 
 ## G
 
@@ -148,7 +148,7 @@ Gatsby は [React](#react)、[GraphQL](#graphql)、モダンな [JavaScript](#ja
 
 ### HTML
 
-すべてのブラウザーが理解可能なマークアップ言語。Hypertext Markup Language の略。 [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) はウェブコンテンツに見出しや段落などを定義して、ユニバーサルな構造を与えます。アクセシビリティ対応のウェブサイトを構築する上でも大事です。
+すべてのブラウザーが理解可能なマークアップ言語。Hypertext Markup Language の略。[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) はウェブコンテンツに見出しや段落などを定義して、ユニバーサルな構造を与えます。アクセシビリティ対応のウェブサイトを構築する上でも大事です。
 
 ### Headless CMS
 
@@ -284,7 +284,7 @@ Gatsby に元から用意されてなかった機能を追加するためのコ�
 
 ### サーバーサイド (Server-side)
 
-[クライアント・サーバモデル](https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%88%E3%82%B5%E3%83%BC%E3%83%90%E3%83%A2%E3%83%87%E3%83%AB)におけるサーバーサイドとは、ネットワーク上のサービスやリソースへとアクセスする為にプログラムによって実行された操作のことです。Gatsby では [Node.js](#nodejs) というサーバーサイドの技術を使ってビルド時にページをコンパイルしています。他のサービスでは[クライアントサイド](#client-side) JavaScript を用いて[ブラウザーのランタイム](#runtime)でページを提供しているサービスもあります。参照：[フロントエンド](#frontend)、 [バックエンド](#backend).
+[クライアント・サーバモデル](https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%88%E3%82%B5%E3%83%BC%E3%83%90%E3%83%A2%E3%83%87%E3%83%AB)におけるサーバーサイドとは、ネットワーク上のサービスやリソースへとアクセスする為にプログラムによって実行された操作のことです。Gatsby では [Node.js](#nodejs) というサーバーサイドの技術を使ってビルド時にページをコンパイルしています。他のサービスでは[クライアントサイド](#client-side) JavaScript を用いて[ブラウザーのランタイム](#runtime)でページを提供しているサービスもあります。参照：[フロントエンド](#frontend)、[バックエンド](#backend).
 
 ### ソースコード (Source Code)
 
@@ -318,7 +318,7 @@ Gatsby のテーマは組み合わせ可能、拡張可能、置き換え可能 
 
 ### トランスフォーマー (Transformer)
 
-特定のタイプのデータを他のタイプのデータに変換するための[プラグイン](#plugin)。例えば、 spreadsheet 内のデータを [JavaScript](#javascript) の配列へと変換する際に使用します。
+特定のタイプのデータを他のタイプのデータに変換するための[プラグイン](#plugin)。例えば、spreadsheet 内のデータを [JavaScript](#javascript) の配列へと変換する際に使用します。
 
 ## U
 
