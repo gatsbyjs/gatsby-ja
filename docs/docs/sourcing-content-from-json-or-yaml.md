@@ -14,7 +14,7 @@ gatsby new gatsby-YAML-JSON-at-buildtime https://github.com/gatsbyjs/gatsby-star
 
 ## YAML からデータを直接インポートする
 
-この項では YAML からデータを取得します。代わりに JSON を使用してインポートする方法を確認するには、 [次の項](#Directly-importing-data-with-JSON) に移動してください。
+この項では YAML からデータを取得します。代わりに JSON を使用してインポートする方法を確認するには、[次の項](#Directly-importing-data-with-JSON) に移動してください。
 
 ### YAML コンテンツを追加する
 
