@@ -20,4 +20,4 @@ Gatsby が素晴らしいものである大きな理由の 1 つは、すべて�
 - [スターターライブラリーへの投稿](/contributing/submit-to-starter-library/)
 - [プラグインライブラリーへの投稿](/contributing/submit-to-plugin-library/)
 
-もし貢献について何か質問がある場合は、残りのコントリビュータードキュメントについて目を通した上で、 [Twitter](https://twitter.com/gatsbyjs) 、 [Discord](https://gatsby.dev/discord) 、 もしくは [GitHubのIssues](/contributing/how-to-file-an-issue/) 内で連絡してください。
+もし貢献について何か質問がある場合は、残りのコントリビュータードキュメントについて目を通した上で、[Twitter](https://twitter.com/gatsbyjs)、[Discord](https://gatsby.dev/discord)、もしくは [GitHubのIssues](/contributing/how-to-file-an-issue/) 内で連絡してください。
