@@ -140,7 +140,7 @@ npm install --save js-yaml
 
 ### いくつかのコンテンツを追加する
 
-（存在しなければ）`content` ディレクトリーを作成し、その中に次の内容を記述した `index.yaml` ファイルを作成してください：
+（存在しなければ）`content` ディレクトリーを作成し、その中に次の内容を記述した `index.yaml` ファイルを作成してください。
 
 ```yaml:title=content/index.yaml
 - path: "/page1"
