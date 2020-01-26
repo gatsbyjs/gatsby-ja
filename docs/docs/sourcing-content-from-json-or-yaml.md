@@ -18,7 +18,7 @@ gatsby new gatsby-YAML-JSON-at-buildtime https://github.com/gatsbyjs/gatsby-star
 
 ### YAML コンテンツを追加する
 
-Gatsby プロジェクトフォルダーで、`content` ディレクトリーを作成し、その中に次の内容を記述した `My-YAML-Content.yaml` ファイルを作成してください：
+Gatsby プロジェクトフォルダーで、`content` ディレクトリーを作成し、その中に次の内容を記述した `My-YAML-Content.yaml` ファイルを作成してください。
 
 ```yaml:title=content/My-YAML-Content.yaml
 title: YAML content used at build time with Gatsby
