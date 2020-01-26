@@ -57,16 +57,14 @@ gatsby new ecommerce-gatsby-tutorial
 cd ecommerce-gatsby-tutorial
 ```
 
-StripeJSプラグインのインストール
-## Installing the StripeJS plugin
+## StripeJSプラグインのインストール
 
 プラグインを利用してこのデフォルトのスタータの機能を拡張できます。そのようなプラグインの1つが `gatsby-plugin-stripe`で、このプロジェクトにインストールします。
 
 ```shell
 npm install gatsby-plugin-stripe
 ```
-
-Open the root site directory in a text editor and navigate to `gatsby-config.js` and add the StripeJS plugin to `gatsby-config.js` in the plugins section. Your `gatsby-config.js` should look like the following code example:
+テキストエディタでルートサイトディレクトリを開き、`gatsby-config.js`に移動します。そして、`gatsby-config.js`のpluginsのところにStripeJSプラグインを追加します。`gatsby-config.js`は次のコード例のようになります。
 
 ```js:title=gatsby-config.js
 module.exports = {
