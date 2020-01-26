@@ -99,7 +99,7 @@ Gatsby プロジェクトフォルダーで、（存在しなければ）`conten
 
 表示したいデータができたので、あとはデータを表示するページを作るだけです。
 
-`json-at-buildtime.js` というページを `pages` というフォルダーの中に作成し、次のコードを記述してください：
+`json-at-buildtime.js` というファイルを `pages` というフォルダーの中に作成し、次のコードを記述してください。
 
 ```jsx:title=src/pages/json-at-buildtime.js
 import React from "react"
