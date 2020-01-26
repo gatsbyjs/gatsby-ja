@@ -1,5 +1,5 @@
 ---
-title: Webサイト間でコンポーネントを共有する
+title: ウェブサイト間でコンポーネントを共有する
 issue: https://github.com/gatsbyjs/gatsby/issues/14042
 ---
 
