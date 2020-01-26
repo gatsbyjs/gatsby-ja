@@ -50,7 +50,7 @@ Gatsbyのサイトを自動的に更新する場合は、Stripe webhookイベ�
 
 # Gatsbyサイトの設定
 
-ターミナルで`gatsby new`を実行して新しいGatsbyのプロジェクトを作成し、ディレクトリを先程作成した新しいプロジェクトに変更します
+ターミナルで`gatsby new`を実行して新しいGatsbyのプロジェクトを作成し、ディレクトリを先程作成した新しいプロジェクトに変更します。
 
 ```shell
 gatsby new ecommerce-gatsby-tutorial
@@ -60,8 +60,7 @@ cd ecommerce-gatsby-tutorial
 StripeJSプラグインのインストール
 ## Installing the StripeJS plugin
 
-プラグインでデフォルトスタータの機能性を拡張できます
-You can extend the functionality of this default starter with plugins. One such plugin is `gatsby-plugin-stripe`, which you’ll install in this project:
+プラグインを利用してこのデフォルトのスタータの機能を拡張できます。そのようなプラグインの1つが `gatsby-plugin-stripe`で、このプロジェクトにインストールします。
 
 ```shell
 npm install gatsby-plugin-stripe
