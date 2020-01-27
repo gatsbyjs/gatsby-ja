@@ -186,5 +186,5 @@ module.exports = {
 
 ## その他のリソース
 
-- Docz の詳細については、 [Docz の公式ページ]（https://docz.site/）、特に [Gatsby のテーマに関する資料]（https://www.docz.site/docs/gatsby-theme）をご覧ください。
+- Docz の詳細については、[Docz の公式ページ](https://docz.site/)、特に [Gatsby のテーマに関する資料](https://www.docz.site/docs/gatsby-theme)をご覧ください。
 - 公式の [Docz Gatsby スターター]（https://github.com/pedronauck/gatsby-starter-docz）を確認してください。
