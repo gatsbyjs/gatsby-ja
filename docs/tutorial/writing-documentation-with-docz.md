@@ -59,7 +59,7 @@ route: /
 今までで最も美しいドキュメントをここに記述してください！
 ```
 
-`gatsby develop` コマンドで開発サーバーを実行すると、デフォルトの Docz レイアウトと「はじめに」という見出しが表示されます。すべてが機能することを確認した後、開発サーバーを停止します。
+`gatsby develop` コマンドで開発サーバーを起動すると、デフォルトの Docz レイアウトと「はじめに」という見出しが表示されます。すべてが機能することを確認した後、開発サーバーを停止します。
 
 React コンポーネントを追加してレンダリングすることで、ドキュメントに一味添えましょう。簡単に試すために、同じ `docs` ディレクトリーにボタン要素を表示するコンポーネントを作成します。
 
@@ -158,9 +158,7 @@ import { Button } from "./button"
 
 ## 設定を追加する
 
-通常、 `doczrc.js` ファイルにより Docz の設定を定義できます。利用可能なすべての設定は[こちらから](https://www.docz.site/docs/project-configuration)確認できます。
-
-またはデフォルトのオプションを設定する場合はテーマの場合、 `gatsby-config.js` から `options` を追加することで設定できます。
+通常、 `doczrc.js` ファイルにより Docz の設定を定義できます。利用可能なすべての設定は[こちらから](https://www.docz.site/docs/project-configuration)確認できます。またはテーマのデフォルトのオプションを設定する場合は、 `gatsby-config.js` から `options` を追加することで設定できます。
 
 ```js:title=gatsby-config.js
 module.exports = {
