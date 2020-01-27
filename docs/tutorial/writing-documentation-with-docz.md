@@ -18,9 +18,7 @@ Docz は mdx ファイル（Markdown for JSX の略）を活用して、**React 
 gatsby new my-gatsby-site-with-docz
 ```
 
-Docz をセットアップするには、Docz の Gatsby テーマをインストールし、いくつかの設定を追加する必要があります。
-
-Gatsby プロジェクトのルートディレクトリーに移動します。
+Docz をセットアップするには、Docz の Gatsby テーマをインストールし、いくつかの設定を追加する必要があります。まず、Gatsby プロジェクトのルートディレクトリーに移動します。
 
 ```shell
 cd my-gatsby-site-with-docz
@@ -104,9 +102,7 @@ Button.defaultProps = {
 >
 > `mdx` ファイルには UI 層の React コンポーネントのみを記述し、データ層のコンポーネントではそれを使用して、 `StaticQuery` と `graphql` を用いて取得したデータをレンダリングできます。
 
-`docs`ディレクトリーに新しいファイルを作成して、新しく作成したボタンのコンポーネントをドキュメント化します。
-
-以下のように記述することで、ファイル `button.mdx` を呼び出します。
+`docs`ディレクトリーに新しいファイルを作成して、新しく作成したボタンのコンポーネントをドキュメント化します。以下のように記述することで、ファイル `button.mdx` を呼び出します。
 
 ```mdx:title=docs/button.mdx
 ---
