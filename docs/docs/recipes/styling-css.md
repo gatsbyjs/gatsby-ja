@@ -31,7 +31,7 @@ p {
 import "./src/styles/global.css"
 ```
 
-> **補足:** `gatsby-config.js` の中で `require('./src/styles/global.css')` を使ってグローバル CSS ファイルをインポートすることもできます。
+> **ヒント:** `gatsby-config.js` の中で `require('./src/styles/global.css')` を使ってグローバル CSS ファイルをインポートすることもできます。
 
 3. `gatsby develop` を実行して、グローバルのスタイルがあなたのサイトに適用されたことを確認してみましょう。
 
@@ -257,7 +257,7 @@ import "./styles.scss"
 import "./styles.sass"
 ```
 
-_メモ: .css のかわりに拡張子を .scss または .sass にしなければならないという違いがありますが、前の CSS モジュールのレシピで言及したように Sass/SCSS ファイルをモジュールとして使うこともできます。_
+_ヒント: .css のかわりに拡張子を .scss または .sass にしなければならないという違いがありますが、前の CSS モジュールのレシピで言及したように Sass/SCSS ファイルをモジュールとして使うこともできます。_
 
 ### 追加のリソース
 
@@ -408,7 +408,7 @@ body {
 }
 ```
 
-_メモ: 上記の例の場合、ふさわしい CSS の宣言は `font-family: 'Source Sans Pro';` のようになります。_
+_ヒント: 上記の例の場合、ふさわしい CSS の宣言は `font-family: 'Source Sans Pro';` のようになります。_
 
 ### 追加のリソース
 
