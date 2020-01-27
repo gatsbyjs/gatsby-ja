@@ -2,7 +2,7 @@
 title: Reactコンポーネントのテスト
 ---
 
-_推奨されるテスティングフレームワークは [Jest](https://jestjs.io/) です。このガイドでは、[ユニットテスト](/docs/unit-testing)のガイドに従って Jest がセットアップ済みであることを前提としています。_
+_推奨されるテストレームワークは [Jest](https://jestjs.io/) です。このガイドでは、[ユニットテスト](/docs/unit-testing)のガイドに従って Jest がセットアップ済みであることを前提としています。_
 
 Kent C. Dodds により作成された [@testing-library/react](https://github.com/testing-library/react-testing-library) はリリース以降人気が高まっており、[enzyme](https://github.com/airbnb/enzyme) に代わる優れた代替ライブラリーです。ユニットテストと結合テストを作成できます。また、ユーザーと同じ方法で DOM 要素の指定をすることを推奨しています。したがって、指針となる原則は：
 
