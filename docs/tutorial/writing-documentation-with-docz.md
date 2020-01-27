@@ -6,7 +6,7 @@ title: "Docz を用いてドキュメントを作成する"
 
 Docz は mdx ファイル（Markdown for JSX の略）を活用して、**React コンポーネント**を Markdown に記述できます。また、PropTypes、Flow types、もしくは TypeScript の型情報から**コンポーネントの持つプロパティ一覧**を生成して、コンポーネントの使用方法を適切に文書化できます。さらに、**コンポーネントのサンプル実行環境**を提供して、だれでもコンポーネントの動作を確認したり、コードを変更して変更をリアルタイムで確認したり、コードをコピーして別の場所で使用したりできます。
 
-もし、Gatsby プロジェクトをゼロから開始して、すぐに Docz を用いた優れたドキュメントが必要な場合は、 [`gatsby-starter-docz`](https://github.com/pedronauck/gatsby-starter-docz) を活用できます。詳細については、このガイドの最後にある[その他のリソース]（＃other-resources）セクションをご覧ください。
+もし、Gatsby プロジェクトをゼロから開始して、すぐに Docz を用いた優れたドキュメントが必要な場合は、[`gatsby-starter-docz`](https://github.com/pedronauck/gatsby-starter-docz) を活用できます。詳細については、このガイドの最後にある[その他のリソース](#other-resources)セクションをご覧ください。
 
 また、以下のガイドでは、既存の Gatsby プロジェクト内で Docz を動作させる方法を知ることができます。
 
