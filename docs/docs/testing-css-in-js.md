@@ -18,7 +18,7 @@ npm install --save-dev jest-emotion babel-plugin-emotion
 
 [Gatsby's emotion plugin](/packages/gatsby-plugin-emotion/) は、内部的に `babel-plugin-emotion` を使用していますので、Jest が使えるようにこれも一緒にインストールしましよう。
 
-もしあなたが [Unit testing guide](/docs/unit-testing) に取り組んだのならば、あなたのプロジェクトの root には `jest-preprocess.js` があるでしょう。そのファイルを開いて、プラグインを追加してください。
+もしあなたが[ユニットテストガイド](/docs/unit-testing)に取り組んだのならば、あなたのプロジェクトのルートには `jest-preprocess.js` があるでしょう。そのファイルを開いて、プラグインを追加してください。
 
 ```diff:title=jest-preprocess.js
 const babelOptions = {
@@ -31,7 +31,7 @@ const babelOptions = {
 module.exports = require("babel-jest").createTransformer(babelOptions)
 ```
 
-Jest にシリアライザーを使用するよう教えるために、あなたは `setup-test-env.js` というファイルを作る必要があります。これはテスト前に毎回自動的に実行されます。プロジェクトの root に `setup-test-env.js` を作り、以下のコードを追加してください。
+Jest にシリアライザーを使用するよう教えるために、あなたは `setup-test-env.js` というファイルを作る必要があります。これはテスト前に毎回自動的に実行されます。プロジェクトのルートに `setup-test-env.js` を作り、以下のコードを追加してください。
 
 ```js:title=setup-test-env.js
 import { createSerializer } from "jest-emotion"
