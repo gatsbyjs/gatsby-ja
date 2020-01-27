@@ -2,7 +2,7 @@
 title: CSS-in-JS のテスト
 ---
 
-[styled-components](https://github.com/styled-components/styled-components) や [emotion](https://github.com/emotion-js/emotion) のような人気のある CSS-in-JS ライブラリーは、それぞれ [jest-styled-components](https://github.com/styled-components/jest-styled-components) や [jest-emotion](https://github.com/emotion-js/emotion/tree/master/packages/jest-emotion) の助けを受けてテストすることもできます。これらのパッケージは、Jest のもともと持っているスナップショットテスト機能を改善してくれます。そして、これは、あなたのウェブサイト上で起こる意図しない UI の変化を避けやすくしてくれる素晴らしい方法となります。どうぞあなたが使用しているパッケージのドキュメントを参照して、そのパッケージがテスト機能もまた提供しているか見てみてください。
+[styled-components](https://github.com/styled-components/styled-components) や [emotion](https://github.com/emotion-js/emotion) のような人気のある CSS-in-JS ライブラリーは、それぞれ [jest-styled-components](https://github.com/styled-components/jest-styled-components) や [jest-emotion](https://github.com/emotion-js/emotion/tree/master/packages/jest-emotion) の助けを受けてテストすることもできます。これらのパッケージは、Jest のもともと持っているスナップショットテスト機能を改善してくれます。そして、これはあなたのウェブサイト上で起こる意図しない UI の変化を避けやすくしてくれる素晴らしい方法となります。どうぞあなたが使用しているパッケージのドキュメントを参照して、そのパッケージがテスト機能を提供しているか確かめてください。
 
 `jest-styled-components` や `jest-emotion` のような**スナップショットシリアライザー**は、標準の出力をより意味があり読みやすいスナップショットに修正してくれます。例えば、不必要な情報を取り除いたり、異なるフォーマットでデータを表示してくれます。結果として、スナップショットシリアライザーは、より違いがわかりやすい効率的なスナップショットテストを導いてくれます。
 
@@ -40,7 +40,7 @@ import * as emotion from "@emotion/core"
 expect.addSnapshotSerializer(createSerializer(emotion))
 ```
 
-最後に、Jest にこのファイルがどこにあるかを教える必要があります。 `package.json` を開いて、以下のように `"jest"` の場所に追加してください。
+最後に、Jest にこのファイルがどこにあるかを教える必要があります。 `package.json` を開いて、 `"jest"` の場所に以下のように追加してください。
 
 ```json:title=package.json
 "jest": {
