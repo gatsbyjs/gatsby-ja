@@ -17,4 +17,4 @@ issue: https://github.com/gatsbyjs/gatsby/issues/14042
 
 --
 
-**ヒント:** この他に、ウェブサイト間でコンポーネントを共有するアイデアをご存知ですか？Gatsby ドキュメントへの貢献をお待ちしています。[貢献する方法](/contributing/docs-contributions/)をご覧ください。
+**ヒント：** この他に、ウェブサイト間でコンポーネントを共有するアイデアをご存知ですか？Gatsby ドキュメントへの貢献をお待ちしています。[貢献する方法](/contributing/docs-contributions/)をご覧ください。
