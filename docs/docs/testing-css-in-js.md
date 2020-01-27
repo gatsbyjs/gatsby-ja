@@ -1,5 +1,5 @@
 ---
-title: CSS-in-JSのテスト
+title: CSS-in-JS のテスト
 ---
 
 [styled-components](https://github.com/styled-components/styled-components) や [emotion](https://github.com/emotion-js/emotion) のような人気のある CSS-in-JS ライブラリーは、それぞれ [jest-styled-components](https://github.com/styled-components/jest-styled-components) や [jest-emotion](https://github.com/emotion-js/emotion/tree/master/packages/jest-emotion) の助けを受けてテストすることもできます。これらのパッケージは、Jest のもともと持っているスナップショットテスト機能を改善してくれます。そして、これは、あなたのウェブサイト上で起こる意図しない UI の変化を避けやすくしてくれる素晴らしい方法となります。どうぞあなたが使用しているパッケージのドキュメントを参照して、そのパッケージがテスト機能もまた提供しているか見てみてください。
