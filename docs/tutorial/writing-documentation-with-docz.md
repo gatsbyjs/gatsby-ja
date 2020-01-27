@@ -18,7 +18,7 @@ Docz は mdx ファイル（Markdown for JSX の略）を活用して、**React 
 gatsby new my-gatsby-site-with-docz
 ```
 
-Docz をセットアップするには、 Docz の Gatsby テーマをインストールし、いくつかの設定を追加する必要があります。
+Docz をセットアップするには、Docz の Gatsby テーマをインストールし、いくつかの設定を追加する必要があります。
 
 Gatsby プロジェクトのルートディレクトリーに移動します。
 
