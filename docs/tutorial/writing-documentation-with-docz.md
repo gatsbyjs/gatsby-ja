@@ -12,7 +12,7 @@ Docz は mdx ファイル（Markdown for JSX の略）を活用して、**React 
 
 ## 環境を構築する
 
-まず、 Gatsby プロジェクトがまだ作成されていない場合、 Gatsby CLI を用いて新しいサイトを作成します。
+まず、Gatsby プロジェクトがまだ作成されていない場合、Gatsby CLI を用いて新しいサイトを作成します。
 
 ```shell
 gatsby new my-gatsby-site-with-docz
