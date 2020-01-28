@@ -74,7 +74,7 @@ exports.createPages = async ({ graphql, actions }, themeOptions) => {
 
 ときには `Header` コンポーネントに何か違うことをさせたいこともあるでしょう。例えば、色を変えたり、さらにナビゲーションアイテムを追加したりといったことです。これを実現するために、ウェブサイトの次のパスにファイルを作ります： `src/gatsby-theme-amazing/components/header.js` 。これで、どんな React コンポーネントもこのファイルからエクスポートでき、 Gatsby はテーマのコンポーネントではなく、こちらのファイルを参照するようになります。
 
-> 💡 Note: 他のテーマから同じメソッドを使うことで、コンポーネントをシャドーイングすることもできます。シャドーイングの高度な使い方については、[latent shadowing](https://johno.com/latent-component-shadowing)で紹介しています。
+> 💡 ヒント: 他のテーマから同じメソッドを使うことで、コンポーネントをシャドーイングすることもできます。シャドーイングの高度な使い方については、[latent shadowing](https://johno.com/latent-component-shadowing)で紹介しています。
 
 ### 拡張
 
