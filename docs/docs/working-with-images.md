@@ -2,7 +2,7 @@
 title: Gatsby で画像を使用する
 ---
 
-画像の最適化は、どんな Web サイトでも課題です。複数デバイス上でパフォーマンス調整のベストプラクティスを利用するには、各画像に複数のサイズと解像度を用意する必要があります。幸運なことに、Gatsby は [page components](/docs/building-with-components/#page-components) で画像を表示する際に利用できる、いくつかの便利な[プラグイン](/docs/plugins/)を持っています。
+画像の最適化は、どんなウェブサイトでも課題です。複数デバイス上でパフォーマンス調整のベストプラクティスを利用するには、各画像に複数のサイズと解像度を用意する必要があります。幸運なことに、Gatsby は [page components](/docs/building-with-components/#page-components) で画像を表示する際に利用できる、いくつかの便利な[プラグイン](/docs/plugins/)を持っています。
 
 その中でも、[GraphQL クエリー](/docs/querying-with-graphql/)を利用して最適なサイズと解像度の画像を取得してから、[`gatsby-image`](/packages/gatsby-image/) コンポーネントで表示する方法を推奨します。
 
