@@ -131,7 +131,7 @@ module.exports = {
 
 テーマとは、根本的には複数の `gatsby-config.js` ファイルを 1 つの設定ファイルにマージするアルゴリズムです。そしてマージされたファイルをもとに、サイトのビルドが行われます。これがただしく行われるように、 2 つの `gatsby-config.js` をどのように組み合わせるのか定義する必要があります。その前に、 "parent/chile" の階層関係を、1 次元の配列にしておきましょう。これによって、複数のシャドーイングされたファイルが利用可能なときに、どのファイルを優先的に参照するのかという順序を定義できます。
 
-上で最初に示した例では、 `['gatsby-theme-parent', 'gatsby-theme-child']` の順番で参照されます（親テーマは常に、その子テーマより先に参照されます。そうすることで、子テーマが機能をオーバーライドできます）。 2 つ目に示した例では、 `['gatsby-theme-blog', 'gatsby-theme-notes']` の順になります。
+上で最初に示した例では、`['gatsby-theme-parent', 'gatsby-theme-child']` の順番で参照されます（親テーマは常に、その子テーマより先に参照されます。そうすることで、子テーマが機能をオーバーライドできます）。 2 つ目に示した例では、`['gatsby-theme-blog', 'gatsby-theme-notes']` の順になります。
 
 一度このテーマの順序を定義したら、 reduce 関数を使ってテーマをマージします。[reduce 関数](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/utils/merge-gatsby-config.js)では、 `gatsby-config.js` におけるそれぞれのキーをマージする方法が定義されています。この関数が呼び出された後に他の値を指定しない限り、キーの値は順番的に最後に指定したものが入ります。
 
