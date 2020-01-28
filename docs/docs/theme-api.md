@@ -54,7 +54,7 @@ module.exports = themeOptions => {
 
 ### 他の場所でオプションにアクセスする方法
 
-テーマはあくまでプラグインなので、これまで使ってきたライフサイクルに関する全てのメソッドのオプションを利用できます。例えば、テーマの `gatsby-node.js` で、 `createPages` の第 2 引数としてオプションを利用できます。
+テーマはあくまでプラグインなので、これまで使ってきたライフサイクルに関する全てのメソッドのオプションを利用できます。例えば、テーマの `gatsby-node.js` で、`createPages` の第 2 引数としてオプションを利用できます。
 
 ```js:title=gatsby-node.js
 exports.createPages = async ({ graphql, actions }, themeOptions) => {
