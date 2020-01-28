@@ -1,62 +1,62 @@
 ---
-title: What Are Gatsby Themes?
+title: Gatsby テーマとは？
 ---
 
-**Gatsby themes** are plugins that include a `gatsby-config.js` file and add pre-configured functionality, data sourcing, and/or UI code to Gatsby sites. You can think of Gatsby themes as separate Gatsby sites that can be put together and allow you to split up a larger Gatsby project!
+**Gatsby テーマ** とは、`gatsby-config.js` を含めた、設定不要な様々な機能、データ取得または UI コードを Gatsby サイトに追加するプラグインです。組み合わせることでより規模の大きい Gatsby プロジェクトを構築できる、別々の Gatsby サイトとも捉えることができます。
 
-## Introduction
+## はじめに
 
-To introduce themes, let's walk through the journey that led to the creation of themes.
+テーマを紹介するにあたって、テーマ誕生までの経緯を辿ってみましょう。
 
-If you've ever created a Gatsby site completely from scratch, you know that there are a number of decisions to be made. Take, for example, creating a blog. You need to decide where your data will live, how it's accessed, how it's displayed and styled, etc.
+もしあなたがゼロから Gatsby サイトを構築したことのある人ならばご存知の通り、サイトを作るにあたって様々なことを決める必要があります。例えばブログを作るとしましょう。データをどこに置くのか、それにどうアクセスするのか、それをどのようなスタイルでどう見せるのか、などを決めなければなりません。
 
-### Gatsby starters
+### Gatsby スターター
 
-One existing way to quickly create Gatsby sites with similar functionality is to use "[Gatsby starters](/docs/starters/)". Starters are essentially Gatsby sites with pre-configured functionality for a particular purpose. You download an entire Gatsby site, pre-built for a particular purpose (e.g. blogging, portfolio site, etc) and customize from there.
+類似した機能を持った複数のサイトを素早く作る手段として用意されているのが「[Gatsby スターター](/docs/starters/)」です。スターターとは、ある用途のためにあらかじめ設定がしてある Gatsby サイトです。ブログやポートフォリオなど特定の用途のために作られた Gatsby サイトを丸ごとダウンロードし、そこからさらにカスタマイズできます。
 
-These traditional starters take a first step toward reducing the level of effort involved in creating a new Gatsby site. However, there are two main problems with traditional starters:
+このような従来のスターターは、新しい Gatsby サイトを作成するにあたってのコストを下げる第一歩になります。しかし、これには大きな 2 つの問題があります。
 
-- Sites created from a traditional starter have basically been "ejected" from the starter -- They maintain no connection to the starter, and begin to diverge immediately. If the starter is updated later, there's no easy way to pull upstream changes into an existing project.
-- If you created multiple sites using the same starter, and later wanted to make the same update to all of those sites, you'd have to do them individually, site-by-site.
+- 従来のスターターを用いて作られたサイトは、スターターから「排出（eject）」されます。作成後もとのスターターとなんの関係も持たないので、すぐに分岐し始めます。スターターが後々更新されたとしても、そのスターターによって作成されたサイトを、スターターでの変更に追従させるのは困難です。
+- もし同じスターターを用いて複数のサイトを作り、のちにそれら全てのサイトに同じ変更を反映させてかったとしても、一括ではできず、それぞれ単体で反映させる必要があります。
 
-### Gatsby themes
+### Gatsby テーマ
 
-Enter themes. Gatsby themes allow Gatsby site functionality to be packaged as a standalone product for others (and yourself!) to easily reuse. Using a traditional starter, all of your default configuration lives directly in your site. Using a theme, all of your default configuration lives in an npm package.
+そこでテーマの登場です。Gatsby テーマを使うことによってある機能を、単体のプロダクトとして誰しもが使いまわせるようにパッケージ化できます。スターターではデフォルトの設定はサイトそのものに置かれますが、テーマの場合はパッケージとして別に存在します。
 
-Themes solve the problems that traditional starters experience:
+テーマはスターターが生む問題を解決してくれます。
 
-- Sites created using a Gatsby theme can adopt upstream changes to the theme -- themes are versioned packages that can be updated like any other package.
-- You can create multiple sites that consume the same theme. To make updates across those sites, you can update the central theme and bump the version in the sites through `package.json` files (rather than spending the time to tediously update the functionality of each individual site).
-- Themes are composable. You could install a blog theme alongside a notes theme, alongside an e-commerce theme (and so forth)
+- テーマを使って作られたサイトには、もとのテーマの変更を容易に反映できます。テーマは通常のパッケージのようにバージョン管理されており、いつでもアップデートできます。
+- 同じテーマを使って複数のサイトを作ることができます。それらのサイト全ての同じ変更を加えたいのであれば、それぞれのサイトに全く同じ機能を追加するのではなく、テーマにその変更をしバージョンを上げ、それぞれのサイトでそのバージョンにアップデートするだけで終わります。
+- テーマは複数組み合わせることができます。ブログテーマやノートテーマ、e コマーステーマを共にインストールできます。
 
-> A Gatsby theme is effectively a composable Gatsby config. They provide a higher-level approach to working with Gatsby that abstracts away the complex or repetitive parts into a reusable package.
+> Gatsby テーマは簡単にいうと複合可能な Gatsby config です。複雑であったり再発明されうる車輪を抽象化しパッケージにすることによって、よりハイレベルなアプローチを提供します。
 
-## When should I use or build a theme?
+## いつテーマを利用・作成するべきか
 
-**Consider using a theme if:**
+**テーマの使いどき**
 
-- You already have an existing Gatsby site and can't start from a starter
-- You want to be able to update to the latest version of a feature on your site
-- You want multiple features on your site, but there is no starter with all the features -- you can use multiple themes, composed in one Gatsby site
+- すでに Gatsby サイトを運用しておりスターターを使えない
+- サイトの機能を常に最新にしておきたい
+- 複数の機能をサイトに持たせたいが、それら全てを備えたスターターがない
 
-**Consider building a theme if:**
+**テーマの作りどき**
 
-- You plan on re-using similar functionality across multiple Gatsby sites
-- You would like to share new Gatsby functionality to the community
+- 複数のサイトで似たような機能を実装する予定がある
+- Gatsby サイトの新たな機能をコミュニティーに共有したい
 
-## What's next?
+## 次のステップ
 
-- [Using a Gatsby Theme](/docs/themes/using-a-gatsby-theme)
-- [Using Multiple Gatsby Themes](/docs/themes/using-multiple-gatsby-themes)
-- [Shadowing](/docs/themes/shadowing/)
-- [Building Themes](/docs/themes/building-themes)
-- [Converting a Starter](/docs/themes/converting-a-starter/)
-- [Theme Composition](/docs/themes/theme-composition/)
-- [Conventions](/docs/themes/conventions/)
+- [Gatsby テーマを使う](/docs/themes/using-a-gatsby-theme)
+- [複数の Gatsby テーマを使う](/docs/themes/using-multiple-gatsby-themes)
+- [シャドーイング](/docs/themes/shadowing/)
+- [テーマを作成する](/docs/themes/building-themes)
+- [スターターをテーマに変換する](/docs/themes/converting-a-starter/)
+- [テーマ構成](/docs/themes/theme-composition/)
+- [テーマの慣習](/docs/themes/conventions/)
 
-## Related blog posts
+## 関連記事
 
-For additional context, check out blog posts published during the development of themes:
+より詳細な事情については、テーマの開発中に公開されたブログ記事を読んでみてください。
 
 - [Why Themes?](/blog/2019-01-31-why-themes/)
 - [Themes Roadmap](/blog/2019-03-11-gatsby-themes-roadmap/)
