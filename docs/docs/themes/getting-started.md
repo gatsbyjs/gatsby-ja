@@ -4,7 +4,7 @@ title: Gatsby テーマの使い方
 
 あらかじめテーマが設定されているスターターを使うことで、Gatsby テーマをすぐに使い始めることができます。
 
-例えば、`gatsby-starter-blog-theme`は `gatsby-theme-blog` パッケージのテーマスターターです。
+例えば、`gatsby-starter-blog-theme` は `gatsby-theme-blog` パッケージのテーマスターターです。
 
 **通常の Gatsby スターター**は特定の用途に合わせて設定してある Gatsby サイトを新規に作成します。出来上がったサイトはスターターからフォークされるため、スターターへの接続は維持されません。
 
