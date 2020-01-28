@@ -72,7 +72,7 @@ exports.createPages = async ({ graphql, actions }, themeOptions) => {
 
 `Header` の例に着目してみましょう。例えば、`gatsby-theme-amazing` というテーマを作ったとします。このテーマでは、ナビゲーションや他の諸々のアイテムを表示するために `Header` コンポーネントを利用します。 npm パッケージのルートからコンポーネントまでのパスは、`gatsby-theme-amazing/src/components/header.js` のようになります。
 
-ときには `Header` コンポーネントに何か違うことをさせたいこともあるでしょう。例えば、色を変えたり、さらにナビゲーションアイテムを追加したりといったことです。これを実現するために、ウェブサイトの次のパスにファイルを作ります： `src/gatsby-theme-amazing/components/header.js` 。これで、どんな React コンポーネントもこのファイルからエクスポートでき、 Gatsby はテーマのコンポーネントではなく、こちらのファイルを参照するようになります。
+ときには `Header` コンポーネントに何か違うことをさせたいこともあるでしょう。例えば、色を変えたり、さらにナビゲーションアイテムを追加したりといったことです。これを実現するために、ウェブサイトの次のパスにファイルを作ります： `src/gatsby-theme-amazing/components/header.js` 。これで、どんな React コンポーネントもこのファイルからエクスポートでき、Gatsby はテーマのコンポーネントではなく、こちらのファイルを参照するようになります。
 
 > 💡 ヒント: 他のテーマから同じメソッドを使うことで、コンポーネントをシャドーイングすることもできます。シャドーイングの高度な使い方については、[latent shadowing](https://johno.com/latent-component-shadowing)で紹介しています。
 
