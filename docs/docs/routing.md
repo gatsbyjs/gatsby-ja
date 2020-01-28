@@ -11,7 +11,7 @@ Gatsby を使用しているサイトが非常に高速である理由の 1 つ�
 Gatsby はプログラムによるページの管理を簡単にします。ページは 3 つの方法で作成できます：
 
 - `gatsby-node.js` ファイルに [`createPages`](/docs/node-apis/#createPages) を実装することでページを作成できます。
-- Gatsby は`src/pages` ディレクトリーにある React コンポーネントを自動でページに変換します。
+- Gatsby は `src/pages` ディレクトリーにある React コンポーネントを自動でページに変換します。
 - プラグインでも `createPages` を実装することでページを作成できます。
 
 詳細は[ページの作成と編集](/docs/creating-and-modifying-pages)をご覧ください。
