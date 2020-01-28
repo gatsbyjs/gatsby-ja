@@ -133,7 +133,7 @@ module.exports = {
 
 上で最初に示した例では、`['gatsby-theme-parent', 'gatsby-theme-child']` の順番で参照されます（親テーマは常に、その子テーマより先に参照されます。そうすることで、子テーマが機能をオーバーライドできます）。 2 つ目に示した例では、`['gatsby-theme-blog', 'gatsby-theme-notes']` の順になります。
 
-一度このテーマの順序を定義したら、 reduce 関数を使ってテーマをマージします。[reduce 関数](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/utils/merge-gatsby-config.js)では、 `gatsby-config.js` におけるそれぞれのキーをマージする方法が定義されています。この関数が呼び出された後に他の値を指定しない限り、キーの値は順番的に最後に指定したものが入ります。
+一度このテーマの順序を定義したら、reduce 関数を使ってテーマをマージします。[reduce 関数](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/utils/merge-gatsby-config.js)では、`gatsby-config.js` におけるそれぞれのキーをマージする方法が定義されています。この関数が呼び出された後に他の値を指定しない限り、キーの値は順番的に最後に指定したものが入ります。
 
 - `siteMetadata` と `mapping` は lodash の `merge` 関数を使って深い階層までマージします。つまり、テーマはデフォルトの `siteMetadata` の値を定義可能であり、`gatsby-config.js` における一般的な `siteMetadata` オブジェクトでオーバーライドできます。
 - `plugins` は、重複を取り除いて標準化されたあと、マージされます。
