@@ -2,7 +2,7 @@
 title: ルーティング
 ---
 
-Gatsby を使用しているサイトが非常に高速である理由の 1 つに、ビルド時に多くの処理を行うためサイトのほとんどが[静的なコンテンツ](/docs/adding-app-and-website-functionality/#static-pages)として実行されることが挙げられます。ビルド時に Gatsby は[ルーティング](/docs/glossary#routing)を処理し、コンテンツへのパスを生成します。 Gatsby を使ったナビゲーションをするためには、パスとは何かということと、パスがどのように生成されるのかということを理解する必要があります。
+Gatsby を使用しているサイトが非常に高速である理由の 1 つに、ビルド時に多くの処理を行うためサイトのほとんどが[静的なコンテンツ](/docs/adding-app-and-website-functionality/#static-pages)として実行されることが挙げられます。ビルド時に Gatsby は[ルーティング](/docs/glossary#routing)処理し、コンテンツへのパスを生成します。 Gatsby を使ったナビゲーションをするためには、パスとは何かということと、パスがどのように生成されるのかについて理解する必要があります。
 
 場合によっては Gatsby で作ったサイトが、ビルド時またはリハイドレーション時に処理できない機能（認証や動的なコンテンツなど）を持つかもしれません。そのようなページを処理するためには Gatsby に組み込まれている [`@reach/router`](/docs/reach-router-and-gatsby/) を使用した [クライアントサイドルーティング](/docs/client-only-routes-and-user-authentication) を利用できます。
 
