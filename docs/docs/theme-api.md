@@ -1,21 +1,21 @@
 ---
-title: Themes API Reference
+title: Themes API リファレンス
 ---
 
-## Core Gatsby APIs
+## コアとなる Gatsby の API
 
-Themes are packaged Gatsby sites shipped as plugins, so you have access to all of Gatsby's APIs for modifying default configuration settings and functionality.
+テーマとは、プラグインとして公開されているパッケージ化された Gatsby サイトのことです。デフォルトの設定や機能を編集するための Gatsby の全ての API を使うことができます。
 
 - [Gatsby Config](https://www.gatsbyjs.org/docs/gatsby-config/)
 - [Actions](https://www.gatsbyjs.org/docs/actions/)
 - [Node Interface](https://www.gatsbyjs.org/docs/node-interface/)
-- ... [and more](https://www.gatsbyjs.org/docs/api-specification/)
+- ... [もっと知りたい方向け](https://www.gatsbyjs.org/docs/api-specification/)
 
-If you're new to Gatsby you can get started by following along with the guides for building out a site. Converting it to a theme will be straightforward later on since themes are prepackaged Gatsby sites.
+Gatsby が初めての方は、サイトを構築するためのガイドから始めてみてください。テーマは事前にパッケージ化された Gatsby サイトなので、一度作ったサイトをテーマに変換することは後で容易にできます。
 
-## Configuration
+## 設定
 
-Plugins can now include a `gatsby-config` in addition to the other `gatsby-*` files. We typically refer to plugins that include a `gatsby-config.js` as a theme (more on that in [theme composition](#theme-composition)). A typical `gatsby-config.js` in a user's site that uses your theme could look like this. This example passes in two options to `gatsby-theme-name`: `postsPath` and `colors`.
+プラグインは、他の `gatsby-*` の形式で命名されたファイルなどと一緒に `gatsby-config` を含むことができるようになりました。通常、 `gatsby-config.js` を含むプラグインのことをテーマと呼びます（もっと知りたい方は[theme composition](#theme-composition)`gatsby-config.js`をご覧ください）。典型的なユーザーサイトの `gatsby-config.js` の中身は次のようになります。 ここで、`gatsby-theme-name` には、 2 つのオプション `postsPath` と `colors` が渡されています。
 
 ```js:title=gatsby-config.js
 module.exports = {
@@ -33,9 +33,9 @@ module.exports = {
 }
 ```
 
-You can access options that are passed to your theme in your theme's `gatsby-config`. You can use options to make filesystem sourcing configurable, accept different nav menu items, change branding colors from the default, and anything else you want to make configurable.
+`gatsby-config` では、テーマへ渡されるオプションにアクセスできます。オプションを使うことで、ファイルシステムのソース管理を設定できるようになったり、異なる nav manu を使えるようになったり、ブランドカラーをデフォルトから変更したり、とにかくしたいと思うものなら何でも設定を変えられるようにできます。
 
-To take advantage of the options that are passed in when configuring your theme in a user's site, return a function in your theme's `gatsby-config.js`. The argument the function receives is the options the user passed in.
+あなたのテーマを使うユーザーが、テーマの設定を変更する際にオプションを渡せるようにするために、テーマの `gatsby-config.js` で関数を返すようにしてください。関数の引数は、ユーザーが指定するオプションです。
 
 ```js:title=gatsby-config.js
 module.exports = themeOptions => {
@@ -50,11 +50,11 @@ module.exports = themeOptions => {
 }
 ```
 
-While using the usual object export (`module.exports = {}`) in your theme means that you can run the theme standalone as its own site, when using a function in your theme to accept options you will need to run the theme as part of an example site. See how the [theme authoring starter](https://github.com/gatsbyjs/gatsby-starter-theme-workspace) handles this using Yarn Workspaces.
+もしあなたのテーマで、よくあるオブジェクトのエクスポート（`module.exports = {}`）を使っているときは、そのテーマをスタンドアローンで動作させることができます。 Yarn ワークスペースでそれをどのように実現するのか知りたい方は、[theme authoring starter](https://github.com/gatsbyjs/gatsby-starter-theme-workspace)をご覧ください。
 
-### Accessing options elsewhere
+### 他の場所でオプションにアクセスする方法
 
-Note that because themes are plugins you can also access the options in any of the lifecycle methods that you're used to. For example, in your theme's `gatsby-node.js` you can access the options as the second argument to `createPages`:
+テーマはあくまでプラグインなので、これまで使ってきたライフサイクルに関する全てのメソッドのオプションを利用できます。例えば、テーマの `gatsby-node.js` で、 `createPages` の第 2 引数としてオプションを利用できます。
 
 ```js:title=gatsby-node.js
 exports.createPages = async ({ graphql, actions }, themeOptions) => {
@@ -62,25 +62,25 @@ exports.createPages = async ({ graphql, actions }, themeOptions) => {
 }
 ```
 
-## Shadowing
+## シャドーイング
 
-Since themes are usually deployed as npm packages that other people use in their sites, you need a way to modify certain files, such as React components, without making changes to the source code of the theme. This is called _Shadowing_.
+テーマは通常、他の人も利用可能なパッケージとしてデプロイされるため、テーマそれ自体のコードに変更を加えることなく、（React コンポーネントのような）特定のファイルを編集する方法が必要になるでしょう。これを実現するのが、 _シャドーイング_ という方法です。
 
-Shadowing is a filesystem-based API that allows us to replace one file with another at build time. For example, if you had a theme with a `Header` component you could replace that `Header` with your own by creating a new file and placing it in the correct location for Shadowing to find it.
+シャドーイングとは、 filesystem をベースとする API であり、これを使うことでビルド時に特定のファイルを置き換えることができます。例えば、 `Header` コンポーネントを含むようなテーマがあるとします。 `Header` をあなた独自のものに置き換えるには、新しいファイルを作り、これを適切な場所に配置し、シャドーイング機能がそれを関知できるようにします。
 
-### Overriding
+### オーバーライド
 
-Taking a closer look at the `Header` example, let's say you have a theme called `gatsby-theme-amazing`. That theme uses a `Header` component to render navigation and other miscellaneous items. The path to the component from the root of the npm package is `gatsby-theme-amazing/src/components/header.js`.
+`Header` の例に着目してみましょう。例えば、 `gatsby-theme-amazing` というテーマを作ったとします。このテーマでは、ナビゲーションや他の諸々のアイテムを表示するために `Header` コンポーネントを利用します。 npm パッケージの root からコンポーネントまでのパスは、 `gatsby-theme-amazing/src/components/header.js` のようになります。
 
-You might want the `Header` component to do something different (maybe change colors, maybe add additional navigation items, really anything you can think of). To do that, you create a file in your site at `src/gatsby-theme-amazing/components/header.js`. You can now export any React component you want from this file and Gatsby will use it instead of the theme's component.
+ときには `Header` コンポーネントに何か違うことをさせたいこともあるでしょう。例えば、色を変えたり、さらにナビゲーションアイテムを追加したりといったことです。これを実現するために、ウェブサイトの次のパスにファイルを作ります： `src/gatsby-theme-amazing/components/header.js` 。これで、どんな React コンポーネントもこのファイルからエクスポートでき、 Gatsby はテーマのコンポーネントではなく、こちらのファイルを参照するようになります。
 
-> 💡 Note: you can shadow components from other themes using the same method. Read more about advanced applications in [latent shadowing](https://johno.com/latent-component-shadowing).
+> 💡 Note: 他のテーマから同じメソッドを使うことで、コンポーネントをシャドーイングすることもできます。シャドーイングの高度な適用例については、[latent shadowing](https://johno.com/latent-component-shadowing)で紹介しています。
 
-### Extending
+### 拡張
 
-In the last section we talked about completely replacing one component with another. What if you want to make a smaller change that doesn't require copy/pasting the entire theme component into your own? You can take advantage of the ability to extend components.
+前のセクションでは、コンポーネントを全く新しく置き換える方法についてお話ししました。では、テーマ全体をコピー&ペーストすることなしに、ちょっとした変更を加えたいときにはどうすれば良いでしょうか。そんな時は、コンポーネントの拡張という機能を使います。
 
-Taking the `Header` example from before, when you write your shadowing file at `src/gatsby-theme-amazing/components/header.js`, you can import the original component and re-export it as such, adding your own overridden prop to the component.
+前に取り上げた `Header` コンポーネントの例を見てみましょう。シャドーイングしたファイルは、 `src/gatsby-theme-amazing/components/header.js` にあります。ここで、独自にオーバーライドした prop をコンポーネントに付与することで、元のコンポーネントをインポートして再度エクスポートするなどといったことができます。
 
 ```js
 import Header from "gatsby-theme-amazing/src/components/header"
@@ -89,31 +89,31 @@ import Header from "gatsby-theme-amazing/src/components/header"
 export default props => <Header {...props} myProp="true" />
 ```
 
-Taking this approach means that when you upgrade your theme later you can also take advantage of all the updates to the `Header` component because you haven't fully replaced it, just modified it.
+このアプローチをとるということはつまり、テーマをアップグレードしたくなったときに、 `Header` コンポーネントに適用された全てのアップデートを活用できるということを意味します。なぜなら、 `Header` コンポーネントを全て置き換えたわけでなく、インポートしたものを修正しただけだからです。
 
-### What path should be used to shadow a file?
+### ファイルをシャドーイングする際に使うべきパスは？
 
-Until Gatsby has tooling to automatically handle shadowing, you will have to manually locate paths in a theme and create the correct shadowing paths in your site.
+Gatsby がシャドーイング機能を全て自動でやってくれるようになるまでは、手動でテーマ内のパスを見つけて、サイト内に正しいシャドーイング用のパスを作成する必要があります。
 
-Luckily, the way to do that is only a few steps. Take the `src` directory from the theme, and move it to the front of the path, then write a file at that location in your site. Looking back on the `Header` example, this is the path to the component in your theme:
+幸いにも、これはそこまで手間ではありません。テーマ内にある、シャドーイングしたいファイルが `{theme-name}/src/{any-sub-dir}/{file}` のようなパスになっているとしたら、自分のサイトの `src` 直下で `{theme-name}/{any-sub-dir}/{file}` の形式でファイルを作ればよいのです。 `Header` の例で言えば、これはテーマにおけるコンポーネントへのパスのことです：
 
 ```text
 gatsby-theme-amazing/src/components/header.js
 ```
 
-and here is the path where you would shadow it in your site:
+そして、下記のパスがサイト内でシャドーイングする場所です：
 
 ```text
 <your-site>/src/gatsby-theme-amazing/components/header.js
 ```
 
-Shadowing only works on imported files in the `src` directory. This is because shadowing is built on top of Webpack, so the module graph needs to include the shadowable file.
+シャドーイングは `src` ディレクトリーの、インポートされたファイルにおいてのみ機能します。これは、シャドーイングが Webpack 上で構築されるため、モジュールグラフがシャドーイング可能なファイルを含める必要があるからです。
 
-Since you can use multiple themes in a given site, there are many potential places to shadow a given file (one for each theme and one for the user's site). In the event that multiple themes are attempting to shadow `gatsby-theme-amazing/src/components/header.js`, the last theme included in the plugins array will win. The site itself takes the highest priority in shadowing.
+ひとつのサイトで複数のテーマを利用できるため、ファイルがシャドーイングされうる場所はたくさんあります（ひとつのファイルが複数のテーマに利用されたり、あるいはユーザーのサイトで利用されたりします）。複数のテーマが `gatsby-theme-amazing/src/components/header.js` をシャドーイングしようとするとき、プラグインの配列の最後のテーマが選ばれます。サイトそれ自体は、シャドーイングにおいてもっとも高い優先権を持ちます。
 
-## Theme composition
+## テーマの構成
 
-Gatsby themes can compose horizontally and vertically. Vertical composition refers to the classic "parent/child" relationship. A child theme declares a parent theme in the child theme's plugins array.
+Gatsby のテーマは、水平的・垂直的に構成可能です。垂直的な構成とは、古典的な"parent/child"という形式の縦の関係を意味します。子テーマは、子テーマのプラグインの配列の中で親テーマを宣言します。
 
 ```js:title=gatsby-theme-child/gatsby-config.js
 module.exports = {
@@ -121,7 +121,7 @@ module.exports = {
 }
 ```
 
-Horizontal composition is when two different themes are used together, such as `gatsby-theme-blog` and `gatsby-theme-notes`.
+水平的な構成とは、例えば `gatsby-theme-blog` と `gatsby-theme-notes` のような、 2 つの異なるテーマが同時に使われるようなときのことを言います。
 
 ```js:title=my-site/gatsby-config.js
 module.exports = {
@@ -129,11 +129,11 @@ module.exports = {
 }
 ```
 
-Themes at their core are an algorithm that merges multiple `gatsby-config.js` files together into a single config your site can use to build with. To do that you need to define how to combine two `gatsby-config.js`s together. Before you can do that, you need to flatten the parent/child relationships into a single array. This results in the final ordering when considering which shadowing file to use if multiple are available.
+テーマとは、根本的には複数の `gatsby-config.js` ファイルを 1 つの設定ファイルにマージするアルゴリズムです。そしてマージされたファイルをもとに、サイトのビルドが行われます。これがただしく行われるように、 2 つの `gatsby-config.js` をどのように組み合わせるのか定義する必要があります。その前に、 "parent/chile" の階層関係を、1 次元の配列にしておきましょう。これによって、複数のシャドーイングされたファイルが利用可能なときに、どのファイルを優先的に参照するのかという順序を定義できます。
 
-The first example results in a final ordering of `['gatsby-theme-parent', 'gatsby-theme-child']` (parents always come before their children so that children can override functionality), while the second example results in `['gatsby-theme-blog', 'gatsby-theme-notes']`.
+上で最初に示した例では、 `['gatsby-theme-parent', 'gatsby-theme-child']` の順番で参照されます（親テーマは常に、その子テーマより先に参照されます。そうすることで、子テーマが機能をオーバーライドできます）。 2 つ目に示した例では、 `['gatsby-theme-blog', 'gatsby-theme-notes']` の順になります。
 
-Once you have the final ordering of themes you merge them together using a reduce function. [This reduce function](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/utils/merge-gatsby-config.js) specifies the way each key in `gatsby-config.js` will merge together. Unless otherwise specified below, the last value wins.
+一度このテーマの順序を定義したら、 reduce 関数を使ってテーマをマージします。[reduce 関数](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/utils/merge-gatsby-config.js)では、 `gatsby-config.js` におけるそれぞれのキーをマージする方法が定義されています。この関数が呼び出された後に他の値を指定しない限り、キーの値は順番的に最後に指定したものが入ります。
 
-- `siteMetadata` and `mapping` both merge deeply using lodash's `merge` function. This means a theme can set default values in `siteMetadata` and the site can override them using the standard `siteMetadata` object in `gatsby-config.js`.
-- `plugins` are normalized to remove duplicates, then concatenated together.
+- `siteMetadata` と `mapping` は lodash の `merge` 関数を使って深い階層までマージします。つまり、テーマはデフォルトの `siteMetadata` の値を定義可能であり、 `gatsby-config.js` における一般的な `siteMetadata` オブジェクトでオーバーライドできます。
+- `plugins` は、重複を取り除いて標準化されたあと、マージされます。
