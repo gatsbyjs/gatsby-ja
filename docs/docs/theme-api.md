@@ -11,7 +11,7 @@ title: Themes API リファレンス
 - [Node Interface](https://www.gatsbyjs.org/docs/node-interface/)
 - ... [もっと知りたい方向け](https://www.gatsbyjs.org/docs/api-specification/)
 
-Gatsby が初めての方は、サイトを構築するためのガイドから始めてみてください。テーマは事前にパッケージ化された Gatsby サイトなので、一度作ったサイトをテーマに変換することは後で容易にできます。
+Gatsby が初めての方は、サイトを構築するためのガイドから始めてみてください。テーマはもともと含まれている Gatsby のサイトなので、一度作ったサイトをテーマに変換することは後で容易にできます。
 
 ## 設定
 
@@ -74,7 +74,7 @@ exports.createPages = async ({ graphql, actions }, themeOptions) => {
 
 ときには `Header` コンポーネントに何か違うことをさせたいこともあるでしょう。例えば、色を変えたり、さらにナビゲーションアイテムを追加したりといったことです。これを実現するために、ウェブサイトの次のパスにファイルを作ります： `src/gatsby-theme-amazing/components/header.js` 。これで、どんな React コンポーネントもこのファイルからエクスポートでき、 Gatsby はテーマのコンポーネントではなく、こちらのファイルを参照するようになります。
 
-> 💡 Note: 他のテーマから同じメソッドを使うことで、コンポーネントをシャドーイングすることもできます。シャドーイングの高度な適用例については、[latent shadowing](https://johno.com/latent-component-shadowing)で紹介しています。
+> 💡 Note: 他のテーマから同じメソッドを使うことで、コンポーネントをシャドーイングすることもできます。シャドーイングの高度な使い方については、[latent shadowing](https://johno.com/latent-component-shadowing)で紹介しています。
 
 ### 拡張
 
