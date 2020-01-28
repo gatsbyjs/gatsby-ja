@@ -121,7 +121,7 @@ module.exports = {
 }
 ```
 
-水平的な構成とは、例えば `gatsby-theme-blog` と `gatsby-theme-notes` のような、 2 つの異なるテーマが同時に使われるようなときのことを言います。
+水平的な構成とは、例えば `gatsby-theme-blog` と `gatsby-theme-notes` のような、2 つの異なるテーマが同時に使われるようなときのことを言います。
 
 ```js:title=my-site/gatsby-config.js
 module.exports = {
