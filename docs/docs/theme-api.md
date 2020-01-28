@@ -40,7 +40,7 @@ module.exports = {
 ```js:title=gatsby-config.js
 module.exports = themeOptions => {
   console.log(themeOptions)
-  // logs `postsPath` and `colors`
+  // `postsPath` と `colors` を標準出力します
 
   return {
     plugins: [
@@ -85,7 +85,7 @@ exports.createPages = async ({ graphql, actions }, themeOptions) => {
 ```js
 import Header from "gatsby-theme-amazing/src/components/header"
 
-// these props are the same as the original component would get
+// 以下の props は、もとのコンポーネントが受け取るものと同じです
 export default props => <Header {...props} myProp="true" />
 ```
 
@@ -95,7 +95,7 @@ export default props => <Header {...props} myProp="true" />
 
 Gatsby がシャドーイング機能を全て自動でやってくれるようになるまでは、手動でテーマ内のパスを見つけて、サイト内に正しいシャドーイング用のパスを作成する必要があります。
 
-幸いにも、これはそこまで手間ではありません。テーマ内にある、シャドーイングしたいファイルが `{theme-name}/src/{any-sub-dir}/{file}` のようなパスになっているとしたら、自分のサイトの `src` 直下で `{theme-name}/{any-sub-dir}/{file}` の形式でファイルを作ればよいのです。 `Header` の例で言えば、これはテーマにおけるコンポーネントへのパスのことです：
+幸いにも、これはそこまで手間ではありません。テーマ内にある、シャドーイングしたいファイルが `<theme-name>/src/<any-sub-dir>/<file>` のようなパスになっているとしたら、自分のサイトの `src` 直下で `<theme-name>/<any-sub-dir>/<file>` の形式でファイルを作ればよいのです。 `Header` の例で言えば、これはテーマにおけるコンポーネントへのパスのことです：
 
 ```text
 gatsby-theme-amazing/src/components/header.js
