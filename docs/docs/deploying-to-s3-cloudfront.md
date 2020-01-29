@@ -1,35 +1,35 @@
 ---
-title: Deploying to S3/Cloudfront
+title: S3/Cloudfront へのデプロイ
 ---
 
-This guide walks through how to host and publish your next Gatsby site to AWS using [S3](https://aws.amazon.com/s3/).
-Optionally - but very recommended - you can add CloudFront, a global CDN to make your site _even faster_.
+このガイドでは、[S3](https://aws.amazon.com/jp/s3/) を使用して、Gatsby サイトを AWS にホストし、公開する方法を順を追って説明します。
+オプションとして（ただし、非常に推奨）、グローバル CDN である CloudFront を追加することで、あなたのサイトを _さらに高速化_ できます。
 
-## Getting Started: AWS CLI
+## はじめに：AWS CLI
 
-Create an [IAM account](https://console.aws.amazon.com/iam/home?#) with administration permissions and create an access id and secret for it.
-You'll need these in the next step.
+管理者権限を持つ [IAM アカウント](https://console.aws.amazon.com/iam/home?#)を作成し、そのアカウントに対するアクセスキー ID とシークレットアクセスキーを作成します。
+これらのアクセスキーは次のステップで必要となります。
 
-Install the AWS CLI and configure it (ensure Python is installed before running these commands):
+AWS CLI をインストールして設定を行います（以下のコマンドを実行する前に Python がインストールされていることを確認してください）：
 
 ```shell
 pip install awscli
 aws configure
 ```
 
-The AWS CLI will now prompt you for the key and secret, so add them.
+AWS CLI でアクセスキー ID とシークレットアクセスキーの入力が求められるので、それらを追加します。
 
-## Setting up: S3
+## セットアップ：S3
 
-Now that your Gatsby site is up and running and AWS access is sorted out, you'll need to add hosting and make the site live on AWS.
+Gatsby サイトが起動・動作し、AWS へのアクセスが設定できたので、次に、あなたのサイトをホストし、AWS で公開する必要があります。
 
-First, install the Gatsby S3 plugin:
+まず、Gatsby S3 プラグインをインストールします：
 
 ```shell
 npm i gatsby-plugin-s3
 ```
 
-Add it to your `gatsby-config.js`: (don't forget to change the bucket name)
+`gatsby-config.js` に以下を追加してください：（バケット名を変更することを忘れないでください）
 
 ```javascript:title=gatsby-config.js
 plugins: [
@@ -42,7 +42,7 @@ plugins: [
 ]
 ```
 
-And finally, add the deployment script to your `package.json`:
+そして最後に、`package.json` にデプロイ用のスクリプトを追加します。
 
 ```json:title=package.json
 "scripts": {
@@ -51,12 +51,12 @@ And finally, add the deployment script to your `package.json`:
 }
 ```
 
-That's it!
-Run `npm run build && npm run deploy` to do a build and have it immediately deployed to S3!
+設定は以上になります！
+`npm run build && npm run deploy` を実行してビルドを行うと、あなたのサイトが速やかに S3 にデプロイされます！
 
-## Deploying with `.env` variables
+## `.env` 変数を使用してデプロイする
 
-Some deployments require passing environment variables. To deploy with environment variables, update the deployment script to your `package.json`:
+デプロイによっては、環境変数を渡す必要があります。環境変数を使用してデプロイするには、`package.json` 内のデプロイ用のスクリプトを次のように更新します。
 
 ```json:title=package.json
 "scripts" : {
@@ -65,29 +65,29 @@ Some deployments require passing environment variables. To deploy with environme
 }
 ```
 
-This command requires `dotenv` first, runs build next, and finally deploys to s3. `dotenv`, a dependency of Gatsby that doesn't need to be installed directly, loads environment variables and makes them available globally.
+このコマンドは、最初に `dotenv` を必要とし、次にビルドを実行し、最後に S3 へデプロイします。`dotenv` は、直接インストールする必要のない Gatsby の依存パッケージであり、環境変数をロードし、グローバルで使用できるようにする機能を持っています。
 
-If you have multiple AWS profiles in your machine, you can deploy by declaring your `AWS_PROFILE` before the deploy script:
+あなたの環境に複数の AWS プロファイルがある場合、デプロイ用のスクリプトの前に `AWS_PROFILE` を宣言することでデプロイできます：
 
 ```shell
 AWS_PROFILE=yourprofilename npm run deploy
 ```
 
-## Setting up: CloudFront
+## セットアップ：CloudFront
 
-CloudFront is a global CDN and can be used to make your blazing fast Gatsby site load _even faster_, particularly for first-time visitors. Additionally, CloudFront provides the easiest way to give your S3 bucket a custom domain name and HTTPS support.
+CloudFront はグローバル CDN であり、特に初めての訪問者に対して、もともと非常に高速な Gatsby サイトのロードを _さらに高速化_ できます。さらに、CloudFront は、S3 バケットにカスタムドメイン名と HTTPS サポートを手軽に実現する方法を提供してくれます。
 
-There are a couple of things that you need to consider when using gatsby-plugin-s3 to deploy a site which uses CloudFront.
+gatsby-plugin-s3 を使用して CloudFront を使ったサイトをデプロイする際に考慮すべき点がいくつかあります。
 
-There are two ways that you can connect CloudFront to an S3 origin. The most obvious way, which the AWS Console will suggest, is to type the bucket name in the Origin Domain Name field. This sets up an S3 origin, and allows you to configure CloudFront to use IAM to access your bucket. Unfortunately, it also makes it impossible to perform serverside (301/302) redirects, and it also means that directory indexes (having index.html be served when someone tries to access a directory) will only work in the root directory. You might not initially notice these issues, because Gatsby's clientside JavaScript compensates for the latter and plugins such as `gatsby-plugin-meta-redirect` can compensate for the former. But just because you can't see these issues, doesn't mean they won't affect search engines.
+CloudFront を S3 オリジンに接続するには 2 つの方法があります。もっとも明快な方法は、AWS コンソールを使用する方法であり、Origin Domain Name フィールドにバケット名をコンソールから直接入力します。これにより、S3 オリジンがセットアップされ、IAM を使用してバケットにアクセスするように CloudFront を設定できます。残念ながら、この方法では、サーバーサイド（301/302）リダイレクトの実行が不可能になります。また、これはディレクトリインデックス（ディレクトリにアクセスした場合、index.html が返される）がルートディレクトリーでしか機能しないことを意味します。Gatsby のクライアントサイド JavaScript が後者の問題を補完し、`gatsby-plugin-meta-redirect` などのプラグインが前者の問題を補完できるため、最初はこれらの問題に気付かないかもしれません。しかし、これらの問題が露見しないからといって、それが検索エンジンに影響を与えないわけではありません。
 
-In order for all the features of your site to work correctly, you must instead use your S3 bucket's Static Website Hosting Endpoint as the CloudFront origin. This does (sadly) mean that your bucket will have to be configured for public-read, because when CloudFront is using an S3 Static Website Hosting Endpoint address as the Origin, it's incapable of authenticating via IAM.
+あなたのサイトのすべての機能が正しく機能するためには、代わりに S3 バケットの静的ウェブサイトホスティングのエンドポイントを CloudFront オリジンとして使用する必要があります。残念ながらこの方法では、CloudFront がオリジンとして S3 静的ウェブサイトホスティングのエンドポイントアドレスを使用することで、IAM を介した認証ができないため、バケットをパブリック読み取りとして設定する必要があります。
 
-### gatsby-plugin-s3 configuration
+### gatsby-plugin-s3 の設定
 
-In the gatsby-plugin-s3 configuration file, there are a couple of optional parameters that you can usually leave blank, `protocol` and `hostname`. But when you're using CloudFront, these parameters are vital for ensuring redirects work correctly. If you omit these parameters, redirects will be performed relative to your S3 Static Website Hosting Endpoint. This means if a user visits your site via the CloudFront URL and hits a redirect, they will be redirected to your S3 Static Website Hosting Endpoint instead. This will disable HTTPS and (more importantly) will display an ugly and unprofessional URL in the user's address bar.
+gatsby-plugin-s3 設定ファイルには、通常は空白のままにできるオプションのパラメーター`protocol` と `hostname` があります。ただし、CloudFront を使用している場合、これらのパラメーターはリダイレクトを正しく機能させるために不可欠です。これらのパラメーターを省略すると、リダイレクトは S3 静的ウェブホスティングのエンドポイントに対して実行されます。つまり、ユーザーが CloudFront の URL 経由でサイトにアクセスし、リダイレクトが実行された場合、代わりに S3 静的ウェブホスティングのエンドポイントにリダイレクトされます。これにより、HTTPS が無効になり、（さらに重要なことに）ユーザーのアドレスバーに見苦しくてプロフェッショナルでない URL が表示されてしまいます。
 
-By specifying the `protocol` and `hostname` parameters, you can cause redirects to be applied relative to a domain of your choosing.
+`protocol` と `hostname` パラメーターを指定することで、選択したドメインに対してリダイレクトを適用できます。
 
 ```javascript:title=gatsby-config.js
 {
@@ -100,13 +100,13 @@ By specifying the `protocol` and `hostname` parameters, you can cause redirects 
 }
 ```
 
-If you use your site's URL elsewhere in gatsby-config.js, you can define the URL once at the top of the config:
+サイトの URL を gatsby-config.js 内の他の場所で使用する場合、設定ファイルのトップに URL をたった一行で定義できます。
 
 ```javascript:title=gatsby-config.js
 const siteAddress = new URL("https://www.example.com")
 ```
 
-And then in the Gatsby config you can reference it like so:
+そして、Gatsby の設定で次のように参照できます。
 
 ```javascript:title=gatsby-config.js
 {
@@ -119,12 +119,12 @@ And then in the Gatsby config you can reference it like so:
 }
 ```
 
-If you need the full address elsewhere in your config, you can access it via `siteAddress.href`.
+設定ファイル内の別の場所で絶対アドレスが必要な場合は、`siteAddress.href` からアクセスできます。
 
-## References:
+## 関連資料：
 
-- [Gatsby on AWS, the right way](https://blog.joshwalsh.me/aws-gatsby/)
-- [Using CloudFront with gatsby-plugin-s3](https://github.com/jariz/gatsby-plugin-s3/blob/master/recipes/with-cloudfront.md)
-- [Publishing Your Next Gatsby Site to AWS With AWS Amplify](/blog/2018-08-24-gatsby-aws-hosting/)
-- [Escalade Sports: From $5000 to \$5/month in Hosting With Gatsby](/blog/2018-06-14-escalade-sports-from-5000-to-5-in-hosting/)
-- [Deploy your Gatsby.js Site to AWS S3](https://benenewton.com/deploy-your-gatsby-js-site-to-aws-s-3)
+- [AWS で Gatsby をただしく使う方法](https://blog.joshwalsh.me/aws-gatsby/)
+- [gatsby-plugin-s3 を利用した CloudFront の使用方法](https://github.com/jariz/gatsby-plugin-s3/blob/master/recipes/with-cloudfront.md)
+- [AWS Amplify を使用して Gatsby サイトを AWS に公開する](/blog/2018-08-24-gatsby-aws-hosting/)
+- [Escalade Sports：Gatsby のホスティングで月額 5000 ドルから 5 ドルへ](/blog/2018-06-14-escalade-sports-from-5000-to-5-in-hosting/)
+- [Gatsby サイトを AWS S3 にデプロイする](https://benenewton.com/deploy-your-gatsby-js-site-to-aws-s-3)
