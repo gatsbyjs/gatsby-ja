@@ -1,19 +1,18 @@
----
-title: "Recipes: Sourcing Data"
+
+title: "レシピ集: データの取得"
 tableOfContentsDepth: 1
----
 
-Data sourcing in Gatsby is plugin-driven; Source plugins fetch data from their source (e.g. the `gatsby-source-filesystem` plugin fetches data from the file system, the `gatsby-source-wordpress` plugin fetches data from the WordPress API, etc). You can also source the data yourself.
+Gatsby のデータソースはプラグインによって実現されています。ソースプラグインはデータソースからデータを取得します。（例： `gatsby-source-filesystem` プラグインはファイルシステムからデータを取得する、`gatsby-source-wordpress` プラグインは WordPress API からデータを取得する、等）データソースを自身で用意することも可能です。
 
-## Adding data to GraphQL
+## GraphQL にデータを追加する
 
-Gatsby's [GraphQL data layer](/docs/querying-with-graphql/) uses nodes to model chunks of data. Gatsby source plugins add source nodes that you can query for, but you can also create source nodes yourself. To add custom data to the GraphQL data layer yourself, Gatsby provides methods you can leverage.
+Gatsby の [GraphQL data layer](/docs/querying-with-graphql/) はデータの塊をモデル化するノードを必要とします。Gatsby ソースプラグインはクエリ対象のソースノードを追加します。しかし、ソースノードはご自身で作成することも可能です。Gatsby では、GraphQL のデータレイヤーにカスタムデータを追加する為のメソッドが提供されています。
 
-This recipe shows you how to add custom data using `createNode()`.
+このレシピでは、 `createNode()` を用いてカスタムデータを追加する方法を紹介します。
 
-### Directions
+### 手順
 
-1. In `gatsby-node.js` use `sourceNodes()` and `actions.createNode()` to create and export nodes to be able to query the data.
+1. `gatsby-node.js` では `sourceNodes()` と `actions.createNode()` が、データを検索する為のノードの作成と書き出しに用いられます。
 
 ```javascript:title=gatsby-node.js
 exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
@@ -37,11 +36,11 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
 }
 ```
 
-2. Run `gatsby develop`.
+2. `gatsby develop` を実行します。
 
-   > _Note: After making changes in `gatsby-node.js` you need to re-run `gatsby develop` for the changes to take effect._
+   > 注意：`gatsby-node.js` に変更を加えたら、変更を反映させるために、 `gatsby develop` を再度実行させる必要があります。
 
-3. Query the data (in GraphiQL or in your components).
+3. データの検索（GraphiQL もしくは新たにさくせしたコンポーネント内で）
 
 ```graphql
 query MyPokemonQuery {
@@ -55,30 +54,30 @@ query MyPokemonQuery {
 }
 ```
 
-### Additional resources
+### 追加資料
 
-- Walk through an example using the `gatsby-source-filesystem` plugin in [tutorial part five](/tutorial/part-five/#source-plugins)
-- Search available source plugins in the [Gatsby library](/plugins/?=source)
-- Understand source plugins by building one in the [Pixabay source plugin tutorial](/docs/pixabay-source-plugin-tutorial/)
-- The createNode function [documentation](/docs/actions/#createNode)
+- [チュートリアル パート 5](/tutorial/part-five/#source-plugins) にて、 `gatsby-source-filesystem` を用いた例の概略
+- [Gatsby ライブラリ](/plugins/?=source) 内で検索可能なソースプラグイン
+- [Pixabay ソースプラグインのチュートリアル](/docs/pixabay-source-plugin-tutorial/) 内での、ソースプラグインのハンズオン
+- createNode の[ドキュメント](/docs/actions/#createNode)
 
-## Sourcing Markdown data for blog posts and pages with GraphQL
+## GraphQL も用いたブログ投稿やページの為の Markdown データソース
 
-You can source Markdown data and use Gatsby's [`createPages` API](/docs/actions/#createPage) to create pages dynamically.
+Markdown データと Gatsby が提供する [`createPages` API](/docs/actions/#createPage) を用いて、動的にページを作成することが出来ます。
 
-This recipe shows how to create pages from Markdown files on your local filesystem using Gatsby's GraphQL data layer.
+このレシピでは、Gatsby の GraphQL データレイヤーを用いて、ローカル環境にある Markdown ファイルからページを作る方法をご紹介します。
 
-### Prerequisites
+### 条件
 
-- A [Gatsby site](/docs/quick-start) with a `gatsby-config.js` file
-- The [Gatsby CLI](/docs/gatsby-cli) installed
-- The [gatsby-source-filesystem plugin](/packages/gatsby-source-filesystem) installed
-- The [gatsby-transformer-remark plugin](/packages/gatsby-transformer-remark) installed
-- A `gatsby-node.js` file
+- `gatsby-config.js` を持つ [Gatsby の作られたサイト](/docs/quick-start) である
+- [Gatsby CLI](/docs/gatsby-cli) がインストールされている
+- [gatsby-source-filesystem プラグイン](/packages/gatsby-source-filesystem) がインストールされている
+- [gatsby-transformer-remark プラグイン](/packages/gatsby-transformer-remark) がインストールされている
+- `gatsby-node.js` が存在する
 
-### Directions
+### 手順
 
-1. In `gatsby-config.js`, configure `gatsby-transformer-remark` along with `gatsby-source-filesystem` to pull in Markdown files from a source folder. This would be in addition to any previous `gatsby-source-filesystem` entries, such as for images:
+1. `gatsby-config.js` で、`gatsby-transformer-remark` と `gatsby-source-filesystem` の設定を行い、ソースディレクトリーから Markdown ファイルを落としてくる様にします。この設定は、画像など、それまでに記載された `gatsby-source-filesystem` のエントリーに追加して読み込まれます。
 
 ```js:title=gatsby-config.js
 module.exports = {
@@ -94,7 +93,7 @@ module.exports = {
   ]
 ```
 
-2. Add a Markdown post to `src/content`, including frontmatter for the title, date, and path, with some initial content for the body of the post:
+2. `src/content` に Markdown の投稿する際は、タイトル、日付、パス、そして投稿本文の初期コンテンツのフォーマットを含めてください。
 
 ```markdown:title=src/content/my-first-post.md
 ---
@@ -106,7 +105,7 @@ path: /my-first-post
 This is my first Gatsby post written in Markdown!
 ```
 
-3. Start up the development server with `gatsby develop`, navigate to the GraphiQL explorer at `http://localhost:8000/___graphql`, and write a query to get all markdown data:
+3. `gatsby develop` コマンドで開発用サーバーを立ち上げ、`http://localhost:8000/___graphql` にアクセスし、GraphiQL エクスプロラーを閲覧します。そこで、すべての Markdown データを取得するクエリを作成します。
 
 ```graphql
 {
@@ -129,7 +128,7 @@ This is my first Gatsby post written in Markdown!
   height="300"
 />
 
-4. Add the JavaScript code to generate pages from Markdown posts at build time by copying the GraphQL query into `gatsby-node.js` and looping through the results:
+4. `gatsby-node.js` への GraphQL クエリをコピーして結果をループすることにより、ビルド時に Markdown 投稿からページを作成する JavaScript のコードを追加します。
 
 ```js:title=gatsby-node.js
 const path = require(`path`)
@@ -163,7 +162,7 @@ exports.createPages = async ({ actions, graphql }) => {
 }
 ```
 
-5. Add a post template in `src/templates`, including a GraphQL query for generating pages dynamically from Markdown content at build time:
+5. ビルド時に、Markdown コンテンツから動的にページを生成するための GraphQL クエリを含む投稿テンプレートを `src/templates` に追加します。
 
 ```jsx:title=src/templates/post.js
 import React from "react"
@@ -198,32 +197,32 @@ export const pageQuery = graphql`
 `
 ```
 
-6. Run `gatsby develop` to restart the development server. View your post in the browser: `http://localhost:8000/my-first-post`
+6. `gatsby develop` コマンドを実行して、開発サーバーを再起動します。投稿は `http://localhost:8000/my-first-post` で閲覧できます。
 
-### Additional resources
+### 追加資料
 
-- [Tutorial: Programmatically create pages from data](/tutorial/part-seven/)
-- [Creating and modifying pages](/docs/creating-and-modifying-pages/)
-- [Adding Markdown pages](/docs/adding-markdown-pages/)
-- [Guide to creating pages from data programmatically](/docs/programmatically-create-pages-from-data/)
-- [Example repo](https://github.com/gatsbyjs/gatsby/tree/master/examples/recipe-sourcing-markdown) for this recipe
+- [チュートリアル：データからページをプログラムで作成する](/tutorial/part-seven/)
+- [ページの作成と編集](/docs/creating-and-modifying-pages/)
+- [マークダウンのページを追加](/docs/adding-markdown-pages/)
+- [プログラムでデータからページを作成する方法](/docs/programmatically-create-pages-from-data/)
+- このレシピの[参考リポジトリ](https://github.com/gatsbyjs/gatsby/tree/master/examples/recipe-sourcing-markdown)
 
-## Sourcing from WordPress
+## WordPress のデータを扱う
 
-### Prerequisites
+### 条件
 
-- An existing [Gatsby site](/docs/quick-start/) with a `gatsby-config.js` and `gatsby-node.js` file
-- A WordPress instance, either self-hosted or on Wordpress.com
+- `gatsby-config.js` と `gatsby-node.js` が存在する [Gatsby サイト](/docs/quick-start/)であること
+- WordPress インスタンスであること（自分でホスティングしているもの、Wordpress.com 上で展開しているもののどちらでも）
 
-### Directions
+### 手順
 
-1. Install the `gatsby-source-wordpress` plugin by running the following command:
+1. 次のコマンドを実行して、 `gatsby-source-wordpress` プラグインをインストール
 
 ```shell
 npm install gatsby-source-wordpress --save
 ```
 
-2. Configure the plugin by modifying the `gatsby-config.js` file such that it includes the following:
+2. プラグインの設定の為に、 `gatsby-config.js` に次にコードを追記
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -245,9 +244,9 @@ module.exports = {
 }
 ```
 
-> **Note:** Refer to the [`gatsby-source-wordpress` plugin docs](/packages/gatsby-source-wordpress/?=wordpre#how-to-use) to know more about configuring your plugins.
+> **注意：** プラグインの設定については、 [`gatsby-source-wordpress` プラグインの Docs](/packages/gatsby-source-wordpress/?=wordpre#how-to-use) を参考にしてください
 
-3. Create a template component such as `src/templates/post.js` with the following code in it:
+3. 次のコードを含むテンプレートコンポーネントを `src/templates/post.js` に作成します
 
 ```jsx:title=post.js
 import React, { Component } from "react"
@@ -284,7 +283,7 @@ export const pageQuery = graphql`
 `
 ```
 
-4. Create dynamic pages for your WordPress posts by pasting the following sample code in `gatsby-node.js`:
+4. `gatsby-node.js` に次のサンプルコードを貼り付けて、 WordPress の投稿の為のページを動的に作成します：
 
 ```javascript:title=gatsby-node.js
 const path = require(`path`)
@@ -324,63 +323,63 @@ exports.createPages = async ({ graphql, actions }) => {
 }
 ```
 
-5. Run `gatsby-develop` to see the newly generated pages and navigate through them.
+5. `gatsby-develop` を実行して、新しく生成されたページを閲覧しにいきます
 
-6. Open the `GraphiQL IDE` at `http://localhost:8000/__graphql` and open the Docs or Explorer to observe the queryable fields for `allWordpressPosts`.
+6. `http://localhost:8000/__graphql` で `GraphiQL IDE` を表示して、 Docs や `allWordpressPosts` に対するクエリーフィールドの監視をするエクスプローラーを開きます。
 
-The dynamic pages created above in `gatsby-node.js` have unique paths for navigating to particular posts, using a template component for the posts and a sample GraphQL query to source WordPress post content.
+上記 `gatsby-node.js` で作成された動的ページには、特定の投稿に移動する為の一意のパスがあり、投稿用のテンプレートコンポーネントと WordPress 投稿コンテンツのソースとなるサンプル GraphQL クエリを使用します。
 
-### Additional resources
+### 追加資料
 
 - [Getting Started with WordPress and Gatsby](/blog/2019-04-26-how-to-build-a-blog-with-wordpress-and-gatsby-part-1/)
-- More on [Sourcing from WordPress](/docs/sourcing-from-wordpress/)
-- [Live example on Sourcing from WordPress](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-wordpress)
+- [WordPress のデータを利用する](/docs/sourcing-from-wordpress/) へ移動
+- [データを利用する例](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-wordpress)
 
 ## Sourcing data from Contentful
 
-### Prerequisites
+### 条件
 
-- A [Gatsby site](/docs/quick-start/)
-- A [Contentful account](https://www.contentful.com/)
-- The [Contentful CLI](https://www.npmjs.com/package/contentful-cli) installed
+- [Gatsby サイト](/docs/quick-start/) であること
+- [Contentful アカウント](https://www.contentful.com/) をもっていること
+- [Contentful CLI](https://www.npmjs.com/package/contentful-cli) がインストールされていること
 
-### Directions
+### 手順
 
-1. Log in to Contentful with the CLI and follow the steps. It will help you create an account if you don't have one.
+1. まず、 Contentful CLI を使って Contentful にログインしてください。アカウントを持っていない場合にアカウントを作成するのに役立ちます。
 
 ```shell
 contentful login
 ```
 
-2. Create a new space if you don't already have one. Make sure to save the space ID given to you at the end of the command. If you already have a Contentful space and space ID, you can skip steps 2 and 3.
+1. Contentful Space や Space ID を持っている場合には、ステップ 2 と 3 はスキップできます。まだ Contentful Space を作成していない場合には、新しく作成してください。コマンドの最後で割り振られた Space ID は保存してください。
 
-Note: for new accounts, you can overwrite the default onboarding space. Check to see the [spaces included with your account](https://app.contentful.com/account/profile/space_memberships).
+注意：新しいアカウントの場合、デフォルトのオンボーディング Space は上書きされます。詳しくは [spaces included with your account](https://app.contentful.com/account/profile/space_memberships) を見てください。
 
 ```shell
 contentful space create --name 'Gatsby example'
 ```
 
-3. Seed the new space with example blog content using the new space ID returned from the previous command, in place of `<space ID>`.
+1. `<space ID>` の代わりに、前のコマンドから返された新しい Space ID を使用して、サンプルのブログコンテンツで新しい Space を作成（seed）します。
 
 ```shell
 contentful space seed -s '<space ID>' -t blog
 ```
 
-For example, with a space ID in place: `contentful space seed -s '22fzx88spbp7' -t blog`
+例えば、 Space ID は右のように配置します： `contentful space seed -s '22fzx88spbp7' -t blog`
 
-4. Create a new access token for your space. Remember this token, as you will need it in step 6.
+1. Space への新しいアクセストークンを作成します。このトークンは記憶してください。Step 6 で必要になります。
 
 ```shell
 contentful space accesstoken create -s '<space ID>' --name 'Example token'
 ```
 
-5. Install the `gatsby-source-contentful` plugin in your Gatsby site:
+1. あなたの Gatsby サイトに `gatsby-source-contentful` プラグインをインストールします：
 
 ```shell
 npm install --save gatsby-source-contentful
 ```
 
-6. Edit the file `gatsby-config.js` and add the `gatsby-source-contentful` to the `plugins` array to enable the plugin. You should strongly consider using [environment variables](/docs/environment-variables/) to store your space ID and token for security purposes.
+1. `gatsby-config.js` を編集して、`gatsby-source-contentful` を `plugins` の配列に追加して、プラグインを有効化します。セキュリティー為に、Space ID やトークンの管理には[環境変数](/docs/environment-variables/)を用いることを強く検討してみてください。
 
 ```javascript:title=gatsby-config.js
 plugins: [
@@ -399,13 +398,14 @@ plugins: [
 ],
 ```
 
-7. Run `gatsby develop` and make sure the site compiled successfully.
+7. `gatsby develop` を実行し、サイトのコンパイルが成功したことを確認してください。
 
-8. Query data with the [GraphiQL editor](/docs/introducing-graphiql/) at `http://localhost:8000/___graphql`. The Contentful plugin adds several new node types to your site, including every content type in your Contentful website. Your example space with a "Blog Post" content type produces a `allContentfulBlogPost` node type in GraphQL.
+
+8. `http://localhost:8000/___graphql` にアクセスして、[GraphiQL editor](/docs/introducing-graphiql/) を使い、データを検索してください。Contentful プラグインによって、あなたのサイトに、あなたの Contentful ウェブサイトのすべての Content タイプを含む新しいノードタイプがいくつか追加されます。"Blog Post" という Content タイプを持つあなたの Example Space は、GraphQL に `allContentfulBlogPost` ノードタイプを作成します。
 
 ![the graphql interface, with a sample query outlined below](../images/recipe-sourcing-contentful-graphql.png)
 
-To query for Blog Post titles from Contentful, use the following GraphQL query:
+Contentful からブログ投稿の titles に対してクエリを投げる場合には、次の GraphQL クエリを使用してください：
 
 ```graphql
 {
@@ -419,9 +419,9 @@ To query for Blog Post titles from Contentful, use the following GraphQL query:
 }
 ```
 
-Contentful nodes also include several metadata fields like `createdAt` or `node_locale`.
+Contentful ノードは `createdAt` や `node_locale` の様ないくつかのメタフィールドも含みます。
 
-9. To show a list of links to the blog posts, create a new file in `/src/pages/blog.js`. This page will display all posts, sorted by updated date.
+9. ブログの投稿へのリンクのリストを表示するには、`/src/pages/blog.js` を作成してください。このページでは、すべての投稿が更新日順に表示されます。
 
 ```jsx:title=src/pages/blog.js
 import React from "react"
@@ -456,31 +456,31 @@ export const query = graphql`
 `
 ```
 
-To continue building out your Contentful site including post detail pages, check out the rest of the [Gatsby docs](/docs/sourcing-from-contentful/) and additional resources below.
+投稿詳細ページを含む Contentful サイト構築を続けるには、他の [Gatsby docs](/docs/sourcing-from-contentful/) と下記の追加資料をチェックしてみてください。
 
-### Additional resources
+### 追加資料
 
 - [Building a Site with React and Contentful](/blog/2018-1-25-building-a-site-with-react-and-contentful/)
-- [More on Sourcing from Contentful](/docs/sourcing-from-contentful/)
-- [Contentful source plugin](/packages/gatsby-source-contentful/)
+- [Contentful のデータ利用についてもっと見る](/docs/sourcing-from-contentful/)
+- [Contentful ソースプラグイン](/packages/gatsby-source-contentful/)
 - [Long-text field types returned as objects](/packages/gatsby-source-contentful/#a-note-about-longtext-fields)
-- [Example repository for this recipe](https://github.com/gatsbyjs/gatsby/tree/master/examples/recipe-sourcing-contentful)
+- [このレシピの例](https://github.com/gatsbyjs/gatsby/tree/master/examples/recipe-sourcing-contentful)
 
-## Pulling data from an external source and creating pages without GraphQL
+## 外部ソースからデータを読み込み、GraphQL を使わずページを作成する
 
-You don't have to use the GraphQL data layer to include data in pages, [though there are reasons why you should consider GraphQL](/docs/why-gatsby-uses-graphql/). You can use the node `createPages` API to pull unstructured data directly into Gatsby sites rather than through GraphQL and source plugins.
+[GraphQL の利用を検討すべき理由はありますが](/docs/why-gatsby-uses-graphql/)、ページ内にデータを内包させる為に、必ずしも GraphQL データレイヤーを用いる必要はありません。GraphQL とソース プラグインを経由せず、 `createPages` API を利用して、まだ構築されていないデータを直接 Gatsby サイトに読み込むことができます。
 
-In this recipe, you'll create dynamic pages from data fetched from the [PokéAPI’s REST endpoints](https://www.pokeapi.co/). The [full example](https://github.com/jlengstorf/gatsby-with-unstructured-data/) can be found on GitHub.
+このレシピでは、[PokéAPI’s REST endpoints](https://www.pokeapi.co/) からデータを取得して動的にページを作成していきます。[完全な例](https://github.com/jlengstorf/gatsby-with-unstructured-data/) は Github にあります。
 
-### Prerequisites
+### 条件
 
-- A Gatsby Site with a `gatsby-node.js` file
-- The [Gatsby CLI](/docs/gatsby-cli) installed
-- The [axios](https://www.npmjs.com/package/axios) package installed through npm
+- `gatsby-node.js` を持つ Gatsby サイトであること
+- [Gatsby CLI](/docs/gatsby-cli) がインストールされていること
+- npm から [axios](https://www.npmjs.com/package/axios) がインストールされていること
 
-### Directions
+### 手順
 
-1. In `gatsby-node.js`, add the JavaScript code to fetch data from the PokéAPI and programmatically create an index page:
+1. `gatsby-node.js` で、PokéAPI からデータを取得する JavaScript コードを追加して、プログラムでインデックスページを作成します：
 
 ```js:title=gatsby-node.js
 const axios = require("axios")
@@ -506,7 +506,7 @@ exports.createPages = async ({ actions: { createPage } }) => {
 }
 ```
 
-2. Create a template to display Pokémon on the homepage:
+2. ホームページに Pokémon を表示させるテンプレートを作成します：
 
 ```jsx:title=src/templates/all-pokemon.js
 import React from "react"
@@ -526,32 +526,32 @@ export default ({ pageContext: { allPokemon } }) => (
 )
 ```
 
-3. Run `gatsby develop` to fetch the data, build pages, and start the development server.
-4. View your homepage in a browser: `http://localhost:8000`
+1. `gatsby develop` を実行して、データを取得、ページの構築、開発用サーバーを立ち上げます。
+2. ホームページをブラウザーで閲覧します：`http://localhost:8000`
 
-### Additional resources
+### 追加資料
 
 - [Full Pokemon data repo](https://github.com/jlengstorf/gatsby-with-unstructured-data/)
-- More on using unstructured data in [Using Gatsby without GraphQL](/docs/using-gatsby-without-graphql/)
-- When and how to [query data with GraphQL](/docs/querying-with-graphql/) for more complex Gatsby sites
+- 構築されていないデータの利用についてもっと知るには、[Using Gatsby without GraphQL](/docs/using-gatsby-without-graphql/) をみてください
+- より複雑な Gatsby サイトの為に、いつ、どのように[GraphQL でデータを検索するか](/docs/querying-with-graphql/)
 
-## Sourcing content from Drupal
+## Drupal からコンテンツを読み込む
 
-### Prerequisites
+### 条件
 
-- A [Gatsby site](/docs/quick-start)
-- A [Drupal](http://drupal.org) site
-- The [JSON:API module](https://www.drupal.org/project/jsonapi) installed and enabled on the Drupal site
+- [Gatsby サイト](/docs/quick-start) であること
+- [Drupal](http://drupal.org) サイトであること
+- Drupal サイトに [JSON:API module](https://www.drupal.org/project/jsonapi) がインストールされていて使用可能であること
 
-### Directions
+### 手順
 
-1. Install the `gatsby-source-drupal` plugin.
+1. `gatsby-source-drupal` をインストールしてください。
 
 ```shell
 npm install --save gatsby-source-drupal
 ```
 
-2. Edit your `gatsby-config.js` file to enable the plugin and configure it.
+1. `gatsby-config.js` を編集し、プラグインを有効化してください。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -567,7 +567,7 @@ module.exports = {
 }
 ```
 
-3. Start the development server with `gatsby develop`, and open the GraphiQL explorer at `http://localhost:8000/___graphql`. Under the Explorer tab, you should see new node types, such as `allBlockBlock` for Drupal blocks, and one for every content type in your Drupal site. For example, if you have a "Page" content type, it will be available as `allNodePage`. To query all "Page" nodes for their title and body, use a query like:
+3. コマンドを実行し、開発用サーバーを立ち上げて、`http://localhost:8000/___graphql` で GraphiQL エクスプローラーを開いてください。Explorer タブの下に、Drupal ブロックの場合は `allBlockBlock` 、Drupal サイトのすべてのコンテンツタイプの場合は新しいノードタイプが表示されます。例えば、もし「ページ」コンテンツタイプがある場合では、`allNodePage` として使用可能になります。すべての「ページ」ノードの title と body を検索するには、次のようなクエリを使用します：
 
 ```graphql
 {
@@ -584,9 +584,9 @@ module.exports = {
 }
 ```
 
-4. To use your Drupal data, create a new page in your Gatsby site at `src/pages/drupal.js`. This page will list all Drupal "Page" nodes.
+4. Drupal データを使うには、Gatsby サイトの `src/pages/drupal.js` に新しいページを作成してください。このページには、すべての Drupal「ページ」ノードがリスト表示されます。
 
-_**Note:** the exact GraphQL schema will depend on your how Drupal instance is structured._
+**注意：** 正確な GraphQL スキーマは、Drupal インスタンスの構造に依存します。
 
 ```jsx:title=src/pages/drupal.js
 import React from "react"
@@ -625,10 +625,10 @@ export const query = graphql`
 }
 ```
 
-5. With the development server running, you can view the new page by visiting `http://localhost:8000/drupal`.
+1. 開発用サーバーを起動すると、`http://localhost:8000/drupal` に訪問することで新しいページを閲覧できます。
 
-### Additional Resources
+### 追加資料
 
 - [Using Decoupled Drupal with Gatsby](/blog/2018-08-13-using-decoupled-drupal-with-gatsby/)
-- [More on sourcing from Drupal](/docs/sourcing-from-drupal)
-- [Tutorial: Programmatically create pages from data](/tutorial/part-seven/)
+- [Drupal のデータ利用についてもっと見る](/docs/sourcing-from-drupal)
+- [チュートリアル：プログラムでデータからページを生成する](/tutorial/part-seven/)
