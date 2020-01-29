@@ -6,7 +6,7 @@ disableTableOfContents: true
 
 Gatsby でサイトを構築する利点の 1 つはあなたが作成したコンポーネントや API やページ自体に簡単に自動テストを追加できるということです。 Gatsby では Jest, Cypress, Testing Library, Storybook, Enzyme などの JavaScript のモダンなツールを採用して変更に強い React アプリケーションを作成できます。
 
-このガイドでは、 Gatsby プロジェクトにテスト機能を追加するためによく使われるツールとセットアップの手順をご紹介します。ただし、ここで紹介されているよりもっと良いテストの手法があるかもしれません。その場合は [GitHub で Issue を作成して](https://github.com/gatsbyjs/gatsby/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+testing) あなたの望むテストユースケースを追加するか、[こちらの手順で Issue を報告してください。](/contributing/how-to-file-an-issue/)
+このガイドでは、 Gatsby プロジェクトにテスト機能を追加するためによく使われるツールとセットアップの手順をご紹介します。ただし、ここで紹介されているよりもっと良いテストの手法があるかもしれません。その場合は [GitHub で Open な Issue](https://github.com/gatsbyjs/gatsby/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+testing)からあなたの望むテストユースケースを探すか、[こちらの手順で Issue を報告してください。](/contributing/how-to-file-an-issue/)
 
 <GuideList slug={props.slug} />
 
