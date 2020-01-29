@@ -177,7 +177,7 @@ export default () => (
 
 **注意**: このとき、指定されたタイプの形式で動画をインポートする必要があります。つまり、 `type=video/ogg` を持つ `<source>` 要素を追加するには、 `.ogg` の形式でファイルをインポートする必要があるということです。もしくは、ローカルファイルをインポートする代わりに、動画がリモートでホストされる場所の URL を `src` として指定できます。
 
-[ `<video>` 要素を使った例のリポジトリを見てみてください](https://github.com/gatsbyjs/gatsby/blob/master/examples/using-video/)
+[`<video>` 要素を使った例のリポジトリを見てみてください](https://github.com/gatsbyjs/gatsby/blob/master/examples/using-video/)
 
 ### カスタム動画プレイヤーに伴うアクセシビリティ
 
