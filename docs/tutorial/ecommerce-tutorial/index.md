@@ -118,18 +118,19 @@ StripeはJavaScriptライブラリを提供します。これにより、Stripe�
 これにより、Stripeの不正検出[[fraud detection](https://stripe.com/docs/stripe-js/reference#including-stripejs)]が容易になります
 もし支払い処理をさらにカスタマイズしたりSrtipeのデータをサイトに引いてくる場合は、[GatsbyのプラグインライブラリでStripeプラグインを確認](https://www.gatsbyjs.org/plugins/?=stripe)してください。
 
-### Getting your Stripe test keys
+### Stripeのテストキーを取得する
 
-View your API credentials by logging into your Stripe account, and then going to Developers > API Keys.
+StripeアカウントにログインしてAPI資格情報を表示し、[開発者] > [APIキー]に移動します。
 
 ![Stripe public test key location in Stripe account](stripe-public-test-key.png)
 
+テストモードと本番モードの2つのキーがあります:
 You have 2 keys in both test mode and production mode:
 
-- a publishable key
-- a secret key
+- 公開可能キー
+- シークレットキー
 
-While testing, you must use the key(s) that include _test_. For production code, you will need to use the live keys. As the names imply, your publishable key may be included in code that you share publicly (for example, on the frontend, and in GitHub), whereas your secret key should not be shared with anyone or committed to any public repo. It’s important to restrict access to this secret key because anyone who has it could potentially read or send requests from your Stripe account and see information about charges or purchases or even refund customers.
+テスト中は _test_.という文字が含まれたキーを使い、本番のコードではライブキーを使う必要があります。名前が示すように、公開可能キーは公開するコード(フロントエンドやGithubなど)に含まれているな愛がありますが、シークレットキーは誰とも共有したり、公開レポジトリにコミットしたりしないでください。このシークレットキーへのアクセスを制限することは重要です。このシークレットキーを持っている人は誰でもStripeアカウントからリクエストを読み取ったり送信したり、請求や購入に関する情報を見たり、顧客に送信したりする可能性があるからです。
 
 ### Enabling the "Checkout client-only integration" for your Stripe account
 
