@@ -1,66 +1,59 @@
 ---
-title: Adding Components to Markdown with MDX
+title: MDX で Markdown にコンポーネントを追加する
 ---
 
-When writing long-form content in Markdown you might want to embed [components](/docs/glossary/#component).
-This is often achieved by either writing content in JSX or using plugins that
-use custom syntax. The first approach isn't optimal because JSX isn't the best
-format for content and can make it less approachable to members of a team. Custom
-syntax and plugins are often too inflexible and don't promote composition. If
-you're finding yourself wanting to add components to your content you can use
-`gatsby-plugin-mdx` which is a Gatsby plugin to integrate MDX into your project.
+Markdown を使って長いコンテンツを作るとき、[コンポーネント](/docs/glossary/#component)を埋め込みたくなるかもしれません。
+これは多くの場合、コンテンツを JSX で書くか、カスタム文法を使うプラグインを利用することで解決されます。
+1 つ目の手段の JSX はコンテンツを書くのに優れたフォーマットではなく、
+コンテンツがチームにとって親しみづらくなってしまうため、最適ではありません。
+カスタム文法とプラグインを使う方法はとても柔軟性に欠ける場合が多く、構造化を促進しません。
+もしあなたが自分のコンテンツにコンポーネントを追加したいなら、 MDX をプロジェクトに
+追加する Gatsby プラグインである `gatsby-plugin-mdx` を使うことをおすすめします。
 
-## What's MDX?
+## MDX とは？
 
-[MDX][mdx] is Markdown for the component era.
-It lets you write JSX embedded inside Markdown.
-It’s a great combination because it allows you to use Markdown’s terse
-syntax (such as `# Heading`) for your content and JSX for more advanced,
-or reusable components.
+[MDX][mdx] はコンポーネント時代のための Markdown です。
+MDX では、 Markdown の中に JSX を埋め込むことができます。
+これは文章を Markdown の簡潔な文法を使って（たとえば `# 見出し` のように）書くことができ、
+より高度なことをしたり、コンポーネントを再利用したりするのには JSX を使える、
+素晴らしい組み合わせです。
 
-This is useful in content-driven sites where you want the ability
-to introduce components like charts or alerts without having to
-configure a plugin. It emphasizes composition over configuration
-and really shines with interactive blog posts, documenting design
-systems, or long form articles with immersive or dynamic
-interactions.
+MDX は、文章が主体なサイトに、図表やアラートなどのコンポーネントを、
+プラグインの設定なしで追加するのに役立ちます。
+それは「設定より構成」を強調し、ブログの記事やデザインシステムの文書化、
+没入型あるいは動的なインタラクションのある長い記事で真価を発揮します。
 
-When using MDX you can also import other MDX documents and render
-them as components. This lets you write something like an FAQ
-page in one place and reuse it throughout your website.
+MDX では、MDX ドキュメントをインポートし、コンポーネントとして利用できます。
+これにより、一箇所に用意した FAQ ページなどを、ウェブサイトの全体で再利用できます。
 
-## What does it look like in practice?
+## 実際にどうなるのか
 
-Importing and JSX syntax works just like it does in your components. This
-results in a seamless experience for developers and content authors alike.
-Markdown and JSX are included alongside each other like this:
+インポートと JSX 文法は、コンポーネント内で使うのと同じようにはたらきます。
+これによって、開発者とコンテンツ製作者の間でシームレスな体験を得られます。
+Markdown と JSX は以下のように一緒に使うことができます。
 
 ```markdown
 import { Chart } from '../components/chart'
 
-# Here’s a chart
+# チャートです
 
-The chart is rendered inside our MDX document.
+このチャートは MDX ドキュメント中で描画されます。
 
 <Chart />
 ```
 
-## Features
+## 特長
 
-❤️ **Powerful**: MDX blends Markdown and JSX syntax to fit perfectly in
-React/JSX-based projects.
+❤️ **パワフル**: MDX は Markdown と JSX の文法を React/JSX に完璧にフィットするよう融合させます。
 
-💻 **Everything is a component**: Use existing components inside your
-MDX and import other MDX files as plain components.
+💻 **すべてがコンポーネント**: すでにあるコンポーネントを MDX で使ったり、他の MDX ファイルを
+プレーンなコンポーネントとして使ったりできます。
 
-🔧 **Customizable**: Decide which component is rendered for each Markdown
-element (`{ h1: MyHeading }`).
+🔧 **カスタマイズ可能**: それぞれの Markdown 要素の描画に、どのコンポーネントを使うかを設定できます（`{ h1: MyHeading }`）。
 
-📚 **Markdown-based**: The simplicity and elegance of markdown remains;
-you interleave JSX only when you want to.
+📚 **Markdown ベース**: Markdown の簡単さ、単純さを保ちます。JSX を使うのは、あなたが使いたいと思ったときだけです。
 
-🔥 **Blazingly blazing fast**: MDX has no runtime, all compilation occurs
-during the build stage.
+🔥 **超高速**: MDX にランタイムはありません。すべての構築作業はビルド段階で行われます。
 
 <GuideList slug={props.slug} />
 
