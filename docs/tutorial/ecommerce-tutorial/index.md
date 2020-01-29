@@ -69,10 +69,37 @@ npm install gatsby-plugin-stripe
 ```js:title=gatsby-config.js
 module.exports = {
   siteMetadata: {
-    title: "Gatsby E-Commerce Starter",
+    title: `Gatsby E-Commerce Starter`,
+    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    author: `@gatsbyjs`,
   },
-  plugins: ["gatsby-plugin-react-helmet", "gatsby-plugin-stripe"],
+  plugins: [
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `gatsby-starter-default`,
+        short_name: `starter`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    `gatsby-plugin-stripe`
+  ],
 }
+
 ```
 
 ### ブラウザでホットリロードされることを確認しよう
@@ -82,17 +109,14 @@ module.exports = {
 
 > **NOTE**:もし、既にGatsbyの開発サーバを`npm run develop`で起動していた場合、コマンドを実行したターミナルで CTRL + C を押してサーバを再起動し、`npm run develop`コマンドを再度実行することで[localhost:8000](http://localhost:8000/)に反映された`gatsby-config.js`の変更を確認するできます。
 
-### How does the StripeJS plugin work?
-
-Stripe provides a JavaScript library the allows you to securely redirect your customer to the Stripe hosted checkout page. The Gatsby plugin, `gatsby-plugin-stripe`, will add this snippet:
+### StripeJS pluginはどのように動作するか
+StripeはJavaScriptライブラリを提供します。これにより、Stripeがホストする支払いページに顧客を安全にリダイレクトできます。Gatsbyプラグインの`gatsby-plugin-stripe`は全てのページで`<body>`タグの末尾に次のスニペットを追加します：
 
 ```html
 <script src="https://js.stripe.com/v3/"></script>
 ```
-
-to the end of the `<body>` tag across all of your pages. This helps facilitate Stripe's [fraud detection](https://stripe.com/docs/stripe-js/reference#including-stripejs).
-
-If you want to further customise the checkout process or pull Stripe data into your site, check out [Gatsby's plugin library for more Stripe plugins](https://www.gatsbyjs.org/plugins/?=stripe).
+これにより、Stripeの不正検出[[fraud detection](https://stripe.com/docs/stripe-js/reference#including-stripejs)]が容易になります
+もし支払い処理をさらにカスタマイズしたりSrtipeのデータをサイトに引いてくる場合は、[GatsbyのプラグインライブラリでStripeプラグインを確認](https://www.gatsbyjs.org/plugins/?=stripe)してください。
 
 ### Getting your Stripe test keys
 
