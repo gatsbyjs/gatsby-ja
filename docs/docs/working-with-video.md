@@ -15,7 +15,7 @@ Gatsby サイトに動画を含めるもっとも簡単な方法は、YouTube �
 
 ## ホストされた動画を Markdown に埋め込む
 
-ホストされた動画を Markdown の投稿やページから使用できるようにする多くの Gatsby プラグインがあります。 YouTube や Vimeo などのさまざまなホストから取得するには、[gatsby-remark-embed-video](/packages/gatsby-remark-embed-video/?=video)プラグインを確認することをお勧めします。
+ホストされた動画を Markdown 投稿やページから使用できるようにする、多くの Gatsby プラグインがあります。 YouTube や Vimeo などのさまざまなホストから動画を取得するには、[gatsby-remark-embed-video](/packages/gatsby-remark-embed-video/?=video)プラグインをお勧めします。
 
 ### ホストされた動画のためのカスタムコンポーネントを作成する
 
@@ -70,7 +70,7 @@ export default NotFoundPage
 
 ## GraphQL を使用して Markdown から動画を要求する
 
-もし Markdown のページまたは投稿が特定の動画を含む場合は、[その序文]（/docs/adding-markdown-pages＃note-on-creating-markdown-files）に動画の URL とタイトルを含めることができます。これにより、これらの値をカスタムコンポーネントに渡すことができます。
+もし Markdown のページまたは投稿が特定の動画を含む場合は、[その序文](/docs/adding-markdown-pages＃note-on-creating-markdown-files)に動画の URL とタイトルを含めることができます。これにより、これらの値をカスタムコンポーネントに渡すことができます。
 
 ```markdown:title=my-first-post.md
 ---
@@ -91,9 +91,9 @@ import { graphql } from "gatsby"
 import Video from "../components/video"
 
 export default function VlogTemplate({
-  data, // このpropは下のGraphQLのQueryによって注入されます。
+  data, // この prop は下の GraphQL の Query によって注入されます。
 }) {
-  const { markdownRemark } = data // data.markdownRemarkはあなたの投稿データを持っています
+  const { markdownRemark } = data // data.markdownRemark はあなたの投稿データを持っています
   const { frontmatter, html } = markdownRemark
   return (
     <div className="blog-post-container">
@@ -173,7 +173,7 @@ export default () => (
 
 ```
 
-2 つの `<source>` 要素がありますが、この中から 1 つだけが使用されます。サポートされていれば `mp4` 、 次に`.ogg`。
+2 つの `<source>` 要素がありますが、この中から 1 つだけが使用されます。サポートされていれば `mp4` 、 次に `.ogg` 。
 
 **注意**: このとき、指定されたタイプの形式で動画をインポートする必要があります。つまり、 `type=video/ogg` を持つ `<source>` 要素を追加するには、 `.ogg` の形式でファイルをインポートする必要があるということです。もしくは、ローカルファイルをインポートする代わりに、動画がリモートでホストされる場所の URL を `src` として指定できます。
 
@@ -184,11 +184,11 @@ export default () => (
 カスタムコンポーネントを独自にホストした動画と統合する利点の 1 つは、アクセシビリティを含め、動画プレーヤーをより詳細に制御できることです。アクセシビリティに関する動画と音声の要素は次のとおりです。
 
 - 字幕：動画の音声のテキストバージョン
-- 写し（または副題）：動画の重要な視覚要素の説明も含めた字幕のような音声や視覚コンテンツのテキストバージョン
+- 文字起こし（または字幕）：動画の重要な視覚要素の説明も含めた字幕のような音声や視覚コンテンツのテキストバージョン
 - 音声解説：対話で補えない視覚情報の音声バージョン
 - アクセシブルコントロール：ラベルが付けられてたり、環境やブラウザーを越えて機能する、マウスなしで操作できる動画を操作するためのボタン
 
-字幕、写し、および音声解説は、主に見ること、聞くことが困難な人を支援することを目的としていますが、聞くことよりも読むことを好む他の多くのユーザーにとって有益です。字幕は、何らかの理由で音声を有効にできない時に動画を視聴したい人々にも役立ちます。
+字幕、文字起こし、および音声解説は、主に見ること、聞くことが困難な人を支援することを目的としていますが、聞くことよりも読むことを好む他の多くのユーザーにとって有益です。字幕は、何らかの理由で音声を有効にできない時に動画を視聴したい人々にも役立ちます。
 
 HTML5 は、 `<track>` 要素を通してこれらのタイプの支援コンテンツのサポートを提供します。 `<track>` 要素は、空のタグとして `<video>` 要素の入れ子にします。動画での `<track>` 要素の使用例は次のようになります。
 
