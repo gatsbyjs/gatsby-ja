@@ -1,7 +1,7 @@
 ---
-title: Additional Tutorials
+title: 追加のチュートリアル
 ---
 
-There are many use cases for Gatsby, from the very common "happy paths" to more specific and complex integrations. With additional Gatsby tutorials, learn about more topics that go beyond [the basics](/tutorial/) and gain development superpowers.
+Gatsby には、すでに動作が保証されている使い方から、固有で複合的な使い方まで、多くのユースケースがあります。追加のチュートリアルによって、[基本](/tutorial/)のその先を学び、開発力を上げましょう。
 
 <GuideList slug={props.slug} />

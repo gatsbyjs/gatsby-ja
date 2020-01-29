@@ -3,22 +3,22 @@ title: GraphQL
 disableTableOfContents: true
 ---
 
-## What is GraphQL?
+## GraphQL とは？
 
-GraphQL is a query language for requesting information from an [API](/docs/glossary#api), and a protocol for servers that support it. GraphQL is one of the ways that you can import data into your Gatsby components.
+GraphQL は、[API](/docs/glossary#api) から情報を要求するためのクエリ言語であり、それをサポートするサーバーのプロトコルです。GraphQL は、Gatsby コンポーネントにデータを取り込むことのできる方法の 1 つです。
 
-Facebook created GraphQL in 2012 when it realized that it needed an API capable of supporting both web-based and native mobile applications. Facebook released GraphQL with an open source license in 2015.
+Facebook は、Web アプリケーションとネイティブアプリケーションの両方をサポートできる API が必要であることに気づき、2012 年に GraphQL を作成しました。Facebook は、2015 年にオープンソースライセンスとして GraphQL をリリースしました。
 
-More traditional APIs use a separate endpoint for each piece or type of data you'd like to request. For example, a newspaper API might contain:
+従来の API では、リクエストするデータごとに個別のエンドポイントを使用します。たとえば、新聞の API には次のものが含まれます。
 
-- an `/articles/<id>` endpoint that returns a specific news story;
-- a `/reporters/<id>` endpoint that returns information about a particular reporter.
+- 特定のニュース記事を返す `/articles/<id>` エンドポイント。
+- 特定のレポーターに関する情報を返す `/reporters/<id>` エンドポイント。
 
-A single news article page might require two separate network requests: one to retrieve the story data, and another for the reporter's contact details. What's more, the `/reporters` endpoint may return more data than you want to display; it might return their biography and social media accounts, when their name, email, and photo are all that you need for the page.
+1 つのニュース記事ページには、2 つのリクエストが必要になる場合があります。さらに、 `/reporters` エンドポイントは、表示するよりも多くのデータを返す場合があります。名前、メール、写真がページに必要な時、経歴やソーシャルメディアアカウントが余分に返される場合があります。
 
-A GraphQL API, on the other hand, has a single endpoint. To retrieve data, you send one request string that uses a GraphQL-specific syntax. GraphQL executes the functions necessary to retrieve the data that you've requested, and returns a single JSON response.
+一方、GraphQL API は単一のエンドポイントを持ちます。データを取得するには、GraphQL 固有の構文を用いて 1 つのリクエストを送信します。GraphQL は、要求したデータを取得するために必要な関数を実行し、単一の JSON 応答を返します。
 
-A request for an article and its reporter might look like the example that follows.
+特定の記事とレポーターを取得するためのリクエストは、次の例のようになります。
 
 ```graphql
 {
@@ -34,7 +34,7 @@ A request for an article and its reporter might look like the example that follo
 }
 ```
 
-And its response contains only what you've requested.
+そして、そのレスポンスには、リクエストしたプロパティのみが含まれます。
 
 ```json
 {
@@ -52,18 +52,18 @@ And its response contains only what you've requested.
 }
 ```
 
-You do not have to use GraphQL with Gatsby, however GraphQL offers a few advantages over other methods of importing data.
+Gatsby で GraphQL を使用する必要はありませんが、GraphQL には他のデータ取得方法に比べていくつかの利点があります。
 
-- You can retrieve only the data that you need for a view.
-- You can add new data types and capabilities without needing to create a new endpoint.
-- You can store content in whatever way makes sense for your site, whether that's in a database, a third-party headless CMS, or Markdown-formatted text files.
+- ページの表示に必要なデータのみを取得できます。
+- 新しいエンドポイントを作成することなく、新しいデータ型と機能を追加できます。
+- データベース、サードパーティのヘッドレス CMS、Markdown 形式のテキストファイルなど、サイトにとって適切な方法でコンテンツを保存できます。
 
-## Learn more
+## さらに学ぶ
 
 - [GraphQL & Gatsby](/docs/graphql/)
 
-- [Why Gatsby Uses GraphQL](/docs/why-gatsby-uses-graphql/)
+- [Gatsby が GraphQL を使用する理由](/docs/why-gatsby-uses-graphql/)
 
-- [GraphQL](https://graphql.org) official site
+- [GraphQL](https://graphql.org) 公式サイト
 
-- [How to GraphQL](https://www.howtographql.com/)
+- [GraphQL の使い方](https://www.howtographql.com/)

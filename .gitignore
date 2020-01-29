@@ -1,4 +1,5 @@
 node_modules
+.textlintcache
 
 # We're using yarn, so no package-lock.json
 package-lock.json

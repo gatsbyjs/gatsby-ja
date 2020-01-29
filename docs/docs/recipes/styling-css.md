@@ -1,19 +1,19 @@
 ---
-title: "Recipes: Styling with CSS"
+title: "レシピ: CSSによるスタイリング"
 ---
 
-There are so many ways to add styles to your website; Gatsby supports almost every possible option, through official and community plugins.
+ウェブサイトにスタイルを適用する方法はとてもたくさんありますが、 Gatsby では公式や非公式のプラグインによってほぼ全ての方法がサポートされています。
 
-## Using global CSS files without a Layout component
+## レイアウトコンポーネントなしでグローバル CSS ファイルを使う
 
-### Prerequisites
+### 必要事項
 
-- An existing [Gatsby site](/docs/quick-start/) with an index page component
-- A `gatsby-browser.js` file
+- インデックスページコンポーネントを含む既存の [Gatsby で作られたサイト](/docs/quick-start/)
+- `gatsby-browser.js` ファイル
 
-### Directions
+### やり方
 
-1. Create a global CSS file as `src/styles/global.css` and paste the following into the file:
+1. `src/styles/global.css` という名前のグローバル CSS ファイルを作成し、 以下の内容をペーストします。
 
 ```css:title=src/styles/global.css
 html {
@@ -25,37 +25,37 @@ p {
 }
 ```
 
-2. Import the global CSS file in the `gatsby-browser.js` file such as the following:
+2. 次に示すような形で、`gatsby-browser.js` にグローバル CSS ファイルをインポートします。
 
 ```javascript:title=gatsby-browser.js
 import "./src/styles/global.css"
 ```
 
-> **Note:** You can also make use of `require('./src/styles/global.css')` to import the global CSS file in your `gatsby-config.js` file.
+> **ヒント:** `gatsby-config.js` の中で `require('./src/styles/global.css')` を使ってグローバル CSS ファイルをインポートすることもできます。
 
-3. Run `gatsby-develop` to observe the global styling being applied across your site.
+3. `gatsby develop` を実行して、グローバルのスタイルがあなたのサイトに適用されたことを確認してみましょう。
 
-> **Note:** This approach is not the best fit if you are using CSS-in-JS for styling your site, in which case a layout page with all the shared components should be used. This is covered in the next recipe.
+> **注意:** あなたのサイトのスタイル手法として CSS-in-JS を使っている場合、この方法はベストではありません。その場合はレイアウトページと shared コンポーネント全てが使われるべきです。これについては次のレシピで説明します。
 
-### Additional resources
+### 追加のリソース
 
-- More on [adding global styles without a layout component](/docs/global-css/#adding-global-styles-without-a-layout-component)
+- より詳細な [レイアウトコンポーネントを使わずにグローバルスタイルを追加する方法について](/docs/global-css/#adding-global-styles-without-a-layout-component)
 
-## Using global styles in a layout component
+## レイアウトコンポーネントでグローバルスタイルを使う
 
-### Prerequisites
+### 必要事項
 
-- A [Gatsby site](/docs/quick-start/) with an index page component
+- インデックスページコンポーネントを含む既存の [Gatsby で作られたサイト](/docs/quick-start/)
 
-### Directions
+### やり方
 
-You can add global styles to a [shared layout component](/tutorial/part-three/#your-first-layout-component). This component is used for things that are common throughout the site, like a header or footer.
+グローバルなスタイルを [shared レイアウトコンポーネント](/tutorial/part-three/#your-first-layout-component)に追加できます。このコンポーネントはサイト全体を通して共通のもの、例えばヘッダーやフッターなどに使われます。
 
-1. If you don't already have one, create a new directory in your site at `/src/components`.
+1. まだなければ、新たに `/src/components` というディレクトリーを作成します。
 
-2. Inside the components directory, create two files: `layout.css` and `layout.js`.
+2. components ディレクトリー内で、次の 2 つのファイルを作成します: `layout.css` と `layout.js`
 
-3. Add the following to `layout.css`:
+3. 以下の内容を `layout.css` に追加します。
 
 ```css:title=/src/components/layout.css
 body {
@@ -63,7 +63,7 @@ body {
 }
 ```
 
-4. Edit `layout.js` to import the CSS file and output layout markup:
+4. CSS をインポートし、マークアップを出力するように `layout.js` を編集します。
 
 ```jsx:title=/src/components/layout.js
 import React from "react"
@@ -72,7 +72,7 @@ import "./layout.css"
 export default ({ children }) => <div>{children}</div>
 ```
 
-5. Now edit your site's homepage at `/src/pages/index.js` and use the new layout component:
+5. それでは、あなたのサイトのホームページである `/src/pages/index.js` を編集して、新しく作成したレイアウトコンポーネントを使ってみましょう！
 
 ```jsx:title=/src/pages/index.js
 import React from "react"
@@ -81,21 +81,21 @@ import Layout from "../components/layout"
 export default () => <Layout>Hello world!</Layout>
 ```
 
-### Additional resources
+### 追加のリソース
 
-- [Standard Styling with Global CSS Files](/docs/global-css/)
-- [More about layout components](/tutorial/part-three)
+- [グローバル CSS ファイルを使ったスタンダードなスタイリング](/docs/global-css/)
+- [レイアウトコンポーネントについてもっと詳しく](/tutorial/part-three)
 
-## Using Styled Components
+## Styled Components を使う
 
-### Prerequisites
+### 必要事項
 
-- A [Gatsby site](/docs/quick-start/) with an index page component
-- [gatsby-plugin-styled-components, styled-components, and babel-plugin-styled-components](/packages/gatsby-plugin-styled-components/) installed in `package.json`
+- インデックスページコンポーネントを含む既存の [Gatsby で作られたサイト](/docs/quick-start/)
+- [gatsby-plugin-styled-components, styled-components, そして babel-plugin-styled-components](/packages/gatsby-plugin-styled-components/) が `package.json` にインストールされていること
 
-### Directions
+### やり方
 
-1. Inside your `gatsby-config.js` file add `gatsby-plugin-styled-components`
+1. `gatsby-config.js` ファイルの中で `gatsby-plugin-styled-components` を追加します。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -103,11 +103,11 @@ module.exports = {
 }
 ```
 
-2. Open the index page component (`src/pages/index.js`) and import the `styled-components` package
+2. インデックスページコンポーネントを開き (`src/pages/index.js`) `styled-components` パッケージをインポートします。
 
-3. Style components by creating style blocks for each element type
+3. スタイルブロックを各要素タイプ毎に作成することでコンポーネントをスタイルします。
 
-4. Apply to the page by including styled components in the JSX
+4. JSX に styled components を含めることでページに適用します。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -157,22 +157,22 @@ export default () => (
 )
 ```
 
-4. Run `gatsby develop` to see the changes
+5. `gatsby develop` を実行し、変更を確認してみましょう。
 
-### Additional resources
+### 追加のリソース
 
-- [More on Using Styled Components](/docs/styled-components/)
-- [Egghead lesson](https://egghead.io/lessons/gatsby-style-gatsby-sites-with-styled-components)
+- [Styled Components についてより詳しく](/docs/styled-components/)
+- [Egghead のレッスン](https://egghead.io/lessons/gatsby-style-gatsby-sites-with-styled-components)
 
-## Using CSS Modules
+## CSS モジュールを使う
 
-### Prerequisites
+### 必要事項
 
-- An existing [Gatsby site](/docs/quick-start/) with an index page component
+- インデックスページコンポーネントを含む既存の [Gatsby で作られたサイト](/docs/quick-start/)
 
-### Directions
+### やり方
 
-1. Create a CSS module as `src/pages/index.module.css` and paste the following into the module:
+1. CSS モジュールを `src/pages/index.module.css` という形で作成し以下の内容をモジュールにペーストします。
 
 ```css:title=src/pages/index.module.css
 .feature {
@@ -181,7 +181,7 @@ export default () => (
 }
 ```
 
-2. Import the CSS module as a JSX object `style` in the `index.js` file by modifying the page so it looks like the following:
+2. `index.js` ファイルのページを編集することによって CSS モジュールを `style` という JSX オブジェクトとしてファイルにインポートします。以下のようになります。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -197,41 +197,41 @@ export default () => (
 // highlight-end
 ```
 
-3. Run `gatsby develop` to see the changes.
+3. `gatsby develop` を実行して変更を確認します。
 
-**Note:**
-Notice that the file extension is `.module.css` instead of `.css`, which tells Gatsby that this is a CSS module.
+**注意:**
+ファイルの拡張子が `.css` ではなく `.module.css` であることに気をつけてください。これによって Gatsby にこのファイルが CSS モジュールであることを伝えています。
 
-### Additional resources
+### 追加のリソース
 
-- More on [Using CSS Modules](/tutorial/part-two/#css-modules)
-- [Live example on Using CSS modules](https://github.com/gatsbyjs/gatsby/blob/master/examples/using-css-modules)
+- より詳細な [CSS モジュールの使用について](/tutorial/part-two/#css-modules)
+- [CSS モジュールの実際の使用例](https://github.com/gatsbyjs/gatsby/blob/master/examples/using-css-modules)
 
-## Using Sass/SCSS
+## Sass/SCSS を使う
 
-Sass is an extension of CSS that gives you more advanced features like nested rules, variables, mixins, and more.
+Sass とは CSS の拡張であり、ネストしたルール、変数、ミックスイン、その他にもさまざまな高度な機能を提供します。
 
-Sass has 2 syntaxes. The most commonly used syntax is "SCSS", and is a superset of CSS. That means all valid CSS syntax, is valid SCSS syntax. SCSS files use the extension .scss
+Sass には二種類の記法があります。もっとも普及しているのが "SCSS" 記法で、CSS のスーパーセットです。これは CSS として正しい記法のもの全てが SCSS 記法としても正しいことを意味します。 SCSS ファイルは拡張子に .scss を使います。
 
-Sass will compile .scss and .sass files to .css files for you, so you can write your stylesheets with more advanced features.
+Sass は .scss と .sass ファイルを .css ファイルにコンパイルしてくれるので、あなたはスタイルシートでより高度な機能を使うことができます。
 
-### Prerequisites
+### 必要事項
 
-- A [Gatsby site](/docs/quick-start/).
+- [Gatsby で作られたサイト](/docs/quick-start/)
 
-### Directions
+### やり方
 
-1. Install the Gatsby plugin [gatsby-plugin-sass](https://www.gatsbyjs.org/packages/gatsby-plugin-sass/) and `node-sass`.
+1. Gatsby のプラグイン [gatsby-plugin-sass](https://www.gatsbyjs.org/packages/gatsby-plugin-sass/) と `node-sass` をインストールします。
 
 `npm install --save node-sass gatsby-plugin-sass`
 
-2. Include the plugin in your `gatsby-config.js` file.
+2. `gatsby-config.js` ファイルにプラグインを追加します。
 
 ```javascript:title=gatsby-config.js
 plugins: [`gatsby-plugin-sass`],
 ```
 
-3.  Write your stylesheets as `.sass` or `.scss` files and import them. If you don't know how to import styles, take a look at [Styling with CSS](/docs/recipes/#2-styling-with-css)
+3. `.sass` または `.scss` ファイルとしてスタイルシートを書き、インポートします。スタイルをインポートする方法がわからない場合は、[CSS によるスタイリング](/docs/recipes/#2-styling-with-css)を確認してください。
 
 ```css:title=styles.scss
 $font-stack: Helvetica, sans-serif;
@@ -257,30 +257,30 @@ import "./styles.scss"
 import "./styles.sass"
 ```
 
-_Note: You can use Sass/SCSS files as modules too, like mentioned in the previous recipe about CSS modules, with the difference that instead of .css the extensions have to be .scss or .sass_
+_ヒント: .css のかわりに拡張子を .scss または .sass にしなければならないという違いがありますが、前の CSS モジュールのレシピで言及したように Sass/SCSS ファイルをモジュールとして使うこともできます。_
 
-### Additional resources
+### 追加のリソース
 
-- [Difference between .sass and .scss](https://responsivedesign.is/articles/difference-between-sass-and-scss/)
-- [Sass guide from the official Sass website](https://sass-lang.com/guide)
-- [A more complete installation tutorial on Sass with some more explanations and more resources](https://www.gatsbyjs.org/docs/sass/)
+- [.sass と .scss の違いについて](https://responsivedesign.is/articles/difference-between-sass-and-scss/)
+- [Sass 公式サイトによる Sass ガイド](https://sass-lang.com/guide)
+- [より詳細な解説とリソースを含んだ、より完全な Sass の導入チュートリアル](https://www.gatsbyjs.org/docs/sass/)
 
-## Adding a Local Font
+## ローカルフォントを追加する
 
-### Prerequisites
+### 必要事項
 
-- A [Gatsby site](/docs/quick-start/)
-- A font file: `.woff2`, `.ttf`, etc.
+- [Gatsby で作られたサイト](/docs/quick-start/)
+- フォントファイル 1 つ: `.woff2`, `.ttf`, など。
 
-### Directions
+### やり方
 
-1. Copy a font file into your Gatsby project, such as `src/fonts/fontname.woff2`.
+1. フォントファイルを Gatsby のプロジェクトにコピーします。例: `src/fonts/fontname.woff2`
 
 ```text
 src/fonts/fontname.woff2
 ```
 
-2. Import the font asset into a CSS file to bundle it into your Gatsby site:
+2. Gatsby のサイトにバンドルするため、CSS ファイルにフォントのアセットをインポートします。
 
 ```css:title=src/css/typography.css
 @font-face {
@@ -289,7 +289,7 @@ src/fonts/fontname.woff2
 }
 ```
 
-**Note:** Make sure the font name is referenced from the relevant CSS, e.g.:
+**注意:** 次の例のように、関連する CSS ファイルからフォント名が参照されていることを確認してください。
 
 ```css:title=src/components/layout.css
 body {
@@ -297,31 +297,31 @@ body {
 }
 ```
 
-By targeting the HTML `body` element, your font will apply to most text on the page. Additional CSS can target other elements, such as `button` or `textarea`.
+HTML の `body` 要素を対象にすることで、 あなたのフォントはほとんどのテキストに適用されます。追加の CSS で `button` や `textarea` といった他の要素を対象にできます。
 
-If fonts are not updating following steps above, make sure to replace the existing font-family in relevant CSS.
+上記の手順でフォントが反映されない場合、関連する CSS で既存の `font-family` が置き換えられているか確認してください。
 
-### Additional resources
+### 追加のリソース
 
-- More on [importing assets into files](/docs/importing-assets-into-files/)
+- より詳細な [ファイルへのアセットのインポートについて](/docs/importing-assets-into-files/)
 
-## Using Emotion
+## Emotion を使う
 
-[Emotion](https://emotion.sh) is a powerful CSS-in-JS library that supports both inline CSS styles and styled components. You can use each styling feature individually or together in the same file.
+[Emotion](https://emotion.sh) とは強力な CSS-in-JS のライブラリーでインライン CSS スタイルに加え、 styled components もサポートします。同じファイルで各々の機能をバラバラに使うことも、一緒に使うこともできます。
 
-### Prerequisites
+### 必要事項
 
-- A [Gatsby site](/docs/quick-start)
+- [Gatsby で作られたサイト](/docs/quick-start/)
 
-### Directions
+### やり方
 
-1. Install the [Gatsby Emotion plugin](/packages/gatsby-plugin-emotion/) and Emotion packages.
+1. [Gatsby Emotion plugin](/packages/gatsby-plugin-emotion/) と Emotion のパッケージをインストールします。
 
 ```shell
 npm install --save gatsby-plugin-emotion @emotion/core @emotion/styled
 ```
 
-2. Add the `gatsby-plugin-emotion` plugin to your `gatsby-config.js` file:
+2. `gatsby-plugin-emotion` プラグインを `gatsby-config.js` ファイルに追加します。:
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -329,9 +329,9 @@ module.exports = {
 }
 ```
 
-3. If you don't already have one, create a page in your Gatsby site at `src/pages/emotion-sample.js`.
+3. もしまだなければ、あなたの Gatsby サイトの `src/pages/emotion-sample.js` に新しいページを作成します。
 
-Import Emotion's `css` core package. You can then use the `css` prop to add [Emotion object styles](https://emotion.sh/docs/object-styles) to any element inside a component:
+Emotion の `css` コアパッケージをインポートします。そうすることで `css` prop を使って [Emotion の object styles](https://emotion.sh/docs/object-styles) をコンポーネント内のどんな要素にも追加できるようになります。
 
 ```jsx:title=src/pages/emotion-sample.js
 import React from "react"
@@ -351,7 +351,7 @@ export default () => (
 )
 ```
 
-4. To use Emotion's [styled components](https://emotion.sh/docs/styled), import the package and define them using the `styled` function.
+4. Emotion の [styled components](https://emotion.sh/docs/styled) を使うには、パッケージをインポートし `styled` 関数を使って定義します。
 
 ```jsx:title=src/pages/emotion-sample.js
 import React from "react"
@@ -372,35 +372,35 @@ export default () => (
 )
 ```
 
-### Additional resources
+### 追加のリソース
 
-- [Using Emotion in Gatsby](/docs/emotion/)
-- [Emotion website](https://emotion.sh)
-- [Getting started with Emotion and Gatsby](https://egghead.io/lessons/gatsby-getting-started-with-emotion-and-gatsby)
+- [Gatsby で Emotion を使う](/docs/emotion/)
+- [Emotion のウェブサイト](https://emotion.sh)
+- [Emotion と Gatsby 入門](https://egghead.io/lessons/gatsby-getting-started-with-emotion-and-gatsby)
 
-## Using Google Fonts
+## Google Fonts を使う
 
-Hosting your own [Google Fonts](https://fonts.google.com/) locally within a project means they won't have to be fetched over the network when your site loads, increasing your site's speed index by up to ~300 milliseconds on desktop and 1+ seconds on 3G. It's also recommended to limit custom font usage to only the essential for performance.
+独自の [Google Fonts](https://fonts.google.com/) をプロジェクト内でローカルにホスティングするということは、サイトのロード時にネットワークを越えてフォントを取得してくる必要がないということを意味し、あなたのサイトの Speed Index をデスクトップで ~300 ミリ秒まで、3G で 1+ 秒ほど向上させます。また、パフォーマンスのためにカスタムフォントの使用を本当に必要なものだけに絞ることが推奨されます。
 
-### Prerequisites
+### 必要事項
 
-- A [Gatsby site](/docs/quick-start)
-- The [Gatsby CLI](/docs/gatsby-cli/) installed
-- Choosing a font package from [the typefaces project](https://github.com/KyleAMathews/typefaces)
+- [Gatsby で作られたサイト](/docs/quick-start)
+- [Gatsby CLI](/docs/gatsby-cli/) がインストール済みであること
+- [the typefaces project](https://github.com/KyleAMathews/typefaces) からフォントを選択済みであること
 
-### Directions
+### やり方
 
-1. Run `npm install --save typeface-your-chosen-font`, replacing `your-chosen-font` with the name of the font you want to install from [the typefaces project](https://github.com/KyleAMathews/typefaces).
+1. `npm install --save typeface-your-chosen-font` を実行します。 `your-chosen-font` の部分を [the typefaces project](https://github.com/KyleAMathews/typefaces) から選んだインストールしたいフォントに置き換えます。
 
-An example to load the popular 'Source Sans Pro' font would be: `npm install --save typeface-source-sans-pro`.
+人気のある 'Source Sans Pro' フォントの場合の例: `npm install --save typeface-source-sans-pro`.
 
-2. Add `import "typeface-your-chosen-font"` to a layout template, page component, or `gatsby-browser.js`.
+2. `import "typeface-your-chosen-font"` をレイアウトテンプレート、ページコンポーネント、または `gatsby-browser.js` に追加します。
 
 ```jsx:title=src/components/layout.js
 import "typeface-your-chosen-font"
 ```
 
-3. Once it's imported, you can reference the font name in a CSS stylesheet, CSS Module, or CSS-in-JS.
+3. フォントがインポートされた後は、CSS スタイルシート、 CSS モジュール、または CSS-in-JS からフォント名を参照できます。
 
 ```css:title=src/components/layout.css
 body {
@@ -408,10 +408,10 @@ body {
 }
 ```
 
-_NOTE: So for the above example, the relevant CSS declaration would be `font-family: 'Source Sans Pro';`_
+_ヒント: 上記の例の場合、ふさわしい CSS の宣言は `font-family: 'Source Sans Pro';` のようになります。_
 
-### Additional resources
+### 追加のリソース
 
-- [Typography.js](/docs/typography-js/) - Another option for using Google fonts on a Gatsby site
-- [The Typefaces Project Docs](https://github.com/KyleAMathews/typefaces/blob/master/README.md)
-- [Live example on Kyle Mathews' blog](https://www.bricolage.io/typefaces-easiest-way-to-self-host-fonts/)
+- [Typography.js](/docs/typography-js/) - Google fonts を Gatsby 製のサイトで使う他のオプション
+- [The Typefaces Project ドキュメント](https://github.com/KyleAMathews/typefaces/blob/master/README.md)
+- [Kyle Mathews' blog による実例](https://www.bricolage.io/typefaces-easiest-way-to-self-host-fonts/)

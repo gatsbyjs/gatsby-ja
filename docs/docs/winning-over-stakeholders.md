@@ -1,15 +1,15 @@
 ---
-title: Winning Over Stakeholders
+title: いろいろな利害関係者を説得する
 ---
 
-Any website project has multiple stakeholders, such as developers, marketers, content creators, engineering leaders, executives, and clients.
+どんな Web 制作のプロジェクトにも開発者や、営業、コンテンツ製作者、エンジニアリーダー、経営者、顧客などさまざまな立場の人たちが関わっています。
 
-In smaller projects and organizations, one person may wear multiple hats. As a freelancer, you may be the developer, marketer, content creator, and engineering leader rolled into one. Working at a mid-sized agency or organization, you are likely to only wear one hat at a time.
+小さなプロジェクトや組織では、一人がたくさんの役割や仕事をする場合もあります。フリーランサーとっては一人で開発者、営業、コンテンツ製作者、エンジニアリーダーになることでしょう。また中規模の企業や組織では、ひとつの役割だけを担うことになるかもしれません。
 
-When working with other stakeholders, it's important to understand their motivations so you can explain the benefits of Gatsby in a way that resonates with them.
+違う立場の人と働いている時は、共感が得られるように Gatsby の利点を説明するために周りの人たちのやる気や動機づけを理解することが重要です。
 
-For example, marketers typically care about increasing leads and conversion rates, executives focus on driving revenue, and clients prioritize the project shipping on time and under budget.
+たとえば、一般的に営業の人は見込み客の増加や成約率を気にしていますし、経営者は売り上げに集中しています。そして顧客はプロジェクトの納期や予算内に収まるかを優先します。
 
-This section includes guides to explaining the benefits of Gatsby to the various types of stakeholders that you may work with.
+この章では、一緒に働くかもしれないさまざまな利害関係者に Gatsby の利点を説明するためのガイドをご紹介します。
 
 <GuideList slug={props.slug} />

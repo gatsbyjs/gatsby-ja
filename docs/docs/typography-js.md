@@ -2,17 +2,17 @@
 title: Typography.js
 ---
 
-## Using Typography.js in Gatsby
+## Typography.js を Gatsby で使う
 
-Typography.js is a JavaScript library that allows you to explore the typographic design of your website and define beautiful custom and pre-existing typographic themes. It enables you to change the font on your website with ease. Typography.js currently maintains over 30 themes for you to use. You can also create your own custom font themes if no available themes fit your requirements. To use Typography in your project, you will be installing a [Gatsby plugin](https://www.gatsbyjs.org/packages/gatsby-plugin-typography/) and specifying a configuration object for Typography.
+Typography.js はサイトに合うタイプデザインを調査し、カスタマイズ可能な既存の美しいテーマを設定する Javascript ライブラリーです。これを使えば、簡単にあなたのサイトのフォントを変更できます。Typography.js では現在、30 以上のテーマが使えるようにメンテナンスされています。欲しいテーマがなければ、自分でテーマを作ることもできます。Typography をプロジェクトで使うためには、[Gatsby プラグイン](https://www.gatsbyjs.org/packages/gatsby-plugin-typography/)をインストールし、Typography 用の設定を書く必要があります。
 
-## Installing the Typography plugin
+## Typography プラグインのインストール
 
-Gatsby has the plugin `gatsby-plugin-typography` to integrate Typography.js into your project.
+Gatsby はプロジェクトに Typography.js を導入するため、`gatsby-plugin-typography` というプラグインを用意しています。
 
-You can install the plugin and its peer dependencies into your project by running the command `npm install gatsby-plugin-typography react-typography typography --save`
+`npm install gatsby-plugin-typography react-typography typography --save` というコマンドを打つことで、プラグインとその peer dependencies のインストールを行うことができます。
 
-After the installation of the plugin is complete, navigate to your `gatsby-config.js` file located in the root of your project's directory and add the plugin to the configuration:
+インストールが完了したら、プロジェクトルートにある `gatsby-config.js` ファイルを開き、以下のようにプラグインの設定を足します。
 
 ```js:title=gatsby-config.js
 module.exports = {
@@ -29,16 +29,16 @@ module.exports = {
 }
 ```
 
-`gatsby-plugin-typography` takes two options for you to specify:
+`gatsby-plugin-typography` には 2 つのオプションを指定できます。
 
-- **pathToConfigModule** (string): The path to the file where you export your Typography configuration.
-- **omitGoogleFont** (boolean, `default: false`): By default, Typography includes a helper that makes a request to Google Font's CDN for fonts you need. You may want to use your own fonts, either by injecting fonts or using a CDN of your choosing. By setting `omitGoogleFont: true`, `gatsby-plugin-typography` will skip adding the font helper. Instead, you will have to include the appropriate fonts yourself - see [Adding a Local Font](/docs/recipes/styling-css#adding-a-local-font)
+- **pathToConfigModule** (string): Typography の設定ファイルへのパス
+- **omitGoogleFont** (boolean, `default: false`): デフォルトでは Typography は必要なフォントを Google Font の CDN にリクエストを送るヘルパーを含んでいます。自分で用意したフォントを使いたい場合、もしくは自分でフォントを読み込む CDN を選択する場合は、`omitGoogleFont: true`, `gatsby-plugin-typography` を指定することでフォントヘルパーを追加する工程をスキップできます。その代わり、適切なフォントを自身で読み込まないといけません。[Adding a Local Font](/docs/recipes/styling-css#adding-a-local-font) を参照してください。
 
-## Creating the Typography configuration
+## Typography の設定の作成
 
-Now that you have added the plugin, create the directory `src/utils/` if it does not already exist in your project and add a new file named `typography.js`. You will use this file to specify the Typography configuration and set this file to be the path for the `pathToConfigModule` option.
+ここまででプラグインを追加したので、もし `src/utils/` ディレクトリーがなかった場合は作成し、`typography.js` という名前のファイルを追加してください。このファイルに Typography の設定を書き、このファイルへのパスを `pathToConfigModule` オプションに設定します。
 
-Inside the `typography.js` file you created, you define your website's typography configuration. A basic typography.js configuration looks like this:
+作成した `typography.js` ファイルの中には、サイトのタイプデザインの設定を書きます。基本的な設定は次のようになっています。
 
 ```js:title=src/utils/typography.js
 import Typography from "typography"
@@ -60,17 +60,17 @@ const typography = new Typography({
 export default typography
 ```
 
-If you're installing Typography.js into an existing Gatsby project you've started, you will need to delete all conflicting CSS font styles from your codebase in favor of your new Typography.js settings.
+もし Typography.js を自身が作成した既存の Gatsby プロジェクトにインストールしている場合は、コンフリクトしているすべての CSS フォントスタイルを Typography.js の設定に合わせて既存のコードから削除する必要があります。
 
-Font sizes of all elements in Typography.js grow and shrink in relation to the `baseFontSize` defined above. Try playing around with this value and see the visual difference it can make to your website.
+Typography.js のすべての要素のフォントサイズは上記で設定した `baseFontSize` に応じて伸ばしたり縮めたりします。この値をいじってみて見た目の変化を見てください。
 
-To find or create a new typography theme, you can visit [Typography.js](https://kyleamathews.github.io/typography.js/) to see a list of options.
+新たにテーマを見つけるか、作成する場合は[Typography.js](https://kyleamathews.github.io/typography.js/)のサイトにあるオプションのリストを参照してください。
 
-## Installing Typography themes
+## Typography テーマのインストール
 
-Typography.js has built in themes that can save time when defining your website's font styling. The Funston theme, maintained by Typography, is one of the built in themes. To install the Funston theme from npm, run the command: `npm install typography-theme-funston --save`
+Typography.js にはサイトのフォントスタイルを決める時間を節約してくれるビルトインテーマがあります。Funston というテーマは Typography によってメンテナンスされているビルトインテーマの 1 つです。この Funston を npm からインストールするには、`npm install typography-theme-funston --save` というコマンドを打ってください。
 
-To use the theme, edit the `typography.js` file that you created before and inform Typography of the new configuration:
+このテーマを使うには、先程作成した `typography.js` ファイルを次のように編集します。
 
 ```diff:title=src/utils/typography.js
 import Typography from "typography";
@@ -92,8 +92,8 @@ const typography = new Typography(
 export default typography;
 ```
 
-After completing the above steps, you can start the development server using the command `gatsby develop` and navigate to the local website <http://localhost:8000>. If all went well you should see the text on your website using the Funston typographic theme.
+上記の手順が終わったら、`gatsby develop` というコマンドで開発サーバーを立ち上げ、<http://localhost:8000> にアクセスしてください。もしすべての手順が上手くいっていたら、サイトのタイプデザインが Funston テーマになっているはずです。
 
-**Note**: If your fonts remains unchanged, remove all `font-family` calls in your CSS and check again.
+**ヒント**: もし以前のフォントが変更されずに残っている場合、CSS からすべての `font-family` を削除し、再度チェックしてください。
 
-To find more themes to install, check out the official [Typography.js](https://kyleamathews.github.io/typography.js/) website.
+インストールしたいテーマをもっと探す場合は、[Typography.js](https://kyleamathews.github.io/typography.js/) の公式サイトを見てください。

@@ -1,27 +1,27 @@
 ---
-title: Making a Site with User Authentication
+title: ユーザー認証を使用したサイトの作成
 ---
 
-Sometimes, you need to create a site with gated content, restricted to only authenticated users. Using Gatsby, you may achieve this using the concept of [client-only routes](/docs/client-only-routes-and-user-authentication/), to define which pages a user can view only after logging in.
+往々にして、認証されたユーザーのみが閲覧可能なコンテンツを含むサイトを構築しないといけないことがあります。Gatsby なら、[クライアントサイドルーティング](/docs/client-only-routes-and-user-authentication/)を用いてユーザーがログイン後にのみ閲覧できるページを作成できます。
 
-## Prerequisites
+## 前提条件
 
-You should have already configured your environment to be able to use the `gatsby-cli`. A good starting point is the [main tutorial](/tutorial).
+事前に `gatsby-cli` を使用できるように環境を設定しておく必要があります。設定の仕方に関しては、[メインチュートリアル](/tutorial)を参照しましょう。
 
-## Security notice
+## セキュリティー通知
 
-In production, you should use a tested and robust solution to handle the authentication. [Auth0](https://www.auth0.com), [Firebase](https://firebase.google.com), and [Passport.js](http://passportjs.org) are good examples. This tutorial will only cover the authentication workflow, but you should take the security of your app as seriously as possible.
+プロダクション環境では、テスト済みで堅牢な認証ソリューションを使用すべきでしょう。[Auth0](https://www.auth0.com)、[Firebase](https://firebase.google.com)、[Passport.js](http://passportjs.org) は良い例です。このチュートリアルでは認証ワークフローのみを扱いますが、アプリのセキュリティーに関してはできる限り慎重に取り扱う必要があります。
 
-## Building your Gatsby app
+## Gatsby アプリの構築
 
-Start by creating a new Gatsby project using the barebones `hello-world` starter:
+`hello-world` スターターを使用して新しい Gatsby プロジェクトを作成することから始めましょう。
 
 ```shell
 gatsby new gatsby-auth gatsbyjs/gatsby-starter-hello-world
 cd gatsby-auth
 ```
 
-Create a new component to hold the links. For now, it will act as a placeholder:
+まずはリンクを含む新しいコンポーネントを作成します。この段階では、プレースホルダーとして振る舞います。
 
 ```jsx:title=src/components/nav-bar.js
 import React from "react"
@@ -36,20 +36,20 @@ export default () => (
       borderBottom: "1px solid #d1c1e0",
     }}
   >
-    <span>You are not logged in</span>
+    <span>ログインしていません</span>
 
     <nav>
-      <Link to="/">Home</Link>
+      <Link to="/">ホーム</Link>
       {` `}
-      <Link to="/">Profile</Link>
+      <Link to="/">プロフィール</Link>
       {` `}
-      <Link to="/">Logout</Link>
+      <Link to="/">ログアウト</Link>
     </nav>
   </div>
 )
 ```
 
-And create the layout component that will wrap all pages and display navigation bar:
+次に、すべてのページをラップしてナビゲーションバーを表示するレイアウトコンポーネントを作成します。
 
 ```jsx:title=src/components/layout.js
 import React from "react"
@@ -66,7 +66,7 @@ const Layout = ({ children }) => (
 export default Layout
 ```
 
-Lastly, change the index page to use layout component:
+最後に、レイアウトコンポーネントを使用するようにインデックスページを変更します。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -82,9 +82,9 @@ export default () => (
 // highlight-end
 ```
 
-## Authentication service
+## 認証サービス
 
-For this tutorial you will use a hardcoded user/password. Create the folder `src/services` and add the following content to the file `auth.js`:
+このチュートリアルでは、ハードコーディングされたユーザー/パスワードを使用します。`src/services`フォルダーを作成し、`auth.js` ファイルに次のコードを追加しましょう。
 
 ```javascript:title=src/services/auth.js
 export const isBrowser = () => typeof window !== "undefined"
@@ -101,7 +101,7 @@ export const handleLogin = ({ username, password }) => {
   if (username === `john` && password === `pass`) {
     return setUser({
       username: `john`,
-      name: `Johnny`,
+      name: `ジョニー`,
       email: `johnny@example.org`,
     })
   }
@@ -121,34 +121,34 @@ export const logout = callback => {
 }
 ```
 
-_The guide on [adding authentication](/docs/building-a-site-with-authentication/) contains more information about the flow for connecting Gatsby to an external service._
+_Gatsby を外部サービスに接続する方法については、[認証の追加](/docs/building-a-site-with-authentication/)に関するガイドを参照してください。_
 
-## Creating client-only routes
+## クライアントサイドルーティングの作成
 
-At the beginning of this tutorial, you created a "hello world" Gatsby site, which includes the `@reach/router` library. Now, using the [@reach/router](https://reach.tech/router/) library, you can create routes available only to logged-in users. This library is used by Gatsby under the hood, so you don't even have to install it.
+このチュートリアルの最初に、"hello world" Gatsby サイトを作成しました。これには、`@reach/router` ライブラリーが含まれています。ここでは、[@reach/router](https://reach.tech/router/) ライブラリーを使用して、ログインユーザーのみが利用できるルートを作成しましょう。このライブラリーは Gatsby 内部で使用されているので、インストールする必要はありません。
 
-First, create `gatsby-node.js` in root directory of your project. You will define that any route that starts with `/app/` is part of your restricted content and the page will be created on demand:
+最初に、プロジェクトのルートディレクトリーに `gatsby-node.js` を作成します。`/app/` で始まるルートのページが制限され、クライアントサイドで動的に生成されるよう定義します。
 
 ```javascript:title=gatsby-node.js
-// Implement the Gatsby API “onCreatePage”. This is
-// called after every page is created.
+// Gatsby の “onCreatePage” API を実装します。
+// この API はすべてのページが生成されたあとに呼び出されます。
 exports.onCreatePage = async ({ page, actions }) => {
   const { createPage } = actions
 
-  // page.matchPath is a special key that's used for matching pages
-  // only on the client.
+  // page.matchPath は特別なキーで、
+  // マッチしたページはクライアントサイドのみで生成されます。
   if (page.path.match(/^\/app/)) {
     page.matchPath = "/app/*"
 
-    // Update the page.
+    // ページの更新
     createPage(page)
   }
 }
 ```
 
-> Note: There is a convenient plugin that already does this work for you: [gatsby-plugin-create-client-paths](/packages/gatsby-plugin-create-client-paths)
+> ヒント: 上記と同等の機能を提供してくれる便利なプラグインがあります: [gatsby-plugin-create-client-paths](/packages/gatsby-plugin-create-client-paths)
 
-Now, you must create a generic page that will have the task to generate the restricted content:
+続いて、制限されたコンテンツを生成するページを作成しましょう。
 
 ```jsx:title=src/pages/app.js
 import React from "react"
@@ -169,17 +169,17 @@ const App = () => (
 export default App
 ```
 
-Next, add the components regarding those new routes. The profile component to show the user data:
+次に、これらの新しいルートに対応するコンポーネントを追加します。まずはユーザーデータを表示するプロフィールコンポーネントを追加しましょう。
 
 ```jsx:title=src/components/profile.js
 import React from "react"
 
 const Profile = () => (
   <>
-    <h1>Your profile</h1>
+    <h1>あなたのプロフィール</h1>
     <ul>
-      <li>Name: Your name will appear here</li>
-      <li>E-mail: And here goes the mail</li>
+      <li>名前: あなたの名前がここに表示されます</li>
+      <li>メールアドレス: あなたのメールアドレスがここに表示されます</li>
     </ul>
   </>
 )
@@ -187,7 +187,7 @@ const Profile = () => (
 export default Profile
 ```
 
-The login component will handle - as you may have guessed - the login process:
+続いて追加するログインコンポーネントは、ご想像のとおり、ログインプロセスを処理します。
 
 ```jsx:title=src/components/login.js
 import React from "react"
@@ -218,7 +218,7 @@ class Login extends React.Component {
 
     return (
       <>
-        <h1>Log in</h1>
+        <h1>ログイン</h1>
         <form
           method="post"
           onSubmit={event => {
@@ -227,11 +227,11 @@ class Login extends React.Component {
           }}
         >
           <label>
-            Username
+            ユーザー名
             <input type="text" name="username" onChange={this.handleUpdate} />
           </label>
           <label>
-            Password
+            パスワード
             <input
               type="password"
               name="password"
@@ -248,11 +248,11 @@ class Login extends React.Component {
 export default Login
 ```
 
-Though the routing is working now, you still can access all routes without restriction.
+この段階においてルーティングは機能していますが、制限なしですべてのルートにアクセスできてしまいます。
 
-## Controlling private routes
+## プライベートルートの制御
 
-To check if a user can access the content, you can wrap the restricted content inside a PrivateRoute component:
+ユーザーがコンテンツにアクセスできるかどうかをチェックするためには、制限するコンテンツを PrivateRoute コンポーネントでラップします。
 
 ```jsx:title=src/components/privateRoute.js
 import React, { Component } from "react"
@@ -271,7 +271,7 @@ const PrivateRoute = ({ component: Component, location, ...rest }) => {
 export default PrivateRoute
 ```
 
-And now you can edit your Router to use the PrivateRoute component:
+PrivateRoute コンポーネントを使用するようにルーターを変更しましょう。
 
 ```jsx:title=src/pages/app.js
 import React from "react"
@@ -294,11 +294,11 @@ const App = () => (
 export default App
 ```
 
-## Refactoring to use new routes and user data
+## 新しいルートとユーザーデータを使用するためのリファクタリング
 
-With the client-only routes in place, you must now refactor some files to account for the user data available.
+ユーザーデータを利用するように、クライアントサイドルーティングを定義しているファイルをリファクタリングしましょう。
 
-The navigation bar will show the user name and logout option to registered users:
+ナビゲーションバーには、ユーザー名とログアウトのリンクが表示されます。
 
 ```jsx:title=src/components/nav-bar.js
 import React from "react"
@@ -309,9 +309,9 @@ import { getUser, isLoggedIn, logout } from "../services/auth" // highlight-line
 export default () => {
   const content = { message: "", login: true }
   if (isLoggedIn()) {
-    content.message = `Hello, ${getUser().name}`
+    content.message = `こんにちは、${getUser().name}さん`
   } else {
-    content.message = "You are not logged in"
+    content.message = "ログインしていません。"
   }
   return (
     // highlight-end
@@ -325,9 +325,9 @@ export default () => {
     >
       <span>{content.message}</span> {/* highlight-line */}
       <nav>
-        <Link to="/">Home</Link>
+        <Link to="/">ホーム</Link>
         {` `}
-        <Link to="/app/profile">Profile</Link> {/* highlight-line */}
+        <Link to="/app/profile">プロフィール</Link> {/* highlight-line */}
         {` `}
         {/* highlight-start */}
         {isLoggedIn() ? (
@@ -338,7 +338,7 @@ export default () => {
               logout(() => navigate(`/app/login`))
             }}
           >
-            Logout
+            ログアウト
           </a>
         ) : null}
         {/* highlight-end */}
@@ -348,7 +348,7 @@ export default () => {
 } // highlight-line
 ```
 
-The index page will suggest to login or check the profile accordingly:
+インデックスページは、ログイン状態に応じてログインまたはプロフィールページへのリンクを表示します。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -364,13 +364,13 @@ export default () => (
     <p>
       {isLoggedIn() ? (
         <>
-          You are logged in, so check your{" "}
-          <Link to="/app/profile">profile</Link>
+          あなたはログインしています。
+          <Link to="/app/profile">プロフィール</Link>をチェックしましょう。
         </>
       ) : (
         <>
-          You should <Link to="/app/login">log in</Link> to see restricted
-          content
+          制限されたコンテンツを閲覧するには、
+          <Link to="/app/login">ログイン</Link>してください。
         </>
       )}
     </p>
@@ -379,7 +379,7 @@ export default () => (
 )
 ```
 
-And the profile will show the user data:
+また、プロフィールにはユーザーデータが表示されます。
 
 ```jsx:title=src/components/profile.js
 import React from "react"
@@ -387,11 +387,11 @@ import { getUser } from "../services/auth" // highlight-line
 
 const Profile = () => (
   <>
-    <h1>Your profile</h1>
+    <h1>あなたのプロフィール</h1>
     <ul>
       {/* highlight-start */}
-      <li>Name: {getUser().name}</li>
-      <li>E-mail: {getUser().email}</li>
+      <li>名前: {getUser().name}</li>
+      <li>メールアドレス: {getUser().email}</li>
       {/* highlight-end */}
     </ul>
   </>
@@ -400,16 +400,16 @@ const Profile = () => (
 export default Profile
 ```
 
-You should now have a complete authentication workflow, functioning with both login and a user-restricted area!
+これで、ログインとユーザー制限エリアを持った認証ワークフローができました！
 
-## Further reading
+## 関連する記事
 
-If you want to learn more about using production-ready auth solutions, these links may help:
+プロダクション利用可能な認証ソリューションの使用についてさらに学びたい場合は、以下のリンクが役立つでしょう。
 
-- [Gatsby repo simple auth example](https://github.com/gatsbyjs/gatsby/tree/master/examples/simple-auth)
-- [A Gatsby email _application_](https://github.com/DSchau/gatsby-mail), using React Context API to handle authentication
-- [The Gatsby store for swag and other Gatsby goodies](https://github.com/gatsbyjs/store.gatsbyjs.org)
-- [Building a blog with Gatsby, React and Webtask.io!](https://auth0.com/blog/building-a-blog-with-gatsby-react-and-webtask/)
-- [JAMstack PWA — Let’s Build a Polling App. with Gatsby.js, Firebase, and Styled-components Pt. 2](https://medium.com/@UnicornAgency/jamstack-pwa-lets-build-a-polling-app-with-gatsby-js-firebase-and-styled-components-pt-2-9044534ea6bc)
-- [JAMstack Hackathon Starter - Authenticated Gatsby app starter with Netlify Identity](/starters/sw-yx/jamstack-hackathon-starter)
-- [Learn With Jason Livestream: How to use Netlify Identity and Netlify Functions (with Shawn Wang)](https://www.youtube.com/watch?v=vrSoLMmQ46k&feature=youtu.be)
+- [Gatsby リポジトリのシンプルな認証サンプル](https://github.com/gatsbyjs/gatsby/tree/master/examples/simple-auth)
+- React Context API を使用して認証処理を行う [Gatsby メール _アプリケーション_](https://github.com/DSchau/gatsby-mail)
+- [景品や Gatsby グッズの Gatsby ストア](https://github.com/gatsbyjs/store.gatsbyjs.org)
+- [Gatsby、React、Webtask.io でブログを構築しよう！](https://auth0.com/blog/building-a-blog-with-gatsby-react-and-webtask/)
+- [JAMstack PWA — Gatsby.js、Firebase、Styled-components で投票アプリをつくろう パート 2](https://medium.com/@UnicornAgency/jamstack-pwa-lets-build-a-polling-app-with-gatsby-js-firebase-and-styled-components-pt-2-9044534ea6bc)
+- [JAMstack Hackathon Starter - Netlify Identity を使用した認証機能付き Gatsby アプリスターター](/starters/sw-yx/jamstack-hackathon-starter)
+- [Learn With Jason Livestream: Netlify Identity および Netlify Functions の使い方 (with Shawn Wang)](https://www.youtube.com/watch?v=vrSoLMmQ46k&feature=youtu.be)

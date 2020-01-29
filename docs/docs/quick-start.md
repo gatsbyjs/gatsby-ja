@@ -11,7 +11,7 @@ title: クイックスタート
   lessonTitle="Quick Start with Gatsby: Create, Develop, and Build Gatsby Sites From the Command Line"
 />
 
-**注意**: このビデオでは`npx`を利用して、npm パッケージをインストールすることなく Gatsby サイトを作成しています。`npx gatsby new`を実行することは、gatsby-cli をコンピュータにインストールしてから`gatsby new`を実行することと同じです。
+**注意**: このビデオでは `npx` を利用して、npm パッケージをインストールすることなく Gatsby サイトを作成しています。`npx gatsby new`を実行することは、gatsby-cli をコンピュータにインストールしてから `gatsby new` を実行することと同じです。
 
 ### Gatsby CLI をインストールする
 
@@ -37,7 +37,7 @@ cd gatsby-site
 gatsby develop
 ```
 
-Gatsby はホットリロード対応の開発環境を`localhost:8000`に立ち上げます。
+Gatsby はホットリロード対応の開発環境を `localhost:8000` に立ち上げます。
 
 `src/pages`の中にある JavaScript で書かれたページを編集してみてください。保存された変更はブラウザー上でリアルタイムに反映されます。
 
@@ -59,7 +59,7 @@ gatsby serve
 
 ### CLI コマンドのドキュメント
 
-ターミナル上で`gatsby --help`を実行すると、詳細な CLI ドキュメントを読むことができます。
+ターミナル上で `gatsby --help` を実行すると、詳細な CLI ドキュメントを読むことができます。
 
 特定のコマンドについて知りたい場合は、`gatsby COMMAND_NAME --help`を実行してください（例：`gatsby new --help`）。
 
