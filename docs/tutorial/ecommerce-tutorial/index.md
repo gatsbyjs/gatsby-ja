@@ -132,17 +132,17 @@ You have 2 keys in both test mode and production mode:
 
 テスト中は _test_.という文字が含まれたキーを使い、本番のコードではライブキーを使う必要があります。名前が示すように、公開可能キーは公開するコード(フロントエンドやGithubなど)に含まれているな愛がありますが、シークレットキーは誰とも共有したり、公開レポジトリにコミットしたりしないでください。このシークレットキーへのアクセスを制限することは重要です。このシークレットキーを持っている人は誰でもStripeアカウントからリクエストを読み取ったり送信したり、請求や購入に関する情報を見たり、顧客に送信したりする可能性があるからです。
 
-### Enabling the "Checkout client-only integration" for your Stripe account
+### Stripeアカウントの"Checkout クライアント専用組み込み"を有効にします
 
-Through this tutorial you will be using the "Checkout client-only integration" from Stripe. To use this integration you need to activate it on the corresponding [Checkout settings](https://dashboard.stripe.com/account/checkout/settings) from your Stripe Dashboard.
+このチュートリアルではStripeの"Checkout クライアント専用組み込み"を利用します。この組み込みを利用するにはStipeダッシュボードの対応する[チェックアウトの設定](https://dashboard.stripe.com/account/checkout/settings)でアクティブにする必要があります。
 
 ![Stripe control to enable the Checkout client-side only integration highlighted](stripe-checkout-clientside-functionality.png)
 
-> 💡 This change will also modify the interface that Stripe provides to administer your products: keep this in mind in case you have previously used this tool. If you have never used the product administrator, you don't need to worry.
+> 💡 この変更により、製品を管理するためにStripeが提供するインターフェースも変更されます。以前にこのツールを利用したことがある場合は、このことに留意してください。今までに製品管理を利用したことがない場合、心配する必要はありません。
 
-Additionally, you need to set a name for your Stripe account on your [Account settings](https://dashboard.stripe.com/account) to use this integration.
+さらに、この組み込みを利用するには、[アカウント設定](https://dashboard.stripe.com/account)でStripeアカウントの名前を設定する必要があります。
 
-To learn more about this integration you may use the [Stripe docs](https://stripe.com/docs/payments/checkout#configure).
+この組み込みの詳細については[Stripe docs](https://stripe.com/docs/payments/checkout#configure)を利用してみてください。
 
 ## Examples
 
