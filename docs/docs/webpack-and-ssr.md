@@ -8,7 +8,7 @@ Bootstrap が完了しました！そしてディスクに[結果ページが書
 
 ## /.cache/
 
-Webpack が必要とする全てのファイルは、`.cache` ディレクトリーの中にあります。このディレクトリーはプロジェクトの初期化時に空であり、安全に削除できます。Gatsby はビルドの過程でディレクトリーとそこに含まれるファイルを生成します。
+Webpack が必要とする全てのファイルは、`.cache` ディレクトリーの中にあります。このディレクトリーはプロジェクトの初期化時には空であり、安全に削除できます。Gatsby はビルドの過程でディレクトリーとそこに含まれるファイルを生成します。
 
 Gatsby はビルドの開始時、[gatsby/cache-dir](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby/cache-dir) に含まれる[全てのファイルのコピー](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/bootstrap/index.js#L191)を、`.cache` ディレクトリーに生成します。この中には、次のセクションで説明する [static-entry.js](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/cache-dir/static-entry.js) や [production-app.js](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/cache-dir/production-app.js) といったものが含まれています。基本的に、Gatsby がブラウザーでの実行か HTML の生成に必要とするファイルは全て、`cache-dir` に含まれます。
 
