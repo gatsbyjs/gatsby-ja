@@ -101,7 +101,7 @@ Gatsby がシャドーイング機能を全て自動でやってくれるよう�
 gatsby-theme-amazing/src/components/header.js
 ```
 
-そして、下記のパスがサイト内でシャドーイングする場所です：
+そして、下記のパスがサイト内でシャドーイングする場所です。
 
 ```text
 <your-site>/src/gatsby-theme-amazing/components/header.js
