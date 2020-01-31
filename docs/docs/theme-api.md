@@ -15,7 +15,7 @@ Gatsby が初めての方は、サイトを構築するためのガイドから�
 
 ## 設定
 
-プラグインは、他の `gatsby-*` の形式で命名されたファイルなどと一緒に `gatsby-config` を含むことができるようになりました。通常、`gatsby-config.js` を含むプラグインのことをテーマと呼びます（もっと知りたい方は[theme composition](#theme-composition)`gatsby-config.js`をご覧ください）。典型的なユーザーサイトの `gatsby-config.js` の中身は次のようになります。 ここで、`gatsby-theme-name` には、2 つのオプション `postsPath` と `colors` が渡されています。
+プラグインは、他の `gatsby-*` の形式で命名されたファイルなどと一緒に `gatsby-config` を含むことができるようになりました。通常、`gatsby-config.js` を含むプラグインのことをテーマと呼びます（もっと知りたい方は[theme composition](#theme-composition)`gatsby-config.js`をご覧ください）。典型的なユーザーサイトの `gatsby-config.js` の中身は次のようになります。ここで、`gatsby-theme-name` には、2 つのオプション `postsPath` と `colors` が渡されています。
 
 ```js:title=gatsby-config.js
 module.exports = {
