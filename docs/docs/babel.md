@@ -2,21 +2,19 @@
 title: Babel
 ---
 
-Gatsby は [Babel](https://babeljs.io/) というすばらしいプロジェクトを使っており、
-モダンな JavaScript をサポートしていない古いブラウザーへのサポートをしつつ、モダンな JavaScript の記述が可能です。
+Gatsby は [Babel](https://babeljs.io/) という素晴らしいプロジェクトを使っており、モダンな JavaScript をサポートしていない古いブラウザーへのサポートをしつつ、モダンな JavaScript の記述が可能です。
 
 ## サポートするブラウザーをどのように指定するのか
 
-Gatsby は基本的に、メジャーなブラウザーの最新 2 つのバージョン、 IE 9 以上 、
-そして 1% 以上のシェアがあればどのようなブラウザーもサポートしています。
+Gatsby はデフォルトでメジャーなブラウザーの最新の 2 つのバージョンと IE9 以上 、そして 1% 以上のシェアがあるブラウザーをサポートしています。
 
 つまり JavaScript は自動的にコンパイルされ、古いブラウザー上でも動作が保証されているということです。
-Polyfills も自動的に追加されますので、古いブラウザー上で謎の動きをするコードはもうありません！
+ポリフィルも自動的に追加されるため、コードが古いブラウザー上で不可解に壊れることはもうありません！
 
-もし最新のブラウザーのみの対応で良いなら、[サポートするブラウザー](/docs/browser-support/)のページをご覧ください。
+もし、新しいブラウザーのみの対応で良いなら、[サポートするブラウザー](/docs/browser-support/)のページをご覧ください。
 どのように Gatsby を設定すれば 、あなたがサポートしたいブラウザーのみを Babel がコンパイルしてくれるのか記載しています。
 
-## .babelrc ファイルをどのようにカスタムして使うか
+## どのようにカスタム .babelrc ファイルを使うか
 
 Gatsby には、ほとんどのサイトで動くようなデフォルトの .babelrc ファイルがセットアップされています。
 もしあなたが Babel のプリセットやプラグインをカスタムしたい場合、ご自身専用の `.babelrc` をサイトのルートに作成してください。
@@ -45,5 +43,4 @@ npm install --save-dev babel-preset-gatsby
 ```
 <!-- prettier-ignore-end -->
 
-より高度な設定をしたければ、 [`babel-preset-gatsby`](https://github.com/gatsbyjs/gatsby/tree/master/packages/babel-preset-gatsby) からデフォルト値をコピーし
-必要に応じてカスタマイズするのも良いでしょう。
+より高度な設定をしたければ、 [`babel-preset-gatsby`](https://github.com/gatsbyjs/gatsby/tree/master/packages/babel-preset-gatsby) からデフォルト値をコピーし、必要に応じてカスタマイズすることも出来ます。
