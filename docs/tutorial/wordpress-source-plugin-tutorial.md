@@ -283,8 +283,7 @@ exports.createPages = ({ graphql, actions }) => {
         path: node.slug,
         component: path.resolve(`./src/templates/blog-post.js`),
         context: {
-          // This is the $slug variable
-          // passed to blog-post.js
+          // こちらが blog-post.js に渡される $slug 変数です。
           slug: node.slug,
         },
       })
