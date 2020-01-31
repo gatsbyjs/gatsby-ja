@@ -297,7 +297,7 @@ exports.createPages = ({ graphql, actions }) => {
 再度開発環境を `gatsby develop` コマンドで再起動する必要があります。再起動を行ったら、サイトのインデックスページでは変化は見られませんが、 [http://localhost:8000/asdf](http://localhost:8000/asdf) のような 404 ページを閲覧すると、作成した 2 つのサンプル記事を確認でき、それらをクリックすることでサンプル記事のページに行くことが出来ます。
 
 ![サンプル記事のリンク](./images/wordpress-source-plugin-sample-post-links.gif)
-st
+
 しかし、誰もブログ記事を見つけようと 404 ページに飛びたいとは思いませんね！なので、トップページからリンクを張りましょう。
 
 ### トップページから記事にリンクを張る
