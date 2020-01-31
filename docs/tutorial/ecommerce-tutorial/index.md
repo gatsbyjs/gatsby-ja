@@ -46,7 +46,7 @@ Stripeはバックエンドコンポーネントを必要としない[hosted che
 製品やSKU、サブスクリプションプランの設定を[Stripe Dashboard](https://stripe.com/docs/payments/checkout#configure)で行うことができます。
 単一の製品やサブスクリプション(電子書籍)を販売している場合、Gatsbyサイトで商品のSKU IDをハードコーディングできます。
 複数の商品を販売している場合、[Stripe ソースプラグイン](https://www.gatsbyjs.org/packages/gatsby-source-stripe/)を利用して、ビルド時に全てのSKUを取得できます。
-Gatsbyのサイトを自動的に更新する場合は、Stripe webhookイベントを利用して新しい商品やSKUが追加されたときに再デプロイをトリガー[trigger a redeploy](https://www.netlify.com/docs/
+Gatsbyのサイトを自動的に更新する場合は、Stripe webhookイベントを利用して新しい商品やSKUが追加されたときに再デプロイをトリガー[trigger a redeploy](https://www.netlify.com/docs/)できます。
 
 # Gatsbyサイトの設定
 
@@ -144,23 +144,19 @@ You have 2 keys in both test mode and production mode:
 
 この組み込みの詳細については[Stripe docs](https://stripe.com/docs/payments/checkout#configure)を利用してみてください。
 
-## Examples
+## 例
+これらの例の実装は[Github](https://github.com/thorsten-stripe/ecommerce-gatsby-tutorial)で見ることができます。
 
-You can find an implementation of these examples [on GitHub](https://github.com/thorsten-stripe/ecommerce-gatsby-tutorial).
+### 簡単: ボタン1つ
+例えば電子書籍などのシンプルな製品を売っている場合、Stripeの支払いページへのリダイレクトを実行するボタンを1つ作成できます。
 
-### Easy: One Button
+#### 商品とSKUの作成
 
-If you're selling a simple product, like an eBook for example, you can create a single button that will perform a redirect to the Stripe Checkout page:
+商品を販売するためにはまず、[Stripe ダッシュボード](https://dashboard.stripe.com/products)または[Stripe API](https://stripe.com/docs/api/products/create)を利用して、Stripeで商品を作成する必要があります。これは、Stripeがフロントエンドからのリクエストが正当であることを検証し、選択された製品/SKUに適切な金額を請求するために必要です。Stripeでは、Stripeの支払いで使用する全てのSKUに名前を付ける必要があります。全てのSKUに必ず1つ追加してください。
 
-#### Create a product and SKU
+#### StripeJSをロードして支払いコンポーネントを作成する
 
-To sell your products, first you need to create them on Stripe using the [Stripe Dashboard](https://dashboard.stripe.com/products) or the [Stripe API](https://stripe.com/docs/api/products/create). This is required for Stripe to validate that the request coming from the frontend is legitimate and to charge the right amount for the selected product/SKU. Stripe requires every SKU used with Stripe Checkout to have a name: be sure to add one to all of your SKUs.
-
-You will need to create both test and live product SKUs in the Stripe Dashboard. Make sure you toggle to "Viewing test data" and then create your products for local development.
-
-#### Create a checkout component that loads StripeJS and redirects to the checkout
-
-Create a new file at `src/components/checkout.js`. Your `checkout.js` file should look like this:
+`src/components/checkout.js`に新しいファイルを作成します。作成した`checkout.js`は以下のようになります:
 
 ```jsx:title=src/components/checkout.js
 import React from "react"
@@ -178,8 +174,8 @@ const buttonStyles = {
 }
 
 const Checkout = class extends React.Component {
-  // Initialise Stripe.js with your publishable key.
-  // You can find your key in the Dashboard:
+  // Stripe.jsを公開可能キーで初期化します
+  // こちらのダッシュボードからキーを確認できます。
   // https://dashboard.stripe.com/account/apikeys
   componentDidMount() {
     this.stripe = window.Stripe("pk_test_jG9s3XMdSjZF9Kdm5g59zlYd")
@@ -212,18 +208,16 @@ const Checkout = class extends React.Component {
 
 export default Checkout
 ```
+#### あなたは何をしましたか？
 
-#### What did you just do?
-
-You imported React, added a button with some styles, and introduced some React functions. The `componentDidMount()` and `redirectToCheckout()` functions are most important for the Stripe functionality. The `componentDidMount()` function is a React lifecycle method that launches when the component is first mounted to the DOM, making it a good place to initialise the Stripe.js client. It looks like this:
+Reactをインポートし、いくつかのstyleのボタンを追加し、React関数を導入しました。`componentDidMount()`や、`redirectToCheckout()`といった関数はStripeの機能の中で最も重要です。`componentDidMount()`関数はコンポーネントが最初にDOMにマウントされた時に起動するReactのライフサイクルメソッドであり、Stripe.jsクライアントを初期化するのに適した場所です。コードは以下のようになります。
 
 ```jsx:title=src/components/checkout.js
   componentDidMount() {
     this.stripe = window.Stripe('pk_test_jG9s3XMdSjZF9Kdm5g59zlYd')
   }
 ```
-
-This identifies you with the Stripe platform, validates the checkout request against your products and security settings, and processes the payment on your Stripe account.
+これによってStripeプラットフォームが識別され、製品とセキュリティの設定に対して支払いリクエストが検証され、Stripeアカウントの支払いが処理されます。
 
 ```jsx:title=src/components/checkout.js
   async redirectToCheckout(event) {
@@ -240,7 +234,7 @@ This identifies you with the Stripe platform, validates the checkout request aga
   }
 ```
 
-The `redirectToCheckout()` function validates your checkout request and either redirects to the Stripe hosted checkout page or resolves with an error object. Make sure to replace `successUrl` and `cancelUrl` with the appropriate URLs for your application.
+`redirectToCheckout()`関数は支払いのリクエストを検証し、Stripeがホストする支払いページにリダイレクトするか、エラーオブジェクトで解決します。`successUrl`と`cancelUrl`を適切なURLに置き換えてください。
 
 ```jsx:title=src/components/checkout.js
   render() {
@@ -255,11 +249,10 @@ The `redirectToCheckout()` function validates your checkout request and either r
   }
 ```
 
-The `render()` function applies your styles to the button and binds the `redirectToCheckout()` function to the button's onclick event.
+`render()`関数はstyleをボタンに適用し、`redirectToCheckout()`関数をボタンのonclickイベントにバインドします。
 
-#### Importing the checkout component into the homepage
-
-Now go to your `src/pages/index.js` file. This is your homepage that shows at the root URL. Import your new checkout component in the file underneath the other imports and add your `<Checkout />` component within the `<Layout>` element. Your `index.js` file should now look like similar to this:
+#### 支払いコンポーネントをホームページにインポートする
+`src/pages/index.js`ファイルに移動しましょう。ここがルートURLに表示されるホームページです。他のimportの下にあるファイルに新しい支払いコンポーネントをimportし、`<Layout>`要素内に`<Checkout />`コンポーネントを追加します。`index.js`ファイルは以下のようになります。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -288,21 +281,19 @@ const IndexPage = () => (
 export default IndexPage
 ```
 
-If you go back to [localhost:8000](http://localhost:8000/) in your browser and you have `npm run develop` running, you should now see a big, enticing "BUY MY BOOK" button. C'mon and give it a click!
+ブラウザで[localhost:8000](http://localhost:8000/)に戻り、`npm run develop`を実行している場合は、大きくて魅力的な"BUY MY BOOK"ボタンが表示されます。さあ、クリックしてみましょう！！
 
-### Advanced: Import SKUs via source plugin
+### 発展: ソースプラグインを通じてSKUをインポートする
 
-Instead of hardcoding the SKU IDs, you can use the [gatsby-source-stripe plugin](https://www.gatsbyjs.org/packages/gatsby-source-stripe/) to retrieve your SKUs at build time.
+SKUのIDをハードコーディングする代わりに、ビルド時に[gatsby-source-stripe plugin](https://www.gatsbyjs.org/packages/gatsby-source-stripe/)を使用してSKUを取得できます。
 
-#### Add the Stripe source plugin
-
-Add the [gatsby-source-stripe plugin](https://www.gatsbyjs.org/packages/gatsby-source-stripe/) which you can use to pull in the SKUs from your Stripe account.
+#### Stripeソースプラグインの追加
+StripeアカウントからSKUを取得するために使える[gatsby-source-stripe plugin](https://www.gatsbyjs.org/packages/gatsby-source-stripe/)プラグインを追加しましょう。
 
 ```shell
 npm install gatsby-source-stripe
 ```
-
-Now you can add the plugin configuration in your `gatsby-config` file:
+これで、`gatsby-config`ファイルにプラグイン設定を追加できます。
 
 ```js:title=gatsby-config.js
 module.exports = {
