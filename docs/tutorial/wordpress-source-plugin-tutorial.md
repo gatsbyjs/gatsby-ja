@@ -221,7 +221,7 @@ exports.createPages = ({ graphql, actions }) => {
 
 しかしながら、実際のブログ記事を作成するためには、事前にページをビルドするためのテンプレートを指定しなければなりません。
 
-`src` ディレクトリー内で、 `templates` という名前のディレクトリーを作成し、その中で `blog-post.js` というフィールドを作成します。その新しいファイル内に、以下をペーストしてください。
+`src` ディレクトリー内で、 `templates` という名前のディレクトリーを作成し、その中に `blog-post.js` という名前のファイルを作成します。その新しいファイル内に、以下をペーストしてください。
 
 ```jsx:title=src/templates/blog-post.js
 import React from "react"
