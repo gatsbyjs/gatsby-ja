@@ -1,14 +1,14 @@
 ---
-title: Theme Tutorials
+title: テーマの利用
 ---
 
-Gatsby themes are a new way to encapsulate, re-use, and compose Gatsby functionality.
+Gatsby テーマは Gatsby の機能をカプセル化、再利用、構成するための新しい方法です。
 
-In this section, you'll find tutorials for:
+この章では、下記についてのチュートリアルを扱います。
 
-1. Setting up a site using a single theme (the blog theme)
-2. Setting up a site which composes multiple themes (the blog theme, and the notes theme)
+1. 単一のテーマ（ブログテーマ）を用いてサイトを立ち上げる。
+2. 複数のテーマ（ブログテーマとメモテーマ）を組み合わせたサイトを立ち上げる。
 
-To learn more about themes in general, you may be interested to check out the [themes section of the docs](/docs/themes), as well.
+テーマ全般についてもっと詳しく知りたい方は、[ドキュメント内のテーマの章]（/docs/themes）もご参照ください。
 
 <GuideList slug={props.slug} />
