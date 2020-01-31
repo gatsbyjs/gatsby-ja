@@ -67,3 +67,7 @@ rules:
 
   - expected: 雛形
     pattern: ボイラープレート
+
+  - expected: スラッグ
+    pattern:
+      - /[Ss]lug
