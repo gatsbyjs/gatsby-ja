@@ -70,4 +70,4 @@ rules:
 
   - expected: スラッグ
     pattern:
-      - /[Ss]lug
+      - /[Ss]lug/
