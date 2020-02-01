@@ -314,8 +314,7 @@ module.exports = {
   ],
 }
 ```
-
-To retrieve your SKUs from your Stripe account you will need to provide your secret API key. This key needs to be kept secret and must never be shared on the frontend or on GitHub. Therefore you need to set an environment variable to store the secret key. You can read more about the usage of env variables in the [Gatsby docs](/docs/environment-variables/).
+StripeアカウントからSKUを取得するにはシークレットAPIキーを提供する必要があります。シークレットキーは秘密にしておく必要があるので、フロントエンドやGithubで絶対に共有しないでください。したがって、環境変数を設定して秘密鍵を保存する必要があります。[Gatsby docs](/docs/environment-variables/)で環境変数の使用法について詳しく読むことができます。
 
 In the root directory of your project add a `.env.development` file:
 
