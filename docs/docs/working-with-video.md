@@ -11,15 +11,15 @@ title: 動画を使用する
 
 ## ホストから動画を取得する
 
-Gatsby サイトに動画を含めるもっとも簡単な方法は、YouTube や Vimeo、Twitch のようなサイトにアップロードされた動画を取得することです。ホストされた動画の URL を使って、Remark のプラグインを使用するか、カスタム `<iframe>` の解決策を作成することで、Gatsby サイトに動画を埋め込むことができます。
+Gatsby サイトに動画を含めるもっとも簡単な方法は、YouTube や Vimeo、Twitch のようなサイトにアップロードされた動画を取得することです。ホストされた動画の URL を使って、Remark のプラグインを使用するか、カスタムされた `<iframe>` を作成することで、Gatsby サイトに動画を埋め込むことができます。
 
 ## ホストされた動画を Markdown に埋め込む
 
-ホストされた動画を Markdown 投稿やページから使用できるようにする、多くの Gatsby プラグインがあります。 YouTube や Vimeo などのさまざまなホストから動画を取得するには、[gatsby-remark-embed-video](/packages/gatsby-remark-embed-video/?=video)プラグインをお勧めします。
+Gatsby にはホストされた動画を Markdown 投稿やページから使用できるようにする、多くのプラグインが用意されています。 YouTube や Vimeo などのさまざまなホストから動画を取得するには、[gatsby-remark-embed-video](/packages/gatsby-remark-embed-video/?=video) プラグインをお勧めします。
 
 ### ホストされた動画のためのカスタムコンポーネントを作成する
 
-YouTube（または同様の）動画を Gatsby の投稿やページに埋め込む方法をさらに詳細に制御したい場合は、再利用可能なカスタム `iframe` コンポーネントを作成し、JSX テンプレートや[MDX の中](/docs/mdx/)の内容に含めます。
+YouTube（または同様の）動画を Gatsby の投稿やページに埋め込む方法をさらに詳細に制御したい場合は、再利用可能なカスタム `iframe` コンポーネントを作成し、JSX テンプレートや [MDX の中](/docs/mdx/)の内容に含めます。
 
 次の再利用可能なサンプルコンポーネントには、URL やタイトルなどの動画データのための props や、スタイル設定に必要なマークアップ、そして一般的な `iframe` 埋め込みコードが含まれています。
 
@@ -41,7 +41,7 @@ const Video = ({ videoSrcURL, videoTitle, ...props }) => (
 export default Video
 ```
 
-次に、このコンポーネントを、動画の URL とタイトルの props と共にテンプレートやページに含めます。URL およびタイトルなどの動画のデータは、JSON のインポートや[GraphQL を使用して Markdown から動画を要求する](#GraphQL-を使用してMarkdownから動画を要求する)など、複数の方法で取得できます。また、404 ページの中にイースターエッグとして YouTube 動画を表示するなど、動画を何か面白いもののためにハードコードすることもできます。
+次に、このコンポーネントを、動画の URL とタイトルの props と共にテンプレートやページに含めます。URL およびタイトルなどの動画のデータは、JSON のインポートや [GraphQL を使用して Markdown から動画を要求する](#GraphQL-を使用してMarkdownから動画を要求する)など、複数の方法で取得できます。また、404 ページの中にイースターエッグとして YouTube 動画を表示するなど、動画を何か面白いもののためにハードコードすることもできます。
 
 ```jsx:title=src/pages/404.js
 import React from "react"
@@ -137,7 +137,7 @@ YouTube、Twitch または Vimeo から動画を取得することは非常に�
 
 HTML5 は、動画を使用するための `<video>` メディア要素を提供します。 `<video>` 要素の中では、動画プレーヤーが使用できる異なるファイル形式を複数の `<source>` 要素を使用して提供できます。各ブラウザーは、その中からサポートしている形式の動画を使用します。
 
-もし、あなたのサイトの `src/assets/dog.mp4` に `dog.mp4` という動画がある場合、他のアセットを使用する時と同様に[webpack を使用して動画をあなたのページに含める](/docs/importing-assets-into-files)ことができます。そして、それを `<video>` 要素にラップされた `<source>` 要素で参照します。
+もし、あなたのサイトの `src/assets/dog.mp4` に `dog.mp4` という動画がある場合、他のアセットを使用する時と同様に [webpack を使用して動画をあなたのページに含める](/docs/importing-assets-into-files)ことができます。そして、それを `<video>` 要素にラップされた `<source>` 要素で参照します。
 
 <!-- prettier-ignore -->
 ```jsx:title=src/pages/index.js
@@ -152,7 +152,7 @@ export default () => (
 
 ```
 
-`<video>` 要素の `controls` 属性は、動画にオーバーレイされる再生/一時停止ボタンや、音量調整、全画面表示ボタンなどのデフォルトのボタンセットを提供します。また、 `muted` 属性なら、音声をミュートに設定できますし、 `poster` 属性では動画が再生されていないときに画像を表示したりできます。複数のビデオに適用したい一般的な属性は、React のカスタム動画コンポーネントで抽出できます。 `<video>` 属性の完全な一覧は[MDN のドキュメント](https://developer.mozilla.org/ja/docs/Web/HTML/Element/video#Attributes)で見られます。
+`<video>` 要素の `controls` 属性は、動画にオーバーレイされる再生/一時停止ボタンや、音量調整、全画面表示ボタンなどのデフォルトのボタンセットを提供します。また、`muted` 属性なら、音声をミュートに設定できますし、`poster` 属性では動画が再生されていないときに画像を表示したりできます。複数のビデオに適用したい一般的な属性は、React のカスタム動画コンポーネントで抽出できます。 `<video>` 属性の完全な一覧は [MDN のドキュメント](https://developer.mozilla.org/ja/docs/Web/HTML/Element/video#Attributes)で見られます。
 
 ### 複数のブラウザーと形式のサポート
 
@@ -175,7 +175,7 @@ export default () => (
 
 2 つの `<source>` 要素がありますが、この中から 1 つだけが使用されます。サポートされていれば `mp4` 、 次に `.ogg` 。
 
-**注意**: このとき、指定されたタイプの形式で動画をインポートする必要があります。つまり、 `type=video/ogg` を持つ `<source>` 要素を追加するには、 `.ogg` の形式でファイルをインポートする必要があるということです。もしくは、ローカルファイルをインポートする代わりに、動画がリモートでホストされる場所の URL を `src` として指定できます。
+**注意**: このとき、指定されたタイプの形式で動画をインポートする必要があります。つまり、`type=video/ogg` を持つ `<source>` 要素を追加するには、`.ogg` の形式でファイルをインポートする必要があるということです。もしくは、ローカルファイルをインポートする代わりに、動画がリモートでホストされる場所の URL を `src` として指定できます。
 
 [`<video>` 要素を使った例のリポジトリを見てみてください](https://github.com/gatsbyjs/gatsby/blob/master/examples/using-video/)
 
@@ -190,7 +190,7 @@ export default () => (
 
 字幕、文字起こし、および音声解説は、主に見ること、聞くことが困難な人を支援することを目的としていますが、聞くことよりも読むことを好む他の多くのユーザーにとって有益です。字幕は、何らかの理由で音声を有効にできない時に動画を視聴したい人々にも役立ちます。
 
-HTML5 は、 `<track>` 要素を通してこれらのタイプの支援コンテンツのサポートを提供します。 `<track>` 要素は、空のタグとして `<video>` 要素の入れ子にします。動画での `<track>` 要素の使用例は次のようになります。
+HTML5 は、`<track>` 要素を通してこれらのタイプの支援コンテンツのサポートを提供します。 `<track>` 要素は、空のタグとして `<video>` 要素の入れ子にします。動画での `<track>` 要素の使用例は次のようになります。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -207,8 +207,8 @@ export default () => (
 )
 ```
 
-kind 属性では、 `captions` や、 `subtitles` 、 `descriptions` などのさまざまなタイプを指定できます。 `srcLang` で、この例では英語を字幕で使用される言語として定義しています。そして、インポートされた字幕ファイルがソースとして使用されます。 `<track>` 要素の詳しい属性については[track についての MDN](https://developer.mozilla.org/ja/docs/Web/HTML/Element/track)で読むことができます。
+kind 属性では、`captions` や、`subtitles` 、`descriptions` などのさまざまなタイプを指定できます。 `srcLang` で、この例では英語を字幕で使用される言語として定義しています。そして、インポートされた字幕ファイルがソースとして使用されます。 `<track>` 要素の詳しい属性については [track についての MDN](https://developer.mozilla.org/ja/docs/Web/HTML/Element/track) で読むことができます。
 
-**注意**: 上記のコードスニペットの字幕をインポートするファイルパスには、 `file-loader！` プレフィックスが含まれています。これは、webpack が `.vtt` 字幕ファイルをインポートするのを助けます。
+**注意**: 上記のコードスニペットの字幕をインポートするファイルパスには、`file-loader！` プレフィックスが含まれています。これは、webpack が `.vtt` 字幕ファイルをインポートするのに必要となります。
 
-Gatsby と React を使用した例については、アクセシビリティを伴う[PayPal の HTML5 動画プレイヤー](https://github.com/paypal/accessible-html5-video-player#react-version)をご覧ください。
+Gatsby と React を使用した例については、アクセシビリティを伴う [PayPal の HTML5 動画プレイヤー](https://github.com/paypal/accessible-html5-video-player#react-version)をご覧ください。
