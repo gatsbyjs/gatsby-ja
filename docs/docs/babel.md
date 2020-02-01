@@ -18,7 +18,7 @@ Gatsby はデフォルトでメジャーなブラウザーの最新の 2 つの�
 
 Gatsby には、ほとんどのサイトで動くようなデフォルトの .babelrc ファイルがセットアップされています。
 もしあなたが Babel のプリセットやプラグインをカスタムしたい場合、ご自身専用の `.babelrc` をサイトのルートに作成してください。
-そして `babel-preset-gatsby`](https://github.com/gatsbyjs/gatsby/tree/master/packages/babel-preset-gatsby) をインポートし、
+そして [`babel-preset-gatsby`](https://github.com/gatsbyjs/gatsby/tree/master/packages/babel-preset-gatsby) をインポートし、
 プラグインやプリセットを追加後、例えば `babel-preset-gatsby` へ `targets` のように値を設定してください。
 
 ```shell
