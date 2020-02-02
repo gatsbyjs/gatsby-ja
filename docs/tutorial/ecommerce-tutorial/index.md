@@ -382,7 +382,7 @@ export default props => (
 )
 ```
 
-クエリを検証し、GraphQL で返されるデータを確認できます。GraphQL は`npm run develop`を実行した際にhttp://localhost:8000/___graphql にて確認できます。
+クエリを検証し、GraphQL で返されるデータを確認できます。GraphiQL は`npm run develop`を実行した際にhttp://localhost:8000/___graphql にて確認できます。
 
 クエリに満足したら、新しく作成した SKU コンポーネントをインポートできる新しいページを作成しましょう。
 
