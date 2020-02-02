@@ -43,6 +43,9 @@ rules:
   - expected: ウェブサイト
     pattern: /Web\s?サイト/i
 
+  - expected: ウェブページ
+    pattern: /Web\s?ページ/i
+
   - expected: ブログ記事
     pattern: ブログポスト
 
