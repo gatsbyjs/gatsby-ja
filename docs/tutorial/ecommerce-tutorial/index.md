@@ -7,15 +7,15 @@ title: "Gatsby Eコマースチュートリアル"
 - [目次](#目次)
 - [なぜEコマースサイトでGatsbyを使うのか](#なぜEコマースサイトでGatsbyを使うのか)
 - [前提条件](#前提条件)
-  - [How does Gatsby work with Stripe?](#how-does-gatsby-work-with-stripe)
-- [Setting up a Gatsby site](#setting-up-a-gatsby-site)
-- [Installing the StripeJS plugin](#installing-the-stripejs-plugin)
-  - [See your site hot reload in the browser!](#see-your-site-hot-reload-in-the-browser)
-  - [How does the StripeJS plugin work?](#how-does-the-stripejs-plugin-work)
-  - [Getting your Stripe test keys](#getting-your-stripe-test-keys)
-- [Examples](#examples)
-  - [Easy: One Button](#easy-one-button)
-  - [Advanced: Import SKUs via source plugin](#advanced-import-skus-via-source-plugin)
+  - [StripeとGatsbyはどのように連携させるのか](#StripeとGatsbyはどのように連携させるのか)
+- [Gatsbyサイトの設定](#Gatsbyサイトの設定)
+- [StripeJSプラグインのインストール](#StripeJSプラグインのインストール)
+  - [ブラウザでホットリロードされることを確認しよう](#ブラウザでホットリロードされることを確認しよう)
+  - [StripeJSプラグインはどのように動作するか](#StripeJプラグインはどのように動作するか)
+  - [Stripeのテストキーを取得する](#Stripeのテストキーを取得する)
+- [例](#例)
+  - [簡単:ボタン1つ](#簡単:ボタン1つ)
+  - [発展:ソースプラグインを通じてSKUをインポートする](#発展:ソースプラグインを通じてSKUをインポートする)
 - [支払いテスト](#支払いテスト)
 
 この発展的ななチュートリアルでは, Gatsbyを用いて支払いができる基本的なeコマースサイトのUIを構築を学ぶことができます。[Stripe](https://stripe.com)は支払い処理のバックエンドとして用います。
@@ -104,12 +104,11 @@ module.exports = {
 
 ### ブラウザでホットリロードされることを確認しよう
 
-ターミナルで`npm run develop`を実行しましす。これにより、開発サーバが起動し、サイトに加えた変更がリロードされるので、ブラウザで変更がプレビューできます。
-ブラウザを[localhost:8000](http://localhost:8000/)で開くと、デフォルトのホームページが表示されます。
+ターミナルで`npm run develop`を実行しましす。これにより、開発サーバが起動し、サイトに加えた変更がリロードされるので、ブラウザで変更がプレビューできます。ブラウザを[localhost:8000](http://localhost:8000/)で開くと、デフォルトのホームページが表示されます。
 
 > **NOTE**:もし、既にGatsbyの開発サーバを`npm run develop`で起動していた場合、コマンドを実行したターミナルで CTRL + C を押してサーバを再起動し、`npm run develop`コマンドを再度実行することで[localhost:8000](http://localhost:8000/)に反映された`gatsby-config.js`の変更を確認するできます。
 
-### StripeJS pluginはどのように動作するか
+### StripeJSプラグインはどのように動作するか
 StripeはJavaScriptライブラリを提供します。これにより、Stripeがホストする支払いページに顧客を安全にリダイレクトできます。Gatsbyプラグインの`gatsby-plugin-stripe`は全てのページで`<body>`タグの末尾に次のスニペットを追加します：
 
 ```html
@@ -147,7 +146,7 @@ You have 2 keys in both test mode and production mode:
 ## 例
 これらの例の実装は[Github](https://github.com/thorsten-stripe/ecommerce-gatsby-tutorial)で見ることができます。
 
-### 簡単: ボタン1つ
+### 簡単:ボタン1つ
 例えば電子書籍などのシンプルな製品を売っている場合、Stripeの支払いページへのリダイレクトを実行するボタンを1つ作成できます。
 
 #### 商品とSKUの作成
@@ -283,7 +282,7 @@ export default IndexPage
 
 ブラウザで[localhost:8000](http://localhost:8000/)に戻り、`npm run develop`を実行している場合は、大きくて魅力的な"BUY MY BOOK"ボタンが表示されます。さあ、クリックしてみましょう！！
 
-### 発展: ソースプラグインを通じてSKUをインポートする
+### 発展:ソースプラグインを通じてSKUをインポートする
 
 SKUのIDをハードコーディングする代わりに、ビルド時に[gatsby-source-stripe plugin](https://www.gatsbyjs.org/packages/gatsby-source-stripe/)を使用してSKUを取得できます。
 
