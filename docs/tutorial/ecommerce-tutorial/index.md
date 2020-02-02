@@ -315,23 +315,21 @@ module.exports = {
 }
 ```
 StripeアカウントからSKUを取得するにはシークレットAPIキーを提供する必要があります。シークレットキーは秘密にしておく必要があるので、フロントエンドやGithubで絶対に共有しないでください。したがって、環境変数を設定して秘密鍵を保存する必要があります。[Gatsby docs](/docs/environment-variables/)で環境変数の使用法について詳しく読むことができます。
-
-In the root directory of your project add a `.env.development` file:
+プロジェクトのルートディレクトリに`.env.development`ファイルを追加してください:
 
 ```text:title=.env.development
 # Stripe secret API key
 STRIPE_SECRET_KEY=sk_test_xxx
 ```
 
-To use the defined env variable you need to require it in your `gatsby-config.js` or `gatsby-node.js` like this:
+定義された環境変数を利用するには`gatsby-config.js`または`gatsby-node.js`で以下のように環境変数を要求する必要があります。
 
 ```js:title=gatsby-config.js
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 ```
-
-Lastly, make sure that your `.gitignore` file excludes all of your `.env.*` files:
+最後に、`.gitignore`ファイルで全ての`.env.*`ファイルが除外されていることを確認してください:
 
 ```text:title=.gitignore
 # dotenv environment variables files
@@ -339,10 +337,9 @@ Lastly, make sure that your `.gitignore` file excludes all of your `.env.*` file
 .env.development
 .env.production
 ```
+#### SKUをリストするコンポーネントを作成する
 
-#### Create a component that lists your SKUs
-
-In your components folder add a new `Products` folder. This folder will include the components that interact with the Stripe SKUs. First, you need a component that queries and lists your SKUs:
+componentsフォルダに新しく`Products`フォルダを追加します。このフォルダはStripeのSKUと対話するコンポーネントが含まれます。まず第一に、SKUを照会およびリストするコンポーネントが必要です:
 
 ```jsx:title=src/components/Products/Skus.js
 import React from "react"
@@ -376,10 +373,9 @@ export default props => (
   />
 )
 ```
+クエリを検証し、GraphQLで返されるデータを確認できます。GraphQLは`npm run develop`を実行した際にhttp://localhost:8000/___graphql で利用できます。
 
-You can validate your query and see what data is being returned in GraphiQL, which is available at http://localhost:8000/___graphql when running `npm run develop`.
-
-Once you're happy with your query, create a new page where you can import the newly created Sku component:
+クエリに満足したら、新しく作成したSKUコンポーネントをインポートできる新しいページを作成しましょう:
 
 ```jsx:title=src/pages/advanced.js
 import React from "react"
@@ -400,12 +396,11 @@ const AdvancedExamplePage = () => (
 
 export default AdvancedExamplePage
 ```
+http://localhost:8000/advanced/ に移動するとSKU名を含む段落のリストが確認できます。
 
-When navigating to http://localhost:8000/advanced/ you should now see a list of paragraphs with your SKU names.
+#### 単一のSKUを提示するコンポーネントの作成
 
-#### Create a component that presents a single SKU
-
-To make your SKUs more visually appealing and interactive, create a new `SkuCard` component in your `Products` folder:
+SKUを魅力的でインタラクティブにするために、`Products`フォルダに`SkuCard`を新たに作成します。
 
 ```jsx:title=src/components/Products/SkuCard.js
 import React from "react"
@@ -468,7 +463,7 @@ const SkuCard = class extends React.Component {
           style={buttonStyles}
           onClick={event => this.redirectToCheckout(event, sku.id)}
         >
-          BUY ME
+          購入
         </button>
       </div>
     )
@@ -477,10 +472,8 @@ const SkuCard = class extends React.Component {
 
 export default SkuCard
 ```
-
-This component renders a neat card for each individual SKU, with the SKU name, nicely formatted pricing, and a "BUY ME" button. The button triggers the `redirectToCheckout()` function with the corresponding SKU ID.
-
-Lastly, you need to refactor your `Skus` component to initialize the Stripe.js client, and render `SkuCards` while handing down the Stripe.js client in the `props`:
+このコンポーネントはSKU名、適切にフォーマットされた価格設定、および「購入」ボタンを利用して、個々のSKUごとに適切なカードをレンダリングします。「購入」ボタンは対応するSKU IDで`redirectToCheckout()`関数をトリガーします。
+最後に、`Skus`コンポーネントをリファクタリングしてStripe.jsクライアントを初期化し、`props`でStripe.jsクライアントを伝えながら`SkuCards`をレンダリングする必要があります:
 
 ```jsx:title=src/components/Products/Skus.js
 import React, { Component } from 'react'
@@ -544,10 +537,8 @@ class Skus extends Component {
 export default Skus
 ```
 
-#### Adding a cart component
+#### カートコンポーネントの追加
+`redirectToCheckout()`関数を呼び出して、SKUとその量の配列を提供し、複数のアイテムを同時に請求できます。したがって、支払いページにリダイレクトするそれぞれの「購入」ボタンの代わりに、カートコンポーネントの状態を利用する主要な「支払いに進む」ボタンを提供できます。この例に必要な変更は[GitHub](https://github.com/thorsten-stripe/ecommerce-gatsby-tutorial/tree/cart-example)で確認できます。
 
-You can call `redirectToCheckout()` providing an array of SKUs and their quantities to charge for multiple items at the same time. Instead of each "BUY ME" button redirecting to the checkout page, you can therefore provide a central "GO TO CHECKOUT" button that uses the state of a cart component. You can see the necessary changes for this example [on GitHub](https://github.com/thorsten-stripe/ecommerce-gatsby-tutorial/tree/cart-example).
-
-# Testing Payments
-
-In test mode (when using the API key that includes _test_) Stripe provides [test cards](https://stripe.com/docs/testing#cards) for you to test different checkout scenarios.
+# 支払いテスト
+テストモード(_test_ という文字列を含むAPIキーを利用する場合)では、Stripeは様々な支払いシナリオをテストするための[テストカード](https://stripe.com/docs/testing#cards)を提供します。
