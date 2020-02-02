@@ -37,14 +37,12 @@ Gatsbyをe-コマースのサイトに使うメリットは以下の通りです
 
 ### StripeとGatsbyはどのように連携させるのか
 
-Stripeは顧客から情報を安全に収集して処理できる支払い処理サービスです。
-Stripeを試すにはこちらにアクセスしてください。[Stripeクイックスタートガイド](https://stripe.com/docs/payments/checkout#tryout)
+Stripeは顧客から情報を安全に収集して処理できる支払い処理サービスです。Stripeを試すにはこちらにアクセスしてください。[Stripeクイックスタートガイド](https://stripe.com/docs/payments/checkout#tryout)
 
 Stripeの代わりとしては、SquareやBraintreeなどがあります。これらの仕組みはStripeと非常に似ています。
 
 Stripeはバックエンドコンポーネントを必要としない[hosted checkout](https://stripe.com/docs/payments/checkout)を提供します。
-製品やSKU、サブスクリプションプランの設定を[Stripe Dashboard](https://stripe.com/docs/payments/checkout#configure)で行うことができます。
-単一の製品やサブスクリプション(電子書籍)を販売している場合、Gatsbyサイトで商品のSKU IDをハードコーディングできます。
+製品やSKU、サブスクリプションプランの設定を[Stripe Dashboard](https://stripe.com/docs/payments/checkout#configure)で行うことができます。1つの製品やサブスクリプション(電子書籍)を販売している場合、Gatsbyサイトで商品のSKU IDをハードコーディングできます。
 複数の商品を販売している場合、[Stripe ソースプラグイン](https://www.gatsbyjs.org/packages/gatsby-source-stripe/)を利用して、ビルド時に全てのSKUを取得できます。
 Gatsbyのサイトを自動的に更新する場合は、Stripe webhookイベントを利用して新しい商品やSKUが追加されたときに再デプロイをトリガー[trigger a redeploy](https://www.netlify.com/docs/)できます。
 
@@ -64,6 +62,7 @@ cd ecommerce-gatsby-tutorial
 ```shell
 npm install gatsby-plugin-stripe
 ```
+
 テキストエディタでルートサイトディレクトリを開き、`gatsby-config.js`に移動します。そして、`gatsby-config.js`のpluginsのところにStripeJSプラグインを追加します。`gatsby-config.js`は次のコード例のようになります。
 
 ```js:title=gatsby-config.js
@@ -152,6 +151,8 @@ You have 2 keys in both test mode and production mode:
 #### 商品とSKUの作成
 
 商品を販売するためにはまず、[Stripe ダッシュボード](https://dashboard.stripe.com/products)または[Stripe API](https://stripe.com/docs/api/products/create)を利用して、Stripeで商品を作成する必要があります。これは、Stripeがフロントエンドからのリクエストが正当であることを検証し、選択された製品/SKUに適切な金額を請求するために必要です。Stripeでは、Stripeの支払いで使用する全てのSKUに名前を付ける必要があります。全てのSKUに必ず1つ追加してください。
+
+StripeダッシュボードでテストSKUと本番SKUの両方を作成する必要があります。「テストデータの表示」に切り替えてから、ローカル開発用の製品を作成してください。
 
 #### StripeJSをロードして支払いコンポーネントを作成する
 
@@ -251,6 +252,7 @@ Reactをインポートし、いくつかのstyleのボタンを追加し、Reac
 `render()`関数はstyleをボタンに適用し、`redirectToCheckout()`関数をボタンのonclickイベントにバインドします。
 
 #### 支払いコンポーネントをホームページにインポートする
+
 `src/pages/index.js`ファイルに移動しましょう。ここがルートURLに表示されるホームページです。他のimportの下にあるファイルに新しい支払いコンポーネントをimportし、`<Layout>`要素内に`<Checkout />`コンポーネントを追加します。`index.js`ファイルは以下のようになります。
 
 ```jsx:title=src/pages/index.js
@@ -313,6 +315,7 @@ module.exports = {
   ],
 }
 ```
+
 StripeアカウントからSKUを取得するにはシークレットAPIキーを提供する必要があります。シークレットキーは秘密にしておく必要があるので、フロントエンドやGithubで絶対に共有しないでください。したがって、環境変数を設定して秘密鍵を保存する必要があります。[Gatsby docs](/docs/environment-variables/)で環境変数の使用法について詳しく読むことができます。
 プロジェクトのルートディレクトリに`.env.development`ファイルを追加してください:
 
@@ -328,6 +331,7 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 ```
+
 最後に、`.gitignore`ファイルで全ての`.env.*`ファイルが除外されていることを確認してください:
 
 ```text:title=.gitignore
@@ -537,6 +541,7 @@ export default Skus
 ```
 
 #### カートコンポーネントの追加
+
 `redirectToCheckout()`関数を呼び出して、SKUとその量の配列を提供し、複数のアイテムを同時に請求できます。したがって、支払いページにリダイレクトするそれぞれの「購入」ボタンの代わりに、カートコンポーネントの状態を利用する主要な「支払いに進む」ボタンを提供できます。この例に必要な変更は[GitHub](https://github.com/thorsten-stripe/ecommerce-gatsby-tutorial/tree/cart-example)で確認できます。
 
 # 支払いテスト
