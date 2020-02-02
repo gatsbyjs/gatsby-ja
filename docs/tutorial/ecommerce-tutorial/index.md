@@ -41,10 +41,7 @@ Stripeは顧客から情報を安全に収集して処理できる支払い処�
 
 Stripeの代わりとしては、SquareやBraintreeなどがあります。これらの仕組みはStripeと非常に似ています。
 
-Stripeはバックエンドコンポーネントを必要としない[hosted checkout](https://stripe.com/docs/payments/checkout)を提供します。
-製品やSKU、サブスクリプションプランの設定を[Stripe Dashboard](https://stripe.com/docs/payments/checkout#configure)で行うことができます。1つの製品やサブスクリプション(電子書籍)を販売している場合、Gatsbyサイトで商品のSKU IDをハードコーディングできます。
-複数の商品を販売している場合、[Stripe ソースプラグイン](https://www.gatsbyjs.org/packages/gatsby-source-stripe/)を利用して、ビルド時に全てのSKUを取得できます。
-Gatsbyのサイトを自動的に更新する場合は、Stripe webhookイベントを利用して新しい商品やSKUが追加されたときに再デプロイをトリガー[trigger a redeploy](https://www.netlify.com/docs/)できます。
+Stripeはバックエンドコンポーネントを必要としない[hosted checkout](https://stripe.com/docs/payments/checkout)を提供します。製品やSKU、サブスクリプションプランの設定を[Stripe Dashboard](https://stripe.com/docs/payments/checkout#configure)で行うことができます。1つの製品やサブスクリプション(電子書籍)を販売している場合、Gatsbyサイトで商品のSKU IDをハードコーディングできます。複数の商品を販売している場合、[Stripe ソースプラグイン](https://www.gatsbyjs.org/packages/gatsby-source-stripe/)を利用して、ビルド時に全てのSKUを取得できます。Gatsbyのサイトを自動的に更新する場合は、Stripe webhookイベントを利用して新しい商品やSKUが追加されたときに再デプロイをトリガー[trigger a redeploy](https://www.netlify.com/docs/)できます。
 
 # Gatsbyサイトの設定
 
