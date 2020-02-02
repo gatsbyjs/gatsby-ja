@@ -5,7 +5,7 @@ title: Service Worker を使ってオフラインサポートを追加する
 [Lighthouse による評価](/docs/audit-with-lighthouse/) を実施したときに、Progressive Web App カテゴリのスコアが良くないことに気づいたかもしれません。ここではスコアを上げる方法について紹介します。
 
 1. [マニフェストファイルを追加](/docs/add-a-manifest-file/)しましょう。オフラインプラグインが、作成された `manifest.webmanifest` をキャッシュできるように、オフラインプラグインの**前に**マニフェストプラグインを書いていることを確認してください。
-2. ウェブサイトが PWA として認定されるために Service Worker を使って、オフラインサポートを追加しましょう。[Gatsby のオフラインプラグイン](/packages/gatsby-plugin-offline/)は、Service Worker を作成してサイトがオフラインでも動作するようにさせ、悪い回線状況に対する耐性を高めます。
+2. ウェブサイトが PWA として認定されるために [Service Worker](https://developer.mozilla.org/ja-JP/docs/Web/API/Service_Worker_API) を使って、オフラインサポートを追加しましょう。[Gatsby のオフラインプラグイン](/packages/gatsby-plugin-offline/)は、Service Worker を作成してサイトがオフラインでも動作するようにさせ、悪い回線状況に対する耐性を高めます。
 
 ## Service Worker とは？
 
@@ -76,8 +76,7 @@ export const registerServiceWorker = () => true
 
 ## Service Worker を削除する
 
-もしサイトから Service Worker を完全に削除したいときは、`gatsby-plugin-office` の代わりに `gatsby-plugin-remove-serviceworker` を追加しましょう。
-手順は [`gatsby-plugin-offline` のREADME](/packages/gatsby-plugin-offline/#remove) をご覧ください。
+もしサイトから Service Worker を完全に削除したいときは、`gatsby-plugin-office` の代わりに `gatsby-plugin-remove-serviceworker` を追加しましょう。手順は [`gatsby-plugin-offline` の README](/packages/gatsby-plugin-offline/#remove) をご覧ください。
 
 ## 参考資料
 
