@@ -242,7 +242,7 @@ exports.createPages = ({ actions }) => {
 1. 以前インストールした `js-yaml` パッケージをインポートします。
 2. `index.yaml` ファイルを読み込み、コンテンツを解析します。
 3. Gatsby の [`createPage()` API](/docs/actions/#createPage)を使用して、解析されたファイルからプログラムでいくつかのページを作成します。
-4. `context` プロパティを使用して、 `pageContext` という特別な prop としてデータをページに渡し、それを使用できるようにします。 `context`の詳細については [ページの作成と変更](/docs/creating-and-modifying-pages/) を参照してください。
+4. `context` プロパティを使用して、`pageContext` という特別な prop としてデータをページに渡し、それを使用できるようにします。 `context`の詳細については [ページの作成と変更](/docs/creating-and-modifying-pages/) を参照してください。
 
 ### テンプレートを作成する
 
