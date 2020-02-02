@@ -1,22 +1,22 @@
 ---
-title: マニフェストファイルを追加しましょう！
+title: マニフェストファイルの追加
 ---
 
-[audit with Lighthouse](/docs/audit-with-lighthouse/) を実行したとき、"Progressive Web App" カテゴリのスコアが低いことに気付くかも知れません。ここでは、そのスコアを改善する方法を紹介します。
+[Lighthouse による監査](/docs/audit-with-lighthouse/) を実行したとき、"Progressive Web App" カテゴリのスコアが低いことに気付くかも知れません。ここでは、そのスコアを改善する方法を紹介します。
 
-まず初めに PWA とはなんでしょうか？
+はじめに、 PWA とはなんでしょうか？
 
-They are regular websites that take advantage of modern browser functionality to augment the web experience with app-like features and benefits. Check out [Google's overview](https://developers.google.com/web/progressive-web-apps/) of what defines a PWA experience and the [Progressive web apps (PWAs) doc](/docs/progressive-web-app/) to learn how a Gatsby site is a progressive web app.
+これらは、モダンブラウザーの機能を利用して、通常の WEB サイトにアプリのような機能と利点を備えて、WEB 体験を強化したものです。 Gatsby サイトをプログレッシブ WEB アプリにしている方法の詳細については、PWA の体験と [プログレッシブ WEB アプリ (PWA) のドキュメント](/docs/progressive-web-app/)の定義に関する [Google の概要](https://developers.google.com/web/progressive-web-apps/)をご覧ください。
 
-The inclusion of a web app manifest is one of the three generally accepted [baseline requirements for a PWA](https://alistapart.com/article/yes-that-web-project-should-be-a-pwa#section1).
+WEB アプリマニフェストを含めることは、一般的な [PWA の基本要件](https://alistapart.com/article/yes-that-web-project-should-be-a-pwa#section1)の 3 つのうちの 1 つです。
 
 [Google](https://developers.google.com/web/fundamentals/web-app-manifest/) からの引用：
 
-> The web app manifest is a simple JSON file that tells the browser about your web application and how it should behave when 'installed' on the user's mobile device or desktop.
+> WEB アプリマニフェストは、WEB アプリケーションと、それがユーザーのモバイルデバイスやデスクトップにインストールされたときの動作をブラウザーに伝えるシンプルな JSON ファイルです。
 
-[Gatsby's manifest plugin](/packages/gatsby-plugin-manifest/) configures Gatsby to create a `manifest.webmanifest` file on every site build.
+[Gatsby のマニフェストプラグイン](/packages/gatsby-plugin-manifest/) はすべてのサイトのビルドで `manifest.webmanifest` を作成するように Gatsby を構成します。
 
-## Using `gatsby-plugin-manifest`
+## `gatsby-plugin-manifest` の使い方
 
 1.  プラグインをインストールします。
 
