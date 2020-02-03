@@ -31,7 +31,7 @@ exports.onPreBootstrap = ({ store, reporter }) => {
 }
 ```
 
-## クエリと presentational components の分離
+## クエリーとプレゼンテーショナルコンポーネントの分離
 
 テーマの作成者として、データの収集とデータをレンダリングするコンポーネントは分離することが望ましいです。これにより、エンドユーザーは [PageQuery](/docs/page-query) や [StaticQuery](/docs/static-query) を記述することなく、`PostList` や `AuthorCard` といったコンポーネントを簡単にオーバーライドできます。
 
