@@ -28,7 +28,7 @@ URL - /**en**/about
 
 ### react-intl
 
-React-intl は i18n 用ライブラリーの FormatJS セットの 1 つであり、150 以上の言語のサポートを提供します。JavaScript の [Internationalization API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl) をもとに構築されており、強化された API とコンポーネントを提供します。React-intl は、React context と HOC（高階コンポーネント）を使用して翻訳機能を提供し、必要に応じて言語モジュールを動的にロードできるようにします。また、基本的な JavaScript i18n API をサポートしていない古いブラウザーで使用可能なポリフィルのオプションもあります。
+React-intl は i18n 用ライブラリーの FormatJS セットの 1 つであり、150 以上の言語のサポートを提供します。JavaScript の [Internationalization API](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Intl) をもとに構築されており、強化された API とコンポーネントを提供します。React-intl は、React context と HOC（高階コンポーネント）を使用して翻訳機能を提供し、必要に応じて言語モジュールを動的にロードできるようにします。また、基本的な JavaScript i18n API をサポートしていない古いブラウザーで使用可能なポリフィルのオプションもあります。
 
 react-intl の [APIs](https://github.com/formatjs/react-intl/blob/master/docs/API.md) および、[デモ](https://github.com/formatjs/react-intl/tree/master/examples)を含む[コンポーネント](https://github.com/formatjs/react-intl/blob/master/docs/Components.md)に関するより詳細な情報は、[ドキュメント](https://github.com/formatjs/react-intl/tree/master/docs)から入手できます。
 
