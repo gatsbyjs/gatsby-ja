@@ -29,7 +29,7 @@ Gatsby プロジェクトを新規作成し、生成されたプロジェクト�
 cd wordpress-tutorial-site
 ```
 
-`gatsby-source-wordpress` プラグインをインストールしてください。このチュートリアルでは説明していないプラグインの機能や GraphQL クエリーの例については、 [`gatsby-source-wordpress` プラグインの README ファイル](/packages/gatsby-source-wordpress/?=wordpress) をご覧ください。
+`gatsby-source-wordpress` プラグインをインストールしてください。このチュートリアルでは説明していないプラグインの機能や GraphQL クエリーの例については、[`gatsby-source-wordpress` プラグインの README ファイル](/packages/gatsby-source-wordpress/?=wordpress)をご覧ください。
 
 ```shell
 npm install --save gatsby-source-wordpress
