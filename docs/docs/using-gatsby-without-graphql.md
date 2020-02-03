@@ -2,15 +2,15 @@
 title: GraphQL を使わない Gatsby について
 ---
 
-ほとんどの Gatsby に関するドキュメントや web 上の例では、ソースプラグインの活用方法やサイトのデータ管理についてフォーカスしています。 しかし、データを Gatsby に取り込む際、ソースプラグイン（や Gatsby ノード）は必ずしも必要ないのです！GraphQL を使わなくとも Gatsby だけで「非構造化データ」を取り扱えます。
+ほとんどの Gatsby に関するドキュメントやウェブ上の例では、ソースプラグインの活用方法やサイトのデータ管理についてフォーカスしています。 しかし、データを Gatsby に取り込む際、ソースプラグイン（や Gatsby ノード）は必ずしも必要ないのです！GraphQL を使わなくとも Gatsby だけで「非構造化データ」を取り扱えます。
 
-> ヒント： ここでは、 「非構造化データ」を 「Gatsby のデータ層の外側で加工されたデータ」のことをいいます。 (Gatsby のノードに変換せずに直接取得されたデータを使います)
+> ヒント：ここでは、「非構造化データ」を「Gatsby のデータ層の外側で加工されたデータ」のことをいいます。(Gatsby のノードに変換せずに直接取得されたデータを使います)
 
 ## アプローチ： Gatsby の `createPages` API を使いデータを取得する
 
-> _ヒント_： 下記サンプルコードは、 ここでいう「非構造化データ」によるアプローチを確かめるために作られたリポジトリです。 [完全版はこちら](https://github.com/jlengstorf/gatsby-with-unstructured-data)
+> _ヒント_：下記サンプルコードは、ここでいう「非構造化データ」によるアプローチを確かめるために作られたリポジトリです。[完全版はこちら](https://github.com/jlengstorf/gatsby-with-unstructured-data)
 
-Gatsby プロジェクト内の `gatsby-node.js` ファイルにて、 必要なデータを取得し `createPages` API の中の`createPage` アクションに記述してください。
+Gatsby プロジェクト内の `gatsby-node.js` ファイルにて、必要なデータを取得し `createPages` API の中の `createPage` アクションに記述してください。
 
 ```javascript:title=gatsby-node.js
 exports.createPages = async ({ actions: { createPage } }) => {
@@ -35,7 +35,7 @@ exports.createPages = async ({ actions: { createPage } }) => {
 }
 ```
 
-- `createPages` は [Gatsby Node API](/docs/node-apis/#createPages)です。 [Gatsby の起動手順](/docs/gatsby-lifecycle-apis/#bootstrap-sequence) の中で読み込まれます。
+- `createPages` は [Gatsby Node API](/docs/node-apis/#createPages) です。 [Gatsby の起動手順](/docs/gatsby-lifecycle-apis/#bootstrap-sequence) の中で読み込まれます。
 - [`createPage` アクション](/docs/actions/#createPage) は実際のページを組み立てる場所です。
 
 ハイライトした行にあるように、データはテンプレートに埋め込まれ、props としてアクセスできます。
@@ -83,15 +83,15 @@ GraphQL によるデータ層を用いることがプロジェクトの規模に
 - フロントエンド側の複雑な部分をクエリの中にまとめることができる — たいていのデータ加工は GraphQL クエリのビルド時に完了します。
 - 階層の入り組んだ複雑なデータを扱うようなモダンなアプリケーションにとって最適なデータクエリ言語
 - データの肥大化をなくすことでパフォーマンスを改善できる — GraphQL はビューで必要とされるデータを遅延読み込みしているため Gatsby は高速に動作します。
-- 開発環境でのホットリロードが可能 — "ポケモン"のウェブサイトの例でいうと、「他のポケモンをみる」機能を詳細ページに追加するような場合、すべての”ポケモン”が表示されるように `gatsby-node.js` を改修してから、開発環境サーバーの再起動が必要です。しかし GraphQL を利用するとホットリロードですぐに追加したクエリが反映されます。
+- 開発環境でのホットリロードが可能 — "ポケモン"のウェブサイトの例でいうと、「他のポケモンをみる」機能を詳細ページに追加するような場合、すべての”ポケモン”が表示されるように `gatsby-node.js` を改修してから、開発環境サーバーの再起動が必要です。しかし GraphQL を利用するとホットリロードにより即座に追加したクエリが反映されます。
 
 > GraphQL についてより深く知りたい場合は [GraphQL in Gatsby](/docs/querying-with-graphql/) を参照。
 
 データ層の外側で処理をすることによって、下記リンクに示すようにトランスフォーマープラグインで提供されるような最適化が得られます。
 
-- [`gatsby-image`](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-image)（画像読み込みの最適化）,
+- [`gatsby-image`](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-image)（画像読み込みの最適化）
 - [`gatsby-transformer-sharp`](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-transformer-sharp)（リサイズ、切り取り、レスポンシブな画像の生成といった、いろいろな画像処理の方法を選択できるフィールドを提供します）
-- Gatsby エコシステムにおける公式のもの、あるいはコミュニティーによるものすべての[トランスフォーマープラグイン](/plugins/?=transformer)、、、など
+- Gatsby エコシステムにおける公式のもの、あるいはコミュニティーによるものすべての [トランスフォーマープラグイン](/plugins/?=transformer)、、、など
 
 その他「非構造データ」を用いた場合のデメリットとして、たくさんのソースから直接データを取得すればするほど、コードが発散してしまうことがあげられます。
 
@@ -99,8 +99,8 @@ GraphQL によるデータ層を用いることがプロジェクトの規模に
 
 もしあなたが作ろうとしているサイトの規模が小さいものでしたら、このガイドで説明したように `createPages` API を使って「非構造データ」を取り込むことが効率的でしょう。あとでもしサイトが大きくなったり、より複雑なサイトの構築やデータを加工したくなった場合は下記のような手順を実施ください。
 
-1.  ほしいソース取得プラグインとトランスフォームプラグインが[Plugin Library](/plugins/)に存在するかを確認ください。
-2.  もしなければこちら[Plugin Authoring](/docs/creating-plugins/)をお読みいただきご自身で作ることをご検討ください！
+1.  ほしいソース取得プラグインとトランスフォームプラグインが [Plugin Library](/plugins/) に存在するかを確認ください。
+2.  もしなければ [Plugin Authoring](/docs/creating-plugins/) をお読みいただきご自身で作ることをご検討ください！
 
 ## 参考
 
