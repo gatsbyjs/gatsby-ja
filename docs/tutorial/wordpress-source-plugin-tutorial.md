@@ -6,7 +6,7 @@ title: "WordPress ソースプラグイン・チュートリアル"
 
 ### このチュートリアルの範囲：
 
-このチュートリアルでは、`gatsby-source-wordpress` をインストールして、設定された WordPress からブログや画像データを Gatsby サイトに取り込み、そのデータをレンダリングします。こちらの [Gatsby + WordPress デモサイト](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-wordpress) では、これからチュートリアルで作成するサイトに近いサンプルサイトのソースコードを確認できます。サンプルサイトには見た目の良い画像は設定されていませんが、次の [WordPress サイトに画像を追加する](/tutorial/wordpress-image-tutorial/) チュートリアルで設定を行うことになるでしょう。
+このチュートリアルでは、`gatsby-source-wordpress` をインストールして、設定された WordPress からブログや画像データを Gatsby サイトに取り込み、そのデータをレンダリングします。こちらの [Gatsby + WordPress デモサイト](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-wordpress)では、これからチュートリアルで作成するサイトに近いサンプルサイトのソースコードを確認できます。サンプルサイトには見た目の良い画像は設定されていませんが、次の [WordPress サイトに画像を追加する](/tutorial/wordpress-image-tutorial/)チュートリアルで設定を行うことになるでしょう。
 
 #### まって、 GraphQL の方がいい？
 
