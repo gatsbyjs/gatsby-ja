@@ -2,7 +2,7 @@
 title: マニフェストファイルの追加
 ---
 
-[Lighthouse による監査](/docs/audit-with-lighthouse/) を実行したとき、"Progressive Web App" カテゴリのスコアが低いことに気付くかも知れません。ここでは、そのスコアを改善する方法を紹介します。
+[Lighthouse による監査](/docs/audit-with-lighthouse/) を実行したとき、「プログレッシブウェブアプリ」カテゴリのスコアが低いことに気付くかも知れません。ここでは、そのスコアを改善する方法を紹介します。
 
 はじめに、 PWA とはなんでしょうか？
 
