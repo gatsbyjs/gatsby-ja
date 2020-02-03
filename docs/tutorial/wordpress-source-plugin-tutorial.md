@@ -10,7 +10,7 @@ title: "WordPress ソースプラグイン・チュートリアル"
 
 #### まって、GraphQL の方がいい？
 
-もし GraphQL を使いたいとお考えでしたら、 WordPress で簡単にデータを GraphQL で取得できる [wp-graphql](https://github.com/wp-graphql/wp-graphql) プラグインがあります。
+もし GraphQL を使いたいとお考えでしたら、WordPress で簡単にデータを GraphQL で取得できる [wp-graphql](https://github.com/wp-graphql/wp-graphql) プラグインがあります。
 
 WP-API でサポートされている同一の認証スキームは wp-graphql でサポートされています。これは [gatsby-source-graphql](/packages/gatsby-source-graphql/) と同時に使うことができます。
 
