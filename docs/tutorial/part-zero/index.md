@@ -38,9 +38,9 @@ Gatsby と Node.js をインストールするには、[Homebrew](https://brew.s
 
 #### Node のインストール
 
-1. ターミナルを開きます
-2. `brew install node`を実行します
-   - もし Homebrew でインストールしたくない場合は、[Node.js の公式ウェブサイト](https://nodejs.org/ja/)より、最新バージョンの Node.js をダウンロードして、ダブルクリックして表示されるインストール手順にしたがってください。
+? 1. ターミナルを開きます
+? 2. `brew install node`を実行します
+?    - もし Homebrew でインストールしたくない場合は、[Node.js の公式ウェブサイト](https://nodejs.org/ja/)より、最新バージョンの Node.js をダウンロードして、ダブルクリックして表示されるインストール手順にしたがってください。
 
 ### Windows の手順
 
@@ -179,7 +179,7 @@ Gatsby のドキュメントには、VS Code で撮影したスクリーンシ�
 
 ### Prettier プラグインをインストールする
 
-また、エラーを回避するためにコードをフォーマットするのに役立つツールである[Prettier](https://github.com/prettier/prettier)を使用することもお勧めします。
+? また、エラーを回避するためにコードをフォーマットするのに役立つツールである[Prettier](https://github.com/prettier/prettier)を使用することもお勧めします。
 
 [Prettier VS Code plugin](https://github.com/prettier/prettier-vscode)を使用して、エディターで Prettier を直接使用できます。
 

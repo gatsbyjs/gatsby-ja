@@ -35,7 +35,7 @@ Node.js のバージョンを更新する方法は、最初に Node.js をイン
 
 新しいバージョンの Node.js をインストールするおすすめの方法です。
 
-もし [チュートリアルの Part 0](https://www.gatsbyjs.org/tutorial/part-zero/#-install-nodejs-and-npm) にしたがっていれば、すでに Homebrew をインストールしているはずです。Homebrew は Node.js（およびその他のソフトウェア）の特定のバージョンをインストールできるプログラムです。
+? もし [チュートリアルの Part 0](https://www.gatsbyjs.org/tutorial/part-zero/#-install-nodejs-and-npm) にしたがっていれば、すでに Homebrew をインストールしているはずです。Homebrew は Node.js（およびその他のソフトウェア）の特定のバージョンをインストールできるプログラムです。
 
 Node.js 8 から 10 に更新するためには、ターミナルを起動して以下のコマンドを実行してください。
 

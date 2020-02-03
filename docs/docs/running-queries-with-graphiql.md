@@ -9,13 +9,13 @@ title: GraphiQLの紹介
 GraphiQL は、GraphQL の統合開発環境（IDE）です。GraphiQL は強力な（そして万能な）ツールです。
 Gatsby サイトを構築する際に、頻繁に使用することになるでしょう。
 
-開発環境のサーバーを実行中に、GraphiQL へアクセスできます。
-通常、以下の URL になります。
-<http://localhost:8000/___graphql>.
+? 開発環境のサーバーを実行中に、GraphiQL へアクセスできます。
+? 通常、以下の URL になります。
+? <http://localhost:8000/___graphql>.
 
 ## GraphiQL の使用例
 
-<http://localhost:8000/___graphql>を開くと、以下の動画のように表示されます。ビルドインの `Site` "type" を突っつくと、`siteMetadata`オブジェクトを含んだ、どのフィールドを利用できるかを確認することができます。
+? <http://localhost:8000/___graphql>を開くと、以下の動画のように表示されます。ビルドインの `Site` "type" を突っつくと、`siteMetadata`オブジェクトを含んだ、どのフィールドを利用できるかを確認することができます。
 
 <video controls="controls" autoplay="true" loop="true">
   <source type="video/mp4" src="/graphiql-explore.mp4" />
@@ -24,7 +24,7 @@ Gatsby サイトを構築する際に、頻繁に使用することになるで�
 
 ## GraphiQL の使用方法
 
-Gatsby サイトで開発環境のサーバーを実行中に、<http://localhost:8000/___graphql>で GraphiQL を開き、データを操作します！ <kbd> Ctrl +Space</kbd>を押して（または<kbd> Shift + Space</kbd>を別のショートカットに登録し使用して）オートコンプリートウィンドウを表示し、<kbd> Ctrl + Enter </kbd>で GraphQL クエリーを実行します。
+? Gatsby サイトで開発環境のサーバーを実行中に、<http://localhost:8000/___graphql>で GraphiQL を開き、データを操作します！ <kbd> Ctrl +Space</kbd>を押して（または<kbd> Shift + Space</kbd>を別のショートカットに登録し使用して）オートコンプリートウィンドウを表示し、<kbd> Ctrl + Enter </kbd>で GraphQL クエリーを実行します。
 
 IDE の右上の端にある GraphiQL のドキュメントを読んでみてください。スルーしてしまいがちですが、読んで見る価値はあります！
 

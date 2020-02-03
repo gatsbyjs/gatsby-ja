@@ -3,9 +3,9 @@ title: 用語集
 disableTableOfContents: true
 ---
 
-import HorizontalNavList from "../../www/src/components/horizontal-nav-list.js"
+? import HorizontalNavList from "../../www/src/components/horizontal-nav-list.js"
 
-Gatsby をはじめたばかりの時は、覚えるべき用語がたくさんあって大変でしょう。この用語集ではよく使われる用語の意味と、Gatsby のサイト上でどのように使われているかを説明します。
+? Gatsby をはじめたばかりの時は、覚えるべき用語がたくさんあって大変でしょう。この用語集ではよく使われる用語の意味と、Gatsby のサイト上でどのように使われているかを説明します。
 
 <HorizontalNavList
 items={"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")}
@@ -150,11 +150,11 @@ Gatsby は [React](#react)、[GraphQL](#graphql)、モダンな [JavaScript](#ja
 
 すべてのブラウザーが理解可能なマークアップ言語。Hypertext Markup Language の略。[HTML](https://developer.mozilla.org/ja/docs/Web/HTML) はウェブコンテンツに見出しや段落などを定義して、ユニバーサルな構造を与えます。アクセシビリティ対応のウェブサイトを構築する上でも大事です。
 
-### Headless CMS
+### [Headless CMS](/docs/glossary/headless-cms)
 
 [バックエンド](#backend)と[フロントエンド](#frontend)の両方を管理するのではなく、バックエンドのコンテンツ管理だけを行うための [CMS](#cms)。このセットアップは [Decoupled](#decoupled) とも呼ばれます。
 
-### ホスティング (Hosting)
+? ### ホスティング (Hosting)
 
 ホスティング・プロバイダーはあなたのウェブサイトやアプリのコピーを持ち、世の中に[公開](#public)ための場所を提供しているサービスです。 [Gatsby のサイトをホストできる主なホスティング・プロバイダ・サービス](/docs/deploying-and-hosting/)は Netlify, AWS, S3, Surge, Heroku 等があります。
 
@@ -174,7 +174,7 @@ Gatsby によってサイトが[ビルド](#build)され、ブラウザー上に
 
 ## J
 
-### JAMStack
+### [JAMStack](/docs/glossary/jamstack)
 
 JAMStack とは [JavaScript](#javascript)、[APIs](#api)、そして（[HTML](#html) の）Markup から構成されたモダンなウェブアーキテクチャのことです。 [JAMStack.org](https://jamstack.org) から引用。"JAM Stack とは、優れたパフォーマンス、セキュリティ、スケーリングのコスト、開発体験を提供するウェブサイトやアプリを構築する新しい手法です"。
 
@@ -305,6 +305,10 @@ Gatsby のスターターとは、あなたのプロジェクトを始めるの�
 Gatsby はあなたのサイトを静的に[ビルド](#build)し、コマンド 1 つで[ホスト](#hosting)できます。これは、その場でページを生成する動的なシステムと違うところです。静的であるということは各コンテンツやコード変更の度に一度の読み込みしか必要がなくなるので、良いパフォーマンスを見込む事ができます。
 
 このサイトでは、他に Gatsby のプロジェクトで用意される `/static` フォルダーのことを指します。これは、[ビルド時](#build)に `/public` フォルダーへと自動的にコピーされるフォルダーのことです。Gatsby によって変換する必要はない一方で [public](#public) フォルダーに入れる必要があるファイル群を入れるフォルダーです。
+
+### [Static Site Generator](/docs/glossary/static-site-generator)
+
+A software application that creates HTML pages from templates or [components](#component) and a given content source.
 
 ## T
 

@@ -54,7 +54,7 @@ backend:
 
 ### ステップ 4
 
-[github.com](http://github.com) にアクセスし、あなたのプロジェクトと同じ名前のリポジトリーを作成してください。以下のコマンドを使い、あなたの Gatsby サイトのコードを GitHub に push してください。
+? [github.com](http://github.com) にアクセスし、あなたのプロジェクトと同じ名前のリポジトリーを作成してください。以下のコマンドを使い、あなたの Gatsby サイトのコードを GitHub に push してください。
 
 ```shell
 git init

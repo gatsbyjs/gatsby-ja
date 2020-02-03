@@ -65,8 +65,8 @@ tableOfContentsDepth: 2
 
 Gatsby テーマを使用するとサイトの見た目を統一できます。 テーマをシームレスに更新したり、まとめて作成したり、あるいは互換性のあるテーマを別のものに交換したりすることもできます。
 
-- [テーマスターターを使って新しいサイトをつくる](/docs/recipes/working-with-themes#creating-a-new-site-using-a-theme-starter)
-- [新しいテーマをつくる](/docs/recipes/working-with-themes#building-a-new-theme)
+? - [テーマスターターを使って新しいサイトをつくる](/docs/recipes/working-with-themes#creating-a-new-site-using-a-theme-starter)
+? - [新しいテーマをつくる](/docs/recipes/working-with-themes#building-a-new-theme)
 
 ## [5. データの取得](/docs/recipes/sourcing-data)
 

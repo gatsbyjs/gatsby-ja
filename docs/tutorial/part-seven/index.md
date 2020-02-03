@@ -247,7 +247,7 @@ exports.createPages = async ({ graphql, actions }) => {
 }
 ```
 
-サーバーを再起動すれば、ページが生成されます！生成されたページを見つける簡単な方法は、サイトに存在しないでたらめなパスへ移動することです。Gatsby がページのリストを表示してくれます。例えば <http://localhost:8000/sdf> に移動すれば、生成されたページのリストが表示されます。
+? サーバーを再起動すれば、ページが生成されます！生成されたページを見つける簡単な方法は、サイトに存在しないでたらめなパスへ移動することです。Gatsby がページのリストを表示してくれます。例えば <http://localhost:8000/sdf> に移動すれば、生成されたページのリストが表示されます。
 
 ![new-pages](new-pages.png)
 
@@ -341,7 +341,7 @@ export default ({ data }) => {
                 {node.frontmatter.title}{" "}
                 <span
                   css={css`
-                    color: #bbb;
+                    color: #555;
                   `}
                 >
                   — {node.frontmatter.date}
