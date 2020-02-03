@@ -6,7 +6,7 @@ title: マニフェストファイルの追加
 
 はじめに、 PWA とはなんでしょうか？
 
-これらは、モダンブラウザーの機能を利用して、通常の WEB サイトにアプリのような機能と利点を備えて、WEB 体験を強化したものです。 Gatsby サイトをプログレッシブウェブアプリにしている方法の詳細については、PWA の体験と [プログレッシブウェブアプリ (PWA) のドキュメント](/docs/progressive-web-app/)の定義に関する [Google の概要](https://developers.google.com/web/progressive-web-apps/)をご覧ください。
+これらは、モダンブラウザーの機能を利用して、通常のウェブサイトにアプリのような機能と利点を備えて、WEB 体験を強化したものです。 Gatsby サイトをプログレッシブウェブアプリにしている方法の詳細については、PWA の体験と [プログレッシブウェブアプリ (PWA) のドキュメント](/docs/progressive-web-app/)の定義に関する [Google の概要](https://developers.google.com/web/progressive-web-apps/)をご覧ください。
 
 ウェブアプリマニフェストを含めることは、一般的な [PWA の基本要件](https://alistapart.com/article/yes-that-web-project-should-be-a-pwa#section1)の 3 つのうちの 1 つです。
 
