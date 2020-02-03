@@ -44,7 +44,7 @@ module.exports = {
 }
 ```
 
-_詳細なインストール手順については [Using Gatsby Image](/docs/using-gatsby-image/) をご覧ください._
+_詳細なインストール手順については [Using Gatsby Image](/docs/using-gatsby-image/) をご覧ください。_
 
 ### クエリーで始める Gatsby image
 
