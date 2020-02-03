@@ -120,7 +120,7 @@ export default Layout
 
 ## サイトのメタデータ
 
-サイトのタイトルやソーシャルメディアのハンドル名などの一般的にカスタマイズされたものについては、`gatsby-config.js` 内でユーザーにサイトメタデータを設定させることができます。そして、次のようにしてテーマ全体でメタデータにアクセスするための StaticQuery を作成できます。
+サイトのタイトルやソーシャルメディアのハンドル名などユーザーにカスタマイズさせたいものについては、`gatsby-config.js` 内のサイトメタデータを編集させることで実現できます。そして、次のようにしてテーマ全体でメタデータにアクセスするための StaticQuery を作成できます。
 
 ```js:title=src/hooks/use-site-metadata.js
 import { graphql, useStaticQuery } from "gatsby"
