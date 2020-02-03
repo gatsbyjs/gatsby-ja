@@ -76,7 +76,7 @@ export const query = graphql`
 
 ### StaticQuery
 
-最上位のテンプレートでも StaticQuery を使用し、props として別の presentational components にデータを渡すことができます。
+最上位のテンプレートでも StaticQuery を使用し、`props` として別のプレゼンテーショナルコンポーネントにデータを渡すことができます。
 
 ```jsx:title=src/components/layout.js
 import React from "react"
