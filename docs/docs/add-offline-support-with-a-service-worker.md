@@ -76,7 +76,7 @@ export const registerServiceWorker = () => true
 
 ## Service Worker を削除する
 
-もしサイトから Service Worker を完全に削除したいときは、`gatsby-plugin-office` の代わりに `gatsby-plugin-remove-serviceworker` を追加しましょう。手順は [`gatsby-plugin-offline` の README](/packages/gatsby-plugin-offline/#remove) をご覧ください。
+もしサイトから Service Worker を完全に削除したいときは、`gatsby-plugin-offline` の代わりに `gatsby-plugin-remove-serviceworker` を追加しましょう。手順は [`gatsby-plugin-offline` の README](/packages/gatsby-plugin-offline/#remove) をご覧ください。
 
 ## 参考資料
 
