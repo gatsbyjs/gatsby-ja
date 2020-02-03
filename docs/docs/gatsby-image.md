@@ -2,7 +2,7 @@
 title: Gatsby の画像 API
 ---
 
-Gatsby のサイトが非常に高速である理由のひとつに、私たちの推奨する画像処理手法があります。`gatsby-image` は、GraphQL で動く Gatsby の [native image processing](https://image-processing.gatsbyjs.org/) と、画像の読み込みを簡単かつ完璧に最適化した [gatsby-plugin-sharp](/packages/gatsby-plugin-sharp/) があなたのサイトでシームレスに動作するよう設計された React コンポーネントです。
+Gatsby のサイトが非常に高速である理由のひとつに、私たちの推奨する画像処理手法があります。`gatsby-image` は、GaraphQL とサイトの画像読み込みを簡単かつ完璧に最適化する [gatsby-plugin-sharp](/packages/gatsby-plugin-sharp/) によって、Gatsby の[ネイティブ画像処理](https://image-processing.gatsbyjs.org/)機能がシームレスに動作するように設計された React コンポーネントです。
 
 > _ヒント: gatsby-image は `<img />` の互換では**ありません**。gatsby-image はレスポンシブな固定の幅/高さを持つ画像とコンテナの幅に合わせて伸縮する画像に最適化されています。GraphQL を使用せずに Gatsby で[画像を扱う](/docs/images-and-files/)他の方法もあります。_
 
