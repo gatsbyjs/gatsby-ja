@@ -86,7 +86,7 @@ gatsby develop
 
 ブラウザーから localhost:8000 を開いてください。また GraphQL クエリーを作成するために localhost:8000/\_\_\_graphql を開いてください。
 
-練習として、 GraphQL エクスプローラーで以下のクエリーの再作成に挑戦してみてください。この最初のクエリーは WordPress のブログ記事の本文を取得します。
+練習として、GraphQL エクスプローラーで以下のクエリーの再作成に挑戦してみてください。この最初のクエリーは WordPress のブログ記事の本文を取得します。
 
 ```graphql
 query {
