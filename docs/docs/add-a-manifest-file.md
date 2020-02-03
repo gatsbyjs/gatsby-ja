@@ -6,13 +6,13 @@ title: マニフェストファイルの追加
 
 はじめに、 PWA とはなんでしょうか？
 
-これらは、モダンブラウザーの機能を利用して、通常の WEB サイトにアプリのような機能と利点を備えて、WEB 体験を強化したものです。 Gatsby サイトをプログレッシブ WEB アプリにしている方法の詳細については、PWA の体験と [プログレッシブ WEB アプリ (PWA) のドキュメント](/docs/progressive-web-app/)の定義に関する [Google の概要](https://developers.google.com/web/progressive-web-apps/)をご覧ください。
+これらは、モダンブラウザーの機能を利用して、通常の WEB サイトにアプリのような機能と利点を備えて、WEB 体験を強化したものです。 Gatsby サイトをプログレッシブウェブアプリにしている方法の詳細については、PWA の体験と [プログレッシブウェブアプリ (PWA) のドキュメント](/docs/progressive-web-app/)の定義に関する [Google の概要](https://developers.google.com/web/progressive-web-apps/)をご覧ください。
 
-WEB アプリマニフェストを含めることは、一般的な [PWA の基本要件](https://alistapart.com/article/yes-that-web-project-should-be-a-pwa#section1)の 3 つのうちの 1 つです。
+ウェブアプリマニフェストを含めることは、一般的な [PWA の基本要件](https://alistapart.com/article/yes-that-web-project-should-be-a-pwa#section1)の 3 つのうちの 1 つです。
 
 [Google](https://developers.google.com/web/fundamentals/web-app-manifest/) からの引用：
 
-> WEB アプリマニフェストは、WEB アプリケーションと、それがユーザーのモバイルデバイスやデスクトップにインストールされたときの動作をブラウザーに伝えるシンプルな JSON ファイルです。
+> ウェブアプリマニフェストは、ウェブアプリケーションと、それがユーザーのモバイルデバイスやデスクトップにインストールされたときの動作をブラウザーに伝えるシンプルな JSON ファイルです。
 
 [Gatsby のマニフェストプラグイン](/packages/gatsby-plugin-manifest/) はすべてのサイトのビルドで `manifest.webmanifest` を作成するように Gatsby を構成します。
 
@@ -53,4 +53,4 @@ npm install --save gatsby-plugin-manifest
 }
 ```
 
-Gatsby サイトに Web マニフェストを追加するために必要なことはたったこれだけです！ここでは基本構成を例に反映する方法を紹介しています。その他のオプションについては、 [plugin reference](/packages/gatsby-plugin-manifest/?=gatsby-plugin-manifest#automatic-mode) をご覧ください。
+Gatsby サイトにウェブマニフェストを追加するために必要なことはたったこれだけです！ここでは基本構成を例に反映する方法を紹介しています。その他のオプションについては、 [plugin reference](/packages/gatsby-plugin-manifest/?=gatsby-plugin-manifest#automatic-mode) をご覧ください。
