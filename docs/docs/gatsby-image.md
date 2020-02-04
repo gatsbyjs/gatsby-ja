@@ -50,7 +50,7 @@ _詳細なインストール手順については [Using Gatsby Image](/docs/usi
 
 Gatsby Image にファイルデータを送るには [GraphQL クエリー](/docs/graphql-reference/)を設定して、それをコンポーネントにプロパティとして渡すか、それをコンポーネントに直接書き込みます。1 つのやり方としては、[`useStaticQuery`](/docs/use-static-query/) フックを活用する方法があります。
 
-画像のソースに関する一般的な GraphQL クエリーは、[gatsby-source-filesystem](/packages/gatsby-source-filesystem/) の `file` と、[gatsby-plugin-sharp](/packages/gatsby-plugin-sharp/) の `imageSharp` と `allImageSharp` の両方を含みますが、最終的に利用可能なオプションは元データによって異なります。
+画像取得のための一般的な GraphQL クエリーは、[gatsby-source-filesystem](/packages/gatsby-source-filesystem/) の `file` と、[gatsby-plugin-sharp](/packages/gatsby-plugin-sharp/) の `imageSharp` と `allImageSharp` の両方が挙げられますが、最終的に利用可能な選択肢は元データによって決まります。
 
 > ヒント: あなたは同じタイプの複数画像をクエリーするために [GraphQL エイリアス](/docs/graphql-reference/#aliasing)も使用できます。
 
