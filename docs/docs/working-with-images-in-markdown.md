@@ -8,11 +8,11 @@ Markdown を利用してコンテンツを作成する際に、画像を挿入�
 
 ブログを作成する際に、記事の見出し画像を設定したい場合があります。frontmatter に画像のファイル名を設定し、GraphQL のクエリに `gatsby-plugin-sharp` を利用して画像を読み込む方法があります。
 
-この方法は `gatsby-transformer-remark` か `gatsby-plugin-mdx` を利用して、すでに Markdown を変換してコンテンツとして利用できるよう設定してある場合を想定しています。もし設定をしていない場合は [Gatsby チュートリアル 7](/tutorial/part-seven/) を参照してください。チュートリアルは `gatsby-transformer-remark` を利用しています。
+この方法は `gatsby-transformer-remark` か `gatsby-plugin-mdx` を利用して、 すでに Markdown を変換してコンテンツとして利用できるよう設定してある場合を想定しています。もし設定をしていない場合は [Programmatically create pages from data](/tutorial/part-seven/) を参照してください。チュートリアルは `gatsby-transformer-remark` を利用しています。
 
 > NOTE: [MDX](/docs/mdx/) を利用した場合も、GraphQL のクエリ内の `markdownRemark` を `Mdx` へ置き換えるだけで動作します。
 
-まずは [Using gatsby-image](/docs/using-gatsby-image/) でも紹介されている画像を扱うために必要なプラグインをダウンロードしましょう。
+まずは [Using gatsby-image](/docs/using-gatsby-image/) で紹介されている画像を扱うために必要なプラグインをインストールしましょう。
 
 ```shell
 npm install --save gatsby-image gatsby-transformer-sharp gatsby-plugin-sharp
@@ -22,7 +22,7 @@ npm install --save gatsby-image gatsby-transformer-sharp gatsby-plugin-sharp
 
 ### Markdown と画像を同じディレクトリーで管理する場合の設定
 
-Markdown と画像が同じディレクトリーにある場合は、画像の指定がひとつの設定のみで完了します。例えば Markdown と画像が `/pages` ディレクトリー以下に格納されている場合、両方のコンテンツが Gatsby のデータ構造として自動的に GraphQL で取得できます。
+Markdown と画像が同じディレクトリーにある場合は、Markdown と画像の設定がひとつのオプションにまとめることができます。例えば Markdown と画像が `/pages` ディレクトリー以下に格納されている場合、両方のコンテンツが Gatsby のデータ構造として自動的に GraphQL で取得できます。
 
 ```js:title=gatsby-config.js
 module.exports = {
@@ -48,10 +48,10 @@ title: 私の好きな犬
 featuredImage: shiba-inu.png
 ---
 
-以下コンテンツを記述
+以下 Markdown コンテンツを記述
 ```
 
-次のステップとして GraphQL のクエリを利用してテンプレートに見出し画像を設定する必要あります。このページ下部で説明します。
+次のステップとして GraphQL のクエリを利用してテンプレートに見出し画像を設定する必要がありますが、このページ下部で説明します。
 
 ### Markdown と画像を別のディレクトリーで管理する場合の設定
 
@@ -87,12 +87,12 @@ title: About
 featuredImage: ../images/team-cat.png
 ---
 
-以下コンテンツを記述
+以下 Markdown コンテンツを記述
 ```
 
 ### Frontmatter から画像を取得する
 
-ここまでで Markdown での記述と画像の指定方法を理解できたと思います。次に GraphQL のクエリで見出し画像を取得する方法を説明します。ファイルパスに実際の画像が存在するパスを指定している場合、画像は GraphQL の `File` node に格納されます。そして画像のデータを `childImageSharp` から参照することが可能になります。
+ここまでで Markdown での記述と画像の指定方法を理解できたと思います。次に GraphQL のクエリで見出し画像を取得する方法を説明します。ファイルパスに実際の画像が存在するパスを指定している場合、画像は GraphQL の `File` node に格納されます。そして画像のデータを `childImageSharp` から参照します。
 
 Markdown のテンプレートファイルに GraphQL のクエリを追加します。以下は [Fluid query](/docs/gatsby-image#images-that-stretch-across-a-fluid-container) を利用してレスポンシブな画像を取得する例です。
 
@@ -118,7 +118,7 @@ export const query = graphql`
 `
 ```
 
-また Markdown のテンプレート内で `gatsby-image` パッケージを import して、 GraphQL で取得したものを `<Img />` コンポーネントへ渡すことで表示できます。
+また Markdown のテンプレート内で `gatsby-image` パッケージを import して、 GraphQL で取得したものを `<Img />` コンポーネントへ渡すことで画像を表示できます。
 
 ```jsx:title=src/templates/blog-post.js
 import React from "react"
@@ -181,7 +181,7 @@ npm install --save gatsby-remark-images gatsby-plugin-sharp
 
 また `gatsby-source-filesystem` がインストールされていることと設定で画像のあるフォルダーが指定されていることを確認してください。
 
-`gatsby-config` でプラグインの設定をしましょう。先程示したように `Remark` か `MDX` を利用します。
+`gatsby-config` でプラグインの設定をしましょう。先述したように `Remark` か `MDX` を利用します。
 
 ### MDX プラグインを使う
 
@@ -218,7 +218,7 @@ module.exports = {
 
 ### Transformer Remark Plugin を使う
 
-`gatsby-plugin-mdx` の代わりに `gatsby-transformer-remark` plugin を利用した場合の例。`gatsby-transformer-remark` の `plugins` の中に `gatsby-remark-images` プラグインの設定をします。
+`gatsby-plugin-mdx` の代わりに `gatsby-transformer-remark` plugin を利用した場合の例です。`gatsby-transformer-remark` の `plugins` の中に `gatsby-remark-images` プラグインの設定をします。
 
 ```js:title=gatsby-config.js
 module.exports = {
@@ -247,7 +247,7 @@ module.exports = {
 }
 ```
 
-このような設定をすることによってデフォルトの Markdown の記述で画像を表示できます。 `Sharp` による表示、もしくは `gatsby-image` コンポーネントを使うことによって実現可能です。
+このような設定をすることによっての Markdown の書式で画像を表示できます。 `Sharp` により処理されたものを `gatsby-image` コンポーネントを使うことにより表示できます。
 
 ```markdown
 ![Hopper The Rabbit](./rabbit-friend.png)
