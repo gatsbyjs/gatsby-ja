@@ -3,13 +3,7 @@ title: 用語集
 disableTableOfContents: true
 ---
 
-<<<<<<< HEAD
-import HorizontalNavList from "../../www/src/components/horizontal-nav-list.js"
-
 Gatsby をはじめたばかりの時は、覚えるべき用語がたくさんあって大変でしょう。この用語集ではよく使われる用語の意味と、Gatsby のサイト上でどのように使われているかを説明します。
-=======
-When you're new to Gatsby there can be a lot of words to learn. This glossary aims to give you a 10,000-foot overview of common terms and what they mean for Gatsby sites.
->>>>>>> 9df3cf44052398d936d607e319857a9e33083b10
 
 <HorizontalNavList
 items={"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")}
