@@ -36,7 +36,7 @@ exports.createPages = async ({ actions: { createPage } }) => {
 ```
 
 - `createPages` は [Gatsby Node API](/docs/node-apis/#createPages) です。 [Gatsby の起動手順](/docs/gatsby-lifecycle-apis/#bootstrap-sequence) の中で読み込まれます。
-- [`createPage` アクション](/docs/actions/#createPage) は実際のページを組み立てる場所です。
+- [`createPage` アクション](/docs/actions/#createPage)は実際のページを組み立てる場所です。
 
 ハイライトした行にあるように、データはテンプレートに埋め込まれ、props としてアクセスできます。
 
