@@ -92,11 +92,7 @@ const typography = new Typography(
 export default typography;
 ```
 
-<<<<<<< HEAD
-上記の手順が終わったら、`gatsby develop` というコマンドで開発サーバーを立ち上げ、<http://localhost:8000> にアクセスしてください。もしすべての手順が上手くいっていたら、サイトのタイプデザインが Funston テーマになっているはずです。
-=======
-After completing the above steps, you can start the development server using the command `gatsby develop` and navigate to the local website `http://localhost:8000`. If all went well you should see the text on your website using the Funston typographic theme.
->>>>>>> 9df3cf44052398d936d607e319857a9e33083b10
+上記の手順が終わったら、`gatsby develop` というコマンドで開発サーバーを立ち上げ、`http://localhost:8000` にアクセスしてください。もしすべての手順が上手くいっていたら、サイトのタイプデザインが Funston テーマになっているはずです。
 
 **ヒント**: もし以前のフォントが変更されずに残っている場合、CSS からすべての `font-family` を削除し、再度チェックしてください。
 
