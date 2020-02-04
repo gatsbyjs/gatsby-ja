@@ -14,12 +14,7 @@ disableTableOfContents: true
 
 GraphiQL は GraphQL の統合開発環境（IDE）です。強力で万能なツールであり、Gatsby でサイトを構築する際には頻繁に使用します。
 
-<<<<<<< HEAD
-開発サーバーが起動しているときは <http://localhost:8000/___graphql> にアクセスできます。
-=======
-You can access it when your site's development server is running—normally at
-`http://localhost:8000/___graphql`.
->>>>>>> 9df3cf44052398d936d607e319857a9e33083b10
+開発サーバーが起動しているときは `http://localhost:8000/___graphql` にアクセスできます。
 
 <video controls="controls" autoplay="true" loop="true">
   <source type="video/mp4" src="/graphiql-explore.mp4"></source>
