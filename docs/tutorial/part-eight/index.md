@@ -355,9 +355,15 @@ Lighthouse は、サイトの改善と学習に最適なツールです。Lighth
 
 ### 公式スターター
 
+<<<<<<< HEAD
 1.  [Gatsby のデフォルトスターター]](https://github.com/gatsbyjs/gatsby-starter-default)：デフォルトの定型文でプロジェクトを開始します。この必要最小限のスターターには、必要なメイン Gatsby 構成ファイルが付属しています。_[実施例](http://gatsbyjs.github.io/gatsby-starter-default/)_
 2.  [Gatsby のブログスターター](https://github.com/gatsbyjs/gatsby-starter-blog): 驚くほど高速なブログを作成するための Gatsby スターター。 _[実施例](http://gatsbyjs.github.io/gatsby-starter-blog/)_
 3.  [Gatsby の"hello world"スターター](https://github.com/gatsbyjs/gatsby-starter-hello-world): Gatsby サイトに必要な最低限の要素を備えた Gatsby スターター。 _[実施例](https://gatsby-starter-hello-world-demo.netlify.com/)_
+=======
+1.  [Gatsby's Default Starter](https://github.com/gatsbyjs/gatsby-starter-default): Kick off your project with this default boilerplate. This barebones starter ships with the main Gatsby configuration files you might need. _[working example](https://gatsbyjs.github.io/gatsby-starter-default/)_
+2.  [Gatsby's Blog Starter](https://github.com/gatsbyjs/gatsby-starter-blog): Gatsby starter for creating an awesome and blazing-fast blog. _[working example](https://gatsbyjs.github.io/gatsby-starter-blog/)_
+3.  [Gatsby's Hello-World Starter](https://github.com/gatsbyjs/gatsby-starter-hello-world): Gatsby Starter with the bare essentials needed for a Gatsby site. _[working example](https://gatsby-starter-hello-world-demo.netlify.com/)_
+>>>>>>> 9df3cf44052398d936d607e319857a9e33083b10
 
 ## みなさん、これで以上です！
 

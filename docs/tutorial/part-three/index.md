@@ -268,7 +268,7 @@ export default ({ children }) => (
 )
 ```
 
-![with-navigation2](with-navigation2.png)
+![with-navigation2](with-navigation.png)
 
 これで、できあがりです！3 ページの基本的なグローバルナビゲーションを備えたサイトができました。
 
