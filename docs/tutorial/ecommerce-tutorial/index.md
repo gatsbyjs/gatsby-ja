@@ -45,7 +45,7 @@ Stripe はバックエンドコンポーネントを必要としない[hosted ch
 
 # Gatsby サイトの設定
 
-ターミナルで`gatsby new`を実行して新しい Gatsby のプロジェクトを作成し、ディレクトリーを先程作成した新しいプロジェクトに変更します。
+ターミナルで `gatsby new` を実行して新しい Gatsby のプロジェクトを作成し、ディレクトリーを先程作成した新しいプロジェクトに変更します。
 
 ```shell
 gatsby new ecommerce-gatsby-tutorial
