@@ -101,7 +101,7 @@ module.exports = {
 
 ターミナルで `npm run develop` を実行しましす。これにより、開発サーバーが起動し、サイトに加えた変更がリロードされるので、ブラウザーで変更がプレビューできます。ブラウザを[localhost:8000](http://localhost:8000/)で開くと、デフォルトのホームページが表示されます。
 
-> **NOTE**:もし、すでに Gatsby の開発サーバを`npm run develop`で起動していた場合、コマンドを実行したターミナルで CTRL + C を押してサーバを再起動し、`npm run develop`コマンドを再度実行することで[localhost:8000](http://localhost:8000/)に反映された`gatsby-config.js`の変更を確認するできます。
+> **ヒント**:もし、すでに Gatsby の開発サーバを `npm run develop` で起動していた場合、コマンドを実行したターミナルで CTRL + C を押してサーバを再起動し、`npm run develop` コマンドを再度実行することで[localhost:8000](http://localhost:8000/)に反映された`gatsby-config.js`の変更を確認できます。
 
 ### StripeJS プラグインはどのように動作するか
 
