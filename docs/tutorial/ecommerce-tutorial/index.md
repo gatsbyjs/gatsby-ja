@@ -255,7 +255,7 @@ React をインポートし、いくつかの style のボタンを追加し、R
 
 #### 支払いコンポーネントをホームページにインポートする
 
-`src/pages/index.js`ファイルに移動しましょう。ここがルート URL に表示されるホームページです。他の import の下にあるファイルに新しい支払いコンポーネントを import し、`<Layout>`要素内に`<Checkout />`コンポーネントを追加します。`index.js`ファイルは以下のようになります。
+`src/pages/index.js` ファイルに移動しましょう。ここがルート URL に表示されるホームページです。他の import の下にあるファイルに新しい支払いコンポーネントを import し、`<Layout>` 要素内に `<Checkout />` コンポーネントを追加します。`index.js` ファイルは以下のようになります。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
