@@ -236,7 +236,7 @@ React をインポートし、いくつかの style のボタンを追加し、R
   }
 ```
 
-`redirectToCheckout()`関数は支払いのリクエストを検証し、Stripe がホストする支払いページにリダイレクトするか、エラーオブジェクトで解決します。`successUrl`と`cancelUrl`を適切な URL に置き換えてください。
+`redirectToCheckout()` 関数は支払いのリクエストを検証し、Stripe がホストする支払いページにリダイレクトするか、エラーオブジェクトで解決します。`successUrl` と `cancelUrl` を適切な URL に置き換えてください。
 
 ```jsx:title=src/components/checkout.js
   render() {
