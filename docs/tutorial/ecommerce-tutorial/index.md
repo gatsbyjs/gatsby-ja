@@ -336,7 +336,7 @@ require("dotenv").config({
 })
 ```
 
-最後に、`.gitignore`ファイルで全ての`.env.*`ファイルが除外されていることを確認してください。
+最後に、`.gitignore` ファイルで全ての `.env.*` ファイルが除外されていることを確認してください。
 
 ```text:title=.gitignore
 # dotenv environment variables files
