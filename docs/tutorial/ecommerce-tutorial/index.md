@@ -130,7 +130,7 @@ You have 2 keys in both test mode and production mode:
 
 ### Stripe アカウントの"クライアント専用組み込み"を有効にします
 
-このチュートリアルでは Stripe の"Checkout クライアント専用組み込み"を利用します。この組み込みを利用するには Stipe ダッシュボードの対応する[チェックアウトの設定](https://dashboard.stripe.com/account/checkout/settings)でアクティブにする必要があります。
+このチュートリアルでは Stripe の"クライアント専用組み込み"を利用します。この組み込みを利用するには Stipe ダッシュボードの対応する[チェックアウトの設定](https://dashboard.stripe.com/account/checkout/settings)でアクティブにする必要があります。
 
 ![Stripe control to enable the Checkout client-side only integration highlighted](stripe-checkout-clientside-functionality.png)
 
