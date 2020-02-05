@@ -284,7 +284,7 @@ const IndexPage = () => (
 export default IndexPage
 ```
 
-ブラウザで[localhost:8000](http://localhost:8000/)に戻り、`npm run develop`を実行している場合は、大きくて魅力的な"BUY MY BOOK"ボタンが表示されます。さあ、クリックしてみましょう！
+ブラウザで[localhost:8000](http://localhost:8000/)に戻り、`npm run develop` を実行している場合は、大きくて魅力的な"BUY MY BOOK"ボタンが表示されます。さあ、クリックしてみましょう！
 
 ### 発展:ソースプラグインを通じて SKU をインポートする
 
