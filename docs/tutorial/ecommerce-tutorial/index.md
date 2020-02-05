@@ -483,7 +483,7 @@ const SkuCard = class extends React.Component {
 export default SkuCard
 ```
 
-このコンポーネントは SKU 名、適切にフォーマットされた価格設定、および「購入」ボタンを利用して、個々の SKU ごとに適切なカードをレンダリングします。「購入」ボタンは対応する SKU ID で`redirectToCheckout()`関数をトリガーします。
+このコンポーネントは SKU 名、適切にフォーマットされた価格設定、および「購入」ボタンを利用して、個々の SKU ごとに適切なカードをレンダリングします。「購入」ボタンは対応する SKU ID で `redirectToCheckout()` 関数をトリガーします。
 最後に、`Skus`コンポーネントをリファクタリングして Stripe.js クライアントを初期化し、`props`で Stripe.js クライアントを伝えながら`SkuCards`をレンダリングする必要があります。
 
 ```jsx:title=src/components/Products/Skus.js
