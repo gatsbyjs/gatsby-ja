@@ -251,7 +251,7 @@ React をインポートし、いくつかの style のボタンを追加し、R
   }
 ```
 
-`render()`関数は style をボタンに適用し、`redirectToCheckout()`関数をボタンの onclick イベントにバインドします。
+`render()` 関数は style をボタンに適用し、`redirectToCheckout()` 関数をボタンの onclick イベントにバインドします。
 
 #### 支払いコンポーネントをホームページにインポートする
 
