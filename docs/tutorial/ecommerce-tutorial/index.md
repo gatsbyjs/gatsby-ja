@@ -138,7 +138,7 @@ You have 2 keys in both test mode and production mode:
 
 さらに、この組み込みを利用するには、[アカウント設定](https://dashboard.stripe.com/account)で Stripe アカウントの名前を設定する必要があります。
 
-この組み込みの詳細については[Stripe docs](https://stripe.com/docs/payments/checkout#configure)を利用してみてください。
+この組み込みの詳細については[Stripe docs](https://stripe.com/docs/payments/checkout#configure)を参照すると良いでしょう。
 
 ## 例
 
