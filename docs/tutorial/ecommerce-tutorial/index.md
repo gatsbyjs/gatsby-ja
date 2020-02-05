@@ -105,7 +105,7 @@ module.exports = {
 
 ### StripeJS プラグインはどのように動作するか
 
-Stripe は JavaScript ライブラリーを提供します。これにより、Stripe がホストする支払いページに顧客を安全にリダイレクトできます。Gatsby プラグインの`gatsby-plugin-stripe`は全てのページで`<body>`タグの末尾に次のスニペットを追加します：
+Stripe は JavaScript ライブラリーを提供します。これにより、Stripe がホストする支払いページに顧客を安全にリダイレクトできます。Gatsby プラグインの `gatsby-plugin-stripe` は全てのページで `<body>` タグの末尾に次のスニペットを追加します：
 
 ```html
 <script src="https://js.stripe.com/v3/"></script>
