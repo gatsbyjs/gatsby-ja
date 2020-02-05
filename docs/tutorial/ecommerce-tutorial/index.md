@@ -54,7 +54,7 @@ cd ecommerce-gatsby-tutorial
 
 ## StripeJS プラグインのインストール
 
-プラグインを利用してこのデフォルトのスタータの機能を拡張できます。そのようなプラグインの 1 つが `gatsby-plugin-stripe`で、このプロジェクトにインストールします。
+プラグインを利用してこのデフォルトのスターターの機能を拡張できます。そのようなプラグインの 1 つが `gatsby-plugin-stripe`で、このプロジェクトにインストールします。
 
 ```shell
 npm install gatsby-plugin-stripe
