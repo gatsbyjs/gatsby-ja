@@ -1,14 +1,14 @@
 ---
-title: "Adding an SEO Component"
+title: "SEO コンポーネントを追加する"
 ---
 
-Every site on the web has basic _meta-tags_ like the title, favicon or description of the page in their `<head>` element. This information gets displayed in the browser and is used when someone shares your website, e.g. on Twitter. You can give your users and these websites additional data to embed your website with more data — and that's where this guide for a SEO component comes in. At the end you'll have a component you can place in your layout file and have rich previews for other clients, smartphone users, and search engines.
+Web 上の全てのサイトは、ページのタイトル、説明文、ファビコンなどの基本的なメタタグを `<head>` 要素に持たせています。これらの情報はブラウザや Twitter などのサイトでシェアした際に表示されます。サイトの開発者はユーザーや他のサイトにより多くの情報を提供できます。そこで参考にしていただきたいのがこのガイドです。このガイドでは、スマートフォンユや検索エンジンでリッチなプレビューを表示するコンポーネントをレイアウトファイルに追加します。
 
-_Note: This component will use StaticQuery. If you're unfamiliar with that, have a look at the [StaticQuery documentation](/docs/static-query/). You also have to have `react-helmet` installed for which you can have a look at [this document](/docs/add-page-metadata)._
+ヒント： このガイドでは StaticQuery を使います。もしそれがなんのことかわからなければ、[StaticQuery のドキュメント](/docs/static-query/)に目を通してみてください。また、`react-helmet` をインストールする必要もあるのでそちらも[このドキュメント](/docs/add-page-metadata)で確認してみてください。
 
 ## gatsby-config.js
 
-Gatsby makes all data put into the `siteMetadata` section of your `gatsby-config` file automatically available in GraphQL and therefore it's a good idea to place your information for the component there.
+Gatsby は、`gatsby-config` の `siteMetadata` 欄に記載された情報を自動的に GraphQL で簡単に取得できるようにするので、そこに記載するのがいいでしょう。
 
 ```js:title=gatsby-config.js
 module.exports = {
@@ -24,9 +24,9 @@ module.exports = {
 }
 ```
 
-## SEO component
+## SEO コンポーネント
 
-Create a new component with this initial boilerplate:
+この雛形をもとに新しいコンポーネントを作成してください。
 
 ```jsx:title=src/components/SEO.js
 import React from "react"
@@ -55,11 +55,11 @@ SEO.defaultProps = {
 }
 ```
 
-**Note:** `propTypes` are included in this example to help you ensure you’re getting all the data you need in the component, and to help serve as a guide while destructuring / using those props.
+**ヒント：** この例では必要な情報を取得し、プロップスとして利用するにあたってわかりやすくするために `propTypes` を使っています。
 
-As the SEO component should also be usable in other files, e.g. a template file, the component also accepts properties for which you set sensible defaults in the `SEO.defaultProps` section. This way the information you put into `siteMetadata` gets used every time unless you define the property explicitly.
+テンプレートファイルなど他のファイルでもこのコンポーネントを利用できるようにするために、`SEO.defaultProps` にてデフォルト値を設定しています。こうしておけば、プロパティを明示的に定義しないかぎりは `siteMetadata` の情報が使われます。
 
-Now define the query and place it in the StaticQuery (you can also save the query in a constant). You can also alias query items, so `title` gets renamed to `defaultTitle`.
+そうしたらクエリを定義し、StaticQuery に渡しましょう（クエリそのものは定数として定義することもできます）。`title` が `defaultTitle` と改名されているように、クエリの各アイテムにはエイリアスを設定できます。
 
 ```jsx:title=src/components/SEO.js
 const SEO = ({ title, description, image, pathname, article }) => (
@@ -84,7 +84,7 @@ const query = graphql`
 `
 ```
 
-The next step is to destructure the data from the query and to create an object that checks if the props were used — if not the default values are utilized. The name aliasing comes in handy here: It avoids name collisions.
+次はクエリから取得した情報を、プロップが使われているかチェックするオブジェクトに分割代入しましょう。命名衝突を防いでくれるので、このような場面でエイリアスは便利です。
 
 ```jsx:title=src/components/SEO.js
 const SEO = ({ title, description, image, pathname, article }) => (
@@ -117,7 +117,7 @@ const SEO = ({ title, description, image, pathname, article }) => (
 export default SEO
 ```
 
-The last step is to return this data with the help of `Helmet`. Your complete SEO component should look like:
+最後に `Helmet` を使ってこの情報を返します。完成した SEO コンポーネントはこのようになっているはずです。
 
 ```jsx:title=src/components/SEO.js
 import React from "react"
@@ -213,9 +213,9 @@ const query = graphql`
 
 ## Examples
 
-You could also put the Facebook and Twitter meta-tags into their own components, add custom favicons you placed in your `static` folder, and add [schema.org](https://schema.org/) data (Google will use that for their [Structured Data](https://developers.google.com/search/docs/guides/intro-structured-data)). To see how that works you can have a look at these two examples:
+このようにして、Facebook や Twitter のメタタグを独自のコンポーネントに持たせることもできますし、`static` フォルダーにお好きなファビコンを用意したり、[schema.org](https://schema.org/)に準じた情報（Google はこれを利用し構造化データを生成します）を追加することもできます。より詳しくはこれらの例を参考にしてみてください。
 
 - [marisamorby.com](https://github.com/marisamorby/marisamorby.com/blob/master/packages/gatsby-theme-blog-sanity/src/components/seo.js)
 - [gatsby-starter-prismic](https://github.com/LeKoArts/gatsby-starter-prismic/blob/master/src/components/SEO/SEO.jsx)
 
-As mentioned at the beginning you are also able to use the component in templates, like in [this example](https://github.com/jlengstorf/marisamorby.com/blob/6e86f845185f9650ff95316d3475bb8ac86b15bf/src/templates/post.js#L12-L18).
+冒頭でも述べたように、これらのコンポーネントを[この例のように](https://github.com/jlengstorf/marisamorby.com/blob/6e86f845185f9650ff95316d3475bb8ac86b15bf/src/templates/post.js#L12-L18)テンプレートとして利用することもできます。
