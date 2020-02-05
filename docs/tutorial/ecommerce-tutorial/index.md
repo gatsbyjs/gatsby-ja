@@ -550,7 +550,7 @@ export default Skus
 
 #### カートコンポーネントの追加
 
-`redirectToCheckout()`関数を呼び出して、SKU とその量の配列を提供し、複数のアイテムを同時に請求できます。したがって、支払いページにリダイレクトするそれぞれの「購入」ボタンの代わりに、カートコンポーネントの状態を利用する主要な「支払いに進む」ボタンを提供できます。この例に必要な変更は[GitHub](https://github.com/thorsten-stripe/ecommerce-gatsby-tutorial/tree/cart-example)で確認できます。
+`redirectToCheckout()` 関数を呼び出して、SKU とその量の配列を提供し、複数のアイテムを同時に請求できます。したがって、支払いページにリダイレクトするそれぞれの「購入」ボタンの代わりに、カートコンポーネントの状態を利用する主要な「支払いに進む」ボタンを提供できます。この例に必要な変更は[GitHub](https://github.com/thorsten-stripe/ecommerce-gatsby-tutorial/tree/cart-example)で確認できます。
 
 # 支払いテスト
 
