@@ -298,7 +298,7 @@ Stripe アカウントから SKU を取得するために使える[gatsby-source
 npm install gatsby-source-stripe
 ```
 
-これで、`gatsby-config`ファイルにプラグイン設定を追加できます。
+これで、`gatsby-config` ファイルにプラグイン設定を追加できます。
 
 ```js:title=gatsby-config.js
 module.exports = {
