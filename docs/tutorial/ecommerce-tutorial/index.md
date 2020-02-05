@@ -156,7 +156,7 @@ Stripe ダッシュボードでテスト SKU と本番 SKU の両方を作成す
 
 #### StripeJS をロードして支払いコンポーネントを作成する
 
-`src/components/checkout.js`に新しいファイルを作成します。作成した`checkout.js`は以下のようになります:
+`src/components/checkout.js` に新しいファイルを作成します。作成した `checkout.js` は以下のようになります:
 
 ```jsx:title=src/components/checkout.js
 import React from "react"
