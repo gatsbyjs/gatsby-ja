@@ -328,7 +328,7 @@ Stripe アカウントから SKU を取得するにはシークレット API キ
 STRIPE_SECRET_KEY=sk_test_xxx
 ```
 
-定義された環境変数を利用するには`gatsby-config.js`または`gatsby-node.js`で以下のように環境変数を要求する必要があります。
+定義された環境変数を利用するには `gatsby-config.js` または `gatsby-node.js` で以下のように環境変数を要求する必要があります。
 
 ```js:title=gatsby-config.js
 require("dotenv").config({
