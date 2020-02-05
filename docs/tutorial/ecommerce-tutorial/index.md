@@ -321,7 +321,7 @@ module.exports = {
 ```
 
 Stripe アカウントから SKU を取得するにはシークレット API キーを提供する必要があります。シークレットキーは秘密にしておく必要があるので、フロントエンドや Github で絶対に共有しないでください。したがって、環境変数を設定して秘密鍵を保存する必要があります。[Gatsby docs](/docs/environment-variables/)で環境変数の使用法について詳しく読むことができます。
-プロジェクトのルートディレクトリに`.env.development`ファイルを追加してください。
+プロジェクトのルートディレクトリに `.env.development` ファイルを追加してください。
 
 ```text:title=.env.development
 # Stripe secret API key
