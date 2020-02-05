@@ -111,7 +111,7 @@ Stripe は JavaScript ライブラリーを提供します。これにより、S
 <script src="https://js.stripe.com/v3/"></script>
 ```
 
-これにより、Stripe の不正検出[[fraud detection](https://stripe.com/docs/stripe-js/reference#including-stripejs)]が容易になります
+これにより、Stripe の[不正検出](https://stripe.com/docs/stripe-js/reference#including-stripejs)]が容易になります
 もし支払い処理をさらにカスタマイズしたり Srtipe のデータをサイトに引いてくる場合は、[Gatsby のプラグインライブラリで Stripe プラグインを確認](https://www.gatsbyjs.org/plugins/?=stripe)してください。
 
 ### Stripe のテストキーを取得する
