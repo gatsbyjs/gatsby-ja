@@ -211,7 +211,7 @@ export default Checkout
 
 #### あなたは何をしましたか？
 
-React をインポートし、いくつかの style のボタンを追加し、React 関数を導入しました。`componentDidMount()`や、`redirectToCheckout()`といった関数は Stripe の機能の中で最も重要です。`componentDidMount()`関数はコンポーネントが最初に DOM にマウントされた時に起動する React のライフサイクルメソッドであり、Stripe.js クライアントを初期化するのに適した場所です。コードは以下のようになります。
+React をインポートし、いくつかの style のボタンを追加し、React 関数を導入しました。`componentDidMount()`や、`redirectToCheckout()` といった関数は Stripe の機能の中で最も重要です。`componentDidMount()` 関数はコンポーネントが最初に DOM にマウントされた時に起動する React のライフサイクルメソッドであり、Stripe.js クライアントを初期化するのに適した場所です。コードは以下のようになります。
 
 ```jsx:title=src/components/checkout.js
   componentDidMount() {
