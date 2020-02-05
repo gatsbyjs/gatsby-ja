@@ -347,7 +347,7 @@ require("dotenv").config({
 
 #### SKU をリストするコンポーネントを作成する
 
-components ディレクトリーに新しく`Products`ファイルを追加します。このファイルには Stripe の SKU と対話するコンポーネントが含まれます。まず第一に、SKU を照会およびリストするコンポーネントが必要です。
+components ディレクトリーに新しく `Products` ファイルを追加します。このファイルには Stripe の SKU と対話するコンポーネントが含まれます。まず第一に、SKU を照会およびリストするコンポーネントが必要です。
 
 ```jsx:title=src/components/Products/Skus.js
 import React from "react"
