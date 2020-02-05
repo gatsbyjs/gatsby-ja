@@ -15,7 +15,7 @@ Gatsby サイトを構築する際に、頻繁に使用することになるで�
 
 ## GraphiQL の使用例
 
-`http://localhost:8000/___graphql`を開くと、以下の動画のように表示されます。ビルドインの `Site` "type" を突っつくと、`siteMetadata`オブジェクトを含んだ、どのフィールドを利用できるかを確認することができます。
+`http://localhost:8000/___graphql` を開くと、以下の動画のように表示されます。ビルドインの `Site` "type" を突っつくと、`siteMetadata` オブジェクトを含んだ、どのフィールドを利用できるかを確認することができます。
 
 <video controls="controls" autoplay="true" loop="true">
   <source type="video/mp4" src="/graphiql-explore.mp4" />
