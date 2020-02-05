@@ -24,7 +24,7 @@ Gatsby サイトを構築する際に、頻繁に使用することになるで�
 
 ## GraphiQL の使用方法
 
-Gatsby サイトで開発環境のサーバーを実行中に、`http://localhost:8000/___graphql`で GraphiQL を開き、データを操作します！ <kbd> Ctrl +Space</kbd>を押して（または<kbd> Shift + Space</kbd>を別のショートカットに登録し使用して）オートコンプリートウィンドウを表示し、<kbd> Ctrl + Enter </kbd>で GraphQL クエリーを実行します。
+Gatsby サイトで開発環境のサーバーを実行中に、`http://localhost:8000/___graphql` で GraphiQL を開き、データを操作します！ <kbd> Ctrl +Space</kbd>を押して（または<kbd> Shift + Space</kbd>を別のショートカットに登録し使用して）オートコンプリートウィンドウを表示し、<kbd> Ctrl + Enter </kbd>で GraphQL クエリーを実行します。
 
 IDE の右上の端にある GraphiQL のドキュメントを読んでみてください。スルーしてしまいがちですが、読んで見る価値はあります！
 
