@@ -1,76 +1,77 @@
 ---
-title: Winning Over Developers
+title: 開発者を説得する
 ---
 
-Developers are often the primary evangelists of Gatsby because they are the primary users of the framework. If you're a developer, you may find that simply talking to other developers about why _you_ like Gatsby is enough to get them interested. Here are some talking points to help support your conversations with developers.
+開発者はこのフレームワークの主要なユーザーのため、Gatsby の主要なエバンジェリストになることが多いです。_あなた_ が開発者であれば、Gatsby が好きな理由を他の開発者に話すだけで彼らは興味を持ってくれるでしょう。開発者との会話をサポートするためのいくつかのポイントを示します。
 
-Some things that developers care about include:
+開発者が気を使う点は次のようなものです。
 
-- **Site Performance** Building sites that are fast and that stay fast as new tools and technology get incorporated.
-- **Working with the best tools and technologies** Getting to use new technologies and having the flexibility to pick the right tools for the job.
-- **Not getting bogged down in configuration and setup** These things are often time consuming, frustrating, and prevent developers from getting to focus on the work they actually care about.
-- **Developing as efficiently and effectively as possible** The more things can be streamlined, automated, and/or simplified, the better.
+- **サイトのパフォーマンス** 高速で、新しいツールと技術が組み込まれても早いままのサイトをつくること。
+- **最高のツールと技術で動作すること** 新しい技術を使うことで、仕事に適したツールを柔軟に選択できるようになります。
+- **設定と構築に行き詰まらないこと** これらのことは時に時間がかかったり、困惑させたり、イライラさせたり、本来開発者が気をかける作業に集中できなくなります。
+- **できる限り効率的・効果的に開発すること** より多くのものを自動化・単純化、あるいは単純化できれば、より良いです。
 
 ## Basic explanation
 
-Here's an example of a basic explanation of Gatsby for developers:
+これは開発者に向けた Gatsby の基本的な説明です。
 
-> Gatsby is a free, open-source, React-based framework for building fast websites and applications. Gatsby streamlines the setup and configuration of your build, it can pull data into your UI from any and all of your sources, and amazing performance and current web best practices are built into Gatsby sites.
+> Gatsby は高速なウェブサイトやアプリケーションを作るための無料でオープンソースな React をベースとしたフレームワークです。Gatsby はビルドのセットアップと設定を合理化し、あらゆるソースから UI にデータを取り込むことができ、素晴らしいパフォーマンスと現在のウェブのベストプラクティスが Gatsby のサイトに組み込まれます。
 
-## Specific benefits
+## 具体的な利点
 
-Gatsby has many benefits that give developers the freedom to build great websites and use the skills and tools they love. Some specific talking points are listed below.
+Gatsby には開発者に素晴らしいサイトを構築したり、彼らが好きなスキルやツールを使う自由をあたえる多くの利点があります。具体的なポイントをいくつか以下に示します。
 
-### Site speed
+### サイトの速度
 
-> Gatsby was built with performance in mind from its inception, and Gatsby sites are consistently 2-3x faster than similar sites built with other tools – pages load in milliseconds rather than seconds. Gatsby's automated performance optimizations include pre-fetching resources, code splitting, statically generating HTML, and Google's [PRPL Pattern](/docs/prpl-pattern/). If you want to take a deeper dive into Gatsby's performance features, check out [Web Performance 101 – also, why is Gatsby so fast?](/blog/2017-09-13-why-is-gatsby-so-fast/).
+> Gatsby は当初からパフォーマンスを念頭に構築され、Gatsby のサイトは他のツールで作られた似たようなサイトと比べ一貫し 2~3 倍高速です。ページは数秒ではなくミリ秒で読み込まれます。Gatsby の自動化されたサイトパフォーマンスの最適化にはリソースのプリフィッチ、コードスプリッティング、静的化された HTML の生成や Google の[PRPL Pattern](/docs/prpl-pattern/)パターンを含みます。もし Gatsby のパフォーマンスの特徴をさらに知りたい場合は、[Web Performance 101 – also, why is Gatsby so fast?](/blog/2017-09-13-why-is-gatsby-so-fast/)をご覧ください。
 
-### Modern web tools
+### モダンなウェブツール
 
-> Gatsby sites are built with React - currently the most popular framework for developing web apps, and data can be pulled into your React components via GraphQL. Gatsby is also built to pull data from any source so you can pick the best tool for each job and function your site needs to perform. Pull data from the best content management tools, the best e-commerce tools, whatever databases you're using, and more.
+> Gatsby のサイトはウェブアプリを開発するフレームワークの中で現在もっとも人気な React で構築されていて、React コンポーネントの中で取得されるデータは GraphQL を通して取得します。 Gatsby はあらゆるソースからデータを取得するように構築されていて、サイトで実行する必要があるジョブや機能のために最適なツールを選べます。 最高のコンテンツ管理ツールや e コマースツール、利用しているデータベースなどからデータを取得できます。
 
-### Plugins and features
+### プラグインと機能
 
-> Just about every feature you could want for building a state-of-the-art website or web app is available through Gatsby. If the feature isn't already built in, there's an extensive library of available plugins. There's a list of features, their availability, and comparisons with other site building options available on the [Features page](/features/). The complete list of currently available plugins can be found on the [Plugins page](/plugins/).
+> 最先端のウェブサイトやウェブアプリを構築するために必要な機能は Gatsby でから入手できます。 組み込まれていない機能があっても、利用可能なプラグインの充実したライブラリがあります。 [特徴ページ](/features/)には機能の一覧とそれらの対応度、他のサイト構築手段との比較があります。[プラグインページ](/plugins/)には現在利用できるプラグインを網羅した一覧があります。
 
-### Data integration
+### 統合されたデータ
 
-> Gatsby supports data integration from sources like CMSs, SaaS services, APIs, databases, and other data sources of all flavors. Gatsby can also pull unstructured data directly into pages using API calls specifically crafted for this purpose, this works great with smaller websites which can later be scaled up effortlessly if necessary. This makes Gatsby stand out from most other static site generators.
+> Gatsby は CMS、SaaS、API、データベースや他のあらゆる種類のデータソースと統合をサポートしています。
+> Gataby はこの目的のために特別に作られた構造化させていないデータもページに直接取得できます、これは後々必要に応じてスケールアップするかもしれない小さなウェブサイトに最適です。 これが Gatsby を他の静的サイトジェネレータと比べて目立つものにしています。
 
-### Community and documentation
+### コミュニティとドキュメント
 
-> You'd be hard-pressed to find a more active and welcoming open-source community than Gatsby. Documentation is thorough, detailed, and doesn't make any assumptions about your experience-level going in. The Gatsby team is committed to transparency and working in the open so the community can follow and participate in Gatsby's development and direction. Everyone is encouraged to contribute to Gatsby and every contribution is valued.
+> Gatsby よりアクティブで友好的なオープンソースコミュニティを見つけるのは難しいでしょう。 ドキュメントは綿密的かつ詳細で、経験の程度は想定されていません。Gatsby チームはコミュニティが Gatsby の開発と方向性をフォローし参加できるように透明性とオープンな作業に取り組んでいます。すべての人が Gatsby に貢献することを奨励され、すべての貢献が評価されます。
 
-### Brings focus to the frontend
+### フロントエンドに焦点を当てる
 
-> A benefit that frequently comes up in discussions of Gatsby is how it helps bring more focus to frontend development and a clearer division between frontend and backend tasks. Complicated tooling and configuration can consume a lot of development time and can pull frontend developers away from doing what they do best. Because Gatsby requires minimal tooling and configuration, frontend developers can spend more time making great UI's and backend developers can focus on adding the features and integrations that make your product better.
+> Gatsby の議論でよく取り上げられる利点は、よりフロントエンドに焦点をあて、フロントエンドとバックエンドの間を明確に分離する方法です。複雑なツールや設定は開発の多くの時間を消費し、フロントエンド開発者を最善のことから引き離す可能性があります。Gatsby は最小のツールと設定しか必要でないため、フロントエンドの開発者は素晴らしい UI づくりに多くの時間を割くことができ、バックエンドの開発者はプロダクトをより良くすることのできる機能や統合を加えることに集中できます。
 
-## Common concerns
+## 一般的な懸念点
 
-You may find that many of your developer friends and colleagues have some questions or concerns about Gatsby. Here are some common examples and responses you can provide to help alleviate those concerns.
+開発者の友人や同僚の多くが Gatsby に関していくつかの質問や懸念があるかもしれません。ここで、これらの懸念を軽減するために提供できるよくある例や回答を示します。
 
-### Our site uses a lot of dynamic content and components. Isn't Gatsby a static site generator?
+### 私たちのサイトでは多くの動的コンテンツやコンポーネントを使っています。Gatsby は静的サイトジェネレーターではないのでしょうか？
 
-> It is, but there's more to it. Gatsby statically generates HTML content using React DOM and server-side APIs – it's an important part of how Gatsby delivers exceptional speed and better security. However, this static HTML content can then be enhanced with client-side JavaScript via React hydration. You can learn more about this in Dustin Schau's blog post [Beyond Static: Building Dynamic apps with Gatsby](/blog/2018-10-15-beyond-static-intro/).
+> そうですが、それだけではありません。Gatsby は ReactDOM とサーバーサイドの API を使って静的に HTML コンテンツを生成します。これは Gatsby が並外れた速度や優れたセキュリティを提供するための方法の重要な部分です。 しかし、静的な HTML コンテンツは React のハイドレーションを通してクライアントサイドの JavaScript で拡張されます。 Dustin Schau のブログ記事 [Beyond Static: Building Dynamic apps with Gatsby](/blog/2018-10-15-beyond-static-intro/)を読むと詳しく知ることができます。
 
-### Do I have to learn GraphQL to use Gatsby?
+### Gataby を使うにあたって、GraphQL を学ぶ必要はありますか？
 
-> GraphQL is used to pull the content from all your different sources into Gatsby in a consistent, unified way. You don't have to use GraphQL to do this, but learning GraphQL will equip you to create new integrations more easily (and it may not be as challenging as you think). Amberly Romo digs into some of the pros and cons in her post on [Using Gatsby without GraphQL](/blog/2018-10-25-using-gatsby-without-graphql/).
+> GraphQL は一貫して統合された方法ですべての異なるソースから Gatsby にデータを取得するために利用されます。 これを行うために GraphQL を使う必要はありませんが、GraphQL を学ぶことで新しい統合を作れるようになります。（そして、それはあなたが思うほど難しくないかもしれません） Amberly Romo が彼女の記事 [Using Gatsby without GraphQL](/blog/2018-10-25-using-gatsby-without-graphql/)で利点と欠点を掘り下げています。
 
-### Our content team needs to be able to make site updates, but they're not super technical. Are they going to be able to work with a Gatsby site?
+### コンテンツテームはサイトを更新できる必要がありますが、彼らは技術的ではありません。彼らでも Gatsby のサイトで作業できるようになりますか？
 
-> Gatsby can pull content from any different source, including all-in-one CMSs like WordPress and Drupal as well as the various headless CMSs out there, so your content team can work with whichever content editor suits their needs and preferences, including the CMS they're already using.
+> Gatsby は WordPress や Drupal などのオールインワンな CMS や様々なヘッドレス CMS などの様々なソースからコンテンツを取得できます、よってコンテンツチームはすでに利用している CMS など、彼らのニーズや好みにあったコンテンツエディタを通して作業できます。
 
-## Case studies
+## 事例
 
-Sometimes the most effective way to get a developer's attention is to show them examples of real sites and dev teams using Gatsby. Here are some case studies you might want to share:
+時に開発者の興味を得るのにもっとも効果的な方法は、Gatsby を使っている実際のサイトや開発チームの例を見せることです。共有するべき事例を次に示します。
 
 - [Delicious Simplicity ❤️ Gatsby: Building Happily Ever After](/blog/2019-06-08-delicious-simplicity-case-study-part-1/)
 - [Beyond Static: Haptic Media Uses Gatsby to Build a Dynamic Web App](/blog/2019-02-05-hapticmedia-case-study/)
 - [IBM Uses Gatsby to Manage Enterprise-Level Content](/blog/2018-12-17-ibm-case-study/#big-company-big-website)
 
-For even more examples of Gatsby sites, [check out the Showcase](/showcase/)
+Gatsby サイトのさらなる例は [ショーケースをご覧ください](/showcase/)。
 
-## Conclusion
+## まとめ
 
-Many developers like being early adopters when exciting new tools come along, but they are just as likely to be skeptical when it seems like that new tool might be just another "flavor of the month." Luckily, Gatsby stands up to scrutiny. The information provided here is a great starting point for conversations with developers about Gatsby. From there, encourage developers to check it out for themselves. That may be all the convincing they need.
+多くの開発者は、刺激的な新しいツールが登場するとアーリーアダプターになりたがりますが、新しいツールが単に「一過性のもの」であるかもしれない場合、彼らは懐疑的であるかもしれません。幸い、Gatsby は精査に持ちこたえました。ここで提供されている情報は Gatsby に関して開発者と会話する素晴らしい出発点です。ここから、開発者が彼ら自身で確認することを推奨します。
