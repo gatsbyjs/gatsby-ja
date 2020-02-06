@@ -53,4 +53,4 @@ npm install --save gatsby-plugin-manifest
 }
 ```
 
-Gatsby サイトにウェブマニフェストを追加するために必要なことはたったこれだけです！ここでは基本構成を例に反映する方法を紹介しています。その他のオプションについては、 [プラグインリファレンス](/packages/gatsby-plugin-manifest/?=gatsby-plugin-manifest#automatic-mode) をご覧ください。
+Gatsby サイトにウェブマニフェストを追加するために必要なことはたったこれだけです。ここでは基本構成を例に反映する方法を紹介しています。その他のオプションについては、 [プラグインリファレンス](/packages/gatsby-plugin-manifest/?=gatsby-plugin-manifest#automatic-mode) をご覧ください。
