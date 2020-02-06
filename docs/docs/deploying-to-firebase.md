@@ -1,64 +1,64 @@
 ---
-title: Deploying to Firebase Hosting
+title: Firebase Hosting へのデプロイ
 ---
 
-In this guide, you will learn how to deploy your Gatsby site to Firebase Hosting.
+このガイドでは、Firebase Hosting へサイトをデプロイする方法を学びます。
 
-[Firebase Hosting](https://firebase.google.com/docs/hosting) is a free web content hosting platform for developers. With a single command, you can quickly deploy web apps and serve both static and dynamic content to a global CDN (content delivery network).
+[Firebase Hosting](https://firebase.google.com/docs/hosting) は無料で利用できる開発者向けのウェブホスティングプラットフォームです。コマンドひとつでウェブアプリケーションをすばやくデプロイし、静的コンテンツと動的コンテンツをグローバル CDN（コンテンツ配信ネットワーク）経由で提供できます。
 
-## Pre-requisites
+## 前提条件
 
-1. Make sure you have:
+1. 以下を準備してください。
 
-   - installed [Node.js](https://nodejs.org/en/download/) on your local machine.
-   - a [Firebase Account](https://console.firebase.google.com).
-   - created a [Firebase Project](https://firebase.google.com/docs/web/setup#create-firebase-project).
+   - ローカルマシンに [Node.js](https://nodejs.org/en/download/) がインストールされていること
+   - [Firebase アカウント](https://console.firebase.google.com)を取得していること
+   - [Firebase プロジェクト](https://firebase.google.com/docs/web/setup#create-firebase-project)が作成されていること
 
-1. This guide assumes that you already have a Gatsby project on your local machine.
+1. このガイドはローカルマシン上に Gatsby のプロジェクトが作成されていることを前提としています。
 
-## Deployment
+## デプロイ
 
-1. Install the Firebase CLI with `npm` by running the following command:
+1. `npm` コマンドで Firebase CLI をインストールします。
 
    ```shell
    npm install -g firebase-tools
    ```
 
-1. Sign into Firebase using your Google account by running the following command:
+1. つぎのコマンドを実行後、Google アカウントで Firebase にログインしてください。
 
    ```shell
    firebase login
    ```
 
-   You can test if the CLI is correctly installed by running `firebase projects:list`, which should show you a list of your Firebase Projects.
+   Firebase プロジェクトのリストを表示する `firebase projects:list` コマンドを実行することで、Firebase CLI がインストールできているか確認できます。
 
-1. Navigate into your gatsby project directory and setup firebase:
+1. Gatsby のプロジェクトディレクトリーに移動して Firebase をセットアップします。
 
    ```shell
    firebase init
    ```
 
-   This command will prompt you to:
+   コマンドを実行後、プロンプトでプロジェクトの設定をします。
 
-   - select the Firebase products you wish to setup. Be sure to select **Firebase Hosting**.
-   - select the Firebase Project you wish to use or create a new one, if you haven't done it previously.
+   - Firebase のプロダクトを選択する際、**Firebase Hosting** を選択してください。
+   - 使用したい Firebase プロジェクトを選択するか、まだ作成してない場合は新しくプロジェクトを作成してください。
 
-   When prompted to select your public directory, press <kbd>enter</kbd>. It will default to `public`, which is also Gatsby's default public directory.
+   公開するディレクトリーの選択を求められたら、そのまま <kbd>enter</kbd> キーを押してください。デフォルトでは `public` ディレクトリーが設定されますが、Gatsby でビルドしたときのデフォルトも `public` ディレクトリーになります。
 
-1. Prepare your site for deployment by running `gatsby build`. This generates a publishable version of your site in the `public` folder.
+1. サイトをデプロイする準備を整えるために `gatsby build` コマンドを実行してください。このコマンドは `public` ディレクトリーに公開用のコンテンツを生成します。
 
-1. Deploy your site by running the following command:
+1. つぎのコマンドでサイトをデプロイします。
 
    ```shell
    firebase deploy
    ```
 
-All done! Once the deployment concludes, you can access your website using `firebaseProjectId.firebaseapp.com` or `firebaseProjectId.web.app`.
+これで完了です！デプロイが終わると、`firebaseProjectId.firebaseapp.com` または `firebaseProjectId.web.app` にアクセスできます。
 
-Check the [Firebase Docs](https://firebase.google.com/docs/hosting/full-config) for information about how to customize your deployment further. Remember that each time you wish to redeploy your site, you will need to rerun `gatsby build` first.
+デプロイをさらにカスタマイズする方法については [Firebase のドキュメント](https://firebase.google.com/docs/hosting/full-config)を確認してください。サイトをデプロイしなおす際には、デプロイの前に `gatsby build` コマンドを実行するのを忘れないでください。
 
-## References:
+## 関連資料
 
-- [Firebase CLI Reference](https://firebase.google.com/docs/cli)
-- [Get Started with Firebase Hosting](https://firebase.google.com/docs/hosting/quickstart)
-- [Connect a custom domain](https://firebase.google.com/docs/hosting/custom-domain)
+- [Firebase CLI リファレンス](https://firebase.google.com/docs/cli)
+- [Firebase Hosting を使ってみる](https://firebase.google.com/docs/hosting/quickstart)
+- [カスタムドメインを接続する](https://firebase.google.com/docs/hosting/custom-domain)
