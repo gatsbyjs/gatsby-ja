@@ -38,7 +38,7 @@ Heroku は以下のような記述のある `package.json` から、自動的に
 
 最後に、静的ファイル群をどのディレクトリーに配置するかを定義するために、プロジェクトのルートディレクトリーに `static.json` ファイルを追加してください。このファイルに設定可能な全てのオプションは [heroku-buildpack-static](https://github.com/heroku/heroku-buildpack-static#configuration) にて確認できます。
 
-Gatsby の [suggested approach to caching](/docs/caching/) に従うためには、以下の設定が良い出発点となるでしょう。
+Gatsby が[推奨するキャッシングの方法](/docs/caching/)に従うためには、以下の設定が良い出発点となるでしょう。
 
 ```json:title=static.json
 {
