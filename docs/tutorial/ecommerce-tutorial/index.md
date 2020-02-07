@@ -120,8 +120,7 @@ Stripe アカウントにログインして API 資格情報を表示し、[開�
 
 ![Stripe public test key location in Stripe account](stripe-public-test-key.png)
 
-テストモードと本番モードの 2 つのキーがあります:
-You have 2 keys in both test mode and production mode:
+テストモードと本番モードの 2 つのキーがあります。
 
 - 公開可能キー
 - シークレットキー
