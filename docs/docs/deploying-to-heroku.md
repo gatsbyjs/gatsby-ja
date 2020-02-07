@@ -11,7 +11,7 @@ heroku buildpacks:set heroku/nodejs
 heroku buildpacks:add https://github.com/heroku/heroku-buildpack-static.git
 ```
 
-[heroku platform api](https://devcenter.heroku.com/articles/setting-up-apps-using-the-heroku-platform-api) を利用したい場合には、ビルドパックを `app.json` に記述することも可能です。
+[Heroku プラットフォーム API](https://devcenter.heroku.com/articles/setting-up-apps-using-the-heroku-platform-api) を利用したい場合には、ビルドパックを `app.json` に記述することも可能です。
 
 ```json:title=app.json
 {
