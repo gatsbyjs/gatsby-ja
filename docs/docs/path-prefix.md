@@ -1,21 +1,20 @@
 ---
-title: Adding a Path Prefix
+title: パスの接頭辞を追加する
 ---
 
-Many applications are hosted at something other than the root (`/`) of their domain.
+多くのアプリケーションは、ドメインルート（`/`)以外の場所にホストされています。
 
-For example, a Gatsby blog could live at `example.com/blog/`, or a site could be hosted on GitHub Pages at `example.github.io/my-gatsby-site/`.
+例えば、Gatsby で作成したブログを `example.com/blog/` 配下に置くこともあれば、GitHub Pages を利用して `example.github.io/my-gatsby-site/` にサイトをホストすることも出来ます。
 
-Each of these sites need a prefix added to all paths on the site. So a link to
-`/my-sweet-blog-post/` should be rewritten as `/blog/my-sweet-blog-post`.
+これらのサイトでは、サイト上の全てのパスに接頭辞を追加する必要があります。例えば、`/my-sweet-blog-post/`は `/blog/my-sweet-blog-post` とするべきです。
 
-In addition, links to various resources (JavaScript, CSS, images, and other static content) need the same prefix, so that the site continues to function correctly when served with the path prefix in place.
+加えて、様々なリソース（JavaScript ファイル、 CSS ファイル、 画像ファイル、 その他の静的なコンテンツなど）へのリンクパスも、同じ接頭辞を追加する必要があります。接頭辞を追加した際に、サイトを問題なく機能させるためです。
 
-Adding the path prefix is a two step process, as follows:
+接頭辞を追加する手順は、以下の 2 ステップになります。
 
-## Add to `gatsby-config.js`
+## `gatsby-config.js`に記述する
 
-Firstly, add a `pathPrefix` value to your `gatsby-config.js`.
+まず、`pathPrefix`の値を `gatsby-config.js` ファイル内に記述します。
 
 ```js:title=gatsby-config.js
 module.exports = {
@@ -23,23 +22,23 @@ module.exports = {
 }
 ```
 
-## Build
+## ビルドする
 
-The final step is to build your application with the `--prefix-paths` flag, like so:
+次に、以下のように `--prefix-paths` フラグを付けて、アプリケーションをビルドします。
 
 ```shell
 gatsby build --prefix-paths
 ```
 
-If this flag is not passed, Gatsby will ignore your `pathPrefix` and build the site as if hosted from the root domain.
+もし `--prefix-paths` フラグが無い場合、Gatsby はあなたの `pathPrefix` を無視し、ルートドメインにサイトをホストする前提でビルドします。
 
-## In-app linking
+## アプリケーション内・サイト内リンク
 
-Gatsby provides APIs and libraries to make using this feature seamless. Specifically, the [`Link`](/docs/gatsby-link/) component has built-in functionality to handle path prefixing.
+Gatsby には、アプリケーション内・サイト内リンクをスムーズに行う為の API とライブラリーがあります。[`Link`](/docs/gatsby-link/)コンポーネントが、パス接頭辞を扱う為の標準機能です。
 
-For example, if you want to link to the location `/page-2`, but the actual link will be prefixed (e.g. `/blog/page-2`); you don't need to hard code the prefix into your links. By using the Gatsby `Link` component, paths will automatically be prefixed with the `pathPrefix` value assigned in your `gatsby-config.js` file. If you later migrate away from using a path prefix, your links will _still_ work seamlessly.
+例えば、もしもあなたが `/page-2` をリンクさせたいけれど、実際のリンクには接頭辞が付いていた（例： `/blog/page-2`)場合、接頭辞を手打ちで追加する必要はありません。Gatsby の `Link` コンポーネントを使うことで、`gatsby-config.js`ファイル内の `pathPrefix` に記述した接頭辞が自動的に追加されます。もしも後でサイトを移動させる際に接頭辞が必要無くなっても、特に追加作業をすることなく、サイト移動が出来ます。
 
-For example, when navigating to the `page-2` location in the `Link` component below; the location will be automatically prefixed with your assigned `pathPrefix` value.
+例えば、以下にある `Link` コンポーネントを `page-2` にリンクさせる場合、`page-2`には自動的に `pathPrefix` で設定した接頭辞が追加されます。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -56,7 +55,7 @@ function Index() {
 }
 ```
 
-If you want to do programmatic/dynamic navigation, this is also possible! Expose the Gatsby `navigate` helper, and this too automatically handles path prefixing.
+また、Gatsby の `navigate` 補助機能を使えば、動的に生成されるリンクへのパス接頭辞追加も自動で行えます。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -66,22 +65,22 @@ import Layout from "../components/layout"
 export default function Index() {
   return (
     <Layout>
-      {/* Note: this is an intentionally contrived example, but you get the idea! */}
       {/* highlight-next-line */}
-      <button onClick={() => navigate("/page-2")}>
-        Go to page 2, dynamically
-      </button>
+      <button onClick={() => navigate("/page-2")}>Page 2</button>
     </Layout>
   )
 }
 ```
 
-## Add the path prefix to paths using `withPrefix`
+## `withPrefix`でパス接頭辞を追加する
 
+すでに自身で接頭辞を追加したパス名がある場合、[`withPrefix`](/docs/gatsby-link/#add-the-path-prefix-to-paths-using-withprefix)という補助機能を使うことで、接頭辞をプロダクションの際に追加できます。（ただし、接頭辞が必要ない開発環境では、追加されません）
 For pathnames you construct manually, there’s a helper function, [`withPrefix`](/docs/gatsby-link/#add-the-path-prefix-to-paths-using-withprefix) that prepends your path prefix in production (but doesn’t during development where paths don’t need to be prefixed).
 
 ### Additional considerations
 
+[`assetPrefix`](/docs/asset-prefix/)は[`withPrefix`](/docs/gatsby-link/#add-the-path-prefix-to-paths-using-withprefix)に
+(HTML でないファイル、例えば画像ファイルや JavaScript ファイルなど）
 The [`assetPrefix`](/docs/asset-prefix/) feature can be thought of as semi-related to this feature. That feature allows your assets (non-HTML files, e.g. images, JavaScript, etc.) to be hosted on a separate domain, for example a CDN.
 
 This feature works seamlessly with `assetPrefix`. Build out your application with the `--prefix-paths` flag and you'll be well on your way to hosting an application with its assets hosted on a CDN, and its core functionality available behind a path prefix.
