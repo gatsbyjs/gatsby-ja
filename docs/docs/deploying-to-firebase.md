@@ -10,7 +10,7 @@ title: Firebase Hosting へのデプロイ
 
 1. 以下を準備してください。
 
-   - ローカルマシンに [Node.js](https://nodejs.org/en/download/) がインストールされていること
+   - ローカルマシンに [Node.js](https://nodejs.org/ja/download/) がインストールされていること
    - [Firebase アカウント](https://console.firebase.google.com)を取得していること
    - [Firebase プロジェクト](https://firebase.google.com/docs/web/setup#create-firebase-project)が作成されていること
 
