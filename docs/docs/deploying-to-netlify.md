@@ -51,7 +51,7 @@ gatsby build
           Drag and drop your site folder here
 ```
 
-デプロイ作業を始めるために、あなたがすべきことは `public` フォルダーをこのエリアにドラッグ＆ドロップするだけです。 Netlify はランダムな名前で新しいサイトを作成し、ファイルのアップロードと公開を開始します。しばらく待つと、公開ウェブサイトの URL が `random-name.netlify.com` の形で表示されます！
+デプロイ作業を始めるために、あなたがすべきことは `public` フォルダーをこのエリアにドラッグ＆ドロップするだけです。Netlify はランダムな名前で新しいサイトを作成し、ファイルのアップロードと公開を開始します。しばらく待つと、公開ウェブサイトの URL が `random-name.netlify.com` の形で表示されます！
 
 ![alt text](./images/gatsby-default-starter.png "Gatsby Default Starter")
 
