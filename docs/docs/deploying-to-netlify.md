@@ -2,7 +2,7 @@
 title: Netlify にデプロイする
 ---
 
-このガイドはあなたの Gatsby サイトを[Netlify](https://www.netlify.com/)にデプロイし、公開するまでの手順を示したものです。
+このガイドはあなたの Gatsby サイトを [Netlify](https://www.netlify.com/) にデプロイし、公開するまでの手順を示したものです。
 
 Netlify は Gatsby サイトをデプロイするための素晴らしい手段です。Netlify はあなたのコードを簡単にメンテナンスでき、
 かつ性能も良いウェブサイトもしくはウェブアプリとして公開するための統合された
