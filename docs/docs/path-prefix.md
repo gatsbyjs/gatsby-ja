@@ -6,15 +6,15 @@ title: パスの接頭辞を追加する
 
 例えば、Gatsby で作成したブログを `example.com/blog/` に置くこともあれば、GitHub Pages を利用して `example.github.io/my-gatsby-site/` にサイトをホストすることも出来ます。
 
-これらのサイトでは、サイト上の全てのパスに接頭辞を追加する必要があります。例えば、`/my-sweet-blog-post/`は `/blog/my-sweet-blog-post` とするべきです。
+これらのサイトでは、サイト上の全てのパスに接頭辞を追加する必要があります。例えば、 `/my-sweet-blog-post/` は `/blog/my-sweet-blog-post` とするべきです。
 
 加えて、様々なリソース（JavaScript ファイル、 CSS ファイル、 画像ファイル、 その他の静的なコンテンツなど）へのリンクパスも、同じ接頭辞を追加する必要があります。接頭辞を追加した際に、サイトを問題なく機能させるためです。
 
 接頭辞を追加する手順は、以下の 2 ステップになります。
 
-## `gatsby-config.js`に記述する
+## `gatsby-config.js` に記述する
 
-まず、`pathPrefix`の値を `gatsby-config.js` ファイル内に記述します。
+まず、 `pathPrefix` の値を `gatsby-config.js` ファイル内に記述します。
 
 ```js:title=gatsby-config.js
 module.exports = {
@@ -34,11 +34,11 @@ gatsby build --prefix-paths
 
 ## アプリケーション内・サイト内リンク
 
-Gatsby には、アプリケーション内・サイト内リンクをシームレスに行う為の API とライブラリーがあります。特に[`Link`](/docs/gatsby-link/)コンポーネントには、パス接頭辞を扱う為の標準機能があります。
+Gatsby には、アプリケーション内・サイト内リンクをシームレスに行う為の API とライブラリーがあります。特に [`Link`](/docs/gatsby-link/) コンポーネントには、パス接頭辞を扱う為の標準機能があります。
 
-例えば、もしもあなたが `/page-2` にリンクさせたいけれど、実際のパスには接頭辞が付いていた（例： `/blog/page-2`)場合、接頭辞を手打ちで追加する必要はありません。Gatsby の `Link` コンポーネントを使うことで、`gatsby-config.js`ファイル内の `pathPrefix` に記述した接頭辞が自動的に追加されます。もしも後でサイトを移動させる際に接頭辞が必要無くなっても、特に追加作業をすることなく、サイト移動が出来ます。
+例えば、もしもあなたが `/page-2` にリンクさせたいけれど、実際のパスには接頭辞が付いていた（例： `/blog/page-2` )場合、接頭辞を手打ちで追加する必要はありません。Gatsby の `Link` コンポーネントを使うことで、 `gatsby-config.js` ファイル内の `pathPrefix` に記述した接頭辞が自動的に追加されます。もしも後でサイトを移動させる際に接頭辞が必要無くなっても、特に追加作業をすることなく、サイト移動が出来ます。
 
-例えば、以下にある `Link` コンポーネントを `page-2` にリンクさせる場合、`page-2`には自動的に `pathPrefix` で設定した接頭辞が追加されます。
+例えば、以下にある `Link` コンポーネントを `page-2` にリンクさせる場合、 `page-2` には自動的に `pathPrefix` で設定した接頭辞が追加されます。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -72,13 +72,13 @@ export default function Index() {
 }
 ```
 
-## `withPrefix`でパス接頭辞を追加する
+## `withPrefix` でパス接頭辞を追加する
 
-接頭辞をプロダクション時にのみ追加したい場合は、[`withPrefix`](/docs/gatsby-link/#add-the-path-prefix-to-paths-using-withprefix)という補助機能を使います。この場合、開発環境では接頭辞は追加されません。
+接頭辞をプロダクション時にのみ追加したい場合は、 [`withPrefix`](/docs/gatsby-link/#add-the-path-prefix-to-paths-using-withprefix) という補助機能を使います。この場合、開発環境では接頭辞は追加されません。
 
 ### 追加考察
 
-[`assetPrefix`](/docs/asset-prefix/)は、[`withPrefix`](/docs/gatsby-link/#add-the-path-prefix-to-paths-using-withprefix)に関連する機能です。
-[`assetPrefix`](/docs/asset-prefix/)を使えば、CDN など別ドメインにホスティングされた HTML 以外のファイル（例：画像ファイルや JavaScript ファイルなど）へのパスを自動で追加できます。
+[`assetPrefix`](/docs/asset-prefix/) は、 [`withPrefix`](/docs/gatsby-link/#add-the-path-prefix-to-paths-using-withprefix) に関連する機能です。
+[`assetPrefix`](/docs/asset-prefix/) を使えば、CDN など別ドメインにホスティングされた HTML 以外のファイル（例：画像ファイルや JavaScript ファイルなど）へのパスを自動で追加できます。
 
-`withPrefix`と `assetPrefix` はシームレスに併用できます。この 2 つの機能を利用し、`--prefix-paths`のフラグを付けてアプリケーションをビルドすれば、パス接頭辞追加と CDN ドメインパス追加の両方が行えます。
+`withPrefix` と `assetPrefix` はシームレスに併用できます。この 2 つの機能を利用し、 `--prefix-paths` のフラグを付けてアプリケーションをビルドすれば、パス接頭辞追加と CDN ドメインパス追加の両方が行えます。
