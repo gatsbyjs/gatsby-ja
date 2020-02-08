@@ -38,7 +38,7 @@ Netlify にログインすると、トップ画面に `New site from git` と書
 
 もう 1 つの手段として、あなたのウェブサイトに関するフォルダーを Git を介さずに Netlify へアップロードする方法があります。
 
-[ビルド](/docs/glossary#ビルド)に従い、 `gatsby build` コマンドを実行しましょう。Gatsby は公開用のウェブサイトファイルを `public` フォルダーに出力します。 ビルドプロセスによって CSS ・ Javascript ・ HTML と画像ファイルは最適化され、このフォルダーに配置されています。
+[ビルド](/docs/glossary#ビルド)に従い、`gatsby build` コマンドを実行しましょう。Gatsby は公開用のウェブサイトファイルを `public` フォルダーに出力します。 ビルドプロセスによって CSS ・ Javascript ・ HTML と画像ファイルは最適化され、このフォルダーに配置されています。
 
 ```shell
 gatsby build
