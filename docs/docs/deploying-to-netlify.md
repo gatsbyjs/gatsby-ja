@@ -1,5 +1,5 @@
 ---
-title: Netlifyにデプロイする
+title: Netlify にデプロイする
 ---
 
 このガイドはあなたの Gatsby サイトを[Netlify](https://www.netlify.com/)にデプロイし、公開するまでの手順を示したものです。
