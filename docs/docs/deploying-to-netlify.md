@@ -44,7 +44,7 @@ Netlify にログインすると、トップ画面に `New site from git` と書
 gatsby build
 ```
 
-一度ビルドが完了すれば、 Netlify にアップロードする準備は終わりです。 [Netlify](https://app.netlify.com/) へアクセスし、ログインか会員登録を実施します。ログインが完了したら次の文章が現れるはずです。
+一度ビルドが完了すれば、Netlify にアップロードする準備は終わりです。[Netlify](https://app.netlify.com/) へアクセスし、ログインか会員登録を実施します。ログインが完了したら次の文章が現れるはずです。
 
 ```text
     Want to deploy a new site without connecting to Git?
