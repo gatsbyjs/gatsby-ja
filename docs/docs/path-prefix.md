@@ -2,13 +2,13 @@
 title: パスの接頭辞を追加する
 ---
 
-多くのアプリケーションは、ドメインルート（`/`)以外の場所にホストされています。
+多くのアプリケーションは、ドメインルート（`/`)以外の場所にホスティングされています。
 
-例えば、Gatsby で作成したブログを `example.com/blog/` に置くこともあれば、GitHub Pages を利用して `example.github.io/my-gatsby-site/` にサイトをホストすることも出来ます。
+例えば、Gatsby で作成したブログを `example.com/blog/` に置くこともあれば、GitHub Pages を利用して `example.github.io/my-gatsby-site/` にサイトをホスティングすることも出来ます。
 
-これらのサイトでは、サイト上の全てのパスに接頭辞を追加する必要があります。例えば、 `/my-sweet-blog-post/` は `/blog/my-sweet-blog-post` とするべきです。
+これらのサイトでは、サイト内の全てのパスに接頭辞を追加する必要があります。例えば、 `/my-sweet-blog-post/` へのリンクパスは `/blog/my-sweet-blog-post` とするなど。
 
-加えて、様々なリソース（JavaScript ファイル、 CSS ファイル、 画像ファイル、 その他の静的なコンテンツなど）へのリンクパスも、同じ接頭辞を追加する必要があります。接頭辞を追加した際に、サイトを問題なく機能させるためです。
+加えて、様々なリソース（JavaScript ファイル・ CSS ファイル・画像ファイル・その他の静的なコンテンツなど）へのリンクパスも、同じ接頭辞を追加する必要があります。接頭辞を追加した際に、サイトを問題なく機能させるためです。
 
 接頭辞を追加する手順は、以下の 2 ステップになります。
 
@@ -55,7 +55,7 @@ function Index() {
 }
 ```
 
-また、Gatsby の `navigate` 補助機能を使えば、動的に生成されるリンクへのパス接頭辞追加も自動で行えます。
+また、Gatsby の [`navigate`](/docs/gatsby-link/#how-to-use-the-navigate-helper-function) 補助機能を使えば、フォーム送信後のページ遷移など、動的ナビゲーションのパス接頭辞追加も自動で行えます。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -81,4 +81,4 @@ export default function Index() {
 [`assetPrefix`](/docs/asset-prefix/) は、 [`withPrefix`](/docs/gatsby-link/#add-the-path-prefix-to-paths-using-withprefix) に関連する機能です。
 [`assetPrefix`](/docs/asset-prefix/) を使えば、CDN など別ドメインにホスティングされた HTML 以外のファイル（例：画像ファイルや JavaScript ファイルなど）へのパスを自動で追加できます。
 
-`withPrefix` と `assetPrefix` はシームレスに併用できます。この 2 つの機能を利用し、 `--prefix-paths` のフラグを付けてアプリケーションをビルドすれば、パス接頭辞追加と CDN ドメインパス追加の両方が行えます。
+`withPrefix` と `assetPrefix` は問題なく併用できます。この 2 つの機能を利用し、 `--prefix-paths` のフラグを付けてアプリケーションをビルドすれば、パス接頭辞追加と CDN ドメインパス追加の両方が行えます。
