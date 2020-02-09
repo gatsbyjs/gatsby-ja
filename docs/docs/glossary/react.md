@@ -7,7 +7,7 @@ React の概要、存在意義、Gatsby エコシステムへの適応につい�
 
 ## React とは？
 
-React は Web ベースの UI を構築するためのライブラリーです。Web ページの作成に使用されるプログラミング言語の 1 つである[JavaScript](/docs/glossary#javascript)で記述されています。
+React は Web ベースの UI を構築するためのライブラリーです。ウェブページの作成に使用されるプログラミング言語の 1 つである[JavaScript](/docs/glossary#javascript)で記述されています。
 
 Facebook は 2013 年に初めて React を公開しました。同社は貢献者のコミュニティーと共にプロジェクトを維持しています。[MIT ライセンス](https://github.com/facebook/react/blob/master/LICENSE)の条件下で、無料で使用およびソースコードの公開をできます。
 

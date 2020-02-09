@@ -109,7 +109,7 @@ If you think that there is something missing in the tag list, you can update [`c
 
 #### Review process
 
-By default, all sites submitted to the Site Showcase will be reviewed by the Gatsby Site Review Board as a candidate for the 'Featured Sites' section of the showcase. If you do not want your site to be featured, please add 'DO NOT FEATURE' to the pull request.
+By default, all sites submitted to the Site Showcase will be reviewed by the Gatsby Site Review Board as a candidate for the 'Featured Sites' section of the showcase. If you do not want your site to be featured, please add 'DO NOT FEATURE' to the Pull Request.
 
 Featured sites will be chosen quarterly based on the following criteria:
 

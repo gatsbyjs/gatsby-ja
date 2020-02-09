@@ -149,7 +149,7 @@ In the first code example, the `image` field was not transformed (_modified_) by
 
 You can read more about how images are added to the GraphQL schema in the guide on [processing external images](/docs/preprocessing-external-images/).
 
-Another possibility that could cause this issue is from empty strings used for image paths somewhere in your site. If this is the case, when Gatsby constructs a GraphQL schema it may [infer](/docs/glossary#inference) the wrong type because the empty string doesn't look like a file path.
+Another possibility that could cause this Issue is from empty strings used for image paths somewhere in your site. If this is the case, when Gatsby constructs a GraphQL schema it may [infer](/docs/glossary#inference) the wrong type because the empty string doesn't look like a file path.
 
 ### Problems installing `sharp` with `gatsby-plugin-sharp` - gyp ERR! build error
 
@@ -195,7 +195,7 @@ To update these packages, run:
 npm install gatsby-plugin-sharp gatsby-plugin-manifest gatsby-remark-images-contentful gatsby-source-contentful gatsby-transformer-sharp gatsby-transformer-sqip
 ```
 
-If updating these doesn't fix the issue, your project probably uses other plugins from the community that depend on a different version of `sharp`. Try running `npm list sharp` or `yarn why sharp` to see all packages in the current project that use `sharp` and try updating them as well.
+If updating these doesn't fix the Issue, your project probably uses other plugins from the community that depend on a different version of `sharp`. Try running `npm list sharp` or `yarn why sharp` to see all packages in the current project that use `sharp` and try updating them as well.
 
 ## Errors building and deploying
 
@@ -207,7 +207,7 @@ For more information on common problems while building your site, refer to the [
 
 You may encounter an error like `Error: ReferenceError: window is not defined` that you didn't see in development if you reference browser globals like `window` or `document` in your code. Because the build is not running in a browser, it will not have access to a browser, which is why objects like `window` will not be defined.
 
-Exact steps for fixing this issue can be found on in the Debugging HTML Builds guide in the section on [checking if `window` is defined](/docs/debugging-html-builds/#how-to-check-if-window-is-defined).
+Exact steps for fixing this Issue can be found on in the Debugging HTML Builds guide in the section on [checking if `window` is defined](/docs/debugging-html-builds/#how-to-check-if-window-is-defined).
 
 ### Build problems from Field 'browser' doesn't contain a valid alias configuration
 
@@ -221,6 +221,6 @@ Module not found: Error: Can't resolve `../..SomeFile.svg`
 
 The build is failing to find the file at `../..SomeFile.svg`. This can be frustrating if your site works when you when run it locally with `gatsby develop`, and even works when you run `gatsby build` and `gatsby serve` locally. A likely problem is that the operating system you are running locally is different than the one where your site is deployed. Oftentimes your deployment target is running some distribution and flavor of Linux.
 
-The most common culprit to prompt this issue is with filepaths having mixed capitalization. In the example above, check to make sure that the file is actually named `SomeFile.svg` and not something different like `Somefile.svg` or `somefile.svg`. Some operating systems will pick up on this discrepancy for you and find the image without any problems. Your deployment environment may not.
+The most common culprit to prompt this Issue is with filepaths having mixed capitalization. In the example above, check to make sure that the file is actually named `SomeFile.svg` and not something different like `Somefile.svg` or `somefile.svg`. Some operating systems will pick up on this discrepancy for you and find the image without any problems. Your deployment environment may not.
 
 Checking the capitalization of files output in your build logs and redeploying is the best next step.

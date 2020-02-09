@@ -387,7 +387,7 @@ For words that have multiple spellings, prefer the US English word over British 
 
 Use the [Hemingway App](https://hemingwayapp.com/). There’s nothing magical
 about this tool, but it will automatically detect widely agreed-upon
-style issues:
+style Issues:
 
 - passive voice
 - unnecessary adverbs
@@ -530,7 +530,7 @@ Looking for:
 - step-by-step tutorials for advanced tasks
 - understanding how Gatsby works at a deep level, so deep that they could actually modify or customize their own projects, or contribute to Gatsby core
 - how does Gatsby really work with Redux, React, and GraphQL?
-- error messages that tell them if it’s a known bug/issue, lead them to docs, and/or suggest fixes
+- error messages that tell them if it’s a known bug/Issue, lead them to docs, and/or suggest fixes
 - guides for how things work in Gatsby
 - they usually already have strong opinions or requirements about what they want to use as their CMS or data source and want to know best practices for their workflow
 - signs that Gatsby is a reliable, long-term choice (signs that it is growing and improving and evidence it will be around for a long time)
