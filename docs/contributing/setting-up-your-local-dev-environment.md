@@ -65,10 +65,10 @@ Yarn is a package manager for your code, similar to [NPM](https://www.npmjs.com/
   - To run tests for a single package you can run: `yarn jest <package-name>`.
   - To run a single test file you can run: `yarn jest <file-path>`.
 
-### Commits and pull requests
+### Commits and Pull Requests
 
 - Commit and push to your fork.
-- Create a pull request from your branch.
+- Create a Pull Request from your branch.
 
 ### Sync your fork
 

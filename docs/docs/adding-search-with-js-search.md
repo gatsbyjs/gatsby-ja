@@ -22,7 +22,7 @@ gatsby new js-search-example https://github.com/gatsbyjs/gatsby-starter-default
 
 After the process is complete, some additional packages are needed.
 
-Change directories to the `js-search-example` folder and issue the following command:
+Change directories to the `js-search-example` folder and Issue the following command:
 
 ```shell
 npm install --save js-search axios
@@ -571,7 +571,7 @@ Once again to get it to work on your site you would only need to copy over [the 
 
 And both the [template](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-js-search/src/templates/ClientSearchTemplate.js) and the [search component](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-js-search/src/components/ClientSearch.js).
 
-Issuing `gatsby develop` again, and if all went without any issues one more time, open your browser of choice and enter the url <http://localhost:8000/search>, you'll have a fully functional search at your disposal coupled with Gatsby API.
+Issuing `gatsby develop` again, and if all went without any Issues one more time, open your browser of choice and enter the url <http://localhost:8000/search>, you'll have a fully functional search at your disposal coupled with Gatsby API.
 
 Hopefully this rather extensive guide has shed some insights on how to implement client search using js-search.
 

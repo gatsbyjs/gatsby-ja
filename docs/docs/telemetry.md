@@ -21,7 +21,7 @@ This raises a question: how will we use this telemetry data to improve the ecosy
 
 - We will be able to understand which plugins are typically used together. This will enable us to surface this information in our public plugin library and build more relevant starters and tutorials based on this data.
 - We will be able to surface popularity of different starters in the starter showcase.
-- We will be able to get more detail on the types of errors users are running into in _every_ build stage (e.g. development, build, etc.). This will let us improve the quality of our tool and better focus our time on solving more common, frustrating issues.
+- We will be able to get more detail on the types of errors users are running into in _every_ build stage (e.g. development, build, etc.). This will let us improve the quality of our tool and better focus our time on solving more common, frustrating Issues.
 - We will be able to surface reliability of different plugins and starters, and detect which of these tend to error more frequently. We can use this data to surface quality metrics and improve the quality of our plugins and starters.
 - We will be able to see timings for different build stages to guide us in where we should focus optimization work.
 

@@ -68,7 +68,7 @@ gatsby serve
 
 しかし、そもそも、PWA とは正確には何でしょうか？
 
-これは、最新のブラウザー機能を利用してアプリのような機能と利点で Web エクスペリエンスを拡張した通常の Web サイトです。PWA エクスペリエンスの構成要素については、 [Google の概要](https://developers.google.com/web/progressive-web-apps/)を確認してください。
+これは、最新のブラウザー機能を利用してアプリのような機能と利点で Web エクスペリエンスを拡張した通常のウェブサイトです。PWA エクスペリエンスの構成要素については、 [Google の概要](https://developers.google.com/web/progressive-web-apps/)を確認してください。
 
 Web アプリマニフェストを含めることは、一般的な[PWA の 3 つの基本的要件](https://alistapart.com/article/yes-that-web-project-should-be-a-pwa#section1)の 1 つです。
 
@@ -115,7 +115,7 @@ Gatsby サイトへ Web マニフェストを追加するのに必要なのは�
 
 ## オフラインサポートを追加する
 
-Web サイトが PWA として認定されるためのもう 1 つの要件は、サービスワーカーの使用です。サービスワーカーはバックグラウンドで実行され、接続状態に基づき、ネットワークコンテンツまたはキャッシュコンテンツを提供することを決め、シームレスに管理されたオフラインエクスペリエンスを可能にします。
+ウェブサイトが PWA として認定されるためのもう 1 つの要件は、サービスワーカーの使用です。サービスワーカーはバックグラウンドで実行され、接続状態に基づき、ネットワークコンテンツまたはキャッシュコンテンツを提供することを決め、シームレスに管理されたオフラインエクスペリエンスを可能にします。
 
 [Gatsby のオフラインプラグイン](/packages/gatsby-plugin-offline/)は、サイトのサービスワーカーを作成することにより、Gatsby サイトをオフラインで動作可能にし、悪いネットワーク状態に対する耐性を高めます。
 
@@ -331,7 +331,7 @@ export const query = graphql`
 `
 ```
 
-上記の例は [Gatsby スターターブログ](/starters/gatsbyjs/gatsby-starter-blog/)に基づいています。`<SEO>` コンポーネントに props を渡すことで、ブログ記事のメタデータを動的に変更できます。この場合、`siteMetadatagatsby-config.js` ファイルのデフォルトの `siteMetadata` プロパティの代わりに、投稿ブログの `title` と `excerpt`（ブログ記事のマークダウンファイルに存在する場合）が使用されます。
+上記の例は [Gatsby スターターブログ](/starters/gatsbyjs/gatsby-starter-blog/)に基づいています。`<SEO>` コンポーネントに props を渡すことで、ブログ記事のメタデータを動的に変更できます。この場合、`siteMetadatagatsby-config.js` ファイルのデフォルトの `siteMetadata` プロパティの代わりに、投稿ブログの `title` と `excerpt`（ブログ記事の Markdown ファイルに存在する場合）が使用されます。
 
 さて、この状態で Lighthouse の評価を再度実施すると、完全ではないにしてもスコア 100 に近づくはずです！
 

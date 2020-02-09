@@ -54,4 +54,4 @@ in most cases, the `--https` passed by itself is easier and more convenient to g
 
 ---
 
-Keep in mind that the automatic certificates issued with the `--https` flag are explicitly issued to `localhost` and will only be accepted there. Using it together with the `--host` option will likely result in browser warnings.
+Keep in mind that the automatic certificates Issued with the `--https` flag are explicitly Issued to `localhost` and will only be accepted there. Using it together with the `--host` option will likely result in browser warnings.

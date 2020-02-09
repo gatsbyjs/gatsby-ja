@@ -22,7 +22,7 @@ There are several ways Gatsby can support your event:
 
 ### A note on shipping
 
-We support US and international Gatsby events, but it’s not uncommon to run into issues with international shipping that can delay orders for weeks. Shipments to non-western countries in particular can often take well over a month to arrive. We’re working on finding international shipping partners, but until that’s sorted out, **if you need stickers shipped internationally, please make sure you’re submitting your event at least 6 weeks in advance**.
+We support US and international Gatsby events, but it’s not uncommon to run into Issues with international shipping that can delay orders for weeks. Shipments to non-western countries in particular can often take well over a month to arrive. We’re working on finding international shipping partners, but until that’s sorted out, **if you need stickers shipped internationally, please make sure you’re submitting your event at least 6 weeks in advance**.
 
 ## Requirements
 
