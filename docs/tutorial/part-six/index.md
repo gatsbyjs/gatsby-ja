@@ -16,7 +16,7 @@ disableTableOfContents: true
 
 Gatsby はトランスフォーマープラグインを利用して、ソースプラグインで取得したデータをブログで表示する形式へ**変換**します。
 
-ここでは Markdown を例とします。Markdown は簡潔に記述できますが Web ページとして表示する場合は HTML へ変換する必要があります。
+ここでは Markdown を例とします。Markdown は簡潔に記述できますがウェブページとして表示する場合は HTML へ変換する必要があります。
 
 `src/pages/sweet-pandas-eating-sweets.md`に以下の Markdown ファイルを追加して、トランスフォーマープラグインと GraphQL を使って HTML へ**変換**する方法を学びましょう。
 

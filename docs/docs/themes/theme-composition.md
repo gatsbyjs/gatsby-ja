@@ -17,6 +17,6 @@ or [`wrapPageElement`](/docs/browser-apis/#wrapPageElement). For better theme
 composition it's recommended to use this feature sparingly. It's a great fit for setting up any
 necessary [React Context](https://reactjs.org/docs/context.html) providers. You shouldn't typically
 add any layout components, such as headers or footers, because it will be applied globally which
-could cause issues with other themes.
+could cause Issues with other themes.
 
 [Read more on layouts and Gatsby Themes](https://www.christopherbiscardi.com/post/layouts-in-gatsby-themes)

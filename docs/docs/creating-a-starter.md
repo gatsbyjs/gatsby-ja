@@ -55,9 +55,9 @@ If there are areas of the starter that could be impacted by the user, it may hel
 
 ## Web accessible
 
-In addition to performance, creating a starter free of accessibility issues is a wonderful way to contribute to the Gatsby ecosystem. Here are some tips for creating an inclusive, accessible starter:
+In addition to performance, creating a starter free of accessibility Issues is a wonderful way to contribute to the Gatsby ecosystem. Here are some tips for creating an inclusive, accessible starter:
 
-- Use adequate [color contrast](https://webaim.org/articles/contrast/). (This is the most common accessibility issue on the web!)
+- Use adequate [color contrast](https://webaim.org/articles/contrast/). (This is the most common accessibility Issue on the web!)
 - Preserve [visible keyboard focus indicators](https://webaim.org/techniques/keyboard/).
 - Use [image alt text](https://webaim.org/techniques/alttext/) in your examples.
 - Recommend and use [semantic HTML](https://webaim.org/techniques/semanticstructure/) wherever possible.

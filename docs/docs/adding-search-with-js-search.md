@@ -22,7 +22,7 @@ gatsby new js-search-example https://github.com/gatsbyjs/gatsby-starter-default
 
 After the process is complete, some additional packages are needed.
 
-Change directories to the `js-search-example` folder and issue the following command:
+Change directories to the `js-search-example` folder and Issue the following command:
 
 ```shell
 npm install --save js-search axios

@@ -231,7 +231,7 @@ const BlogPosts = ({ posts }) => {
 }
 ```
 
-At this point, if you try to use these links to navigate your site, you will notice that you're faced with a 404 error on every page. That's because even though you're navigating to the pages correctly, there's still the issue of actually creating the pages. For this, you will have to use a template file which will programmatically build a page for each blog post.
+At this point, if you try to use these links to navigate your site, you will notice that you're faced with a 404 error on every page. That's because even though you're navigating to the pages correctly, there's still the Issue of actually creating the pages. For this, you will have to use a template file which will programmatically build a page for each blog post.
 
 ## Creating pages programmatically with a template
 
