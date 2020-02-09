@@ -1,34 +1,34 @@
 ---
-title: Visual Testing with Storybook
+title: Storybook を使用した Visual Testing
 ---
 
-Knowing your components look as intended in every permutation is not only a great way to test them visually, but also provides "living documentation" for them. This makes it easier for teams to:
+[Storybook](https://storybook.js.org/) は、コンポーネントの UI 開発環境です。 Storybook の機能により、コンポーネントがどのような組み合わせでも意図したとおりであると確認できることは、視覚的なテストを行う最適な方法であるだけでなく、「生きたドキュメント」の提供を可能にします。これにより、チームは次のことが容易になります。
 
-1. know what components are available to them in a given project and
-2. what props those components accept and what all of the states of that component are.
+1. プロジェクトで利用可能なコンポーネントの確認
+2. コンポーネントが受け取れる props と、状態の確認
 
-As your project grows over time having this information available will be invaluable. This is the function of the [Storybook](https://storybook.js.org/) library. Storybook is a UI development environment for your UI components. With it, you can visualize different states of your UI components and develop them interactively.
+プロジェクトが時間とともに成長するにつれて、この情報を利用できることは非常に貴重です。 Storybook は、コンポーネントのさまざまな状態を視覚化し、インタラクティブに開発できます。
 
-## Setting up your environment
+## 環境を設定する
 
-To set up Storybook you need to install dependencies and do some custom configuration. First, install the Storybook CLI.
+Storybook をセットアップするには、依存関係をインストールし、カスタム設定を行う必要があります。最初に、 Storybook CLI をインストールします。
 
 ```shell
 npm install -g @storybook/cli
 ```
 
-Once the CLI is installed, the next step is to run the `sb init` command that is now available from the root directory of your Gatsby project.
+CLI をインストールして次にやるべきことは、 Gatsby プロジェクトのルートディレクトリーから `sb init` コマンドを実行することです。
 
 ```shell
 cd my-awesome-gatsby-project
 sb init
 ```
 
-> Note that if you're running a recent version of `npm` (5.2.0+) you can run the following single command instead: `npx -p @storybook/cli sb init`, which is the recommended method by Storybook. This doesn't install the CLI on your machine, thereby ensuring you're always running the latest version of the CLI.
+> `npm` (5.2.0+) の最新バージョンで実行する場合、代わりに `npx -p @storybook/cli sb init` コマンドを実行できます。マシンに CLI がインストールされないので、常に最新バージョンの CLI を実行できます。 Storybook も推奨する方法です。
 
-The `sb init` command bootstraps the basic config necessary to run Storybook for a React project. However, since this is for a Gatsby project, you need to update the default Storybook configuration a bit so you don't get errors when trying to use Gatsby specific components inside of the stories.
+この `sb init` コマンドは、 React プロジェクトの Storybook を実行するために必要な基本設定を作成します。ただし、ストーリー内で Gatsby 固有のコンポーネントを使用しようとした場合にエラーが発生しないように、Gatsby プロジェクト用に、デフォルトの Storybook の設定を少し更新する必要があります。
 
-To update your Storybook config open `.storybook/config.js` and modify the content as follows:
+Storybook の設定を更新するには、 `.storybook/config.js` を開いて以下のように内容を変更します。
 
 ```js:title=.storybook/config.js
 import { configure } from "@storybook/react"
@@ -56,13 +56,13 @@ window.___navigate = pathname => {
 // highlight-end
 ```
 
-> You can remove the `stories` folder from the root of your project, or move it inside your `src` folder
+> プロジェクトのルートから `stories` フォルダーを削除するか、 `src` フォルダー内に移動することできます。
 
-Next make some adjustments to Storybook's default `webpack` configuration so you can transpile Gatsby source files, and to ensure you have the necessary `babel` plugins to transpile Gatsby components.
+次に、 Gatsby ソースファイルをトランスパイルできるように Storybook のデフォルトの `webpack` 設定を調整し、 Gatsby コンポーネントをトランスパイルするために必要な `babel` プラグインがあることを確認します。
 
-Create a new file called `webpack.config.js` in the `.storybook` folder created by the Storybook CLI. Then place the following code in that file (depending on which version of Storybook you're using):
+Storybook CLI で作成された `.storybook` フォルダーに `webpack.config.js` ファイルを作成します。そして、そのファイルに以下のコードを配置します (使用している Storybook のバージョンによって異なります）。
 
-**For Storybook v5:**
+**Storybook v5 の場合**
 
 ```js:title=.storybook/webpack.config.js
 module.exports = ({ config }) => {
@@ -92,9 +92,9 @@ module.exports = ({ config }) => {
 }
 ```
 
-> Note that if you're using a [StaticQuery](/docs/static-query/) in your components, `babel-plugin-remove-graphql-queries` is required to render them in Storybook. This is because the queries are run at build time in Gatsby, and will not have been run when rendering the components directly.
+> コンポーネントで [StaticQuery](/docs/static-query/) を使用している場合、 Storybook でレンダリングするために `babel-plugin-remove-graphql-queries` が必要であることに注意してください。これはクエリが、 Gatsby のビルド時には実行され、コンポーネントを直接レンダリングするときには実行されないようにするためです。
 
-> When using TypeScript, add this rule:
+> TypeScript を使用する場合、以下のルールを追加します。
 
 ```diff:title=.storybook/webpack.config.js
 // Prefer Gatsby ES6 entrypoint (module) over commonjs (main) entrypoint
@@ -118,7 +118,7 @@ config.resolve.mainFields = ["browser", "module", "main"]
 return config
 ```
 
-**For Storybook v4:**
+**Storybook v4 の場合**
 
 ```js:title=.storybook/webpack.config.js
 module.exports = (baseConfig, env, defaultConfig) => {
@@ -148,15 +148,15 @@ module.exports = (baseConfig, env, defaultConfig) => {
 }
 ```
 
-Once you have this configured you should run Storybook to ensure it can start up properly and you can see the default stories installed by the CLI. To run storybook:
+設定が完了したら、それが適切に起動でき、 CLI によってインストールされたデフォルトのストーリーが立ち上がるかを確認するために Storybook を実行してみましょう。 Storybook を実行するには以下のコマンドを実行します。
 
 ```shell
 npm run storybook
 ```
 
-Storybook CLI adds this command to your `package.json` for you so you shouldn't have to anything other than run the command. If Storybook builds successfully you should be able to navigate to <http://localhost:6006> and see the default stories supplied by the Storybook CLI.
+Storybook CLI はこのコマンドを `package.json` に追加してくれるので、コマンドを実行する以外に何もする必要はありません。Storybook がビルドに成功すれば、 <http://localhost:6006> に移動して、Storybook CLI によって提供されたデフォルトのストーリーを表示できるはずです。
 
-However, if you use `StaticQuery` or `useStaticQuery` in your project Storybook needs to be run with the `NODE_ENV` set to `production` (as Storybook sets this by default to `development`). Otherwise `babel-plugin-remove-graphql-queries` won't be run. Moreover Storybook needs to know about [static files](https://storybook.js.org/docs/configurations/serving-static-files/#2-via-a-directory) generated by Gatsby's `StaticQuery`. Your scripts should look like:
+ただし、`StaticQuery` または `useStaticQuery` をプロジェクトで使用する場合、 Storybook は `NODE_ENV` を `production` に設定して実行する必要があります (Storybook はデフォルトで `development` に設定するため）。そうしなければ `babel-plugin-remove-graphql-queries` は実行されません。さらに、 Storybook は Gatsby の `StaticQuery` によって生成された [static files](https://storybook.js.org/docs/configurations/serving-static-files/#2-via-a-directory) について知る必要があります。スクリプトは以下のようになります。
 
 ```json:title=package.json
 {
@@ -167,13 +167,13 @@ However, if you use `StaticQuery` or `useStaticQuery` in your project Storybook 
 }
 ```
 
-## Writing stories
+## ストーリーを書く
 
-A full guide to writing stories is beyond the scope of this guide, but we'll take a look at creating a story.
+ストーリーを書くための完全なガイドはこのガイドの範囲外ですが、ストーリーの作成について見ていきましょう。
 
-First, create the story file. Storybook looks for all files with a `.stories.js` extension and loads them into Storybook for you. Generally you will want your stories near where the component is defined, however since this is Gatsby, if you want stories for your pages, you will have to create those files outside of the `pages` directory.
+まず、ストーリーファイルを作成します。 Storybook は、 `.stories.js` 拡張子を持つすべてのファイルを検索し、 Storybook にロードします。通常、ストーリーはコンポーネントが定義されている場所の近くに配置しますが、 Gatsby で、ページのストーリーが必要な場合は、 `pages` ディレクトリーの外部にこれらのファイルを作成する必要があります。
 
-> A good solution is to create a `__stories__` directory next to your `pages` directory and put any page stories in there.
+> 良い解決策は、 `pages` ディレクトリの隣に `__stories__` ディレクトリを作成し、そこにページストーリーを配置することです。
 
 ```jsx:title=src/components/example.stories.js
 import React from "react"
@@ -186,10 +186,9 @@ storiesOf(`Dashboard/Header`, module).add(`default`, () => (
 ))
 ```
 
-This is a very simple story without much going on, but honestly, nothing else really changes as related to Gatsby. If you want to learn more about how Storybook works and what you can do with it, check out some of the resources listed below.
+これは非常にシンプルなストーリーですが、 Gatsby に関連して他に変更点はありません。Storybook の仕組みと、それを使って何ができるかについて詳しく知りたい場合は、以下のリソースをご覧ください。
 
-## Other resources
+## その他の資料
 
-- For more information on Storybook, visit
-  [the Storybook site](https://storybook.js.org/).
-- Get started with a [Jest and Storybook starter](https://github.com/Mathspy/gatsby-storybook-jest-starter)
+- Storybook の詳細については、[the Storybook site](https://storybook.js.org/) をご覧ください。
+- [Jest and Storybook starter](https://github.com/Mathspy/gatsby-storybook-jest-starter) を始めましょう。
