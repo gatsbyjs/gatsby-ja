@@ -1,29 +1,29 @@
 ---
-title: Adding Offline Support with a Service Worker
+title: Service Worker を使ってオフラインサポートを追加する
 ---
 
-If you've run an [audit with Lighthouse](/docs/audit-with-lighthouse/), you may have noticed a lackluster score in the "Progressive Web App" category. Let's address how you can improve that score.
+[Lighthouse による評価](/docs/audit-with-lighthouse/) を実施したときに、Progressive Web App カテゴリのスコアが良くないことに気づいたかもしれません。ここではスコアを上げる方法について紹介します。
 
-1.  You can [add a manifest file](/docs/add-a-manifest-file/). Ensure that the manifest plugin is listed _before_ the offline plugin so that the offline plugin can cache the created `manifest.webmanifest`.
-2.  You can also add offline support, since another requirement for a website to qualify as a PWA is the use of a [service worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API). [Gatsby's offline plugin](/packages/gatsby-plugin-offline/) makes a Gatsby site work offline--and makes it more resistant to bad network conditions--by creating a service worker for your site.
+1. [マニフェストファイルを追加](/docs/add-a-manifest-file/)しましょう。オフラインプラグインが、作成された `manifest.webmanifest` をキャッシュできるように、オフラインプラグインの**前に**マニフェストプラグインを書いていることを確認してください。
+2. ウェブサイトが PWA として認定されるために [Service Worker](https://developer.mozilla.org/ja-JP/docs/Web/API/Service_Worker_API) を使って、オフラインサポートを追加しましょう。[Gatsby のオフラインプラグイン](/packages/gatsby-plugin-offline/)は、Service Worker を作成してサイトがオフラインでも動作するようにさせ、悪い回線状況に対する耐性を高めます。
 
-## What is a service worker?
+## Service Worker とは？
 
-A service worker is a script that your browser runs in the background, separate from a web page, opening the door to features that don't need a web page or user interaction. They increase your site availability in spotty connections, and are essential to making a nice user experience.
+Service Worker はウェブページとは別にバックグラウンドで実行されるスクリプトです。ウェブページやユーザーのインタラクションを必要としない機能を可能にします。不安定な回線でのサイトの使いやすさを向上させ、優れたユーザーエクスペリエンスを実現するには必要不可欠です。
 
-It supports features like push notifications and background synchronization.
+プッシュ通知やバックグラウンド同期などの機能をサポートします。
 
-## Using service workers in Gatsby with `gatsby-plugin-offline`
+## `gatsby-plugin-offline` を利用して Gatsby で Service Worker を使う
 
-Gatsby provides an awesome plugin interface to create and load a service worker into your site: [gatsby-plugin-offline](https://www.npmjs.com/package/gatsby-plugin-offline).
+Gatsby は [gatsby-plugin-offline](https://www.npmjs.com/package/gatsby-plugin-offline) という Service Worker の作成、読み込みのための素晴らしいプラグインインターフェースを用意しています。
 
-We recommend using this plugin together with the [manifest plugin](https://www.npmjs.com/package/gatsby-plugin-manifest). (Don’t forget to list the offline plugin after the manifest plugin so that the manifest file can be included in the service worker).
+[マニフェストプラグイン](https://www.npmjs.com/package/gatsby-plugin-manifest)と一緒に使うことをおすすめします。（Service Worker にマニフェストファイルを含めるために、マニフェストプラグインの後にオフラインプラグインを追加することに注意してください）。
 
-## Installing `gatsby-plugin-offline`
+## `gatsby-plugin-offline` をインストール
 
 `npm install --save gatsby-plugin-offline`
 
-Add this plugin to your `gatsby-config.js`
+プラグインを `gatsby-config.js` に追加します。
 
 ```javascript:title=gatsby-config.js
 {
@@ -39,19 +39,19 @@ Add this plugin to your `gatsby-config.js`
 }
 ```
 
-That's all you need to add offline support to your Gatsby site.
+Gatsby サイトにオフラインサポートを追加する手順は以上です。
 
-Note: Service worker registers only in production builds (`gatsby build`).
+ヒント： Service Worker はプロダクションビルド（`gatsby build`）でのみ登録します。
 
-## Displaying a message when a service worker updates
+## Service Worker が更新したときにメッセージを表示する
 
-To display a custom message once your service worker finds an update, you can use the [`onServiceWorkerUpdateReady`](/docs/browser-apis/#onServiceWorkerUpdateReady) browser API in your `gatsby-browser.js` file. The following code will display a confirm prompt asking the user whether they would like to refresh the page when an update is found:
+Service Worker が更新を見つけたときに、カスタムメッセージを表示したいときは、`gatsby-browser.js` ファイルで [`onServiceWorkerUpdateReady`](/docs/browser-apis/#onServiceWorkerUpdateReady) ブラウザー API を使用しましょう。以下のコードは、更新が見つかったときにページを再読み込みしていいかどうかを尋ねるプロンプトを表示します。
 
 ```javascript:title=gatsby-browser.js
 export const onServiceWorkerUpdateReady = () => {
   const answer = window.confirm(
-    `This application has been updated. ` +
-      `Reload to display the latest version?`
+    `アプリケーションが更新されました。 ` +
+      `最新版を表示しますか？`
   )
 
   if (answer === true) {
@@ -60,25 +60,25 @@ export const onServiceWorkerUpdateReady = () => {
 }
 ```
 
-## Using a custom service worker in Gatsby
+## Gatsby でカスタム Service Worker を使う
 
-You can add a custom service worker if your use case requires something that `gatsby-plugin-offline` doesn't support.
+もし `gatsby-plugin-offline` がサポートしていない機能が必要なときは、カスタム Service Worker を追加できます。
 
-Add a file called `sw.js` in the `static` folder.
+`static` フォルダーに `sw.js` ファイルを追加します。
 
-Use the [`registerServiceWorker`](/docs/browser-apis/#registerServiceWorker) browser API in your `gatsby-browser.js` file.
+`gatsby-brwoser.js` ファイルで [`registerServiceWorker`](/docs/browser-apis/#registerServiceWorker) ブラウザー API を使用します。
 
 ```javascript:title=gatsby-browser.js
 export const registerServiceWorker = () => true
 ```
 
-That's all! Gatsby will register your custom service worker.
+以上でおしまいです！Gatsby はカスタム Service Worker を登録します。
 
-## Removing the service worker
+## Service Worker を削除する
 
-If you would like to fully remove the service worker from your site, you can use the plugin `gatsby-plugin-remove-serviceworker` in place of `gatsby-plugin-offline`. See [the README for `gatsby-plugin-offline`](/packages/gatsby-plugin-offline/#remove) for instructions how to do this.
+もしサイトから Service Worker を完全に削除したいときは、`gatsby-plugin-offline` の代わりに `gatsby-plugin-remove-serviceworker` を追加しましょう。手順は [`gatsby-plugin-offline` の README](/packages/gatsby-plugin-offline/#remove) をご覧ください。
 
-## References
+## 参考資料
 
-- [Service Workers: an Introduction](https://developers.google.com/web/fundamentals/primers/service-workers/)
-- [Service Worker API](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
+- [Service Worker の紹介](https://developers.google.com/web/fundamentals/primers/service-workers/?hl=ja)
+- [Service Worker API](https://developer.mozilla.org/ja/docs/Web/API/Service_Worker_API)

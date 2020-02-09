@@ -2,42 +2,42 @@
 title: Bulma
 ---
 
-[Bulma](https://bulma.io) is a free, open source CSS framework based on Flexbox. This guide will show you how to get started with Gatsby and Bulma.
+[Bulma](https://bulma.io) は Flexbox をベースにした、無料のオープンソース CSS フレームワークです。このガイドでは Gatsby で Bulma を使う方法を紹介します。
 
-This guide assumes that you have a Gatsby project set up. If you need to set up a project, head to the [**Quick Start guide**](/docs/quick-start), then come back.
+このガイドは、すでに Gatsby プロジェクトが設定済みであることを前提としています。まだ設定済みでない場合は、[**クイックスタートガイド**](/docs/quick-start) を読んでから戻ってきてください。
 
-## Installation
+## インストール
 
-For starters, lets install all the required packages we're going to need.
+まずは、必要なパッケージをインストールしましょう。
 
 `yarn add bulma node-sass gatsby-plugin-sass`
 
-Then add the `gatsby-plugin-sass` in to `gatsby-config.js`.
+次に `gatsby-config.js` に `gatsby-plugin-sass` を追加します。
 
 ```javascript:title=gatsby-config.js
 plugins: [`gatsby-plugin-sass`],
 ```
 
-## File for styles
+## スタイルファイル
 
-Now is the time to create a scss-file that holds your simple style customisation and the import statement for bulma.
+ではシンプルなスタイル変更と、bulma をインポートする文を含んだ scss ファイルを作っていきましょう。
 
-(To keep things simple, insert the file next to `index.js` in the pages-directory)
+（話を簡単にするため、index.js のページディレクトリにファイルを追加します）
 
 ```scss:title=mystyles.scss
 @charset "utf-8";
 
-// If need, change your variables before importing Bulma
+// もし必要なら、Bulma をインポートする前に変数を変更しましょう
 $title-color: #ff0000;
 
 @import "~bulma/bulma.sass";
 ```
 
-## Using Bulma
+## Bulma を使う
 
-The last step is to import the style and use it.
+最後に、スタイルをインポートしましょう。
 
-Replace the default contents of the `index.js` file.
+index.js ファイルの内容を書き換えます。
 
 ```jsx:title=index.js
 import React from "react"
@@ -64,8 +64,8 @@ const IndexPage = () => {
 export default IndexPage
 ```
 
-And that's all there is to it! Now you can use Bulma as you normally would.
+以上で終わりです！これで通常どおり Bulma を使うことができます。
 
-## Resources
+## 参考資料
 
 - [Bulma documentation on how to use sass](https://bulma.io/documentation/customize/with-node-sass/)

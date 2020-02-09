@@ -1,41 +1,41 @@
 ---
-title: "WordPress Source Plugin Tutorial"
+title: "WordPress ソースプラグイン・チュートリアル"
 ---
 
-## How to create a site with data pulled from WordPress
+## WordPress から取得したデータを使用するサイトの作成方法
 
-### What this tutorial covers:
+### このチュートリアルの範囲：
 
-In this tutorial, you will install the `gatsby-source-wordpress` plugin in order to pull blog and image data from a WordPress install into your Gatsby site and render that data. This [Gatsby + WordPress demo site](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-wordpress) shows you the source code for an example site similar to what you’re going to be building in this tutorial, although it’s missing the cool images you’ll be adding in the next part of this tutorial, [Adding Images to a WordPress Site](/tutorial/wordpress-image-tutorial/). :D
+このチュートリアルでは、`gatsby-source-wordpress` をインストールして、設定された WordPress からブログや画像データを Gatsby サイトに取り込み、そのデータをレンダリングします。こちらの [Gatsby + WordPress デモサイト](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-wordpress)では、これからチュートリアルで作成するサイトに近いサンプルサイトのソースコードを確認できます。サンプルサイトには見た目の良い画像は設定されていませんが、次の [WordPress サイトに画像を追加する](/tutorial/wordpress-image-tutorial/)チュートリアルで設定を行うことになるでしょう。
 
-#### But do you prefer GraphQL?
+#### まって、GraphQL の方がいい？
 
-If you prefer using GraphQL, there's a [wp-graphql](https://github.com/wp-graphql/wp-graphql) plugin to easily expose both default and custom data in WordPress.
+もし GraphQL を使いたいとお考えでしたら、WordPress で簡単にデータを GraphQL で取得できる [wp-graphql](https://github.com/wp-graphql/wp-graphql) プラグインがあります。
 
-The same authentication schemes supported by the WP-API are supported in wp-graphql, which can be used with the [gatsby-source-graphql](/packages/gatsby-source-graphql/) plugin.
+WP-API でサポートされている同一の認証スキームは wp-graphql でサポートされています。これは [gatsby-source-graphql](/packages/gatsby-source-graphql/) と同時に使うことができます。
 
-## Why go through this tutorial?
+## なぜこのチュートリアルをやるの？
 
-While each source plugin may operate differently from others, it’s worth going through this tutorial because you will almost definitely be using a source plugin in most Gatsby sites you build. This tutorial will walk you through the basics of connecting your Gatsby site to a CMS, pulling in data, and using React to render that data in beautiful ways on your site.
+各ソースプラグインは、他と異なった動きをすることがあります。ほとんどの Gatsby サイトではほぼ確実にソースプラグインを使用することになるため、このチュートリアルはきっと助けになるでしょう。このチュートリアルでは Gatsby サイトを CMS に接続し、データを取得し、そのデータを React で表示するための素晴らしい方法の基礎を学ぶことができます。
 
-If you’d like to look at the growing number of source plugins available to you, search for “source” in the [Gatsby plugin library](/plugins/?=source).
+もし利用可能な、今も増え続けているソースプラグインをご覧になりたければ、[Gatsby プラグインライブラリー](/plugins/?=source)で "source" というキーワードで検索してください。
 
-### Creating a site with the `gatsby-source-wordpress` plugin
+### `gatsby-source-wordpress` プラグインを使用するサイトを作成
 
-Create a new Gatsby project and change directories into the new project you just created:
+Gatsby プロジェクトを新規作成し、生成されたプロジェクトのディレクトリーに移動してください。
 
 ```shell
  gatsby new wordpress-tutorial-site
 cd wordpress-tutorial-site
 ```
 
-Install the `gatsby-source-wordpress` plugin. For extra reading on the plugin’s features and examples of GraphQL queries not included in this tutorial, see the [`gatsby-source-wordpress` plugin’s README file](/packages/gatsby-source-wordpress/?=wordpress).
+`gatsby-source-wordpress` プラグインをインストールしてください。このチュートリアルでは説明していないプラグインの機能や GraphQL クエリーの例については、[`gatsby-source-wordpress` プラグインの README ファイル](/packages/gatsby-source-wordpress/?=wordpress)をご覧ください。
 
 ```shell
 npm install gatsby-source-wordpress
 ```
 
-Add the `gatsby-source-wordpress` plugin to `gatsby-config.js` using the following code, which you can also find in the [demo site’s source code](https://github.com/gatsbyjs/gatsby/blob/master/examples/using-wordpress/gatsby-config.js).
+以下のコードを使い、`gatsby-config.js` に `gatsby-source-wordpress` プラグインを追加してください。これは[デモサイトのソースコード](https://github.com/gatsbyjs/gatsby/blob/master/examples/using-wordpress/gatsby-config.js)でも確認できます。
 
 ```js:title=gatsby-config.js
 module.exports = {
@@ -47,27 +47,27 @@ module.exports = {
   plugins: [
     // https://public-api.wordpress.com/wp/v2/sites/gatsbyjsexamplewordpress.wordpress.com/pages/
     /*
-     * Gatsby's data processing layer begins with “source”
-     * plugins. Here the site sources its data from WordPress.
+     * Gatsby のデータ処理レイヤーは "source" プラグインから始まります。
+     * このサイトでは WordPress からデータを取得しています。
      */
     // highlight-start
     {
       resolve: `gatsby-source-wordpress`,
       options: {
         /*
-         * The base URL of the WordPress site without the trailingslash and the protocol. This is required.
-         * Example : 'demo.wp-api.org' or 'www.example-site.com'
+         * 最後のスラッシュとプロトコルを含まない WordPress サイトのベース URL。これは必須項目です。
+         * 例 : 'dev-gatbsyjswp.pantheonsite.io' または 'www.example-site.com'
          */
-        baseUrl: `live-gatbsyjswp.pantheonsite.io`,
-        // The protocol. This can be http or https.
+        baseUrl: `dev-gatbsyjswp.pantheonsite.io`,
+        // プロトコル。ここでは http か https を設定できます。
         protocol: `https`,
-        // Indicates whether the site is hosted on wordpress.com.
-        // If false, then the assumption is made that the site is self hosted.
-        // If true, then the plugin will source its content on wordpress.com using the JSON REST API V2.
-        // If your site is hosted on wordpress.org, then set this to false.
+        // wordpress.com にホスティングされているかを示します。
+        // false を設定した場合、セルフホスティングだと仮定されます。
+        // true を設定した場合、プラグインは JSON REST API V2 を使用して wordpress.com からコンテンツを取得します。
+        // もし wordpress.org にホスティングされている場合は false を指定してください。
         hostingWPCOM: false,
-        // If useACF is true, then the source plugin will try to import the WordPress ACF Plugin contents.
-        // This feature is untested for sites hosted on WordPress.com
+        // もし useACF が true の場合、ソースプラグインは WordPress ACF プラグインコンテンツのインポートを試行します。
+        // この機能は WordPress.com にホスティングされたサイトではテストされていません。
         useACF: true,
       },
     },
@@ -102,19 +102,19 @@ module.exports = {
 }
 ```
 
-### Creating GraphQL queries that pull data from WordPress
+### WordPress からデータを取得する GraphQL クエリーの作成
 
-Now you are ready to create a GraphQL query to pull in some data from the WordPress site. You will create a query that pulls in the title of the blog posts, date they were posted, and blogpost content.
+これで WordPress サイトからデータを取得するための GraphQL クエリーを作成する準備が整いました。それではブログ記事のタイトル、投稿日付、ブログ記事の本文を取得するためのクエリーを作成しましょう。
 
-Run:
+以下を実行してください。
 
 ```shell
 gatsby develop
 ```
 
-In your browser, open localhost:8000 to see your site, and open localhost:8000/\_\_\_graphql so that you can create your GraphQL queries.
+ブラウザーから localhost:8000 を開いてください。また GraphQL クエリーを作成するために localhost:8000/\_\_\_graphql を開いてください。
 
-As an exercise, try re-creating the following queries in your GraphiQL explorer. This first query will pull in the blogpost content from WordPress:
+練習として、GraphQL エクスプローラーで以下のクエリーの再作成に挑戦してみてください。この最初のクエリーは WordPress のブログ記事の本文を取得します。
 
 ```graphql
 query {
@@ -132,7 +132,7 @@ query {
 }
 ```
 
-This next query will pull in a sorted list of the blog posts:
+次のクエリーはソートされたブログ記事のリストを取得します。
 
 ```graphql
 {
@@ -148,9 +148,9 @@ This next query will pull in a sorted list of the blog posts:
 }
 ```
 
-## Rendering the blog posts to `index.js`
+## `index.js` にブログ記事をレンダリングする
 
-Now that you've created GraphQL queries that pull in the data you want, you'll use that second query to create a list of sorted blogpost titles on your site's homepage. Here's what your home page component in `src/pages/index.js` should look like:
+これであなたが必要としているデータを取得する GraphQL クエリーが作成できました。2 番目のクエリーはあなたのサイトのトップページで、ソートされたブログ記事のタイトルのリストを作成するために使用します。こちらが `src/pages/index.js` のあるべき状態です。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -194,28 +194,28 @@ export const pageQuery = graphql`
 //highlight-end
 ```
 
-Save these changes and look at localhost:8000 to see your new homepage with a list of sorted blog posts!
+こちらの変更を保存して localhost:8000 にアクセスし、ソートされたブログ記事のリストがある新しいトップページを確認しましょう！
 
-![WordPress home after query](./images/wordpress-source-plugin-home.jpg)
+![クエリー実行後の WordPress ホーム](./images/wordpress-source-plugin-home.jpg)
 
-> **NOTE:** to future editors: it would be useful to also have examples of how to load blog posts to their own individual pages. And helpful to insert a screenshot of the final result here
+> **ヒント:** 将来の編集者へ: ブログ記事をそれぞれの個別ページに表示させるための例も示しておくと便利でしょう。また最終的な結果のスクリーンショットをここに挿入することも助けとなります。
 
-## Create pages for each blog post and link to them
+## 各ブログ記事のページを作成し、それらにリンクを設定する
 
-An index page with a post title and excerpt is great, but you should also build pages out for each of the blog posts, and link to them from your `index.js` file.
+投稿のタイトルと抜粋があるインデックスページは素晴らしいものですが、あなたは各ブログ記事の個別ページを作り、それらに `index.js` ファイルからリンクさせる必要があるでしょう。
 
-To do this, you need to:
+そのためには以下を行う必要があります。
 
-1. Create pages for each blog post
-2. Link up the title on the index page with the post page.
+1. 各ブログ記事のページを作成する。
+2. インデックスページ上のタイトルからブログ記事へのリンクを作成する。
 
-If you haven't already, please read through [Part 7](/tutorial/part-seven/) of the foundational tutorial, as it goes through the concept and examples of this process with Markdown instead of WordPress.
+もしまだこれらを行っていないようでしたら、基本チュートリアルの[パート 7](/tutorial/part-seven/) をご覧ください。このページでは WordPress の代わりに Markdown を使用してコンセプトとこのプロセスの例について説明しています。
 
-### Creating pages for each blog post.
+### 各ブログ記事へのページを作成する
 
-In Part 7 of the tutorial, the first step in creating pages is creating slugs for the markdown files. Since you are using WordPress and not Markdown files, you can grab the slugs that get returned from your API call to the WordPress source. You can skip creating slugs, since you already have them.
+先程のチュートリアルのパート 7 では、ページを作成するための最初の一歩として Markdown ファイルのためにスラッグを作成しています。Markdown ファイルの代わりに WordPress を使用しているため、WordPress への API 呼び出しから取得できるスラッグを利用できます。あなたはすでにスラッグを取得できるため、新たにそれらを作成する必要はありません。
 
-Open up your `gatsby-node.js` file in the root of your project (it should be blank except for some comments) and add the following:
+プロジェクトのルートにある `gatsby-node.js` ファイルを開き（これはいくつかのコメントを除けば空のファイルのはずです）以下を追記してください。
 
 ```js:title=gatsby-node.js
 const path = require(`path`)
@@ -241,15 +241,15 @@ exports.createPages = ({ graphql, actions }) => {
 }
 ```
 
-Next, [stop and restart](https://www.gatsbyjs.org/tutorial/part-zero/#view-your-site-locally) the `gatsby develop` environment. As you watch the terminal you should see two Post objects log to the terminal:
+次に `gatsby develop` 環境の[停止と再起動](https://www.gatsbyjs.org/tutorial/part-zero/#view-your-site-locally)を行います。ターミナルを見ることで、あなたは 2 つの記事オブジェクトのログ出力を見ることができます。
 
-![Two posts logged to the terminal](./images/wordpress-source-plugin-log.jpg)
+![ターミナルにログ出力された 2 つのブログ記事](./images/wordpress-source-plugin-log.jpg)
 
-Excellent! As explained in Part 7 of the tutorial, this `createPages` export is one of the Gatsby "workhorses" and allows us to create your blog posts (or pages, or custom post types, etc.) from your WordPress install.
+すばらしい！チュートリアルのパート 7 で述べられたように、この `createPages` の出力は Gatsby の主機能の 1 つであり、WordPress のインストールからブログ記事（もしくはページやカスタムポストなど）を作成することを可能にします。
 
-Before you can create the blog posts, however, you need to specify a template to build the pages.
+しかしながら、実際のブログ記事を作成するためには、事前にページをビルドするためのテンプレートを指定しなければなりません。
 
-In your `src` directory, create a directory called `templates` and in the newly created `templates` folder, create a filed named `blog-post.js`. In that new file, paste the following:
+`src` ディレクトリー内で、`templates` という名前のディレクトリーを作成し、その中に `blog-post.js` という名前のファイルを作成します。その新しいファイル内に、以下をペーストしてください。
 
 ```jsx:title=src/templates/blog-post.js
 import React from "react"
@@ -282,9 +282,9 @@ export const query = graphql`
 `
 ```
 
-What is this file doing? After importing your dependencies, it constructs the layout of the post with JSX. It wraps everything in the `Layout` component, so the style is the same throughout the site. Then, it simply adds the post title and the post content. You can add anything you want and can query for here (e.g. feature image, post meta, custom fields, etc.).
+このファイルは何をやっているのでしょうか？依存関係をインポートした後に、JSX を使いブログ記事のレイアウトを構築しています。これは `Layout` コンポーネント内のすべてをラップしているため、サイト全体を通してレイアウトは同じです。また、これは記事のタイトルと本文を単純に追加しています。ここでは好きなものを追加したり、クエリー内容を変更したり出来ます（例：画像、記事のメタデータ、カスタムフィールドなど）
 
-Below that, you can see the GraphQL query calling the specific post based on the `$slug`. This variable is passed to the `blog-post.js` template when the page is created in `gatsby-node.js`. To accomplish this, add the following code to the `gatsby-node.js` file:
+以下では `$slug` を使用した特定の記事を取得する GraphQL を確認できます。この変数は `gatsby-node.js` 内でページが作成される際に `blog-post.js` テンプレートへ渡されます。これを行うために、以下のコードを `gatsby-node.js` ファイルに追記してください。
 
 ```js:title=gatsby-node.js
 const path = require(`path`)
@@ -311,8 +311,7 @@ exports.createPages = ({ graphql, actions }) => {
         path: node.slug,
         component: path.resolve(`./src/templates/blog-post.js`),
         context: {
-          // This is the $slug variable
-          // passed to blog-post.js
+          // こちらが blog-post.js に渡される $slug 変数です。
           slug: node.slug,
         },
       })
@@ -322,17 +321,17 @@ exports.createPages = ({ graphql, actions }) => {
 }
 ```
 
-You will need to stop and start your environment again using `gatsby develop`. When you do, you will not see a change on the index page of the site, but if you navigate to a 404 page, like [http://localhost:8000/asdf](http://localhost:8000/asdf), you should see the two sample posts created and be able to click on them to go to the sample posts:
+再度開発環境を `gatsby develop` コマンドで再起動する必要があります。再起動を行ったら、サイトのインデックスページでは変化は見られませんが、[http://localhost:8000/asdf](http://localhost:8000/asdf) のような 404 ページを閲覧すると、作成した 2 つのサンプル記事を確認でき、それらをクリックすることでサンプル記事のページに行くことが出来ます。
 
-![Sample post links](./images/wordpress-source-plugin-sample-post-links.gif)
+![サンプル記事のリンク](./images/wordpress-source-plugin-sample-post-links.gif)
 
-But nobody likes to go to a 404 page to find a blog post! So, let's link these up from the home page.
+しかし、誰もブログ記事を見つけようと 404 ページに飛びたいとは思いませんね！なので、トップページからリンクを張りましょう。
 
-### Linking to posts from the homepage.
+### トップページから記事にリンクを張る
 
-Since you already have your structure and query done for the `index.js` page, all you need to do is use the `Link` component to wrap your titles and you should be good to go.
+すでに `index.js` に構造とクエリーの設定を行っているため、ただ `Link` コンポーネントを使ってタイトルを囲むだけで設定できます。
 
-Open up `src/pages/index.js` again and add the following:
+`src/pages/index.js` ファイルを開き、以下を追記してください。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -375,10 +374,10 @@ export const pageQuery = graphql`
 `
 ```
 
-And that's it! When you wrap the title in the `Link` component and reference the slug of the post, Gatsby will add some magic to the link, preload it, and make the transition between pages incredibly fast:
+これで完了です！`Link` コンポーネントでタイトルを囲って記事のスラッグを参照させれば、Gatsby は魔法のようにそこへのリンクを設定し、事前に読み込み、ページ間の移動を信じられないほど早くしてくれます。
 
-![Final product with links from the home page to the blog posts](./images/wordpress-source-plugin-home-to-post-links.gif)
+![トップページからブログ記事へのリンクが設置された最終的な完成品](./images/wordpress-source-plugin-home-to-post-links.gif)
 
-### Wrapping up.
+### まとめ
 
-You can apply the same procedure to calling and creating pages, custom post types, custom fields, taxonomies, and all the fun and flexible content WordPress is known for. This can be as simple or as complex as you would like it to be, so explore and have fun with it!
+同じ手順を使うことで、ページを呼び出して生成したり、カスタム記事タイプやカスタムフィールドを設定したり、分類を行ったり、そして WordPress の機能として知られているすべての楽しく柔軟なコンテンツを利用したりできます。これはいくらでも簡単にしたり複雑にしたりできます。なので楽しみながらいろいろ試してみてください！
