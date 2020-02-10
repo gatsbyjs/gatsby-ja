@@ -191,7 +191,7 @@ HTML では下記のように表現されます
 
 ```mdx
 ---
-description: frontmatterのdescription例
+description: frontmatter の description 例
 ---
 
 import { Chart } from "../components/chart"
