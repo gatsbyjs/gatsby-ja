@@ -40,7 +40,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
 
    > ヒント：`gatsby-node.js` に変更を加えたら、変更を反映させるために、 `gatsby develop` を再度実行する必要があります。
 
-3. データの検索（GraphiQL もしくは新たにさくせしたコンポーネント内で）
+3. データの検索（GraphiQL もしくは新たに作成したコンポーネント内で）
 
 ```graphql
 query MyPokemonQuery {
