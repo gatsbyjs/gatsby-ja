@@ -187,7 +187,7 @@ npm install --save gatsby-remark-images gatsby-plugin-sharp
 
 `gatsby-plugin-mdx` の使い方を紹介します。 `gatsby-plugin-mdx` の `gatsbyRemarkPlugins` の設定の中に `gatsby-remark-images` の設定を追加します。
 
-> Note: この例では Markdown と画像が同じディレクトリーにある場合を想定しています。詳しくは[Markdown と画像を別のディレクトリーで管理する場合の設定](#configuring-for-images-and-posts-in-different-directories)を確認してください。
+> ヒント: この例では Markdown と画像が同じディレクトリーにある場合を想定しています。詳しくは[Markdown と画像を別のディレクトリーで管理する場合の設定](#configuring-for-images-and-posts-in-different-directories)を確認してください。
 
 ```js:title=gatsby-config.js
 module.exports = {
