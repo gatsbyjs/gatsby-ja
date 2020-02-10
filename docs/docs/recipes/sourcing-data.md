@@ -353,7 +353,7 @@ contentful login
 
 1. Contentful Space や Space ID を持っている場合には、ステップ 2 と 3 はスキップできます。まだ Contentful Space を作成していない場合には、新しく作成してください。コマンドの最後で割り振られた Space ID は保存してください。
 
-注意：新しいアカウントの場合、デフォルトのオンボーディング Space は上書きされます。詳しくは [spaces included with your account](https://app.contentful.com/account/profile/space_memberships) を見てください。
+ヒント：新しいアカウントの場合、デフォルトのオンボーディング Space は上書きされます。詳しくは [spaces included with your account](https://app.contentful.com/account/profile/space_memberships) を見てください。
 
 ```shell
 contentful space create --name 'Gatsby example'
@@ -586,7 +586,7 @@ module.exports = {
 
 4. Drupal データを使うには、Gatsby サイトの `src/pages/drupal.js` に新しいページを作成してください。このページには、すべての Drupal「ページ」ノードがリスト表示されます。
 
-**注意：** 正確な GraphQL スキーマは、Drupal インスタンスの構造に依存します。
+**ヒント：** 正確な GraphQL スキーマは、Drupal インスタンスの構造に依存します。
 
 ```jsx:title=src/pages/drupal.js
 import React from "react"
