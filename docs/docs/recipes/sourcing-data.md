@@ -244,7 +244,7 @@ module.exports = {
 }
 ```
 
-> **注意：** プラグインの設定については、 [`gatsby-source-wordpress` プラグインの Docs](/packages/gatsby-source-wordpress/?=wordpre#how-to-use) を参考にしてください
+> **ヒント：** プラグインの設定については、 [`gatsby-source-wordpress` プラグインの Docs](/packages/gatsby-source-wordpress/?=wordpre#how-to-use) を参考にしてください
 
 3. 次のコードを含むテンプレートコンポーネントを `src/templates/post.js` に作成します
 
