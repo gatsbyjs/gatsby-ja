@@ -4,7 +4,7 @@ title: Markdown 構文
 
 Markdown は Gatsby でウェブサイトにページやポストを書くための標準的な方法です。この便利なガイドは Markdown 構文とフォーマットについての知識を解説します！
 
-## 見出し s
+## 見出し
 
 ```markdown
 # 見出し 1
