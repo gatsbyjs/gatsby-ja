@@ -2,7 +2,7 @@
 title: 問題を提出する方法
 ---
 
-The [問題追跡](https://github.com/gatsbyjs/gatsby/issues) バグレポート、機能リクエスト、および [提出する PR ](/contributing/how-to-open-a-pull-request/).
+The [問題追跡](https://github.com/gatsbyjs/gatsby/issues) のチャンネル バグレポート、機能リクエスト、および [提出する PR ](/contributing/how-to-open-a-pull-request/).
 
 問題を迅速に解決したい場合は、問題に含めてください：
 
