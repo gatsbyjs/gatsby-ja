@@ -93,7 +93,7 @@ module.exports = {
   ]
 ```
 
-2. `src/content` に Markdown の投稿する際は、タイトル、日付、パス、そして投稿本文の初期コンテンツのフォーマットを含めてください。
+2. `src/content` に Markdown を投稿する際は、タイトル、日付、パス、そして投稿本文の初期コンテンツの Formatter を含めてください。
 
 ```markdown:title=src/content/my-first-post.md
 ---
