@@ -4,7 +4,7 @@ title: Markdown で書かれているコンテンツで画像を扱う
 
 Markdown を利用してコンテンツを作成する際に、画像を挿入することでより魅力的なコンテンツを作成できます。Markdown で画像を挿入する方法をいくつか紹介します。
 
-## Frontmatter metadata を利用した見出し画像の表示
+## Frontmatter メタデータを利用した見出し画像の表示
 
 ブログを作成する際に、記事の見出し画像を設定したい場合があります。frontmatter に画像のファイル名を設定し、GraphQL のクエリに `gatsby-plugin-sharp` を利用して画像を読み込む方法があります。
 
