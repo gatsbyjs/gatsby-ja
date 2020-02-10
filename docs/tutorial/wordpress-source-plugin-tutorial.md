@@ -32,7 +32,7 @@ cd wordpress-tutorial-site
 `gatsby-source-wordpress` プラグインをインストールしてください。このチュートリアルでは説明していないプラグインの機能や GraphQL クエリーの例については、[`gatsby-source-wordpress` プラグインの README ファイル](/packages/gatsby-source-wordpress/?=wordpress)をご覧ください。
 
 ```shell
-npm install --save gatsby-source-wordpress
+npm install gatsby-source-wordpress
 ```
 
 以下のコードを使い、`gatsby-config.js` に `gatsby-source-wordpress` プラグインを追加してください。これは[デモサイトのソースコード](https://github.com/gatsbyjs/gatsby/blob/master/examples/using-wordpress/gatsby-config.js)でも確認できます。
@@ -40,7 +40,9 @@ npm install --save gatsby-source-wordpress
 ```js:title=gatsby-config.js
 module.exports = {
   siteMetadata: {
-    title: "Gatsby WordPress Tutorial",
+    title: `Gatsby WordPress Tutorial`,
+    description: `An example to learn how to source data from WordPress.`,
+    author: `@gatsbyjs`,
   },
   plugins: [
     // https://public-api.wordpress.com/wp/v2/sites/gatsbyjsexamplewordpress.wordpress.com/pages/
@@ -58,7 +60,7 @@ module.exports = {
          */
         baseUrl: `dev-gatbsyjswp.pantheonsite.io`,
         // プロトコル。ここでは http か https を設定できます。
-        protocol: `http`,
+        protocol: `https`,
         // wordpress.com にホスティングされているかを示します。
         // false を設定した場合、セルフホスティングだと仮定されます。
         // true を設定した場合、プラグインは JSON REST API V2 を使用して wordpress.com からコンテンツを取得します。
@@ -70,6 +72,32 @@ module.exports = {
       },
     },
     // highlight-end
+    /**
+     * The following plugins aren't required for gatsby-source-wordpress,
+     * but we need them so the default starter we installed above will keep working.
+     **/
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `gatsby-starter-default`,
+        short_name: `starter`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
   ],
 }
 ```
@@ -122,7 +150,7 @@ query {
 
 ## `index.js` にブログ記事をレンダリングする
 
-これであなたが必要としているデータを取得する GraphQL クエリーが作成できました。2 番目のクエリーはあなたのサイトのトップページで、ソートされたブログ記事のタイトルのリストを作成するために使用します。こちらが `index.js` のあるべき状態です。
+これであなたが必要としているデータを取得する GraphQL クエリーが作成できました。2 番目のクエリーはあなたのサイトのトップページで、ソートされたブログ記事のタイトルのリストを作成するために使用します。こちらが `src/pages/index.js` のあるべき状態です。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -213,7 +241,7 @@ exports.createPages = ({ graphql, actions }) => {
 }
 ```
 
-次に `gatsby develop` 環境の停止と再起動を行います。ターミナルを見ることで、あなたは 2 つの記事オブジェクトのログ出力を見ることができます。
+次に `gatsby develop` 環境の[停止と再起動](https://www.gatsbyjs.org/tutorial/part-zero/#view-your-site-locally)を行います。ターミナルを見ることで、あなたは 2 つの記事オブジェクトのログ出力を見ることができます。
 
 ![ターミナルにログ出力された 2 つのブログ記事](./images/wordpress-source-plugin-log.jpg)
 
@@ -303,7 +331,7 @@ exports.createPages = ({ graphql, actions }) => {
 
 すでに `index.js` に構造とクエリーの設定を行っているため、ただ `Link` コンポーネントを使ってタイトルを囲むだけで設定できます。
 
-`index.js` ファイルを開き、以下を追記してください。
+`src/pages/index.js` ファイルを開き、以下を追記してください。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -318,7 +346,7 @@ export default ({ data }) => {
       <h1>My WordPress Blog</h1>
       <h4>Posts</h4>
       {data.allWordpressPost.edges.map(({ node }) => (
-        <div>
+        <div key={node.slug}>
           //highlight-start
           <Link to={node.slug}>
             <p>{node.title}</p>

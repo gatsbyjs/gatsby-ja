@@ -1,11 +1,11 @@
 ---
-title: "Gatsby Eコマースチュートリアル"
+title: "Gatsby eコマースチュートリアル"
 ---
 
 # 目次
 
 - [目次](#目次)
-- [なぜ E コマースサイトで Gatsby を使うのか](#なぜEコマースサイトでGatsbyを使うのか)
+- [なぜ e コマースサイトで Gatsby を使うのか](#なぜeコマースサイトでGatsbyを使うのか)
 - [前提条件](#前提条件)
   - [Stripe と Gatsby はどのように連携させるのか](#StripeとGatsbyはどのように連携させるのか)
 - [Gatsby サイトの設定](#Gatsbyサイトの設定)
@@ -20,9 +20,9 @@ title: "Gatsby Eコマースチュートリアル"
 
 この発展的なチュートリアルでは、Gatsby を用いて支払いができる基本的な e コマースサイトの UI を構築を学ぶことができます。[Stripe](https://stripe.com)は支払い処理のバックエンドとして用います。
 
-## なぜ E コマースサイトで Gatsby を使うのか
+## なぜ e コマースサイトで Gatsby を使うのか
 
-Gatsby を E コマースのサイトに使うメリットは以下のとおりです。
+Gatsby を e コマースのサイトに使うメリットは以下のとおりです。
 
 - 静的サイト固有のセキュリティ
 - ページを React から静的ファイルに変換する際の超高速パフォーマンス
@@ -65,7 +65,7 @@ npm install gatsby-plugin-stripe
 ```js:title=gatsby-config.js
 module.exports = {
   siteMetadata: {
-    title: `Gatsby E-Commerce Starter`,
+    title: `Gatsby e-Commerce Starter`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
   },
@@ -214,7 +214,7 @@ React をインポートし、いくつかの style のボタンを追加し、R
 
 ```jsx:title=src/components/checkout.js
   componentDidMount() {
-    this.stripe = window.Stripe('pk_test_jG9s3XMdSjZF9Kdm5g59zlYd')
+    this.stripe = window.Stripe("pk_test_jG9s3XMdSjZF9Kdm5g59zlYd")
   }
 ```
 
@@ -224,13 +224,13 @@ React をインポートし、いくつかの style のボタンを追加し、R
   async redirectToCheckout(event) {
     event.preventDefault()
     const { error } = await this.stripe.redirectToCheckout({
-      items: [{ sku: 'sku_DjQJN2HJ1kkvI3', quantity: 1 }],
+      items: [{ sku: "sku_DjQJN2HJ1kkvI3", quantity: 1 }],
       successUrl: `http://localhost:8000/page-2/`,
       cancelUrl: `http://localhost:8000/`,
     })
 
     if (error) {
-      console.warn('Error:', error)
+      console.warn("Error:", error)
     }
   }
 ```
@@ -302,7 +302,7 @@ npm install gatsby-source-stripe
 ```js:title=gatsby-config.js
 module.exports = {
   siteMetadata: {
-    title: `Gatsby E-Commerce Starter`,
+    title: `Gatsby e-commerce Starter`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -387,7 +387,6 @@ export default props => (
 
 ```jsx:title=src/pages/advanced.js
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -486,16 +485,16 @@ export default SkuCard
 最後に、`Skus` コンポーネントをリファクタリングして Stripe.js クライアントを初期化し、`props` で Stripe.js クライアントを伝えながら `SkuCards` をレンダリングする必要があります。
 
 ```jsx:title=src/components/Products/Skus.js
-import React, { Component } from 'react'
-import { graphql, StaticQuery } from 'gatsby'
-import SkuCard from './SkuCard' // highlight-line
+import React, { Component } from "react"
+import { graphql, StaticQuery } from "gatsby"
+import SkuCard from "./SkuCard" // highlight-line
 
 const containerStyles = {
-  display: 'flex',
-  flexDirection: 'row',
-  flexWrap: 'wrap',
-  justifyContent: 'space-between',
-  padding: '1rem 0 1rem 0',
+  display: "flex",
+  flexDirection: "row",
+  flexWrap: "wrap",
+  justifyContent: "space-between",
+  padding: "1rem 0 1rem 0",
 }
 
 class Skus extends Component {

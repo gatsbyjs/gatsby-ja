@@ -368,6 +368,8 @@ ls public
 surge public/
 ```
 
+> 実行後、コマンドライン上で `domain: some-name.surge.sh` の情報が表示されたら、もう一度 `enter` キーを押してください。
+
 実行が終了すると、ターミナルに次のように表示されます。
 
 ![Surge を使用して Gatsby サイトを公開したスクリーンショット](surge-deployment.png)
