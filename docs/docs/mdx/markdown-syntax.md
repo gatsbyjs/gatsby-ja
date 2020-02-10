@@ -20,7 +20,7 @@ Markdown は Gatsby でウェブサイトにページやポストを書くため
 ###### 見出し 6
 ```
 
-Here's how those tags render in HTML:
+上記タグは HTML 上では以下のように表示されます。
 
 # 見出し 1
 
