@@ -1,8 +1,8 @@
 ---
-title: How to File an Issue
+title: 問題を提出する方法
 ---
 
-The [issue tracker](https://github.com/gatsbyjs/gatsby/issues) is the preferred channel for bug reports, feature requests and [submitting pull requests](/contributing/how-to-open-a-pull-request/).
+The [問題追跡](https://github.com/gatsbyjs/gatsby/issues) バグレポート、機能リクエスト、および [submitting pull requests](/contributing/how-to-open-a-pull-request/).
 
 If you want your Issue to be resolved quickly, please include in your Issue:
 
