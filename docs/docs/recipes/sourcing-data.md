@@ -61,7 +61,7 @@ query MyPokemonQuery {
 - [Pixabay ソースプラグインのチュートリアル](/docs/pixabay-source-plugin-tutorial/) 内での、ソースプラグインのハンズオン
 - createNode の[ドキュメント](/docs/actions/#createNode)
 
-## GraphQL も用いたブログ投稿やページの為の Markdown データソース
+## GraphQL を用いたブログ投稿やページの為の Markdown データの取得
 
 Markdown データと Gatsby が提供する [`createPages` API](/docs/actions/#createPage) を用いて、動的にページを作成することが出来ます。
 
