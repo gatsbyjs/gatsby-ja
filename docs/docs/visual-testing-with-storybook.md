@@ -154,7 +154,7 @@ module.exports = (baseConfig, env, defaultConfig) => {
 npm run storybook
 ```
 
-Storybook CLI はこのコマンドを `package.json` に追加してくれるので、コマンドを実行する以外に何もする必要はありません。Storybook がビルドに成功すれば、 `http://localhost:6006` に移動して、Storybook CLI によって提供されたデフォルトのストーリーを表示できるはずです。
+Storybook CLI はこのコマンドを `package.json` に追加してくれるので、コマンドを実行する以外に何もする必要はありません。Storybook がビルドに成功すれば、`http://localhost:6006` に移動して、Storybook CLI によって提供されたデフォルトのストーリーを表示できるはずです。
 
 ただし、`StaticQuery` または `useStaticQuery` をプロジェクトで使用する場合、 Storybook は `NODE_ENV` を `production` に設定して実行する必要があります (Storybook はデフォルトで `development` に設定するため）。そうしなければ `babel-plugin-remove-graphql-queries` は実行されません。さらに、 Storybook は Gatsby の `StaticQuery` によって生成された [static files](https://storybook.js.org/docs/configurations/serving-static-files/#2-via-a-directory) について知る必要があります。スクリプトは以下のようになります。
 
