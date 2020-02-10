@@ -36,8 +36,8 @@ Markdown は Gatsby でウェブサイトにページやポストを書くため
 
 - それぞれの見出し行は等価となる HTML に変換されます
   - 例：`# 見出し 1` は `<h1>見出し 1</h1>` に変換されます
-- それぞれの見出しレベルの正しい使い方については次の資料を参照してください。
-  [accessibility guidelines](https://www.w3.org/WAI/tutorials/page-structure/headings/) by the World Wide Web Consortium (W3C)
+- それぞれの見出しレベルの正しい使い方については W3C(the World Wide Web Consortium) の [accessibility guidelines](https://www.w3.org/WAI/tutorials/page-structure/headings/) を参照してください。
+
   _ヒント: [Gatsby のドキュメント](/contributing/docs-contributions#headings) によると、H1 は Markdown の Frontmatter における `title` 要素をレンダリングする際、すでに使用されています。そのため、Markdown 本文に見出しを記載する際には H2 タグ(つまり `##` )から始めてください。_
 
 ## テキストの強調
@@ -121,7 +121,7 @@ HTML では下記のように表現されます
 
 ### 代替テキストのないイメージ
 
-この表記方法は、装飾または反復的な画像に適しています。（参考： [decorative or repetitive images](https://www.w3.org/WAI/tutorials/images/decision-tree/)）
+この表記方法は、装飾または反復的な画像に適しています。（参考： [decorative or repetitive images](https://www.w3.org/WAI/tutorials/images/decision-tree/) ）
 
 ```markdown
 ![](path-to-image)
@@ -175,7 +175,7 @@ HTML では下記のように表現されます
 ## Frontmatter
 
 - Markdown ファイルのメタデータを記載します
-- Variables that can later be injected into your components
+- これらは変数としてコンポーネント上で利用できます
 - 必須要件
   - ファイルの最初に記載すること
   - 正しい YAML 構文であること
