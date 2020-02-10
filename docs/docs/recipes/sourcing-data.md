@@ -468,7 +468,7 @@ export const query = graphql`
 
 ## 外部ソースからデータを読み込み、GraphQL を使わずページを作成する
 
-[GraphQL の利用を検討すべき理由はありますが](/docs/why-gatsby-uses-graphql/)、ページ内にデータを内包させる為に、必ずしも GraphQL データレイヤーを用いる必要はありません。GraphQL とソース プラグインを経由せず、 `createPages` API を利用して、まだ構築されていないデータを直接 Gatsby サイトに読み込むことができます。
+[GraphQL の利用を検討すべき理由はいくつかありますが](/docs/why-gatsby-uses-graphql/)、ページ内にデータを内包させる為に、必ずしも GraphQL データレイヤーを用いる必要はありません。GraphQL とソース プラグインを経由せず、 `createPages` API を利用して、まだ構築されていないデータを直接 Gatsby サイトに読み込むことができます。
 
 このレシピでは、[PokéAPI’s REST endpoints](https://www.pokeapi.co/) からデータを取得して動的にページを作成していきます。[完全な例](https://github.com/jlengstorf/gatsby-with-unstructured-data/) は Github にあります。
 
