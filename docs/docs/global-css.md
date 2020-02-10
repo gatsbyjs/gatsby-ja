@@ -90,7 +90,7 @@ a {
 
 そして、`gatsby-browser.js` の中で CSS ファイルを読み込みます。
 
-> **NOTE:** この方法は CSS を読み込んだときに実行され、読み込んだスタイルは JavaScript ビルド時に出力されます。 CSS-in-JS のための JavaScript ビルドは行われません。
+> **ヒント:** この方法は CSS を読み込んだときに実行され、読み込んだスタイルは JavaScript ビルド時に出力されます。 CSS-in-JS のための JavaScript ビルドは行われません。
 > レイアウトコンポーネントまたは global-styles.js の中で CSS ファイルを読み込むことが最善策になります。
 
 ```javascript:title=gatsby-browser.js
