@@ -332,7 +332,7 @@ exports.createPages = async ({ graphql, actions }) => {
 ### 追加資料
 
 - [Getting Started with WordPress and Gatsby](/blog/2019-04-26-how-to-build-a-blog-with-wordpress-and-gatsby-part-1/)
-- [WordPress のデータを利用する](/docs/sourcing-from-wordpress/) へ移動
+- [WordPress のデータを利用する](/docs/sourcing-from-wordpress/) へ進む
 - [データを利用する例](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-wordpress)
 
 ## Sourcing data from Contentful
