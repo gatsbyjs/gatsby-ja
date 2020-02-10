@@ -12,7 +12,7 @@ Markdown を利用してコンテンツを作成する際に、画像を挿入�
 
 > NOTE: [MDX](/docs/mdx/) を利用した場合も、GraphQL のクエリ内の `markdownRemark` を `Mdx` へ置き換えるだけで動作します。
 
-まずは [Using gatsby-image](/docs/using-gatsby-image/) で紹介されている画像を扱うために必要なプラグインをインストールしましょう。
+まずは [Gatsby の画像 API](/docs/using-gatsby-image/) で紹介されている画像を扱うために必要なプラグインをインストールしましょう。
 
 ```shell
 npm install --save gatsby-image gatsby-transformer-sharp gatsby-plugin-sharp
