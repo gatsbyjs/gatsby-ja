@@ -27,7 +27,7 @@ Netlify にログインすると、トップ画面に `New site from git` と書
 - Publish directory: Netlify がウェブサイトの公開に利用するフォルダーを指定します。（例：public, dist, build）デフォルト値は `public`です。
 - Advanced build settings: あなたのウェブサイトが環境変数をビルドに用いる場合、任意で指定できます。 `Show advanced` をクリックして、`New Variable` ボタンから指定します。
 
-`Deploy site` ボタンをクリックすると、 Netlify はあなたの入力した設定に応じてビルドを開始します。`Deploys` タブに移動して、`Deploy log` にデプロイプロセスが表示されていることを確認しましょう。しばらく待つと、公開ウェブサイトの URL が `random-name.netlify.com` の形で表示されます！
+`Deploy site` ボタンをクリックすると、Netlify はあなたの入力した設定に応じてビルドを開始します。`Deploys` タブに移動して、`Deploy log` にデプロイプロセスが表示されていることを確認しましょう。しばらく待つと、公開ウェブサイトの URL が `random-name.netlify.com` の形で表示されます！
 
 ### フォルダーのアップロード
 
