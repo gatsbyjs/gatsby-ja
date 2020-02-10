@@ -8,7 +8,7 @@ Markdown を利用してコンテンツを作成する際に、画像を挿入�
 
 ブログを作成する際に、記事の見出し画像を設定したい場合があります。frontmatter に画像のファイル名を設定し、GraphQL のクエリに `gatsby-plugin-sharp` を利用して画像を読み込む方法があります。
 
-この方法は `gatsby-transformer-remark` か `gatsby-plugin-mdx` を利用して、 すでに Markdown を変換してコンテンツとして利用できるよう設定してある場合を想定しています。もし設定をしていない場合は [Programmatically create pages from data](/tutorial/part-seven/) を参照してください。チュートリアルは `gatsby-transformer-remark` を利用しています。
+この方法は `gatsby-transformer-remark` か `gatsby-plugin-mdx` を利用して、 すでに Markdown を変換してコンテンツとして利用できるよう設定してある場合を想定しています。もし設定をしていない場合は「[プログラムでデータからページを生成する](/tutorial/part-seven/)」を参照してください。チュートリアルは `gatsby-transformer-remark` を利用しています。
 
 > NOTE: [MDX](/docs/mdx/) を利用した場合も、GraphQL のクエリ内の `markdownRemark` を `Mdx` へ置き換えるだけで動作します。
 
