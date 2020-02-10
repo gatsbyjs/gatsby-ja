@@ -38,7 +38,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
 
 2. `gatsby develop` を実行します。
 
-   > 注意：`gatsby-node.js` に変更を加えたら、変更を反映させるために、 `gatsby develop` を再度実行させる必要があります。
+   > ヒント：`gatsby-node.js` に変更を加えたら、変更を反映させるために、 `gatsby develop` を再度実行する必要があります。
 
 3. データの検索（GraphiQL もしくは新たにさくせしたコンポーネント内で）
 
