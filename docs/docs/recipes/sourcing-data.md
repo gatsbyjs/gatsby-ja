@@ -1,12 +1,14 @@
-
+---
 title: "レシピ集: データの取得"
 tableOfContentsDepth: 1
+---
 
-Gatsby のデータソースはプラグインによって実現されています。ソースプラグインはデータソースからデータを取得します。（例： `gatsby-source-filesystem` プラグインはファイルシステムからデータを取得する、`gatsby-source-wordpress` プラグインは WordPress API からデータを取得する、等）データソースを自身で用意することも可能です。
+
+Gatsby のデータ取得はプラグインによって実現されています。データ取得プラグインはデータソースからデータを取得します。（例： `gatsby-source-filesystem` プラグインはファイルシステムからデータを取得する、`gatsby-source-wordpress` プラグインは WordPress API からデータを取得する、等）データソースを自身で用意することも可能です。
 
 ## GraphQL にデータを追加する
 
-Gatsby の [GraphQL data layer](/docs/querying-with-graphql/) はデータの塊をモデル化するノードを必要とします。Gatsby ソースプラグインはクエリ対象のソースノードを追加します。しかし、ソースノードはご自身で作成することも可能です。Gatsby では、GraphQL のデータレイヤーにカスタムデータを追加する為のメソッドが提供されています。
+Gatsby の [GraphQL data layer](/docs/querying-with-graphql/) はデータの塊をモデル化するノードを必要とします。Gatsby データ取得プラグインはクエリ対象のソースノードを追加します。しかし、ソースノードはご自身で作成することも可能です。Gatsby では、GraphQL のデータレイヤーにカスタムデータを追加する為のメソッドが提供されています。
 
 このレシピでは、 `createNode()` を用いてカスタムデータを追加する方法を紹介します。
 
@@ -57,8 +59,8 @@ query MyPokemonQuery {
 ### 追加資料
 
 - [チュートリアル パート 5](/tutorial/part-five/#source-plugins) にて、 `gatsby-source-filesystem` を用いた例の概略
-- [Gatsby ライブラリ](/plugins/?=source) 内で検索可能なソースプラグイン
-- [Pixabay ソースプラグインのチュートリアル](/docs/pixabay-source-plugin-tutorial/) 内での、ソースプラグインのハンズオン
+- [Gatsby ライブラリ](/plugins/?=source) 内で検索可能なデータ取得プラグイン
+- [Pixabay データ取得プラグインのチュートリアル](/docs/pixabay-source-plugin-tutorial/) 内での、データ取得プラグインのハンズオン
 - createNode の[ドキュメント](/docs/actions/#createNode)
 
 ## GraphQL を用いたブログ投稿やページの為の Markdown データの取得
@@ -462,7 +464,7 @@ export const query = graphql`
 
 - [Building a Site with React and Contentful](/blog/2018-1-25-building-a-site-with-react-and-contentful/)
 - [Contentful のデータ利用についてもっと見る](/docs/sourcing-from-contentful/)
-- [Contentful ソースプラグイン](/packages/gatsby-source-contentful/)
+- [Contentful データ取得プラグイン](/packages/gatsby-source-contentful/)
 - [Long-text field types returned as objects](/packages/gatsby-source-contentful/#a-note-about-longtext-fields)
 - [このレシピの例](https://github.com/gatsbyjs/gatsby/tree/master/examples/recipe-sourcing-contentful)
 
