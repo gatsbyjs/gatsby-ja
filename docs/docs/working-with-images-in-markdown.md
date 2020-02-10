@@ -94,7 +94,7 @@ featuredImage: ../images/team-cat.png
 
 ここまでで Markdown での記述と画像の指定方法を理解できたと思います。次に GraphQL のクエリで見出し画像を取得する方法を説明します。ファイルパスに実際の画像が存在するパスを指定している場合、画像は GraphQL の `File` node に格納されます。そして画像のデータを `childImageSharp` から参照します。
 
-Markdown のテンプレートファイルに GraphQL のクエリを追加します。以下は [Fluid query](/docs/gatsby-image#images-that-stretch-across-a-fluid-container) を利用してレスポンシブな画像を取得する例です。
+Markdown のテンプレートファイルに GraphQL のクエリを追加します。以下は[可変クエリー](/docs/gatsby-image#images-that-stretch-across-a-fluid-container)を利用してレスポンシブな画像を取得する例です。
 
 ```jsx:title=src/templates/blog-post.js
 export const query = graphql`
