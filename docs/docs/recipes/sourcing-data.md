@@ -532,7 +532,7 @@ export default ({ pageContext: { allPokemon } }) => (
 ### 追加資料
 
 - [Full Pokemon data repo](https://github.com/jlengstorf/gatsby-with-unstructured-data/)
-- 構築されていないデータの利用についてもっと知るには、[Using Gatsby without GraphQL](/docs/using-gatsby-without-graphql/) をみてください
+- 非構造化データの利用についてもっと知るには、[Using Gatsby without GraphQL](/docs/using-gatsby-without-graphql/) をみてください
 - より複雑な Gatsby サイトの為に、いつ、どのように[GraphQL でデータを検索するか](/docs/querying-with-graphql/)
 
 ## Drupal からコンテンツを読み込む
