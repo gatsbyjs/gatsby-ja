@@ -61,6 +61,6 @@ Netlify の site にある `Overview` から `Domain Settings` に移動しま�
 ## その他のリソース
 
 - [A Step-by-Step Guide: Gatsby on Netlify](https://www.netlify.com/blog/2016/02/24/a-step-by-step-guide-gatsby-on-netlify/)
-- More [blog posts on Gatsby + Netlify](/blog/tags/netlify)
+- [Gatsby と Netlify に関するブログ記事](/blog/tags/netlify)
 - [Gatsby Netlify CMS](/packages/gatsby-plugin-netlify-cms)
 - [Gatsby + Netlify CMS Starter](https://github.com/netlify-templates/gatsby-starter-netlify-cms)
