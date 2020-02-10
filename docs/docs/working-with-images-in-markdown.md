@@ -179,7 +179,7 @@ Markdown の body に画像を表示したい場合の説明をします。[gats
 npm install --save gatsby-remark-images gatsby-plugin-sharp
 ```
 
-また `gatsby-source-filesystem` がインストールされていることと設定で画像のあるフォルダーが指定されていることを確認してください。
+また `gatsby-source-filesystem` がインストールされていること、そして設定で画像のあるフォルダーが指定されていることを確認してください。
 
 `gatsby-config` でプラグインの設定をしましょう。先述したように `Remark` か `MDX` を利用します。
 
