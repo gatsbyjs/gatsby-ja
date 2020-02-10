@@ -35,7 +35,7 @@ Markdown は Gatsby でウェブサイトにページやポストを書くため
 ###### 見出し 6
 
 - それぞれの見出し行は等価となる HTML に変換されます
-  - i.e. `# 見出し 1` は `<h1>見出し 1</h1>` に変換されます
+  - 例：`# 見出し 1` は `<h1>見出し 1</h1>` に変換されます
 - それぞれの見出しレベルの正しい使い方については次の資料を参照してください。
   [accessibility guidelines](https://www.w3.org/WAI/tutorials/page-structure/headings/) by the World Wide Web Consortium (W3C)
   _ヒント: [Gatsby のドキュメント](/contributing/docs-contributions#headings) によると、H1 は Markdown の Frontmatter における `title` 要素をレンダリングする際、すでに使用されています。そのため、Markdown 本文に見出しを記載する際には H2 タグ(つまり `##` )から始めてください。_
