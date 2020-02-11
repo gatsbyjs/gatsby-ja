@@ -57,25 +57,25 @@ export default () => (
 )
 ```
 
-## Things to watch out for
+## 気をつけるべきこと
 
-Since Gatsby uses Server-Side Rendering (SSR) to generate your site's pages, the JSX code you write is usually compiled before the browser loads the page. Because of this, certain features are not available at compile time and can cause a build error.
+Gatsby は、サーバサイドレンダリング (SSR) を使用してサイトのページを生成しているため、たいていの場合、ブラウザがページをロードする前にあなたが書いた JSX のコードが、コンパイルされます。このため、ある機能は、コンパイルした時に利用できずビルドエラーになることがあります。
 
-### Use of browser globals
+### ブラウザグローバルの使用について
 
-Some components or code reference browser globals such as `window`, `document` or `localStorage`. These objects are not available at [build](/docs/glossary#build) time and can result in a webpack error when compiling:
+一部のコンポーネントやコードでは、 `window`、 `document`、 `localStorage` のようなブラウザグローバルを参照することがあります。それらのオブジェクトでは、[ビルド](/docs/glossary#build) 時点では利用できず、コンパイル時に webpack エラーが発生する可能性があります。
 
 ```text
 WebpackError: ReferenceError: window is not defined
 ```
 
-To learn more about solutions for supporting SSR and client-side libraries, check out the related section on the [Porting from Create React App documentation](/docs/porting-from-create-react-app-to-gatsby#server-side-rendering-and-browser-apis).
+SSR およびクライアントサイドライブラリをサポートする解決策については、[Create React App から Gatsby への移植](/docs/porting-from-create-react-app-to-gatsby#server-side-rendering-and-browser-apis)に関連するセクションをご覧ください。
 
-#### Fixing third-party modules
+#### サードパーティモジュールを直す
 
-Some packages expect `window` or another browser global to be defined. These packages will have to be patched.
+一部のパッケージは、 `window` もしくは、別のブラウザグローバルが定義されることを期待します。それらのパッケージは、パッチを適用する必要があります。
 
-You can learn how to patch these packages on the [Debugging HTML Builds documentation](/docs/debugging-html-builds/#fixing-third-party-modules).
+[HTML ビルドのデバッグ](/docs/debugging-html-builds/#fixing-third-party-modules) でそれらのパッケージにパッチを適用する方法を学べます。
 
 ### Components without server-side rendering
 
