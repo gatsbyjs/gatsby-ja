@@ -1,26 +1,24 @@
 ---
-title: Adding a List of Markdown Blog Posts
+title: Markdownのブログ投稿一覧を追加する
 ---
+Markdown のページをサイトに追加すると、専用のインデックスページに投稿を一覧表示できるようになります。
 
-Once you have added Markdown pages to your site, you are just one step away from being able to list your posts on a dedicated index page.
-
-## Creating posts
-
-As described [here](/docs/adding-markdown-pages), you will have to create your posts in Markdown files which will look like this:
+## 投稿を作成
+[ここ](/docs/adding-markdown-pages) で説明しているように, Markdown ファイルに投稿を作成する必要があります。それは次のようになります。
 
 ```markdown
 ---
 path: "/blog/my-first-post"
 date: "2017-11-07"
-title: "My first blog post"
+title: "初めてのブログ投稿"
 ---
 
-Has anyone heard about GatsbyJS yet?
+GatsbyJS って聞いたことある？
 ```
 
-## Creating the page
+## ページの作成
 
-The first step will be to create the page which will display your posts, in `src/pages/`. You can for example use `index.js`.
+最初の手順は投稿を表示するページを `src/pages/` に作成することです。例えば `index.js` を利用できます。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -32,7 +30,7 @@ const IndexPage = ({
   },
 }) => {
   const Posts = edges
-    .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
+    .filter(edge => !!edge.node.frontmatter.date) // いくつかの基準に基づいて投稿をフィルタリングできます
     .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
 
   return <div>{Posts}</div>
@@ -41,9 +39,9 @@ const IndexPage = ({
 export default IndexPage
 ```
 
-## Creating the GraphQL query
+## GraphQL のクエリを作成
 
-Second, you need to provide the data to your component with a GraphQL query. Add it, so that `index.js` looks like this:
+次に、 GraphQL クエリを利用してコンポーネントにデータを提供する必要があります。 `index.js` に以下のように追加します。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -56,7 +54,7 @@ const IndexPage = ({
   },
 }) => {
   const Posts = edges
-    .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
+    .filter(edge => !!edge.node.frontmatter.date) // いくつかの基準に基づいて投稿をフィルタリングできます
     .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
 
   return <div>{Posts}</div>
