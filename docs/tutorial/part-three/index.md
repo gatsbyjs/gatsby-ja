@@ -1,57 +1,57 @@
 ---
-title: Creating Nested Layout Components
+title: ネストしたレイアウトコンポーネントの作成
 typora-copy-images-to: ./
 disableTableOfContents: true
 ---
 
-Welcome to part three!
+パート 3 へようこそ！
 
-## What's in this tutorial?
+## このチュートリアルの内容は？
 
-In this part, you'll learn about Gatsby plugins and creating "layout" components.
+このパートでは、Gatsby プラグインと、「レイアウト」コンポーネントを作成する方法について学びます。
 
-Gatsby plugins are JavaScript packages that help add functionality to a Gatsby site. Gatsby is designed to be extensible, which means plugins are able to extend and modify just about everything Gatsby does.
+Gatsby プラグインは、Gatsby サイトに機能を追加するための JavaScript パッケージです。Gatsby は機能を拡張できるように設計されています。つまり、プラグインは Gatsby のほぼすべての機能を拡張したり変更できます。
 
-Layout components are for sections of your site that you want to share across multiple pages. For example, sites will commonly have a layout component with a shared header and footer. Other common things to add to layouts are a sidebar and/or navigation menu. On this page for example, the header at the top is part of gatsbyjs.org's layout component.
+レイアウトコンポーネントは、サイト内の複数ページで共通に使用する特定のセクションの事を指します。たとえば、サイトには通常、共有ヘッダーとフッターなどのレイアウトコンポーネントがあります。その他のレイアウトコンポーネントとして、一般的には、サイドバーやナビゲーションメニューがあります。例えば、このページの上部のヘッダーは、gatsbyjs.org のレイアウトコンポーネントの一部になります。
 
-Let's dive into part three.
+それでは、パート 3 を詳しくみていきましょう。
 
-## Using plugins
+## プラグインの使用
 
-You’re probably familiar with the idea of plugins. Many software systems support adding custom plugins to add new functionality or even modify the core workings of the software. Gatsby plugins work the same way.
+もしかしたら、すでにプラグインの概念に馴染みがあるかもしれません。多くのソフトウェアシステムでは、カスタムプラグインを追加することで、新しい機能を追加することや、ソフトウェアのコア機能を変更できます。Gatsby プラグインも同様な働きをします。
 
-Community members (like you!) can contribute plugins (small amounts of JavaScript code) that others can then use when building Gatsby sites.
+（あなたのような）コミュニティメンバーは、他の人が Gatsby サイトを構築するために使用するプラグイン（少量の JavaScript コード）を提供できます。
 
-> There are already hundreds of plugins! Explore the Gatsby [Plugin Library](/plugins/).
+> すでに何百ものプラグインがあります！Gatsby [プラグインライブラリ](/plugins/)をご覧ください。
 
-Our goal with plugins is to make them straightforward to install and use. You will likely be using plugins in almost every Gatsby site you build. While working through the rest of the tutorial you’ll have many opportunities to practice installing and using plugins.
+私たちは、プラグインを簡単にインストールして使用できるようにすることを目標にしています。これから構築するほとんどすべての Gatsby サイトでプラグインを使用することになります。このチュートリアルの残りの部分の作業を通じて、プラグインをインストールして使うための練習をたくさんできます。
 
-For an initial introduction to using plugins, we'll install and implement the Gatsby plugin for Typography.js.
+プラグインを使い始める導入として、Typography.js の Gatsby プラグインをインストールして組み込んでみます。
 
-[Typography.js](https://kyleamathews.github.io/typography.js/) is a JavaScript library which generates global base styles for your site's typography. The library has a [corresponding Gatsby plugin](/packages/gatsby-plugin-typography/) to streamline using it in a Gatsby site.
+[Typography.js](https://kyleamathews.github.io/typography.js/) は、全体の基本となるサイトのタイポグラフィのスタイルを生成するための JavaScript ライブラリーです。このライブラリーを Gatsby サイトで効率よく使用できるように[対応する Gatsby プラグイン](/packages/gatsby-plugin-typography/)が用意されています。
 
-### ✋ Create a new Gatsby site
+### ✋ 新しい Gatsby サイトの作成
 
-As we mentioned in [part two](/tutorial/part-two/), at this point it's probably a good idea to close the terminal window(s) and project files from previous parts of the tutorial, to keep things clean on your desktop. Then open a new terminal window and run the following commands to create a new Gatsby site in a directory called `tutorial-part-three` and then move to this new directory:
+[パート 2](/tutorial/part-two/) でも述べたように、この時点で、前のチュートリアルで使用したターミナルウィンドウとプロジェクトファイルを閉じて、デスクトップをクリアに保つことをお勧めします。次に、新しいターミナルウィンドウを開き、次のコマンドを実行して、`tutorial-part-three` というディレクトリーに新しい Gatsby サイトを作成し、この新しいディレクトリーに移動します。
 
 ```shell
 gatsby new tutorial-part-three https://github.com/gatsbyjs/gatsby-starter-hello-world
 cd tutorial-part-three
 ```
 
-### ✋ Install and configure `gatsby-plugin-typography`
+### ✋ `gatsby-plugin-typography` をインストールして設定する
 
-There are two main steps to using a plugin: Installing and configuring.
+プラグインを使用するまでに、インストールして、設定するという 2 つの主な手順を踏みます。
 
-1. Install the `gatsby-plugin-typography` NPM package.
+1. `gatsby-plugin-typography` NPM パッケージをインストールします。
 
 ```shell
 npm install --save gatsby-plugin-typography react-typography typography typography-theme-fairy-gates
 ```
 
-> Note: Typography.js requires a few additional packages, so those are included in the instructions. Additional requirements like this will be listed in the "install" instructions of each plugin.
+> ヒント: Typography.js にはいくつかの追加パッケージが必要なため、それらの手順も含まれます。このように追加で必要なものは、それぞれのプラグインの「インストール」手順に記載されています。
 
-2. Edit the file `gatsby-config.js` at the root of your project to the following:
+2. プロジェクトのルートにあるファイル `gatsby-config.js` を次のように編集します。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -66,11 +66,11 @@ module.exports = {
 }
 ```
 
-The `gatsby-config.js` is another special file that Gatsby will automatically recognize. This is where you add plugins and other site configuration.
+`gatsby-config.js` は、Gatsby が自動的に認識するもう 1 つの特別なファイルです。このファイルに、プラグインとその他のサイトに関する設定を追加します。
 
-> Check out the [doc on gatsby-config.js](/docs/gatsby-config/) to read more, if you wish.
+> 必要に応じて、詳細は [gatsby-config.js のドキュメント](/docs/gatsby-config/)を参照してください。
 
-3. Typography.js needs a configuration file. Create a new directory called `utils` in the `src` directory. Then add a new file called `typography.js` to `utils` and copy the following into the file:
+3. Typography.js の設定ファイルが必要になります。`src` ディレクトリーに `utils` という新しいディレクトリーを作成します。次に、`typography.js` という新しいファイルを `utils` に追加し、次の内容をファイルにコピーします。
 
 ```javascript:title=src/utils/typography.js
 import Typography from "typography"
@@ -82,20 +82,19 @@ export const { scale, rhythm, options } = typography
 export default typography
 ```
 
-4. Start the development server.
+4. 開発サーバーを起動します。
 
 ```shell
 gatsby develop
 ```
 
-Once you load the site, if you inspect the generated HTML using the Chrome developer tools, you’ll see that the typography plugin added a `<style>` element to the `<head>` element with its generated CSS:
+サイトを読み込んだ後、Chrome 開発者ツールを使用して生成された HTML を検証すると、タイポグラフィプラグインが `<head>` エレメント内の `<style>` エレメントに生成した CSS が追加されているのを確認できます。
 
 ![typography-styles](typography-styles.png)
 
-### ✋ Make some content and style changes
+### ✋ コンテンツとスタイルに変更を加える
 
-Copy the following into your `src/pages/index.js` so you can see the
-effect of the CSS generated by Typography.js better.
+Typography.js によって生成された CSS の効果をよりわかりやすく確認できるように、以下を `src/pages/index.js` にコピーします。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -111,12 +110,11 @@ export default () => (
 )
 ```
 
-Your site should now look like this:
+サイトは次のようになります。
 
 ![no-layout](no-layout.png)
 
-Let's make a quick improvement. Many sites have a single column of text centered in the middle of the page. To create this, add the following styles to the
-`<div>` in `src/pages/index.js`.
+手早く改良してみましょう。多くのサイトでは、ページの真ん中にテキストを中央寄せて一列にします。これを作成するには、`src/pages/index.js` 内の `<div>` に次のスタイルを追加します。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -135,11 +133,11 @@ export default () => (
 
 ![with-layout2](with-layout2.png)
 
-Sweet. You've installed and configured your very first Gatsby plugin!
+すばらしい。初めての Gatsby プラグインをインストールして設定しました！
 
-## Creating layout components
+## レイアウトコンポーネントの作成
 
-Now let's move on to learning about layout components. To get ready for this part, add a couple new pages to your project: an about page and a contact page.
+次に、レイアウトコンポーネントについて学習します。このパートの準備をするために、プロジェクトにいくつかの新しいページを追加します。about ページと contact ページを追加します。
 
 ```jsx:title=src/pages/about.js
 import React from "react"
@@ -165,19 +163,19 @@ export default () => (
 )
 ```
 
-Let's see what the new about page looks like:
+新しい about ページがどのように見えるか見てみましょう。
 
 ![about-uncentered](about-uncentered.png)
 
-Hmm. It would be nice if the content of the two new pages were centered like the index page. And it would be nice to have some sort of global navigation so it's easy for visitors to find and visit each of the sub-pages.
+うーん。2 つの新しいページのコンテンツもインデックスページのように中央寄せされているといいですね。また、訪問者が各サブページを簡単に見つけてアクセスできるように、何らかのグローバルナビゲーションを用意しておくと便利です。
 
-You'll tackle these changes by creating your first layout component.
+はじめてのレイアウトコンポーネントを作成して、これらの変更に取り組んでいきましょう。
 
-### ✋ Create your first layout component
+### ✋ はじめてのレイアウトコンポーネントの作成
 
-1. Create a new directory at `src/components`.
+1. `src/components` に新しいディレクトリーを作成します。
 
-2. Create a very basic layout component at `src/components/layout.js`:
+2. `src/components/layout.js` にまず基本的なレイアウトコンポーネントを作成します。
 
 ```jsx:title=src/components/layout.js
 import React from "react"
@@ -189,7 +187,7 @@ export default ({ children }) => (
 )
 ```
 
-3. Import this new layout component into your `src/pages/index.js` page component:
+3. この新しいレイアウトコンポーネントを `src/pages/index.js` ページコンポーネントにインポートします。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -208,17 +206,17 @@ export default () => (
 
 ![with-layout2](with-layout2.png)
 
-Sweet, the layout is working! The content of your index page is still centered.
+すばらしい、レイアウトが機能しています！インデックスページのコンテンツはちゃんと中央寄せされたままです。
 
-But try navigating to `/about/`, or `/contact/`. The content on those pages still won't be centered.
+しかし、`/about/` または `/contact/` に移動してみてください。これらのページのコンテンツはまだ中央寄せされてません。
 
-4. Import the layout component in `about.js` and `contact.js` (as you did for `index.js` in the previous step).
+4. レイアウトコンポーネントを `about.js` と `contact.js` にインポートします（前のステップで `index.js` に対して行ったように）。
 
-The content of all three of your pages is centered thanks to this single shared layout component!
+この 1 つの共有レイアウトコンポーネントにより、すべての 3 つのページのコンテンツを中央に寄せることができました！
 
-### ✋ Add a site title
+### ✋ サイトタイトルを追加する
 
-1. Add the following line to your new layout component:
+1. 新しいレイアウトコンポーネントに次の行を追加します。
 
 ```jsx:title=src/components/layout.js
 import React from "react"
@@ -231,13 +229,13 @@ export default ({ children }) => (
 )
 ```
 
-If you go to any of your three pages, you'll see the same title added, e.g. the `/about/` page:
+3 つのページのいずれかにアクセスすると、同じタイトルが追加されます。たとえば、`/about/` ページは以下のようになります。
 
 ![with-title](with-title.png)
 
-### ✋ Add navigation links between pages
+### ✋ ページ間にナビゲーションリンクを追加する
 
-1. Copy the following into your layout component file:
+1. レイアウトコンポーネントファイルに以下の内容をコピーします。
 
 ```jsx:title=src/components/layout.js
 import React from "react"
@@ -272,10 +270,10 @@ export default ({ children }) => (
 
 ![with-navigation2](with-navigation2.png)
 
-And there you have it! A three page site with basic global navigation.
+これで、できあがりです！3 ページの基本的なグローバルナビゲーションを備えたサイトができました。
 
-_Challenge:_ With your new "layout component" powers, try adding headers, footers, global navigation, sidebars, etc. to your Gatsby sites!
+_チャレンジ:_ 新しい「レイアウトコンポーネント」機能を使用して、ヘッダー、フッター、グローバルナビゲーション、サイドバーなどを Gatsby サイトに追加してみてください！
 
-## What's coming next?
+## 次は何ですか？
 
-Continue on to [part four of the tutorial](/tutorial/part-four/) where you'll start learning about Gatsby's data layer and programmatically creating pages!
+[チュートリアルのパート 4](/tutorial/part-four/) に進み、Gatsby のデータレイヤーについて学習し、プログラムによりページを作成します。
