@@ -18,7 +18,7 @@ title: グローバル CSS ファイルを用いた標準的なスタイリン�
 gatsby new global-styles https://github.com/gatsbyjs/gatsby-starter-hello-world
 ```
 
-新規作成したサイトをコードエディターで開きます。 `/src/components` ディレクトリーを作成し、新規ファイルを 2 つ作成します：
+新規作成したサイトをコードエディターで開きます。`/src/components` ディレクトリーを作成し、新規ファイルを 2 つ作成します：
 
 ```diff
   global-styles/
