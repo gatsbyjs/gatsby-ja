@@ -1,10 +1,12 @@
 ---
 title: Markdownのブログ投稿一覧を追加する
 ---
+
 Markdown のページをサイトに追加すると、専用のインデックスページに投稿を一覧表示できるようになります。
 
 ## 投稿を作成
-[ここ](/docs/adding-markdown-pages) で説明しているように, Markdown ファイルに投稿を作成する必要があります。それは次のようになります。
+
+[ここ](/docs/adding-markdown-pages) で説明しているように、 Markdown ファイルに投稿を作成する必要があります。それは次のようになります。
 
 ```markdown
 ---
