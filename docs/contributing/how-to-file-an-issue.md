@@ -10,7 +10,7 @@ title: 問題を提出する方法
 - あなたの内容 `gatsby-config.js` そして `package.json` そしてあなたの
   `gatsby-node.js`、 `gatsby-browser.js` `gatsby-ssr.js` そこで行った変更に応じたファイル。
 
-個人的なサポートリクエストには課題トラッカーを使用しないでください。 [Stack Overflow](https://stackoverflow.com/questions/ask?tags=gatsby) （**gatsby** 鬼ごっこ） そして [Gatsby Discord](https://gatsby.dev/discord) 助けを得るより良い場所です。
+個人的なサポートリクエストには課題トラッカーを使用しないでください。 [Stack Overflow](https://stackoverflow.com/questions/ask?tags=gatsby)（**gatsby** 鬼ごっこ）そして [Gatsby Discord](https://gatsby.dev/discord) 助けを得るより良い場所です。
 
 ### 問題に関する特記事項
 
@@ -20,8 +20,8 @@ title: 問題を提出する方法
 
 2. 問題があり、さらに詳細を追加できる場合は、バグがどのように影響しているかを説明するコメントを書くか、可能であれば、バグの回避策を書きます
 
-3. もしそこにあるなら _ではありません_ 問題、何が起こっているかについての もっとも 完全な説明を書き、 できれば、問題を再現する Gatsby サイトへのリンクまたは [再現可能なテストケースを作成する](/contributing/how-to-make-a-reproducible-test-case/)
+3. もしそこにあるなら _ではありません_ 問題、何が起こっているかについてのもっとも完全な説明を書き、 できれば、問題を再現する Gatsby サイトへのリンクまたは [再現可能なテストケースを作成する](/contributing/how-to-make-a-reproducible-test-case/)
 
-4. バグの修正を支援する申し出 （そして、あなたが助けを求めることは完全に期待されています。 open-source メンテナーは貢献者を助けたい）
+4. バグの修正を支援する申し出（そして、あなたが助けを求めることは完全に期待されています。 open-source メンテナーは貢献者を助けたい）
 
 5. [届ける 良い 作成された、テスト済み PR](/contributing/how-to-open-a-pull-request/)
