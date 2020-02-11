@@ -1,20 +1,20 @@
 ---
-title: Adding React Components
+title: React コンポーネントを追加する
 ---
 
-This guide covers how to add React components to your Gatsby site.
+このガイドは、あなたの Gatsby サイトに React コンポーネントを追加する方法を解説します。
 
-## React components
+## React コンポーネント
 
-React components are prebuilt elements or groups of elements that can be used to split your User Interface (UI) into independent, reusable pieces. There are multiple types of components you can write: this guide covers functional components. For more in-depth information on writing React components including classes, check out the [React documentation](https://reactjs.org/docs/components-and-props.html).
+React コンポーネントは、あなたのユーザーインターフェース (UI) を独立した再利用可能な部品として分割するために使えるすでに構築された要素、もしくは要素の集合です。React コンポーネントで書くことができるコンポーネントの種類は多くあるのですが、このガイドでは、関数コンポーネントを使用します。クラスコンポーネントを含む React コンポーネントの書き方について詳細を知りたい場合は、こちらの [React ドキュメント](https://ja.reactjs.org/docs/components-and-props.html)をご覧ください。
 
-Components also offer the ability to be customized using inputs, better known as "props" (properties). Props can be of any JavaScript type, such as Boolean, String, Object, Array or almost anything you can think of.
+コンポーネントは、"props" (プロパティ）として知られる入力を用いてカスタマイズされる機能も提供されています。 Props は、ブーリアンや文字列、オブジェクト、配列など、考えられるほぼすべての JavaScript の型になりえます。
 
-For example, you could use a component for Buttons on your site. This would enable them to be used multiple times across pages with different labels or actions each time.
+例えば、あなたのサイト上のボタンに対してコンポーネントを使えます。これで、毎回異なるラベルやアクションを持つページを越えて、複数回使用できます。
 
-## Importing React components
+## React コンポーネントをインポートする
 
-In Gatsby, when using React components, you can import and use them like you would in a React application. Here's an example of the [Gatsby Link](/docs/gatsby-link/) component in action, which brings with it extra functionality for performance:
+Gatsby で React コンポーネントを使うときは、React アプリケーションと同じようにしてインポートして使用できます。ここでは、動作している [Gatsby Link](/docs/gatsby-link/) を例にします。そして、パフォーマンスのための追加機能をもたらします。
 
 ```jsx
 import React from "react"
@@ -27,32 +27,32 @@ export default () => (
 )
 ```
 
-### Importing third-party components
+### サードパーティコンポーネントをインポートする
 
-Just like React, Gatsby also supports third-party components and libraries. You can install a third-party component or library via your package manager. We tend to favour and use npm and we will reflect this in our examples.
+React と同様にして、Gatsby でもサードパーティコンポーネントとライブラリはサポートしています。あなたは、パッケージマネジャ経由でサードパーティコンポーネントやライブラリをインストールできます。私たちは、 npm を好んで使用する傾向にあるので、 npm を例にしています。
 
-Here's an example of adding a third-party component to your site.
+ここでは、あなたのサイトにサードパーティコンポーネントを追加する一例を挙げています。
 
-First, you have to install the component or library's package via a package manager. It's recommended not to mix package managers, so if you use npm, don't use another and vice versa.
+はじめに、パッケージマネジャでコンポーネントやライブラリのパッケージをインストールしなければなりません。パッケージマネジャを組み合わせることはおすすめしません。だから、もしあなたが npm を使用するなら別のものは使用しないでください。また逆もまた然りです。
 
 ```shell
 npm install @material-ui/core
 ```
 
-After you've installed a package, import and use it in your page's source:
+パッケージのインストールが完了したら、あなたのページのソースコード上でインポートして使用します。
 
 ```jsx:title=my-page.jsx
 import React from "react"
 
-// import my fancy third-party component
+// わたしの素敵なサードパーティコンポーネントをインポートする
 import Button from "@material-ui/core/Button"
 
 export default () => (
   <div>
-    <p>This is my super awesome page made with Gatsby!</p>
+    <p>これは、わたしの超すごい Gatsby でできたページです!</p>
 
-    {/* use my fancy third-party component */}
-    <Button>Fancy button!</Button>
+    {/* わたしの素敵なサードパーティコンポーネントを使用する */}
+    <Button>素敵なボタン!</Button>
   </div>
 )
 ```
