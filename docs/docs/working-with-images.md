@@ -1,26 +1,26 @@
 ---
-title: Working with Images in Gatsby
+title: Gatsby で画像を使用する
 ---
 
-Optimizing images is a challenge on any website. To utilize best practices for performance across devices, you need multiple sizes and resolutions of each image. Luckily, Gatsby has several useful [plugins](/docs/plugins/) that work together to do that for images on [page components](/docs/building-with-components/#page-components).
+画像の最適化は、どんなウェブサイトでも課題です。複数デバイス上でパフォーマンス調整のベストプラクティスを利用するには、各画像に複数のサイズと解像度を用意する必要があります。幸運なことに、Gatsby は [page components](/docs/building-with-components/#page-components) で画像を表示する際に利用できる、いくつかの便利な[プラグイン](/docs/plugins/)を持っています。
 
-The recommended approach is to use [GraphQL queries](/docs/querying-with-graphql/) to get images of the optimal size or resolution, then, display them with the [`gatsby-image`](/packages/gatsby-image/) component.
+その中でも、[GraphQL クエリー](/docs/querying-with-graphql/)を利用して最適なサイズと解像度の画像を取得してから、[`gatsby-image`](/packages/gatsby-image/) コンポーネントで表示する方法を推奨します。
 
-## Query images with GraphQL
+## GraphQL で画像をクエリーする
 
-Querying images with GraphQL allows you to access the image's data as well as perform transformations with [Sharp](https://github.com/lovell/sharp), a high-performance image processing library.
+GraphQL で画像をクエリーすると、画像のデータにアクセスできるだけでなく、高性能な画像処理ライブラリ [Sharp](https://github.com/lovell/sharp) で変換を実行できます。
 
-You'll need a few plugins for this:
+このためには、いくつかのプラグインが必要となります。
 
-- [`gatsby-source-filesystem`](/packages/gatsby-source-filesystem/) plugin allows you to [query files with GraphQL](/docs/querying-with-graphql/#images)
-- [`gatsby-plugin-sharp`](/packages/gatsby-plugin-sharp) powers the connections between Sharp and Gatsby Plugins
-- [`gatsby-transformer-sharp`](/packages/gatsby-transformer-sharp/) allows you to create multiples images of the right sizes and resolutions with a query
+- [`gatsby-source-filesystem`](/packages/gatsby-source-filesystem/) プラグインを利用すると、[GraphQL でファイルをクエリー](/docs/querying-with-graphql/#images)できるようになります。
+- [`gatsby-plugin-sharp`](/packages/gatsby-plugin-sharp) は Gatsby プラグインと Sharp 間の連携を強化します。
+- [`gatsby-transformer-sharp`](/packages/gatsby-transformer-sharp/) を利用すると、クエリーによって適切なサイズと解像度を持つ複数の画像を生成できるようになります。
 
-If the final image is of a fixed size, optimization relies on having multiple resolutions of the image. If it is responsive, that is it stretches to fill a container or page, optimization relies on having different sizes of the same image. See the [Gatsby Image documentation for more information](/packages/gatsby-image/#two-types-of-responsive-images).
+最終的な画像が固定サイズの場合、その画像について複数の解像度を持つように最適化されます。レスポンシブである場合、つまりコンテナまたはページに合わせて画像が伸縮するような場合、ひとつの画像ごとに複数のサイズを持つように最適化されます。[詳細については、Gatsby Image のドキュメント](/packages/gatsby-image/#two-types-of-responsive-images)を参照してください。
 
-You can also use arguments in your query to specify exact, minimum, and maximum dimensions. See the [Gatsby Image documentation for complete options](/packages/gatsby-image/#two-types-of-responsive-images).
+また、クエリーに引数を指定することで、正確な寸法や、最小・最大寸法を指定できます。[全てのオプションについては、Gatsby Image のドキュメント](/packages/gatsby-image/#two-types-of-responsive-images)を参照してください。
 
-This example is for an image gallery where images stretch when the page is resized. It uses the `fluid` method and the fluid fragment to grab the right data to use in `gatsby-image` component and arguments to set the maximum width as 400px and maximum height as 250px.
+以下の例は、ページのサイズを変更すると画像もリサイズされるようなイメージギャラリーのためのクエリーです。`fluid` 関数と fluid フラグメントを使用することで `gatsby-image` コンポーネントで使用できる適切なデータを取得し、引数を使用して最大幅を 400px、最大高を 250px に設定しています。
 
 ```js
 export const query = graphql`
@@ -36,28 +36,28 @@ export const query = graphql`
 `
 ```
 
-## Optimizing images with gatsby-image
+## gatsby-image を利用して画像を最適化する
 
-[`gatsby-image`](/packages/gatsby-image/) is a plugin that automatically creates React components for optimized images that:
+[`gatsby-image`](/packages/gatsby-image/) は、最適化された画像から自動的に React コンポーネントを生成するプラグインです。以下の機能を持っています。
 
-> - Loads the optimal size of image for each device size and screen resolution
-> - Holds the image position while loading so your page doesn't jump around as images load
-> - Uses the "blur-up" effect i.e. it loads a tiny version of the image to show while the full image is loading
-> - Alternatively provides a "traced placeholder" SVG of the image
-> - Lazy loads images, which reduces bandwidth and speeds the initial load time
-> - Uses [WebP](https://developers.google.com/speed/webp/) images, if browser supports the format
+> - 各デバイスのサイズと画面解像度に合わせて最適なサイズの画像を読み込みます。
+> - 画像の読み込み中にページ位置がずれないように、読み込み中に画像の位置を固定します。
+> - 「blur-up」エフェクトをかけます。つまり、画像全体がロードされるまで、画像の小さなバージョンを読み込むようになります。
+> - または、画像をトレースした SVG 画像を提供します。
+> - 画像の遅延読み込みによって、帯域幅が削減され、初回読み込み時間が短縮されます。
+> - ブラウザがサポートしている場合、[WebP](https://developers.google.com/speed/webp/) フォーマットの画像を使用します。
 
-Here is an image component that uses the query from the previous example:
+前の例のクエリーを使用した画像コンポーネントは次のようになります。
 
 ```jsx
 <Img fluid={data.fileName.childImageSharp.fluid} alt="" />
 ```
 
-## Using fragments to standardize formatting
+## フラグメントを使用してフォーマットを統一する
 
-What if you have a bunch of images and you want them all to use the same formatting?
+多数の画像があって、そのすべてに同じフォーマットを使用したい場合はどうするのがよいでしょうか？
 
-A custom fragment is an easy way to standardize formatting and re-use it on multiple images:
+カスタムフラグメントを利用することで、簡単にフォーマットを統一して複数の画像で再利用できます。
 
 ```js
 export const squareImage = graphql`
@@ -71,7 +71,7 @@ export const squareImage = graphql`
 `
 ```
 
-The fragment can then be referenced in the image query:
+これで、フラグメントを画像クエリ内で参照できるようになります。
 
 ```js
 export const query = graphql`
@@ -91,7 +91,7 @@ export const query = graphql`
 `
 ```
 
-### Additional resources
+### 参考リンク
 
 - [Gatsby Image API docs](/docs/gatsby-image/)
 - [Using gatsby-image with Gatsby](https://egghead.io/playlists/using-gatsby-image-with-gatsby-ea85129e), free egghead.io playlist

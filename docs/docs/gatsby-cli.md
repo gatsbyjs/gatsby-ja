@@ -102,7 +102,7 @@ You can now view gatsbyjs.org in the browser.
   On Your Network:  http://192.168.0.212:8000/ // highlight-line
 ```
 
-**ヒント**: Windows では 0.0.0.0:8000 にアクセスできません。(ただし、localhost:8000 または「ネットワークの URL」を使うと問題なくアクセスできます）
+**ヒント**: ローカルにてビルドされた Gatsby サイトには、 `localhost:8000` または `On Your Network` に表示された URL からアクセスできます。
 
 ### `build`
 

@@ -2,25 +2,25 @@
 title: Emotion
 ---
 
-In this guide, you will learn how to set up a site with the CSS-in-JS library [Emotion](https://emotion.sh).
+このガイドでは、CSS-in-JS のライブラリーである [Emotion](https://emotion.sh) をサイトに導入する方法を学びます。
 
-Emotion is a performant and flexible CSS-in-JS library. Building on many other CSS-in-JS libraries, it allows you to style apps quickly with string or object styles. It has predictable composition to avoid specificity issues with CSS. With source maps and labels, Emotion has a great developer experience and great performance with heavy caching in production.
+Emotion は高パフォーマンスで柔軟性のある CSS-in-JS のライブラリーです。他の多くの CSS-in-JS のライブラリーに影響を受けており、文字列でもオブジェクトでも簡単にスタイルをあてられます。また、CSS 特有の問題を解決するために、分かりやすい構成にできます。Emotion はソースマップとラベルの機能によってとても開発がしやすく、キャッシュの有効活用によって運用時も高いパフォーマンスを発揮します。
 
-[Server side rendering](https://emotion.sh/docs/ssr) works out of the box in Emotion. You can use React’s `renderToString` or `renderToNodeStream` methods directly without any extra configuration. `extractCritical` feature removes unused rules that were created with emotion and helps loading pages faster.
+Emotion は[サーバーサイドレンダリング](https://emotion.sh/docs/ssr)でも動作します。追加の設定なしに React の `renderToString` 関数や `renderToNodeStream` 関数を直接使用できます。Emotion の `extractCritical` 機能は使用されていないスタイルを削除しページの読み込みを高速化します。
 
-First, open a new terminal window and run the following to create a new site:
+まず、新しいターミナルウィンドウを開き、次のコマンドを実行して新しいサイトを作成します。
 
 ```shell
 gatsby new emotion-tutorial https://github.com/gatsbyjs/gatsby-starter-hello-world
 ```
 
-Second, install the necessary dependencies for Emotion and Gatsby.
+次に、Emotion と Gatsby に必要なプラグインをインストールします。
 
 ```shell
 npm install --save gatsby-plugin-emotion @emotion/core @emotion/styled
 ```
 
-And then add the plugin to your site's `gatsby-config.js`:
+さらに、インストールしたプラグインを `gatsby-config.js` に追加します。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -28,9 +28,9 @@ module.exports = {
 }
 ```
 
-Then in your terminal run `npm start` to start the Gatsby development server.
+ターミナルで `npm start` を実行し、Gatsby の開発サーバーを起動してください。
 
-Now create a sample Emotion page at `src/pages/index.js`:
+`src/pages/index.js` に Emotion を使用したサンプルページを作成します。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -81,7 +81,7 @@ const Username = styled.h2`
 const Excerpt = styled.p`
   margin: 0;
 `
-// Using css prop provides a concise and flexible API to style the components. //
+// css prop を使うと、簡潔かつ柔軟にコンポーネントにスタイルをあてられます。 //
 const underline = css`
   text-decoration: underline;
 `
@@ -114,9 +114,9 @@ export default () => (
 )
 ```
 
-## Adding global styles in Gatsby with Emotion
+## Emotion でグローバルスタイルを定義する
 
-To start, create a new Gatsby site with the [hello world starter](https://github.com/gatsbyjs/gatsby-starter-hello-world) and install [`gatsby-plugin-emotion`](/packages/gatsby-plugin-emotion/) and its dependencies:
+まず、[hello world starter](https://github.com/gatsbyjs/gatsby-starter-hello-world) を使用して新たに Gatsby のサイトを作成し、[`gatsby-plugin-emotion`](/packages/gatsby-plugin-emotion/) とその依存関係をインストールします。
 
 ```shell
 gatsby new global-styles https://github.com/gatsbyjs/gatsby-starter-hello-world
@@ -124,7 +124,7 @@ cd global-styles
 npm install --save gatsby-plugin-emotion @emotion/core @emotion/styled
 ```
 
-Create `gatsby-config.js` and add the Emotion plugin:
+次に、`gatsby-config.js` を作成し、Emotion のプラグインを追加します。
 
 ```js:title=gatsby-config.js
 module.exports = {
@@ -132,7 +132,7 @@ module.exports = {
 }
 ```
 
-Next, add a layout component at `src/components/layout.js`:
+さらに、`src/components/layout.js` にレイアウトコンポーネントを作成します。
 
 ```jsx:title=src/components/layout.js
 import React from "react"
@@ -159,7 +159,7 @@ export default ({ children }) => (
 )
 ```
 
-Then, update `src/pages/index.js` to use the layout:
+そして、`src/pages/index.js` でレイアウトコンポーネントを使用するように変更します。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -168,4 +168,4 @@ import Layout from "../components/layout"
 export default () => <Layout>Hello world!</Layout>
 ```
 
-Run `npm run build`, and you can see in `public/index.html` that the styles have been inlined globally.
+`npm run build` を実行すると、先ほどグローバルにインラインで定義したスタイルが `public/index.html` で確認できるはずです。

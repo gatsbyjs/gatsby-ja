@@ -1,18 +1,18 @@
 ---
-title: Using Gatsby Professionally
+title: プロとして Gatsby を使う
 overview: true
 ---
 
-As a Gatsby developer and enthusiast, you may be interested in how you can spend more of your time professionally building with Gatsby.
+あなたは、Gatsby の開発者および愛好家として、Gatsby を使って専門的に構築するためにより多くの時間を費やすことに興味があるかもしれません。
 
-You may see problems happen around you that you know Gatsby could solve, and want others to adopt Gatsby so they don't encounter them in the future. You may be interested in driving business goals, such as growing your organization or increasing revenue. Or, you may simply love building with Gatsby and want to do it more.
+あなたの周りで問題が起き、その問題が Gatsby で解決できるのを知っていたとき、将来困らないためにも他の人たちに Gatsby を採用してもらいたいと思うことでしょう。あなたは組織の成長や収益の増加など、ビジネス目標を推進することに関心があるかもしれません。あるいは、単純に Gatsby で構築するのが好きで、もっと触れたいと思っているかもしれません。
 
-This section of the documentation is aimed to help you spend more time as a Gatsby developer by giving you the tools to spread Gatsby within your organization or convince clients that Gatsby is the right tool for them.
+このセクションでは、Gatsby を組織に広めたり、クライアントに Gatsby が適切なツールであることを納得させたりするためのツールを提供することで、あなたが Gatsby 開発者としてより多くの時間を費やす支援をすることを目的としています。
 
-It includes resources for how to explain Gatsby to different stakeholders, such as other developers, engineering leaders, marketers, executives, and clients.
+他の開発者やエンジニアリングリーダー、マーケティング担当者、経営者、クライアントなど、さまざまな利害関係者に対して Gatsby を説明するための方法が含まれています。
 
-It also includes resources that help your teams develop more effectively at scale -- when there are multiple developers on a project or multiple projects in the organization.
+また、プロジェクトに複数の開発者がいる場合や組織内に複数のプロジェクトがある場合など、大規模なチームがより効率的に開発するのに役立つ方法も含まれています。
 
-Finally, it includes resources for you about how Gatsby can help you advance professionally within your career -- whatever your goals and ambitions are.
+あなたの目標や野望が何であろうと、キャリアの中であなたがプロとして前進するために Gatsby がどのように助けてくれるかについての方法が揃っています。
 
 <GuideList slug={props.slug} />

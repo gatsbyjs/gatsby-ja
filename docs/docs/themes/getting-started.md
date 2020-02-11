@@ -1,28 +1,28 @@
 ---
-title: Getting Started with Gatsby Themes
+title: Gatsby テーマの使い方
 ---
 
-The quickest way to get started using a Gatsby theme is to use a starter that's configured to use the theme.
+あらかじめテーマが設定されているスターターを使うことで、Gatsby テーマをすぐに使い始めることができます。
 
-For example, `gatsby-starter-blog-theme` is a theme starter for the `gatsby-theme-blog` package.
+例えば、`gatsby-starter-blog-theme` は `gatsby-theme-blog` パッケージのテーマスターターです。
 
-A **regular Gatsby starter** creates a new Gatsby site that is preconfigured for a particular use case. The resulting site effectively forks off the starter — after it’s created, the site maintains no connection to the starter.
+**通常の Gatsby スターター**は特定の用途に合わせて設定してある Gatsby サイトを新規に作成します。出来上がったサイトはスターターからフォークされるため、スターターへの接続は維持されません。
 
-A **Gatsby theme starter** creates a new Gatsby site that installs and configures one or more Gatsby themes. When a starter installs a theme, it maintains the connection to that theme as a standalone npm package.
+**Gatsby テーマスターター**は Gatsby テーマが 1 つ以上インストールされた Gatsby サイトを新規に作成します。スターターがテーマをインストールする際、スタンドアローンの npm パッケージとしてテーマへの接続が維持されます。
 
-Installing the Gatsby blog theme starter is the same process as a regular Gatsby starter:
+Gatsby ブログテーマスターターのインストール手順は通常の Gatsby スターターと同様です。
 
 ```shell
 gatsby new my-blog https://github.com/gatsbyjs/gatsby-starter-blog-theme
 ```
 
-## What does a theme starter do?
+## テーマスターターは何をする？
 
-The starter for the official Gatsby blog theme does the following:
+公式の Gatsby ブログテーマ用スターターは以下を実行します。
 
-### 1. The starter installs the theme and configures it
+### 1. テーマをインストールし設定する
 
-When you use a starter that's built with a theme, you will often see that you're initially presented with a lighter weight `gatsby-config.js`. Themes start doing their magic when installed via the `plugins` array:
+テーマを使用して作られたスターターの `gatsby-config.js` は最初軽く見えることが多くあります。テーマは `plugins` 配列からインストールされたときに真価を発揮します。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -32,7 +32,7 @@ module.exports = {
       options: {},
     },
   ],
-  // Customize your site metadata:
+  // 自サイトのメタデータをカスタマイズ:
   siteMetadata: {
     title: "My Blog Title",
     author: "My Name",
@@ -52,7 +52,7 @@ module.exports = {
 }
 ```
 
-### 2. The starter scaffolds out example blog posts.
+### 2. サンプルのブログ記事を組み立てる
 
 ```mdx:title=/content/posts/hello-world.mdx
 ---
@@ -63,10 +63,10 @@ path: /hello-world
 I'm an example post!
 ```
 
-Once you've made some edits, run `gatsby develop` to start a development server and view your changes in a browser.
+ファイルに変更を加えたら、`gatsby develop` を実行して開発サーバーを起動し、変更された箇所をブラウザーで見てみましょう。
 
-## Updating a theme
+## テーマをアップデートする
 
-To pull in the latest updates of your theme you can update the `gatsby-theme-blog` version in your site's `package.json`.
+自分のサイトの `package.json` 内にある `gatsby-theme-blog` のバージョンをアップデートすることで、テーマを最新のものにできます。
 
-You can do this by running the install of the theme package again: `npm install --save gatsby-theme-blog`.
+`npm install --save gatsby-theme-blog`を再度実行することによりアップデートが行なえます。

@@ -2,7 +2,7 @@
 title: How to Open a Pull Request
 ---
 
-A big part of contributing to open source is submitting changes to a project: improvements to source code or tests, updates to docs content, even typos or broken links. This doc will cover what you need to know to **open a pull request** in Gatsby.
+A big part of contributing to open source is submitting changes to a project: improvements to source code or tests, updates to docs content, even typos or broken links. This doc will cover what you need to know to **open a Pull Request** in Gatsby.
 
 ## What is a Pull Request (PR)?
 
@@ -10,7 +10,7 @@ In case you aren't familiar, here's how the folks at GitHub [define a pull reque
 
 > Pull requests let you tell others about changes you've pushed to a branch in a repository on GitHub. Once a pull request is opened, you can discuss and review the potential changes with collaborators and add follow-up commits before your changes are merged into the base branch.
 
-Gatsby uses the PR process to review and test changes before they’re added to Gatsby’s GitHub repository. Anyone can open a pull request. The same process is used for all contributors, whether this is your first open source contribution or you’re a core member of the Gatsby team.
+Gatsby uses the PR process to review and test changes before they’re added to Gatsby’s GitHub repository. Anyone can open a Pull Request. The same process is used for all contributors, whether this is your first open source contribution or you’re a core member of the Gatsby team.
 
 When someone wants to contribute to Gatsby, they open a request to _pull_ their code into the repo. Depending on the type of change, PRs are categorized into:
 
@@ -23,7 +23,7 @@ Recommendations for different kinds of contributions will follow in this guide a
 
 ## Things to know before opening a PR
 
-We typically recommend [opening an issue](/contributing/how-to-file-an-issue/) before a pull request if there isn't already an issue for the problem you'd like to solve. This helps facilitate a discussion before deciding on an implementation.
+We typically recommend [opening an issue](/contributing/how-to-file-an-issue/) before a Pull Request if there isn't already an Issue for the problem you'd like to solve. This helps facilitate a discussion before deciding on an implementation.
 
 For some changes, such as typo fixes or broken links, it may be appropriate to open a small PR by itself. This is somewhat subjective so if you have any questions, [feel free to ask us](/contributing/how-to-contribute/#not-sure-how-to-start-contributing).
 
@@ -68,7 +68,7 @@ To test changes locally against the Gatsby [site and project files](https://gith
 
 ### Documentation PRs
 
-The Gatsby.js docs site mostly lives in the [www](https://github.com/gatsbyjs/gatsby/tree/master/www) and [docs](https://github.com/gatsbyjs/gatsby/tree/master/docs) directories on GitHub, including docs and tutorial content. There are also some [examples in the Gatsby repo](https://github.com/gatsbyjs/gatsby/tree/master/examples) referenced in the docs.
+The Gatsby docs site mostly lives in the [www](https://github.com/gatsbyjs/gatsby/tree/master/www) and [docs](https://github.com/gatsbyjs/gatsby/tree/master/docs) directories on GitHub, including docs and tutorial content. There are also some [examples in the Gatsby repo](https://github.com/gatsbyjs/gatsby/tree/master/examples) referenced in the docs.
 
 Additional docs PR steps:
 

@@ -2,7 +2,7 @@
 title: How to Contribute
 ---
 
-We want contributing to Gatsby to be fun, enjoyable, and educational for anyone and everyone. All contributions are welcome, including issues, new docs as well as updates and tweaks, blog posts, workshops, and more.
+We want contributing to Gatsby to be fun, enjoyable, and educational for anyone and everyone. All contributions are welcome, including Issues, new docs as well as updates and tweaks, blog posts, workshops, and more.
 
 ## Not sure how to start contributing?
 
@@ -10,6 +10,6 @@ If you are worried or don't know where to start, check out our [where to partici
 
 ## Pair programming
 
-Gatsby.js offers free [pair programming sessions](/contributing/pair-programming/) to the community, if there's something you'd like to work on together. Get in touch with us if you have a question about contributing or an idea for something to pair on!
+Gatsby offers free [pair programming sessions](/contributing/pair-programming/) to the community, if there's something you'd like to work on together. Get in touch with us if you have a question about contributing or an idea for something to pair on!
 
 <GuideList slug={props.slug} />

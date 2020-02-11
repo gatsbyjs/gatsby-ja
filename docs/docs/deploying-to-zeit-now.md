@@ -1,31 +1,31 @@
 ---
-title: Deploying to ZEIT Now
+title: ZEIT Now へのデプロイ
 ---
 
-[ZEIT Now](https://zeit.co/now) is a cloud platform for websites and serverless APIs, that you can use to deploy your Gatsby projects to your personal domain (or a free `.now.sh` suffixed URL).
+[ZEIT Now](https://zeit.co/now) はウェブサイトとサーバーレス API のためのクラウドプラットフォームであり、Gatsby のプロジェクトを独自ドメイン（または無料の `.now.sh` がついた URL）にデプロイできます。
 
-This guide will show you how to get started in a few quick steps:
+このガイドでは、少ないステップではじめる方法を紹介します。
 
-## Step 1: Installing Now CLI
+## ステップ 1：Now CLI のインストール
 
-To install their command-line interface with [npm](https://www.npmjs.com/), run the following command:
+[npm](https://www.npmjs.com/) を使って Now CLI をインストールするには、つぎのコマンドを実行します。
 
 ```shell
 npm install -g now
 ```
 
-## Step 2: Deploying
+## ステップ 2：デプロイ
 
-You can deploy your application by running the following command in the root of the project directory:
+プロジェクトのルートディレクトリーでつぎのコマンドを実行すると、アプリケーションをデプロイできます。
 
 ```shell
 now
 ```
 
-That's all!
+これで完了です！
 
-Your site will now deploy, and you will receive a link similar to the following: https://gatsby-functions.now-examples.now.sh
+これでサイトがデプロイされ、このようなリンクが表示されます：https://gatsby-functions.now-examples.now.sh
 
-## References:
+## 関連資料
 
-- [Example Project](https://github.com/zeit/now-examples/tree/master/gatsby)
+- [プロジェクト例](https://github.com/zeit/now/tree/master/examples/gatsby)

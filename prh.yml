@@ -43,6 +43,9 @@ rules:
   - expected: ウェブサイト
     pattern: /Web\s?サイト/i
 
+  - expected: ウェブページ
+    pattern: /Web\s?ページ/i
+
   - expected: ブログ記事
     pattern: ブログポスト
 
@@ -67,3 +70,7 @@ rules:
 
   - expected: 雛形
     pattern: ボイラープレート
+
+  - expected: スラッグ
+    pattern:
+      - /[Ss]lug/

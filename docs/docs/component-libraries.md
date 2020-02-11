@@ -4,7 +4,7 @@ title: Creating Component Libraries
 
 Component libraries are often used in component-based UI systems like React and Vue. They are typically versioned repositories of components.
 
-IBM's [Carbon Design System](http://carbondesignsystem.com/) and Palantir's [Blueprint](https://blueprintjs.com/) are both good examples.
+IBM's [Carbon Design System](https://www.carbondesignsystem.com/) and Palantir's [Blueprint](https://blueprintjs.com/) are both good examples.
 
 ## Why component libraries
 
@@ -21,7 +21,7 @@ Component libraries are typically stored in a separate repository. Individual ap
 
 One drawback of using component libraries is the additional complexity of cross-repository dependencies.
 
-For example, if a feature developer need to change a library component, that developer's workflow typically involves two pull requests; one to the component repository repo to make the changes, and one to the website repository to bump the component version.
+For example, if a feature developer need to change a library component, that developer's workflow typically involves two Pull Requests; one to the component repository repo to make the changes, and one to the website repository to bump the component version.
 
 ## Different versioning approaches
 

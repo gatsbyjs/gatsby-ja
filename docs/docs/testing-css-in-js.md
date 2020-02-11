@@ -1,24 +1,24 @@
 ---
-title: Testing CSS-in-JS
+title: CSS-in-JS のテスト
 ---
 
-Popular CSS-in-JS libraries like [styled-components](https://github.com/styled-components/styled-components) or [emotion](https://github.com/emotion-js/emotion) can also be tested with the help of [jest-styled-components](https://github.com/styled-components/jest-styled-components) or [jest-emotion](https://github.com/emotion-js/emotion/tree/master/packages/jest-emotion) respectively. These packages improve Jest's built-in snapshot testing experience and are a great way to help avoid unintended changes to your website's UI. Please refer to your package's documentation to see if it also offers testing capabilities.
+[styled-components](https://github.com/styled-components/styled-components) や [emotion](https://github.com/emotion-js/emotion) のような人気のある CSS-in-JS ライブラリーは、それぞれ [jest-styled-components](https://github.com/styled-components/jest-styled-components) や [jest-emotion](https://github.com/emotion-js/emotion/tree/master/packages/jest-emotion) の助けを受けてテストすることもできます。これらのパッケージは、Jest のもともと持っているスナップショットテスト機能を改善してくれます。そして、これはあなたのウェブサイト上で起こる意図しない UI の変化を避けやすくしてくれる素晴らしい方法となります。どうぞあなたが使用しているパッケージのドキュメントを参照して、そのパッケージがテスト機能を提供しているか確かめてください。
 
-_Snapshot serializers_ like `jest-styled-components` or `jest-emotion` modify the standard output to a more meaningful and readable snapshot, e.g. by removing unnecessary information or displaying data in another format. Which ultimately leads to more comparable and effective snapshot tests.
+`jest-styled-components` や `jest-emotion` のような**スナップショットシリアライザー**は、標準の出力をより意味があり読みやすいスナップショットに修正してくれます。例えば、不必要な情報を取り除いたり、異なるフォーマットでデータを表示してくれます。結果として、スナップショットシリアライザーは、より違いがわかりやすい効率的なスナップショットテストを導いてくれます。
 
-By default snapshots of your styled components show the generated class names (which you didn't set) and no styling information. When changing the styles you'll only see the diff of some cryptic class names (hashes). That's why you should use the above mentioned _snapshot serializers_. They remove the hashes and format the CSS in style elements.
+デフォルトでは、あなたの styled components のスナップショットは、生成されたクラス名（あなたが決めていないもの）を見せ、スタイルに関する情報は見せてくれません。スタイルを変更した時に、あなたが確認できるのは、いくつかの暗号化された（ハッシュ化された）クラス名の変化だけです。だからこそ、あなたは上記で示した**スナップショットシリアライザー**を使用するべきなのです。スナップショットシリアライザーは、ハッシュ化されたクラス名を取り除き、スタイル要素に沿った CSS を見せてくれます。
 
-For this example you'll use emotion. The testing utilities of emotion and glamor are largely based on [jest-styled-components](https://github.com/styled-components/jest-styled-components) so they have a similar usage. Please have a look at the testing section of your library to follow along.
+ここでは、例として emotion を使用します。emotion と glamor のテストユーティリティーは、多くの部分が [jest-styled-components](https://github.com/styled-components/jest-styled-components) に基づいていますので、使用感は似ています。以下に続く、ライブラリのテスト部分をご覧ください。
 
-## Installation
+## インストール
 
 ```shell
 npm install --save-dev jest-emotion babel-plugin-emotion
 ```
 
-As [Gatsby's emotion plugin](/packages/gatsby-plugin-emotion/) is using `babel-plugin-emotion` under the hood you'll also need to install it so that Jest can use it.
+[Gatsby's emotion plugin](/packages/gatsby-plugin-emotion/) は、内部的に `babel-plugin-emotion` を使用していますので、Jest が使えるようにこれも一緒にインストールしましよう。
 
-If you followed along with the [Unit testing guide](/docs/unit-testing) you'll have the file `jest-preprocess.js` at the root of your project. Open that file and add the plugin:
+もしあなたが[ユニットテストガイド](/docs/unit-testing)に取り組んだのならば、あなたのプロジェクトのルートには `jest-preprocess.js` があるでしょう。そのファイルを開いて、プラグインを追加してください。
 
 ```diff:title=jest-preprocess.js
 const babelOptions = {
@@ -31,7 +31,7 @@ const babelOptions = {
 module.exports = require("babel-jest").createTransformer(babelOptions)
 ```
 
-In order to tell Jest to use the serializer you'll need to create the file `setup-test-env.js` which will be run automatically before every test. Create the file `setup-test-env.js` at the root of your project. Insert this code into it:
+Jest にシリアライザーを使用するよう教えるために、あなたは `setup-test-env.js` というファイルを作る必要があります。これはテスト前に毎回自動的に実行されます。プロジェクトのルートに `setup-test-env.js` を作り、以下のコードを追加してください。
 
 ```js:title=setup-test-env.js
 import { createSerializer } from "jest-emotion"
@@ -40,7 +40,7 @@ import * as emotion from "@emotion/core"
 expect.addSnapshotSerializer(createSerializer(emotion))
 ```
 
-Lastly you need to tell Jest where to find this file. Open your `package.json` and add this entry to your `"jest"` section:
+最後に、Jest にこのファイルがどこにあるかを教える必要があります。 `package.json` を開いて、 `"jest"` の場所に以下のように追加してください。
 
 ```json:title=package.json
 "jest": {
@@ -48,9 +48,9 @@ Lastly you need to tell Jest where to find this file. Open your `package.json` a
 }
 ```
 
-## Usage
+## 使い方
 
-In this example you'll use `react-test-renderer` but you can also use [@testing-library/react](/docs/testing-react-components) or any other appropriate library. Because you created the `setup-test-env.js` file you can write your unit tests like you used to do. But now you'll also get the styling information!
+この例では、`react-test-renderer` を使いますが、 [@testing-library/react](/docs/testing-react-components) など他の適切なライブラリーも使用できます。 `setup-test-env.js` を作ったことにより、あなたの慣れた書き方と同じように単体テストを書くことができます。しかも今やスタイルの情報まで確認できます！
 
 ```js:title=src/components/Button.test.js
 import React from "react"
@@ -68,7 +68,7 @@ test("Button renders correctly", () => {
 })
 ```
 
-The resulting snapshot will look like this:
+スナップショットの結果はこのようになります。
 
 ```js
 // Jest Snapshot v1, https://goo.gl/fbAQLP
@@ -86,14 +86,14 @@ exports[`Button renders correctly 1`] = `
 `
 ```
 
-If your styled component depends on `theme` via `ThemeProvider` you'll have two options:
+もしあなたの styled component が `ThemeProvider` を通して `theme` に依存しているなら、あなたには 2 つの選択があります。
 
-- Wrap all your components with the `ThemeProvider`
-- Use API helpers (have a look at the library's documentation, e.g. [styled-components](https://github.com/styled-components/jest-styled-components#theming) or [emotion](https://github.com/emotion-js/emotion/tree/master/packages/emotion-theming#createbroadcast-function))
+- 全てのコンポーネントを `ThemeProvider` でラップする選択
+- ライブラリーの API を使う選択（ライブラリのドキュメントを見てください。 [styled-components](https://github.com/styled-components/jest-styled-components#theming) または [emotion](https://github.com/emotion-js/emotion/tree/master/packages/emotion-theming#createbroadcast-function))
 
-And this is where snapshots tests really shine. If you change, e.g. the primary color in your theme file you'll see which components get affected by this change. This way you can catch unintended changes to the style of your components.
+そして、これこそがスナップショットテストが本当に役立つ時なのです。もしあなたがテーマファイルの主要な色を変更しても、あなたはどのコンポーネントが影響を受けたのか分かります。これにより、コンポーネントに対する意図しないスタイルの変化を見逃すことはありません。
 
-This example uses the first option:
+この例は上記の最初の選択を使用しています。
 
 ```js:title=src/components/Wrapper.test.js
 import React from "react"
@@ -121,7 +121,7 @@ test("Wrapper renders correctly", () => {
 })
 ```
 
-The resulting snapshot will look like this:
+スナップショットの結果はこのようになります。
 
 ```js
 // Jest Snapshot v1, https://goo.gl/fbAQLP
