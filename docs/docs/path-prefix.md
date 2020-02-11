@@ -65,8 +65,9 @@ import Layout from "../components/layout"
 export default function Index() {
   return (
     <Layout>
+      {/* 注意: 以下のコードは現実的な例ではありませんが、考え方としてはわかるはずです。 */}
       {/* highlight-next-line */}
-      <button onClick={() => navigate("/page-2")}>Page 2</button>
+      <button onClick={() => navigate("/page-2")}>Page 2 へ動的に移動</button>
     </Layout>
   )
 }
@@ -78,7 +79,6 @@ export default function Index() {
 
 ### 追加考察
 
-[`assetPrefix`](/docs/asset-prefix/) は、[`withPrefix`](/docs/gatsby-link/#add-the-path-prefix-to-paths-using-withprefix) に関連する機能です。
-[`assetPrefix`](/docs/asset-prefix/) を使えば、CDN など別ドメインにホスティングされた HTML 以外のファイル（例：画像ファイルや JavaScript ファイルなど）へのパスを自動で追加できます。
+[`assetPrefix`](/docs/asset-prefix/) は、[`withPrefix`](/docs/gatsby-link/#add-the-path-prefix-to-paths-using-withprefix) に関連する機能であり、この機能を使えば、CDN など別ドメインにホスティングされた HTML 以外のファイル（例：画像ファイルや JavaScript ファイルなど）へのパスを自動で追加できます。
 
 `withPrefix` と `assetPrefix` は問題なく併用できます。この 2 つの機能を利用し、`--prefix-paths` のフラグを付けてアプリケーションをビルドすれば、パス接頭辞追加と CDN ドメインパス追加の両方が行えます。
