@@ -108,7 +108,7 @@ import "./src/styles/global.css"
 
 ### コンポーネントの中で CSS を読み込む
 
-チームメンバーが従来の CSS (非 CSS-in-JS)を使用している場合でも、 個別の CSS ファイルに分割し、独立した作業が行えます。[import files directly](/docs/importing-assets-into-files/) を使ってページやテンプレート、コンポーネントの中で CSS を取り込むことで可能にします。
+チームメンバーが従来の CSS (非 CSS-in-JS)を使用している場合でも、個別の CSS ファイルに分割し、独立した作業が行えます。それらの CSS ファイルはページやテンプレート、コンポーネントの中で[直接取り込む](/docs/importing-assets-into-files/)ことができます。
 
 ```css:title=menu.css
 .menu {
