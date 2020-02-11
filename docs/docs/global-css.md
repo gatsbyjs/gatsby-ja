@@ -100,7 +100,7 @@ import "./src/styles/global.css"
 // require('./src/styles/global.css')
 ```
 
-> _ヒント: Node.js の require, import 構文を使うことができます。さらにつけ加えると、 `src/styles` フォルダの中に置く実例 CSS ファイルの配置は任意です。_
+> _ヒント: Node.js の require、import 構文を使うことができます。さらにつけ加えると、 `src/styles` フォルダの中に置く実例 CSS ファイルの配置は任意です。_
 
 グローバルスタイルがサイト全体に反映されているはずです：
 
