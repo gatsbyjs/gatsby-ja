@@ -4,7 +4,7 @@ title: グローバル CSS ファイルを用いた標準的なスタイリン�
 
 古くよりウェブサイトはグローバル CSS ファイルによってスタイリングが行われてきました。
 
-グローバルスコープ CSS ルールは外部 `.css` ファイルの中で宣言され、 [詳細度](https://developer.mozilla.org/ja/docs/Web/CSS/Specificity) と [カスケード処理](https://developer.mozilla.org/ja/docs/Web/CSS/Cascade) によってスタイルの優先順位が決められ、スタイルが適用されます。
+グローバルスコープ CSS ルールは外部 `.css` ファイルの中で宣言され、[詳細度](https://developer.mozilla.org/ja/docs/Web/CSS/Specificity)と[カスケード処理](https://developer.mozilla.org/ja/docs/Web/CSS/Cascade)によってスタイルの優先順位が決められ、スタイルが適用されます。
 
 ## レイアウトコンポーネントにグローバルスタイルを追加する
 
