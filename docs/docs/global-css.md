@@ -12,7 +12,7 @@ title: グローバル CSS ファイルを用いた標準的なスタイリン�
 
 > **ヒント:** このパターンは Gatsby の [the default starter](https://github.com/gatsbyjs/gatsby-starter-default/blob/02324e5b04ea0a66d91c7fe7408b46d0a7eac868/src/layouts/index.js#L6) の中でデフォルトレイアウトとして実装されています。
 
-グローバルスタイルを使った共通レイアウトを学ぶために、 まず [hello world starter](https://github.com/gatsbyjs/gatsby-starter-hello-world) を使った新しい Gatsby サイトを作成してください。
+グローバルスタイルを使った共通レイアウトを学ぶために、まず [hello world starter](https://github.com/gatsbyjs/gatsby-starter-hello-world) を使った新しい Gatsby サイトを作成してください。
 
 ```shell
 gatsby new global-styles https://github.com/gatsbyjs/gatsby-starter-hello-world
