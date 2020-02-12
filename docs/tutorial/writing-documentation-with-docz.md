@@ -27,7 +27,7 @@ cd my-gatsby-site-with-docz
 次に、必要なパッケージをインストールします。
 
 ```shell
-npm install --save gatsby-theme-docz
+npm install --save gatsby-theme-docz docz
 ```
 
 インストール後に、 `gatsby-config.js` ファイルの `plugins` 配下に `gatsby-theme-docz` を追記します。

@@ -30,7 +30,7 @@ In this guide, you'll learn how to implement Disqus on your blog as it has a num
 
 Bear in mind, however, that choosing Disqus also incurs a tradeoff. Your site is no longer entirely static but depends on an external platform to deliver your comments through embedded `iframe`s on the fly. Moreover, you should consider the privacy implications of letting a third party store your visitors' comments and potentially track their browsing behavior. You may consult the [Disqus privacy policy](https://help.disqus.com/terms-and-policies/disqus-privacy-policy), the [privacy FAQs](https://help.disqus.com/terms-and-policies/privacy-faq) (specifically the last question on GDPR compliance) and inform your users [how to edit their data sharing settings](https://help.disqus.com/terms-and-policies/how-to-edit-your-data-sharing-settings).
 
-If these concerns outweigh the benefits of Disqus, you may want to look into some of the other options above. We welcome pull requests to expand this guide with setup instructions for other services.
+If these concerns outweigh the benefits of Disqus, you may want to look into some of the other options above. We welcome Pull Requests to expand this guide with setup instructions for other services.
 
 ## Implementing Disqus
 
@@ -74,7 +74,7 @@ const disqusConfig = {
 }
 ```
 
-Where `identifier` must be a string or number that uniquely identifies the post. It could be the post's slug, title or some ID. Finally, add `DiscussionEmbed` to the JSX of your post template.
+Where `identifier` must be a string or number that uniquely identifies the post. It could be the post's スラッグ、 title or some ID. Finally, add `DiscussionEmbed` to the JSX of your post template.
 
 ```jsx:title=src/templates/post.js
 return (

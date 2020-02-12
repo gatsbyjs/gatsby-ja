@@ -54,7 +54,7 @@ Add your own domains to your site easily using Render's [custom domains](https:/
 
 ## Pull Request Previews
 
-With Pull Request (PR) previews, you can visualize changes introduced in a pull request instead of simply relying on code reviews.
+With Pull Request (PR) previews, you can visualize changes introduced in a Pull Request instead of simply relying on code reviews.
 
 Once enabled, every PR for your site will automatically generate a new static site based on the code in the PR. It will have its own URL, and it will be deleted automatically when the PR is closed.
 

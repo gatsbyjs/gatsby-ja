@@ -27,4 +27,4 @@ plugins: [`gatsby-plugin-offline`]
 ## 参考資料
 
 - [Service Worker の紹介](https://developers.google.com/web/fundamentals/primers/service-workers/?hl=ja)
-- [サービスワーカー API](https://developer.mozilla.org/ja/docs/Web/API/Service_Worker_API)
+- [Service Worker API](https://developer.mozilla.org/ja/docs/Web/API/Service_Worker_API)

@@ -29,7 +29,7 @@ Then immediately starts _pre-caching_ resources for pages linked to from the
 initial route. When a user clicks on a link, Gatsby creates the new page _on
 demand_ on the client.
 
-This issue written at the start of Gatsby's 1.0 work provides further background
+This Issue written at the start of Gatsby's 1.0 work provides further background
 on how Gatsby works to guarantee high performance.
 
 https://github.com/gatsbyjs/gatsby/issues/431
