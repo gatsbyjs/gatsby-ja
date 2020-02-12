@@ -6,7 +6,7 @@ title: React コンポーネントを追加する
 
 ## React コンポーネント
 
-React コンポーネントは、あなたのユーザーインターフェース (UI) を独立した再利用可能な部品として分割するために使えるすでに構築された要素、もしくは要素の集合です。React コンポーネントで書くことができるコンポーネントの種類は多くあるのですが、このガイドでは、関数コンポーネントを使用します。クラスコンポーネントを含む React コンポーネントの書き方について詳細を知りたい場合は、こちらの [React ドキュメント](https://ja.reactjs.org/docs/components-and-props.html)をご覧ください。
+React コンポーネントは、ユーザーインターフェース (UI) を独立した再利用可能な部品として分割するために使えるすでに構築された要素、もしくは要素の集合です。React コンポーネントで書くことができるコンポーネントの種類は多くあるのですが、このガイドでは、関数コンポーネントを使用します。クラスコンポーネントを含む React コンポーネントの書き方について詳細を知りたい場合は、こちらの [React ドキュメント](https://ja.reactjs.org/docs/components-and-props.html)をご覧ください。
 
 コンポーネントは、"props" (プロパティ）として知られる入力を用いてカスタマイズされる機能も提供されています。 Props は、ブーリアンや文字列、オブジェクト、配列など、考えられるほぼすべての JavaScript の型になりえます。
 
@@ -31,9 +31,9 @@ export default () => (
 
 React と同様にして、Gatsby でもサードパーティコンポーネントとライブラリはサポートしています。あなたは、パッケージマネジャ経由でサードパーティコンポーネントやライブラリをインストールできます。私たちは、 npm を好んで使用する傾向にあるので、 npm を例にしています。
 
-ここでは、あなたのサイトにサードパーティコンポーネントを追加する一例を挙げています。
+ここでは、サイトにサードパーティコンポーネントを追加する一例を挙げています。
 
-はじめに、パッケージマネジャでコンポーネントやライブラリのパッケージをインストールしなければなりません。パッケージマネジャを組み合わせることはおすすめしません。だから、もしあなたが npm を使用するなら別のものは使用しないでください。また逆もまた然りです。
+はじめに、パッケージマネジャでコンポーネントやライブラリのパッケージをインストールしなければなりません。パッケージマネジャを組み合わせることはおすすめしません。なので、もしあなたが npm を使用するなら別のものは使用しないことをおすすめします。また逆もまた然りです。
 
 ```shell
 npm install @material-ui/core
@@ -77,8 +77,8 @@ SSR およびクライアントサイドライブラリをサポートする解�
 
 [HTML ビルドのデバッグ](/docs/debugging-html-builds/#fixing-third-party-modules) でそれらのパッケージにパッチを適用する方法を学べます。
 
-### Components without server-side rendering
+### サーバサイドレンダリングなしのコンポーネント
 
-Server-side rendering means pages and content are built out by the Node.js server and then sent to a browser ready to go. It’s like your pages are constructed before even being sent to the user. Gatsby is server-side rendered at build time, meaning that the code that gets to your browser has already been run to build pages and content, but this doesn’t mean you can’t still have dynamic pages.
+サーバサイドレンダリングは、ページとコンテンツが Node.js サーバによってビルドされ、ブラウザに送信されることを意味します。ユーザーに送信される前にページが構築されるようなものです。Gatsby では、ビルド時にサーバサイドでレンダリングされます。つまり、ブラウザーに到達するコードは、すでにページとコンテンツをビルドするために実行されています。しかし、これはまだ動的なページを保持できないことを意味します。
 
-Some React components don't have server-side rendering support (SSR) out-of-the-box so you might have to add SSR yourself.
+一部の React コンポーネントは、デフォルトでサーバサイドレンダリング (SSR) がサポートされていないため、SSR を自分自身で追加する必要があるかもしれません。
