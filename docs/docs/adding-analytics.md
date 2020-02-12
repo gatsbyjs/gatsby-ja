@@ -1,8 +1,8 @@
 ---
-title: Adding Analytics
+title: アクセス解析を追加する
 ---
 
-## Why use analytics?
+## なぜアクセス解析を使うのですか？
 
 Once you have your site live you will start wanting to get an idea of how many visitors are coming to your site along with other metrics such as:
 
@@ -12,7 +12,7 @@ Once you have your site live you will start wanting to get an idea of how many v
 
 Google Analytics provides a way to collect this data and perform analytics on it answering the above questions among many others. The platform is free for 10 million hits per month per Tracking ID. There are other analytics options--see the "Other Gatsby analytics plugins" section at the bottom of this doc for ideas.
 
-## Setting up Google Analytics
+## Google Analytics の設定
 
 The first step is to set up a Google Analytics account. You can do that [here](https://analytics.google.com/) by signing in with your Google Account.
 
@@ -26,7 +26,7 @@ You should now have a Tracking ID; take note of it, as your website will need to
 
 You can find this tracking ID later by going to `Admin > Tracking Info > Tracking Code`.
 
-## Using `gatsby-plugin-google-analytics`
+## `gatsby-plugin-google-analytics`を使う
 
 Now, it's time to configure Gatsby to send page views to your Google Analytics account.
 
@@ -58,7 +58,7 @@ There are a number of extra configuration options--both with the Gatsby plugin a
 
 Once this is configured you can deploy your site to test! If you navigate to the homepage of Google Analytics, you should see a dashboard with different statistics.
 
-## Other Gatsby analytics plugins
+## Gatsby におけるその他のアクセス解析プラグイン
 
 - [Google Tag Manager](/packages/gatsby-plugin-google-tagmanager/)
 - [Google Analytics gtag.js](/packages/gatsby-plugin-gtag/)
