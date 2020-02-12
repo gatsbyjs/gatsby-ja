@@ -1,8 +1,8 @@
 ---
-title: Preparing a Site for Deployment
+title: ウェブサイトをデプロイする準備
 ---
 
-## Create new Gatsby project
+## 新しい Gatsby プロジェクトを作成する
 
 First thing you need to do is generate and configure your new Gatsby project.
 If you haven't already [set up a Gatsby project](/docs/quick-start) you can do so by first installing Gatsby globally:
@@ -23,7 +23,7 @@ Finally, change into the new site directory:
 cd your-new-project
 ```
 
-## Generate your site
+## あなたのウェブサイトをビルドする
 
 To generate static files in the simplest way, write
 
@@ -33,11 +33,11 @@ gatsby build
 
 Then in the `public` directory will be files to copy to the server.
 
-## Adding a path prefix
+## パスのプレフィックスを追加する
 
 If you want a specific Path Prefix, for example `example.com/blog/` instead of `example.com/` read [adding a path prefix](/docs/path-prefix)
 
-## Specific deploy
+## 実際にデプロイする
 
 Additional actions may be required depending on which server you use.
 If you have a server from one of the following providers, you should read the individual subpages:
