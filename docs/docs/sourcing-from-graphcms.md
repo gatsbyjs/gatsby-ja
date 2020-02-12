@@ -35,7 +35,7 @@ gatsby new gatsby-site https://github.com/gatsbyjs/gatsby-starter-default
 
 ### プラグインの設定
 
-最後に、データをクエリーする前に `gatsby-source-graphql` プラグインの設定が必要です。`gatsby-config.js` を開いて plugins の配列に次のオブジェクトを追加します。この例では GraphCMS の公開 API を使っていますが、ほとんどの場合あなたのプロジェクトに合わせて API の url や fieldName を置き換えることになります。[ GraphCMS API の詳細はこちらをご覧ください。](https://docs.graphcms.com/developers/api)
+最後に、データをクエリーする前に `gatsby-source-graphql` プラグインの設定が必要です。`gatsby-config.js` を開いて plugins の配列に次のオブジェクトを追加します。この例では GraphCMS の公開 API を使っていますが、ほとんどの場合あなたのプロジェクトに合わせて API の url や fieldName を置き換えることになります。[GraphCMS API の詳細はこちらをご覧ください。](https://docs.graphcms.com/developers/api)
 
 ```js
 {
