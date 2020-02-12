@@ -2,7 +2,7 @@
 title: GraphCMS からデータを取得する
 ---
 
-## GraphCMS のやり方
+## GraphCMS 流のヘッドレス CMS
 
 [GraphCMS](https://graphcms.com?ref="gatsby-headless-docs-top") は GraphQL で操作するのに最適化されたヘッドレス CMS です。記事、作成者、プロダクトなどのコンテンツの構造は、モデルと呼ばれるコンテンツタイプに分類されます。これらのモデルはおなじみの GraphQL を使ってクエリーできます。
 
