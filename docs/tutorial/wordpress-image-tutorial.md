@@ -129,11 +129,7 @@ module.exports = {
 npm run develop
 ```
 
-<<<<<<< HEAD
-localhost:8000 と localhost:8000/\_\_\_graphql を開いてください。
-=======
-Open `http://localhost:8000` and `http://localhost:8000/___graphql`.
->>>>>>> 79b09bc29f133961f3d7de0f36a25ff727e6c22a
+`http://localhost:8000` と `http://localhost:8000/___graphql` を開いてください。
 
 特定の幅と高さの画像を生成する例を次に示します。
 

@@ -247,14 +247,7 @@ exports.createPages = async ({ graphql, actions }) => {
 }
 ```
 
-<<<<<<< HEAD
-サーバーを再起動すれば、ページが生成されます！生成されたページを見つける簡単な方法は、サイトに存在しないでたらめなパスへ移動することです。Gatsby がページのリストを表示してくれます。例えば <http://localhost:8000/sdf> に移動すれば、生成されたページのリストが表示されます。
-=======
-Restart the development server and your pages will be created! An easy way to
-find new pages you create while developing is to go to a random path where
-Gatsby will helpfully show you a list of pages on the site. If you go to
-`http://localhost:8000/sdf`, you'll see the new pages you created.
->>>>>>> 79b09bc29f133961f3d7de0f36a25ff727e6c22a
+サーバーを再起動すれば、ページが生成されます！生成されたページを見つける簡単な方法は、サイトに存在しないでたらめなパスへ移動することです。Gatsby がページのリストを表示してくれます。例えば `http://localhost:8000/sdf` に移動すれば、生成されたページのリストが表示されます。
 
 ![new-pages](new-pages.png)
 

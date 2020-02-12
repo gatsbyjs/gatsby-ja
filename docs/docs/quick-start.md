@@ -37,11 +37,7 @@ cd gatsby-site
 gatsby develop
 ```
 
-<<<<<<< HEAD
-Gatsby はホットリロード対応の開発環境を `localhost:8000` に立ち上げます。
-=======
-Gatsby will start a hot-reloading development environment accessible by default at `http://localhost:8000`.
->>>>>>> 79b09bc29f133961f3d7de0f36a25ff727e6c22a
+Gatsby はホットリロード対応の開発環境を `http://localhost:8000` に立ち上げます。
 
 `src/pages`の中にある JavaScript で書かれたページを編集してみてください。保存された変更はブラウザー上でリアルタイムに反映されます。
 

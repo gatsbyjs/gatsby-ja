@@ -38,15 +38,9 @@ Gatsby と Node.js をインストールするには、[Homebrew](https://brew.s
 
 #### Node のインストール
 
-<<<<<<< HEAD
 1. ターミナルを開きます
 2. `brew install node`を実行します
    - もし Homebrew でインストールしたくない場合は、[Node.js の公式ウェブサイト](https://nodejs.org/ja/)より、最新バージョンの Node.js をダウンロードして、ダブルクリックして表示されるインストール手順にしたがってください。
-=======
-1. Open your Terminal
-2. Run `brew install node`
-   - If you don't want to install it through Homebrew, download the latest Node.js version from [the official Node.js website](https://nodejs.org/en/), double click on the downloaded file and go through the installation process.
->>>>>>> 79b09bc29f133961f3d7de0f36a25ff727e6c22a
 
 ### Windows の手順
 
@@ -161,27 +155,17 @@ gatsby develop
 
 ### サイトをローカルに表示する
 
-<<<<<<< HEAD
-ブラウザーで新しいタブを開き、[**http://localhost:8000**](http://localhost:8000/)に移動します。
-=======
-Open up a new tab in your browser and navigate to `http://localhost:8000/`
->>>>>>> 79b09bc29f133961f3d7de0f36a25ff727e6c22a
+ブラウザーで新しいタブを開き、`http://localhost:8000`に移動します。
 
 ![ホームページを確認する](04-home-page.png)
 
 <!-- textlint-disable ja-technical-writing/ja-no-mixed-period -->
 
-<<<<<<< HEAD
 おめでとうございます！これが、最初の Gatsby サイトの始まりです！🎉
 
 <!-- textlint-enable ja-technical-writing/ja-no-mixed-period -->
-=======
-You’ll be able to visit the site locally at `http://localhost:8000/` for as long as your development server is running. That’s the process you started by running the `gatsby develop` command. To stop running that process (or to “stop running the development server”), go back to your terminal window, hold down the “control” key, and then hit “c” (ctrl-c). To start it again, run `gatsby develop` again!
 
-**Note:** If you are using VM setup like `vagrant` and/or would like to listen on your local IP address, run `gatsby develop --host=0.0.0.0`. Now, the development server listens on both `http://localhost` and your local IP.
->>>>>>> 79b09bc29f133961f3d7de0f36a25ff727e6c22a
-
-開発サーバーが実行されている限り、[**_http://localhost:8000_**](http://localhost:8000/)でローカルのサイトにアクセスできます。これは、`gatsby develop`コマンドを実行して開始したプロセスです。そのプロセスの実行を停止（または「開発サーバーの実行を停止」）するには、ターミナルウィンドウに戻り、「コントロール」キーを押しながら「c」(ctrl-c)を押します。もう一度起動するには、再度 `gatsby develop` を実行してください！
+開発サーバーが実行されている限り、`http://localhost:8000`でローカルのサイトにアクセスできます。これは、`gatsby develop`コマンドを実行して開始したプロセスです。そのプロセスの実行を停止（または「開発サーバーの実行を停止」）するには、ターミナルウィンドウに戻り、「コントロール」キーを押しながら「c」(ctrl-c)を押します。もう一度起動するには、再度 `gatsby develop` を実行してください！
 
 **ヒント：** `vagrant`のような VM を使用してセットアップしている場合、および/またはローカル IP アドレスでリッスンしたい場合は、`gatsby develop ---host=0.0.0.0`を実行します。これで、開発サーバーは"localhost"とローカル IP の両方でリッスンします。
 
@@ -195,13 +179,7 @@ Gatsby のドキュメントには、VS Code で撮影したスクリーンシ�
 
 ### Prettier プラグインをインストールする
 
-<<<<<<< HEAD
 また、エラーを回避するためにコードをフォーマットするのに役立つツールである[Prettier](https://github.com/prettier/prettier)を使用することもお勧めします。
-=======
-1.  Open the extensions view on VS Code (View => Extensions).
-2.  Search for "Prettier - Code formatter".
-3.  Click "Install". (After installation, you'll be prompted to restart VS Code to enable the extension. Newer versions of VS Code will automatically enable the extension after download.)
->>>>>>> 79b09bc29f133961f3d7de0f36a25ff727e6c22a
 
 [Prettier VS Code plugin](https://github.com/prettier/prettier-vscode)を使用して、エディターで Prettier を直接使用できます。
 
