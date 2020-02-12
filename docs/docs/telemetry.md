@@ -1,49 +1,48 @@
 ---
-title: Telemetry
+title: テレメトリー
 ---
 
-Gatsby contains a telemetry feature that collects anonymous usage information that is used to help improve Gatsby for all users.
-The Gatsby user base is growing very rapidly. It's important that our small team and the greater community will better understand the usage patterns, so we can best decide how to design future features and prioritize current work.
+Gatsby は全ての使用者への改善を目的として、匿名の使用情報を集めるテレメトリー機能を持っています。
+Gatsby のユーザー基盤は飛躍的に成長しています。私たちの小さなチームと素晴らしいコミュニティーが使用パターンを理解することは大事なことです。それにより、私たちは、将来の機能と現在の仕事の優先付けをどのように行うか最善の選択を行うことができます。
 
-You will be notified when installing Gatsby and when running it for the first time.
+Gatsby をインストールし、初めて起動するときにテレメトリーを行うことは通知されます。
 
-## How to opt-out
+## どのようにオプトアウトするか
 
-Users may always opt-out from the telemetry with `gatsby telemetry --disable` or setting the environment variable `GATSBY_TELEMETRY_DISABLED` to `1`
+ユーザーは、 `gatsby telemetry --disable` コマンドあるいは、環境変数 `GATSBY_TELEMETRY_DISABLED` に `1` を設定することで、いつでもテレメトリー機能をオプトアウトできます。
 
-## Why?
+## なぜ必要なのか？
 
-**Anonymous** aggregate user analytics allow us to prioritize fixes and features based on how and when people use Gatsby.
-Since much of Gatsby’s function revolves around community plugins and starters, we want to collect information on usage
-and reliability so that we can ensure a high-quality ecosystem.
+**匿名**のユーザー分析の集計は、人々がどのように、またいつ Gatsby を使用するのかに基づきバグ修正や機能追加の優先付けを可能にしてくれます。
+Gatsby の機能の多くが、コミュニテイのプラグインやスターター周りで展開されているので、私たちは高品質なエコシステムを確立するために、使用方法と信頼性に関する情報を集めたいのです。
 
-This raises a question: how will we use this telemetry data to improve the ecosystem? Some examples are helpful:
+ここで質問が挙がります。どのようにして、私たちは、テレメトリーデータをエコシステムの改善に用いるでしょうか？いくつか例を挙げましょう。
 
-- We will be able to understand which plugins are typically used together. This will enable us to surface this information in our public plugin library and build more relevant starters and tutorials based on this data.
-- We will be able to surface popularity of different starters in the starter showcase.
-- We will be able to get more detail on the types of errors users are running into in _every_ build stage (e.g. development, build, etc.). This will let us improve the quality of our tool and better focus our time on solving more common, frustrating Issues.
-- We will be able to surface reliability of different plugins and starters, and detect which of these tend to error more frequently. We can use this data to surface quality metrics and improve the quality of our plugins and starters.
-- We will be able to see timings for different build stages to guide us in where we should focus optimization work.
+- 私たちは、一般的にどのプラグインが一緒に使われているかを把握できます。これにより、私たちは公開しているプラグインのライブラリーのデータを得ることができるので、そのデータに基づき、より適切なスターターやチュートリアルを作ることができます。
+- 私たちは、スターターショーケースにある様々なスターターの中で、人気のあるスターターを明らかにできます。
+- 私たちは、ユーザーが**あらゆる**ビルド（例： development や build など）で出くわすエラーの種類についてより詳しく知ることができます。これは、私たちが提供しているツールの品質改善、そして私たちがユーザーにとってよくあるストレスの溜まる問題の解決にもっと集中することを可能にします。
+- 私たちは、様々なプラグインやスターターの信頼性を明らかにできます。そして、これらの内どれがエラーをより頻繁に起こしているのかを検知します。私たちは、このデータを品質の測定と私たちの提供するプラグインとスターターの改善に用いることができます。
+- 私たちは、最適化処理に集中すべき点を導くために、様々なビルドステージのためのタイミングを見ることができます。
 
-## What do we track?
+## 何を追跡しているのか？
 
-We track general usage details, including command invocation, build process status updates, performance measurements, and errors.
-We use these metrics to better understand the usage patterns. These metrics will directly allow us to better decide how to design future features and prioritize current work.
+私たちは、コマンドの呼び出し、ビルド途中のステータス更新、パフォーマンス計測、そしてエラーを含む一般的な使用詳細を追跡しています。
+私たちはこれらの指標を使用パターンのより良い理解のために使用しています。これらの指標により、私たちは将来の機能や現在の作業の優先付けをどのように行うかべきかより良く決めることができます。
 
-Specifically, we collect the following information for _all_ telemetry events:
+具体的には、私たちは、以下の*全ての*テレメトリーイベントに関する情報を収集しています。
 
-- Timestamp of the occurrence
-- Command invoked (e.g. `build` or `develop`)
-- Gatsby machine ID. This is generated with UUID and stored in global gatsby config at ~/.config/gatsby/config.json.
-- Unique session ID. This is generated on each run with UUID.
-- One-way hash of the current working directory or a hash of the git remote
-- General OS level information (operating system, version, CPU architecture, and whether the command is run inside a CI)
-- Current Gatsby version
+- イベントのタイムスタンプ
+- 呼び出されたコマンド（例： `build` や `develop`）
+- Gatsby のマシン ID。これは、UUID と一緒に発行されます。そして、~/.config/gatsby/config.json にある Gatsby のグローバル設定へ保存されます。
+- 固有のセッション ID。これは起動ごとに UUID と共に発行されます。
+- 現在の作業ディレクトリーの一方向ハッシュ、または git remote のハッシュ
+- 一般的な OS 情報（オペレーティングシステム、バージョン、CPU アーキテクチャ、そして CI のどこでコマンドが実行されているか）
+- 現在の Gatsby のバージョン
 
-The access to the raw data is highly controlled, and we cannot identify individual users from the dataset. It is anonymized and untraceable back to the user.
+生データへのアクセスは、固く制限されています。私たちは、データセットから個人の特定を行うことはできません。データセットは、匿名化されユーザーまでさかのぼることができないようになっています。
 
-## What about sensitive data? (e.g. secrets)
+## センシティブなデータについてはどうですか？(例： 認証情報）
 
-We perform additional steps to ensure that secure data (e.g. environment variables used to store secrets for the build process) **do not** make their way into our analytics. [We strip logs, error messages, etc.](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-telemetry/src/error-helpers.js) of this sensitive data to ensure we _never_ gain access to this sensitive data.
+私たちは、セキュアなデータ（例： ビルドプロセスに用いられる認証情報を保存するための環境変数）は、私たちの分析へかからないようにすることを確実なものとするため、追加のステップを踏んでいます。私たちが**一切**センシティブなデータにアクセスすることが無いようセンシティブなデータから、[私たちは、ログ、エラーメッセージなどを取り除いています。](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-telemetry/src/error-helpers.js)
 
-You can view all the information that is sent by Gatsby’s telemetry by setting the environment variable `GATSBY_TELEMETRY_DEBUG`to `1` to print the telemetry data instead of sending it over.
+環境変数の `GATSBY_TELEMETRY_DEBUG` を `1` にすることで、Gatsby のテレメトリーで扱われるデータが送られる代わりに表示されます。これにより、あなたは全ての情報を確認できます。
