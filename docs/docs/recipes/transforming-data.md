@@ -1,5 +1,10 @@
 ---
+<<<<<<< HEAD
 title: "レシピ集: データの変換"
+=======
+title: "Recipes: Transforming Data"
+tableOfContentsDepth: 1
+>>>>>>> 79b09bc29f133961f3d7de0f36a25ff727e6c22a
 ---
 
 Gatsby でのデータ変換はプラグインによって実現されています。トランスフォーマープラグインは source プラグインを通じてデータを取得し、実際に使う形式へ変換します（例：JSON を JavaScript オブジェクトにする等）。

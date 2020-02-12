@@ -65,7 +65,11 @@ module.exports = {
 
 Gatsby テーマを使用すると、コンポーネントシャドウイングと呼ばれるものを利用できます。これによりテーマに含まれるデフォルトのコンポーネントの内容を、作成したカスタムコンポーネントの内容で置き換えることができます。
 
+<<<<<<< HEAD
 Gatsby の公式ブログテーマのパッケージには、サイト作成者の自己紹介のコンテンツを含むコンポーネントがあります。そのコンポーネントへのファイルパス（サイトのパスではなくブログテーマ内）は、`gatsby-theme-blog/src/components/bio-content.js` です。このファイルパスは、サイトの `node_modules/gatsby-theme-blog` ディレクトリーのテーマを調べることで見つけることができます。
+=======
+The Gatsby blog theme package has a component that contains the content of the site author's biography. The file path to that component (in the blog theme package, not your site) is `src/gatsby-theme-blog/components/bio-content.js`. You can find this path by looking through the theme in your site's `node_modules/gatsby-theme-blog` directory.
+>>>>>>> 79b09bc29f133961f3d7de0f36a25ff727e6c22a
 
 ファイルツリーを見ると、次のように表示されます。
 

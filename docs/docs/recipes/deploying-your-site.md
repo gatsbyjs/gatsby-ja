@@ -1,5 +1,10 @@
 ---
+<<<<<<< HEAD
 title: "レシピ: サイトをデプロイする"
+=======
+title: "Recipes: Deploying Your Site"
+tableOfContentsDepth: 1
+>>>>>>> 79b09bc29f133961f3d7de0f36a25ff727e6c22a
 ---
 
 ショータイム。満足ゆくサイトができたら、あとはそれをデプロイするだけです。
@@ -75,7 +80,11 @@ gatsby build && gatsby serve
 
 6. デプロイパスを `public/` に変更します。
 
+<<<<<<< HEAD
 7. 正常に動作していることを確認できたら `netlify deploy --prod` で本番環境にデプロイします。
+=======
+7. Make sure that everything looks fine before deploying to production using `netlify deploy -d . --prod`
+>>>>>>> 79b09bc29f133961f3d7de0f36a25ff727e6c22a
 
 ### 追加資料
 

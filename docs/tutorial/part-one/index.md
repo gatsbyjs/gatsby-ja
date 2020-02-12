@@ -165,7 +165,11 @@ export default () => (
 )
 ```
 
+<<<<<<< HEAD
 2. http://localhost:8000/about/ に移動します。
+=======
+2.  Navigate to `http://localhost:8000/about/`
+>>>>>>> 79b09bc29f133961f3d7de0f36a25ff727e6c22a
 
 ![新しい about ページ](05-about-page.png)
 
@@ -230,7 +234,11 @@ export default () => (
 
 ### "props" とは何ですか？
 
+<<<<<<< HEAD
 先ほど、UI を描写する再利用可能なコードとして React コンポーネントを定義しました。これらの再利用可能な部品を動的にするには、それらに異なるデータを与えられるようにする必要があります。"props" と呼ばれる入力でそれを行います。Props は、React コンポーネントにプロパティを与えるためのものです。
+=======
+Earlier, you defined React components as reusable pieces of code describing a UI. To make these reusable pieces dynamic you need to be able to supply them with different data. You do that with input called "props". Props are (appropriately enough) properties supplied to React components.
+>>>>>>> 79b09bc29f133961f3d7de0f36a25ff727e6c22a
 
 `about.js` では、インポートした `Header` サブコンポーネントに `"About Gatsby"` の値を持つ `headerText` 属性を渡しました。
 
@@ -335,7 +343,11 @@ Gatsby の `<Link />` コンポーネントは、サイト内のページ間を�
 
 ## Gatsby サイトのデプロイ
 
+<<<<<<< HEAD
 Gatsby は**モダンなサイトジェネレーター**です。つまり、デプロイするためにセットアップするサーバーや複雑なデータベースは必要ありません。代わりに、Gatsby の `build` コマンドで、静的なサイトホスティングサービスにデプロイできるように、静的な HTML および JavaScript ファイルのディレクトリーを生成します。
+=======
+Gatsby.js is a _modern site generator_, which means there are no servers to set up or complicated databases to deploy. Instead, the Gatsby `build` command produces a directory of static HTML and JavaScript files which you can deploy to a static site hosting service.
+>>>>>>> 79b09bc29f133961f3d7de0f36a25ff727e6c22a
 
 もし Gatsby でつくったウェブサイトをはじめてデプロイするなら、[Surge](http://surge.sh/) を試してみてください。Surge は、Gatsby サイトをデプロイするための数ある「静的サイトホスティングサービス」の 1 つです。
 
@@ -368,7 +380,13 @@ ls public
 surge public/
 ```
 
+<<<<<<< HEAD
 実行が終了すると、ターミナルに次のように表示されます。
+=======
+> Note that you will have to press the `enter` key after you see the `domain: some-name.surge.sh` information on your command-line interface.
+
+Once this finishes running, you should see in your terminal something like:
+>>>>>>> 79b09bc29f133961f3d7de0f36a25ff727e6c22a
 
 ![Surge を使用して Gatsby サイトを公開したスクリーンショット](surge-deployment.png)
 

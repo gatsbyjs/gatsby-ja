@@ -2,7 +2,11 @@
 title: Styled Components
 ---
 
+<<<<<<< HEAD
 このガイドでは、CSS-in-JS ライブラリーである [Styled Components](https://www.styled-components.com/) を使用してサイトをセットアップする方法を学習します。
+=======
+In this guide, you will learn how to set up a site with the CSS-in-JS library [Styled Components](https://styled-components.com/).
+>>>>>>> 79b09bc29f133961f3d7de0f36a25ff727e6c22a
 
 Styled Components ではコンポーネント内で実際の CSS 構文を使用できます。 Styled Components は「CSS-in-JS」の変種であり、従来の CSS の問題の多くを解決します。
 

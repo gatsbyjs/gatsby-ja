@@ -15,7 +15,11 @@ Gatsby サイトに動画を含めるもっとも簡単な方法は、YouTube �
 
 ## ホストされた動画を Markdown に埋め込む
 
+<<<<<<< HEAD
 Gatsby にはホストされた動画を Markdown 投稿やページから使用できるようにする、多くのプラグインが用意されています。 YouTube や Vimeo などのさまざまなホストから動画を取得するには、[gatsby-remark-embed-video](/packages/gatsby-remark-embed-video/?=video) プラグインをお勧めします。
+=======
+There are numerous Gatsby plugins for working with hosted video in your Markdown posts and pages. We recommend checking out the [gatsby-remark-embed-video](/packages/gatsby-remark-embed-video/?=video) plugin for sourcing from a variety of hosts like YouTube or Vimeo.
+>>>>>>> 79b09bc29f133961f3d7de0f36a25ff727e6c22a
 
 ### ホストされた動画のためのカスタムコンポーネントを作成する
 

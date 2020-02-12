@@ -30,7 +30,11 @@ cd [your-project-name]
 gatsby develop
 ```
 
+<<<<<<< HEAD
 これであなたは [`localhost:8000`](http://localhost:8000) から作成されたサイトを見ることができるようになるだけでなく、Netlify CMS がプリインストールされ、[`localhost:8000/admin`](http://localhost:8000/admin) からアクセスできるようになりました。
+=======
+Now you can go to `http://localhost:8000` to see your new site, but what's extra cool is that Netlify CMS is pre-installed and you can access it at `http://localhost:8000/admin`
+>>>>>>> 79b09bc29f133961f3d7de0f36a25ff727e6c22a
 
 コンテンツマネジメントシステム（CMS）は便利です。あなたは Markdown を使い手動でブログポストなどのコンテンツを追加する代わりに、それらをサイト上のダッシュボードから追加できます。もしかすると、あなたは CMS をローカルだけでなく開発したウェブサイト上からも使いたくなるかもしれません。それを実現するためには、GitHub を通して Netlify にデプロイし、継続的デプロイを設定し、いくつかの設定を変更する必要があります。こちらについては [ステップ 5](#ステップ-5) をご覧ください。
 
@@ -54,7 +58,11 @@ backend:
 
 ### ステップ 4
 
+<<<<<<< HEAD
 [github.com](http://github.com) にアクセスし、あなたのプロジェクトと同じ名前のリポジトリーを作成してください。以下のコマンドを使い、あなたの Gatsby サイトのコードを GitHub に push してください。
+=======
+Open [github.com](https://github.com) and create a new repository, with the same name as your project. Push your new Gatsby site's code to GitHub using the following Terminal commands:
+>>>>>>> 79b09bc29f133961f3d7de0f36a25ff727e6c22a
 
 ```shell
 git init

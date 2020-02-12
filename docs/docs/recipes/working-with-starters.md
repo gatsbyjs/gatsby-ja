@@ -1,5 +1,10 @@
 ---
+<<<<<<< HEAD
 title: "レシピ: スターターを使用する"
+=======
+title: "Recipes: Working with Starters"
+tableOfContentsDepth: 1
+>>>>>>> 79b09bc29f133961f3d7de0f36a25ff727e6c22a
 ---
 
 [スターター](/docs/starters/) は、公式もしくはコミュニティーによって整備された Gatsby サイトの雛形です。

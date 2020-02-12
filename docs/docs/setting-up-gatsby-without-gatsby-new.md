@@ -65,4 +65,8 @@ cd ../../
 gatsby develop
 ```
 
+<<<<<<< HEAD
 それだけです！初期ページが `localhost:8000` で、GraphiQL IDE が `localhost:8000/___graphql` で起動しているはずです。ここからは[チュートリアル](/tutorial/part-zero/#set-up-a-code-editor)に戻って、Gatsby が提供する機能をフルに体験するためコードエディターを設定する箇所からチュートリアルを再開してください。
+=======
+And that's it! You should now have your initial page running on `http://localhost:8000` with a GraphiQL IDE running on `http://localhost:8000/___graphql`. From here, you can follow the rest of the [Gatsby tutorial](/tutorial/part-zero/#set-up-a-code-editor) starting with setting up a code editor to get the full experience of what Gatsby can offer.
+>>>>>>> 79b09bc29f133961f3d7de0f36a25ff727e6c22a
