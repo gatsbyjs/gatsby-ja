@@ -2,9 +2,7 @@
 title: Organize a Gatsby Event
 ---
 
-Interested in organizing a Gatsby event? We want to help build the Gatsby community in your area. If your event meets a few basic requirements listed below, you’ll be eligible to receive support from Gatsby such as Gatsby stickers, learning resources, up to \$300 for event costs, and more. Get started by requesting event support below.
-
-[Request Event Support](https://airtable.com/shrpwc99yogJm9sfI)
+Our communiy event support offerings and process are undergoing some changes. Check back soon to see our updated community event support opportunities!
 
 ## What constitutes a Gatsby event?
 
