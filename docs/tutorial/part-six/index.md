@@ -12,11 +12,11 @@ disableTableOfContents: true
 
 ## トランスフォーマープラグイン
 
-多くの場合、ソースプラグインで取得したデータ形式は Web サイトの構築に使用されるものではありません。ファイルシステムソースプラグインを使用すればファイルの**メタデータ**を取得できますが、ファイル内に**入力されているデータ**は取得できません。
+多くの場合、ソースプラグインで取得したデータ形式はウェブサイトの構築に使用されるものではありません。ファイルシステムソースプラグインを使用すればファイルの**メタデータ**を取得できますが、ファイル内に**入力されているデータ**は取得できません。
 
 Gatsby はトランスフォーマープラグインを利用して、ソースプラグインで取得したデータをブログで表示する形式へ**変換**します。
 
-ここでは Markdown を例とします。Markdown は簡潔に記述できますが Web ページとして表示する場合は HTML へ変換する必要があります。
+ここでは Markdown を例とします。Markdown は簡潔に記述できますがウェブページとして表示する場合は HTML へ変換する必要があります。
 
 `src/pages/sweet-pandas-eating-sweets.md`に以下の Markdown ファイルを追加して、トランスフォーマープラグインと GraphQL を使って HTML へ**変換**する方法を学びましょう。
 
@@ -33,7 +33,7 @@ Here's a video of a panda eating sweets.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4n0xNbfJLR8" frameborder="0" allowfullscreen></iframe>
 ```
 
-ファイルを保存して`/my-files/`を確認します。表に新しい Markdown が追加されています。これは Gatsby の非常に便利な機能です。先程の`siteMetadata`の例のように、ソースプラグインはデータをライブリロードします。`gatsby-source-filesystem`はファイルを常に監視して、ファイルが追加されるとクエリを再実行します。
+ファイルを保存して `/my-files/` を確認します。表に新しい Markdown が追加されています。これは Gatsby の非常に便利な機能です。先程の `siteMetadata` の例のように、ソースプラグインはデータをライブリロードします。`gatsby-source-filesystem`はファイルを常に監視して、ファイルが追加されるとクエリを再実行します。
 
 Markdown を変換できるトランスフォーマープラグインを追加します。
 
@@ -41,7 +41,7 @@ Markdown を変換できるトランスフォーマープラグインを追加�
 npm install --save gatsby-transformer-remark
 ```
 
-次にプラグインを`gatsby-config.js`に追加します。
+次にプラグインを `gatsby-config.js` に追加します。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -78,7 +78,7 @@ module.exports = {
 
 Gatsby の基本的な設定ができ始めています。ソースプラグインはデータを Gatsby のデータシステムに**取り込み**、トランスフォーマープラグインはソースプラグインが取得したデータを**変換**します。このパターンは Gatsby でサイトを構築するために必要なすべてのデータ取得と変換を処理できます。
 
-## Markdown のリストを`src/pages/index.js`に作成する
+## Markdown のリストを `src/pages/index.js` に作成する
 
 次に、フロントページに Markdown のリストを作成します。多くのブログのように、各投稿へのリンクをリストにしてフロントページに表示します。GraphQL を利用すれば Markdown の投稿を**取得**できるため、手動でリストを管理する必要はありません。
 
@@ -170,9 +170,9 @@ seem to really enjoy bananas!
 
 良い感じです！しかし、投稿の表示順が間違っています。
 
-修正は簡単です。クエリでデータを取得する時、GraphQL クエリにさまざまな引数を渡すことができます。例えば、ノードの`sort`や`filter`、数を指定した`skip`、`limit`で数の制限などができます。この強力な演算子を利用して必要なデータを必要な形式で選択できます。
+修正は簡単です。クエリでデータを取得する時、GraphQL クエリにさまざまな引数を渡すことができます。例えば、ノードの `sort` や `filter` 、数を指定した `skip` 、`limit`で数の制限などができます。この強力な演算子を利用して必要なデータを必要な形式で選択できます。
 
-index ページの GraphQL クエリで`allMarkdownRemark`を`allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC })`に変更します。
+index ページの GraphQL クエリで `allMarkdownRemark` を `allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC })` に変更します。
 これを保存すればソート順が修正されます。  
 _注: frontmatter と date の間はアンダースコアが 3 つです。_
 

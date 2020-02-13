@@ -2,33 +2,33 @@
 title: Styled Components
 ---
 
-In this guide, you will learn how to set up a site with the CSS-in-JS library [Styled Components](https://www.styled-components.com/).
+このガイドでは、CSS-in-JS ライブラリーである [Styled Components](https://styled-components.com/) を使用してサイトをセットアップする方法を学習します。
 
-Styled Components lets you use actual CSS syntax inside your components. Styled Components is a variant on "CSS-in-JS"—which solves many of the problems with traditional CSS.
+Styled Components ではコンポーネント内で実際の CSS 構文を使用できます。 Styled Components は「CSS-in-JS」の変種であり、従来の CSS の問題の多くを解決します。
 
-One of the most important problems they solve is selector name collisions. With traditional CSS, you have to be careful not to overwrite CSS selectors used elsewhere in a site because all CSS selectors live in the same global namespace. This unfortunate restriction can lead to elaborate (and often confusing) selector naming schemes.
+Styled Components が解決するもっとも重要な問題の 1 つはセレクター名の衝突です。従来の CSS では、全ての CSS セレクターが同じグローバル名前空間に存在するため、サイト内の他の場所で使用されている CSS セレクターを上書きしないように注意する必要があります。この残念な制約により、セレクターの命名規則が複雑になります（そしてしばしば混乱を招きます）。
 
-With CSS-in-JS, you avoid all that as CSS selectors are scoped automatically to their component. Styles are tightly coupled with their components. This makes it much easier to know how to edit a component's CSS as there's never any confusion about how and where CSS is being used.
+CSS-in-JS を使用すると、CSS セレクターがコンポーネント内に自動的にスコープされるため、CSS の問題全てを回避できます。スタイルはコンポーネントと密接に結びついています。これにより、CSS がどこでどのように使用されているかについての混乱が生じないため、コンポーネントの CSS を編集する方法がはるかに知りやすくなります。
 
 <EggheadEmbed
   lessonLink="https://egghead.io/lessons/gatsby-style-gatsby-sites-with-styled-components"
   lessonTitle="Style Gatsby sites with styled-components"
 />
 
-First, open a new terminal window and run the following to create a new site:
+まず、新しいターミナルウィンドウを開き、次のコマンドを実行して新しいサイトを作成します。
 
 ```shell
 gatsby new styled-components-tutorial https://github.com/gatsbyjs/gatsby-starter-hello-world
 cd styled-components-tutorial
 ```
 
-Second, install the necessary dependencies for `styled-components`, including the Gatsby plugin.
+次に、Gatsby プラグインを含む `styled-components` に必要な依存関係をインストールします。
 
 ```shell
 npm install --save gatsby-plugin-styled-components styled-components babel-plugin-styled-components
 ```
 
-And then add it to your site's `gatsby-config.js`:
+さらに、サイト内の `gatsby-config.js` にインストールしたプラグインを追記します。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -36,9 +36,9 @@ module.exports = {
 }
 ```
 
-Then in your terminal run `gatsby develop` to start the Gatsby development server.
+そして、ターミナルで `gatsby develop` を実行して Gatsby の開発用サーバーを起動します。
 
-Now create a sample Styled Components page at `src/pages/index.js`:
+最後に、`src/pages/index.js` に Styled Components を使用してサンプルページを作成します。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -112,11 +112,11 @@ export default () => (
 )
 ```
 
-## Creating Global Styles
+## グローバルスタイルの作成
 
-Styled-components are primarily used for a single CSS class that is isolated from other components. In some cases, you want to override global styling — for example, the default margins of your `body` element. Styled-components has your back. You can use the `createGlobalStyle` to accomplish this. It's advised to use `createGlobalStyle` in [Layout components](/docs/layout-components/), which are shared over multiple pages rather than using it on a single page.
+Styled Components は、主に他のコンポーネントから分離された単一の CSS クラスに使用されます。場合によっては、`body` 要素のデフォルトのマージンなどといったグローバルスタイルを無効したいこともあるでしょう。安心してください。Styled Components は `createGlobalStyle` を使用してグローバルスタイルを設定できます。[レイアウトコンポーネント](/docs/layout-components/) を作成する場合は `createGlobalStyle` を使用することをお勧めします。これは単一のページではなく、複数のページで共有されます。
 
-The example below shows how to create a `GlobalStyle` (which is a StyledComponent) for the color purple by importing `createGlobalStyle` from `styled-components`.
+次の例は、`styled-components` から `createGlobalStyle` をインポートして、クローバルの要素に紫色を適用する `GlobalStyle` コンポーネント（Styled Component）を作成する方法を示しています。
 
 ```jsx:title=src/components/layout.js
 import React from "react"
@@ -134,11 +134,11 @@ export default ({ children }) => (
 )
 ```
 
-## Enabling user stylesheets with a stable class name
+## 不変なクラス名によるユーザースタイルシートの有効化
 
-Adding a persistent CSS `className` to your styled components can make it easier for end users of your website to take advantage of [user stylesheets](https://www.viget.com/articles/inline-styles-user-style-sheets-and-accessibility/) for accessibility.
+Styled Components に不変な CSS のクラス名（`className`）を割り当てると、ウェブサイトのエンドユーザーが、アクセシビリティ確保を目的とした[ユーザースタイルシート](https://www.viget.com/articles/inline-styles-user-style-sheets-and-accessibility/)の利用がしやすくなります。
 
-Here's an example where the class name `container` is added to the DOM along with the Styled Components' dynamically-created class names:
+これは、Styled Components によって動的に生成されたクラス名と、`container` クラス名が DOM に割り当てられる例です。
 
 ```jsx:title=src/components/container.js
 import React from "react"
@@ -154,7 +154,7 @@ export default ({ children }) => (
 )
 ```
 
-An end user of your site could then [write their own CSS styles](https://mediatemple.net/blog/tips/bend-websites-css-will-stylish-stylebot/) matching HTML elements using a class name of `.container`. If your CSS-in-JS style changes, it will not affect the end user's stylesheet.
+サイトのエンドユーザーは、`.container` クラス名を使用して、HTML 要素に対応する[独自の CSS スタイルを記述](https://mediatemple.net/blog/tips/bend-websites-css-will-stylish-stylebot/)できます。 CSS-in-JS のスタイルを変更しても、エンドユーザーのスタイルシートには影響しません。
 
 ```css:title=user-stylesheet.css
 .container {

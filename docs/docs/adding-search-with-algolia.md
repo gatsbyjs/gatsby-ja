@@ -590,7 +590,7 @@ https://youtu.be/Amsub4xJ3Jc
 
 ## Additional Resources
 
-If you have any issues or if you want to learn more about using Algolia for search, check out this tutorial from Jason Lengstorf:
+If you have any Issues or if you want to learn more about using Algolia for search, check out this tutorial from Jason Lengstorf:
 
 https://youtu.be/VSkXyuXzwlc
 

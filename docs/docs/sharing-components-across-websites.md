@@ -1,20 +1,20 @@
 ---
-title: Sharing Components Across Websites
+title: ウェブサイト間でコンポーネントを共有する
 issue: https://github.com/gatsbyjs/gatsby/issues/14042
 ---
 
-One of the benefits of multiple teams using Gatsby within your organization is the ability to share React components across different websites.
+組織内の複数のチームで Gatsby を使う利点の 1 つは、異なるウェブサイト間で React コンポーネントを共有できることです。
 
-There are several strategies here.
+共有する方法はいくつかあります。
 
-**Component libraries** are a cleaner and purer approach, but often requiring additional tooling or causing some changes to require pull requests to multiple.
+**コンポーネントライブラリー**は明確で純粋なやり方です。しかし、しばしば追加のツールや変更によって複数のサイトへプルリクエストする必要があります。
 
-Alternately, teams can implement **systems for component discoverability**, such as [Storybook](https://github.com/storybookjs/storybook) or [Styleguidist](https://github.com/styleguidist/react-styleguidist), on a per-site basis and simply copy-paste desired code across repositories.
+あるいは、サイトごとに [Storybook](https://github.com/storybookjs/storybook) や [Styleguidist](https://github.com/styleguidist/react-styleguidist) などの**コンポーネントを見つけやすくするツール**を導入することで、リポジトリーをまたがって簡単に目的のコードをコピー＆ペーストできます。
 
-To avoid copy-pasting and reuse components instead you can use **component-sharing tools** such as [Bit](https://github.com/teambit/bit) to reuse and sync components between websites.
+[Bit](https://github.com/teambit/bit) などの**コンポーネント共有ツール**を使うことで、コピー＆ペーストせずにウェブサイト間でコンポーネントの再利用と同期を行えます。
 
 <GuideList slug={props.slug} />
 
 --
 
-**Note:** do you have additional ideas on sharing components across websites? We welcome contributions to the Gatsby docs. Find out [how to contribute](/contributing/docs-contributions/).
+**ヒント：** この他に、ウェブサイト間でコンポーネントを共有するアイデアをご存知ですか？Gatsby ドキュメントへの貢献をお待ちしています。[貢献する方法](/contributing/docs-contributions/)をご覧ください。

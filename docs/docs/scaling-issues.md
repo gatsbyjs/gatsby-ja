@@ -2,15 +2,15 @@
 title: Scaling Issues
 ---
 
-In certain circumstances, your application may hit some scaling issues that necessitate workarounds. These workarounds should be treated as _temporary_ and should be revisited in the future as Gatsby scales to support larger applications with hundreds of thousands of pages.
+In certain circumstances, your application may hit some scaling Issues that necessitate workarounds. These workarounds should be treated as _temporary_ and should be revisited in the future as Gatsby scales to support larger applications with hundreds of thousands of pages.
 
 However -- until we get to that point, some workarounds are useful to consider if they unblock your team from deploying, developing, etc.
 
 > Just looking for possible solutions? [Jump ahead](#possible-solutions-to-scaling-issues)
 
-## What is a scaling issue?
+## What is a scaling Issue?
 
-A scaling issue is evident if your application is unable to build due to an error _or_ if it is extremely slow in some lifecycle, e.g. `develop` or `build`. For example:
+A scaling Issue is evident if your application is unable to build due to an error _or_ if it is extremely slow in some lifecycle, e.g. `develop` or `build`. For example:
 
 - An "Out of Memory" occurs when building in CI
 - The `develop` lifecycle takes 10x as long as `build`
@@ -39,9 +39,9 @@ success extract queries from components — 0.127 s
 [10208:0000029380BC1810]   139043 ms: Scavenge 1374.4 (1424.6) -> 1373.6 (1425.1) MB, 2.1 / 0.0 ms  (average mu = 0.317, current mu = 0.262) allocation failure
 ```
 
-## When can a scaling issue arise?
+## When can a scaling Issue arise?
 
-A scaling issue _can_ arise in varied cases, but typically something like:
+A scaling Issue _can_ arise in varied cases, but typically something like:
 
 - A Gatsby application with ~100K+ pages
   - See [this issue](https://github.com/gatsbyjs/gatsby/issues/12343) for an example
@@ -49,19 +49,19 @@ A scaling issue _can_ arise in varied cases, but typically something like:
 - Extremely large GraphQL queries, which are stored in memory in the `develop` lifecycle
   - See [this issue](https://github.com/gatsbyjs/gatsby/issues/12566) for an example
 
-If you are seeing errors or slowness **and** your Gatsby app matches one of the above use-cases, it's very likely you are hitting some scaling issues.
+If you are seeing errors or slowness **and** your Gatsby app matches one of the above use-cases, it's very likely you are hitting some scaling Issues.
 
-## Possible solutions to scaling issues
+## Possible solutions to scaling Issues
 
-It's difficult to pin down exactly _how_ to fix a scaling issue. We have some recommendations and workarounds that _may_ work for your application.
+It's difficult to pin down exactly _how_ to fix a scaling Issue. We have some recommendations and workarounds that _may_ work for your application.
 
-Note: the application of these techniques should be considered analogous to applying a bandage. A bandage solves the underlying issue, but at some indeterminate point in the future the underlying issue may be healed! In much the same way--treat these techniques as temporary and re-visit in the future if underlying scaling issues in Gatsby have since been resolved.
+Note: the application of these techniques should be considered analogous to applying a bandage. A bandage solves the underlying Issue, but at some indeterminate point in the future the underlying Issue may be healed! In much the same way--treat these techniques as temporary and re-visit in the future if underlying scaling Issues in Gatsby have since been resolved.
 
 ### `GATSBY_DB_NODES`
 
-In preparation for future versions of Gatsby, we've enabled **experimental** support for a different mechanism for the persistence of nodes: [Loki](https://www.npmjs.com/package/lokijs). It's challenging to assess whether this could lead to unforeseen issues without breaking changes, so we've exposed it behind a flag while we continue to assess the impact to Gatsby applications.
+In preparation for future versions of Gatsby, we've enabled **experimental** support for a different mechanism for the persistence of nodes: [Loki](https://www.npmjs.com/package/lokijs). It's challenging to assess whether this could lead to unforeseen Issues without breaking changes, so we've exposed it behind a flag while we continue to assess the impact to Gatsby applications.
 
-Loki allows us to opt-in to possibly more performant internal operations and it _may_ resolve your scaling issues. If it does--please let us know! To opt-in to this experimental feature:
+Loki allows us to opt-in to possibly more performant internal operations and it _may_ resolve your scaling Issues. If it does--please let us know! To opt-in to this experimental feature:
 
 ```json
 {

@@ -17,7 +17,7 @@ Node.js は JavaScript のランタイムで、Google Chrome でも同様のエ�
 
 Node.js をインストールすると、JavaScript を[コマンドライン](/docs/glossary#command-line)から実行できます。コマンドラインで `node` と入力すると Node.js のシェルが立ち上がります。スクリプトを実行するには JavaScript ファイルへのパスを含めて入力します。例： `node /Users/gatsbyfan/hello-world.js`
 
-Gatsby を使用する前にまず、[Node.js をインストール](/tutorial/part-zero/#-install-nodejs-and-npm)する必要があります。
+Gatsby を使用する前にまず、[Node.js をインストール](/tutorial/part-zero/#install-nodejs-for-your-appropriate-operating-system)する必要があります。
 
 Node.js をインストールすると、Node.js の **パッケージマネージャー** である [npm](/docs/glossary#npm) もあわせてインストールされます。パッケージマネージャーとはモジュールやパッケージをあなたのプロジェクトにインストールしたり更新したりするための特別なソフトウェアです。
 

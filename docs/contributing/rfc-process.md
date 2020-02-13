@@ -5,7 +5,7 @@ title: RFC process
 ## What is the RFC process?
 
 Many changes, including bug fixes and documentation improvements can be
-implemented and reviewed via the normal GitHub pull request workflow.
+implemented and reviewed via the normal GitHub Pull Request workflow.
 
 Some changes, however, are "substantial", and we ask that these be put through
 a bit of a design process and produce a consensus among the Gatsby core team.
@@ -64,7 +64,7 @@ Gatsby.
   present convincing motivation, demonstrate understanding of the impact of the
   design, or are disingenuous about the drawbacks or alternatives tend to be
   poorly-received**.
-- Submit a pull request. As a pull request the RFC will receive design
+- Submit a Pull Request. As a Pull Request the RFC will receive design
   feedback from the larger community, and the author should be prepared to revise
   it in response.
 - Build consensus and integrate feedback. RFCs that have broad support
@@ -74,20 +74,20 @@ Gatsby.
   for inclusion in Gatsby.
 - RFCs that are candidates for inclusion in Gatsby will enter a "final comment
   period" lasting 3 calendar days. The beginning of this period will be signaled
-  with a comment and tag on the RFCs pull request.
+  with a comment and tag on the RFCs Pull Request.
 - An RFC can be modified based upon feedback from the team and community.
   Significant modifications may trigger a new final comment period.
 - An RFC may be rejected by the team after public discussion has settled
   and comments have been made summarizing the rationale for rejection. A member
-  of the team should then close the RFCs associated pull request.
+  of the team should then close the RFCs associated Pull Request.
 - An RFC may be accepted at the close of its final comment period. A team
-  member will merge the RFCs associated pull request, at which point the RFC will
+  member will merge the RFCs associated Pull Request, at which point the RFC will
   become 'active'.
 
 ## The RFC life-cycle
 
 Once an RFC becomes active, then authors may implement it and submit the
-feature as a pull request to the Gatsby repo. Becoming 'active' is not a rubber
+feature as a Pull Request to the Gatsby repo. Becoming 'active' is not a rubber
 stamp, and in particular still does not mean the feature will ultimately be
 merged; it does mean that the core team has agreed to it in principle and are
 amenable to merging it.
@@ -101,7 +101,7 @@ each RFC in a manner that it will reflect the final design of the feature; but
 the nature of the process means that we cannot expect every merged RFC to
 actually reflect what the end result will be at the time of the next major
 release; therefore we try to keep each RFC document somewhat in sync with the
-language feature as planned, tracking such changes via followup pull requests
+language feature as planned, tracking such changes via followup Pull Requests
 to the document.
 
 ## Implementing an RFC
@@ -112,11 +112,11 @@ review after the RFC has been accepted.
 
 If you are interested in working on the implementation for an 'active' RFC, but
 cannot determine if someone else is already working on it, feel free to ask
-(e.g. by leaving a comment on the associated issue).
+(e.g. by leaving a comment on the associated Issue).
 
 ## Reviewing RFCs
 
-Each week the team will attempt to review some set of open RFC pull requests.
+Each week the team will attempt to review some set of open RFC Pull Requests.
 
 We try to make sure that any RFC that we accept is accepted at the weekly team
 meeting. Every accepted feature should have a core team champion, who will
