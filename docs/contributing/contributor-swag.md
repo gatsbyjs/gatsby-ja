@@ -1,26 +1,26 @@
 ---
-title: Free Swag for Gatsby Contributors!
+title: Gatsby 貢献者への無料の景品！
 ---
 
-Gatsby relies on contributors from the open source community, and we want to make sure you know how much it means to us that you’re willing to put time and effort into [contributing to Gatsby](/contributing/how-to-contribute/).
+Gatsby はオープンソースコミュニティーの貢献者に依存しています。[Gatsby への貢献](/contributing/how-to-contribute/)に時間と労力を費やすことが、私たちにとってどれだけ意味があるのかを確認したいと思います。
 
-To show our appreciation, _**everyone who contributes to Gatsby is eligible to receive free swag!**_
+感謝の証として、 _**Gatsby に貢献した全ての人が無料の景品を受け取ることができます！**_
 
-![Gatsby contributors wearing swag.](./images/gatsby-swag.jpg)
+![Gatsby の貢献者が景品を着てます。](./images/gatsby-swag.jpg)
 
-### How to claim your free swag
+### 無料の景品を受け取る方法
 
-If you contribute to the Gatsby organization on GitHub, you can claim your swag by [logging into the Gatsby Store](https://store.gatsbyjs.org/) and requesting a discount code. With five or more contributions, you can claim your _**Level 2**_ swag.
+GitHub で Gatsby 組織に貢献した場合は [Gatsby Store にログイン](https://store.gatsbyjs.org/) して、割引コードを要求することで景品を受け取れます。5 回以上貢献することで _**レベル２**_ の景品を受け取ることもできます。
 
-If you’ve contributed in other ways, such as giving talks about Gatsby, teaching others to use it, writing Gatsby articles/tutorials, participating in a Gatsby research project, or any other way, please email <mailto:marketing@gatsbyjs.com> or [tweet at Gatsby on Twitter](https://twitter.com/gatsbyjs) to claim your swag.
+別の方法で貢献した場合は <mailto:marketing@gatsbyjs.com> にメールするか、[Twitter で Gatsby にツイート](https://twitter.com/gatsbyjs)して景品を受け取りましょう。例えば Gatsby について講演したり、Gatsby の使い方を他の人に教えたり、Gatsby の記事／チュートリアルを書いたり、Gatsby の研究プロジェクトへ参加したり、またはその他の方法で貢献した場合です。
 
-### Details about free swag
+### 無料の景品の詳細
 
-- We will send one item from our [swag store](https://store.gatsbyjs.org/) per swag tier
-- Tier 1 swag includes most items \$10 and under
-- Tier 2 swag includes most items \$26 and under
-- Not all items are eligible due to high cost to create the swag. We’ll make it clear which items are not eligible
-- There’s a limit of one free swag item per swag tier
-- Shipping is free worldwide
+- [景品ストア](https://store.gatsbyjs.org/) から景品レベルごとに 1 つのアイテムを送ります。
+- レベル 1 の景品には、10 ドル以下のほとんどのアイテムが含まれています。
+- レベル 2 の景品には、26 ドル以下のほとんどのアイテムが含まれています。
+- 景品を作成するのに費用がかかるため、すべてのアイテムが対象となるわけではありません。どのアイテムが対象外なのかを明確にします。
+- 無料で受け取ることができるのは、景品レベルごとに 1 つという制限があります。
+- 世界中どこでも送料無料です。
 
-> **NOTE:** Worldwide free shipping is a pilot program. If shipping costs get out of control, we may need to adjust this policy in the future.
+> **注意：** 世界中への送料無料は試験的なプログラムです。送料が手に負えなくなった場合は、このポリシーを調整する必要があります。
