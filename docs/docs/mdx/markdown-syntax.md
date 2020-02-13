@@ -76,13 +76,13 @@ Markdown は Gatsby でウェブサイトにページやポストを書くため
 HTML では下記のように表現されます。
 
 - Gatsby
-  - docs
+  - ドキュメント
 
 * Gatsby
-  - docs
+  - ドキュメント
 
 - Gatsby
-  - docs
+  - ドキュメント
 
 ### 番号付き箇条書き
 
