@@ -60,7 +60,7 @@ gatsby new gatsby-site https://github.com/gatsbyjs/gatsby-starter-default
 
 <http://localhost:8000/___graphql>
 
-このページでは新しいコンテンツ API を試すことができるインターフェイスが表示されます。
+このページには新しいコンテンツ API を試すためのインターフェースが表示されます。
 
 このクエリーを実行してください。
 
