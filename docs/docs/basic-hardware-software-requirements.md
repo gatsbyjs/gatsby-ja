@@ -1,7 +1,7 @@
 ---
-title: Basic Hardware and Software Requirements
+title: ハードウェアおよびソフトウェアの基本要件
 ---
 
-This is a stub. Help our community expand it.
+このドキュメントは書きかけです。私たちのコミュニティーの発展を手伝ってください。
 
-Please use the [Gatsby Style Guide](/contributing/gatsby-style-guide/) to ensure your pull request gets accepted.
+あなたの PullRequest が承認されるためにも[翻訳スタイルガイド](/contributing/gatsby-style-guide/) を一読してください。
