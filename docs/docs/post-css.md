@@ -42,7 +42,7 @@ import "./styles.css"
 
 ### CSS modules と併用する
 
-CSS モジュールを使用するための追加設定は不要です。拡張子に `.module` を追加するだけです。例：`App.css -> App.module.css` 。 module 拡張子を持つファイルは CSS モジュールとして処理されます。
+CSS モジュールを使用するための追加設定は不要です。拡張子に `.module` を追加するだけです。例：`App.css -> App.module.css` 。module 拡張子を持つファイルは CSS モジュールとして処理されます。
 
 ### PostCSS プラグイン
 
