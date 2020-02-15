@@ -75,7 +75,7 @@ SSR およびクライアントサイドライブラリをサポートする解�
 
 一部のパッケージは、`window` もしくは、別のブラウザグローバルが定義されることを期待します。それらのパッケージは、パッチを適用する必要があります。
 
-[HTML ビルドのデバッグ](/docs/debugging-html-builds/#fixing-third-party-modules) でそれらのパッケージにパッチを適用する方法を学べます。
+[HTML ビルドのデバッグ](/docs/debugging-html-builds/#fixing-third-party-modules)でそれらのパッケージにパッチを適用する方法を学べます。
 
 ### サーバサイドレンダリングなしのコンポーネント
 
