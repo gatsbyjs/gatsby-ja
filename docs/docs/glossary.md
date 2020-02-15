@@ -3,13 +3,7 @@ title: 用語集
 disableTableOfContents: true
 ---
 
-<<<<<<< HEAD
-import HorizontalNavList from "../../www/src/components/horizontal-nav-list.js"
-
 Gatsby をはじめたばかりの時は、覚えるべき用語がたくさんあって大変でしょう。この用語集ではよく使われる用語の意味と、Gatsby のサイト上でどのように使われているかを説明します。
-=======
-When you're new to Gatsby there can be a lot of words to learn. This glossary aims to give you a 10,000-foot overview of common terms and what they mean for Gatsby sites.
->>>>>>> 79b09bc29f133961f3d7de0f36a25ff727e6c22a
 
 <HorizontalNavList
 items={"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")}
@@ -158,15 +152,11 @@ Gatsby は [React](#react)、[GraphQL](#graphql)、モダンな [JavaScript](#ja
 
 [バックエンド](#backend)と[フロントエンド](#frontend)の両方を管理するのではなく、バックエンドのコンテンツ管理だけを行うための [CMS](#cms)。このセットアップは [Decoupled](#decoupled) とも呼ばれます。
 
-<<<<<<< HEAD
-### ホスティング (Hosting)
-=======
 ### [Headless WordPress](/docs/glossary/headless-wordpress)
 
-The practice of using JSON returned from the WordPress REST API as a [headless CMS](#headless-cms). It allows you to use WordPress to write and edit content that can be consumed by any client capable of parsing JSON.
+WordPress の REST API から返ってくる JSON を Headless CMS として活用する方法です。JSON をパースできるクライアントにて WordPress を使ってコンテンツの追加や編集を行うことを可能とします。
 
-### Hosting
->>>>>>> 79b09bc29f133961f3d7de0f36a25ff727e6c22a
+### ホスティング (Hosting)
 
 ホスティング・プロバイダーはあなたのウェブサイトやアプリのコピーを持ち、世の中に[公開](#public)ための場所を提供しているサービスです。 [Gatsby のサイトをホストできる主なホスティング・プロバイダ・サービス](/docs/deploying-and-hosting/)は Netlify, AWS, S3, Surge, Heroku 等があります。
 
