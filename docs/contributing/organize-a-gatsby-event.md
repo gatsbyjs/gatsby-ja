@@ -2,9 +2,7 @@
 title: Organize a Gatsby Event
 ---
 
-Interested in organizing a Gatsby event? We want to help build the Gatsby community in your area. If your event meets a few basic requirements listed below, you’ll be eligible to receive support from Gatsby such as Gatsby stickers, learning resources, up to \$300 for event costs, and more. Get started by requesting event support below.
-
-[Request Event Support](https://airtable.com/shrpwc99yogJm9sfI)
+Our communiy event support offerings and process are undergoing some changes. Check back soon to see our updated community event support opportunities!
 
 ## What constitutes a Gatsby event?
 
@@ -22,7 +20,7 @@ There are several ways Gatsby can support your event:
 
 ### A note on shipping
 
-We support US and international Gatsby events, but it’s not uncommon to run into issues with international shipping that can delay orders for weeks. Shipments to non-western countries in particular can often take well over a month to arrive. We’re working on finding international shipping partners, but until that’s sorted out, **if you need stickers shipped internationally, please make sure you’re submitting your event at least 6 weeks in advance**.
+We support US and international Gatsby events, but it’s not uncommon to run into Issues with international shipping that can delay orders for weeks. Shipments to non-western countries in particular can often take well over a month to arrive. We’re working on finding international shipping partners, but until that’s sorted out, **if you need stickers shipped internationally, please make sure you’re submitting your event at least 6 weeks in advance**.
 
 ## Requirements
 

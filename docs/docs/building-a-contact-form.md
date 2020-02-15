@@ -172,6 +172,6 @@ For an in-depth guide on running your own mail server, you can refer to [this aw
 
 ## Other resources
 
-If you have any issues or if you want to learn more about implementing your own contact form in Gatsby, check out this tutorial from Scott Tolinski:
+If you have any Issues or if you want to learn more about implementing your own contact form in Gatsby, check out this tutorial from Scott Tolinski:
 
 https://youtu.be/hF7xJhzrr9s
