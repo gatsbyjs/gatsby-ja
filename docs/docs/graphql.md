@@ -1,9 +1,9 @@
 ---
-title: GraphQL & Gatsby
+title: GraphQL と Gatsby
 overview: true
 ---
 
-When building with Gatsby, you access your data through a query language named [GraphQL](http://graphql.org/). GraphQL allows you to declaratively express your data needs. This is done with `queries`, queries are the representation of the data you need. A query looks like this:
+あなたが Gatsby でページを作る時、データには [GraphQL](http://graphql.org/) という問い合わせ言語を用いてアクセスします。GraphQL によって、あなたがデータに求めるものを宣言的に表現できます。GraphQL は `クエリ` と共に実行されます。クエリとは、あなたが必要なデータを表したものです。クエリはこのような見た目になります。
 
 ```graphql
 {
@@ -15,7 +15,7 @@ When building with Gatsby, you access your data through a query language named [
 }
 ```
 
-Which returns this:
+このクエリは以下を返します。
 
 ```json
 {
@@ -27,8 +27,8 @@ Which returns this:
 }
 ```
 
-Notice how the query signature exactly matches the returned JSON signature. This is possible because in GraphQL, you query against a `schema` that is the representation of your available data. Don't worry about where the schema comes from right now, Gatsby takes care of organizing all of your data for you and making it discoverable with a tool called GraphiQL. GraphiQL is a UI that lets you 1) run queries against your data in the browser, and 2) dig into the structure of data available to you through a data type explorer.
+クエリで書いた情報と返ってきた JSON が全く同じ形式であることに気づいたでしょうか。GraphQL では、あなたがアクセスできるデータを表現した `スキーマ` というものに対してクエリを送るため、これが可能となります。今のところはスキーマがどこから来るのか気にしなくても大丈夫です。Gatsby はあなたのために全てのデータをまとめて面倒を見てくれますし、また Gatsby は、GraphiQL と呼ばれるツールによってあなたのデータを発見可能なものにします。GraphiQL とは、あなたに、1) ブラウザー内でデータに向けてクエリを実行させてくれる、 2) あなたが利用可能なデータの構造をデータタイプの探索を通して調べてくれる UI です。
 
-If you want to know more about GraphQL, you can read more about [why Gatsby uses it](/docs/why-gatsby-uses-graphql/) and check out this [conceptual guide](/docs/querying-with-graphql/) on querying data with GraphQL.
+もしあなたがもっと GraphQL について学びたいのなら、[なぜ Gatsby は GraphQL を使用しているか](/docs/why-gatsby-uses-graphql/)でさらに学ぶことができます。また、GraphQL を用いたクエリについては、[コンセプチュアルガイド](/docs/querying-with-graphql/)を参照してください。
 
 <GuideList slug={props.slug} />
