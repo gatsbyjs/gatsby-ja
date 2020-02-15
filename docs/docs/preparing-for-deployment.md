@@ -17,7 +17,7 @@ npm install --global gatsby-cli
 gatsby new your-new-project
 ```
 
-最後に新しいディレクトリに移動します。
+最後に新しいディレクトリーへ移動します。
 
 ```shell
 cd your-new-project
@@ -36,7 +36,7 @@ gatsby build
 ## パスのプレフィックスを追加する
 
 もし、あなたが特定のパスにデプロイしたい場合、[パスの接頭辞を追加する](/docs/path-prefix)を読んでください。
-（例）`example.com/` の代わりに `example.com/blog/` にデプロイしたい
+（例）`example.com/` の代わりに `example.com/blog/` へデプロイしたい。
 
 ## ホスティングサービスへデプロイする
 
