@@ -254,7 +254,7 @@ GATSBY_GRAPHQL_IDE=playground gatsby develop
 
 > **ヒント:** このコマンドのうち、 `GATSBY_GRAPHQL_IDE=playground` 部分はオプションです。 このオプションを追加すると、GraphQL を探索するための古いインターフェースである GraphiQL の代わりに GraphQL Playground を有効にできます。
 
-右側の [ドキュメント] タブを使えば、利用可能なデータスキーマを確認できます。
+右側の「ドキュメント」タブを使えば、利用可能なデータスキーマを確認できます。
 
 利用可能なオプションの 1 つは `allProductsJson` で、これにはいくつかのノードを持つエッジが含まれます。
 
