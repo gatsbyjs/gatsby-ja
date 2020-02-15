@@ -45,7 +45,7 @@ exports.createPages = ({ actions: { createPage } }) => {
 }
 ```
 
-`gatsby develop` コマンドを実行すると、`localhost:8000/no-data/` では次のように表示されます。
+`gatsby develop` コマンドを実行すると、`http://localhost:8000/no-data/` では次のように表示されます。
 
 ![１つ前のコードスニペットで生成されたページのスクリーンショット](./images/why-gql-no-data.png)
 
