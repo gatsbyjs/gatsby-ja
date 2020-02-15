@@ -287,7 +287,7 @@ GraphQL Playground の左側のパネルにこのクエリーを入力して上�
   lessonTitle="Create Pages in Gatsby Using GraphQL"
 />
 
-`gatsby-node.js` では、先ほど書いた GraphQL クエリーを 使用してページを生成できます。
+`gatsby-node.js` では、先ほど書いた GraphQL クエリーを使用してページを生成できます。
 
 ```js:title=gatsby-node.js
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
