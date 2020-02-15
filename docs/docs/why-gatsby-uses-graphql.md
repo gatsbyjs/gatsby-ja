@@ -376,7 +376,7 @@ export default Product
 3. [GraphQL フラグメント](/packages/gatsby-image/#fragments) を使用して、最適化された画像を作成するために必要なすべてのデータを指定したクエリーを作成します。なお、GraphQL Playground では GraphQL フラグメントは動作しません。
 4. `img` タグは、`Image` という名前の `gatsby-image` コンポーネントと交換されました。`src` 属性の代わりに、最適化された画像データを持つオブジェクトを受け入れます。
 
-このファイルを保存し、`gatsby develop` コマンドを実行して、`localhost:8000/gql/purple-hat/` を開いてみましょう。
+このファイルを保存し、`gatsby develop` コマンドを実行して、`http://localhost:8000/gql/purple-hat/` を開いてみましょう。
 
 ![紫色の帽子をかぶった猫の遅延読み込み画像](./images/why-gql-images.gif)
 
