@@ -16,11 +16,7 @@ GraphQL で画像をクエリーすると、画像のデータにアクセスで
 - [`gatsby-plugin-sharp`](/packages/gatsby-plugin-sharp) は Gatsby プラグインと Sharp 間の連携を強化します。
 - [`gatsby-transformer-sharp`](/packages/gatsby-transformer-sharp/) を利用すると、クエリーによって適切なサイズと解像度を持つ複数の画像を生成できるようになります。
 
-<<<<<<< HEAD
 最終的な画像が固定サイズの場合、その画像について複数の解像度を持つように最適化されます。レスポンシブである場合、つまりコンテナまたはページに合わせて画像が伸縮するような場合、ひとつの画像ごとに複数のサイズを持つように最適化されます。[詳細については、Gatsby Image のドキュメント](/packages/gatsby-image/#two-types-of-responsive-images)を参照してください。
-=======
-If the final image is of a fixed size, optimization relies on having multiple resolutions of the image. If it is responsive, meaning it stretches to fill a container or page, optimization relies on having different sizes of the same image. See the [Gatsby Image documentation for more information](/packages/gatsby-image/#two-types-of-responsive-images).
->>>>>>> 79b09bc29f133961f3d7de0f36a25ff727e6c22a
 
 また、クエリーに引数を指定することで、正確な寸法や、最小・最大寸法を指定できます。[全てのオプションについては、Gatsby Image のドキュメント](/packages/gatsby-image/#two-types-of-responsive-images)を参照してください。
 
