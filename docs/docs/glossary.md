@@ -154,7 +154,7 @@ Gatsby は [React](#react)、[GraphQL](#graphql)、モダンな [JavaScript](#ja
 
 ### [Headless WordPress](/docs/glossary/headless-wordpress)
 
-WordPress の REST API から返ってくる JSON を Headless CMS として活用する方法です。JSON をパースできるクライアントにて WordPress を使ってコンテンツの追加や編集を行うことを可能とします。
+WordPress の REST API から返ってくる JSON を [Headless CMS](#headless-cms) として活用する方法です。JSON をパースできるクライアントにて WordPress を使ってコンテンツの追加や編集を行うことを可能とします。
 
 ### ホスティング (Hosting)
 
@@ -308,9 +308,9 @@ Gatsby はあなたのサイトを静的に[ビルド](#build)し、コマンド
 
 このサイトでは、他に Gatsby のプロジェクトで用意される `/static` フォルダーのことを指します。これは、[ビルド時](#build)に `/public` フォルダーへと自動的にコピーされるフォルダーのことです。Gatsby によって変換する必要はない一方で [public](#public) フォルダーに入れる必要があるファイル群を入れるフォルダーです。
 
-### [Static Site Generator](/docs/glossary/static-site-generator)
+### [静的サイトジェネレーター(Static Site Generator)](/docs/glossary/static-site-generator)
 
-A software application that creates HTML pages from templates or [components](#component) and a given content source.
+テンプレートや[コンポーネント](#component)とコンテンツを使って HTML のページを作成するためのソフトウェアです。
 
 ## T
 

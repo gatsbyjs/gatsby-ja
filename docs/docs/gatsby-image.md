@@ -1,29 +1,29 @@
 ---
-title: Gatsby Image API
+title: Gatsby の画像 API
 ---
 
-Part of what makes Gatsby sites so fast is its recommended approach to handling images. `gatsby-image` is a React component designed to work seamlessly with Gatsby’s [native image processing](https://image-processing.gatsbyjs.org/) capabilities powered by GraphQL and [gatsby-plugin-sharp](/packages/gatsby-plugin-sharp/) to easily and completely optimize image loading for your sites.
+Gatsby のサイトが非常に高速である理由のひとつに、私たちの推奨する画像処理手法があります。`gatsby-image` は、GaraphQL とサイトの画像読み込みを簡単かつ完璧に最適化する [gatsby-plugin-sharp](/packages/gatsby-plugin-sharp/) によって、Gatsby の[ネイティブ画像処理](https://image-processing.gatsbyjs.org/)機能がシームレスに動作するように設計された React コンポーネントです。
 
-> _Note: gatsby-image is **not** a drop-in replacement for `<img />`. It’s optimized for responsive fixed width/height images and images that stretch the full-width of a container. There are also other ways to [work with images](/docs/images-and-files/) in Gatsby that don't require GraphQL._
+> _ヒント: gatsby-image は `<img />` の互換では**ありません**。gatsby-image はレスポンシブな固定の幅/高さを持つ画像とコンテナの幅に合わせて伸縮する画像に最適化されています。GraphQL を使用せずに Gatsby で[画像を扱う](/docs/images-and-files/)他の方法もあります。_
 
-Demo: [https://using-gatsby-image.gatsbyjs.org/](https://using-gatsby-image.gatsbyjs.org/)
+デモ：[https://using-gatsby-image.gatsbyjs.org/](https://using-gatsby-image.gatsbyjs.org/)
 
-## In this doc
+## このドキュメントで取り扱うこと
 
-- [Setting up Gatsby Image](#setting-up-gatsby-image)
-- [Types of images with gatsby-image](#types-of-images-with-gatsby-image)
-  - [Fixed images and parameters](#images-with-a-fixed-width-and-height)
-  - [Fluid images and parameters](#images-that-stretch-across-a-fluid-container)
-  - [Resized images](#resized-images)
-  - [Shared query parameters](#shared-query-parameters)
-- [Image query fragments](#image-query-fragments)
-- [Gatsby Image props](#gatsby-image-props)
+- [Gatsby Image を始める準備](#setting-up-gatsby-image)
+- [gatsby-image での画像タイプ](#types-of-images-with-gatsby-image)
+  - [固定画像のクエリーパラメーター](#images-with-a-fixed-width-and-height)
+  - [可変画像のクエリーパラメーター](#images-that-stretch-across-a-fluid-container)
+  - [サイズ変更した画像](#resized-images)
+  - [共用クエリーパラメーター](#shared-query-parameters)
+- [画像のクエリーフラグメント](#image-query-fragments)
+- [Gatsby Image プロパティ](#gatsby-image-props)
 
-## Setting up Gatsby Image
+## Gatsby Image を始める準備
 
-To start working with Gatsby Image, install the `gatsby-image` package along with necessary plugins `gatsby-transformer-sharp` and `gatsby-plugin-sharp`. Reference the packages in your `gatsby-config.js` file. You can also provide additional options to [`gatsby-plugin-sharp`](/packages/gatsby-plugin-sharp/) in your config file.
+Gatsby Image を使用するには、`gatsby-image` と共に必要なプラグインである `gatsby-transformer-sharp` と `gatsby-plugin-sharp` をインストールします。あなたの `gatsby-config.js` ファイル内のパッケージを参照してください。また、この設定ファイルで [`gatsby-plugin-sharp`](/packages/gatsby-plugin-sharp/) にオプションを追加することもできます。
 
-A common way to source images is to install and use `gatsby-source-filesystem` to connect your local files, but other source plugins can be used as well, such as `gatsby-source-contentful`, `gatsby-source-datocms` and `gatsby-source-sanity`.
+画像を使うには、`gatsby-source-filesystem` を使用してローカルファイルにアクセスする方法が一般的ですが、`gatsby-source-contentful` や `gatsby-source-datocms`、`gatsby-source-sanity` など他のソースプラグインも使用できます。
 
 ```bash
 npm install --save gatsby-image gatsby-plugin-sharp gatsby-transformer-sharp
@@ -44,27 +44,27 @@ module.exports = {
 }
 ```
 
-_For in-depth install instructions, check out the docs on [Using Gatsby Image](/docs/using-gatsby-image/)._
+_詳細なインストール手順については [Using Gatsby Image](/docs/using-gatsby-image/) をご覧ください。_
 
-### Gatsby image starts with a query
+### クエリーで始める Gatsby image
 
-To feed file data in to Gatsby Image, set up a [GraphQL query](/docs/graphql-reference/) and either pass it into a component as props or write it directly in the component. One technique is to leverage the [`useStaticQuery`](/docs/use-static-query/) hook.
+Gatsby Image にファイルデータを送るには [GraphQL クエリー](/docs/graphql-reference/)を設定して、それをコンポーネントにプロパティとして渡すか、それをコンポーネントに直接書き込みます。1 つのやり方としては、[`useStaticQuery`](/docs/use-static-query/) フックを活用する方法があります。
 
-Common GraphQL queries for sourcing images include `file` from [gatsby-source-filesystem](/packages/gatsby-source-filesystem/), and both `imageSharp` and `allImageSharp` from [gatsby-plugin-sharp](/packages/gatsby-plugin-sharp/), but ultimately the options available to you will depend on your content sources.
+画像取得のための一般的な GraphQL クエリーは、[gatsby-source-filesystem](/packages/gatsby-source-filesystem/) の `file` と、[gatsby-plugin-sharp](/packages/gatsby-plugin-sharp/) の `imageSharp` と `allImageSharp` の両方が挙げられますが、最終的に利用可能な選択肢は元データによって決まります。
 
-> Note: you can also use [GraphQL aliases](/docs/graphql-reference/#aliasing) for querying multiple images of the same type.
+> ヒント: あなたは同じタイプの複数画像をクエリーするために [GraphQL エイリアス](/docs/graphql-reference/#aliasing)も使用できます。
 
-See below for code examples of queries and how to use them in components.
+クエリーの例とコンポーネントでの使い方については、以下をご覧ください。
 
-## Types of images with `gatsby-image`
+## `gatsby-image` での画像タイプ
 
-Gatsby image objects are created through GraphQL methods. There are two types of image optimizations available, _fixed_ and _fluid_, which create multiple image sizes (1x, 1.5x, etc.). There is also the _resize_ method, which returns a single image.
+Gatsby image オブジェクトは GraphQL メソッドを介して作成されます。画像最適化には _固定_ と _可変_ の 2 種類があり、複数サイズの画像（1x、1.5x など）を作成します。単一の画像を作成する _リサイズ_ メソッドもあります。
 
-### Images with a _fixed_ width and height
+### _固定_ の幅と高さを持つ画像
 
-Automatically create images for different resolutions at a set width or height — Gatsby creates responsive images for 1x, 1.5x, and 2x pixel densities using the `<picture>` element.
+設定した幅もしくは高さでいろいろな解像度の画像を自動的に作成します。Gatsby は 1x、1.5x、そして 2x のピクセル密度に合わせたレスポンシブ画像を作成し、それらを `<picture>` 要素で使用します。
 
-Once you've queried for a `fixed` image to retrieve its data, you can pass that data into the `Img` component:
+`fixed` 画像のクエリーで画像のデータを取得したら、そのデータを `Img` コンポーネントに渡すことができます。
 
 ```jsx
 import { useStaticQuery, graphql } from "gatsby"
@@ -75,8 +75,8 @@ export default () => {
     query {
       file(relativePath: { eq: "images/default.jpg" }) {
         childImageSharp {
-          # Specify a fixed image and fragment.
-          # The default width is 400 pixels
+          # 固定画像とフラグメントを指定します。
+          # デフォルトの幅は 400 ピクセルです。
           // highlight-start
           fixed {
             ...GatsbyImageSharpFixed
@@ -98,15 +98,15 @@ export default () => {
 }
 ```
 
-#### Fixed image query parameters
+#### 固定画像のクエリーパラメーター
 
-In a query, you can specify options for fixed images.
+クエリーでは、固定画像のオプションを指定できます。
 
-- `width` (int, default: 400)
+- `width` (int, 初期値：400)
 - `height` (int)
-- `quality` (int, default: 50)
+- `quality` (int, 初期値：50)
 
-#### Returns
+#### 返り値
 
 - `base64` (string)
 - `aspectRatio` (float)
@@ -115,7 +115,7 @@ In a query, you can specify options for fixed images.
 - `src` (string)
 - `srcSet` (string)
 
-This is where fragments like `GatsbyImageSharpFixed` come in handy, as they'll return all the above items in one line without having to type them all out:
+ここでは、クエリーにすべての項目を入力しなくても上記の項目を 1 行ですべて返してくれる `GatsbyImageSharpFixed` のようなフラグメントが便利です。
 
 ```graphql
 file(relativePath: { eq: "images/default.jpg" }) {
@@ -129,13 +129,13 @@ file(relativePath: { eq: "images/default.jpg" }) {
 }
 ```
 
-Read more in the [gatsby-plugin-sharp](/packages/gatsby-plugin-sharp/?=#fixed) README.
+詳細については、[gatsby-plugin-sharp](/packages/gatsby-plugin-sharp/?=#fixed) をご覧ください。
 
-### Images that stretch across a _fluid_ container
+### _可変_ コンテナに合わせて伸縮する画像
 
-Create flexible sizes for an image that stretches to fill its container. E.g. for a container whose max width is 800px, the automatic sizes would be: 200px, 400px, 800px, 1200px and 1600px – enough to provide close to the optimal image size for every device size / screen resolution. If you want more control over which sizes are output you can use the `srcSetBreakpoints` parameter.
+1 つの画像からコンテナに合わせて伸縮するフレキシブルな画像を作成します。例えば最大幅が 800px のコンテナがあるとき、自動生成されるサイズはすべてのデバイスサイズや画面解像度に最適なサイズを提供するために 200px、400px、800px、1200px、そして 1600px となります。もしあなたが出力するサイズをさらに操作したい場合は、`srcSetBreakpoints` パラメーターを使うことができます。
 
-Once you've queried for a `fluid` image to retrieve its data, you can pass that data into the `Img` component:
+`fluid` 画像のクエリーで画像のデータを取得したら、そのデータを `Img` コンポーネントに渡すことができます。
 
 ```jsx
 import { useStaticQuery, graphql } from "gatsby"
@@ -146,8 +146,8 @@ export default () => {
     query {
       file(relativePath: { eq: "images/default.jpg" }) {
         childImageSharp {
-          # Specify a fluid image and fragment
-          # The default maxWidth is 800 pixels
+          # 可変画像とフラグメントを指定します。
+          # デフォルトの幅は 800 ピクセルです。
           // highlight-start
           fluid {
             ...GatsbyImageSharpFluid
@@ -169,18 +169,18 @@ export default () => {
 }
 ```
 
-#### Fluid image query parameters
+#### 可変画像のクエリーパラメーター
 
-In a query, you can specify options for fluid images.
+クエリーでは、可変画像のオプションを指定できます。
 
-- `maxWidth` (int, default: 800)
+- `maxWidth` (int, 初期値：800)
 - `maxHeight`(int)
-- `quality` (int, default: 50)
-- `srcSetBreakpoints` (array of int, default: `[]`)
-- `fit` (string, default: `[sharp.fit.cover][6]`)
-- `background` (string, default: `rgba(0,0,0,1)`)
+- `quality` (int, 初期値：50)
+- `srcSetBreakpoints` (array of int, 初期値：`[]`)
+- `fit` (string, 初期値：`[sharp.fit.cover][6]`)
+- `background` (string, 初期値：`rgba(0,0,0,1)`)
 
-#### Returns
+#### 返り値
 
 - `base64` (string)
 - `src` (string)
@@ -190,7 +190,7 @@ In a query, you can specify options for fluid images.
 - `src` (string)
 - `srcSet` (string)
 
-This is where fragments like `GatsbyImageSharpFluid` come in handy, as they'll return all the above items in one line without having to type them all out:
+ここでは、クエリーにすべての項目を入力しなくても上記の項目を 1 行ですべて返してくれる `GatsbyImageSharpFluid` のようなフラグメントが便利です。
 
 ```graphql
 file(relativePath: { eq: "images/default.jpg" }) {
@@ -204,24 +204,24 @@ file(relativePath: { eq: "images/default.jpg" }) {
 }
 ```
 
-Read more in the [gatsby-plugin-sharp](/packages/gatsby-plugin-sharp/?=#fluid) README.
+詳細については、[gatsby-plugin-sharp](/packages/gatsby-plugin-sharp/?=#fluid) をご覧ください。
 
-### Resized images
+### サイズ変更した画像
 
-In addition to _fixed_ and _fluid_ images, the gatsby-image API allows you to call a `resize` method with `gatsby-plugin-sharp` to return a single image as opposed to multiple sizes. There are no default fragments available for the resize method.
+_固定_ 画像と _可変_ 画像に加えて、gatsby-image API では `gatsby-plugin-sharp` の `resize` メソッドを呼び出し、複数サイズではなく単一の画像を作成できます。リサイズメソッドで使用できるデフォルトのフラグメントはありません。
 
-#### Parameters
+#### パラメーター
 
-- `width` (int, default: 400)
+- `width` (int, 初期値：400)
 - `height` (int)
-- `quality` (int, default: 50)
-- `jpegProgressive` (bool, default: true)
-- `pngCompressionLevel` (int, default: 9)
-- `base64`(bool, default: false)
+- `quality` (int, 初期値：50)
+- `jpegProgressive` (bool, 初期値：true)
+- `pngCompressionLevel` (int, 初期値：9)
+- `base64`(bool, 初期値：false)
 
-#### Returns
+#### 返り値
 
-Resize returns an object with the following items:
+リサイズでは以下の項目をオブジェクトとして返します。
 
 - `src` (string)
 - `width` (int)
@@ -240,17 +240,17 @@ allImageSharp {
 }
 ```
 
-### Shared query parameters
+### 共用クエリーパラメーター
 
-In addition to `gatsby-plugin-sharp` settings in `gatsby-config.js`, there are additional query options that apply to both _fluid_ and _fixed_ images:
+`gatsby-config.js` 内の `gatsby-plugin-sharp` の設定に加えて、_固定_ と _可変_ の両方に適用できる追加のクエリーオプションがあります。
 
-- `grayscale` (bool, default: false)
-- `duotone` (bool|obj, default: false)
-- `toFormat` (string, default: \`\`)
-- `cropFocus` (string, default: `[sharp.strategy.attention][6]`)
-- `pngCompressionSpeed` (int, default: 4)
+- `grayscale` (bool, 初期値：false)
+- `duotone` (bool|obj, 初期値：false)
+- `toFormat` (string, 初期値：\`\`)
+- `cropFocus` (string, 初期値：`[sharp.strategy.attention][6]`)
+- `pngCompressionSpeed` (int, 初期値：4)
 
-Here's an example of using the `duotone` option with a fixed image:
+ここでは、`duotone` オプションを固定画像に適用してみます。
 
 ```graphql
 fixed(
@@ -265,11 +265,11 @@ fixed(
 <figure>
   <img alt="Jay Gatsby holding wine class in normal color and duotone." src="./images/duotone-before-after.png" />
   <figcaption>
-    Duotone | Before - After
+    デュオトーン | 適用前 - 適用後
   </figcaption>
 </figure>
 
-And an example of using the `grayscale` option with a fixed image:
+そして、`grayscale` オプションを固定画像に適用した例です。
 
 ```graphql
 fixed(
@@ -280,21 +280,21 @@ fixed(
 <figure>
   <img alt="Jay Gatsby holding wine class in normal color and duotone." src="./images/grayscale-before-after.png" />
   <figcaption>
-    Grayscale | Before - After
+    グレースケール | 適用前 - 適用後
   </figcaption>
 </figure>
 
-Read more in the [`gatsby-plugin-sharp`](/packages/gatsby-plugin-sharp) README.
+詳細については、[`gatsby-plugin-sharp`](/packages/gatsby-plugin-sharp) をご覧ください。
 
-## Image query fragments
+## 画像のクエリーフラグメント
 
-GraphQL includes a concept called "query fragments", which are a part of a query that can be reused. To ease building with `gatsby-image`, Gatsby image processing plugins which support `gatsby-image` ship with fragments which you can easily include in your queries.
+GraphQL には、「クエリーフラグメント」と呼ばれる考え方があり、これは再利用可能なクエリーの一部です。`gatsby-image` を使った構築を簡単にするため、`gatsby-image` をサポートする Gatsby 画像処理プラグインにはあなたがクエリーに簡単に含めることができるフラグメントが付属しています。
 
-> Note: using fragments in your queries depends on which data source(s) you have configured. Read more in the [gatsby-image](/packages/gatsby-image#fragments) README.
+> ヒント: クエリーでフラグメントを使用するかどうかはあなたが設定したデータソースによって異なります。詳しくは [gatsby-image](/packages/gatsby-image#fragments) をご覧ください。
 
-### Common fragments with `gatsby-transformer-sharp`
+### `gatsby-transformer-sharp` の共通フラグメント
 
-#### Fixed images
+#### 固定画像
 
 - `GatsbyImageSharpFixed`
 - `GatsbyImageSharpFixed_noBase64`
@@ -303,7 +303,7 @@ GraphQL includes a concept called "query fragments", which are a part of a query
 - `GatsbyImageSharpFixed_withWebp_noBase64`
 - `GatsbyImageSharpFixed_withWebp_tracedSVG`
 
-#### Fluid images
+#### 可変画像
 
 - `GatsbyImageSharpFluid`
 - `GatsbyImageSharpFluid_noBase64`
@@ -312,19 +312,19 @@ GraphQL includes a concept called "query fragments", which are a part of a query
 - `GatsbyImageSharpFluid_withWebp_noBase64`
 - `GatsbyImageSharpFluid_withWebp_tracedSVG`
 
-#### About `noBase64`
+#### `noBase64` について
 
-If you don't want to use the [blur-up effect](https://using-gatsby-image.gatsbyjs.org/blur-up/), choose the fragment with `noBase64` at the end.
+もしあなたが、[blur-up effect](https://using-gatsby-image.gatsbyjs.org/blur-up/)を使用したくない場合は、末尾に `noBase64` を含むフラグメントを選択してください。
 
-#### About `tracedSVG`
+#### `tracedSVG` について
 
-If you want to use the [traced placeholder SVGs](https://using-gatsby-image.gatsbyjs.org/traced-svg/), choose the fragment with `tracedSVG` at the end.
+もしあなたが、[traced placeholder SVGs](https://using-gatsby-image.gatsbyjs.org/traced-svg/) を使用したい場合は、末尾に `tracedSVG` を含むフラグメントを選択してください。
 
-#### About `withWebP`
+#### `withWebP` について
 
-If you want to automatically use [WebP images](https://developers.google.com/speed/webp/) when the browser supports the file format, use the `withWebp` fragments. If the browser doesn't support WebP, `gatsby-image` will fall back to the default image format.
+ブラウザが [WebP images](https://developers.google.com/speed/webp/) ファイル形式をサポートしているときに自動的に使用したい場合は、`withWebp` フラグメントを使用してください。もしブラウザが WebP をサポートしていない場合は、`gatsby-image` はデフォルトの画像形式にフォールバックします。
 
-Here's an example of using a non-default fragment from `gatsby-transformer-sharp`. Be sure to pick one that matches your desired image type (_fixed_ or _fluid_):
+これは `gatsby-transformer-sharp` のデフォルトではないフラグメントを使用する場合の例です。目的の画像タイプ(_固定_ または _可変_)に合うものを選択してください。
 
 ```graphql
 file(relativePath: { eq: "images/default.jpg" }) {
@@ -337,41 +337,41 @@ file(relativePath: { eq: "images/default.jpg" }) {
 }
 ```
 
-For more info on how these options work, check out the Gatsby Image demo: [https://using-gatsby-image.gatsbyjs.org/](https://using-gatsby-image.gatsbyjs.org/)
+これらのオプションについての詳細は、Gatsby image デモをご覧ください: [https://using-gatsby-image.gatsbyjs.org/](https://using-gatsby-image.gatsbyjs.org/)
 
-#### Additional plugin fragments
+#### 追加のプラグインフラグメント
 
-Additionally, plugins supporting `gatsby-image` currently include [gatsby-source-contentful](/packages/gatsby-source-contentful/), [gatsby-source-datocms](https://github.com/datocms/gatsby-source-datocms) and [gatsby-source-sanity](https://github.com/sanity-io/gatsby-source-sanity). See the [gatsby-image](/packages/gatsby-image/#fragments) README for more details.
+さらに、`gatsby-image` をサポートするプラグインは、現在 [gatsby-source-contentful](/packages/gatsby-source-contentful/) や、 [gatsby-source-datocms](https://github.com/datocms/gatsby-source-datocms)、[gatsby-source-sanity](https://github.com/sanity-io/gatsby-source-sanity) があります。詳細は [gatsby-image](/packages/gatsby-image/#fragments) をご覧ください。
 
-## Gatsby-image props
+## Gatsby-image プロパティ
 
-After you've made a query, you can pass additional options to the gatsby-image component.
+クエリーを作成した後、追加オプションを gatsby-image コンポーネントに渡すことができます。
 
-| Name                   | Type                | Description                                                                                                                   |
-| ---------------------- | ------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `fixed`                | `object`            | Data returned from the `fixed` query                                                                                          |
-| `fluid`                | `object`            | Data returned from the `fluid` query                                                                                          |
-| `fadeIn`               | `bool`              | Defaults to fading in the image on load                                                                                       |
-| `durationFadeIn`       | `number`            | fade-in duration is set up to 500ms by default                                                                                |
-| `title`                | `string`            | Passed to the rendered HTML `img` element                                                                                     |
-| `alt`                  | `string`            | Passed to the rendered HTML `img` element. Defaults to an empty string, e.g. `alt=""`                                         |
-| `crossOrigin`          | `string`            | Passed to the rendered HTML `img` element                                                                                     |
-| `className`            | `string` / `object` | Passed to the wrapper element. Object is needed to support Glamor's css prop                                                  |
-| `style`                | `object`            | Spread into the default styles of the wrapper element                                                                         |
-| `imgStyle`             | `object`            | Spread into the default styles of the actual `img` element                                                                    |
-| `placeholderStyle`     | `object`            | Spread into the default styles of the placeholder `img` element                                                               |
-| `placeholderClassName` | `string`            | A class that is passed to the placeholder `img` element                                                                       |
-| `backgroundColor`      | `string` / `bool`   | Set a colored background placeholder. If true, uses "lightgray" for the color. You can also pass in any valid color string.   |
-| `onLoad`               | `func`              | A callback that is called when the full-size image has loaded.                                                                |
-| `onStartLoad`          | `func`              | A callback that is called when the full-size image starts loading, it gets the parameter `{ wasCached: <boolean> }` provided. |
-| `onError`              | `func`              | A callback that is called when the image fails to load.                                                                       |
-| `Tag`                  | `string`            | Which HTML tag to use for wrapping elements. Defaults to `div`.                                                               |
-| `objectFit`            | `string`            | Passed to the `object-fit-images` polyfill when importing from `gatsby-image/withIEPolyfill`. Defaults to `cover`.            |
-| `objectPosition`       | `string`            | Passed to the `object-fit-images` polyfill when importing from `gatsby-image/withIEPolyfill`. Defaults to `50% 50%`.          |
-| `loading`              | `string`            | Set the browser's native lazy loading attribute. One of `lazy`, `eager` or `auto`. Defaults to `lazy`.                        |
-| `critical`             | `bool`              | Opt-out of lazy-loading behavior. Defaults to `false`. Deprecated, use `loading` instead.                                     |
+| 名前                   | タイプ              | 説明                                                                                                                                     |
+| ---------------------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `fixed`                | `object`            | `fixed` クエリーで返されるデータです。                                                                                                   |
+| `fluid`                | `object`            | `fluid` クエリーで返されるデータです。                                                                                                   |
+| `fadeIn`               | `bool`              | デフォルトでは画像読み込み時にフェードインします。                                                                                       |
+| `durationFadeIn`       | `number`            | デフォルトではフェードインは 500ms に設定されています。                                                                                  |
+| `title`                | `string`            | レンダリングされた `img` 要素に渡されます。                                                                                              |
+| `alt`                  | `string`            | レンダリングされた `img` 要素に渡されます。デフォルトでは空文字列です。例：`alt=""`                                                      |
+| `crossOrigin`          | `string`            | レンダリングされた `img` 要素に渡されます。                                                                                              |
+| `className`            | `string` / `object` | ラッパーする要素に渡されます。Glamor の CSS プロパティを使用するにはオブジェクトが必要です。                                             |
+| `style`                | `object`            | ラッパー要素のデフォルトスタイルに適用されます。                                                                                         |
+| `imgStyle`             | `object`            | 実際の `img` 要素のデフォルトスタイルに適用されます。                                                                                    |
+| `placeholderStyle`     | `object`            | `img` 要素のプレースホルダーのデフォルトスタイルに適用されます。                                                                         |
+| `placeholderClassName` | `string`            | `img` 要素のプレースホルダーに渡されるクラス名です。                                                                                     |
+| `backgroundColor`      | `string` / `bool`   | 色付き背景のプレースホルダーの設定です。true にすると、色に「ライトグレー」を使用します。有効な色文字列を渡すことができます。            |
+| `onLoad`               | `func`              | フルサイズの画像が読み込まれたときに呼び出されるコールバックです。                                                                       |
+| `onStartLoad`          | `func`              | フルサイズの画像の読み込みが開始されたときに呼び出されるコールバックで、指定された `{ wasCached: <boolean> }` パラメーターを取得します。 |
+| `onError`              | `func`              | 画像の読み込みに失敗した場合に呼び出されるコールバックです。                                                                             |
+| `Tag`                  | `string`            | ラッパー要素に使用される HTML タグです。デフォルトは `div` です。                                                                        |
+| `objectFit`            | `string`            | `gatsby-image/withIEPolyfill` からインポートすると渡される、 `object-fit-images` のポリフィルです。デフォルトは `cover` です。           |
+| `objectPosition`       | `string`            | `gatsby-image/withIEPolyfill` をインポートすると渡される `object-fit-images` のポリフィルです。デフォルトは `50% 50%` です。             |
+| `loading`              | `string`            | ブラウザの遅延読み込み属性を設定します。`lazy`、`eager`、`auto`のいずれかを設定できます。デフォルトは `lazy` です。                      |
+| `critical`             | `bool`              | 遅延読み込み動作のオプトアウトです。デフォルトは `false` です。この設定は非推奨ですので、代わりに `loading` を使用してください。         |
 
-Here are some usage examples:
+以下が使用例です。
 
 ```jsx
 <Img
@@ -381,14 +381,14 @@ Here are some usage examples:
   className="customImg"
   placeholderStyle={{ `backgroundColor`: `black` }}
   onLoad={() => {
-    // do loading stuff
+    // 読み込み中の処理
   }}
   onStartLoad={({ wasCached }) => {
-    // do stuff on start of loading
-    // optionally with the wasCached boolean parameter
+    // 読み込み開始時の処理
+    // オプションで wasCached (boolean) パラメータ
   }}
   onError={(error) => {
-    // do error stuff
+    // エラー時の処理
   }}
   Tag="custom-image"
   loading="eager"

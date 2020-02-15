@@ -333,9 +333,9 @@ exports.sourceNodes = ({ actions }) => {
 2. The `Event` type will implement the typical Gatsby `Node` interface.
 3. You'll use `@dontInfer`, because rather than Gatsby inferring fields, you'll be defining them explicitly.
 4. In addition to an `id` field, you'll create new fields for each data point associated with an event (name, location, startDate, endDate, url). _To read more detail about creating types, check out the [`createTypes` documentation](/docs/actions/#createTypes)_.
-5. You'll also create a `slug` field. You'll notice your event data doesn't include "slug" data. You'll define this in the next step.
+5. You'll also create a `slug` field. You'll notice your event data doesn't include "スラッグ" data. You'll define this in the next step.
 
-### Define resolvers for any custom fields (slug)
+### Define resolvers for any custom fields (スラッグ）
 
 Gatsby provides a `createResolvers` API hook. That gives you a function called `createResolvers`. Inside this function, you will set up a base path.
 
@@ -422,7 +422,7 @@ exports.createResolvers = ({ createResolvers }) => {
 }
 ```
 
-You'll define a helper, `slugify` to help generate the slugs:
+You'll define a helper, `slugify` to help generate the スラッグ s:
 
 ```javascript:title=gatsby-theme-events/gatsby-node.js
 exports.createResolvers = ({ createResolvers }) => {
@@ -486,7 +486,7 @@ Test that this is working by running `gatsby-theme-events` again:
 yarn workspace gatsby-theme-events develop
 ```
 
-If you query this time for `allEvent`, you'll see the `Event` data, including the new slugs:
+If you query this time for `allEvent`, you'll see the `Event` data, including the new スラッグ s:
 
 ![Successful execution of the previously described query, in the GraphiQL explorer](./images/building-a-theme-query-event-type.png)
 
@@ -512,7 +512,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 ```
 
 - You'll default the `basePath` to the root path (`"/"`)
-- Then you'll set up the call to the `createPage` action to create the a page at the base path.
+- Then you'll set up the call to the `createPage` action to create a page at the base path.
   - _Note that the component listed doesn't exist yet -- you'll create that shortly._
 
 ### Query for events
@@ -632,9 +632,9 @@ To test that the root path (`"/"`) and individual event pages are building succe
 yarn workspace gatsby-theme-events develop
 ```
 
-You should see the placeholder `events.js` component at [localhost:8000](http://localhost:8000/).
+You should see the placeholder `events.js` component at `http://localhost:8000/`.
 
-If you hit [http://localhost:8000/404](http://localhost:8000/404) (for example -- or any route that doesn't exist) you should see a listing of event pages, all building with the placeholder `event.js` component.
+If you hit `http://localhost:8000/404` (for example -- or any route that doesn't exist) you should see a listing of event pages, all building with the placeholder `event.js` component.
 
 ## Display sorted data with `useStaticQuery`
 
@@ -764,7 +764,7 @@ const EventsTemplate = () => {
 export default EventsTemplate
 ```
 
-To test that it's working, open up [localhost:8000](http://localhost:8000/) again. You should see the "Gatsby Events Theme" header from `<Layout>` component, and the stringified event data from the `<EventList>` component.
+To test that it's working, open up `http://localhost:8000/` again. You should see the "Gatsby Events Theme" header from `<Layout>` component, and the stringified event data from the `<EventList>` component.
 
 ![The root path view, with a header of "Gatsby Events Theme", and stringified JSON event data](./images/building-a-theme-events-page-data.png)
 
@@ -809,7 +809,7 @@ export default EventList
   - The date of the event
   - The location of the event
 
-Checking [localhost:8000](http://localhost:8000/) again, you should see the new markup:
+Checking `http://localhost:8000/` again, you should see the new markup:
 
 ![The events page, shown with markup defined](./images/building-a-theme-events-page-markup.png)
 
@@ -1081,13 +1081,13 @@ yarn workspace site develop
 Once this is running, you'll observe two things:
 
 1. An "events" directory has automatically been generated for you in `site/events`.
-2. If you hit [localhost:8000/404](http://localhost:8000/404) (or any other route that doesn't exist), you'll see that the site has created an `/events` page.
+2. If you hit `http://localhost:8000/404` (or any other route that doesn't exist), you'll see that the site has created an `/events` page.
 
 However, you don't have any event data in the site. Copy the `events.yml` file from `gatsby-theme-events/data` into `site/events`. Then, restart the dev server:
 
 ![Running the site, the basepath is now `/events`](./images/building-a-theme-changed-basepath.png)
 
-The events listing page will now be accessible at [http://localhost:8000/events](http://localhost:8000/events). Hitting [the root path](http://localhost:8000/) will return a 404.
+The events listing page will now be accessible at `http://localhost:8000/events`. Hitting `http://localhost:8000/` will return a 404.
 
 ## Make themes extendable with gatsby-plugin-theme-ui
 
@@ -1206,7 +1206,7 @@ export default theme
 
 To use the theme you've defined, you'll need to use component shadowing to override the default theme in `gatsby-plugin-theme-ui`.
 
-> 💡 "Component shadowing" is a mechanism to override default provided by a Gatsby theme. To dig deeper on component shadowing, check out [this blog post on the subject](/blog/2019-04-29-component-shadowing/).
+> 💡 "Component shadowing" is a mechanism to override the default rendering provided by a Gatsby theme. To dig deeper on component shadowing, check out [this blog post on the subject](/blog/2019-04-29-component-shadowing/).
 
 You'll use component shadowing to activate the custom theme defined in the previous step.
 

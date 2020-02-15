@@ -29,7 +29,7 @@ module.exports = {
 }
 ```
 
-Here's an example of how you could implement this plugin with Markdown, but for other sources, you will need a way to uniquely identify content--typically a URL or slug.
+Here's an example of how you could implement this plugin with Markdown, but for other sources, you will need a way to uniquely identify content--typically a URL or スラッグ。
 
 ```js:title=gatsby-node.js
 const { createFilePath } = require(`gatsby-source-filesystem`)
@@ -57,7 +57,7 @@ For basic setups with Markdown content like the [gatsby-starter-blog](https://gi
 Your content might not fit neatly into the blog-starter scenario, for various reasons like:
 
 - Your content isn't in Markdown so the plugin doesn't know about it
-- Your Markdown files have dates in the filenames, for which the slug URLs cause 404s
+- Your Markdown files have dates in the filenames, for which the スラッグ URLs cause 404s
 
 The good news is you can accommodate these scenarios and more in `gatsby-config.js` and `gatsby-node.js`.
 
@@ -132,7 +132,7 @@ The `output` field in your feed object allows you to customize the filename for 
 
 By default, feed is referenced in every page. You can customize this behavior by providing an extra field `match` of type `string`. This string will be used to build a `RegExp`, and this regular expression will be used to test the `pathname` of current page. Only pages that satisfied the regular expression will have feed reference included.
 
-To see your feed in action, run `gatsby build && gatsby serve` and you can then inspect the content and URLs in your RSS file at <http://localhost:9000/rss.xml>.
+To see your feed in action, run `gatsby build && gatsby serve` and you can then inspect the content and URLs in your RSS file at `http://localhost:9000/rss.xml`.
 
 > NOTE: if your blog has custom permalinks, such as links with or without dates in them, you may need to [customize `gatsby-node.js`](https://github.com/gatsbyjs/gatsby-starter-blog/blob/master/gatsby-node.js#L57) to output the correct URLs in your RSS feed. [Get in touch with us](/contributing/how-to-contribute/) if you need any help!
 

@@ -1,47 +1,40 @@
 ---
-<<<<<<< HEAD
 title: "レシピ集: テーマを使用する"
-=======
-title: "Recipes: Working with Themes"
 tableOfContentsDepth: 1
->>>>>>> 79b09bc29f133961f3d7de0f36a25ff727e6c22a
 ---
 
 [Gatsby テーマ](/docs/themes/what-are-gatsby-themes)は Gatsby を構成するもの（共有の機能、データの取得、デザイン）をインストール可能なパッケージとして抽象化したものです。つまり、テーマの設定や機能は直接あなたのプロジェクト内に書かれるのではなく、一元的にバージョン管理された依存パッケージという形でインストールされるということです。テーマをシームレスに更新したり、まとめて作成したり、あるいは互換性のあるテーマを別のものに交換したりすることもできます。
 
-<<<<<<< HEAD
-## テーマスターターを使用して新しくサイトを作成する
-=======
-## Creating a new site using a theme
+## テーマを使用して新しくサイトを作成する
 
-Found a theme you'd like to use on your project? Awesome! You can configure it for use by following the steps below.
+あなたのプロジェクトで使いたいテーマが見つかりましたか？すばらしい！以下の手順に沿ってテーマを適用できます。
 
-> If you'd like to take a look at more theme options, check out [list of themes](https://www.npmjs.com/search?q=gatsby-theme).
+> もっと他のテーマを探したい場合は、[テーマ一覧](https://www.npmjs.com/search?q=gatsby-theme)を参照。
 
-### Prerequisites
+### 前提条件
 
-- Make sure you have the [Gatsby CLI](/docs/gatsby-cli) installed
+- [Gatsby CLI](/docs/gatsby-cli) がインストールされていること。
 
-### Directions
+### 進め方
 
-1. Create a gatsby site
+1. CLI コマンドで Gatsby のサイトを新しく作成します。
 
 ```shell
 gatsby new {your-project-name}
 ```
 
-2. Change directory and install theme
+2. 作成したサイトのフォルダに移動し、テーマをインストールします。
 
-In this example, our theme is `gatsby-theme-blog`. You can replace that reference with whatever your theme is named.
+この例では、`gatsby-theme-blog` というテーマを適用します。あなたが使いたいテーマの名前に差し替えてください。
 
 ```shell
 cd {your-project-name}
 npm install gatsby-theme-blog
 ```
 
-3. Add theme to `gatsby.config.js`
+3. `gatsby.config.js` にテーマを追加します。
 
-Follow the instructions found in the README of the theme you're using to determine what configuration it requires.
+あなたが使いたいテーマの README に沿って、必要な設定を加えてください。
 
 ```shell
 module.exports = {
@@ -62,28 +55,23 @@ module.exports = {
 }
 ```
 
-4. Run `gatsby develop` , the theme should be available at `http://localhost:8000/{basePath}`
+4. `gatsby develop` を起動してください。`http://localhost:8000/{basePath}` にて、テーマが適用されたページが表示されるはずです。
 
-> To learn how to further customize a theme, check out the available paths on [Gatsby-theme-blog Documentation](https://www.npmjs.com/package/gatsby-theme-blog).
+> 例で使用した `gatsby-theme-blog` のテーマをさらにカスタマイズしたい場合は、[Gatsby-theme-blog Documentation](https://www.npmjs.com/package/gatsby-theme-blog) に手順が記載されています。
 
-### Additional resources
+### 追加の資料
 
-- To learn how to further customize a theme, check out the docs on [Gatsby theme shadowing.](https://www.gatsbyjs.org/docs/themes/shadowing/)
+- テーマをさらにカスタマイズしたい場合は、[Gatsby theme shadowing](https://www.gatsbyjs.org/docs/themes/shadowing/) のドキュメントを参照。
 
-- You can also [use multiple themes](https://www.gatsbyjs.org/docs/themes/using-multiple-gatsby-themes/) on a project.
+- プロジェクトに[複数のテーマを適用](https://www.gatsbyjs.org/docs/themes/using-multiple-gatsby-themes/)することも可能です。
 
-## Creating a new site using a theme starter
->>>>>>> 79b09bc29f133961f3d7de0f36a25ff727e6c22a
+## テーマスターターを使用して新しくサイトを作成する
 
 テーマを利用するスターターでサイトを作る手順は、テーマを**利用しない**スターターでサイトを作る手順と同じです。今回の例では [Gatsby 公式ブログのテーマから新しいサイトを作成するスターター](https://github.com/gatsbyjs/gatsby-starter-blog-theme)を使います。
 
 ### 前提条件
 
-<<<<<<< HEAD
 - [Gatsby CLI](/docs/gatsby-cli) がインストールされていること。
-=======
-- Make sure you have the [Gatsby CLI](/docs/gatsby-cli) installed
->>>>>>> 79b09bc29f133961f3d7de0f36a25ff727e6c22a
 
 ### 進め方
 

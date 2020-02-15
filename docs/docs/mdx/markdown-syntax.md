@@ -1,209 +1,209 @@
 ---
-title: Markdown Syntax
+title: Markdown 構文
 ---
 
-Markdown is a very common way to write content in Gatsby posts and pages. This guide contains tips for Markdown syntax and formatting that might come in handy!
+Markdown は Gatsby でウェブサイトにページやポストを書くための標準的な方法です。この便利なガイドは Markdown 構文とフォーマットについての知識を解説します！
 
-## Headings
+## 見出し
 
 ```markdown
-# heading 1
+# 見出し 1
 
-## heading 2
+## 見出し 2
 
-### heading 3
+### 見出し 3
 
-#### heading 4
+#### 見出し 4
 
-##### heading 5
+##### 見出し 5
 
-###### heading 6
+###### 見出し 6
 ```
 
-Here's how those tags render in HTML:
+上記タグは HTML 上では以下のように表示されます。
 
-# heading 1
+# 見出し 1
 
-## heading 2
+## 見出し 2
 
-### heading 3
+### 見出し 3
 
-#### heading 4
+#### 見出し 4
 
-##### heading 5
+##### 見出し 5
 
-###### heading 6
+###### 見出し 6
 
-- each heading gets converted to their HTML equivalent
-  - i.e. `# heading 1` is `<h1>heading 1</h1>`
-- Correct usage of each heading should follow the
-  [accessibility guidelines](https://www.w3.org/WAI/tutorials/page-structure/headings/) set by the World Wide Web Consortium (W3C)
-  _Note: in the [Gatsby docs](/contributing/docs-contributions#headings), h1s are already included from `title` entries in frontmatter metadata, and contributions in Markdown should begin with h2._
+- それぞれの見出し行は等価となる HTML に変換されます
+  - 例：`# 見出し 1` は `<h1>見出し 1</h1>` に変換されます
+- それぞれの見出しレベルの正しい使い方については W3C(the World Wide Web Consortium) の [accessibility guidelines](https://www.w3.org/WAI/tutorials/page-structure/headings/) を参照してください。
 
-## Emphasized text
+  _ヒント: [Gatsby のドキュメント](/contributing/docs-contributions#headings) によると、H1 は Markdown の Frontmatter における `title` 要素をレンダリングする際、すでに使用されています。そのため、Markdown 本文に見出しを記載する際には H2 タグ(つまり `##` )から始めてください。_
 
-- Italic
-  - one asterisk or one underscore
-    - `*italic*` or `_italic_`
-    - _italic!_
-- Bold
-  - two asterisks or two underscores
-    - `**bold**` or `__bold__`
-    - **bold!**
-- Italic and Bold
+## テキストの強調
 
-  - three asterisks or three underscore
-    - `***italic and bold***` or `___italic and bold___`
-    - **_italic and bold!!_**
+- 斜体（イタリック）
+  - 1 文字のアスタリスクか、アンダースコア
+    - `*斜体*` or `_斜体_`
+    - _斜体_
+- 太字（ボールド）
+  - 二文字のアスタリスクか、アンダースコア
+    - `**太字**` or `__太字__`
+    - **太字**
+- 斜体かつ太字
 
-## Lists
+  - 三文字のアスタリスクか、アンダースコア
+    - `***斜体かつ太字***` or `___斜体かつ太字___`
+    - **_斜体かつ太字_**
 
-### Unordered
+## 箇条書き
 
-- can use `*`, `-`, or `+` for each list item
+### 番号なし箇条書き
+
+- `*`, `-`, もしくは `+` をそれぞれの箇条書き要素の頭に付加しましょう。
 
 <!-- prettier-ignore-start -->
 ```markdown
 * Gatsby
-  * docs
+  * ドキュメント
 - Gatsby
-  - docs
+  - ドキュメント
 + Gatsby
-  + docs
+  + ドキュメント
 ```
 <!-- prettier-ignore-end -->
 
-How unordered lists are rendered in HTML:
+HTML では下記のように表現されます。
 
 - Gatsby
-  - docs
+  - ドキュメント
 
 * Gatsby
-  - docs
+  - ドキュメント
 
 - Gatsby
-  - docs
+  - ドキュメント
 
-### Ordered
+### 番号付き箇条書き
 
-- number and period for each list item
-- using `1.` for each item can automatically increment depending on the content
+- 数字とピリオドをそれぞれの箇条書き要素の頭に付加しましょう
+- `1.` を全てのアイテムの頭に付加すれば、番号は自動的に増加します
 
 ```markdown
-1. One
-1. Two
-1. Three
+1. 壱
+1. 弐
+1. 参
 ```
 
-1. One
-1. Two
-1. Three
+1. 壱
+1. 弐
+1. 参
 
-## Links and images
+## リンクと画像
 
-### Link
+### リンク
 
-Links in Markdown use this format. URLs can be relative or remote:
+リンクは Markdown において下記のように表記します。URL は絶対パス・相対パスどちらでも構いません。
 
 ```markdown
 [Text](url)
 ```
 
-Example of a link rendering in HTML:
+HTML では下記のように表現されます
 
 [Gatsby site](https://www.gatsbyjs.org/)
 
-### Image with alt text
+### イメージと代替テキスト
 
 ```markdown
 ![alt text](path-to-image)
 ```
 
-### Image without alt text
+### 代替テキストのないイメージ
 
-This pattern is appropriate for [decorative or repetitive images](https://www.w3.org/WAI/tutorials/images/decision-tree/):
+この表記方法は、装飾または反復的な画像に適しています。（参考： [decorative or repetitive images](https://www.w3.org/WAI/tutorials/images/decision-tree/) ）
 
 ```markdown
 ![](path-to-image)
 ```
 
-## Blockquote
+## 引用ブロック
 
-- Use `>` to declare a blockquote
-- Adding multiple `>` with create nested blockquotes
-- It is recommended to place `>` before each line
-- You can use other Markdown syntax inside blockquotes
+- `>` を引用する行頭に付与します
+- 複数の `>` を使うことでネストされた引用を表現できます
+- `>` を引用全ての行頭に使うことを推奨します
+- 引用ブロックの中でも他の Markdown 構文は有効です
 
 ```markdown
-> blockquote
+> 引用文前半
 >
-> > nested blockquote
+> > ネストされた引用
 >
-> > **I'm bold!**
+> > **ここは太字！**
 >
-> more quotes
+> 引用文後半
 ```
 
-> Blockquote
+> 引用文前半
 >
-> > nested blockquote
+> > ネストされた引用
 >
-> > **I'm bold!**
+> > **ここは太字！**
 >
-> more quotes
+> 引用文後半
 
-## Code comments
+## コードコメント
 
-### Inline
+### 行内コード
 
-- Enclose the text in backticks \`code\`
-- Inline `code` looks like this sentence
+- コード部分をバッククオートで囲みます \`code\`
+- このように表示されます `code`
 
-### Code blocks
+### コードブロック
 
-- Indent a block by four spaces
+- コード部分を全てスペース 4 つでインデントします
 
 ## MD vs MDX
 
-- MDX is a superset of Markdown. It allows you to write JSX inside markdown. This includes importing and rendering React components!
+- MDX は Markdown の上位互換です。 JSX 構文を Markdown 内に記載することができます。つまり React コンポーネントを内部に記載できます！
 
-## Processing Markdown and MDX in Gatsby:
+## Gatsby における Markdown と MDX の処理
 
-- In order to process and use Markdown or MDX in Gatsby, you can use the [gatsby-source-filesystem](/docs/sourcing-from-the-filesystem) plugin
-- You can check out the package [README](/packages/gatsby-source-filesystem) for more information on how it works!
+- Gatsby で Markdown または MDX を使うためには [gatsby-source-filesystem](/docs/sourcing-from-the-filesystem) プラグインを利用しましょう
+- プラグインの [README](/packages/gatsby-source-filesystem) により詳しい動作説明が記載されています
 
 ## Frontmatter
 
-- Metadata for your Markdown
-- Variables that can later be injected into your components
-- Must be:
-  - At the top of the file
-  - Valid YAML
-  - Between triple dashed lines
+- Markdown ファイルのメタデータを記載します
+- これらは変数としてコンポーネント上で利用できます
+- 必須要件
+  - ファイルの最初に記載すること
+  - 正しい YAML 構文であること
+  - 3 つのハイフンで囲むこと
   ```
   ---
-  title: My Frontmatter Title
+  title: Frontmatterで定義したタイトル
   example_boolean: true
   ---
   ```
 
-## Frontmatter + MDX example
+## Frontmatter + MDX の例
 
 ```mdx
 ---
-description: A simple example of a description in frontmatter
+description: frontmatter の description 例
 ---
 
 import { Chart } from "../components/chart"
 
-# Here’s a chart
+# チャート
 
-The chart is rendered inside our MDX document.
+Chart コンポーネントを MDX 内にレンダリングすることができます
 
 <Chart description={description} />
 ```
 
-## Helpful resources
+## 参考情報
 
 - https://daringfireball.net/projects/markdown/syntax
 - https://www.markdownguide.org/basic-syntax
