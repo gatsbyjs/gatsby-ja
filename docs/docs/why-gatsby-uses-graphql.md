@@ -374,7 +374,7 @@ export default Product
 1. クエリーの結果は、`data` プロパティとしてテンプレートコンポーネントに追加されます。
 2. 画像パスは、Sharp トランスフォーマーによって、最適化された画像を含む「子ノード」に自動的に変換されました。
 3. [GraphQL フラグメント](/packages/gatsby-image/#fragments) を使用して、最適化された画像を作成するために必要なすべてのデータを指定したクエリーを作成します。なお、GraphQL Playground では GraphQL フラグメントは動作しません。
-4. `img` タグは、`Image` という名前の `gatsby-image` コンポーネントと交換されました。 `src` 属性の代わりに、最適化された画像データを持つオブジェクトを受け入れます。
+4. `img` タグは、`Image` という名前の `gatsby-image` コンポーネントと交換されました。`src` 属性の代わりに、最適化された画像データを持つオブジェクトを受け入れます。
 
 このファイルを保存し、`gatsby develop` コマンドを実行して、`localhost:8000/gql/purple-hat/` を開いてみましょう。
 
