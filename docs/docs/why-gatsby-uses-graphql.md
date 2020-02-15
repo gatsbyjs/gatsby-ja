@@ -79,7 +79,7 @@ exports.createPages = ({ actions: { createPage } }) => {
 
 > **ヒント：** `context` の中で使用できない予約語がいくつかあります。 それらは、`path` 、`matchPath` 、`component` 、`componentChunkName` 、`pluginCreator___NODE` 、そして `pluginCreatorId` です。
 
-Gatsby が作成したページには `pageContext` という プロパティが含まれており、その値は `context` となっています。そのため、作成されたページからは、コンポーネントの任意の値を参照できます。
+Gatsby が作成したページには `pageContext` というプロパティが含まれており、その値は `context` となっています。そのため、作成されたページからは、コンポーネントの任意の値を参照できます。
 
 ```jsx:title=src/templates/with-context.js
 import React from "react"
