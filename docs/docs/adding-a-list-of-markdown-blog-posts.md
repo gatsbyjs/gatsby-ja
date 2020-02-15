@@ -83,9 +83,9 @@ export const pageQuery = graphql`
 `
 ```
 
-## Creating the `PostLink` component
+## `PostLink` コンポーネントの作成
 
-The only thing left to do is to add the `PostLink` component. Create a new file `post-link.js` in `src/components/` and add the following:
+あとは `PostLink` コンポーネントの作成だけです。 `src/components/` に `post-link.js` ファイルを作成して次のように記述します。
 
 ```jsx:title=src/components/post-link.js
 import React from "react"
@@ -102,4 +102,4 @@ const PostLink = ({ post }) => (
 export default PostLink
 ```
 
-This should get you a page with your posts sorted by descending date. You can further customize the `frontmatter` and the page and `PostLink` components to get your desired effects!
+これで、日付降順でソートされた投稿が並べられたページを表示できます。さらに、 `frontmatter` 、ページ、 `PostLink` コンポーネントなどをさらにカスタマイズして、望み通りのエフェクトがかけられます！
