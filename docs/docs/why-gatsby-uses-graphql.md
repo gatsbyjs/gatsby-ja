@@ -94,7 +94,7 @@ const WithContext = ({ pageContext }) => (
 export default WithContext
 ```
 
-`gatsby develop` コマンドで開発サーバーを起動し、`localhost:8000/page-with-context/` にアクセスして、作成されたページを確認してみましょう。
+`gatsby develop` コマンドで開発サーバーを起動し、`http://localhost:8000/page-with-context/` にアクセスして、作成されたページを確認してみましょう。
 
 ![ハードコードされたデータで作成されたページのスクリーンショット](./images/why-gql-with-context.png)
 
