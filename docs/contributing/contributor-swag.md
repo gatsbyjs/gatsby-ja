@@ -1,18 +1,18 @@
 ---
-title: Gatsby 貢献者への無料の景品！
+title: Gatsby コントリビューターへの無料の景品！
 ---
 
-Gatsby はオープンソースコミュニティーの貢献者に依存しています。[Gatsby への貢献](/contributing/how-to-contribute/)に時間と労力を費やすことが、私たちにとってどれだけ意味があるのかを確認したいと思います。
+Gatsby はオープンソースコミュニティーのコントリビューターに依存しています。[Gatsby への貢献](/contributing/how-to-contribute/)に時間と労力を費やすことが、私たちにとってどれだけ意味があるのかを確認したいと思います。
 
 感謝の証として、 _**Gatsby に貢献した全ての人が無料の景品を受け取ることができます！**_
 
-![Gatsby の貢献者が景品を着てます。](./images/gatsby-swag.jpg)
+![Gatsby のコントリビューターが景品を着てます。](./images/gatsby-swag.jpg)
 
 ### 無料の景品を受け取る方法
 
-GitHub で Gatsby 組織に貢献した場合は [Gatsby Store にログイン](https://store.gatsbyjs.org/) して、割引コードを要求することで景品を受け取れます。5 回以上貢献することで _**レベル２**_ の景品を受け取ることもできます。
+GitHub で Gatsby 組織に貢献した場合は [Gatsby Store にログイン](https://store.gatsbyjs.org/)して、割引コードを要求することで景品を受け取れます。5 回以上貢献することで _**レベル２**_ の景品を受け取ることもできます。
 
-別の方法で貢献した場合は <mailto:marketing@gatsbyjs.com> にメールするか、[Twitter で Gatsby にツイート](https://twitter.com/gatsbyjs)して景品を受け取りましょう。例えば Gatsby について講演したり、Gatsby の使い方を他の人に教えたり、Gatsby の記事／チュートリアルを書いたり、Gatsby の研究プロジェクトへ参加したり、またはその他の方法で貢献した場合です。
+別の方法で貢献した場合は <mailto:marketing@gatsbyjs.com> にメールするか、[Twitter で Gatsby にツイート](https://twitter.com/gatsbyjs)して景品を受け取りましょう。例えば Gatsby について講演したり、Gatsby の使い方を他の人に教えたり、Gatsby の記事やチュートリアルを書いたり、Gatsby の研究プロジェクトへ参加したり、またはその他の方法で貢献した場合です。
 
 ### 無料の景品の詳細
 
