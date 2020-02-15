@@ -260,7 +260,7 @@ One of the available options is `allProductsJson`, which contains “edges”, a
 
 The JSON transformer plugin has created one node for each product, and inside the node you can select the data you need for that product.
 
-You can write a query to select each product’s スラッグ like this:
+You can write a query to select each product’s slug like this:
 
 ```graphql
 {
@@ -323,7 +323,7 @@ The results that come back are very similar to the contents of `data/products.js
 
 However, note that you’re only passing the `slug` in `context` — you’ll use this in the template component to load more product data.
 
-As you’ve already seen, the `context` argument is made available to the template component in the `pageContext` prop. To make queries more powerful, Gatsby _also_ exposes everything in `context` as a GraphQL variable, which means you can write a query that says, in plain English, “Load data for the product with the スラッグ passed in `context`.”
+As you’ve already seen, the `context` argument is made available to the template component in the `pageContext` prop. To make queries more powerful, Gatsby _also_ exposes everything in `context` as a GraphQL variable, which means you can write a query that says, in plain English, “Load data for the product with the slug passed in `context`.”
 
 Here’s what that looks like in practice:
 

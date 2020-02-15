@@ -25,7 +25,7 @@ The Guide List component takes one prop:
 
 - `slug` (required) - the value of which is already available on every page's context on Gatsbyjs.org by default
 
-The スラッグ is used to find a matching value in one of the `yaml` files that sets up the hierarchical structure for how the guides in the [docs](https://github.com/gatsbyjs/gatsby/blob/master/www/src/data/sidebars/doc-links.yaml), [tutorial](https://github.com/gatsbyjs/gatsby/blob/master/www/src/data/sidebars/tutorial-links.yaml), and [contributing](https://github.com/gatsbyjs/gatsby/blob/master/www/src/data/sidebars/contributing-links.yaml) section are organized. It finds the matching entry in the hierarchy and renders the pages that are children of it in a list.
+The slug is used to find a matching value in one of the `yaml` files that sets up the hierarchical structure for how the guides in the [docs](https://github.com/gatsbyjs/gatsby/blob/master/www/src/data/sidebars/doc-links.yaml), [tutorial](https://github.com/gatsbyjs/gatsby/blob/master/www/src/data/sidebars/tutorial-links.yaml), and [contributing](https://github.com/gatsbyjs/gatsby/blob/master/www/src/data/sidebars/contributing-links.yaml) section are organized. It finds the matching entry in the hierarchy and renders the pages that are children of it in a list.
 
 The component can be used like this:
 

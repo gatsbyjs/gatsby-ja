@@ -112,7 +112,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
 ## Outputting data
 
-The code above will create pages in the root of the site at `/`, with the path being the スラッグ of the post。
+The code above will create pages in the root of the site at `/`, with the path being the slug of the post.
 
 Then, within the `post.js` template, you can determine exactly how and where you want to output data on each page. Again, you'll use GraphQL to query individual fields, so a simple example looks something like this:
 

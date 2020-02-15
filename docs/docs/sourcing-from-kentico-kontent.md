@@ -103,7 +103,7 @@ So you've seen how to add content to existing pages in Gatsby using Kentico Kont
 
 It's great to be able to add content to existing static pages, but one of the great benefits of using CaaS is being able to define pages in Kentico Kontent and having them generated automatically. To see how, you'll add pages based on content from the Sample Project in the Article type (feel free to explore how these are structured in Kentico Kontent).
 
-Start by making use of the URL pattern in the Article type to generate スラッグ s for your Article nodes:
+Start by making use of the URL pattern in the Article type to generate slugs for your Article nodes:
 
 ```javascript:title=gatsby-node.js
 exports.onCreateNode = ({ node, actions: { createNodeField } }) => {

@@ -333,9 +333,9 @@ exports.sourceNodes = ({ actions }) => {
 2. The `Event` type will implement the typical Gatsby `Node` interface.
 3. You'll use `@dontInfer`, because rather than Gatsby inferring fields, you'll be defining them explicitly.
 4. In addition to an `id` field, you'll create new fields for each data point associated with an event (name, location, startDate, endDate, url). _To read more detail about creating types, check out the [`createTypes` documentation](/docs/actions/#createTypes)_.
-5. You'll also create a `slug` field. You'll notice your event data doesn't include "スラッグ" data. You'll define this in the next step.
+5. You'll also create a `slug` field. You'll notice your event data doesn't include "slug" data. You'll define this in the next step.
 
-### Define resolvers for any custom fields (スラッグ）
+### Define resolvers for any custom fields (slug）
 
 Gatsby provides a `createResolvers` API hook. That gives you a function called `createResolvers`. Inside this function, you will set up a base path.
 
@@ -422,7 +422,7 @@ exports.createResolvers = ({ createResolvers }) => {
 }
 ```
 
-You'll define a helper, `slugify` to help generate the スラッグ s:
+You'll define a helper, `slugify` to help generate the slugs:
 
 ```javascript:title=gatsby-theme-events/gatsby-node.js
 exports.createResolvers = ({ createResolvers }) => {
@@ -486,7 +486,7 @@ Test that this is working by running `gatsby-theme-events` again:
 yarn workspace gatsby-theme-events develop
 ```
 
-If you query this time for `allEvent`, you'll see the `Event` data, including the new スラッグ s:
+If you query this time for `allEvent`, you'll see the `Event` data, including the new slugs:
 
 ![Successful execution of the previously described query, in the GraphiQL explorer](./images/building-a-theme-query-event-type.png)
 
