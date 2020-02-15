@@ -63,7 +63,7 @@ Gatsby は、サーバサイドレンダリング（SSR）を使用してサイ�
 
 ### ブラウザグローバルの使用について
 
-一部のコンポーネントやコードでは、`window`、`document`、`localStorage` のようなブラウザグローバルを参照することがあります。それらのオブジェクトでは、[ビルド](/docs/glossary#build) 時点では利用できず、コンパイル時に webpack エラーが発生することもあります。
+一部のコンポーネントやコードでは、`window`、`document`、`localStorage` のようなブラウザグローバルを参照することがあります。それらのオブジェクトでは、[ビルド](/docs/glossary#build)時点では利用できず、コンパイル時に webpack エラーが発生することもあります。
 
 ```text
 WebpackError: ReferenceError: window is not defined
