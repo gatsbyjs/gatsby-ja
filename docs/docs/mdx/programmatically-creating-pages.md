@@ -91,10 +91,10 @@ title: Blog Post 2
 Gatsby is the best
 ```
 
-## Generate スラッグ s
+## Generate slugs
 
 Since MDX posts are being sourced outside of `src/pages`, each post
-needs to be given a スラッグ which tells Gatsby the URL to render to。
+needs to be given a slug which tells Gatsby the URL to render to.
 
 If you want to set the URLs in your frontmatter, you can skip this step.
 
@@ -166,7 +166,7 @@ query {
 ```
 
 If you skipped the last step and want to use frontmatter for your
-スラッグ s instead of the generated field, replace `fields` with `frontmatter`.
+slugs instead of the generated field, replace `fields` with `frontmatter`.
 
 ```javascript:title=gatsby-node.js
 const path = require("path")

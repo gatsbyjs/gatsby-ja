@@ -29,7 +29,7 @@ module.exports = {
 }
 ```
 
-Here's an example of how you could implement this plugin with Markdown, but for other sources, you will need a way to uniquely identify content--typically a URL or スラッグ。
+Here's an example of how you could implement this plugin with Markdown, but for other sources, you will need a way to uniquely identify content--typically a URL or slug.
 
 ```js:title=gatsby-node.js
 const { createFilePath } = require(`gatsby-source-filesystem`)
@@ -57,7 +57,7 @@ For basic setups with Markdown content like the [gatsby-starter-blog](https://gi
 Your content might not fit neatly into the blog-starter scenario, for various reasons like:
 
 - Your content isn't in Markdown so the plugin doesn't know about it
-- Your Markdown files have dates in the filenames, for which the スラッグ URLs cause 404s
+- Your Markdown files have dates in the filenames, for which the slug URLs cause 404s
 
 The good news is you can accommodate these scenarios and more in `gatsby-config.js` and `gatsby-node.js`.
 

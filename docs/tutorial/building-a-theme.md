@@ -335,7 +335,7 @@ exports.sourceNodes = ({ actions }) => {
 4. In addition to an `id` field, you'll create new fields for each data point associated with an event (name, location, startDate, endDate, url). _To read more detail about creating types, check out the [`createTypes` documentation](/docs/actions/#createTypes)_.
 5. You'll also create a `slug` field. You'll notice your event data doesn't include "slug" data. You'll define this in the next step.
 
-### Define resolvers for any custom fields (slug）
+### Define resolvers for any custom fields (slug)
 
 Gatsby provides a `createResolvers` API hook. That gives you a function called `createResolvers`. Inside this function, you will set up a base path.
 
