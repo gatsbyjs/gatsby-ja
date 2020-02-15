@@ -213,7 +213,7 @@ GraphQL にデータを取り込むには、少し前もってセットアップ
   lessonTitle="Make Data Queryable in GraphQL With Gatsby"
 />
 
-product データと画像を GraphQL に読み込むには、以下の [Gatsby プラグイン](/plugins/) を追加し、いくつかの手順を踏む必要があります。
+product データと画像を GraphQL に読み込むには、以下の [Gatsby プラグイン](/plugins/)を追加し、いくつかの手順を踏む必要があります。
 
 - JSON ファイルを Gatsby の内部データストアに読み込みます。このデータストアでは、GraphQL を使用してクエリーを実行できます。（[`gatsby-source-filesystem`](/packages/gatsby-source-filesystem/)）
 - GraphQL を使用してクエリーを実行できるように、JSON ファイルのフォーマットを変換します。（[`gatsby-transformer-json`](/packages/gatsby-transformer-json/)）
