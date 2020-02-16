@@ -43,7 +43,7 @@ export default IndexPage
 
 ## GraphQL のクエリを作成
 
-次に、 GraphQL クエリを利用してコンポーネントにデータを提供する必要があります。 `index.js` に以下のように追加します。
+次に、GraphQL クエリを利用してコンポーネントにデータを提供する必要があります。`index.js` に以下のように追記します。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
