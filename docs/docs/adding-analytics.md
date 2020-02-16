@@ -52,7 +52,7 @@ module.exports = {
 
 > ヒント： 詳しい解説は [gatsby-config.js](/docs/gatsby-config/) を参照
 
-プラグインに関する完全なドキュメントは [こちら](/packages/gatsby-plugin-google-analytics/)を参照してください。
+プラグインに関する完全なドキュメントは[こちら](/packages/gatsby-plugin-google-analytics/)を参照してください。
 
 Google Analytics アカウントと Gatsby のプラグインには、共に膨大な量の設定項目が存在します。あなたのウェブサイトの都合に合わせた設定が可能です。
 
