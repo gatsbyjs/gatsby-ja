@@ -16,7 +16,7 @@ Google Analytics はアクセスデータを収集・分析して上記を含む
 
 最初の作業は Google Analytics のアカウントを設定することです。[こちら](https://analytics.google.com/)にアクセスして、Google Account でログインしてください。
 
-Google は [アナリティクスのスタートガイド](https://support.google.com/analytics/answer/1008015?hl=ja) も準備しています。
+Google は[アナリティクスのスタートガイド](https://support.google.com/analytics/answer/1008015?hl=ja)も準備しています。
 
 アカウントを手に入れたら、次はプロパティと呼ばれる概念を設定します。これはトラッキング ID とセットで提供されます。プロパティ名にはウェブサイト自身の名前を設定し、ウェブサイトの URL を入力します。
 
