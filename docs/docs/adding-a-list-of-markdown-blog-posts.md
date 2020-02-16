@@ -85,7 +85,7 @@ export const pageQuery = graphql`
 
 ## `PostLink` コンポーネントの作成
 
-あとは `PostLink` コンポーネントの作成だけです。 `src/components/` に `post-link.js` ファイルを作成して次のように記述します。
+あとは `PostLink` コンポーネントの作成だけです。`src/components/` に `post-link.js` ファイルを作成して次のように記述します。
 
 ```jsx:title=src/components/post-link.js
 import React from "react"
