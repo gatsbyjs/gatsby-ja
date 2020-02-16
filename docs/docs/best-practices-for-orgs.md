@@ -1,14 +1,14 @@
 ---
-title: Best Practices for Organizations
+title: 組織のためのベストプラクティス
 issue: https://github.com/gatsbyjs/gatsby/issues/14042
 ---
 
-When you have multiple teams building Gatsby sites, there are some best practices to ensure you're working well at scale. These docs explain those practices.
+複数のチームで Gatsby サイトを構築する場合、うまくスケールさせるためのいくつかのベストプラクティスがあります。これらのドキュメントではそういったプラクティスについて説明しています。
 
 <GuideList slug={props.slug} />
 
 --
 
-This is a stub. Help our community expand it.
+このドキュメントは書きかけです。私たちのコミュニティーの発展を手伝ってください。
 
-Please use the [Gatsby Style Guide](/contributing/gatsby-style-guide/) to ensure your pull request gets accepted.
+あなたの PullRequest が承認されるためにも[翻訳スタイルガイド](/contributing/gatsby-style-guide/) を一読してください。
