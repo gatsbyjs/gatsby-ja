@@ -192,7 +192,7 @@ const babelOptions = {
 
 もしあなた自身の Babel の設定に変更を加える必要があるなら、 `jest-preprocess.js` にある設定を編集できます。 Gatsby によって使われているいくつかのプラグインをオンにする必要があるでしょう。しかし、 Babel のバージョン 7 系をインストールする必要があることを覚えていてください。 [the Gatsby Babel config guide](/docs/babel) にサンプルがいくつかあります。
 
-Jest を使ったテストをもっと知りたいのであれば、[the Jest site](https://jestjs.io/docs/ja/getting-started) をご覧ください。
+Jest を使ったテストをもっと知りたいのであれば、[Jestのウェブサイト](https://jestjs.io/docs/ja/getting-started)をご覧ください。
 
 これら全てのテクニックを隠蔽する例として、そして [@testing-library/react][react-testing-library] を使った完全な単体テスト一式の例としては、 [using-jest][using-jest] のサンプルをチェックしてください。
 
