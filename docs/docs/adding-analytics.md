@@ -30,7 +30,7 @@ Google は[アナリティクスのスタートガイド](https://support.google
 
 では、Gatsby で Google Analytics アカウントを使い、閲覧情報を送信する設定を行いましょう。
 
-この解説では `gatsby-plugin-google-analytics` プラグインを使用します。 他の解析手段を使う場合（gtag.js と Google Tag Manager を用いる場合を含む）、 [他の Gatsby アクセス解析用プラグイン](#other-gatsby-analytics-plugins)のセクションを確認してください。
+この解説では `gatsby-plugin-google-analytics` プラグインを使用します。 他の解析手段を使う場合（gtag.js と Google Tag Manager を用いる場合を含む）、[他の Gatsby アクセス解析用プラグイン](#other-gatsby-analytics-plugins)のセクションを確認してください。
 
 ```shell
 npm install --save gatsby-plugin-google-analytics
