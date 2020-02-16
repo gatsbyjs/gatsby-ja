@@ -4,7 +4,7 @@ title: RSS フィードを追加する
 
 ## RSS フィードとは？
 
-[RSS フィード](https://ja.wikipedia.org/wiki/RSS) は、ウェブサイトのコンテンツを購読用の形式で掲載する標準的な XML ファイルのことで、読者がニュースアグリゲーターまたはフィードリーダーとも呼ばれるアプリでコンテンツを消費できるようにします。
+[RSS フィード](https://ja.wikipedia.org/wiki/RSS)は、ウェブサイトのコンテンツを購読用の形式で掲載する標準的な XML ファイルのことで、読者がニュースアグリゲーターまたはフィードリーダーとも呼ばれるアプリでコンテンツを消費できるようにします。
 
 あなたのサイトのコンテンツを同時配給するための流通機構として考えてみてください。
 
@@ -48,7 +48,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 }
 ```
 
-RSS フィードはプロダクションビルドでのみ作られるので、次にビルドを実行します（`npm run build`）。デフォルトでは、生成された RSS フィードのパスは `/rss.xml` ですが、このデフォルト機能を設定するオプションが公開されています。
+RSS フィードはプロダクションビルドでのみ作られるので、次にビルドを実行します（`npm run build`）。デフォルトでは、生成された RSS フィードのパスは `/rss.xml` ですが、このデフォルト値を変更するオプションが用意されています。
 
 [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog) のような Markdown コンテンツでの基本的なセットアップについては、以上ですべてです！　ですが、`gatsby-node.js` や `gatsby-config.js` ファイルでカスタムコードを使うことでカスタムの RSS フィードスキーマを作れます。
 
@@ -134,7 +134,7 @@ module.exports = {
 
 動いてるフィードを確認するには、`gatsby build && gatsby serve` を実行することで、`http://localhost:9000/rss.xml` にある RSS ファイルのコンテンツや URL を調査できます。
 
-> ノート: あなたのブログがカスタムパーマリンク、例えば日付を含んでいたりいなかったりするリンクを使っているなら、RSS フィードに正しい URL を出力するよう [`gatsby-node.js` をカスタマイズする](https://github.com/gatsbyjs/gatsby-starter-blog/blob/master/gatsby-node.js#L57) 必要があるかもしれません。困ったときは[私達にご連絡ください](/contributing/how-to-contribute/)!
+> ノート: あなたのブログがカスタムパーマリンク、例えば日付を含んでいたりいなかったりするリンクを使っているなら、RSS フィードに正しい URL を出力するよう [`gatsby-node.js` をカスタマイズする](https://github.com/gatsbyjs/gatsby-starter-blog/blob/master/gatsby-node.js#L57)必要があるかもしれません。困ったときは[私達にご連絡ください](/contributing/how-to-contribute/)!
 
 ## iTunes RSS ブロックの構文
 
