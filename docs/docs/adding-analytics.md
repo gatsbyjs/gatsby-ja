@@ -26,7 +26,7 @@ Google は [アナリティクスのスタートガイド](https://support.googl
 
 もしトラッキング ID のがわからなくなった場合は、 `管理 > トラッキング情報 > トラッキングコード` より確認できます。
 
-## `gatsby-plugin-google-analytics`を使う
+## `gatsby-plugin-google-analytics` を使う
 
 では、Gatsby で Google Analytics アカウントを使い、閲覧情報を送信する設定を行いましょう。
 
