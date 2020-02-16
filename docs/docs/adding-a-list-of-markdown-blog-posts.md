@@ -6,7 +6,7 @@ Markdown のページをサイトに追加すると、専用のインデック�
 
 ## 投稿を作成
 
-[ここ](/docs/adding-markdown-pages) で説明しているように、 Markdown ファイルに投稿を作成する必要があります。それは次のようになります。
+[ここ](/docs/adding-markdown-pages)で説明しているように、投稿を Markdown ファイルで作成する必要があります。それは次のように行えます。
 
 ```markdown
 ---
