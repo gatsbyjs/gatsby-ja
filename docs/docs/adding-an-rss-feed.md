@@ -134,7 +134,7 @@ module.exports = {
 
 動いてるフィードを確認するには、`gatsby build && gatsby serve` を実行することで、`http://localhost:9000/rss.xml` にある RSS ファイルのコンテンツや URL を調査できます。
 
-> ノート: あなたのブログがカスタムパーマリンク、例えば日付を含んでいたりいなかったりするリンクを使っているなら、RSS フィードに正しい URL を出力するよう [`gatsby-node.js` をカスタマイズする](https://github.com/gatsbyjs/gatsby-starter-blog/blob/master/gatsby-node.js#L57)必要があるかもしれません。困ったときは[私達にご連絡ください](/contributing/how-to-contribute/)!
+> ヒント: あなたのブログがカスタムパーマリンク、例えば日付を含んでいたりいなかったりするリンクを使っているなら、RSS フィードに正しい URL を出力するよう [`gatsby-node.js` をカスタマイズする](https://github.com/gatsbyjs/gatsby-starter-blog/blob/master/gatsby-node.js#L57)必要があるかもしれません。困ったときは[私達にご連絡ください](/contributing/how-to-contribute/)!
 
 ## iTunes RSS ブロックの構文
 
