@@ -1,36 +1,36 @@
 ---
-title: Adding Analytics
+title: アクセス解析を追加する
 ---
 
-## Why use analytics?
+## なぜアクセス解析を使うのですか？
 
-Once you have your site live you will start wanting to get an idea of how many visitors are coming to your site along with other metrics such as:
+あなたが自分のウェブサイトをデプロイしてから、どれだけの人がウェブサイトを訪れたか、様々な指標と共に確認できます。
 
-- What pages are most popular?
-- Where do my visitors come from?
-- When do people visit my site?
+- もっとも人気のあるページは？
+- 訪問者はどこからアクセスしていた？
+- 訪問者はいつアクセスしていた？
 
-Google Analytics provides a way to collect this data and perform analytics on it answering the above questions among many others. The platform is free for 10 million hits per month per Tracking ID. There are other analytics options--see the "Other Gatsby analytics plugins" section at the bottom of this doc for ideas.
+Google Analytics はアクセスデータを収集・分析して上記を含む様々な問いに答える方法を提供します。トラッキング ID ごとに 1 ヶ月あたり 1000 万アクセスまでは無料で利用できます。他のアクセス解析サービスについては、この記事の最後にある[他の Gatsby アクセス解析用プラグイン](/docs/adding-analytics#他のGatsbyアクセス解析用プラグイン)を参照してください。
 
-## Setting up Google Analytics
+## Google Analytics の設定
 
-The first step is to set up a Google Analytics account. You can do that [here](https://analytics.google.com/) by signing in with your Google Account.
+最初の作業は Google Analytics のアカウントを設定することです。[こちら](https://analytics.google.com/)にアクセスして、Google Account でログインしてください。
 
-Google also has a [get started page](https://support.google.com/analytics/answer/1008015?hl=en) for reference.
+Google は[アナリティクスのスタートガイド](https://support.google.com/analytics/answer/1008015?hl=ja)も準備しています。
 
-Once you have an account, you will be prompted to set up a new property. This property will have a Tracking ID associated with it. In this case the property will be the website itself. Fill out the form with your website name and URL.
+アカウントを手に入れたら、次はプロパティと呼ばれる概念を設定します。これはトラッキング ID とセットで提供されます。プロパティ名にはウェブサイト自身の名前を設定し、ウェブサイトの URL を入力します。
 
-The Tracking ID is what is used to identify data with your site's traffic. You would typically use a different Tracking ID for each website you are monitoring.
+トラッキング ID はあなたのウェブサイト宛トラフィックを識別するための符号です。通常、アクセスを解析するウェブサイトごとに違うトラッキング ID を利用します。
 
-You should now have a Tracking ID; take note of it, as your website will need to reference it when sending page views to Google Analytics. It should be in the format `UA-XXXXXXXXX-X`.
+トラッキング ID が発行されたら、これをメモします。ウェブサイトがページの閲覧情報を Google Analytics へ送るために必要となります。ID の形式は `UA-XXXXXXXXX-X` です。
 
-You can find this tracking ID later by going to `Admin > Tracking Info > Tracking Code`.
+もしトラッキング ID のがわからなくなった場合は、 `管理 > トラッキング情報 > トラッキングコード` より確認できます。
 
-## Using `gatsby-plugin-google-analytics`
+## `gatsby-plugin-google-analytics` を使う
 
-Now, it's time to configure Gatsby to send page views to your Google Analytics account.
+では、Gatsby で Google Analytics アカウントを使い、閲覧情報を送信する設定を行いましょう。
 
-We are going to use `gatsby-plugin-google-analytics`. For other analytics options (including Google Analytics gtag.js and Google Tag Manager), check [other Gatsby analytics plugins](#other-gatsby-analytics-plugins).
+この解説では `gatsby-plugin-google-analytics` プラグインを使用します。 他の解析手段を使う場合（gtag.js と Google Tag Manager を用いる場合を含む）、[他の Gatsby アクセス解析用プラグイン](#other-gatsby-analytics-plugins)のセクションを確認してください。
 
 ```shell
 npm install --save gatsby-plugin-google-analytics
@@ -42,7 +42,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        // replace "UA-XXXXXXXXX-X" with your own Tracking ID
+        // この下の行をあなたのトラッキング ID("UA-XXXXXXXXX-X") で置き換えてください
         trackingId: "UA-XXXXXXXXX-X",
       },
     },
@@ -50,15 +50,15 @@ module.exports = {
 }
 ```
 
-> Note: Read more about [gatsby-config.js](/docs/gatsby-config/)
+> ヒント： 詳しい解説は [gatsby-config.js](/docs/gatsby-config/) を参照
 
-Full documentation for the plugin can be found [here](/packages/gatsby-plugin-google-analytics/).
+プラグインに関する完全なドキュメントは[こちら](/packages/gatsby-plugin-google-analytics/)を参照してください。
 
-There are a number of extra configuration options--both with the Gatsby plugin and also in your Google Analytics account--so you can tailor things to meet your website's needs.
+Google Analytics アカウントと Gatsby のプラグインには、共に膨大な量の設定項目が存在します。あなたのウェブサイトの都合に合わせた設定が可能です。
 
-Once this is configured you can deploy your site to test! If you navigate to the homepage of Google Analytics, you should see a dashboard with different statistics.
+以上で、あなたのウェブサイトにアクセス解析を追加する手順は終了です！Google Analytics のページにアクセスして、ダッシュボードで表示されている統計を確認しましょう。
 
-## Other Gatsby analytics plugins
+## 他の Gatsby アクセス解析用プラグイン
 
 - [Google Tag Manager](/packages/gatsby-plugin-google-tagmanager/)
 - [Google Analytics gtag.js](/packages/gatsby-plugin-gtag/)
