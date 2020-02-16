@@ -7,11 +7,11 @@ Gatsby は、検索エンジンでの表示順位やパフォーマンスの向�
 ## サーバーレンダリング
 
 Gatsby ページはサーバー側でレンダリングされるため、 Googlebot やその他の検索エンジンクローラーはすべてのページコンテンツを解釈できます。
-ブラウザーであなたのサイトを開き、`右クリック => ページのソースを表示` を選択することで、ページ全体の HTML ドキュメントを確認できます。
+ブラウザーであなたのサイトを開き、 `右クリック => ページのソースを表示` を選択することで、ページ全体の HTML ドキュメントを確認できます。
 
-もし[`gatsby-plugin-offline`](/packages/gatsby-plugin-offline/)をインストールしている場合は、一部の HTML のみが表示され、期待したような HTML ドキュメントとならないかもしれません。`gatsby-plugin-offline`を使用すると、ネットワーク帯域の消費を抑え、ユーザーに不要なデータをダウンロードさせないようにします。そのため、一部の HTML ドキュメントのみが表示されるのです。`gatsby-plugin-offline`は、2 ページ目以降のロード時にのみ機能します。Google などの検索エンジンに対しては常にページ全体の HTML ドキュメントを返します。検索エンジンは、サンドボックスモードという、常に 1 ページ目の訪問となるようなモードでページを巡回しているためです。
+もし[`gatsby-plugin-offline`](/packages/gatsby-plugin-offline/)をインストールしている場合は、一部の HTML のみが表示され、期待したような HTML ドキュメントとならないかもしれません。 `gatsby-plugin-offline` を使用すると、ネットワーク帯域の消費を抑え、ユーザーに不要なデータをダウンロードさせないようにします。そのため、一部の HTML ドキュメントのみが表示されるのです。`gatsby-plugin-offline` は、2 ページ目以降のロード時にのみ機能します。Google などの検索エンジンに対しては常にページ全体の HTML ドキュメントを返します。検索エンジンは、サンドボックスモードという、常に 1 ページ目の訪問となるようなモードでページを巡回しているためです。
 
-サイトの管理者として、`gatsby-plugin-offline`を使用している場合にどのように自分のサイトをテストすれば良いのでしょうか？ターミナルを利用して、自分のサイトを確認するのがベストでしょう。次のコマンドで、自分のサイトをクロールできます。
+サイトの管理者として、 `gatsby-plugin-offline` を使用している場合にどのように自分のサイトをテストすれば良いのでしょうか？ターミナルを利用して、自分のサイトを確認するのがベストでしょう。次のコマンドで、自分のサイトをクロールできます。
 
 **Windows の場合 (powershell を使用します）:**
 
@@ -35,7 +35,7 @@ curl https://www.gatsbyjs.org/docs/seo
 
 サイトにページタイトル、メタ説明、代替テキスト、JSON-LD を使用した構造化データなどのメタデータを追加すると、検索結果にあなたのページを表示する際に、検索エンジンがよりあなたのページのコンテンツを理解しやすくなります。
 
-ページにメタデータを追加する一般的な方法は、あなたのページに[react-helmet]（https://github.com/nfl/react-helmet）コンポーネントを追加することです（SSR をサポートするために[Gatsby React Helmet plugin](/packages/gatsby-plugin-react-helmet)と一緒に利用できます）。あなたの Gatsby のアプリケーションに SEO 用のコンポーネントを追加する方法は[こちら](https://www.gatsbyjs.org/docs/add-seo-component/)です。
+ページにメタデータを追加する一般的な方法は、あなたのページに[react-helmet]（https://github.com/nfl/react-helmet）コンポーネントを追加することです（SSR をサポートするために[Gatsby React Helmet プラグイン](/packages/gatsby-plugin-react-helmet)と一緒に利用できます）。あなたの Gatsby のアプリケーションに SEO 用のコンポーネントを追加する方法は[こちら](https://www.gatsbyjs.org/docs/add-seo-component/)です。
 
 React-helmet を使用した例：
 
@@ -48,7 +48,7 @@ React-helmet を使用した例：
 
 Google は、あらゆる Web や世界中の情報を収集するのはもちろん、ページのコンテンツを理解するために、Web 上で見つけた構造化データを使用しています。
 
-たとえば、以下は[JSON-LD 形式]（https://developers.google.com/search/docs/guides/intro-structured-data）（リンクされたデータのJavaScriptオブジェクト表記）の構造化データスニペットです。 Spooky Technologies という会社の連絡先ページに、連絡先情報が記載されています。
+たとえば、以下は[JSON-LD 形式](https://developers.google.com/search/docs/guides/intro-structured-data)（リンクデータの JavaScript オブジェクト表記）の構造化データスニペットです。 Spooky Technologies という会社の連絡先ページに、連絡先情報が記載されています。
 
 ```html
 <script type="application/ld+json">
@@ -68,7 +68,7 @@ Google は、あらゆる Web や世界中の情報を収集するのはもち�
 
 構造化データを使用する場合、開発中にテストする必要があります。Google の[構造化データテストツール]（https://search.google.com/structured-data/testing-tool）は、Googleが推奨する方法の1つです。
 
-デプロイ後に[リッチリザルトのステータス レポート]（https://support.google.com/webmasters/answer/7552505?hl=ja）を確認することで、ページの状態を監視しやすくなり、テンプレートエンジンや配信で発生している問題を解消しやすくなります。
+デプロイ後に[リッチリザルトのステータス レポート](https://support.google.com/webmasters/answer/7552505?hl=ja)を確認することで、ページの状態を監視しやすくなり、テンプレートエンジンや配信で発生している問題を解消しやすくなります。
 
 ## その他の資料
 
