@@ -28,12 +28,12 @@ Gatsby を e コマースのサイトに使うメリットは以下のとおり�
 - ページを React から静的ファイルに変換する際の超高速パフォーマンス
 - 簡単にホストできる
 
-こちらからホストされたデモを見れます: https://gatsby-ecommerce-stripe.netlify.com/
+こちらからホストされたデモを見れます： https://gatsby-ecommerce-stripe.netlify.com/
 
 ## 前提条件
 
 - これはより高度なチュートリアルなので、以前に Gatsby でサイトを構築したことがある場合は、このチュートリアルの時間が短縮できそうです。([基本チュートリアルはこちら](/tutorial/))
-- Stripe アカウント: [アカウント登録はこちら](https://dashboard.stripe.com/register)
+- Stripe アカウント： [アカウント登録はこちら](https://dashboard.stripe.com/register)
 
 ### Stripe と Gatsby はどのように連携させるのか
 
@@ -101,7 +101,7 @@ module.exports = {
 
 ターミナルで `npm run develop` を実行しましす。これにより、開発サーバーが起動し、サイトに加えた変更がリロードされるので、ブラウザーで変更がプレビューできます。ブラウザを[localhost:8000](http://localhost:8000/)で開くと、デフォルトのホームページが表示されます。
 
-> **ヒント**:もし、すでに Gatsby の開発サーバを `npm run develop` で起動していた場合、コマンドを実行したターミナルで CTRL + C を押してサーバを再起動し、`npm run develop` コマンドを再度実行することで[localhost:8000](http://localhost:8000/)に反映された`gatsby-config.js`の変更を確認できます。
+> **ヒント**:もし、すでに Gatsby の開発サーバを `npm run develop` で起動していた場合、コマンドを実行したターミナルで CTRL + C を押してサーバを再起動し、`npm run develop` コマンドを再度実行することで[localhost:8000](http://localhost:8000/)に反映された `gatsby-config.js` の変更を確認できます。
 
 ### StripeJS プラグインはどのように動作するか
 
@@ -285,7 +285,7 @@ export default IndexPage
 
 ブラウザで[localhost:8000](http://localhost:8000/)に戻り、`npm run develop` を実行している場合は、大きくて魅力的な"BUY MY BOOK"ボタンが表示されます。さあ、クリックしてみましょう！
 
-### 発展:ソースプラグインを通じて SKU をインポートする
+### 発展：ソースプラグインを通じて SKU をインポートする
 
 SKU の ID をハードコーディングする代わりに、ビルド時に[gatsby-source-stripe plugin](https://www.gatsbyjs.org/packages/gatsby-source-stripe/)を使用して SKU を取得できます。
 
@@ -408,7 +408,7 @@ http://localhost:8000/advanced/ に移動すると SKU 名を含む段落のリ�
 
 #### 単一の SKU を提示するコンポーネントの作成
 
-SKU を魅力的でインタラクティブにするため、`Products`ディレクトリに`SkuCard`を新たに作成します。
+SKU を魅力的でインタラクティブにするため、`Products`ディレクトリに `SkuCard` を新たに作成します。
 
 ```jsx:title=src/components/Products/SkuCard.js
 import React from "react"

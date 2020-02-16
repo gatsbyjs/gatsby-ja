@@ -1,5 +1,6 @@
 ---
 title: Gatsby.js ドキュメント
+description: Gatsby のチュートリアル、ガイド、ビルド方法などのまとめ。
 disableTableOfContents: true
 ---
 

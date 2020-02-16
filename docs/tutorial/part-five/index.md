@@ -198,7 +198,7 @@ export const query = graphql`
 `
 ```
 
-そして [http://localhost:8000/my-files](http://localhost:8000/my-files) にアクセスすると… 😲。
+そして `http://localhost:8000/my-files` にアクセスすると… 😲。
 
 ![my-files-page](my-files-page.png)
 

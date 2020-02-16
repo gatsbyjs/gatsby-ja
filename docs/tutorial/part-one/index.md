@@ -165,7 +165,7 @@ export default () => (
 )
 ```
 
-2. http://localhost:8000/about/ に移動します。
+2. `http://localhost:8000/about/` に移動します。
 
 ![新しい about ページ](05-about-page.png)
 

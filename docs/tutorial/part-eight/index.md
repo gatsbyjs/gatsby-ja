@@ -44,7 +44,7 @@ gatsby build
 gatsby serve
 ```
 
-これを実行すると、[`localhost:9000`](http://localhost:9000) でサイトを表示できます。
+これを実行すると、`http://localhost:9000` でサイトを表示できます。
 
 ### Lighthouse による評価を実施する
 
@@ -355,7 +355,7 @@ Lighthouse は、サイトの改善と学習に最適なツールです。Lighth
 
 ### 公式スターター
 
-1.  [Gatsby のデフォルトスターター]](https://github.com/gatsbyjs/gatsby-starter-default)：デフォルトの定型文でプロジェクトを開始します。この必要最小限のスターターには、必要なメイン Gatsby 構成ファイルが付属しています。_[実施例](https://gatsbyjs.github.io/gatsby-starter-default/)_
+1.  [Gatsby のデフォルトスターター](https://github.com/gatsbyjs/gatsby-starter-default)：デフォルトの定型文でプロジェクトを開始します。この必要最小限のスターターには、必要なメイン Gatsby 構成ファイルが付属しています。_[実施例](https://gatsbyjs.github.io/gatsby-starter-default/)_
 2.  [Gatsby のブログスターター](https://github.com/gatsbyjs/gatsby-starter-blog): 驚くほど高速なブログを作成するための Gatsby スターター。 _[実施例](https://gatsbyjs.github.io/gatsby-starter-blog/)_
 3.  [Gatsby の"hello world"スターター](https://github.com/gatsbyjs/gatsby-starter-hello-world): Gatsby サイトに必要な最低限の要素を備えた Gatsby スターター。 _[実施例](https://gatsby-starter-hello-world-demo.netlify.com/)_
 

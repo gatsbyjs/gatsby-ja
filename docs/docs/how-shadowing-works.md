@@ -283,7 +283,7 @@ export default props => (
 
 This is the first case we'll handle when attempting to resolve the file.
 
-In order to do this we need to leverage the **issuer** of the request. This points to the file that the request came from. This means it refers to _where_ the `import` occurs.
+In order to do this we need to leverage the **Issuer** of the request. This points to the file that the request came from. This means it refers to _where_ the `import` occurs.
 The **request** refers to what the import points to.
 
 This is implemented by another method on the plugin's class which we call `requestPathIsIssuerShadowPath` which has the following method signature:
@@ -297,7 +297,7 @@ requestPathIsIssuerShadowPath({
 })
 ```
 
-`requestPathIsIssuerShadowPath` checks all possible directories for shadowing and then returns whether the issuer's path is found. Let's first take a look at the code and then unpack what's happening here.
+`requestPathIsIssuerShadowPath` checks all possible directories for shadowing and then returns whether the Issuer's path is found. Let's first take a look at the code and then unpack what's happening here.
 
 ```js
 requestPathIsIssuerShadowPath({ requestPath, issuerPath, theme }) {
@@ -328,7 +328,7 @@ const fullPaths = [
 ]
 ```
 
-We then know that if the issuer _matches_ one of these components that it's being extended. This means that a shadowed component is extending the same component from its parent.
+We then know that if the Issuer _matches_ one of these components that it's being extended. This means that a shadowed component is extending the same component from its parent.
 
 When this happens, we return the next path, so here the original location of the theme: `/Users/johno/c/gatsby-theme-example-component-extending/gatsby-theme-tomato/src/box`.
 
@@ -352,7 +352,7 @@ Now, all usages of the Box in `gatsby-theme-tomato` will be also wrapped in a pu
 
 #### An edge case
 
-If a theme sets [`module` config](https://webpack.js.org/configuration/resolve/#resolvemodules) the issuer will be null. As such we need to first check that the `request.context.issuer` is present before we attempt to resolve the shadowed component.
+If a theme sets [`module` config](https://webpack.js.org/configuration/resolve/#resolvemodules) the Issuer will be null. As such we need to first check that the `request.context.issuer` is present before we attempt to resolve the shadowed component.
 
 It's important to note that we don't recommend appending to the modules list in themes.
 Though, if you do, we will make sure we don't arbitrarily error.

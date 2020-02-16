@@ -1,5 +1,6 @@
 ---
 title: "レシピ: スターターを使用する"
+tableOfContentsDepth: 1
 ---
 
 [スターター](/docs/starters/) は、公式もしくはコミュニティーによって整備された Gatsby サイトの雛形です。

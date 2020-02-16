@@ -18,7 +18,7 @@ Gatsby で GraphQL Playground にアクセスするためには、以下のよ�
 "develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
 ```
 
-`gatsby develop` の代わりに `npm run develop` を使用し、立ち上がったサーバー <https://localhost:8000/___graphql> へアクセスすることで利用できます。
+`gatsby develop` の代わりに `npm run develop` を使用し、立ち上がったサーバー `http://localhost:8000/___graphql` へアクセスすることで利用できます。
 
 `gatsby develop` を引き続き使用するためには、gatsby-config.js で dotenv パッケージを使用する必要があります。`.env.development` といった名前で[environment variable](/docs/environment-variables/)ファイルを作成し、`.env.development` へ `GATSBY_GRAPHQL_IDE=playground` と記入します。
 

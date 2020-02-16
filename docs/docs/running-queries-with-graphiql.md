@@ -11,7 +11,11 @@ Gatsby サイトを構築する際に、頻繁に使用することになるで�
 
 開発環境のサーバーを実行中に、GraphiQL へアクセスできます。
 通常、以下の URL になります。
-`http://localhost:8000/___graphql`.
+`http://localhost:8000/___graphql`
+
+## GraphiQL の使用例
+
+`http://localhost:8000/___graphql` を開くと、以下の動画のように表示されます。ビルドインの `Site` "type" を突っつくと、`siteMetadata`オブジェクトを含んだ、どのフィールドを利用できるかを確認できます。
 
 ## GraphiQL の使用例
 

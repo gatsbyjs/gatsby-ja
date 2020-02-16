@@ -1,5 +1,6 @@
 ---
 title: "レシピ: サイトをデプロイする"
+tableOfContentsDepth: 1
 ---
 
 ショータイム。満足ゆくサイトができたら、あとはそれをデプロイするだけです。
@@ -75,7 +76,7 @@ gatsby build && gatsby serve
 
 6. デプロイパスを `public/` に変更します。
 
-7. 正常に動作していることを確認できたら `netlify deploy --prod` で本番環境にデプロイします。
+7. 正常に動作していることを確認できたら `netlify deploy -d . --prod` で本番環境にデプロイします。
 
 ### 追加資料
 

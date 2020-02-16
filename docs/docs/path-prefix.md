@@ -67,9 +67,7 @@ export default function Index() {
     <Layout>
       {/* 注意: 以下のコードは現実的な例ではありませんが、考え方としてはわかるはずです。 */}
       {/* highlight-next-line */}
-      <button onClick={() => navigate("/page-2")}>
-        Page 2 へ動的に移動
-      </button>
+      <button onClick={() => navigate("/page-2")}>Page 2 へ動的に移動</button>
     </Layout>
   )
 }

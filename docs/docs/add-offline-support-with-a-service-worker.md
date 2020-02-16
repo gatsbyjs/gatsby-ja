@@ -50,8 +50,7 @@ Service Worker が更新を見つけたときに、カスタムメッセージ�
 ```javascript:title=gatsby-browser.js
 export const onServiceWorkerUpdateReady = () => {
   const answer = window.confirm(
-    `アプリケーションが更新されました。 ` +
-      `最新版を表示しますか？`
+    `アプリケーションが更新されました。 ` + `最新版を表示しますか？`
   )
 
   if (answer === true) {
