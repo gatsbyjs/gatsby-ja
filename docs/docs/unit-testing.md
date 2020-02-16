@@ -172,7 +172,7 @@ describe("Header", () => {
 
 自分のプロジェクトのルートディレクトリー内のファイルに `jest-preprocess` を実行するために、`jest.config.js` の transform を更新してください。
 
-**注意:** `<rootDir>` は Jest によってプロジェクトのルートディレクトリーに書き換えられるので、ここは変更しないでください。
+**注意：** `<rootDir>` は Jest によってプロジェクトのルートディレクトリーに書き換えられるので、ここは変更しないでください。
 
 ```js:title=jest.config.js
     "^.+\\.[jt]sx?$": "<rootDir>/jest-preprocess.js",
