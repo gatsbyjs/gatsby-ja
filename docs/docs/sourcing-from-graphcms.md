@@ -14,7 +14,7 @@ GraphCMS を Gatsby から使用するときの利点のひとつは、プロジ
 
 ### 雛形をインストールする
 
-はじめに、 Gatsby のスターターサイトを作りましょう。
+はじめに、Gatsby のスターターサイトを作りましょう。
 
 ```shell
 gatsby new gatsby-site https://github.com/gatsbyjs/gatsby-starter-default
