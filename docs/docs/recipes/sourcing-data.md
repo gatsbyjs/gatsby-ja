@@ -3,14 +3,13 @@ title: "レシピ集: データの取得"
 tableOfContentsDepth: 1
 ---
 
-
 Gatsby のデータ取得はプラグインによって実現されています。データ取得プラグインはデータソースからデータを取得します。（例： `gatsby-source-filesystem` プラグインはファイルシステムからデータを取得する、`gatsby-source-wordpress` プラグインは WordPress API からデータを取得する、等）データソースを自身で用意することも可能です。
 
 ## GraphQL にデータを追加する
 
 Gatsby の [GraphQL data layer](/docs/querying-with-graphql/) はデータの塊をモデル化するノードを必要とします。Gatsby データ取得プラグインはクエリ対象のソースノードを追加します。しかし、ソースノードはご自身で作成することも可能です。Gatsby では、GraphQL のデータレイヤーにカスタムデータを追加する為のメソッドが提供されています。
 
-このレシピでは、 `createNode()` を用いてカスタムデータを追加する方法を紹介します。
+このレシピでは、`createNode()` を用いてカスタムデータを追加する方法を紹介します。
 
 ### 手順
 
@@ -40,7 +39,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
 
 2. `gatsby develop` を実行します。
 
-   > ヒント：`gatsby-node.js` に変更を加えたら、変更を反映させるために、 `gatsby develop` を再度実行する必要があります。
+   > ヒント：`gatsby-node.js` に変更を加えたら、変更を反映させるために、`gatsby develop` を再度実行する必要があります。
 
 3. データの検索（GraphiQL もしくは新たに作成したコンポーネント内で）
 
@@ -58,7 +57,7 @@ query MyPokemonQuery {
 
 ### 追加資料
 
-- [チュートリアル パート 5](/tutorial/part-five/#source-plugins) にて、 `gatsby-source-filesystem` を用いた例の概略
+- [チュートリアル パート 5](/tutorial/part-five/#source-plugins) にて、`gatsby-source-filesystem` を用いた例の概略
 - [Gatsby ライブラリ](/plugins/?=source) 内で検索可能なデータ取得プラグイン
 - [Pixabay データ取得プラグインのチュートリアル](/docs/pixabay-source-plugin-tutorial/) 内での、データ取得プラグインのハンズオン
 - createNode の[ドキュメント](/docs/actions/#createNode)
@@ -218,13 +217,13 @@ export const pageQuery = graphql`
 
 ### 手順
 
-1. 次のコマンドを実行して、 `gatsby-source-wordpress` プラグインをインストール
+1. 次のコマンドを実行して、`gatsby-source-wordpress` プラグインをインストール
 
 ```shell
 npm install gatsby-source-wordpress --save
 ```
 
-2. プラグインの設定の為に、 `gatsby-config.js` に次にコードを追記
+2. プラグインの設定の為に、`gatsby-config.js` に次にコードを追記
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -285,7 +284,7 @@ export const pageQuery = graphql`
 `
 ```
 
-4. `gatsby-node.js` に次のサンプルコードを貼り付けて、 WordPress の投稿の為のページを動的に作成します：
+4. `gatsby-node.js` に次のサンプルコードを貼り付けて、WordPress の投稿の為のページを動的に作成します：
 
 ```javascript:title=gatsby-node.js
 const path = require(`path`)
@@ -327,7 +326,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
 5. `gatsby-develop` を実行して、新しく生成されたページを閲覧しにいきます
 
-6. `http://localhost:8000/__graphql` で `GraphiQL IDE` を表示して、 Docs や `allWordpressPosts` に対するクエリーフィールドの監視をするエクスプローラーを開きます。
+6. `http://localhost:8000/__graphql` で `GraphiQL IDE` を表示して、Docs や `allWordpressPosts` に対するクエリーフィールドの監視をするエクスプローラーを開きます。
 
 上記 `gatsby-node.js` で作成された動的ページには、特定の投稿に移動する為の一意のパスがあり、投稿用のテンプレートコンポーネントと WordPress 投稿コンテンツのソースとなるサンプル GraphQL クエリを使用します。
 
@@ -347,7 +346,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
 ### 手順
 
-1. まず、 Contentful CLI を使って Contentful にログインしてください。アカウントを持っていない場合にアカウントを作成するのに役立ちます。
+1. まず、Contentful CLI を使って Contentful にログインしてください。アカウントを持っていない場合にアカウントを作成するのに役立ちます。
 
 ```shell
 contentful login
@@ -367,7 +366,7 @@ contentful space create --name 'Gatsby example'
 contentful space seed -s '<space ID>' -t blog
 ```
 
-例えば、 Space ID は右のように配置します： `contentful space seed -s '22fzx88spbp7' -t blog`
+例えば、Space ID は右のように配置します： `contentful space seed -s '22fzx88spbp7' -t blog`
 
 1. Space への新しいアクセストークンを作成します。このトークンは記憶してください。Step 6 で必要になります。
 
@@ -402,8 +401,7 @@ plugins: [
 
 7. `gatsby develop` を実行し、サイトのコンパイルが成功したことを確認してください。
 
-
-8. `http://localhost:8000/___graphql` にアクセスして、[GraphiQL editor](/docs/introducing-graphiql/) を使い、データを検索してください。Contentful プラグインによって、あなたのサイトに、あなたの Contentful ウェブサイトのすべての Content タイプを含む新しいノードタイプがいくつか追加されます。"Blog Post" という Content タイプを持つあなたの Example Space は、GraphQL に `allContentfulBlogPost` ノードタイプを作成します。
+8) `http://localhost:8000/___graphql` にアクセスして、[GraphiQL editor](/docs/introducing-graphiql/) を使い、データを検索してください。Contentful プラグインによって、あなたのサイトに、あなたの Contentful ウェブサイトのすべての Content タイプを含む新しいノードタイプがいくつか追加されます。"Blog Post" という Content タイプを持つあなたの Example Space は、GraphQL に `allContentfulBlogPost` ノードタイプを作成します。
 
 ![the graphql interface, with a sample query outlined below](../images/recipe-sourcing-contentful-graphql.png)
 
@@ -470,7 +468,7 @@ export const query = graphql`
 
 ## 外部ソースからデータを読み込み、GraphQL を使わずページを作成する
 
-[GraphQL の利用を検討すべき理由はいくつかありますが](/docs/why-gatsby-uses-graphql/)、ページ内にデータを内包させる為に、必ずしも GraphQL データレイヤーを用いる必要はありません。GraphQL とソース プラグインを経由せず、 `createPages` API を利用して、まだ構築されていないデータを直接 Gatsby サイトに読み込むことができます。
+[GraphQL の利用を検討すべき理由はいくつかありますが](/docs/why-gatsby-uses-graphql/)、ページ内にデータを内包させる為に、必ずしも GraphQL データレイヤーを用いる必要はありません。GraphQL とソース プラグインを経由せず、`createPages` API を利用して、まだ構築されていないデータを直接 Gatsby サイトに読み込むことができます。
 
 このレシピでは、[PokéAPI’s REST endpoints](https://www.pokeapi.co/) からデータを取得して動的にページを作成していきます。[完全な例](https://github.com/jlengstorf/gatsby-with-unstructured-data/) は Github にあります。
 
