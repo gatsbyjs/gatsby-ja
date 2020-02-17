@@ -12,7 +12,7 @@ CSS-in-JS は CSS と JavaScript の架け橋になります：
 3. **動的**: JavaScript 変数の活用によりコンポーネントの状態に連動して動的にサイトをスタイリングします。
 4. **おまけ**: CSS-in-JS には豊富なライブラリーがあります。キャッシュを支援する一意なクラス名の生成、ベンダープリフィックスの自動付与、クリティカル CSS の最適化ローディング、その他多くの機能をライブラリー追加できます。
 
-CSS-in-JS は Gatsby において必須という訳ではありませんが、上記の理由により多くの JavaScript 開発者に人気があります。詳しく知りたい場合は、 Max Stoiber（CSS-in-JS ライブラリー styled-components の作者の一人）の記事 [_Why I write CSS in JavaScript_](https://mxstbr.com/thoughts/css-in-js/) をご覧ください。しかしながら、CSS-in-JS が必要か、依存せずに包括的なフロントエンドのスキルセットで推しすすめることが可能どうかも熟慮しなければなりません。また、JSX から CSS への移植はかなりの労力を伴います。
+CSS-in-JS は Gatsby において必須という訳ではありませんが、上記の理由により多くの JavaScript 開発者に人気があります。詳しく知りたい場合は、Max Stoiber（CSS-in-JS ライブラリー styled-components の作者の一人）の記事 [_Why I write CSS in JavaScript_](https://mxstbr.com/thoughts/css-in-js/) をご覧ください。しかしながら、CSS-in-JS が必要か、依存せずに包括的なフロントエンドのスキルセットで推しすすめることが可能どうかも熟慮しなければなりません。また、JSX から CSS への移植はかなりの労力を伴います。
 
 **これは React や Gatsby の機能の一部ではなく、幾つかの[サードパーティ CSS-in-JS ライブラリー](https://github.com/MicheleBertoli/css-in-js#css-in-js)を使用することでもたらされます。**
 
