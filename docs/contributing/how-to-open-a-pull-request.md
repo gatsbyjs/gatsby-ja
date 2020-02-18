@@ -1,18 +1,19 @@
 ---
-title: How to Open a Pull Request
+title: プルリクエスト (PR) を送る
 ---
 
-A big part of contributing to open source is submitting changes to a project: improvements to source code or tests, updates to docs content, even typos or broken links. This doc will cover what you need to know to **open a Pull Request** in Gatsby.
+オープンソースプロジェクトへの貢献をする中で、大きな割合を占めるのが、変更部分の提出です。例えば、ソースコードやテストコードの改善、ドキュメントの更新、文字の打ち間違いやリンク切れの修正などです。このドキュメントでは、Gatsby で**プルリクエストを送る**ために知るべきことをお伝えします。
 
-## What is a Pull Request (PR)?
+## プルリクエスト (PR) とは？
 
-In case you aren't familiar, here's how the folks at GitHub [define a pull request](https://help.github.com/en/articles/about-pull-requests):
+もしもあなたがプルリクエストについてよく知らない場合、以下が GitHub での[プルリクエストの定義](https://help.github.com/en/articles/about-pull-requests)になります。
 
+> プルリクエストは、
 > Pull requests let you tell others about changes you've pushed to a branch in a repository on GitHub. Once a pull request is opened, you can discuss and review the potential changes with collaborators and add follow-up commits before your changes are merged into the base branch.
 
 Gatsby uses the PR process to review and test changes before they’re added to Gatsby’s GitHub repository. Anyone can open a Pull Request. The same process is used for all contributors, whether this is your first open source contribution or you’re a core member of the Gatsby team.
 
-When someone wants to contribute to Gatsby, they open a request to _pull_ their code into the repo. Depending on the type of change, PRs are categorized into:
+When someone wants to contribute to Gatsby, they open a request to _pull_ their code into the repo. Depending on the type of change, PR は以下のように分類されます。PRs are categorized into:
 
 - [Documentation](#documentation-prs)
 - [Code](#code-changes)
@@ -21,17 +22,19 @@ When someone wants to contribute to Gatsby, they open a request to _pull_ their 
 
 Recommendations for different kinds of contributions will follow in this guide and throughout the contributing docs.
 
-## Things to know before opening a PR
+## PR を送る前に知るべきこと
 
+Gatsby では、同じ問題に関する Issue がまだ無い場合、プルリクエストを送る前に [Issue を作成する](/contributing/how-to-file-an-issue/)ことが推奨されています。どのような変更を実装するかについて、議論する場を設けるためです。
 We typically recommend [opening an issue](/contributing/how-to-file-an-issue/) before a Pull Request if there isn't already an Issue for the problem you'd like to solve. This helps facilitate a discussion before deciding on an implementation.
 
+文字の打ち間違えやリンク切れなどの修正については、Issue を作成せず PR を送るだけで良いこともあります。こちらに関しては個人の判断になりがちなので、もしもよく分からない場合は[お気軽にご質問ください](/contributing/how-to-contribute/#not-sure-how-to-start-contributing)。
 For some changes, such as typo fixes or broken links, it may be appropriate to open a small PR by itself. This is somewhat subjective so if you have any questions, [feel free to ask us](/contributing/how-to-contribute/#not-sure-how-to-start-contributing).
 
-The Gatsby core team uses a triaging process outlined in [Managing Pull Requests](/contributing/managing-pull-requests/), if you're interested in learning more about how that works.
+Gatsby コアチームは、[プルリクエストを管理](/contributing/managing-pull-requests/)の中で定められた優先選定に The Gatsby core team uses a triaging process outlined in [Managing Pull Requests](/contributing/managing-pull-requests/), if you're interested in learning more about how that works.
 
-## Opening PRs in Gatsby
+## Gatsby に PR を送る
 
-For any kind of change to files in the Gatsby repo, you can follow the below steps. Be sure to check out additional tips for contributing to various parts of the repo later in this doc, such as docs changes, blog posts, starters, or code improvements and tests.
+Gatsby リポジトリにどんな種類の変更でも行うときは、以下の手順を踏みます。このドキュメントの後半で、貢献に For any kind of change to files in the Gatsby repo, you can follow the below steps. Be sure to check out additional tips for contributing to various parts of the repo later in this doc, such as docs changes, blog posts, starters, or code improvements and tests。
 
 Some PRs can be done completely from the [GitHub UI](https://help.github.com/en/articles/creating-a-pull-request), such as edits to README files or docs.
 
@@ -40,7 +43,7 @@ To test changes locally against the Gatsby [site and project files](https://gith
 - [Fork and clone the Gatsby repo](/contributing/setting-up-your-local-dev-environment/#gatsby-repo-install-instructions).
 - Install [yarn](https://yarnpkg.com/) to pull in dependencies and build the project.
 - Follow the instructions for the part of the project you want to change. (See specific sections below.)
-- [Create a branch in Git](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) to isolate your changes:
+- [Git でブランチを作成する](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) to isolate your changes:
 
   ```shell
   git checkout -b some-change
@@ -76,7 +79,7 @@ Additional docs PR steps:
 
 Further instructions can be found on the [docs contributions](/contributing/docs-contributions/) page.
 
-### Code changes
+### コードの変更 Code changes
 
 Instructions for making changes to the Gatsby source code, tests, internals, APIs, packages, and more can be found in the contributing docs on [setting up your local dev environment](/contributing/setting-up-your-local-dev-environment/). There are also additional details on the [Code contributions](/contributing/code-contributions/) page.
 
@@ -87,20 +90,21 @@ There are specific pages about contributing to various parts of the Gatsby ecosy
 - [Showcase submissions](/contributing/site-showcase-submissions/)
 - [Starter library](/contributing/submit-to-starter-library/)
 
-### Blog posts
+### ブログ記事 Blog posts
 
 For the Gatsby blog, it's necessary to run your content idea by the Gatsby team before submitting it. For more information, refer to the page on [blog and website contributions](/contributing/blog-and-website-contributions/), including how to propose an idea and setting up the blog to run locally.
 
 ## Follow up with reviews and suggestions
 
-After a PR is sent to the Gatsby GitHub repo, the Gatsby core team and the community may suggest modifications to the changes that your PR introduces.
+あなたの PR が Gatsyby GitHub リポジトリに送られた後、あなたの変更提案箇所について、Gatsby のコアチームとコミュニティメンバーが変更提案をすることがあります。
+After a PR is sent to the Gatsby GitHub repo, the Gatsby core team and the community may suggest modifications to the changes that your PR introduces。
 
-The Gatsby core and learning teams review and approve every PR that the community sends to make sure that it meets the contribution guidelines of the repo, and to find opportunities for improvement to your PR changes.
+Gatsby のコアチーム・ラーニングチームは、コミュニティに送られた全ての PR レビューと承認をし、The Gatsby core and learning teams review and approve every PR that the community sends to make sure that it meets the contribution guidelines of the repo, and to find opportunities for improvement to your PR changes。
 
 These suggestions may also be called "request changes" by the GitHub UI. When a change request is added to your PR, this and the rest of the change requests will appear on the GitHub page for your PR. From this page you can use the suggestions UI to:
 
 - Review the suggested changes using the "View changes" button.
-- [Commit](https://help.github.com/en/articles/incorporating-feedback-in-your-pull-request#applying-suggested-changes) the suggestions.
+- [コミット](https://help.github.com/en/articles/incorporating-feedback-in-your-pull-request#applying-suggested-changes) the suggestions.
 - [Discuss suggestions](https://help.github.com/en/articles/about-conversations-on-github) to ask questions about the suggested changes.
 - [Add suggestions to a batch](https://help.github.com/en/articles/incorporating-feedback-in-your-pull-request#applying-suggested-changes) so they can be pushed in a single commit.
 
@@ -141,14 +145,14 @@ For more information on working with upstream repos, [visit the GitHub docs](htt
 
 _**Note:** as a member of the Gatsby repo, you can also clone it directly (instead of forking and using an upstream remote workflow). You can then push changes to [feature branches](https://git-scm.com/book/en/v1/Git-Branching-Branching-Workflows) to open PRs._
 
-## Additional resources
+## 追加資料
 
-- CSS Tricks: [How to Contribute to an Open Source Project](https://css-tricks.com/how-to-contribute-to-an-open-source-project/)
-- [Creating a pull request](https://help.github.com/en/articles/creating-a-pull-request) from GitHub
+- CSS Tricks: [オープンソースプロジェクトに貢献する方法](https://css-tricks.com/how-to-contribute-to-an-open-source-project/)
+- [プルリクエストを送る](https://help.github.com/en/articles/creating-a-pull-request) GitHub から
 - [Configuring a remote for a fork](https://help.github.com/en/articles/configuring-a-remote-for-a-fork)
-- [Which remote URL should I use?](https://help.github.com/en/articles/which-remote-url-should-i-use)
-- [Git Branching and Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
+- [どのリモート URL を使うべき？](https://help.github.com/en/articles/which-remote-url-should-i-use)
+- [Git でのブランチとマージ](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
 - [Feature Branching and Workflows](https://git-scm.com/book/en/v1/Git-Branching-Branching-Workflows)
-- [Resolving merge conflicts](https://help.github.com/en/articles/resolving-a-merge-conflict-on-github)
-- [Managing Pull Requests](/contributing/managing-pull-requests/) on the Gatsby core team
-- [Guide on Markdown Syntax](/docs/mdx/markdown-syntax/)
+- [マージコンフリクトを解消する](https://help.github.com/en/articles/resolving-a-merge-conflict-on-github)
+- [プルリクエストを管理する](/contributing/managing-pull-requests/) on the Gatsby core team
+- [マークダウン構文ガイド](/docs/mdx/markdown-syntax/)
