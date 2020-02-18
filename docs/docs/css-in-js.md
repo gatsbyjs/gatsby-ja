@@ -16,7 +16,7 @@ CSS-in-JS は Gatsby において必須という訳ではありませんが、�
 
 **これは React や Gatsby の機能の一部ではなく、幾つかの[サードパーティ CSS-in-JS ライブラリー](https://github.com/MicheleBertoli/css-in-js#css-in-js)を使用することでもたらされます。**
 
-> CSS-in-JS で JSX マークアップに 不変な CSS クラスを追加することは エンドユーザがアクセシビリティのために [User Stylesheets](https://www.viget.com/articles/inline-styles-user-style-sheets-and-accessibility/) を追加することの助けになります。[Styled Components](/docs/styled-components#enabling-user-stylesheets-with-a-stable-class-name) での例をご覧くだい。
+> CSS-in-JS で JSX マークアップに不変な CSS クラスを追加することは エンドユーザがアクセシビリティのために [User Stylesheets](https://www.viget.com/articles/inline-styles-user-style-sheets-and-accessibility/) を追加することの助けになります。[Styled Components](/docs/styled-components#enabling-user-stylesheets-with-a-stable-class-name) での例をご覧くだい。
 
 JavaScript が読み込まれるまでスタイルが適用されない事に留意すべきです。したがって、FOUC(Flash Of Unstyled Content) という CSS 適用前が表示されてしまう現象を防ぐためにスタイルを抽出するプラグインが必要になります。この問題を解決するために、すべての CSS-in-JS ライブラリーはスタイルを抽出する為の Gatsby プラグインを持ちます。そして、抽出したスタイルをビルド時に HTML へ挿入し、これにより FOUC を防ぎます。
 
