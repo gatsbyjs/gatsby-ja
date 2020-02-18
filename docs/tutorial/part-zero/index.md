@@ -12,7 +12,11 @@ disableTableOfContents: true
 
 コンピュータのコマンドラインインターフェイス（CLI）を見つけて開いてみましょう。使用しているオペレーティングシステムに応じて、[**Mac の手順**](http://www.macworld.co.uk/feature/mac-software/how-use-terminal-on-mac-3608274/)、[**Windows の手順**](https://www.quora.com/How-do-I-open-terminal-in-windows)、または[**Linux の手順**](https://www.howtogeek.com/140679/beginner-geek-how-to-start-using-the-linux-terminal/)を参照してください。
 
+<<<<<<< HEAD
 _コマンドラインがはじめての方へ: コマンドを「実行する」とは、与えられた一連の指示をコマンドプロンプトに入力して、エンターキーを押すことを意味します。コマンドは、`node --version`のようにハイライトしたボックスの中に記載します。しかし、ハイライトしたボックスの中のすべてがコマンドというわけではありません！実行する必要があるコマンドは、明示的にそれを実行するよう書かれています。_
+=======
+_Note: If you’re new to the command line, "running" a command, means "writing a given set of instructions in your command prompt, and hitting the Enter key". Commands will be shown in a highlighted box, something like `node --version`, but not every highlighted box is a command! If something is a command it will be mentioned as something you have to run/execute._
+>>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
 
 ## お使いの OS に適切な Node.js をインストールする
 
@@ -24,17 +28,31 @@ Gatsby と Node.js をインストールするには、[Homebrew](https://brew.s
 
 #### コンピューターに Homebrew をインストールするには：
 
+<<<<<<< HEAD
 1. ターミナルを開きます。
 1. `brew -v`を実行して Homebrew がインストールされているか確認します。"Homebrew"という文字列とバージョン番号が表示されるはずです。
 1. もし表示されない場合は、[Homebrew の指示](https://docs.brew.sh/Installation)にしたがって、ダウンロードしてインストールします。
 1. Homebrew をインストールしたら、手順 2 を繰り返して確認します。
+=======
+1. Open your Terminal.
+2. See if Homebrew is installed by running `brew -v`. You should see "Homebrew" and a version number.
+3. If not, download and install [Homebrew with the instructions](https://docs.brew.sh/Installation).
+4. Once you've installed Homebrew, repeat step 2 to verify.
+>>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
 
 #### Xcode コマンドラインツールのインストール：
 
+<<<<<<< HEAD
 1. ターミナルを開きます。
 1. `xcode-select --install`を実行して Xcode コマンドラインツールをインストールします。
    - もし失敗した場合は、Apple 開発者アカウントでサインインして、[Apple のサイトから直接](https://developer.apple.com/download/more/)ダウンロードします。
 1. インストール開始のプロンプトが表示された後、プロンプトが再度表示されて、ダウンロードするツールのソフトウェアライセンスに同意するように求められます。
+=======
+1. Open your Terminal.
+2. Install Xcode Command line tools by running `xcode-select --install`.
+   - If that fails, download it [directly from Apple's site](https://developer.apple.com/download/more/), after signing-in with an Apple developer account
+3. After being prompted to start the installation, you'll be prompted again to accept a software license for the tools to download.
+>>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
 
 #### Node のインストール
 
