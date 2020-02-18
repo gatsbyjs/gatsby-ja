@@ -19,7 +19,13 @@ title: クイックスタート
 npm install -g gatsby-cli
 ```
 
+<<<<<<< HEAD
 ### 新しいサイトを作成する
+=======
+> The above command installs Gatsby CLI globally on your machine.
+
+### Create a new site
+>>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
 
 ```shell
 gatsby new gatsby-site
@@ -37,7 +43,11 @@ cd gatsby-site
 gatsby develop
 ```
 
+<<<<<<< HEAD
 Gatsby はホットリロード対応の開発環境を `localhost:8000` に立ち上げます。
+=======
+Gatsby will start a hot-reloading development environment accessible by default at `http://localhost:8000`.
+>>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
 
 `src/pages`の中にある JavaScript で書かれたページを編集してみてください。保存された変更はブラウザー上でリアルタイムに反映されます。
 

@@ -3,9 +3,13 @@ title: 用語集
 disableTableOfContents: true
 ---
 
+<<<<<<< HEAD
 import HorizontalNavList from "../../www/src/components/horizontal-nav-list.js"
 
 Gatsby をはじめたばかりの時は、覚えるべき用語がたくさんあって大変でしょう。この用語集ではよく使われる用語の意味と、Gatsby のサイト上でどのように使われているかを説明します。
+=======
+When you're new to Gatsby there can be a lot of words to learn. This glossary aims to give you a 10,000-foot overview of common terms and what they mean for Gatsby sites.
+>>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
 
 <HorizontalNavList
 items={"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")}
@@ -78,6 +82,10 @@ CMS とはコンテンツ・マネジメント・システム (Content Managemen
 
 設定ファイルのこと。Gatsby では `gatsby-config.js` を使って Gatsby にあなたのサイトの設定を行います。よく使われる設定としては、サイトの metadata を設定してあなたのサイトの SEO を向上させるものがあります。
 
+### [Continuous Deployment](/docs/glossary/continuous-deployment)
+
+Continuous deployment (CD) automates the process of releasing changes to your project. A continuous deployment workflow automatically builds and tests your project, and publishes your changes only when they pass the required tests.
+
 ### CSS
 
 [CSS](https://developer.mozilla.org/ja/docs/Web/CSS) は Cascading Style Sheets の略であり、[HTML](#html) と [JavaScript](#javascript) と共に、サイトを構成する主戦物です。CSS はウェブサイトのデザインを変更する為に設計された言語です。後方互換性の保守に優れており、新しい機能が実装されても、[CSS パーサー](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#CSS_parsing)はサポートされていない機能を安全に無視して、サポートしている機能だけを提供できます。[CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_and_Progressive_Enhancement) のような新しい技術をブラウザーに提供しつつ、古いブラウザーにはフォールバックを提供しています。Gatsby では様々な[スタイリングに対するアプローチ](/docs/styling/)に対応しています。これは、通常の CSS ファイルや、CSS modules、CSS-in-JS を含みます。
@@ -96,7 +104,15 @@ CMS とはコンテンツ・マネジメント・システム (Content Managemen
 
 [Gatsby](#gatsby) において、分離とは関心の分離のことを指します。多くの場合、[フロントエンド](#frontend)と[バックエンド](#backend)を分離することを指しています。例として、[Decoupled Drupal](https://dri.es/how-to-decouple-drupal-in-2019) や [Headless WordPress](https://www.smashingmagazine.com/2018/10/headless-wordpress-decoupled/) が挙げられます。
 
+<<<<<<< HEAD
 ### デプロイ (Deploy)
+=======
+### [Decoupled Drupal](/docs/glossary/decoupled-drupal)
+
+Decoupling refers to the practice of using Drupal as a [headless CMS](#headless-cms). A decoupled Drupal instance functions as a content API that returns JSON for your [frontend](#frontend) to consume.
+
+### Deploy
+>>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
 
 あなたのウェブサイトを[ビルド](#build)し、[ホストプロバイダー](#hosting)にアップロードする一連の動作のこと。
 
@@ -150,11 +166,19 @@ Gatsby は [React](#react)、[GraphQL](#graphql)、モダンな [JavaScript](#ja
 
 すべてのブラウザーが理解可能なマークアップ言語。Hypertext Markup Language の略。[HTML](https://developer.mozilla.org/ja/docs/Web/HTML) はウェブコンテンツに見出しや段落などを定義して、ユニバーサルな構造を与えます。アクセシビリティ対応のウェブサイトを構築する上でも大事です。
 
-### Headless CMS
+### [Headless CMS](/docs/glossary/headless-cms)
 
 [バックエンド](#backend)と[フロントエンド](#frontend)の両方を管理するのではなく、バックエンドのコンテンツ管理だけを行うための [CMS](#cms)。このセットアップは [Decoupled](#decoupled) とも呼ばれます。
 
+<<<<<<< HEAD
 ### ホスティング (Hosting)
+=======
+### [Headless WordPress](/docs/glossary/headless-wordpress)
+
+The practice of using JSON returned from the WordPress REST API as a [headless CMS](#headless-cms). It allows you to use WordPress to write and edit content that can be consumed by any client capable of parsing JSON.
+
+### Hosting
+>>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
 
 ホスティング・プロバイダーはあなたのウェブサイトやアプリのコピーを持ち、世の中に[公開](#public)ための場所を提供しているサービスです。 [Gatsby のサイトをホストできる主なホスティング・プロバイダ・サービス](/docs/deploying-and-hosting/)は Netlify, AWS, S3, Surge, Heroku 等があります。
 
@@ -174,7 +198,7 @@ Gatsby によってサイトが[ビルド](#build)され、ブラウザー上に
 
 ## J
 
-### JAMStack
+### [JAMStack](/docs/glossary/jamstack)
 
 JAMStack とは [JavaScript](#javascript)、[APIs](#api)、そして（[HTML](#html) の）Markup から構成されたモダンなウェブアーキテクチャのことです。 [JAMStack.org](https://jamstack.org) から引用。"JAM Stack とは、優れたパフォーマンス、セキュリティ、スケーリングのコスト、開発体験を提供するウェブサイトやアプリを構築する新しい手法です"。
 
@@ -305,6 +329,10 @@ Gatsby のスターターとは、あなたのプロジェクトを始めるの�
 Gatsby はあなたのサイトを静的に[ビルド](#build)し、コマンド 1 つで[ホスト](#hosting)できます。これは、その場でページを生成する動的なシステムと違うところです。静的であるということは各コンテンツやコード変更の度に一度の読み込みしか必要がなくなるので、良いパフォーマンスを見込む事ができます。
 
 このサイトでは、他に Gatsby のプロジェクトで用意される `/static` フォルダーのことを指します。これは、[ビルド時](#build)に `/public` フォルダーへと自動的にコピーされるフォルダーのことです。Gatsby によって変換する必要はない一方で [public](#public) フォルダーに入れる必要があるファイル群を入れるフォルダーです。
+
+### [Static Site Generator](/docs/glossary/static-site-generator)
+
+A software application that creates HTML pages from templates or [components](#component) and a given content source.
 
 ## T
 

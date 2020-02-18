@@ -65,8 +65,14 @@ tableOfContentsDepth: 2
 
 Gatsby テーマを使用するとサイトの見た目を統一できます。 テーマをシームレスに更新したり、まとめて作成したり、あるいは互換性のあるテーマを別のものに交換したりすることもできます。
 
+<<<<<<< HEAD
 - [テーマスターターを使って新しいサイトをつくる](/docs/recipes/working-with-themes#creating-a-new-site-using-a-theme-starter)
 - [新しいテーマをつくる](/docs/recipes/working-with-themes#building-a-new-theme)
+=======
+- [Creating a new site using a theme](/docs/recipes/working-with-themes#creating-a-new-site-using-a-theme)
+- [Creating a new site using a theme starter](/docs/recipes/working-with-themes#creating-a-new-site-using-a-theme-starter)
+- [Building a new theme](/docs/recipes/working-with-themes#building-a-new-theme)
+>>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
 
 ## [5. データの取得](/docs/recipes/sourcing-data)
 
@@ -106,7 +112,12 @@ Gatsby では、単一の GraphQL インターフェイスを通じてあらゆ�
 
 Gatsby でのデータ変換はプラグインによって実現されています。Transformer プラグインは source プラグインを通じてデータを取得し、実際に使う形式へ変換します（例：JSON を JavaScript オブジェクトにする等）。
 
+<<<<<<< HEAD
 - [Markdown を HTML に変換する](/docs/recipes/transforming-data#transforming-markdown-into-html)
+=======
+- [Transforming Markdown into HTML](/docs/recipes/transforming-data#transforming-markdown-into-html)
+- [Transforming images into grayscale using GraphQL](/docs/recipes/transforming-data#transforming-images-into-grayscale-using-graphql)
+>>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
 
 ## [9. サイトのデプロイ](/docs/recipes/deploying-your-site)
 

@@ -12,7 +12,11 @@ disableTableOfContents: true
 
 コンピュータのコマンドラインインターフェイス（CLI）を見つけて開いてみましょう。使用しているオペレーティングシステムに応じて、[**Mac の手順**](http://www.macworld.co.uk/feature/mac-software/how-use-terminal-on-mac-3608274/)、[**Windows の手順**](https://www.quora.com/How-do-I-open-terminal-in-windows)、または[**Linux の手順**](https://www.howtogeek.com/140679/beginner-geek-how-to-start-using-the-linux-terminal/)を参照してください。
 
+<<<<<<< HEAD
 _コマンドラインがはじめての方へ: コマンドを「実行する」とは、与えられた一連の指示をコマンドプロンプトに入力して、エンターキーを押すことを意味します。コマンドは、`node --version`のようにハイライトしたボックスの中に記載します。しかし、ハイライトしたボックスの中のすべてがコマンドというわけではありません！実行する必要があるコマンドは、明示的にそれを実行するよう書かれています。_
+=======
+_Note: If you’re new to the command line, "running" a command, means "writing a given set of instructions in your command prompt, and hitting the Enter key". Commands will be shown in a highlighted box, something like `node --version`, but not every highlighted box is a command! If something is a command it will be mentioned as something you have to run/execute._
+>>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
 
 ## お使いの OS に適切な Node.js をインストールする
 
@@ -24,23 +28,43 @@ Gatsby と Node.js をインストールするには、[Homebrew](https://brew.s
 
 #### コンピューターに Homebrew をインストールするには：
 
+<<<<<<< HEAD
 1. ターミナルを開きます。
 1. `brew -v`を実行して Homebrew がインストールされているか確認します。"Homebrew"という文字列とバージョン番号が表示されるはずです。
 1. もし表示されない場合は、[Homebrew の指示](https://docs.brew.sh/Installation)にしたがって、ダウンロードしてインストールします。
 1. Homebrew をインストールしたら、手順 2 を繰り返して確認します。
+=======
+1. Open your Terminal.
+2. See if Homebrew is installed by running `brew -v`. You should see "Homebrew" and a version number.
+3. If not, download and install [Homebrew with the instructions](https://docs.brew.sh/Installation).
+4. Once you've installed Homebrew, repeat step 2 to verify.
+>>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
 
 #### Xcode コマンドラインツールのインストール：
 
+<<<<<<< HEAD
 1. ターミナルを開きます。
 1. `xcode-select --install`を実行して Xcode コマンドラインツールをインストールします。
    - もし失敗した場合は、Apple 開発者アカウントでサインインして、[Apple のサイトから直接](https://developer.apple.com/download/more/)ダウンロードします。
 1. インストール開始のプロンプトが表示された後、プロンプトが再度表示されて、ダウンロードするツールのソフトウェアライセンスに同意するように求められます。
+=======
+1. Open your Terminal.
+2. Install Xcode Command line tools by running `xcode-select --install`.
+   - If that fails, download it [directly from Apple's site](https://developer.apple.com/download/more/), after signing-in with an Apple developer account
+3. After being prompted to start the installation, you'll be prompted again to accept a software license for the tools to download.
+>>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
 
 #### Node のインストール
 
+<<<<<<< HEAD
 1. ターミナルを開きます
 2. `brew install node`を実行します
    - もし Homebrew でインストールしたくない場合は、[Node.js の公式ウェブサイト](https://nodejs.org/ja/)より、最新バージョンの Node.js をダウンロードして、ダブルクリックして表示されるインストール手順にしたがってください。
+=======
+1. Open your Terminal
+2. Run `brew install node`
+   - If you don't want to install it through Homebrew, download the latest Node.js version from [the official Node.js website](https://nodejs.org/en/), double click on the downloaded file and go through the installation process.
+>>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
 
 ### Windows の手順
 
@@ -155,15 +179,25 @@ gatsby develop
 
 ### サイトをローカルに表示する
 
+<<<<<<< HEAD
 ブラウザーで新しいタブを開き、[**http://localhost:8000**](http://localhost:8000/)に移動します。
+=======
+Open up a new tab in your browser and navigate to `http://localhost:8000/`
+>>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
 
 ![ホームページを確認する](04-home-page.png)
 
 <!-- textlint-disable ja-technical-writing/ja-no-mixed-period -->
 
+<<<<<<< HEAD
 おめでとうございます！これが、最初の Gatsby サイトの始まりです！🎉
 
 <!-- textlint-enable ja-technical-writing/ja-no-mixed-period -->
+=======
+You’ll be able to visit the site locally at `http://localhost:8000/` for as long as your development server is running. That’s the process you started by running the `gatsby develop` command. To stop running that process (or to “stop running the development server”), go back to your terminal window, hold down the “control” key, and then hit “c” (ctrl-c). To start it again, run `gatsby develop` again!
+
+**Note:** If you are using VM setup like `vagrant` and/or would like to listen on your local IP address, run `gatsby develop --host=0.0.0.0`. Now, the development server listens on both `http://localhost` and your local IP.
+>>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
 
 開発サーバーが実行されている限り、[**_http://localhost:8000_**](http://localhost:8000/)でローカルのサイトにアクセスできます。これは、`gatsby develop`コマンドを実行して開始したプロセスです。そのプロセスの実行を停止（または「開発サーバーの実行を停止」）するには、ターミナルウィンドウに戻り、「コントロール」キーを押しながら「c」(ctrl-c)を押します。もう一度起動するには、再度 `gatsby develop` を実行してください！
 
@@ -179,7 +213,13 @@ Gatsby のドキュメントには、VS Code で撮影したスクリーンシ�
 
 ### Prettier プラグインをインストールする
 
+<<<<<<< HEAD
 また、エラーを回避するためにコードをフォーマットするのに役立つツールである[Prettier](https://github.com/prettier/prettier)を使用することもお勧めします。
+=======
+1.  Open the extensions view on VS Code (View => Extensions).
+2.  Search for "Prettier - Code formatter".
+3.  Click "Install". (After installation, you'll be prompted to restart VS Code to enable the extension. Newer versions of VS Code will automatically enable the extension after download.)
+>>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
 
 [Prettier VS Code plugin](https://github.com/prettier/prettier-vscode)を使用して、エディターで Prettier を直接使用できます。
 

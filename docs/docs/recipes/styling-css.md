@@ -1,5 +1,10 @@
 ---
+<<<<<<< HEAD
 title: "レシピ: CSSによるスタイリング"
+=======
+title: "Recipes: Styling with CSS"
+tableOfContentsDepth: 1
+>>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
 ---
 
 ウェブサイトにスタイルを適用する方法はとてもたくさんありますが、 Gatsby では公式や非公式のプラグインによってほぼ全ての方法がサポートされています。
@@ -211,9 +216,15 @@ export default () => (
 
 Sass とは CSS の拡張であり、ネストしたルール、変数、ミックスイン、その他にもさまざまな高度な機能を提供します。
 
+<<<<<<< HEAD
 Sass には二種類の記法があります。もっとも普及しているのが "SCSS" 記法で、CSS のスーパーセットです。これは CSS として正しい記法のもの全てが SCSS 記法としても正しいことを意味します。 SCSS ファイルは拡張子に .scss を使います。
 
 Sass は .scss と .sass ファイルを .css ファイルにコンパイルしてくれるので、あなたはスタイルシートでより高度な機能を使うことができます。
+=======
+Sass has 2 syntaxes. The most commonly used syntax is "SCSS", and is a superset of CSS. That means all valid CSS syntax, is valid SCSS syntax. SCSS files use the extension `.scss`
+
+Sass will compile `.scss` and `.sass` files to `.css` files for you, so you can write your stylesheets with more advanced features.
+>>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
 
 ### 必要事項
 
@@ -257,7 +268,11 @@ import "./styles.scss"
 import "./styles.sass"
 ```
 
+<<<<<<< HEAD
 _ヒント: .css のかわりに拡張子を .scss または .sass にしなければならないという違いがありますが、前の CSS モジュールのレシピで言及したように Sass/SCSS ファイルをモジュールとして使うこともできます。_
+=======
+_Note: You can use Sass/SCSS files as modules too, like mentioned in the previous recipe about CSS modules, with the difference that instead of `.css` the extensions have to be `.scss` or `.sass`_
+>>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
 
 ### 追加のリソース
 

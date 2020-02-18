@@ -51,7 +51,11 @@ Babel はすべてのソースコードを走査して、クエリー抽出中�
 
 GraphQL サーバーへ問い合わせるためビルド時に設定していた特定のコードは、この時点で関係なくなり、それぞれのクエリーで抽出された JSON データに置き換えることができます。
 
+<<<<<<< HEAD
 GraphQL とクエリー宣言に関連するインポートは、クエリーが実行されたときに Gatsby が見つけたクエリー結果に対応する JSON のインポートに置き換えられます。`useStaticQuery` フックを使用して記述された静的クエリーを持つ次のコンポーネントを考えてみます。
+=======
+The imports related to GraphQL and query declarations are changed to imports for the JSON that correspond to the query result that Gatsby found when it ran the query. Consider the following component with a static query written using the `useStaticQuery` hook:
+>>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
 
 ```jsx
 import { useStaticQuery, graphql } from "gatsby"

@@ -65,7 +65,11 @@ const YAMLbuildtime = () => (
 export default YAMLbuildtime
 ```
 
+<<<<<<< HEAD
 上記のコードは YAML データを配列としてインポートし、`Array.map` メソッドでそれを反復処理し、ファンクショナル React コンポーネント（FC）を使用してデータが埋められたマークアップをレンダリングします。
+=======
+The above code imports YAML source data as an array, iterates over it with the `Array.map` method, and renders the data-filled markup through a functional React component.
+>>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
 
 ## JSON からデータを直接インポートする
 
@@ -293,7 +297,11 @@ YAML ファイルを解析し、Gatsby を設定してテンプレートでペ�
     - gatsby-node.js
 ```
 
+<<<<<<< HEAD
 ターミナルで `gatsby develop` を実行し、ブラウザーで <http://localhost:8000/page1> にアクセスすると、サイトの生成に使用された YAML ファイルを元とするコンテンツを含んだページが表示されます。
+=======
+Running `gatsby develop` in the terminal and opening a browser window to `http://localhost:8000/page1` you'll see a page with content that was sourced from a YAML file used to generate your site.
+>>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
 
 これを既存の Gatsby サイトで機能させるには、次の物が必要です。
 

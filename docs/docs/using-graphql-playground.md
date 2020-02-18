@@ -18,7 +18,23 @@ Gatsby で GraphQL Playground にアクセスするためには、以下のよ�
 "develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
 ```
 
+<<<<<<< HEAD
 `gatsby develop` の代わりに `npm run develop` を使用し、立ち上がったサーバー <https://localhost:8000/___graphql> へアクセスすることで利用できます。
+=======
+If you are on **Windows** then you should use:
+
+```
+"develop": "cross-env GATSBY_GRAPHQL_IDE=playground gatsby develop",
+```
+
+If you haven't installed **cross-env**, you can do it with:
+
+```
+npm install --save-dev cross-env
+```
+
+Use `npm run develop` instead of `gatsby develop` and access it when the development server is running on `http://localhost:8000/___graphql`
+>>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
 
 `gatsby develop` を引き続き使用するためには、gatsby-config.js で dotenv パッケージを使用する必要があります。`.env.development` といった名前で[environment variable](/docs/environment-variables/)ファイルを作成し、`.env.development` へ `GATSBY_GRAPHQL_IDE=playground` と記入します。
 

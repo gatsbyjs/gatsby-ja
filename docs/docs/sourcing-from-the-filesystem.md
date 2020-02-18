@@ -63,7 +63,40 @@ GraphiQL を開きます。
 
 結果はファイル「ノード」の配列です。（ノードは「グラフ」内のオブジェクトの仮名です）各ファイルオブジェクトには、クエリーしたフィールドがあります。
 
+<<<<<<< HEAD
 ## ファイルノードの変換
+=======
+If you have multiple sets of data, you can query specific ones by specifying the `name` property from the config object in the `gatsby-config.js` file. In this case, `name` is set to `src`.
+
+```javascript:title=gatsby-config.js
+{
+  resolve: `gatsby-source-filesystem`,
+  options: {
+    path: `${__dirname}/src`,
+    name: `src`,
+  },
+},
+```
+
+You can then update your query using `sourceInstanceName` and the value of the `name` property in a filter like so.
+
+```graphql
+{
+  allFile(filter: { sourceInstanceName: { eq: "src" } }) {
+    edges {
+      node {
+        relativePath
+        prettySize
+        extension
+        birthTime
+      }
+    }
+  }
+}
+```
+
+## Transforming File nodes
+>>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
 
 ファイルが取得されると、Gatsby エコシステムのさまざまな「トランスフォーマー」プラグインを使用して、ファイルノードを様々な他のタイプのデータに変換できます。例えば、JSON ファイルは `gatsby-source-filesystem` を使用してデータを取得でき、結果であるファイルノードを `gatsby-transformer-json` を使用して JSON ノードに変換できます。
 
