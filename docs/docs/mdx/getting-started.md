@@ -1,49 +1,43 @@
 ---
-title: Getting Started with MDX
+title: MDX 入門
 ---
 
-The fastest way to get started with Gatsby + MDX is to use the [MDX
-starter](https://github.com/ChristopherBiscardi/gatsby-starter-mdx-basic). This
-allows you to write .mdx files in `src/pages` in order to create new pages on
-your site.
+Gatsby で MDX を使い始めるいちばん早い方法は [MDX starter](https://github.com/ChristopherBiscardi/gatsby-starter-mdx-basic) を利用することです。`src/pages`に作った .mdx ファイルから、ウェブサイトの新しいページを作ることができます。
 
-## 🚀 Quick start
+## 🚀 クイックスタート
 
-1. **Initialize the MDX starter** with the Gatsby CLI
+1. Gatsby CLI を使って **MDX スターターを初期化する**
 
    ```shell
    gatsby new my-mdx-starter https://github.com/ChristopherBiscardi/gatsby-starter-mdx-basic
    ```
 
-1. **Run the dev server** by changing directory to the scaffolded site and install dependencies
+1. 構築されたサイトのディレクトリーに移動して依存パッケージをインストールし、**開発サーバーを起動する**
 
    ```shell
    cd my-mdx-starter/
    gatsby develop
    ```
 
-1. **Open the site** running at `http://localhost:8000`
+1. http://localhost:8000 **で動作しているウェブサイトを開く**
 
-1. **Update the MDX content** by opening the `my-mdx-starter` directory
-   in your code editor of choice and edit `src/pages/index.mdx`.
-   Save your changes and the browser will update in real time!
+1. **MDX コンテンツを編集** するために、テキストエディターで `my-mdx-starter` ディレクトリーを開いて `src/pages/index.mdx` を編集してみてください。ファイルを保存すると、リアルタイムで更新が反映されます！
 
-## Add MDX to an existing Gatsby site
+## Gatsby サイトに MDX を追加する
 
-If you already have a Gatsby site that you'd like to add MDX to, you
-can follow these steps for configuring the [gatsby-plugin-mdx](/packages/gatsby-plugin-mdx/) plugin.
+MDX を追加したい Gatsby サイトがあるなら、以下の手順で [gatsby-plugin-mdx](/packages/gatsby-plugin-mdx/) プラグインを設定するとよいでしょう。
 
-Alternatively, you may be looking to configure an existing blog site to use MDX. [This blog post](/blog/2019-11-21-how-to-convert-an-existing-gatsby-blog-to-use-mdx/) walks you through those steps in detail.
+また、既存のブログを MDX を使うように変更することもできます。[こちらのブログ記事(英語)](/blog/2019-11-21-how-to-convert-an-existing-gatsby-blog-to-use-mdx/) で詳しい手順を解説しています。
 
-1. **Add `gatsby-plugin-mdx`** and MDX as dependencies
+1. MDX と **`gatsby-plugin-mdx` を依存関係に追加する**
 
    ```shell
    npm install gatsby-plugin-mdx @mdx-js/mdx @mdx-js/react
    ```
 
-   > **Note:** If you're upgrading from v0, additionally [check out the MDX migration guide](https://mdxjs.com/migrating/v1).
+   > **ヒント:** バージョン 0 からアップグレードする場合は、加えてこの [MDX アップグレードガイド](https://mdxjs.com/migrating/v1)もご覧ください。
 
-1. **Update your `gatsby-config.js`** to use `gatsby-plugin-mdx`
+1. `gatsby-plugin-mdx` を使うように **`gatsby-config.js` を編集する**
 
    ```javascript:title=gatsby-config.js
    module.exports = {
@@ -54,13 +48,10 @@ Alternatively, you may be looking to configure an existing blog site to use MDX.
    }
    ```
 
-1. **Restart `gatsby develop`** and add an `.mdx` page to `src/pages
+1. **`gatsby develop` を実行し直し**、`.mdx` ファイルを `src/pages` に追加する
 
-> **Note:** If you want to query for frontmatter, exports, or other fields like
-> `tableOfContents` and you haven't previously added a `gatsby-source-filesystem`
-> pointing at `src/pages` in your project, you'll want to add one now.
+> **ヒント:** Frontmatter や エクスポート、`tableOfContents` といったフィールドのデータを取得したいなら、`src/pages` を読み込むよう設定した `gatsby-source-filesystem` をプロジェクトに追加しておくとよいでしょう。
 
-## What's next?
+## 次は？
 
-Go check out the [writing MDX guide](/docs/mdx/writing-pages) to find out what else you can do
-with Gatsby and MDX.
+[MDX の書き方](/docs/mdx/writing-pages) に進み、Gatsby と MDX で他にどんなことができるのか見てみましょう！
