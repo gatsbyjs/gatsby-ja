@@ -19,7 +19,7 @@ Gatsby で MDX を使い始めるいちばん早い方法は [MDX starter](https
    gatsby develop
    ```
 
-1. http://localhost:8000 **で動作しているウェブサイトを開く**
+1. `http://localhost:8000` **で動作しているウェブサイトを開く**
 
 1. **MDX コンテンツを編集** するために、テキストエディターで `my-mdx-starter` ディレクトリーを開いて `src/pages/index.mdx` を編集してみてください。ファイルを保存すると、リアルタイムで更新が反映されます！
 
