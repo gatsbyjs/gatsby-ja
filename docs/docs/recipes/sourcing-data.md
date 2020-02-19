@@ -58,7 +58,7 @@ query MyPokemonQuery {
 ### 追加資料
 
 - [チュートリアル パート 5](/tutorial/part-five/#source-plugins) にて、`gatsby-source-filesystem` を用いた例の概略
-- [Gatsby ライブラリ](/plugins/?=source) 内で検索可能なデータ取得プラグイン
+- [Gatsby ライブラリ](/plugins/?=source)内で検索可能なデータ取得プラグイン
 - [Pixabay データ取得プラグインのチュートリアル](/docs/pixabay-source-plugin-tutorial/) 内での、データ取得プラグインのハンズオン
 - createNode の[ドキュメント](/docs/actions/#createNode)
 
@@ -245,7 +245,7 @@ module.exports = {
 }
 ```
 
-> **ヒント：** プラグインの設定については、 [`gatsby-source-wordpress` プラグインの Docs](/packages/gatsby-source-wordpress/?=wordpre#how-to-use) を参考にしてください
+> **ヒント：** プラグインの設定については、[`gatsby-source-wordpress` プラグインの Docs](/packages/gatsby-source-wordpress/?=wordpre#how-to-use) を参考にしてください
 
 3. 次のコードを含むテンプレートコンポーネントを `src/templates/post.js` に作成します
 
