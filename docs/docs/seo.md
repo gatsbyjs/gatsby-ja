@@ -29,7 +29,7 @@ curl https://www.gatsbyjs.org/docs/seo
 
 静的ファイルへのレンダリング、プログレッシブ画像の読み込み、[PRPL pattern](/docs/prpl-pattern/)など、Gatsby には標準で数多くのパフォーマンス最適化の仕組みが取り入れられています。これらの仕組みにより、Gatsby を使うだけでサイトを高速化できます。
 
-2018 年 7 月、「Speed Update」とよばれるアルゴリズムについて、[Google はサイトの表示速度について新しいランキングの考え方を発表しました](https://webmaster-ja.googleblog.com/2018/01/using-page-speed-in-mobile-search.html) 。 これにより、ローディングが速いページを上位にランク付けする可能性があります。しかし、検索クエリの目的は依然として非常に関連性が高く、コンテンツの関連性が高い場合は低速ページでも上位にランク付けされることがあります。
+2018 年 7 月、「Speed Update」とよばれるアルゴリズムについて、[Google はサイトの表示速度について新しいランキングの考え方を発表しました](https://webmaster-ja.googleblog.com/2018/01/using-page-speed-in-mobile-search.html)。これにより、ローディングが速いページを上位にランク付けする可能性があります。しかし、検索クエリの目的は依然として非常に関連性が高く、コンテンツの関連性が高い場合は低速ページでも上位にランク付けされることがあります。
 
 ## ページのメタデータ
 
