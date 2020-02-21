@@ -35,7 +35,7 @@ curl https://www.gatsbyjs.org/docs/seo
 
 サイトにページタイトル、メタ説明、代替テキスト、JSON-LD を使用した構造化データなどのメタデータを追加すると、検索結果にあなたのページを表示する際に、検索エンジンがよりあなたのページのコンテンツを理解しやすくなります。
 
-ページにメタデータを追加する一般的な方法は、あなたのページに[react-helmet]（https://github.com/nfl/react-helmet）コンポーネントを追加することです（SSR をサポートするために[Gatsby React Helmet プラグイン](/packages/gatsby-plugin-react-helmet)と一緒に利用できます）。あなたの Gatsby のアプリケーションに SEO 用のコンポーネントを追加する方法は[こちら](https://www.gatsbyjs.org/docs/add-seo-component/)です。
+ページにメタデータを追加する一般的な方法は、あなたのページに [react-helmet](https://github.com/nfl/react-helmet) コンポーネントを追加することです（SSR をサポートするために[Gatsby React Helmet プラグイン](/packages/gatsby-plugin-react-helmet)と一緒に利用できます）。あなたの Gatsby のアプリケーションに SEO 用のコンポーネントを追加する方法は[こちら](https://www.gatsbyjs.org/docs/add-seo-component/)です。
 
 React-helmet を使用した例：
 
