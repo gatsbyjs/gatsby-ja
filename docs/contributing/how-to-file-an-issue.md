@@ -7,7 +7,7 @@ title: Issue を提出する方法
 Issue を迅速に解決したい場合は、以下を Issue に含めてください。
 
 - Gatsby, Node.js, OS の各バージョン
-- `gatsby-config.js` , `package.json` の内容、およびあなたの行った変更に応じて `gatsby-node.js` , `gatsby-browser.js`, `gatsby-ssr.js` の内容
+- `gatsby-config.js`、`package.json` の内容、およびあなたの行った変更に応じて `gatsby-node.js` 、`gatsby-browser.js`、`gatsby-ssr.js` の内容
 
 個人の課題のサポートのために Issue を利用するのは控えてください。[Stack Overflow](https://stackoverflow.com/questions/ask?tags=gatsby) の **gatsby** タグや [Gatsby Discord](https://gatsby.dev/discord) で質問すると良いでしょう。
 
