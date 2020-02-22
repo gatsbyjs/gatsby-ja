@@ -1,24 +1,22 @@
 ---
-title: How to File an Issue
+title: Issue を提出する方法
 ---
 
-The [issue tracker](https://github.com/gatsbyjs/gatsby/issues) is the preferred channel for bug reports, feature requests and [submitting pull requests](/contributing/how-to-open-a-pull-request/).
+バグ報告や機能の提案、Pull Request の送信は、GitHub の [Issues](https://github.com/gatsbyjs/gatsby/issues) より行うことができます。
 
-If you want your Issue to be resolved quickly, please include in your Issue:
+Issue を迅速に解決したい場合は、以下を Issue に含めてください。
 
-- Gatsby version, Node.js version, OS version
-- The contents of your `gatsby-config.js` and `package.json` as well as your
-  `gatsby-node.js`, `gatsby-browser.js` `gatsby-ssr.js` files depending on
-  changes you've made there.
+- Gatsby, Node.js, OS の各バージョン
+- `gatsby-config.js` , `package.json` の内容、およびあなたの行った変更に応じて `gatsby-node.js` , `gatsby-browser.js`, `gatsby-ssr.js` の内容
 
-Please do not use the Issue tracker for personal support requests. [Stack Overflow](https://stackoverflow.com/questions/ask?tags=gatsby) (**gatsby** tag) and the [Gatsby Discord](https://gatsby.dev/discord) are better places to get help.
+個人の課題のサポートのためには Issue を利用しないでください。その場合は、[Stack Overflow](https://stackoverflow.com/questions/ask?tags=gatsby) の**gatsby** タグや [Gatsby Discord](https://gatsby.dev/discord) を利用するのが良いでしょう。
 
-### Special Note on Issues
+### Issue に関する特記事項
 
-If an Issue is affecting you, start at the top of this list and complete as many tasks on the list as you can:
+Issue があなたに影響する場合は、以下リストの一番上から初めて、できるだけ多くのタスクを完了させてください。
 
-1.  If there is an Issue, add a reaction or more details to the Issue to indicate that it's affecting you
-2.  If there is an Issue and you can add more detail, write a comment describing how the bug is affecting OR if you can, write up a work-around for the bug
-3.  If there _is not_ an Issue, write the most complete description of what's happening, preferably with link to a Gatsby site that reproduces the problem or [create a reproducible test case](/contributing/how-to-make-a-reproducible-test-case/)
-4.  Offer to help fix the bug (and it is totally expected that you ask for help; open-source maintainers want to help contributors)
-5.  [Deliver a well-crafted, tested PR](/contributing/how-to-open-a-pull-request/)
+1. Issue がある場合は、リアクションや課題の詳細を追加することであなたに影響していることを示します。
+2. Issue があり、あなたが詳細を追加できる場合は、バグがどのように影響しているかをコメントしたり、可能であればバクの回避策を書きます。
+3. Issue がない場合は、何が起こっているかについて詳細な説明を書いてください。可能であれば問題を再現できる Gatsby サイトへのリンクを追記するか、[再現可能なテストケース](/contributing/how-to-make-a-reproducible-test-case/)を作成します。
+4. バグを修正することを申し出ます。（何か詰まった場合はメンテナーに助けを求めると良いでしょう。オープンソースのメンテナーは貢献者をサポートしたいのです）
+5. よく検討されたテスト済みの[Pull Request を作成](/contributing/how-to-open-a-pull-request/)します。
