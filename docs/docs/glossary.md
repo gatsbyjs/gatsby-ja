@@ -76,9 +76,9 @@ CMS とはコンテンツ・マネジメント・システム (Content Managemen
 
 設定ファイルのこと。Gatsby では `gatsby-config.js` を使って Gatsby にあなたのサイトの設定を行います。よく使われる設定としては、サイトの metadata を設定してあなたのサイトの SEO を向上させるものがあります。
 
-### [Continuous Deployment](/docs/glossary/continuous-deployment)
+### [継続的デプロイ (Continuous Deployment)](/docs/glossary/continuous-deployment)
 
-Continuous deployment (CD) automates the process of releasing changes to your project. A continuous deployment workflow automatically builds and tests your project, and publishes your changes only when they pass the required tests.
+継続的デプロイ (Continuout Deployment, CD) とは、あなたのプロジェクトのリリースプロセスを自動化するものです。継続的デプロイワークフローは自動的にあなたのプロジェクトのテスト、およびビルドを行い、差分に問題が無いと判断されたら自動的に公開されます。
 
 ### CSS
 
