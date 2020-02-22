@@ -1,94 +1,94 @@
 ---
-title: Translation Style Guide
+title: 翻訳スタイルガイド
 ---
 
-Each language translation may have some specific ways it differs from the advice Gatsby provides for writing in English, such as the use of "you" as the pronoun or the Oxford comma. Each translation group should decide on conventions and stick with them for consistency, documenting those decisions in the repo's [style guide](https://github.com/gatsbyjs/gatsby-i18n-source/blob/master/style-guide.md) file to set contributors up for success. Use the [English style guide](/contributing/gatsby-style-guide/) as a reference to determine the equivalent rules in your language.
+各言語の翻訳には、文の口調や句読点の使い方など、Gatsby の英語のドキュメントとはまた異なるアドバイスやスタイルガイドがあるでしょう。各言語の翻訳チームはドキュメントの統一性を保つために、それぞれのスタイルガイドを設け、リポジトリの[スタイルガイド](https://github.com/gatsbyjs/gatsby-i18n-source/blob/master/style-guide.md)に記載することで、コントリビューターが貢献しやすくなるでしょう。[原文のスタイルガイド](/contributing/gatsby-style-guide/)を参考にして、各言語のスタイルガイドを定めてください。
 
-Guidelines that remain firm no matter the language stem from the goals and values of Gatsby as a project: to provide a **friendly community for Gatsby learners of all skill and experience levels** that's also **safe and welcoming to contributors**. Translated docs and learning materials should [maintain these values](/blog/2019-04-19-gatsby-why-we-write/) with **high-quality spelling and grammar**, accurate information, similar structure and purpose. For any questions about guidelines, feel free to [get in touch](/contributing/how-to-contribute/#not-sure-how-to-start-contributing) with the Gatsby team.
+いかなる言語の翻訳でも、Gatsby プロジェクト全体のゴール、およびバリューとして次のガイドラインに沿ってください。**技術レベル、経験レベル問わず、Gatsby を学ぶすべての人に対して友好的なコミュニティを提供すること。どんなコントリビューターも安心して貢献できる環境であること。** 翻訳されたドキュメントやチュートリアルは[これらのバリュー](/blog/2019-04-19-gatsby-why-we-write/)を守りつつ、**品質の高い文法**、正確な情報、統一された構成や目的を保つことを目指しましょう。ガイドラインに関して質問があるばあい、Gatsby チームに気軽に[お声がけ](/contributing/how-to-contribute/#not-sure-how-to-start-contributing)ください。
 
-### Glossary
+### 用語集
 
-The style guide has a [glossary section](https://github.com/gatsbyjs/gatsby-i18n-source/blob/master/style-guide.md#glossary) that you can use to fill in common translations. Look at the English [Glossary](/docs/glossary/) for a list of terms that are useful to have translations for.
+スタイルガイドには[用語集](https://github.com/gatsbyjs/gatsby-i18n-source/blob/master/style-guide.md#glossary)が用意されています。翻訳をする上で共通の単語は、用語集を参考にしてください。翻訳する際に便利な単語に関しては原文の[用語集](/docs/glossary/)を参考にすると良いでしょう。
 
-### Universal style guide
+### 共通スタイルガイド
 
-The following rules should apply in all translations and can serve as a basis for your language-specific style guide.
+以下のルールは各言語のスタイルガイドのベースとして、すべての言語の翻訳スタイルガイドで適用しましょう。
 
-#### Keep the meaning of the source
+#### 原文に忠実に
 
-Keep the meaning of the original English source even if it is confusing or has a typo. If you find an error that can be fixed, create an issue or pull request to the original [gatsby repo](https://github.com/gatsbyjs/gatsby) so that all translations can benefit from the change.
+原文がわかりにくかったり、タイポがあったとしても、基本的に原文に忠実に訳してください。もし、原文に間違いがあり、それが修正可能であれば、[Gatsby 本家のリポジトリ](https://github.com/gatsbyjs/gatsby)に Issue や Pull Request を立ててください。そうすれば、全ての翻訳版がその修正の恩恵を受けることができます。
 
-#### Text in code blocks
+### コードブロック内のテキスト
 
-Leave text in code blocks untranslated except for comments. You may optionally translate text in strings, but be careful not to translate strings that refer to code!
+コードブロック内に関しては、基本的にコメント以外を翻訳しないでください。任意で文字列リテラルの中身を翻訳することはできますが、コード自体はそのままにしてください！
 
-✅ DO:
+✅ 良い：
 
-```jsx
-// Ejemplo
+```js
+// 例
 import React from "react"
 export default () => (
   <div style={{ color: `purple`, fontSize: `72px` }}>Hello Gatsby!</div>
 )
 ```
 
-✅ ALSO OKAY:
+✅ 良い：
 
-```jsx
-// Ejemplo
+```js
+// 例
 import React from "react"
 export default () => (
-  <div style={{ color: `purple`, fontSize: `72px` }}>¡Hola Gatsby!</div>
+  <div style={{ color: `purple`, fontSize: `72px` }}>こんにちは、Gatsby！</div>
 )
 ```
 
-❌ DON'T:
+❌ 悪い：
 
-```jsx
-// Ejemplo
+```js
+// 例
 import React from "react"
 export default () => (
-  // 'purple' is a CSS keyword
-  <div style={{ color: `morado`, fontSize: `72px` }}>¡Hola Gatsby!</div>
+  // 'purple' はCSSのキーワード
+  <div style={{ color: `紫`, fontSize: `72px` }}>こんにちは、Gatsby！</div>
 )
 ```
 
-❌ DEFINITELY DON'T:
+❌ 絶対にしないで：
 
-```jsx
-importar Reaccionar desde "reaccionar"
-exportar defecto () => (
-   <div estilo = {{color: `morado`, fontSize:` 72px`}}> ¡Hola Gatsby! </div>
+```js
+インポート リアクト フロム "リアクト"
+エクスポート デフォルト () => (
+   <div スタイル={{color: `紫`, fontSize:` 72px`}}>こんにちは、Gatsby！</div>
 )
 ```
 
-#### Internal links
+#### 内部リンク
 
-Translate link text but keep all slugs and hashes in links the same as they are in English.
+サイト内部の別のページにリンクする文章は翻訳して構いません。しかし、リンク先の URL は原文と同じ URL を使うので、そのままにしておいてください。
 
-✅ OK:
-
-```markdown
-- [Configure su entorno de desarrollo](/tutorial/set-up-your-development-environment)
-```
-
-❌ DON'T:
+✅ 良い：
 
 ```markdown
-- [Configura tu entorno de desarrollo](/tutorial/configura-tu-entorno-de-desarrollo)
+- [開発環境のセットアップ](/tutorial/set-up-your-development-environment)
 ```
 
-#### External links
+❌ 悪い：
 
-If an external link is to an article in a reference like [MDN] or [Wikipedia], and a version of that article exists in your language that is of decent quality, consider linking to that version instead.
+```markdown
+- [開発環境のセットアップ](/tutorial/開発環境のセットアップ)
+```
+
+### 外部リンク
+
+もし外部リンクが[MDN]や[Wikipedia]のような記事の場合であって、かつ十分なクオリティの日本語版が存在する場合は、翻訳版へのリンクを貼りましょう。
 
 [mdn]: https://developer.mozilla.org/en-US/
 [wikipedia]: https://en.wikipedia.org/wiki/Main_Page
 
-✅ OK:
+✅ 良い：
 
-```markdown
-Los elementos de React son [inmutables](https://es.wikipedia.org/wiki/Objeto_inmutable).
+```md
+React エレメントは[イミュータブル](https://ja.wikipedia.org/wiki/イミュータブル)です。
 ```
 
-For links that have no equivalent (Stack Overflow, YouTube videos, etc.), use the English link.
+同等のリンクが存在しない場合（Stack Overflow、YouTube 等）、英語リンクをそのまま使用してください。
