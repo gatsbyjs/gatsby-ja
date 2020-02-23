@@ -56,7 +56,7 @@ Issue の右側にある _labels_ のドロップダウンから type ラベル�
 
 各ラベルの詳細については、[ラベルの説明](https://github.com/gatsbyjs/gatsby/issues/labels)を確認してください。
 
-もっとも一般的な Issue の type は `type: question or discussion` です。通常これは自由に討論する、または明確な次の手段がない Issue に付けることができます。
+もっとも一般的な Issue の type は `type: question or discussion` です。通常これは Issue を議論の場として使用するとき、または明確な次の手段がない Issue に付けることができます。
 
 詳細が明確になったら Issue の type を変更しても構いません。`type: question or discussion` で始まるものは、後で `type: bug` に変更する必要があるかもしれません。
 
