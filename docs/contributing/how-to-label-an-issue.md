@@ -42,7 +42,7 @@ Issue にラベルを付けるための広範な手順は次のとおりです�
 
 ### 興味のある Issue を探してください
 
-[Gatsby の Issue リスト](https://github.com/gatsbyjs/gatsby/issues)を開いて、最近の興味のあるものが見つかるまでスクロールしてください。または、[ラベルのない Issue リスト](https://github.com/gatsbyjs/gatsby/issues?q=is%3Aopen+is%3Aissue+no%3Alabel)も見ることができます。
+[Gatsby の Issue 一覧](https://github.com/gatsbyjs/gatsby/issues)を開いて、最近の興味のあるものが見つかるまでスクロールしてください。または、[ラベルのない Issue 一覧](https://github.com/gatsbyjs/gatsby/issues?q=is%3Aopen+is%3Aissue+no%3Alabel)も見ることができます。
 
 ### Issue を読んでください
 
