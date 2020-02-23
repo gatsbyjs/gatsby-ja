@@ -76,6 +76,10 @@ CMS とはコンテンツ・マネジメント・システム (Content Managemen
 
 設定ファイルのこと。Gatsby では `gatsby-config.js` を使って Gatsby にあなたのサイトの設定を行います。よく使われる設定としては、サイトの metadata を設定してあなたのサイトの SEO を向上させるものがあります。
 
+### [継続的デプロイ (Continuous Deployment)](/docs/glossary/continuous-deployment)
+
+継続的デプロイ (Continuout Deployment, CD) とは、あなたのプロジェクトのリリースプロセスを自動化するものです。継続的デプロイワークフローは自動的にあなたのプロジェクトのテスト、およびビルドを行い、差分に問題が無いと判断されたら自動的に公開されます。
+
 ### CSS
 
 [CSS](https://developer.mozilla.org/ja/docs/Web/CSS) は Cascading Style Sheets の略であり、[HTML](#html) と [JavaScript](#javascript) と共に、サイトを構成する主戦物です。CSS はウェブサイトのデザインを変更する為に設計された言語です。後方互換性の保守に優れており、新しい機能が実装されても、[CSS パーサー](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#CSS_parsing)はサポートされていない機能を安全に無視して、サポートしている機能だけを提供できます。[CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_and_Progressive_Enhancement) のような新しい技術をブラウザーに提供しつつ、古いブラウザーにはフォールバックを提供しています。Gatsby では様々な[スタイリングに対するアプローチ](/docs/styling/)に対応しています。これは、通常の CSS ファイルや、CSS modules、CSS-in-JS を含みます。
