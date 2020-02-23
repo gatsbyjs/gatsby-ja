@@ -22,7 +22,7 @@ Gatsby は毎日たくさんの新しい Issue が公開される非常に活発
 
 [Gatsby メンテナチーム](https://github.com/orgs/gatsbyjs/teams/maintainers)のメンバーであれば誰でも Issue にラベルを付けることができます。
 
-Pull Request が Gatsby プロジェクトにマージされるとチームに招待されます。開始するには [`help wanted`](https://github.com/gatsbyjs/gatsby/labels/%F0%9F%93%8D%20status%3A%20help%20wanted) の Issue リストと [貢献ガイド](/contributing/how-to-contribute/) をご覧ください。
+Pull Request が Gatsby プロジェクトにマージされるとチームに招待されます。開始するには [`help wanted`](https://github.com/gatsbyjs/gatsby/labels/%F0%9F%93%8D%20status%3A%20help%20wanted) タグがついた Issue 一覧と[貢献ガイド](/contributing/how-to-contribute/)をご覧ください。
 
 **ヒント** Pull Request がすでにマージされていて、メンテナチームに招待されて _いない_ 場合は、[ダッシュボード](https://store.gatsbyjs.org/) にアクセスして割引コードをリクエストしてください。チームに招待されるはずです。— _そして Gatsby の景品が無料で手に入ります！_ それでも解決しない場合は、team@gatsbyjs.com にメールを送ってください。招待します。
 
