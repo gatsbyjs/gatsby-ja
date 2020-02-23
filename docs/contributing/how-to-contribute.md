@@ -6,7 +6,7 @@ title: 貢献の方法
 
 ## どのように貢献を始めたらいいか分からない？
 
-心配な場合やどこから始めたらいいか分からない場合は、[どこに参加するか](/contributing/where-to-participate/)のページを確認しましょう。Twitter では [Marcy Sutton (@marcysutton)](https://twitter.com/marcysutton) や [@GatsbyJS](https://twitter.com/gatsbyjs) 、[Discord](https://gatsby.dev/discord) では Gatsby チームの誰かに質問できます。また、 [Issue を提出](/contributing/how-to-file-an-issue/)することで、メンテナーがガイドしてくれるでしょう。
+心配な場合やどこから始めたらいいか分からない場合は、[どこに参加するか](/contributing/where-to-participate/)のページを確認しましょう。Twitter では [Marcy Sutton (@marcysutton)](https://twitter.com/marcysutton) や [@GatsbyJS](https://twitter.com/gatsbyjs)、[Discord](https://gatsby.dev/discord) では Gatsby チームの誰かに質問できます。また、[Issue を提出](/contributing/how-to-file-an-issue/)することで、メンテナーがガイドしてくれるでしょう。
 
 ## ペアプログラミング
 
