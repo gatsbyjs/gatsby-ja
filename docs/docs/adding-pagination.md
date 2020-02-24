@@ -126,6 +126,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
 ## その他の資料
 
-- 前へ/次へのページリンクや、ページの下部に配置する従来のページナビゲーションの追加は、この [チュートリアル](https://nickymeuleman.netlify.com/blog/gatsby-pagination/) にしたがってください
+- 前へ/次へのページリンクや、ページの下部に配置する従来のページナビゲーションの追加は、この[チュートリアル](https://nickymeuleman.netlify.com/blog/gatsby-pagination/)にしたがってください
 
 - 公式のエクステンション [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog) のページネーションは [gatsby-paginated-blog](https://github.com/NickyMeuleman/gatsby-paginated-blog) を参照してください
