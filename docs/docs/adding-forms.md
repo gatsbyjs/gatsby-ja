@@ -2,7 +2,7 @@
 title: フォームの追加
 ---
 
-Gatsby は React 上に作られています。そのため、React フォームで可能なことは全て Gatsby でも実現出来ます。 React フォームの作成方法に関する詳細は、[React フォームのドキュメント](https://ja.reactjs.org/docs/forms.html) で見つけられます（このドキュメントは Gatsby で作られてます！）。
+Gatsby は React 上に作られています。そのため、React フォームで可能なことは全て Gatsby でも実現出来ます。 React フォームの作成方法に関する詳細は、[React フォームのドキュメント](https://ja.reactjs.org/docs/forms.html)で見つけられます（このドキュメントは Gatsby で作られています！）。
 
 次のページから始めます。
 
