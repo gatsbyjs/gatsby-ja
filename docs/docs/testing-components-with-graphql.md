@@ -80,7 +80,7 @@ query IndexQuery {
 }
 ```
 
-GraphiQL は、 Gatsby によって定義されたフラグメントについて一切知りません。したがって、もしあなたのクエリーがフラグメントを使用しているのならば、フラグメントの内容と置き換える必要があります。もしあなたが `gatsby-transformer-sharp` を使用しているのならば、[gatsby-transformer-sharp/src/fragments.js](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-transformer-sharp/src/fragments.js) にてフラグメントを見つけることができます。
+GraphiQL は、Gatsby によって定義されたフラグメントについて一切知りません。したがって、もしあなたのクエリーがフラグメントを使用しているのならば、フラグメントの内容と置き換える必要があります。もしあなたが `gatsby-transformer-sharp` を使用しているのならば、[gatsby-transformer-sharp/src/fragments.js](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-transformer-sharp/src/fragments.js) にてフラグメントを見つけることができます。
 例えば、あなたのクエリーが以下を含んでいるとします。
 
 ```graphql
