@@ -108,7 +108,7 @@ GitHub UI で解決できない提案があっても、PR がマージされる�
 
 あなたの疑問点が無くなり、全ての変更提案がコミットされたら、その[conversation を solved としてマーキング](https://help.github.com/en/articles/commenting-on-a-pull-request#resolving-conversations)できます。
 
-Gatsby チームとコミュニティー両方にとって、このプロセスはあなたの変更内容を Gatsby の GitHub リポジトリーにマージする前に改善するのに役立ちます。
+Gatsby チームとコミュニティー双方のため、これらのプロセスを行うことで、Gatsby の GitHub リポジトリーへマージする前にあなたの変更内容を改善できます。
 
 ## Gatsby リポジトリーでの更新を、自身のフォークリポジトリーに反映する
 
@@ -139,7 +139,7 @@ Gatsby の GitHub リポジトリーは頻繁に更新されているため、�
 
 上流リポジトリーについてさらに知りたい場合は、[GitHub ドキュメントをご覧ください](https://help.github.com/en/articles/configuring-a-remote-for-a-fork)。
 
-_**ヒント:** Gatsby リポジトリーのメンバーは、上流リモートリポジトリーをフォークする代わりに、リポジトリーを直接クローンできます。クローンしたリポジトリー内で変更をしたあと、PR を作成するために[フィーチャーブランチ](https://git-scm.com/book/en/v1/Git-Branching-Branching-Workflows)にプッシュします。_
+_**ヒント:** Gatsby リポジトリーのメンバーは、上流リモートリポジトリーをフォークする代わりに、リポジトリーを直接クローンできます。クローンしたリポジトリー内で変更をしたあと、PR を作成するために[フィーチャーブランチ](https://git-scm.com/book/en/v1/Git-Branching-Branching-Workflows)へプッシュします。_
 
 ## 追加資料
 
