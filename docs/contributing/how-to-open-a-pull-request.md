@@ -8,11 +8,11 @@ title: Pull Request を作成する
 
 もしもあなたが Pull Request についてよく知らない場合、以下が GitHub での[Pull Request の定義](https://help.github.com/en/articles/about-pull-requests)になります。
 
-> Pull Request を作成することで、GitHub リポジトリのブランチに Push したあなたの変更点について、他のユーザーに通知できます。Pull Request が作成されれば、考えうる変更点についてコラボレーター達と議論やレビューを行うことができ、最初の変更部分を元のブランチにマージする前に、更なる変更も追加できます。
+> Pull Request を作成することで、GitHub リポジトリーのブランチに Push したあなたの変更点について、他のユーザーに通知できます。Pull Request が作成されれば、考えうる変更点についてコラボレーター達と議論やレビューを行うことができ、最初の変更部分を元のブランチにマージする前に、更なる変更も追加できます。
 
-Gatsby では、変更部分を Gatsby リポジトリにマージする前段階のレビュー＆テストとして、この PR プロセスを使用しています。Pull Request は誰でも作成することが出来ます。あなたが初めてオープンソースに貢献する場合でも、あなたが Gatsby チームのコアメンバーである場合でも、この PR プロセスは同じです。
+Gatsby では、変更部分を Gatsby リポジトリーにマージする前段階のレビュー＆テストとして、この PR プロセスを使用しています。Pull Request は誰でも作成できます。あなたが初めてオープンソースに貢献する場合でも、あなたが Gatsby チームのコアメンバーである場合でも、この PR プロセスは同じです。
 
-Gatsby に貢献したい場合、まず変更したコードを Gatsby リポジトリに*プル*してもらうためのリクエストを作成します。変更内容のタイプによって、PR は以下のように分類されます。
+Gatsby に貢献したい場合、まず変更したコードを Gatsby リポジトリーに*プル*してもらうためのリクエストを作成します。変更内容のタイプによって、PR は以下のように分類されます。
 
 - [Documentation](#documentation-prs)
 - [Code](#code-changes)
@@ -31,15 +31,15 @@ Gatsby コアチームは、[Pull Request を管理](/contributing/managing-pull
 
 ## Gatsby で PR を作成する
 
-Gatsby リポジトリに変更を行うときは、どんな変更内容であっても以下の手順を踏みます。ドキュメントの変更・ブログの投稿・テンプレート・コードの改善やテストなどへの貢献について、追加のヒントがこのページで後ほど説明されているので、そちらも必ずご確認ください。
+Gatsby リポジトリーに変更を行うときは、どんな変更内容であっても以下の手順を踏みます。ドキュメントの変更・ブログの投稿・テンプレート・コードの改善やテストなどへの貢献について、追加のヒントがこのページで後ほど説明されているので、そちらも必ずご確認ください。
 
 README ファイルやドキュメントの変更など、一部の PR は[GitHub UI](https://help.github.com/en/articles/creating-a-pull-request)上で完結できます。
 
-Gatsby [サイトファイルとプロジェクトファイル]（https://github.com/gatsbyjs/gatsby）への変更を自身のローカル環境でテストするには、まずレポジトリをフォークし、その一部をインストールしてからローカル環境で実行します。
+Gatsby [サイトファイルとプロジェクトファイル]（https://github.com/gatsbyjs/gatsby）への変更を自身のローカル環境でテストするには、まずリポジトリーをフォークし、その一部をインストールしてからローカル環境で実行します。
 
-- [Gatsby レポジトリをフォークしてクローン](/contributing/setting-up-your-local-dev-environment/#gatsby-repo-install-instructions)します。
+- [Gatsby リポジトリーをフォークしてクローン](/contributing/setting-up-your-local-dev-environment/#gatsby-repo-install-instructions)します。
 - 全ての依存関係を読み込んでプロジェクトを立ち上げるために、[yarn](https://yarnpkg.com/)をインストールします。
-- 下記のセクションからあなたが変更したいカテゴリを探し、記述されている指示に従ってください。
+- 下記のセクションからあなたが変更したいカテゴリーを探し、記述されている指示にしたがってください。
 - あなた専用のブランチを作るために、以下のコードをコマンドライン上で実行して[Git ブランチを作成](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) します。
 
   ```shell
@@ -47,12 +47,12 @@ Gatsby [サイトファイルとプロジェクトファイル]（https://github
   ```
 
 - 内容の変更を行い Git からプッシュしたいと思ったら、[変更を追加してコミットを作成](https://help.github.com/en/articles/adding-a-file-to-a-repository-using-the-command-line)します。コミットをどのように構築するかについては、[PR を管理する](/contributing/managing-pull-requests/#commit-and-pr-title)をご確認ください。
-  - ドット `.` を使えば、現ディレクトリ・サブディレクトリ内の全ての未追跡ファイルを Git に追加できます。
+  - ドット `.` を使えば、現ディレクトリー・サブディレクトリー内の全ての未追跡ファイルを Git に追加できます。
   ```shell
   git add .
   ```
   - [GitHub Desktop](https://desktop.github.com/) や [GitX](https://rowanj.github.io/gitx/)のようなビジュアルツールを使えば、どのファイルや行をコミットするべきか選ぶのに役立ちます。
-- コードをコミットする際、[Prettier](https://prettier.io)を使った自動校正が行われます。この校正を手動で行いたい場合、プロジェクトのベースディレクトリ内で以下の npm スクリプトを実行します。
+- コードをコミットする際、[Prettier](https://prettier.io)を使った自動校正が行われます。この校正を手動で行いたい場合、プロジェクトのベースディレクトリー内で以下の npm スクリプトを実行します。
   ```shell
   npm run format
   ```
@@ -60,15 +60,15 @@ Gatsby [サイトファイルとプロジェクトファイル]（https://github
   ```shell
   git commit --amend
   ```
-- あなたのフォークリポジトリが [`origin`](https://www.git-tower.com/learn/git/glossary/origin) として登録されている場合、以下のコマンドで変更をプッシュします。
+- あなたのフォークリポジトリーが [`origin`](https://www.git-tower.com/learn/git/glossary/origin) として登録されている場合、以下のコマンドで変更をプッシュします。
   ```shell
   git push origin head
   ```
-- Gatsby リポジトリに変更した内容の PR を作成するには、[GitHub Pull Request UI](https://help.github.com/en/articles/creating-a-pull-request) を使います。他の方法としてコマンドラインから PR を送ることもでき、その場合は [hub](https://github.com/github/hub) の使用が推奨されています。
+- Gatsby リポジトリーに変更した内容の PR を作成するには、[GitHub Pull Request UI](https://help.github.com/en/articles/creating-a-pull-request) を使います。他の方法としてコマンドラインから PR を送ることもでき、その場合は [hub](https://github.com/github/hub) の使用が推奨されています。
 
 ### Documentation PRs
 
-Gatsby のドキュメントサイトは、ドキュメントとチュートリアルを含めてほぼ Github 上の [www](https://github.com/gatsbyjs/gatsby/tree/master/www) ディレクトリと [docs](https://github.com/gatsbyjs/gatsby/tree/master/docs) ディレクトリ内にあります。また、これらのドキュメントから参照される形で、[サンプル集](https://github.com/gatsbyjs/gatsby/tree/master/examples)も存在します。
+Gatsby のドキュメントサイトは、ドキュメントとチュートリアルを含めてほぼ Github 上の [www](https://github.com/gatsbyjs/gatsby/tree/master/www) ディレクトリーと [docs](https://github.com/gatsbyjs/gatsby/tree/master/docs) ディレクトリー内にあります。また、これらのドキュメントから参照される形で、[サンプル集](https://github.com/gatsbyjs/gatsby/tree/master/examples)も存在します。
 
 以下は、追加ドキュメントの PR 手順です。
 
@@ -93,9 +93,9 @@ Gatsby ブログに投稿をする場合、記事を投稿する前に、記事�
 
 ## レビュー・提案によるフォローアップ
 
-あなたが Gatsyby の GitHub リポジトリで PR 作成をした後、あなたの変更内容について、Gatsby のコアチームとコミュニティメンバーが改善提案をすることがあります。
+あなたが Gatsyby の GitHub リポジトリーで PR 作成をした後、あなたの変更内容について、Gatsby のコアチームとコミュニティーメンバーが改善提案をすることがあります。
 
-Gatsby のコアチーム・ラーニングチームは、コミュニティで作成された全ての PR に対して、その内容が貢献ガイドラインを満たしているか・その PR 内容がさらに改善出来るかのレビューをし、承認します。
+Gatsby のコアチーム・ラーニングチームは、コミュニティーで作成された全ての PR に対して、その内容が貢献ガイドラインを満たしているか・その PR 内容がさらに改善できるかのレビューをし、承認します。
 
 これらの提案は GitHub の UI 上で「request changes」とも呼ばれます。ある提案があなたの PR に追加されたら、以降の提案もあなたの GitHub の PR ページ上で表示され続けます。このページからは、以下のことができます。
 
@@ -108,17 +108,17 @@ GitHub UI で解決できない提案があっても、PR がマージされる�
 
 あなたの疑問点が無くなり、全ての変更提案がコミットされたら、その[conversation を solved としてマーキング](https://help.github.com/en/articles/commenting-on-a-pull-request#resolving-conversations)できます。
 
-Gatsby チームとコミュニティ両方にとって、このプロセスはあなたの変更内容を Gatsby の GitHub リポジトリにマージする前に改善するのに役立ちます。
+Gatsby チームとコミュニティー両方にとって、このプロセスはあなたの変更内容を Gatsby の GitHub リポジトリーにマージする前に改善するのに役立ちます。
 
-## Gatsby リポジトリでの更新を、自身のフォークリポジトリに反映する
+## Gatsby リポジトリーでの更新を、自身のフォークリポジトリーに反映する
 
-Gatsby の GitHub リポジトリは頻繁に更新されているため、自身の変更を Gatsby リポジトリにマージするためにも、最新の変更をあなたのフォークリポジトリに反映させる必要が出てきます。そのためには、Gatsby を[上流リモート](https://help.github.com/en/articles/configuring-a-remote-for-a-fork)として追加します。
+Gatsby の GitHub リポジトリーは頻繁に更新されているため、自身の変更を Gatsby リポジトリーにマージするためにも、最新の変更をあなたのフォークリポジトリーに反映させる必要が出てきます。そのためには、Gatsby を[上流リモート](https://help.github.com/en/articles/configuring-a-remote-for-a-fork)として追加します。
 
-- Gatsby のリポジトリ URL をリモートとして設定します。リモートとして設定する名前は何でも構いません。以下の例では "upstream" としています。
+- Gatsby のリポジトリー URL をリモートとして設定します。リモートとして設定する名前は何でも構いません。以下の例では "upstream" としています。
   ```shell
   git remote add upstream git@github.com:gatsbyjs/gatsby.git
   ```
-  - _注意: この構文は [SSH キーを利用していますが、あなたのユーザーネームとパスワードを使用して `https` 接続をする事も出来ます。](https://help.github.com/en/articles/which-remote-url-should-i-use)_
+  - _注意: この構文は [SSH キーを利用していますが、あなたのユーザーネームとパスワードを使用して `https` 接続をする事もできます。](https://help.github.com/en/articles/which-remote-url-should-i-use)_
 - リモート名とその URL を確認
   ```shell
   git remote -v
@@ -127,25 +127,25 @@ Gatsby の GitHub リポジトリは頻繁に更新されているため、自�
   ```shell
   git fetch upstream master
   ```
-- 自身の更新したい[ブランチ上](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)で、Gatsby での更新を全て自身のフォークリポジトリにマージ
+- 自身の更新したい[ブランチ上](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)で、Gatsby での更新を全て自身のフォークリポジトリーにマージ
   ```shell
   git merge upstream/master
   ```
   - [マージコンフリクト](https://help.github.com/en/articles/resolving-a-merge-conflict-on-github)があった場合は、クリーンマージを行うために、どこでコンフリクトが起こっているのか確認しましょう。
-- あなたのブランチで特に問題が起きていなければ、変更した内容をフォークリポジトリにプッシュします。
+- あなたのブランチで特に問題が起きていなければ、変更した内容をフォークリポジトリーにプッシュします。
   ```shell
   git push origin head
   ```
 
-上流リポジトリについてさらに知りたい場合は、[GitHub ドキュメントをご覧ください](https://help.github.com/en/articles/configuring-a-remote-for-a-fork)。
+上流リポジトリーについてさらに知りたい場合は、[GitHub ドキュメントをご覧ください](https://help.github.com/en/articles/configuring-a-remote-for-a-fork)。
 
-_**ヒント:** Gatsby レポジトリのメンバーは、上流リモートレポジトリをフォークする代わりに、レポジトリを直接クローンできます。クローンしたレポジトリ内で変更をしたあと、PR を作成するために[フィーチャーブランチ](https://git-scm.com/book/en/v1/Git-Branching-Branching-Workflows)にプッシュします。_
+_**ヒント:** Gatsby リポジトリーのメンバーは、上流リモートリポジトリーをフォークする代わりに、リポジトリーを直接クローンできます。クローンしたリポジトリー内で変更をしたあと、PR を作成するために[フィーチャーブランチ](https://git-scm.com/book/en/v1/Git-Branching-Branching-Workflows)にプッシュします。_
 
 ## 追加資料
 
 - CSS Tricks: [オープンソースプロジェクトに貢献する方法](https://css-tricks.com/how-to-contribute-to-an-open-source-project/)
 - GitHub で [Pull Request を作成する](https://help.github.com/en/articles/creating-a-pull-request)
-- [フォークレポジトリのリモートを設定する](https://help.github.com/en/articles/configuring-a-remote-for-a-fork)
+- [フォークリポジトリーのリモートを設定する](https://help.github.com/en/articles/configuring-a-remote-for-a-fork)
 - [どのリモート URL を使うべき？](https://help.github.com/en/articles/which-remote-url-should-i-use)
 - [Git でのブランチとマージ](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
 - [フィーチャーブランチとワークフロー](https://git-scm.com/book/en/v1/Git-Branching-Branching-Workflows)
