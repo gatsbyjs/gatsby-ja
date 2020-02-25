@@ -119,7 +119,7 @@ export default class IndexPage extends React.Component {
 }
 ```
 
-これで入力が機能するようになったので、フォームの送信に応じて何かを起動したくなるでしょう。`onSubmit` プロパティをフォーム要素に追加して、 `handleSubmit` でユーザーが送信ボタンを押した時にアラートが表示されるようにしましょう。
+これで入力が機能するようになったので、フォームの送信に応じて何かを起動したくなるでしょう。`onSubmit` プロパティをフォーム要素に追加して、`handleSubmit` でユーザーが送信ボタンを押した時にアラートが表示されるようにしましょう。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
