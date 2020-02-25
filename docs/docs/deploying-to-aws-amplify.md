@@ -1,40 +1,40 @@
 ---
-title: Deploying to AWS Amplify
+title: AWS Amplify へのデプロイ
 ---
 
-In this guide you'll walk through how to deploy and host your Gatsby site using the [AWS Amplify Console](https://console.amplify.aws).
+このガイドでは [AWS Amplify Console](https://aws.amazon.com/jp/amplify/console/) を使って Gatsby サイトをデプロイしてホストする方法を順を追って説明します。
 
-AWS Amplify is a combination of client library, CLI toolchain, and a Console for continuous deployment and hosting. The Amplify CLI and library allow developers to get up & running with full-stack cloud-powered applications with features like authentication, storage, serverless GraphQL or REST APIs, analytics, Lambda functions, & more. The Amplify Console provides continuous deployment and hosting for modern web apps (single page apps and static site generators). Continuous deployment allows developers to deploy updates to their web app on every code commit to their Git repository. Hosting includes features such as globally available CDNs, easy custom domain setup + HTTPS, feature branch deployments, and password protection.
+AWS Amplify はクライアントのライブラリー、CLI ツールチェーン、継続的なデプロイとホスティングを行うコンソールの詰め合わせです。開発者は Amplify CLI とライブラリーにより、認証、ストレージ、サーバレス GraphQL/REST API、分析、Lambda 関数などの機能を備えたフルスタックなクラウド・アプリケーションの起動と実行が可能です。Amplify Console はモダンなウェブアプリ（シングルページアプリケーションや静的サイトジェネレーター）の為の継続的なデプロイとホスティングを提供します。継続的デプロイにより、開発者は Git リポジトリにコードをコミットするごとにウェブアプリの更新を反映できます。ホスティングにはグローバルで利用可能な CDN、簡単な独自ドメイン構築と HTTPS 化、feature branch デプロイ、そしてパスワード保護などの機能が含まれます。
 
-## Pre-requisites
+## 前提条件
 
-1. [Sign up for an AWS Account](https://portal.aws.amazon.com/billing/signup?redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation). There are no upfront charges or any term commitments to create an AWS account and signing up gives you immediate access to the AWS Free Tier
+1. [AWS Account に登録する](https://portal.aws.amazon.com/billing/signup?redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation)。AWS account を作成するために初期費用や期間契約はありません。また、登録後すぐに AWS 無料枠へアクセスできます。
 
-1. This guide assumes that you have setup a Gatsby project. If you need to set up a project, start with the [Gatsby Auth starter with AWS Amplify](https://github.com/dabit3/gatsby-auth-starter-aws-amplify) then come back. The starter implements a basic authentication flow for signing up signing in users as well as protected client side routing.
+1. このガイドは Gatsby プロジェクトがセットアップされていることを前提としています。プロジェクトをセットアップする必要がある場合、[Gatsby Auth starter with AWS Amplify](https://github.com/dabit3/gatsby-auth-starter-aws-amplify) を参照してください。スターターは保護されたクライアント側のルーティングに加え、ユーザー登録とログインのために基本的な認証フローを実装します。
 
 ![Gatsby Amplify](./images/amplify-gatsby-auth.gif)
 
-## Deployment
+## デプロイ
 
-1. Log in to the [AWS Amplify Console](https://console.aws.amazon.com/amplify/home) and choose Get Started under Deploy.
+1. [AWS Amplify Console](https://console.aws.amazon.com/amplify/home) にログインし、「Deploy」の下にある「Get Started」を選択します。
    ![Gatsby Amplify2](./images/amplify-gettingstarted.png)
 
-1. Connect a branch from your GitHub, Bitbucket, GitLab, or AWS CodeCommit repository. Connecting your repository allows Amplify to deploy updates on every code commit to a branch.
+1. GitHub、Bitbucket、GitLab、あるいは AWS CodeCommit リポジトリーからブランチに接続します。リポジトリーに接続されると、Amplify はブランチにコードをコミットするごとに更新を反映できるようになります。
    ![Gatsby Amplify2](./images/amplify-connect-repo.gif)
 
-1. Accept the default build settings. Give the Amplify Console permission to deploy backend resources with your frontend with a service role. This allows the Console to detect changes to both your backend and frontend on every code commit and make updates. If you do not have a service role follow the prompts to create one, then come back to the console and pick it from the dropdown.
+1. デフォルトのビルド設定を承認します。サービスロールを持つフロントエンドでバックエンドリソースを反映する権限を Amplify Console に与えます。これによりコンソールは、コードをコミットするごとにバックエンドとフロントエンドの両方の変更が察知し、更新を行います。もし、サービスロールがなければ誘導に従い 1 つ作成し、作成したらコンソールに戻り、ドロップダウンから作成したサービスロールを選択します。
    ![Gatsby Amplify2](./images/amplify-build-settings.gif)
 
-1. Review your changes and then choose **Save and deploy**. The Amplify Console will pull code from your repository, build changes to the backend and frontend, and deploy your build artifacts at `https://master.unique-id.amplifyapp.com`. Bonus: Screenshots of your app on different devices to find layout Issues :fire:
+1. 変更内容を吟味し、**Save and deploy** を選択します。Amplify Console はリポジトリーからコードを pull して、バックエンドとフロントエンドの変更をビルドし、ビルド成果物を `https://master.unique-id.amplifyapp.com` にデプロイします。おまけ：様々なデバイスでレイアウトの問題を見つけるためのアプリのスクリーンショット。:file:
    ![Gatsby Amplify2](./images/amplify-gatsby-deploy.gif)
 
-## References:
+## 参考資料：
 
-- [Publishing Your Next Gatsby Site to AWS With AWS Amplify](/blog/2018-08-24-gatsby-aws-hosting/)
-- If you want more control over hosting on AWS you can also [deploy your Gatsby.js Site to AWS S3](/docs/deploying-to-s3-cloudfront/).
+- [AWS Amplify で AWS に次の Gatsby サイトを公開する](/blog/2018-08-24-gatsby-aws-hosting/).
+- もし、あなたが AWS 上のホスティングをさらに管理したいのであれば [AWS S3 に Gatsby.js サイトをデプロイする](/docs/deploying-to-s3-cloudfront/) ことも可能です。
 
-### More resources
+### 追加資料
 
-Jason Lengstorf and Nader Dabit livestream building a site & deploying with AWS Amplify:
+Jason Lengstorf と Nader Dabit の AWS Amplify を用いたサイトビルドとデプロイのライブストリーム：
 
 https://youtu.be/i9HG8CV-_dQ
