@@ -4,11 +4,7 @@ title: Gatsby で画像を使用する
 
 画像の最適化は、どんなウェブサイトでも課題です。複数デバイス上でパフォーマンス調整のベストプラクティスを利用するには、各画像に複数のサイズと解像度を用意する必要があります。幸運なことに、Gatsby は [page components](/docs/building-with-components/#page-components) で画像を表示する際に利用できる、いくつかの便利な[プラグイン](/docs/plugins/)を持っています。
 
-<<<<<<< HEAD
-その中でも、[GraphQL クエリー](/docs/querying-with-graphql/)を利用して最適なサイズと解像度の画像を取得してから、[`gatsby-image`](/packages/gatsby-image/) コンポーネントで表示する方法を推奨します。
-=======
-The recommended approach is to use [GraphQL queries](/docs/graphql-concepts/) to get images of the optimal size or resolution, then, display them with the [`gatsby-image`](/packages/gatsby-image/) component.
->>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
+その中でも、[GraphQL クエリー](/docs/graphql-concepts/)を利用して最適なサイズと解像度の画像を取得してから、[`gatsby-image`](/packages/gatsby-image/) コンポーネントで表示する方法を推奨します。
 
 ## GraphQL で画像をクエリーする
 
@@ -16,15 +12,9 @@ GraphQL で画像をクエリーすると、画像のデータにアクセスで
 
 このためには、いくつかのプラグインが必要となります。
 
-<<<<<<< HEAD
-- [`gatsby-source-filesystem`](/packages/gatsby-source-filesystem/) プラグインを利用すると、[GraphQL でファイルをクエリー](/docs/querying-with-graphql/#images)できるようになります。
+- [`gatsby-source-filesystem`](/packages/gatsby-source-filesystem/) プラグインを利用すると、[GraphQL でファイルをクエリー](/docs/graphql-concepts/#images)できるようになります。
 - [`gatsby-plugin-sharp`](/packages/gatsby-plugin-sharp) は Gatsby プラグインと Sharp 間の連携を強化します。
 - [`gatsby-transformer-sharp`](/packages/gatsby-transformer-sharp/) を利用すると、クエリーによって適切なサイズと解像度を持つ複数の画像を生成できるようになります。
-=======
-- [`gatsby-source-filesystem`](/packages/gatsby-source-filesystem/) plugin allows you to [query files with GraphQL](/docs/graphql-concepts/#images)
-- [`gatsby-plugin-sharp`](/packages/gatsby-plugin-sharp) powers the connections between Sharp and Gatsby Plugins
-- [`gatsby-transformer-sharp`](/packages/gatsby-transformer-sharp/) allows you to create multiples images of the right sizes and resolutions with a query
->>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
 
 最終的な画像が固定サイズの場合、その画像について複数の解像度を持つように最適化されます。レスポンシブである場合、つまりコンテナまたはページに合わせて画像が伸縮するような場合、ひとつの画像ごとに複数のサイズを持つように最適化されます。[詳細については、Gatsby Image のドキュメント](/packages/gatsby-image/#two-types-of-responsive-images)を参照してください。
 

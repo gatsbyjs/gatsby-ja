@@ -102,7 +102,7 @@ CMS とはコンテンツ・マネジメント・システム (Content Managemen
 
 Decoupled Drupal とは、Drupal のサービスを[ヘッドレス CMS](#headless-cms) として活用することを指します。ヘッドレス CMS としての Drupal インスタンスはコンテンツ API として機能し、[フロントエンド](#frontend)側で表示させる情報を JSON として返します。
 
-### デプロイ
+### デプロイ (Deploy)
 
 あなたのウェブサイトを[ビルド](#build)し、[ホストプロバイダー](#hosting)にアップロードする一連の動作のこと。
 

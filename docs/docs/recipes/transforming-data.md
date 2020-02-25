@@ -53,12 +53,8 @@ export const query = graphql`
 
 ### 追加の資料
 
-<<<<<<< HEAD
 - `gatsby-transformer-remark` を使用して、[Markdown を HTML に変換するチュートリアル](/tutorial/part-six/#transformer-plugins)。
 - [Gatsby プラグインライブラリ](/plugins/?=transformer)で利用できるトランスフォーマープラグインを探す。
-=======
-- [Tutorial on transforming Markdown to HTML](/tutorial/part-six/#transformer-plugins) using `gatsby-transformer-remark`
-- Browse available transformer plugins in the [Gatsby plugin library](/plugins/?=transformer)
 
 ## Transforming images into grayscale using GraphQL
 
@@ -150,4 +146,3 @@ export default () => {
 - [API docs, including grayscale and duotone query tips](/docs/gatsby-image/#shared-query-parameters)
 - [Gatsby Image docs](/docs/gatsby-image/)
 - [Image processing examples](https://github.com/gatsbyjs/gatsby/tree/master/examples/image-processing)
->>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
