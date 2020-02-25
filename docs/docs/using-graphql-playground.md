@@ -24,7 +24,7 @@ Gatsby で GraphQL Playground にアクセスするためには、以下のよ�
 "develop": "cross-env GATSBY_GRAPHQL_IDE=playground gatsby develop",
 ```
 
-もし、**cross-env** がインストールされていなかったら以下のコマンドでインストールすることができます。
+もし、**cross-env** がインストールされていなかったら以下のコマンドでインストールできます。
 
 ```
 npm install --save-dev cross-env
