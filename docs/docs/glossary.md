@@ -76,9 +76,9 @@ CMS とはコンテンツ・マネジメント・システム (Content Managemen
 
 設定ファイルのこと。Gatsby では `gatsby-config.js` を使って Gatsby にあなたのサイトの設定を行います。よく使われる設定としては、サイトの metadata を設定してあなたのサイトの SEO を向上させるものがあります。
 
-### [Continuous Deployment](/docs/glossary/continuous-deployment)
+### [継続的デプロイ (Continuous Deployment)](/docs/glossary/continuous-deployment)
 
-Continuous deployment (CD) automates the process of releasing changes to your project. A continuous deployment workflow automatically builds and tests your project, and publishes your changes only when they pass the required tests.
+継続的デプロイ (Continuout Deployment, CD) とは、あなたのプロジェクトのリリースプロセスを自動化するものです。継続的デプロイワークフローは自動的にあなたのプロジェクトのテスト、およびビルドを行い、差分に問題が無いと判断されたら自動的に公開されます。
 
 ### CSS
 
@@ -98,15 +98,11 @@ Continuous deployment (CD) automates the process of releasing changes to your pr
 
 [Gatsby](#gatsby) において、分離とは関心の分離のことを指します。多くの場合、[フロントエンド](#frontend)と[バックエンド](#backend)を分離することを指しています。例として、[Decoupled Drupal](https://dri.es/how-to-decouple-drupal-in-2019) や [Headless WordPress](https://www.smashingmagazine.com/2018/10/headless-wordpress-decoupled/) が挙げられます。
 
-<<<<<<< HEAD
-### デプロイ (Deploy)
-=======
 ### [Decoupled Drupal](/docs/glossary/decoupled-drupal)
 
-Decoupling refers to the practice of using Drupal as a [headless CMS](#headless-cms). A decoupled Drupal instance functions as a content API that returns JSON for your [frontend](#frontend) to consume.
+Decoupled Drupal とは、Drupal のサービスを[ヘッドレス CMS](#headless-cms) として活用することを指します。ヘッドレス CMS としての Drupal インスタンスはコンテンツ API として機能し、[フロントエンド](#frontend)側で表示させる情報を JSON として返します。
 
-### Deploy
->>>>>>> 22a3fb4d3155774ddc223a249897020b0ee18db1
+### デプロイ
 
 あなたのウェブサイトを[ビルド](#build)し、[ホストプロバイダー](#hosting)にアップロードする一連の動作のこと。
 

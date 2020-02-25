@@ -1,25 +1,25 @@
 ---
-title: Enhancing Styles with CSS-in-JS
+title: CSS-in-JS でのスタイル実装
 overview: true
 ---
 
-CSS-in-JS refers to an approach where styles are written in JavaScript instead of in external CSS files to easily scope styles in components, eliminate dead code, encourage faster performance and dynamic styling, and more.
+CSS-in-JS とは外部 CSS ファイルを使わず、JavaScript の中でスタイルを記述するアプローチのことを指します。これはコンポーネント内のスタイルを簡単にスコープしたり、不要コード除去、パフォーマンス高速化、動的スタイリングなどをもたらします。
 
-CSS-in-JS bridges the gap between CSS and JavaScript:
+CSS-in-JS は CSS と JavaScript の架け橋になります：
 
-1. **Components**: you'll style your site with components, which integrates well with React's "everything is a component" philosophy.
-2. **Scoped**: this is a side effect of the first. Just like [CSS Modules](/docs/css-modules/), CSS-in-JS is scoped to components by default.
-3. **Dynamic**: style your site dynamically based on component state by integrating JavaScript variables.
-4. **Bonuses**: many CSS-in-JS libraries generate unique class names which can help with caching, automatic vendor prefixes, timely loading of critical CSS, and implementing many other features, depending on the library you choose.
+1. **コンポーネント**: コンポーネントでサイトのスタイルを設定します。これは、React の「すべてがコンポートである」という思想とうまく融合します。
+2. **スコープ**: これは 1 つめの副作用です。 [CSS Modules](/docs/css-modules/) 同様、CSS-in-JS はデフォルトでコンポーネントにスコープされます。
+3. **動的**: JavaScript 変数の活用によりコンポーネントの状態に連動して動的にサイトをスタイリングします。
+4. **おまけ**: CSS-in-JS には豊富なライブラリーがあります。キャッシュを支援する一意なクラス名の生成、ベンダープリフィックスの自動付与、クリティカル CSS の最適化ローディング、その他多くの機能をライブラリーにより追加できます。
 
-CSS-in-JS, while not required in Gatsby, is very popular among JavaScript developers for the reasons listed above. For more context, read Max Stoiber's (creator of CSS-in-JS library [styled-components](/docs/styled-components/)) article [_Why I write CSS in JavaScript_](https://mxstbr.com/thoughts/css-in-js/). However, you should also consider whether CSS-in-JS is necessary, as not relying on it can encourage more inclusive frontend skill-sets. It is also more difficult to port styles from JSX to and from CSS.
+CSS-in-JS は Gatsby において必須という訳ではありませんが、上記の理由により多くの JavaScript 開発者に人気があります。詳しく知りたい場合は、Max Stoiber（CSS-in-JS ライブラリー styled-components の作者の一人）の記事 [_Why I write CSS in JavaScript_](https://mxstbr.com/thoughts/css-in-js/) をご覧ください。しかし、CSS-in-JS が必要かどうかは検討する必要があります。CSS-in-JS に依存しない実装は、より包括的なフロントエンドのスキルセットを促進できるからです。また、JSX から CSS への移植はかなりの労力を伴います。
 
-_Note that this functionality is not a part of React or Gatsby, and requires using any of the many [third-party CSS-in-JS libraries](https://github.com/MicheleBertoli/css-in-js#css-in-js)._
+**これは React や Gatsby の機能の一部ではなく、幾つかの[サードパーティ CSS-in-JS ライブラリー](https://github.com/MicheleBertoli/css-in-js#css-in-js)を使用することでもたらされます。**
 
-> Adding a stable CSS class to your JSX markup along with your CSS-in-JS can make it easier to users to include [User Stylesheets](https://www.viget.com/articles/inline-styles-user-style-sheets-and-accessibility/) for accessibility. See [Styled Components](/docs/styled-components#enabling-user-stylesheets-with-a-stable-class-name) example.
+> CSS-in-JS で JSX マークアップに不変な CSS クラスを追加することは エンドユーザがアクセシビリティのために [User Stylesheets](https://www.viget.com/articles/inline-styles-user-style-sheets-and-accessibility/) を追加することの助けになります。[Styled Components](/docs/styled-components#enabling-user-stylesheets-with-a-stable-class-name) での例をご覧くだい。
 
-Keep in mind that styles aren't applied until the JavaScript loads hence a plugin to extract the styles is necessary to prevent flash of unstyled content (FOUC). To cater for this, every CSS-in-JS library has a Gatsby plugin which you need to extract styles and insert them into the HTML during builds and this prevents FOUC.
+JavaScript が読み込まれるまでスタイルが適用されない事に留意すべきです。したがって、FOUC(Flash Of Unstyled Content) という CSS 適用前が表示されてしまう現象を防ぐためにスタイルを抽出するプラグインが必要になります。この問題を解決するために、すべての CSS-in-JS ライブラリーはスタイルを抽出する為の Gatsby プラグインを持ちます。そして、抽出したスタイルをビルド時に HTML へ挿入し、これにより FOUC を防ぎます。
 
-This section contains guides for styling your site with some of the most popular CSS-in-JS libraries, including how to set up global styles using each library.
+このセクションでは、特に人気の高い CSS-in-JS ライブラリーによるグローバルスタイルの設定方法が収録されています。
 
 <GuideList slug={props.slug} />

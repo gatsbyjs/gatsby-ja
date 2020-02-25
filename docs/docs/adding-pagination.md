@@ -1,17 +1,16 @@
 ---
-title: Adding Pagination
+title: ページネーションの追加
 ---
 
-A page displaying a list of content gets longer as the amount of content grows.
-Pagination is the technique of spreading that content across multiple pages.
+コンテンツのリストを表示するページは、コンテンツの量が増えるにつれて長くなります。ページネーションは、コンテンツを複数のページに分ける方法です。
 
-The goal of pagination is to create multiple pages (from a single [template](/docs/building-with-components/#page-template-components)) that show a limited number of items.
+ページネーションのゴールは、単一の[テンプレート](/docs/building-with-components/#page-template-components)から、限られた数のアイテムを表示する複数のページを作成することです。
 
-Each page will [query GraphQL](/docs/querying-with-graphql/) for those specific items.
+各ページは、それぞれのアイテムを [GraphQL のクエリー](/docs/querying-with-graphql/)で取得します。
 
-The information needed to query for those specific items (i.e. values for [`limit`](/docs/graphql-reference/#limit) and [`skip`](/docs/graphql-reference/#skip)) will come from the [`context`](/docs/graphql-reference/#query-variables) that is added when [creating pages](/docs/creating-and-modifying-pages/#creating-pages-in-gatsby-nodejs) in `gatsby-node`.
+それぞれのアイテムを取得するために必要な、[`limit`](/docs/graphql-reference/#limit) や [`skip`](/docs/graphql-reference/#skip) などの情報は、[ページの作成](/docs/creating-and-modifying-pages/#creating-pages-in-gatsby-nodejs)時に `gatsby-node` で追加される [`context`] から取得します。
 
-## Example
+## 例
 
 ```jsx:title=src/templates/blog-list-template.js
 import React from "react"
@@ -89,7 +88,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // ...
 
-  // Create blog-list pages
+  // ブログリストページの作成
   // highlight-start
   const posts = result.data.allMarkdownRemark.edges
   const postsPerPage = 6
@@ -123,11 +122,10 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 }
 ```
 
-The code above will create an amount of pages that is based on the total number of posts. Each page will list `postsPerPage`(6) posts, until there are less than `postsPerPage`(6) posts left.
-The path for the first page is `/blog`, following pages will have a path of the form: `/blog/2`, `/blog/3`, etc.
+上記コードは、投稿総数に基づいた量のページを作成します。残りの投稿数が `postPerPage` で指定された 6 未満になるまで、各ページには 6 投稿ずつ表示されます。各ページのパスは、最初のページが `blog`、次のページからは `blog/2`、`blog/3` となります。
 
-## Other resources
+## その他の資料
 
-- Follow this [step-by-step tutorial](https://nickymeuleman.netlify.com/blog/gatsby-pagination/) to add links to the previous/next page and the traditional page-navigation at the bottom of the page
+- 前へ/次へのページリンクや、ページの下部に配置する従来のページナビゲーションの追加は、この[チュートリアル](https://nickymeuleman.netlify.com/blog/gatsby-pagination/)にしたがってください
 
-- See [gatsby-paginated-blog](https://github.com/NickyMeuleman/gatsby-paginated-blog) [(demo)](https://nickymeuleman.github.io/gatsby-paginated-blog/) for an extension of the official [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog) with pagination in place
+- 公式のエクステンション [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog) のページネーションは [gatsby-paginated-blog](https://github.com/NickyMeuleman/gatsby-paginated-blog) を参照してください
