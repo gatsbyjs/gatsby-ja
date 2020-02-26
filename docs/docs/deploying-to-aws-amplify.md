@@ -30,7 +30,7 @@ AWS Amplify はクライアントのライブラリー、CLI ツールチェー�
 
 ## 参考資料：
 
-- [AWS Amplify で AWS に次の Gatsby サイトを公開する](/blog/2018-08-24-gatsby-aws-hosting/).
+- [AWS Amplify で AWS に次の Gatsby サイトを公開する](/blog/2018-08-24-gatsby-aws-hosting/)。
 - もし、あなたが AWS 上のホスティングをさらに管理したいのであれば [AWS S3 に Gatsby.js サイトをデプロイする](/docs/deploying-to-s3-cloudfront/) ことも可能です。
 
 ### 追加資料
