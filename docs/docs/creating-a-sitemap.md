@@ -1,23 +1,23 @@
 ---
-title: Creating a Sitemap
+title: サイトマップを生成する
 ---
 
-## What is a sitemap?
+## サイトマップとは
 
-An [XML sitemap](https://support.google.com/webmasters/answer/156184?hl=en) lists a website’s important pages, making sure search engines (such as Google) can find and crawl them all. In effect, a sitemap helps a search engine understand your website structure.
+[XML sitemap](https://support.google.com/webmasters/answer/156184?hl=en) は、ウェブサイトの重要なページのリストで、Google のような検索エンジンがこれらのページをすべてクロールできるように用いられます。サイトマップは、検索エンジンがあなたのウェブサイトの構造を理解することを助けます。
 
-Think of it as a map for your website. It shows what all of the pages are on your website.
+これは、あなたのウェブサイトの地図であると考えてください。あなたのウェブサイトの全ページが何であるかを示します。
 
-## Using [gatsby-plugin-sitemap](/packages/gatsby-plugin-sitemap/)
+## [gatsby-plugin-sitemap](/packages/gatsby-plugin-sitemap/) を使う
 
-To generate an XML sitemap, you will use the [`gatsby-plugin-sitemap`](/packages/gatsby-plugin-sitemap/) package.
+XML サイトマップを生成するために、 [`gatsby-plugin-sitemap`](/packages/gatsby-plugin-sitemap/) プラグインを利用します。
 
-Install the package by running the following command:
+下記のコマンドでプラグインをインストールします。
 `npm install --save gatsby-plugin-sitemap`
 
-### How to configure
+### 設定方法
 
-Once installation is complete, you can now add this plugin to your `gatsby-config.js`, like so:
+プラグインのインストールが終了したら、 `gatsby-config.js` に、下記のような設定を追加します。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -28,14 +28,14 @@ module.exports = {
 }
 ```
 
-**Note:** The siteUrl property must be defined and not left empty.
+**ヒント:** `siteUrl` は必須項目です、空白のままにしないでください。
 
-Next run a build (`npm run build`) since the sitemap generation will only happen for production builds. This is all that's required to get a working sitemap with Gatsby! By default, the generated sitemap path is /sitemap.xml and will include all of your site’s pages, but of course the plugin exposes options to configure this default functionality.
+サイトマップの生成は、本番環境のビルド時のみ行われるため、まずはビルドコマンド (`npm run build`)を実行します。Gatsby でサイトマップを生成する作業はこれだけです！ 既定では、 /sitemap.xml にサイトマップが生成され、ウェブサイトの全ページがサイトマップに含まれています。もちろん、プラグインでこのデフォルト設定を変更することも可能です。
 
-### Additional modifications
+### 追加設定
 
-Additional modification steps are available in the [`gatsby-plugin-sitemap` documentation](/packages/gatsby-plugin-sitemap)
+追加の設定を行いたい場合は、 [`gatsby-plugin-sitemap` のドキュメント](/packages/gatsby-plugin-sitemap)を確認してください
 
-## More information
+## 追加情報
 
-- Also check out a post on [gatsby-plugin-advanced-sitemap](/blog/2019-05-07-advanced-sitemap-plugin-for-seo/) from the Gatsby blog
+- サイトマップの生成に関する更に詳しい情報を知りたい場合、Gatsby ブログの [gatsby-plugin-advanced-sitemap](/blog/2019-05-07-advanced-sitemap-plugin-for-seo/) の確認をおすすめします
