@@ -34,8 +34,8 @@ module.exports = {
 
 ### 追加設定
 
-追加の設定を行いたい場合は、 [`gatsby-plugin-sitemap` のドキュメント](/packages/gatsby-plugin-sitemap)を確認してください
+追加の設定を行いたい場合は、 [`gatsby-plugin-sitemap` のドキュメント](/packages/gatsby-plugin-sitemap)を確認してください。
 
 ## 追加情報
 
-- サイトマップの生成に関する更に詳しい情報を知りたい場合、Gatsby ブログの [gatsby-plugin-advanced-sitemap](/blog/2019-05-07-advanced-sitemap-plugin-for-seo/) の確認をおすすめします
+- サイトマップの生成に関する、さらに詳しい情報を知りたい場合、Gatsby ブログの [gatsby-plugin-advanced-sitemap](/blog/2019-05-07-advanced-sitemap-plugin-for-seo/) の確認をおすすめします
