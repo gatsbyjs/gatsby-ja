@@ -74,7 +74,7 @@ Gatsby のドキュメントサイトは、ドキュメントとチュートリ�
 
 - ドキュメントのみの変更の場合、`git checkout -b docs/some-change` か `git checkout -b docs-some-change` を使うことで、CI プロセスを減らし文字校正のみを行う事ができます。
 
-より詳しい指示については、 [ドキュメントに貢献](/contributing/docs-contributions/)ページをご覧ください。
+より詳しい指示については、[ドキュメントに貢献](/contributing/docs-contributions/)ページをご覧ください。
 
 ### Code changes
 
