@@ -38,4 +38,4 @@ module.exports = {
 
 ## 追加情報
 
-- サイトマップの生成に関する、さらに詳しい情報を知りたい場合、Gatsby ブログの [gatsby-plugin-advanced-sitemap](/blog/2019-05-07-advanced-sitemap-plugin-for-seo/) の確認をおすすめします
+- サイトマップの生成に関する、さらに詳しい情報を知りたい場合、Gatsby ブログの [gatsby-plugin-advanced-sitemap](/blog/2019-05-07-advanced-sitemap-plugin-for-seo/) の確認をおすすめします。
