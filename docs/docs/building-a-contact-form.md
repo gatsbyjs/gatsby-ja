@@ -83,7 +83,7 @@ Netlify でサイトをホストしている場合、Netlify の素晴らしい 
   ...
 ```
 
-これで、フォームからのすべての送信が Netlify のダッシュボードのフォームタブに表示されます。Netlify ではフォームの属性の `netlify-honeypot ="bot-field"` と対応する hidden フィールドを追加することで、 受信する可能性のあるスパム通知を拒否することもできます。
+これで、フォームからのすべての送信が Netlify のダッシュボードのフォームタブに表示されます。Netlify ではフォームの属性の `netlify-honeypot ="bot-field"` と対応する hidden フィールドを追加することで、受信する可能性のあるスパム通知を拒否することもできます。
 
 Netlify フォームの詳細な情報は [Netlify のウェブサイト](https://www.netlify.com/docs/form-handling/)を参照してください。
 
