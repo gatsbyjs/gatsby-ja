@@ -106,7 +106,7 @@ Formsprees の機能を活用するためには、フォームの POST メソッ
 
 変更を行ったら、フォームから初めて送信した際に、あなたのメールアドレスに Formspree から送られるメールを使用して Formspree に登録します。その後は、フォームからの送信のすべてがあなたのメールアドレスに送信されます。登録や、設定の詳細については [Formspree のウェブサイト](https://formspree.io/)をご覧ください。
 
-このように設定されたすべてのフォームは、標準で reCAPTCHA を備えていますが、 `name="_gotcha"` という 隠しフィールドを追加することで Honeypot スパムフィルタリングを有効にすることもできます。
+このように設定されたすべてのフォームは、標準で reCAPTCHA を備えていますが、`name="_gotcha"` という 隠しフィールドを追加することで Honeypot スパムフィルタリングを有効にすることもできます。
 
 ```jsx
 <input type="text" name="_gotcha" style="display:none" />
