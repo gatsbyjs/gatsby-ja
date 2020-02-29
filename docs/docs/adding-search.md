@@ -1,68 +1,68 @@
 ---
-title: Adding Search
+title: 検索機能の追加
 overview: true
 ---
 
-See below for a list of guides in this section, or keep reading for an overview on adding search functionality to your site.
+このセクションにおけるガイドの一覧を以下でお読みいただくか、あなたのサイトに検索機能を追加する方法の概要を引き続きお読みください。
 
 <GuideList slug={props.slug} />
 
-## Site search overview
+## サイト検索の概要
 
-Before going through the steps for adding search to your Gatsby website, examine the components needed for adding search to a website.
+あなたの Gatsby サイトに検索機能を追加する手順を実行する前に、ウェブサイトに検索機能を追加するために必要なコンポーネントを確認してください。
 
-There are three required components for adding search to your Gatsby website:
+あなたの Gatsby ウェブサイトに検索機能を追加するためには 3 つのコンポーネントが必要です。
 
-1.  index
-2.  engine
+1.  インデックス
+2.  エンジン
 3.  UI
 
-## Site search components
+## サイト検索コンポーネント
 
-### Search index
+### 検索インデックス
 
-The search index is a copy of your data stored in a search-friendly format. An index is for optimizing speed and performance when executing a search query. Without an index, every search would need to scan every page in your site—which quickly becomes inefficient.
+検索インデックスは検索しやすい形式で保存されたデータのコピーです。インデックスは検索クエリを実行する際の速度とパフォーマンスを最適化するためのものです。インデックスがなければ、すべての検索はあなたのサイト内のすべてのページをスキャンする必要があり、すぐに非効率になります。
 
-### Search engine
+### 検索エンジン
 
-The search engine takes a search query, runs it through the search index, and returns any matching documents.
+検索エンジンは検索クエリを取得した後、検索インデックスを介して実行し、一致するドキュメントを返します。
 
-### Search UI
+### 検索 UI
 
-The UI component provides an interface to the user, which allows them to write search queries and view the results of each query.
+UI コンポーネントは、検索クエリの作成と各クエリの結果を表示するためのインターフェイスをユーザーに提供します。
 
-## Adding search to your site
+## サイトに検索機能を追加
 
-Now that you know the three required components, there are a few ways to approach adding search to your Gatsby-powered site.
+3 つの必須コンポーネントがわかったので、あなたの Gatsby を使用したサイトに検索機能を追加する方法をいくつか紹介します。
 
-### Use an open source search engine
+### オープンソースの検索エンジンの使用
 
-Using an open source search engine is always free and allows you to enable offline search for your site. Note that you need to be careful with offline search because the entire search index has to be brought into the client, which can affect the bundle size significantly.
+オープンソースの検索エンジンの使用は常に無料で、あなたのサイトのオフライン検索を有効にできます。オフライン検索は検索インデックス全体をクライアントに取り込む必要があるため、バンドルサイズに大きな影響を与える可能性があることに注意する必要があります。
 
-Open source libraries like [`elasticlunr`](https://www.npmjs.com/package/elasticlunr), [`flexsearch`](https://github.com/nextapps-de/flexsearch) or [`js-search`](https://github.com/bvaughn/js-search) can be used to enable search for your site.
+[`elasticlunr`](https://www.npmjs.com/package/elasticlunr)、[`flexsearch`](https://github.com/nextapps-de/flexsearch) もしくは [`js-search`](https://github.com/bvaughn/js-search) のようなオープンソースライブラリーがあなたのサイトの検索機能を有効化するために使用できます。
 
-Doing so will require you to create a search index when your site is built. For [`elasticlunr`](https://www.npmjs.com/package/elasticlunr), there is a plugin called [`gatsby-plugin-elasticlunr-search`](https://github.com/gatsby-contrib/gatsby-plugin-elasticlunr-search) that creates a search index automatically. For [`flexsearch`](https://github.com/nextapps-de/flexsearch) there is a plugin called [`gatsby-plugin-flexsearch`](https://github.com/tmsss/gatsby-plugin-flexsearch).
+そのためには、あなたのサイトの構築時に検索インデックスを作成する必要があります。[`elasticlunr`](https://www.npmjs.com/package/elasticlunr) には、検索インデックスを自動的に作成する [`gatsby-plugin-elasticlunr-search`](https://github.com/gatsby-contrib/gatsby-plugin-elasticlunr-search) というプラグインがあります。[`flexsearch`](https://github.com/nextapps-de/flexsearch) には、[`gatsby-plugin-flexsearch`](https://github.com/tmsss/gatsby-plugin-flexsearch) というプラグインがあります。
 
-For other libraries, you can use a combination of [`onCreateNode`](/docs/node-apis/#onCreateNode), [`setFieldsOnGraphQLNodeType`](/docs/node-apis/#setFieldsOnGraphQLNodeType) and [`sourceNodes`](/docs/node-apis/#sourceNodes) from the Gatsby node API to create the search index and make it available in GraphQL. For more info on how to do this check out [`gatsby-plugin-elasticlunr-search`'s source code](https://github.com/gatsby-contrib/gatsby-plugin-elasticlunr-search/blob/master/src/gatsby-node.js#L96-L131).
+他のライブラリーについては、Gatsby Node API の [`onCreateNode`](/docs/node-apis/#onCreateNode)、[`setFieldsOnGraphQLNodeType`](/docs/node-apis/#setFieldsOnGraphQLNodeType)、および [`sourceNodes`](/docs/node-apis/#sourceNodes) の組み合わせを使用して、検索インデックスを作成し、GraphQL で使用できるようにします。これを行う方法の詳細については、[`gatsby-plugin-elasticlunr-search`のソースコード](https://github.com/gatsby-contrib/gatsby-plugin-elasticlunr-search/blob/master/src/gatsby-node.js#L96-L131)をご覧ください。
 
-Another option is to generate the search index at the end of the build using the [`onPostBuild`](/docs/node-apis/#onPostBuild) node API. This approach is used by [`gatsby-plugin-lunr`](https://github.com/humanseelabs/gatsby-plugin-lunr) to build a multilanguage index.
+他の選択肢は[`onPostBuild`](/docs/node-apis/#onPostBuild) Node API を使用して、ビルドの最後に検索インデックスを生成することです。このアプローチは [`gatsby-plugin-lunr`](https://github.com/humanseelabs/gatsby-plugin-lunr) において使用されており、多言語インデックスを構築します。
 
-After building the search index and including it in Gatsby's data layer, you will need to allow the user to search your website. This is typically done by using a text input to capture the search query, then using one of the libraries mentioned above to retrieve the desired document(s).
+検索インデックスを作成して Gatsby のデータレイヤーに含めた後、ユーザーがあなたのウェブサイトを検索できるようにする必要があります。これは通常、テキスト入力を使用して検索クエリを捕捉し、上記のライブラリーのいずれかを使用して目的のドキュメントを取得することによって行われます。
 
-### Use an API-based search engine
+### API ベースの検索エンジンの使用
 
-Another option is to use an external search engine. This solution is much more scalable as visitors to your site don't have to download your entire search index (which becomes very large as your site grows) in order to search your site. The trade-off is you'll need to pay for hosting the search engine or pay for a commercial search service.
+別の選択肢は外部の検索エンジンを使用することです。このソリューションは、あなたのサイトの訪問者がサイトを検索するために検索インデックス全体（あなたのサイトの成長に応じて非常に大きくなります）をダウンロードする必要がないため、はるかにスケーラブルです。トレードオフは、検索エンジンのホスティング費用または商用検索サービスの費用を支払う必要があることです。
 
-There are many available both open source that you can host yourself and commercial hosted options.
+自らホストできるオープンソースを利用するか、商用のホストを利用できます。
 
-- [ElasticSearch](https://www.elastic.co/products/elasticsearch) — OSS and has commercial hosting available
-- [Solr](http://lucene.apache.org/solr/) — OSS and has commercial hosting available
-- [Algolia](https://www.algolia.com/) — Commercial
+- [ElasticSearch](https://www.elastic.co/products/elasticsearch) — OSS および商用ホスティングが利用可能
+- [Solr](http://lucene.apache.org/solr/) — OSS および商用ホスティングが利用可能
+- [Algolia](https://www.algolia.com/) — 商用
 
-If you're building a documentation website you can use [Algolia's DocSearch feature](https://community.algolia.com/docsearch/). It will automatically create a search index from the content of your pages.
+あなたがドキュメントサイトを構築する場合は、[Algolia の DocSearch 機能](https://community.algolia.com/docsearch/)を使用できます。ページのコンテンツから検索インデックスが自動的に作成されます。
 
-If your website does not qualify as documentation, you need to collect the search index at build time and upload it using [`gatsby-plugin-algolia`](https://github.com/algolia/gatsby-plugin-algolia).
+あなたのウェブサイトがドキュメントサイトではない場合、ビルド時に検索インデックスを収集し、[`gatsby-plugin-algolia`](https://github.com/algolia/gatsby-plugin-algolia)を使用してアップロードする必要があります。
 
-When using Algolia, they host the search index and search engine for you. Your search queries will be sent to their servers which will respond with any results. You'll need to implement your own UI; Algolia provides a [React library](https://github.com/algolia/react-instantsearch) which may have components you'd like to use.
+Algolia を使用する場合、Algolia は検索インデックスと検索エンジンをホストします。検索クエリがサーバーに送信され、何らかの結果が返されます。あなたは独自の UI を実装する必要があります。Algolia が提供する [React ライブラリー](https://github.com/algolia/react-instantsearch)の中に、あなたの使用したいコンポーネントがあるかもしれません。
 
-Elasticsearch has several React component libraries for search e.g. https://github.com/appbaseio/reactivesearch
+Elasticsearch には、検索用のいくつかの React コンポーネントライブラリーがあります。例： https://github.com/appbaseio/reactivesearch
