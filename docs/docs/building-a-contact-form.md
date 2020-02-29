@@ -156,7 +156,7 @@ app.post("/contact", function(req, res) {
 app.listen(3000)
 ```
 
-この実装では `/contact` への POST リクエストに反応して、POST されたフォームのデータをあなたのメールアドレスに送ります。このサーバーは、 [Now](https://zeit.co/now) などのサービスを使ってデプロイすることも出来ます。
+この実装では `/contact` への POST リクエストに反応して、POST されたフォームのデータをあなたのメールアドレスに送ります。このサーバーは、[Now](https://zeit.co/now) などのサービスを使ってデプロイすることも出来ます。
 
 デプロイしたら、公開 URL（`my-project-abcd123.now.sh` のような）をメモしてフォームのアクションで指定します。
 
