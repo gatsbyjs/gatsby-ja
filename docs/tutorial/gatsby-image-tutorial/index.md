@@ -4,64 +4,60 @@
 
 ##このチュートリアルには何が含まれていますか？
 
-このチュートリアルを終わりには、以下のことが出来るようになります：
+このチュートリアルを終わりには、以下のことができるようになります：
 
-- レスポンシブ画像に対応した　`gatsby-image` の使い方について学ぶ。
-- GraphQLを用いて単一の画像を照会する。
-- YAMLファイルを通して複数の画像を取得する。
+- レスポンシブ画像に対応した `gatsby-image` の使い方について学ぶ。
+- GraphQL を用いて単一の画像を照会する。
+- YAML ファイルを通して複数の画像を取得する。
 - 一般的なエラーのトラブルシューティングの方法について学ぶ。
 
 ## 前提条件
 
-このチュートリアルはすでにGatsbyのプロジェクトが実行されていて、そのページにレンダリングしたい画像があることを前提としています。Gatsbyサイトをセットアップする方法は [メインチュートリアル](/tutorial/) または [クイックスタート](/docs/quick-start/) をご覧ください。
+このチュートリアルはすでに Gatsby のプロジェクトが実行されていて、そのページにレンダリングしたい画像があることを前提としています。Gatsby サイトをセットアップする方法は [メインチュートリアル](/tutorial/) または [クイックスタート](/docs/quick-start/) をご覧ください。
 
-このチュートリアルでは、`gatsby-image` 、GraphQLやGatsbyのデータレイヤーを用いてレスポンシブ画像を最適化するReactコンポーネントをセットアップする方法を学びます。
+このチュートリアルでは、`gatsby-image` 、GraphQL や Gatsby のデータレイヤーを用いてレスポンシブ画像を最適化する React コンポーネントをセットアップする方法を学びます。
 
-> _ノート: このチュートリアルでは、YAMLファイルに保存されている静的なコンテンツを使用していますが、同様の方法がマークダウンファイルでも使用することが出来ます。_
+> _ノート: このチュートリアルでは、YAML ファイルに保存されている静的なコンテンツを使用していますが、同様の方法をマークダウンファイルでも使用できます。_
 
 ## 入門
 
-Gatsbyの画像最適化は信じられないパフォーマンスの `gatsby-image` と呼ばれるプラグインによって提供されます。
+Gatsby の画像最適化は信じられないほど良いパフォーマンスを発揮する `gatsby-image` と呼ばれるプラグインによって提供されます。
 
 ### ステップ 1
 
-npmを使って、 `gatsby-image` プラグインとその依存関係にあるプラグインをインストールします。
-
+npm を使って、 `gatsby-image` プラグインとそれと依存関係にあるプラグインをインストールします。
 
 ```bash
 npm install gatsby-image gatsby-transformer-sharp gatsby-plugin-sharp
 ```
 
-### Step 2
-### ステップ　2
+### ステップ 2
 
-新たにインストールしたプラグインを　`gatsby-config.js` ファイルに追加します。ファイルは最終的に以下のようになります（すでに使用されている他のプラグインは簡単にするために省略しています）。
+新たにインストールしたプラグインを `gatsby-config.js` ファイルに追加します。ファイルは最終的に以下のようになります（すでに使用されている他のプラグインは省略しています）。
 
-> ＿ノート;  `gatsby-image` はインストールしたら、`gatsby-config.js` に追加する必要はありません。
+> ＿ノート; `gatsby-image` はインストール後、`gatsby-config.js` に追加する必要はありません。
 
 ```javascript:title=gatsby-config.js
 plugins: [`gatsby-transformer-sharp`, `gatsby-plugin-sharp`]
 ```
 
-## Gatsby-image configuration
 ## Gatsby-image の構成
 
 これで、`gatsby-image` を使えるように設定されました。
 
-### ステップ　3
+### ステップ 3
 
 画像ファイルを置く場所を決めてください。この例では、`src/data` に置いてあります。
 
-もし、プロジェクトがこのディレクトリ内のコンテンツを表示させる設定をまだ行なっていない場合は、次の2つを実行してください:
+もし、プロジェクトがこのディレクトリー内のコンテンツを表示させる設定をまだ行なっていない場合は、次の 2 つを実行してください。
 
-
-1.  `gatsby-source-filesystem` をインストールしてください。　ノート: プロジェクトを　`gatsby new <name>` を使用して作成した場合は、この最初の手順はすでにデフォルトスターターを経由して実行されています。
+1.  `gatsby-source-filesystem` をインストールしてください。ノート: プロジェクトを `gatsby new <name>` を使用して作成した場合は、この最初の手順はすでにデフォルトスターターを経由して実行されています。
 
 ```bash
 npm install gatsby-source-filesystem
 ```
 
-2. 次に　`gatsby-config.js` で正しくフォルダの指定がされているかを確認してください。この例では、以下のようになります:
+2. 次に `gatsby-config.js` でただしくフォルダーの指定がされているかを確認してください。この例では、以下のようになります:
 
 ```javascript:title=gatsby-config.js
 plugins: [
@@ -71,15 +67,15 @@ plugins: [
 ]
 ```
 
-これで、 `gatsby-image` を使って作業を始める準備が整いました!
+これで、 `gatsby-image` を使って作業を始める準備が整いました！
 
 ## ステップ 4
 
 次のステップはあなたが達成しようとしていることによって異なります。
 
-## 単一画像のデータのクエリ
+## 単一画像のデータのクエリー
 
-画像ファイルを直接クエリするために　`graphql` を使用します。画像ファイルを相対パスに含めることで、 `gatsby-image` によってそのファイルを処理する方法を指定することが出来ます。
+画像ファイルを直接クエリーするために `graphql` を使用します。画像ファイルを相対パスに含めることで、 `gatsby-image` によってそのファイルを処理する方法を指定できます。
 
 ```jsx:title=src/pages/index.js
 export const query = graphql`
@@ -97,25 +93,23 @@ export const query = graphql`
 
 ここで注意することがいくつかあります。
 
+### 画像の相対パスと `gatsby-config.js`
 
-### 相対画像パスと　`gatsby-config.js`
-
-あなたは相対パスと聞いて、コードが置かれているファイルに対応する相対パス（この場合はindex.js）であると予想するかもしれません。しかし、それは違います。相対パスは実際には `gatsby-source-filesystem` に配置したコードの設定に基づき、ここでは `src/data` を指します。
+相対パスと聞いて、コードが置かれているファイルに対応する相対パス（この場合は index.js）であると予想するかもしれません。しかし、それは違います。相対パスは実際には `gatsby-source-filesystem` に配置したコードの設定に基づき、ここでは `src/data` を指します。
 
 ### 画像のフラグメント
 
-このクエリについてもう1つ注意すべき点は、固定されたwidthとheightを持つ画像を返すフラグメント　`GatsbyImageSharpFluid` の使い方についてです。この特定の大きさに合わせる方法の代わりに、コンテナを埋めるスケーラブルな画像を作るフラグメント　`GatsbyImageSharpFluid` を使う事が出来ます。`gatsby-image` では、_fluid_ な画像は、_fixed_ な画像が固定されているのに対して、画面に応じたサイズを持っていない画像を意味します。
+このクエリーについてもう 1 つ注意すべき点は、固定された幅と高さを持つ画像を返すフラグメント `GatsbyImageSharpFluid` の使い方です。この特定の大きさに合わせる方法の代わりに、コンテナを埋めるスケーラブルな画像を作るフラグメント `GatsbyImageSharpFluid` を使う事ができます。`gatsby-image` では、_fluid_ な画像は、_fixed_ な画像が固定されているのに対して、画面に応じたサイズを持っていない画像を意味します。
 
-クエリは、`gatsby-image` コンポーネントで利用可能な形式に処理された画像を含むデータオブジェクトを返します。その結果は自動的にコンポーネントに渡され、`data` propに添付されます。それから、JSXを用いて画像を表示し、レスポンシブで高いパフォーマンスのHTMLを自動的に出力します。
+クエリーは、`gatsby-image` コンポーネントで利用可能な形式に処理された画像を含むデータオブジェクトを返します。その結果は自動的にコンポーネントに渡され、`data` prop に添付されます。それから、JSX を用いて画像を表示し、レスポンシブで高いパフォーマンスの HTML を自動的に出力します。
 
-画像を表示するためには　まず、`gatsby-image` が提供するコンポーネントをインポートします。
+画像を表示するためにはまず、`gatsby-image` が提供するコンポーネントをインポートします。
 
 ```jsx
 import Img from "gatsby-image"
 ```
 
-これで使用する事が出来ます。画像のキーは、画像が処理された方法と一致させることに注意してください。この例では `fixed`を用いています。
-
+これで使用できます。画像のキーは、画像が処理された方法と一致させることに注意してください。この例では `fixed` を用いています。
 
 ```jsx
 <Img
@@ -125,7 +119,7 @@ import Img from "gatsby-image"
 />
 ```
 
-こちらはクエリと使用方法を全てまとめたものです:
+こちらはクエリーと使用方法を全てまとめたものです。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -159,11 +153,11 @@ export const query = graphql`
 export default HomePage
 ```
 
-## Querying for multiple images from YAML data
+## YAML から複数の画像をクエリーする方法
 
-Another way to source images is through YAML (or Markdown). This example uses the `gatsby-transformer-yaml` plugin to query the YAML files. More information about that plugin can be found in the [Gatsby plugin library](/packages/gatsby-transformer-yaml/?=gatsby-transformer-yaml).
+画像を参照する別の方法には YAML（やマークダウン）を使う方法があります。この例では、YAML ファイルをクエリーする `gatsby-transformer-yaml` プラグインを使用します。このプラグインについて詳しく知りたい場合は [Gatsby プラグインライブラリー] をご覧ください。
 
-Here's an example of a query from a list of conferences in a YAML file with an image for each one:
+こちらは YAML ファイルにあるカンファレンスとそれぞれの画像のリストのクエリーの例です。
 
 ```graphql
 {
@@ -185,19 +179,21 @@ Here's an example of a query from a list of conferences in a YAML file with an i
 }
 ```
 
-In this case the query starts with `allSpeakingYaml` to direct `graphql` to look for this data in the `speaking.yaml` file in your `src/data` folder referenced in `gatsby-config.js`. If you want to query a file named `blog.yaml`, for example, you'd start the query with `allBlogYaml`.
+この場合、クエリーは `gatsby-config.js` に参照されている `src/data` ファイルにある `speakeing.yaml` のデータを探して `graphql` を含めるために `allSpeakingYaml` で開始しています。
 
 ## Rendering images sourced from YAML
 
-In order to reference your images in YAML make sure that the relative paths are accurate. The path to each image should be relative to the location of the `.yaml` file pointing to it. And all of these files need to be in a directory visible to the `gatsby-source-filesystem` plugin configured in `gatsby-config.js`.
+## YAML をソースとする画像のレンダリング
 
-The inside of the YAML file would look something like this:
+YAML データの画像を参照するために、相対パスが正確であるかどうかを確認してください。それぞれの画像のパスは `yaml` ファイルが示している位置と相対的になっているべきです。そして、それらのファイル全ては `gatsby-config-js` に設定済みの `gatsby-source-filesystem` のディレクトリーの中にある必要があります。
+
+YAML ファイルの中はこのようになっているでしょう。
 
 ```yaml
 - image: speaking/kcdc.jpg
 ```
 
-Now, you can create the query. Similar to the single use example above, you can use `gatsby-image` features inside the query. When the query runs, the relative path will point to the location of the image file and the resulting query processes the file as an image for display.
+これで、クエリーを作成できます。前述した単一の画像の例と同じように、あなたはクエリーの中の `gatsby-image` の機能を使えます。クエリーを実行すると、相対パスは画像ファイルの位置を示し、結果としてクエリーは表示するための画像としてファイルを処理します。
 
 ```graphql
 {
@@ -217,7 +213,7 @@ Now, you can create the query. Similar to the single use example above, you can 
 }
 ```
 
-Since the images are stored as part of an array, they can be accessed using the JavaScript `map` function in JSX. As with the single image example, the actual processed image is at the `...GatsbyImageSharpFluid` level in the returned data structure.
+画像が配列の一部として保存されるので、JSX の中で JavaScript の `map` 関数を使ってアクセスできます。
 
 ```jsx
 <Img
@@ -227,9 +223,9 @@ Since the images are stored as part of an array, they can be accessed using the 
 />
 ```
 
-## Using Static Query
+## 静的クエリーを使う
 
-If your query is part of a reusable component you may want to use a Static Query hook. The code necessary to do this is almost the same as the single image use case above.
+もしあなたのクエリーが再利用可能なコンポーネントである場合、静的なクエリーフックを使うことができます。これを行うために必要なコードは前述した単一画像の使用例とほとんど同じです。
 
 ```jsx:title=src/components/header-image.js
 export default () => {
@@ -249,15 +245,15 @@ export default () => {
 }
 ```
 
-Instead of a query constant and data that references the result like in the first section above, you can put the `useStaticQuery` hook directly in the JSX code and then reference it in the `Img` component. Note that the query language didn’t change and neither did the `Img` tag syntax; the only change was the location of the query and the usage of the `useStaticQuery` function to wrap it.
+上記の最初のセクションのように結果を参照するクエリー定数とデータの代わりに、JSX のコードに直接 `useStaticQuery` フックを置くことで `Img` コンポーネントの結果を参照できます。クエリー言語は変更せずに `Img` タグの構文でもないことに注意してください。唯一の変更はクエリーの位置とクエリーをラップする関数 `useStaticQuery` を使用していることです。
 
-## Multiple queries and aliasing
+## 複数のクエリーとエイリアス
 
-The last use case you may come across is how to handle a situation where you have multiple queries in the same file/page.
+あなたが出くわすかもしれない最後のユースケースは、同じファイル/ページに複数のクエリーがある状況を処理する方法です。
 
-This example is attempting to query for all the data in `speaking.yaml` and the direct file query in the first example. In order to do this you want to use aliasing in GraphQL.
+この例では、最初の例の `speaking.yaml` の全てのデータとダイレクトファイルのクエリーをクエリーすることを試みます。これを行うためには GraphQL のエイリアスを使います。
 
-The first thing to know is that an alias is assigning a name to a query. The second thing to know is that aliases are optional, but they can make your life easier! Below is an example.
+最初に知っておくべきことはエイリアスがクエリーに名前を割り当てているということです。2 つ目にエイリアスはオプションですが、あなたの人生を楽にするということです。以下に例を示します。
 
 ```graphql
 talks: allSpeakingYaml {
@@ -276,7 +272,7 @@ talks: allSpeakingYaml {
 }
 ```
 
-When you do that, you’ve changed the reference to the query object available in your JSX code. While it was previously referenced as this:
+これを行うと、JSX コードの再利用可能なクエリーオブジェクトへの参照が変化します。以前はこのように参照されていました。
 
 ```jsx
 {
@@ -286,7 +282,7 @@ When you do that, you’ve changed the reference to the query object available i
 }
 ```
 
-Giving it an alias does not add a level of complexity to the response object, it just replaces it. So you end up with the same structure, referenced like this (note the alias `talks` in place of the longer `allSpeakingYaml`):
+エイリアスを与えてもオブジェクトのレスポンスへの複雑さのレベルは追加されず、単に置き換わるだけです。このように参照された同じ構成になります（エイリアスは `allSpeakingYaml` ではなく、 `talks` に置き換わっていることに注意してください）。
 
 ```jsx
 {
@@ -296,17 +292,17 @@ Giving it an alias does not add a level of complexity to the response object, it
 }
 ```
 
-The top-level object name of `data` is implicit. This is important because when you conduct multiple queries as part of a single component, Gatsby still passes the entire result to the component.
+トップレベルにある `data`というオブジェクトは暗黙の値です。これは単一のコンポーネントの一部として複数のクエリーを実行するとき、Gatsby は結果全体をコンポーネントに渡すため重要です。
 
-Here's an example of data flowing into a component:
+コンポーネントのデータの流れの例を以下に示します。
 
 ```jsx
 const SpeakingPage = ({ data }) => {}
 ```
 
-Everything else gets referenced from that top-level return name.
+その他の全てはトップレベルの戻り値から参照されます。
 
-With that understanding, you can combine two queries referencing images and use aliasing to distinguish between them.
+これを理解すると、あなたは画像を参照する 2 つのクエリーを組み合わせたり、エイリアスを利用してそれらを区別できます。
 
 ```graphql
 {
@@ -333,7 +329,7 @@ With that understanding, you can combine two queries referencing images and use 
 }
 ```
 
-Notice that this example uses aliasing for one query and not the other. This is allowed; there is no requirement that all your queries use aliasing. In this case, the JSX would look like this to access the `speaking.yaml` content.
+この例では一方のクエリーではエイリアスを使用し、他のクエリーでは使用していないということに注意してください。これは許可されています。全てのクエリーでエイリアスを使用する必要はありません。この場合、JSX は `speaking.yaml` のコンテンツにアクセスするため、このように見えます。
 
 ```jsx
 {
@@ -343,38 +339,38 @@ Notice that this example uses aliasing for one query and not the other. This is 
 }
 ```
 
-And then like this to access the image using the alias name `banner`.
+そしてこのように `banner` というエイリアスを使って画像にアクセスします。
 
 ```jsx
 <Img fluid={data.banner.childImageSharp.fluid} />
 ```
 
-These examples should handle a fair number of use cases. A couple bonus things:
+これらの例はかなりの数のユースケースを処理する必要があります。以下はいつくかのボーナスです：
 
-## Aspect ratio
+## アスペクトレシオ
 
-`gatsby-image` has a feature that gives you the ability to set an aspect ratio to constrain image proportions. This can be used for fixed or fluid processed images; it doesn't matter.
+`gatsby-image` はアスペクトレシオを設定し、画像の比率を制限する機能を持っています。これは fixed や fluid に関わらず、処理された画像に使用できます。
 
 ```jsx
 <Img sizes={{ ...data.banner.childImageSharp.fluid, aspectRatio: 21 / 9 }} />
 ```
 
-This example uses the `sizes` option on the `Img` component to specify the `aspectRatio` option along with the fluid image data. This processing is made possible by `gatsby-plugin-sharp`.
+この例では fluid の画像データとともに `aspectRatio` オプションを `Img` コンポーネントに指定して `sizes` オプションを使用しています。この処理は `gatsby-plugin-sharp` が可能にしています。
 
-## Bonus Error
+## ボーナスエラー
 
-Now for errors to watch out for. If you change your image processing from `fixed` to `fluid` you may see this error.
+エラーに気をつけてください。もし画像処理を `fixed` から `fluid` に変更したら、このようなエラーが表示されるかもしれません。
 
 ![In image cache error message.](./ErrorMessage.png)
 
-Despite its appearance, solving this doesn't actually require flushing any kind of cache. In reality, it has to do with incompatible references. You likely triggered it because you changed the query to process the image as `fluid` but the JSX key was still set to `fixed`, or vice versa.
+見た目に関わらず、これを解決するためには実際にキャッシュをフラッシュする必要はありません。実際には、互換性のない参照に関係しています。これはおそらくクエリーの画像の処理を `fluid` に変更したが 、JSX のキーは `fixed` にセットされたまま、もしくはその逆だからです。
 
-## The end
+## 最後に
 
-So that's it. This post included a number of different possible use cases, so don't feel as if you need to explore them all. Pick the examples and tips that apply to your implementation.
+以上です。この投稿には多くの異なるユースケースが含まれるため、これらすべてを調査する必要があるとは思わないでください。実際に該当する例とヒントを選択してください。
 
-## Other resources
+## その他の資料
 
-- [Gatsby Image API docs](/docs/gatsby-image/)
-- [Using Gatsby Image](/docs/using-gatsby-image/)
-- [Other image and media techniques in Gatsby](/docs/images-and-files/)
+- [Gatsby Image API ドキュメント](/docs/gatsby-image/)
+- [Gatsby Image の使用](/docs/using-gatsby-image/)
+- [Gatsby のその他の画像とメディアのテクニック](/docs/images-and-files/)
