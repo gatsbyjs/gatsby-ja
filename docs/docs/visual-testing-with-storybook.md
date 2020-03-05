@@ -11,21 +11,15 @@ title: Storybook を使用した Visual Testing
 
 ## 環境を設定する
 
-Storybook をセットアップするには、依存関係をインストールし、カスタム設定を行う必要があります。最初に、 Storybook CLI をインストールします。
+> Note that the following instructions are using [npx](https://www.npmjs.com/package/npx). `npx` is a part of npm and in this case it allows you to automatically generate a file/folder structure complete with the default configuration. If you're running an older version of `npm` (`<5.2.0`) you should run the following command instead: `npm install -g @storybook/cli`. You can then run `sb init` from your Gatsby root directory to initialise Storybook.
 
-```shell
-npm install -g @storybook/cli
-```
-
-CLI をインストールして次にやるべきことは、 Gatsby プロジェクトのルートディレクトリーから `sb init` コマンドを実行することです。
+To set up Storybook you need to install dependencies and do some custom configuration. You can get started quickly by using the automated command line tool from your Gatsby root directory:
 
 ```shell
 npx -p @storybook/cli sb init
 ```
 
-> `npm` (5.2.0+) の最新バージョンで実行する場合、代わりに `npx -p @storybook/cli sb init` コマンドを実行できます。マシンに CLI がインストールされないので、常に最新バージョンの CLI を実行できます。 Storybook も推奨する方法です。
-
-この `sb init` コマンドは、 React プロジェクトの Storybook を実行するために必要な基本設定を作成します。ただし、ストーリー内で Gatsby 固有のコンポーネントを使用しようとした場合にエラーが発生しないように、Gatsby プロジェクト用に、デフォルトの Storybook の設定を少し更新する必要があります。
+This command adds a set of boilerplate files for Storybook in your project. However, since this is for a Gatsby project, you need to update the default Storybook configuration a bit so you don't get errors when trying to use Gatsby specific components inside of the stories.
 
 Storybook の設定を更新するには、 `.storybook/config.js` を開いて以下のように内容を変更します。
 

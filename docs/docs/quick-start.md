@@ -19,6 +19,8 @@ title: クイックスタート
 npm install -g gatsby-cli
 ```
 
+> 上記コマンドは Gatsby CLI をあなたの PC にグローバルインストールします。
+
 ### 新しいサイトを作成する
 
 ```shell

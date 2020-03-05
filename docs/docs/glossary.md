@@ -98,6 +98,10 @@ CMS とはコンテンツ・マネジメント・システム (Content Managemen
 
 [Gatsby](#gatsby) において、分離とは関心の分離のことを指します。多くの場合、[フロントエンド](#frontend)と[バックエンド](#backend)を分離することを指しています。例として、[Decoupled Drupal](https://dri.es/how-to-decouple-drupal-in-2019) や [Headless WordPress](https://www.smashingmagazine.com/2018/10/headless-wordpress-decoupled/) が挙げられます。
 
+### [Decoupled Drupal](/docs/glossary/decoupled-drupal)
+
+Decoupled Drupal とは、Drupal のサービスを[ヘッドレス CMS](#headless-cms) として活用することを指します。ヘッドレス CMS としての Drupal インスタンスはコンテンツ API として機能し、[フロントエンド](#frontend)側で表示させる情報を JSON として返します。
+
 ### デプロイ (Deploy)
 
 あなたのウェブサイトを[ビルド](#build)し、[ホストプロバイダー](#hosting)にアップロードする一連の動作のこと。
