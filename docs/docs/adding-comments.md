@@ -21,8 +21,8 @@ Tania Rascia が Gatsby ブログで書いたように[独自のコメントシ�
 このガイドでは、ブログに Disqus を実装する方法を学びます。Disqus には、次のような多くの優れた機能があります。
 
 - [コメントの管理とフォーラムの維持](https://help.disqus.com/moderation/moderating-101)に手間がかかりません。
-- 公式の[React サポート](https://github.com/disqus/disqus-react)を提供します。
-- [寛大な無料枠](https://disqus.com/pricing)を提供します。
+- 公式の [React サポート](https://github.com/disqus/disqus-react)を提供しています。
+- [寛大な無料枠](https://disqus.com/pricing)を提供しています。
 - [もっとも広く使用されているサービス](https://www.datanyze.com/market-share/comment-systems/disqus-market-share)のようです。
 - コメントが簡単です。 Disqus には大規模なユーザー基盤があり、新規ユーザーが慣れるまでがとても早いです。Google、Facebook、Twitter のアカウントを登録でき、これらのチャンネルを介して書いたコメントをシームレスに連携できます。
 - Disqus のユーザーインターフェースは多くのユーザーが認識できる落ち着いた見た目をしています。
