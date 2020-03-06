@@ -45,7 +45,7 @@ Gatsby は React で構築されています。そのため React フォーム�
 
 ### Getform
 
-Getform は静的サイトでフォーム送信を実現するためのフォームバックエンドプラットフォームです。無料プランもあります。まず、Gatsby サイトで投稿を受け取ることが出来るフォームの作成から始めます。フォームを作成するとき、表示する各フィールドの `name` 属性をつけて、POST メソッドで Getform に送信するように設定します（name, email, message など）。
+Getform は静的サイトでフォーム送信を実現するためのフォームバックエンドプラットフォームです。無料プランもあります。問い合わせを受け付けるためのフォームをあなたの Gatsby サイトに設置しましょう。フォームを作成するとき、表示する各フィールドの `name` 属性をつけて、POST メソッドで Getform に送信するように設定します（name, email, message など）。
 
 ```jsx:title=src/pages/contact.js
 <form method="post" action="https://getform.io/{your-unique-getform-endpoint}">
@@ -91,7 +91,7 @@ Netlify フォームの詳細な情報は [Netlify のウェブサイト](https:
 
 Formspree は寛大な無料利用プランを持つ、静的サイトからのフォーム送信をサポートするためのサービスです。ほとんど設定を必要とせずに、フォームが指定したメールアドレスにデータを直接送信する優れたツールとなります。
 
-Formsprees の機能を活用するためには、フォームの POST メソッドのアクションを Formspree API（メールアドレスはあなたのものに置き換えてください）向けに設定します。そして、メールアドレスの入力フィールドの `name` 属性を `name="_replyto"` に変更します。
+Formsprees の機能を活用するためには、フォームの POST メソッドのアクションを `Formspree API/ あなたのメールアドレス` の形式に設定します。そして、メールアドレスの入力フィールドの `name` 属性を `name="_replyto"` に変更します。
 
 ```jsx:title=src/pages/contact.js
 <form method="post" action="https://formspree.io/email@domain.tld">
@@ -104,15 +104,15 @@ Formsprees の機能を活用するためには、フォームの POST メソッ
 </form>
 ```
 
-変更を行ったら、フォームから初めて送信した際に、あなたのメールアドレスに Formspree から送られるメールを使用して Formspree に登録します。その後は、フォームからの送信のすべてがあなたのメールアドレスに送信されます。登録や、設定の詳細については [Formspree のウェブサイト](https://formspree.io/)をご覧ください。
+変更後、問い合わせフォームから初めて送信した際に、あなたのメールアドレスに Formspree からメールが届きます。そのメールから Formspree に登録します。その後は、フォームからの送信のすべてがあなたのメールアドレスに送信されます。登録や、設定の詳細については [Formspree のウェブサイト](https://formspree.io/)をご覧ください。
 
-このように設定されたすべてのフォームは、標準で reCAPTCHA を備えていますが、`name="_gotcha"` という 隠しフィールドを追加することで Honeypot スパムフィルタリングを有効にすることもできます。
+Formspree で設定したすべてのフォームは、標準で reCAPTCHA を備えていますが、`name="_gotcha"` という 隠しフィールドを追加することで Honeypot スパムフィルタリングを有効にすることもできます。
 
 ```jsx
 <input type="text" name="_gotcha" style="display:none" />
 ```
 
-入力欄が非表示になっているため、Formspree はこのフィールドの値がボットのみから送信されたことを認識し、静かに無視します！
+入力欄が非表示になっているため、Formspree はこのフィールドの値がボットから送信されたことを認識し、無視します。
 
 ### 独自のサーバーで実行する
 
