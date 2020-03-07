@@ -76,4 +76,4 @@ rules:
       - /[Ss]lug/
 
   - expected: 一覧
-    pattern: リスト
+    pattern: /リスト/
