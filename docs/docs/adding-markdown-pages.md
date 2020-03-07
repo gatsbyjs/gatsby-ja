@@ -1,31 +1,31 @@
 ---
-title: Adding Markdown Pages
+title: Markdownのページを追加する
 ---
 
-Gatsby can use Markdown files to create pages in your site.
-You add plugins to read and understand folders with Markdown files and from them create pages automatically.
+Gatsby ではあなたのウェブサイトにページを追加するために Markdown ファイルを利用できます。
+プラグインを追加し、Markdown ファイルのあるフォルダを読み込むよう設定するだけで、自動的に Markdown ファイルからページを生成します。
 
-Here are the steps Gatsby follows for making this happen.
+以下が、Gatsby における上記の処理です。
 
-1.  Read files into Gatsby from the filesystem
-2.  Transform Markdown to HTML and [frontmatter](#frontmatter-for-metadata-in-markdown-files) to data
-3.  Add a Markdown file
-4.  Create a page component for the Markdown files
-5.  Create static pages using Gatsby's Node.js `createPage` API
+1. Gatsby がファイルシステムからファイルを読み込む
+2. Markdown ファイルを HTML に変換し、 [frontmatter](#frontmatter-for-metadata-in-markdown-files) をデータ化します
+3. Markdown ファイルを追加します
+4. Markdown ファイル用のページコンポーネントを作成します
+5. Gatsby の `createPage` Node.js API を使って静的なページが生成されます
 
-## Read files into Gatsby from the filesystem
+## ファイルシステムから Gatsby にファイルを読み込む
 
-Use the plugin [`gatsby-source-filesystem`](/packages/gatsby-source-filesystem/#gatsby-source-filesystem) to read files.
+[`gatsby-source-filesystem`](/packages/gatsby-source-filesystem/#gatsby-source-filesystem) をファイル読み込みのために利用します。
 
-### Install
+### インストール
 
 `npm install --save gatsby-source-filesystem`
 
-### Add plugin
+### プラグインの追加
 
-**NOTE:** There are two ways to add a plugin in `gatsby-config.js`. Either you can pass a string with the plugin name or in case you want to include options, pass an object.
+**ヒント：** `gatsby-config.js` にプラグインを追加する方法は 2 通りあります。プラグイン名の文字列を記述する方法と、オプションを含んだ内容を記述する方法です。後者の場合はオブジェクトとして記述します。
 
-Open `gatsby-config.js` to add the `gatsby-source-filesystem` plugin. Now pass the object from the next block to the `plugins` array. By passing an object that includes the key `path`, you set the file system path.
+`gatsby-config.js` を開き `gatsby-source-filesystem` プラグインを追加しましょう。この時、 `plugins` 配列の最後の位置にオブジェクトを追加します。`path` キーに、Gatsby が読み込むファイルシステムのパスを指定してください。
 
 ```javascript:title=gatsby-config.js
 plugins: [
@@ -39,7 +39,7 @@ plugins: [
 ]
 ```
 
-Completing the above step means that you've "sourced" the Markdown files from the filesystem. You can now "transform" the Markdown to HTML and the YAML frontmatter to JSON.
+この手順を完了することで、Markdown ファイルをファイルシステムからデータソースとして利用できます。Markdown 本文は HTML に変換され、frontmatter の YAML は JSON ファイルとしてデータ化されます。
 
 ## Transform Markdown to HTML and frontmatter to data using `gatsby-transformer-remark`
 
