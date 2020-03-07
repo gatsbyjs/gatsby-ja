@@ -181,7 +181,6 @@ export default HomePage
 
 この場合、クエリーは `gatsby-config.js` に参照されている `src/data` ファイルにある `speakeing.yaml` のデータを探して `graphql` を含めるために `allSpeakingYaml` で開始しています。
 
-## Rendering images sourced from YAML
 
 ## YAML をソースとする画像のレンダリング
 
