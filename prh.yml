@@ -74,3 +74,6 @@ rules:
   - expected: スラッグ
     pattern:
       - /[Ss]lug/
+
+  - expected: 一覧
+    pattern: リスト
