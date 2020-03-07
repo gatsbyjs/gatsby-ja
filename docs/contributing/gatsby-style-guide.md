@@ -135,6 +135,10 @@ Hyperlinks should contain the clearest words to indicate where the link will lea
 
 In tutorials that are meant for beginners, use as few hyperlinks as possible to minimize distractions. In docs, it's ok to include as many hyperlinks as necessary to provide relevant and interesting information and resources.
 
+### Mark localhost URLs as code strings
+
+Unless you're running `gatsby develop` or `gatsby build` locally, localhost links will not work. Therefore it's recommended to list these URL references as code blocks so there aren't invalid links throughout the docs on Gatsbyjs.org.
+
 ### Indicate when something is optional
 
 When a paragraph or sentence offers an optional path, the beginning of the first sentence should indicate that it's optional. For example, "if you'd like to learn more about xyz, see our reference guide" is clearer than "Go to the reference guide if you'd like to learn more about xyz."
@@ -387,7 +391,7 @@ For words that have multiple spellings, prefer the US English word over British 
 
 Use the [Hemingway App](https://hemingwayapp.com/). There’s nothing magical
 about this tool, but it will automatically detect widely agreed-upon
-style issues:
+style Issues:
 
 - passive voice
 - unnecessary adverbs
@@ -399,6 +403,17 @@ designed for scientific communication but might help avoid overspecialized
 wording.
 
 ## Best practices
+
+### Referencing Gatsby Cloud
+
+While Gatsby Cloud is hosted on a separate site, [gatsbyjs.com](https://www.gatsbyjs.com/), it is part of the Gatsby [founding organization](/blog/2018-05-24-launching-new-gatsby-company/) and focused specifically on Gatsby sites. There are various parts of the OSS documentation that may benefit from pointing to Gatsby Cloud as a potential platform to explore.
+
+The guidelines for doing so are as follows:
+
+- If possible, Gatsby Cloud should be accompanied by other relevant technologies.
+- If Gatsby Cloud does something by default, the docs should still include instructions for accessing that functionality manually.
+
+The spirit of these guidelines is to ensure that users are aware of multiple options for running their Gatsby site. With the exception of `gatsby-cli`, the open source documentation should generally preclude assumptions about technology choices.
 
 ### Support software versions
 
@@ -530,7 +545,7 @@ Looking for:
 - step-by-step tutorials for advanced tasks
 - understanding how Gatsby works at a deep level, so deep that they could actually modify or customize their own projects, or contribute to Gatsby core
 - how does Gatsby really work with Redux, React, and GraphQL?
-- error messages that tell them if it’s a known bug/issue, lead them to docs, and/or suggest fixes
+- error messages that tell them if it’s a known bug/Issue, lead them to docs, and/or suggest fixes
 - guides for how things work in Gatsby
 - they usually already have strong opinions or requirements about what they want to use as their CMS or data source and want to know best practices for their workflow
 - signs that Gatsby is a reliable, long-term choice (signs that it is growing and improving and evidence it will be around for a long time)

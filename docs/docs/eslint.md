@@ -1,33 +1,33 @@
 ---
-title: Using ESLint
+title: ESLint を利用する
 ---
 
-ESLint is an open source JavaScript linting utility. Code linting is a type of static analysis that is frequently used to find problematic patterns. There are code linters for most programming languages, and compilers sometimes incorporate linting into the compilation process.
+ESLint とは JavaScript の静的解析に使われるオープンソースのツールです。一般的にリントと呼ばれ、問題のあるコードを検出するのに使われます。多くのプログラミング言語にはリントツールが存在し、言語によってはコンパイラーがコンパイルプロセスの一環としてリント機能を内包していることもあります。
 
-JavaScript, being a dynamic and loosely-typed language, is especially prone to developer error. Without the benefit of a compilation process, JavaScript code is typically executed in order to find syntax or other errors. Linting tools like ESLint allow developers to discover problems with their JavaScript code without executing it.
+動的で型規約が希薄な JavaScript は、エラーが生まれやすい言語です。コンパイルというプロセスの恩恵を受けられない中、JavaScript はシンタックス等のエラーを見つけるために実行されることがしばしばあります。ESLint のようなリントツールを使うと、実際にコードを実行することなく問題を発見できます。
 
-## How to use ESLint
+## ESLint の使い方
 
-Gatsby ships with a built-in [ESLint](https://eslint.org) setup. For _most_ users, our built-in ESlint setup is all you need. If you know however that you'd like to customize your ESlint config e.g. your company has their own custom ESlint setup, this shows how this can be done.
+Gatsby は [ESLint](https://eslint.org) をデフォルトで組み込んでいます。ほとんどのユーザーにとってはそのままの設定で十分でしょう。もしあなたが ESLint の設定をさらにカスタマイズ（例えば組織特有の設定など）したいのであれば、このガイドを参考にしてください。
 
-You'll replicate (mostly) the [ESLint config Gatsby ships with](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/utils/eslint-config.js) so you can then add additional presets, plugins, and rules.
+Gatsby にあらかじめ用意されている [ESLint config](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/utils/eslint-config.js)を応用して、お好みのルールやプラグインを追加してください。
 
 ```shell
 
-# First install the necessary ESLint dependencies
+# 必要となるパッケージをインストールします
 npm install --save-dev eslint-config-react-app
 ```
 
-Now that your packages have been installed, create a new file at the root of the site named `.eslintrc.js` using the command below.
+インストールが完了したら、プロジェクトのルートディレクトリーに `.eslintrc.js` というファイルを以下のコマンドを使って作成しましょう。
 
 ```shell
-# Create a config file for ESLint
+# ESLint の設定ファイルを作成する
 touch .eslintrc.js
 ```
 
-### Configuring ESLint
+### ESLint の設定
 
-Copy the snippet below to the newly created `.eslintrc.js` file. Then add additional presets, plugins, and rules as desired.
+以下のスニペットを、作成した `.eslintrc.js` にコピーしてください。その後お好きなプリセット、プラグイン、もしくはルールを追加することもできます。
 
 ```js:title=.eslintrc.js
 module.exports = {
@@ -38,8 +38,8 @@ module.exports = {
 }
 ```
 
-Note: When there is no ESLint file Gatsby implicitly adds a barebones ESLint loader. This loader pipes ESLint feedback into the terminal window where you are running or building Gatsby and also to the console in your browser developer tools. This gives you consolidated, immediate feedback on newly-saved files. When you include a custom `.eslintrc` file, Gatsby gives you full control over the ESLint configuration. This means that it will override the built-in `eslint-loader` and you need to enable any and all rules yourself. One way to do this is to use the Community plugin [`gatsby-eslint-plugin`](/packages/gatsby-plugin-eslint/). This also means that the default [ESLint config Gatsby ships with](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/utils/eslint-config.js) will be entirely overwritten. If you would still like to take advantage of those rules, you'll need to copy them to your local file.
+ヒント： ESLint ファイルが存在しない場合、Gatsby は ESLint ローダーを追加します。このローダーは ESLint の実行結果を、Gatsby が実行されているターミナル画面と、ブラウザーの開発コンソールに表示させます。これにより新たに保存したファイルに対しての分析結果をいちはやく確認できます。カスタマイズされた `.eslintrc` ファイルが存在する場合、Gatsby は開発者に ESLint の管理を完全にまかせます。したがって `eslint-loader` はオーバーライドされ、ルールを変更するには開発者が全てを管理する必要があります。これを実現するひとつの手段として、[`gatsby-eslint-plugin`](/packages/gatsby-plugin-eslint/)が用意されているのでそちらも参考にしてみてください。これを使う場合もあらかじめ Gatsby に用意されている [ESLint config](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/utils/eslint-config.js)は完全にオーバーライドされます。もしこれらの設定を活用したければ、作成される設定ファイルにコピーする必要があります。
 
-### Disabling ESLint
+### ESLint を無効にする
 
-Creating an empty `.eslintrc` file at the root of your project will disable ESLint for your site. The empty file will disable the built-in `eslint-loader` because Gatsby assumes once you have an ESLint file you are in charge of linting.
+ESLint を使わない場合は、空の `.eslintrc` ファイルをルートディレクトリーに用意してください。Gatsby が設定ファイルの有無で `eslint-loader` を有効化するか判断するため、空ファイルがあるだけで ESLint は無効化されます。

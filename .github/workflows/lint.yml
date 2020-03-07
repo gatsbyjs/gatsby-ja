@@ -1,20 +1,54 @@
 name: Lint
-on: [pull_request]
+
+on: [push, pull_request]
+
 jobs:
   textlint:
     runs-on: ubuntu-latest
+
+    env:
+      node-version: 12.x
+
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2.0.0
+
+      - name: Use Node.js ${{ env.node-version }}
+        uses: actions/setup-node@v1.4.0
+        with:
+          node-version: ${{ env.node-version }}
+
+      - name: Get the number of processors currently available
+        id: processors
+        run: echo "::set-output name=number::$(getconf _NPROCESSORS_ONLN)"
+
+      - name: Get yarn cache directory path
+        id: yarn
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Restore yarn cache
+        uses: actions/cache@v1.1.2
+        with:
+          path: ${{ steps.yarn.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
       - name: Setup reviewdog
         run: |
           mkdir -p $HOME/bin && curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s -- -b $HOME/bin
           echo ::add-path::$HOME/bin
           echo ::add-path::$(go env GOPATH)/bin # for Go projects
+
       - name: Install dependencies
-        run: yarn install
-      - name: textlint
-        run: $(yarn bin)/textlint -f checkstyle ${FILES} | reviewdog -f=checkstyle -name="textlint" -reporter=github-pr-review -level=${LEVEL}
+        run: yarn --frozen-lockfile
         env:
-          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CHILD_CONCURRENCY: ${{ steps.processors.outputs.number }}
+          NETWORK_CONCURRENCY: ${{ steps.processors.outputs.number }}
+
+      - name: textlint
+        run: yarn textlint ${FILES} -f checkstyle --experimental --parallel --max-concurrency ${{ steps.processors.outputs.number }} | reviewdog -f=checkstyle -name="textlint" -reporter=github-pr-review -level=${LEVEL}
+        env:
           FILES: README.md docs/**/*.md
           LEVEL: error
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}

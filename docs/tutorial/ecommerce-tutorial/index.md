@@ -1,136 +1,161 @@
 ---
-title: "Gatsby E-Commerce Tutorial"
+title: "Gatsby eコマースチュートリアル"
 ---
 
-# Table of Contents
+# 目次
 
-- [Table of Contents](#table-of-contents)
-- [Why use Gatsby for an e-commerce site?](#why-use-gatsby-for-an-e-commerce-site)
-- [Prerequisites](#prerequisites)
-  - [How does Gatsby work with Stripe?](#how-does-gatsby-work-with-stripe)
-- [Setting up a Gatsby site](#setting-up-a-gatsby-site)
-- [Installing the StripeJS plugin](#installing-the-stripejs-plugin)
-  - [See your site hot reload in the browser!](#see-your-site-hot-reload-in-the-browser)
-  - [How does the StripeJS plugin work?](#how-does-the-stripejs-plugin-work)
-  - [Getting your Stripe test keys](#getting-your-stripe-test-keys)
-- [Examples](#examples)
-  - [Easy: One Button](#easy-one-button)
-  - [Advanced: Import SKUs via source plugin](#advanced-import-skus-via-source-plugin)
-- [Testing Payments](#testing-payments)
+- [目次](#目次)
+- [なぜ e コマースサイトで Gatsby を使うのか](#なぜeコマースサイトでGatsbyを使うのか)
+- [前提条件](#前提条件)
+  - [Stripe と Gatsby はどのように連携させるのか](#StripeとGatsbyはどのように連携させるのか)
+- [Gatsby サイトの設定](#Gatsbyサイトの設定)
+- [StripeJS プラグインのインストール](#StripeJSプラグインのインストール)
+  - [ブラウザでホットリロードされることを確認しよう](#ブラウザでホットリロードされることを確認しよう)
+  - [StripeJS プラグインはどのように動作するか](#StripeJプラグインはどのように動作するか)
+  - [Stripe のテストキーを取得する](#Stripeのテストキーを取得する)
+- [例](#例)
+  - [簡単:ボタン 1 つ](#簡単:ボタン1つ)
+  - [発展:ソースプラグインを通じて SKU をインポートする](#発展:ソースプラグインを通じてSKUをインポートする)
+- [支払いテスト](#支払いテスト)
 
-In this advanced tutorial, you’ll learn how to use Gatsby to build the UI for a basic e-commerce site that can accept payments, with [Stripe](https://stripe.com) as the backend for processing payments.
+この発展的なチュートリアルでは、Gatsby を用いて支払いができる基本的な e コマースサイトの UI を構築を学ぶことができます。[Stripe](https://stripe.com)は支払い処理のバックエンドとして用います。
 
-## Why use Gatsby for an e-commerce site?
+## なぜ e コマースサイトで Gatsby を使うのか
 
-Benefits of using Gatsby for e-commerce sites include the following:
+Gatsby を e コマースのサイトに使うメリットは以下のとおりです。
 
-- Security inherent in static sites
-- Blazing fast performance when your pages are converted from React into static files
-- Easy to host
+- 静的サイト固有のセキュリティ
+- ページを React から静的ファイルに変換する際の超高速パフォーマンス
+- 簡単にホストできる
 
-You can see the working demo hosted here: https://gatsby-ecommerce-stripe.netlify.com/
+こちらからホストされたデモを見れます： https://gatsby-ecommerce-stripe.netlify.com/
 
-## Prerequisites
+## 前提条件
 
-- Since this is a more advanced tutorial, building a site with Gatsby before will likely make this tutorial less time-consuming ([see the main tutorial here](/tutorial/))
-- Stripe account: [register for an account here](https://dashboard.stripe.com/register)
+- これはより高度なチュートリアルなので、以前に Gatsby でサイトを構築したことがある場合は、このチュートリアルの時間が短縮できそうです。([基本チュートリアルはこちら](/tutorial/))
+- Stripe アカウント： [アカウント登録はこちら](https://dashboard.stripe.com/register)
 
-### How does Gatsby work with Stripe?
+### Stripe と Gatsby はどのように連携させるのか
 
-Stripe is a payment processing service that allows you to securely collect and process payment information from your customers. To try out Stripe for yourself, go to [Stripe’s Quick Start Guide](https://stripe.com/docs/payments/checkout#tryout).
+Stripe は顧客から情報を安全に収集して処理できる支払い処理サービスです。Stripe を試すにはこちらにアクセスしてください。[Stripe クイックスタートガイド](https://stripe.com/docs/payments/checkout#tryout)
 
-There are alternatives to Stripe, like Square and Braintree, and their setup is very similar to Stripe.
+Stripe の代わりとしては、Square や Braintree などがあります。これらの仕組みは Stripe と非常に似ています。
 
-Stripe offers a [hosted checkout](https://stripe.com/docs/payments/checkout) that doesn't require any backend component. You can configure products, SKUs, and subscription plans in the [Stripe Dashboard](https://stripe.com/docs/payments/checkout#configure). If you're selling a single product or subscription (like an eBook) you can hardcode the product's SKU ID in your Gatsby site. If you're selling multiple products, you can use the [Stripe source plugin](https://www.gatsbyjs.org/packages/gatsby-source-stripe/) to retrieve all SKUs at build time. If you want your Gatsby site to automatically update, you can use the Stripe webhook event to [trigger a redeploy](https://www.netlify.com/docs/webhooks/) when a new product or SKU is added.
+Stripe はバックエンドコンポーネントを必要としない[hosted checkout](https://stripe.com/docs/payments/checkout)を提供します。製品や SKU、サブスクリプションプランの設定を[Stripe Dashboard](https://stripe.com/docs/payments/checkout#configure)で行うことができます。1 つの製品やサブスクリプション（電子書籍）を販売している場合、Gatsby サイトで商品の SKU ID をハードコーディングできます。複数の商品を販売している場合、[Stripe ソースプラグイン](https://www.gatsbyjs.org/packages/gatsby-source-stripe/)を利用して、ビルド時に全ての SKU を取得できます。Gatsby のサイトを自動的に更新する場合は、Stripe webhook イベントを利用して新しい商品や SKU が追加されたときに再デプロイをトリガー[trigger a redeploy](https://www.netlify.com/docs/)できます。
 
-# Setting up a Gatsby site
+# Gatsby サイトの設定
 
-Create a new Gatsby project by running the `gatsby new` command in the terminal and change directories into the new project you just started:
+ターミナルで `gatsby new` を実行して新しい Gatsby のプロジェクトを作成し、ディレクトリーを先程作成した新しいプロジェクトに変更します。
 
 ```shell
 gatsby new ecommerce-gatsby-tutorial
 cd ecommerce-gatsby-tutorial
 ```
 
-## Installing the StripeJS plugin
+## StripeJS プラグインのインストール
 
-You can extend the functionality of this default starter with plugins. One such plugin is `gatsby-plugin-stripe`, which you’ll install in this project:
+プラグインを利用してこのデフォルトのスターターの機能を拡張できます。そのようなプラグインの 1 つが `gatsby-plugin-stripe`で、このプロジェクトにインストールします。
 
 ```shell
 npm install gatsby-plugin-stripe
 ```
 
-Open the root site directory in a text editor and navigate to `gatsby-config.js` and add the StripeJS plugin to `gatsby-config.js` in the plugins section. Your `gatsby-config.js` should look like the following code example:
+テキストエディタでルートサイトディレクトリーを開き、`gatsby-config.js`に移動します。そして、`gatsby-config.js`の plugins のところに StripeJS プラグインを追加します。`gatsby-config.js`は次のコード例のようになります。
 
 ```js:title=gatsby-config.js
 module.exports = {
   siteMetadata: {
-    title: "Gatsby E-Commerce Starter",
+    title: `Gatsby e-Commerce Starter`,
+    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    author: `@gatsbyjs`,
   },
-  plugins: ["gatsby-plugin-react-helmet", "gatsby-plugin-stripe"],
+  plugins: [
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `gatsby-starter-default`,
+        short_name: `starter`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    `gatsby-plugin-stripe`,
+  ],
 }
 ```
 
-### See your site hot reload in the browser!
+### ブラウザでホットリロードされることを確認しよう
 
-Run `npm run develop` in the terminal, which starts a development server and reloads changes you make to your site so you can preview them in the browser. Open up your browser to [localhost:8000](http://localhost:8000/) and you should see a default homepage.
+ターミナルで `npm run develop` を実行しましす。これにより、開発サーバーが起動し、サイトに加えた変更がリロードされるので、ブラウザーで変更がプレビューできます。ブラウザを[localhost:8000](http://localhost:8000/)で開くと、デフォルトのホームページが表示されます。
 
-> **NOTE**: If you have already started your Gatsby development server using `npm run develop`, you will need to restart the server by pressing CTRL + C in the terminal where the command was run and running `npm run develop` again to see changes in your `gatsby-config.js` reflected on [localhost:8000](http://localhost:8000/)
+> **ヒント**:もし、すでに Gatsby の開発サーバを `npm run develop` で起動していた場合、コマンドを実行したターミナルで CTRL + C を押してサーバを再起動し、`npm run develop` コマンドを再度実行することで[localhost:8000](http://localhost:8000/)に反映された `gatsby-config.js` の変更を確認できます。
 
-### How does the StripeJS plugin work?
+### StripeJS プラグインはどのように動作するか
 
-Stripe provides a JavaScript library the allows you to securely redirect your customer to the Stripe hosted checkout page. The Gatsby plugin, `gatsby-plugin-stripe`, will add this snippet:
+Stripe は JavaScript ライブラリーを提供します。これにより、Stripe がホストする支払いページに顧客を安全にリダイレクトできます。Gatsby プラグインの `gatsby-plugin-stripe` は全てのページで `<body>` タグの末尾に次のスニペットを追加します：
 
 ```html
 <script src="https://js.stripe.com/v3/"></script>
 ```
 
-to the end of the `<body>` tag across all of your pages. This helps facilitate Stripe's [fraud detection](https://stripe.com/docs/stripe-js/reference#including-stripejs).
+これにより、Stripe の[不正検出](https://stripe.com/docs/stripe-js/reference#including-stripejs)]が容易になります
+もし支払い処理をさらにカスタマイズしたり Srtipe のデータをサイトに引いてくる場合は、[Gatsby のプラグインライブラリで Stripe プラグインを確認](https://www.gatsbyjs.org/plugins/?=stripe)してください。
 
-If you want to further customise the checkout process or pull Stripe data into your site, check out [Gatsby's plugin library for more Stripe plugins](https://www.gatsbyjs.org/plugins/?=stripe).
+### Stripe のテストキーを取得する
 
-### Getting your Stripe test keys
-
-View your API credentials by logging into your Stripe account, and then going to Developers > API Keys.
+Stripe アカウントにログインして API 資格情報を表示し、[開発者] > [API キー]に移動します。
 
 ![Stripe public test key location in Stripe account](stripe-public-test-key.png)
 
-You have 2 keys in both test mode and production mode:
+テストモードと本番モードの 2 つのキーがあります。
 
-- a publishable key
-- a secret key
+- 公開可能キー
+- シークレットキー
 
-While testing, you must use the key(s) that include _test_. For production code, you will need to use the live keys. As the names imply, your publishable key may be included in code that you share publicly (for example, on the frontend, and in GitHub), whereas your secret key should not be shared with anyone or committed to any public repo. It’s important to restrict access to this secret key because anyone who has it could potentially read or send requests from your Stripe account and see information about charges or purchases or even refund customers.
+テスト中は _test_.という文字が含まれたキーを使い、本番のコードではライブキーを使う必要があります。名前が示すように、公開可能キーは公開するコード(フロントエンドや GitHub など)に含まれているな愛がありますが、シークレットキーは誰とも共有したり、公開レポジトリにコミットしたりしないでください。このシークレットキーへのアクセスを制限することは重要です。このシークレットキーを持っている人は誰でも Stripe アカウントからリクエストを読み取ったり送信したり、請求や購入に関する情報を見たり、顧客に送信したりする可能性があるからです。
 
-### Enabling the "Checkout client-only integration" for your Stripe account
+### Stripe アカウントの"クライアント専用組み込み"を有効にします
 
-Through this tutorial you will be using the "Checkout client-only integration" from Stripe. To use this integration you need to activate it on the corresponding [Checkout settings](https://dashboard.stripe.com/account/checkout/settings) from your Stripe Dashboard.
+このチュートリアルでは Stripe の"クライアント専用組み込み"を利用します。この組み込みを利用するには Stipe ダッシュボードの対応する[チェックアウトの設定](https://dashboard.stripe.com/account/checkout/settings)でアクティブにする必要があります。
 
 ![Stripe control to enable the Checkout client-side only integration highlighted](stripe-checkout-clientside-functionality.png)
 
-> 💡 This change will also modify the interface that Stripe provides to administer your products: keep this in mind in case you have previously used this tool. If you have never used the product administrator, you don't need to worry.
+> 💡 この変更により、製品を管理するために Stripe が提供するインターフェースも変更されます。以前にこのツールを利用したことがある場合は、このことに留意してください。今までに製品管理を利用したことがない場合、心配する必要はありません。
 
-Additionally, you need to set a name for your Stripe account on your [Account settings](https://dashboard.stripe.com/account) to use this integration.
+さらに、この組み込みを利用するには、[アカウント設定](https://dashboard.stripe.com/account)で Stripe アカウントの名前を設定する必要があります。
 
-To learn more about this integration you may use the [Stripe docs](https://stripe.com/docs/payments/checkout#configure).
+この組み込みの詳細については[Stripe docs](https://stripe.com/docs/payments/checkout#configure)を参照すると良いでしょう。
 
-## Examples
+## 例
 
-You can find an implementation of these examples [on GitHub](https://github.com/thorsten-stripe/ecommerce-gatsby-tutorial).
+これらの例の実装は[GitHub](https://github.com/thorsten-stripe/ecommerce-gatsby-tutorial)で見ることができます。
 
-### Easy: One Button
+### 簡単:ボタン 1 つ
 
-If you're selling a simple product, like an eBook for example, you can create a single button that will perform a redirect to the Stripe Checkout page:
+例えば電子書籍などのシンプルな製品を売っている場合、Stripe の支払いページへのリダイレクトを実行するボタンを 1 つ作成できます。
 
-#### Create a product and SKU
+#### 商品と SKU の作成
 
-To sell your products, first you need to create them on Stripe using the [Stripe Dashboard](https://dashboard.stripe.com/products) or the [Stripe API](https://stripe.com/docs/api/products/create). This is required for Stripe to validate that the request coming from the frontend is legitimate and to charge the right amount for the selected product/SKU. Stripe requires every SKU used with Stripe Checkout to have a name: be sure to add one to all of your SKUs.
+商品を販売するためにはまず、[Stripe ダッシュボード](https://dashboard.stripe.com/products)または[Stripe API](https://stripe.com/docs/api/products/create)を利用して、Stripe で商品を作成する必要があります。これは、Stripe がフロントエンドからのリクエストが正当であることを検証し、選択された製品/SKU に適切な金額を請求するために必要です。Stripe では、Stripe の支払いで使用する全ての SKU に名前を付ける必要があります。全ての SKU に必ず 1 つ追加してください。
 
-You will need to create both test and live product SKUs in the Stripe Dashboard. Make sure you toggle to "Viewing test data" and then create your products for local development.
+Stripe ダッシュボードでテスト SKU と本番 SKU の両方を作成する必要があります。「テストデータの表示」に切り替えてから、ローカル開発用の製品を作成してください。
 
-#### Create a checkout component that loads StripeJS and redirects to the checkout
+#### StripeJS をロードして支払いコンポーネントを作成する
 
-Create a new file at `src/components/checkout.js`. Your `checkout.js` file should look like this:
+`src/components/checkout.js` に新しいファイルを作成します。作成した `checkout.js` は以下のようになります:
 
 ```jsx:title=src/components/checkout.js
 import React from "react"
@@ -148,8 +173,8 @@ const buttonStyles = {
 }
 
 const Checkout = class extends React.Component {
-  // Initialise Stripe.js with your publishable key.
-  // You can find your key in the Dashboard:
+  // Stripe.jsを公開可能キーで初期化します
+  // こちらのダッシュボードからキーを確認できます。
   // https://dashboard.stripe.com/account/apikeys
   componentDidMount() {
     this.stripe = window.Stripe("pk_test_jG9s3XMdSjZF9Kdm5g59zlYd")
@@ -183,34 +208,34 @@ const Checkout = class extends React.Component {
 export default Checkout
 ```
 
-#### What did you just do?
+#### 何が起こったの？
 
-You imported React, added a button with some styles, and introduced some React functions. The `componentDidMount()` and `redirectToCheckout()` functions are most important for the Stripe functionality. The `componentDidMount()` function is a React lifecycle method that launches when the component is first mounted to the DOM, making it a good place to initialise the Stripe.js client. It looks like this:
+React をインポートし、いくつかの style のボタンを追加し、React 関数を導入しました。`componentDidMount()`や、`redirectToCheckout()` といった関数は Stripe の機能の中で最も重要です。`componentDidMount()` 関数はコンポーネントが最初に DOM にマウントされた時に起動する React のライフサイクルメソッドであり、Stripe.js クライアントを初期化するのに適した場所です。コードは以下のようになります。
 
 ```jsx:title=src/components/checkout.js
   componentDidMount() {
-    this.stripe = window.Stripe('pk_test_jG9s3XMdSjZF9Kdm5g59zlYd')
+    this.stripe = window.Stripe("pk_test_jG9s3XMdSjZF9Kdm5g59zlYd")
   }
 ```
 
-This identifies you with the Stripe platform, validates the checkout request against your products and security settings, and processes the payment on your Stripe account.
+これによって Stripe プラットフォームが識別され、製品とセキュリティの設定に対して支払いリクエストが検証され、Stripe アカウントの支払いが処理されます。
 
 ```jsx:title=src/components/checkout.js
   async redirectToCheckout(event) {
     event.preventDefault()
     const { error } = await this.stripe.redirectToCheckout({
-      items: [{ sku: 'sku_DjQJN2HJ1kkvI3', quantity: 1 }],
+      items: [{ sku: "sku_DjQJN2HJ1kkvI3", quantity: 1 }],
       successUrl: `http://localhost:8000/page-2/`,
       cancelUrl: `http://localhost:8000/`,
     })
 
     if (error) {
-      console.warn('Error:', error)
+      console.warn("Error:", error)
     }
   }
 ```
 
-The `redirectToCheckout()` function validates your checkout request and either redirects to the Stripe hosted checkout page or resolves with an error object. Make sure to replace `successUrl` and `cancelUrl` with the appropriate URLs for your application.
+`redirectToCheckout()` 関数は支払いのリクエストを検証し、Stripe がホストする支払いページにリダイレクトするか、エラーオブジェクトで解決します。`successUrl` と `cancelUrl` を適切な URL に置き換えてください。
 
 ```jsx:title=src/components/checkout.js
   render() {
@@ -225,11 +250,11 @@ The `redirectToCheckout()` function validates your checkout request and either r
   }
 ```
 
-The `render()` function applies your styles to the button and binds the `redirectToCheckout()` function to the button's onclick event.
+`render()` 関数は style をボタンに適用し、`redirectToCheckout()` 関数をボタンの onclick イベントにバインドします。
 
-#### Importing the checkout component into the homepage
+#### 支払いコンポーネントをホームページにインポートする
 
-Now go to your `src/pages/index.js` file. This is your homepage that shows at the root URL. Import your new checkout component in the file underneath the other imports and add your `<Checkout />` component within the `<Layout>` element. Your `index.js` file should now look like similar to this:
+`src/pages/index.js` ファイルに移動しましょう。ここがルート URL に表示されるホームページです。他の import の下にあるファイルに新しい支払いコンポーネントを import し、`<Layout>` 要素内に `<Checkout />` コンポーネントを追加します。`index.js` ファイルは以下のようになります。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -258,26 +283,26 @@ const IndexPage = () => (
 export default IndexPage
 ```
 
-If you go back to [localhost:8000](http://localhost:8000/) in your browser and you have `npm run develop` running, you should now see a big, enticing "BUY MY BOOK" button. C'mon and give it a click!
+ブラウザで[localhost:8000](http://localhost:8000/)に戻り、`npm run develop` を実行している場合は、大きくて魅力的な"BUY MY BOOK"ボタンが表示されます。さあ、クリックしてみましょう！
 
-### Advanced: Import SKUs via source plugin
+### 発展：ソースプラグインを通じて SKU をインポートする
 
-Instead of hardcoding the SKU IDs, you can use the [gatsby-source-stripe plugin](https://www.gatsbyjs.org/packages/gatsby-source-stripe/) to retrieve your SKUs at build time.
+SKU の ID をハードコーディングする代わりに、ビルド時に[gatsby-source-stripe plugin](https://www.gatsbyjs.org/packages/gatsby-source-stripe/)を使用して SKU を取得できます。
 
-#### Add the Stripe source plugin
+#### Stripe ソースプラグインの追加
 
-Add the [gatsby-source-stripe plugin](https://www.gatsbyjs.org/packages/gatsby-source-stripe/) which you can use to pull in the SKUs from your Stripe account.
+Stripe アカウントから SKU を取得するために使える[gatsby-source-stripe plugin](https://www.gatsbyjs.org/packages/gatsby-source-stripe/)プラグインを追加しましょう。
 
 ```shell
 npm install gatsby-source-stripe
 ```
 
-Now you can add the plugin configuration in your `gatsby-config` file:
+これで、`gatsby-config` ファイルにプラグイン設定を追加できます。
 
 ```js:title=gatsby-config.js
 module.exports = {
   siteMetadata: {
-    title: `Gatsby E-Commerce Starter`,
+    title: `Gatsby e-commerce Starter`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -294,16 +319,15 @@ module.exports = {
 }
 ```
 
-To retrieve your SKUs from your Stripe account you will need to provide your secret API key. This key needs to be kept secret and must never be shared on the frontend or on GitHub. Therefore you need to set an environment variable to store the secret key. You can read more about the usage of env variables in the [Gatsby docs](/docs/environment-variables/).
-
-In the root directory of your project add a `.env.development` file:
+Stripe アカウントから SKU を取得するにはシークレット API キーを提供する必要があります。シークレットキーは秘密にしておく必要があるので、フロントエンドや GitHub で絶対に共有しないでください。したがって、環境変数を設定して秘密鍵を保存する必要があります。[Gatsby docs](/docs/environment-variables/)で環境変数の使用法について詳しく読むことができます。
+プロジェクトのルートディレクトリに `.env.development` ファイルを追加してください。
 
 ```text:title=.env.development
 # Stripe secret API key
 STRIPE_SECRET_KEY=sk_test_xxx
 ```
 
-To use the defined env variable you need to require it in your `gatsby-config.js` or `gatsby-node.js` like this:
+定義された環境変数を利用するには `gatsby-config.js` または `gatsby-node.js` で以下のように環境変数を要求する必要があります。
 
 ```js:title=gatsby-config.js
 require("dotenv").config({
@@ -311,7 +335,7 @@ require("dotenv").config({
 })
 ```
 
-Lastly, make sure that your `.gitignore` file excludes all of your `.env.*` files:
+最後に、`.gitignore` ファイルで全ての `.env.*` ファイルが除外されていることを確認してください。
 
 ```text:title=.gitignore
 # dotenv environment variables files
@@ -320,9 +344,9 @@ Lastly, make sure that your `.gitignore` file excludes all of your `.env.*` file
 .env.production
 ```
 
-#### Create a component that lists your SKUs
+#### SKU をリストするコンポーネントを作成する
 
-In your components folder add a new `Products` folder. This folder will include the components that interact with the Stripe SKUs. First, you need a component that queries and lists your SKUs:
+components ディレクトリーに新しく `Products` ファイルを追加します。このファイルには Stripe の SKU と対話するコンポーネントが含まれます。まず第一に、SKU を照会およびリストするコンポーネントが必要です。
 
 ```jsx:title=src/components/Products/Skus.js
 import React from "react"
@@ -357,13 +381,12 @@ export default props => (
 )
 ```
 
-You can validate your query and see what data is being returned in GraphiQL, which is available at http://localhost:8000/___graphql when running `npm run develop`.
+クエリを検証し、GraphQL で返されるデータを確認できます。GraphiQL は `npm run develop` を実行した際にhttp://localhost:8000/___graphql にて確認できます。
 
-Once you're happy with your query, create a new page where you can import the newly created Sku component:
+クエリに満足したら、新しく作成した SKU コンポーネントをインポートできる新しいページを作成しましょう。
 
 ```jsx:title=src/pages/advanced.js
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -381,11 +404,11 @@ const AdvancedExamplePage = () => (
 export default AdvancedExamplePage
 ```
 
-When navigating to http://localhost:8000/advanced/ you should now see a list of paragraphs with your SKU names.
+http://localhost:8000/advanced/ に移動すると SKU 名を含む段落のリストが確認できます。
 
-#### Create a component that presents a single SKU
+#### 単一の SKU を提示するコンポーネントの作成
 
-To make your SKUs more visually appealing and interactive, create a new `SkuCard` component in your `Products` folder:
+SKU を魅力的でインタラクティブにするため、`Products`ディレクトリに `SkuCard` を新たに作成します。
 
 ```jsx:title=src/components/Products/SkuCard.js
 import React from "react"
@@ -448,7 +471,7 @@ const SkuCard = class extends React.Component {
           style={buttonStyles}
           onClick={event => this.redirectToCheckout(event, sku.id)}
         >
-          BUY ME
+          購入
         </button>
       </div>
     )
@@ -458,21 +481,20 @@ const SkuCard = class extends React.Component {
 export default SkuCard
 ```
 
-This component renders a neat card for each individual SKU, with the SKU name, nicely formatted pricing, and a "BUY ME" button. The button triggers the `redirectToCheckout()` function with the corresponding SKU ID.
-
-Lastly, you need to refactor your `Skus` component to initialize the Stripe.js client, and render `SkuCards` while handing down the Stripe.js client in the `props`:
+このコンポーネントは SKU 名、適切にフォーマットされた価格設定、および「購入」ボタンを利用して、個々の SKU ごとに適切なカードをレンダリングします。「購入」ボタンは対応する SKU ID で `redirectToCheckout()` 関数をトリガーします。
+最後に、`Skus` コンポーネントをリファクタリングして Stripe.js クライアントを初期化し、`props` で Stripe.js クライアントを伝えながら `SkuCards` をレンダリングする必要があります。
 
 ```jsx:title=src/components/Products/Skus.js
-import React, { Component } from 'react'
-import { graphql, StaticQuery } from 'gatsby'
-import SkuCard from './SkuCard' // highlight-line
+import React, { Component } from "react"
+import { graphql, StaticQuery } from "gatsby"
+import SkuCard from "./SkuCard" // highlight-line
 
 const containerStyles = {
-  display: 'flex',
-  flexDirection: 'row',
-  flexWrap: 'wrap',
-  justifyContent: 'space-between',
-  padding: '1rem 0 1rem 0',
+  display: "flex",
+  flexDirection: "row",
+  flexWrap: "wrap",
+  justifyContent: "space-between",
+  padding: "1rem 0 1rem 0",
 }
 
 class Skus extends Component {
@@ -524,10 +546,10 @@ class Skus extends Component {
 export default Skus
 ```
 
-#### Adding a cart component
+#### カートコンポーネントの追加
 
-You can call `redirectToCheckout()` providing an array of SKUs and their quantities to charge for multiple items at the same time. Instead of each "BUY ME" button redirecting to the checkout page, you can therefore provide a central "GO TO CHECKOUT" button that uses the state of a cart component. You can see the necessary changes for this example [on GitHub](https://github.com/thorsten-stripe/ecommerce-gatsby-tutorial/tree/cart-example).
+`redirectToCheckout()` 関数を呼び出して、SKU とその量の配列を提供し、複数のアイテムを同時に請求できます。したがって、支払いページにリダイレクトするそれぞれの「購入」ボタンの代わりに、カートコンポーネントの状態を利用する主要な「支払いに進む」ボタンを提供できます。この例に必要な変更は[GitHub](https://github.com/thorsten-stripe/ecommerce-gatsby-tutorial/tree/cart-example)で確認できます。
 
-# Testing Payments
+# 支払いテスト
 
-In test mode (when using the API key that includes _test_) Stripe provides [test cards](https://stripe.com/docs/testing#cards) for you to test different checkout scenarios.
+テストモード（_test_ という文字列を含む API キーを利用する場合）では、Stripe は様々な支払いシナリオをテストするための[テストカード](https://stripe.com/docs/testing#cards)を提供します。

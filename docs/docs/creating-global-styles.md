@@ -1,9 +1,9 @@
 ---
-title: Creating Global Styles
+title: グローバルスタイルを作成する
 ---
 
-Creating global styles for your Gatsby site depends on your styling approach, so we've moved the instructions to the relevant guides:
+Gatsby サイトでのグローバルスタイル作成は、開発者の[スタイリング手法](/docs/styling)に依るので、それぞれの説明を関連するガイドに編纂しました：
 
-- [Global styles with standard CSS files](/docs/global-css/) (also applies if you're using CSS Modules for component-scoped styles)
-- [Global styles with CSS-in-JS library Emotion](/docs/emotion/)
-- [Global styles with CSS-in-JS library Styled-Components](/docs/styled-components/)
+- [グローバル CSS ファイルを用いた標準的なスタイリング](/docs/global-css/)（CSS Modules でコンポーネントスコープを使用している場合でも適用されます）
+- [CSS-in-JS ライブラリ Emotion を用いたグローバルスタイル](/docs/emotion/)
+- [CSS-in-JS ライブラリ Styled Components を用いたグローバルスタイル](/docs/styled-components/)

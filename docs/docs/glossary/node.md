@@ -3,32 +3,32 @@ title: Node.js
 disableTableOfContents: true
 ---
 
-Learn more about Node.js, one of the software packages that makes Gatsby possible.
+Gatsby に必要なソフトウェアの 1 つである Node.js について学びましょう。
 
-## What is Node.js?
+## Node.js とは？
 
-Node.js is a JavaScript runtime that uses the same engine as Google Chrome. With Node.js, you can run JavaScript applications on your computer, without the need for a web browser.
+Node.js は JavaScript のランタイムで、Google Chrome でも同様のエンジンが使われています。Node.js を使うと、JavaScript アプリケーションをブラウザーなしで実行できます。
 
-In the early 2000s, services such as Gmail and Flickr showed us that JavaScript could be used to build robust applications, available to anyone with a web browser and internet connection.
+2000 年代初頭、Gmail や Flickr などのサービスは JavaScript でロバストなアプリケーションを開発できることを示してくれました。そしてそれらのアプリケーションは、ウェブブラウザーとインターネット接続があれば誰でも利用できるものでした。
 
-However, those JavaScript applications had a big limitation: they could only perform as well as the runtime allowed. Before 2009, the runtime was almost always a web browser. So Google formed the Chromium Project, in part, to create a faster browser. The result was Google Chrome, released in 2008, and its new JavaScript engine: [V8](https://v8.dev/).
+しかし、それらの JavaScript アプリケーションは、ランタイムの下でしか実行できないという、大きな制約がありました。2009 年まで、ランタイムと言えばほぼブラウザーしかありませんでした。そこで Google によって、部分的にはより高速なブラウザーを開発するために、Chromium プロジェクトが発足しました。その成果が 2008 年にリリースされた Google Chrome と、その新しい JavaScript エンジンである [V8](https://v8.dev/) です。
 
-A year later, Node.js made its debut as a standalone JavaScript runtime using the V8 engine.
+1 年後、V8 エンジンを使用した Node.js というスタンドアロン JavaScript ランタイムが公開されました。
 
-Once you've installed Node.js, you can use it to run JavaScript from the [command line](/docs/glossary#command-line). Type `node` at a prompt to launch the Node.js interactive shell. Include the path to a JavaScript file to execute that script: e.g. `node /Users/gatsbyfan/hello-world.js`.
+Node.js をインストールすると、JavaScript を[コマンドライン](/docs/glossary#command-line)から実行できます。コマンドラインで `node` と入力すると Node.js のシェルが立ち上がります。スクリプトを実行するには JavaScript ファイルへのパスを含めて入力します。例： `node /Users/gatsbyfan/hello-world.js`
 
-You will need to [install Node.js](/tutorial/part-zero/#-install-nodejs-and-npm) before using Gatsby. Gatsby is built using JavaScript, and requires the Node.js runtime.
+Gatsby を使用する前にまず、[Node.js をインストール](/tutorial/part-zero/#install-nodejs-for-your-appropriate-operating-system)する必要があります。
 
-Installing Node.js also installs [npm](/docs/glossary#npm), the Node.js _package manager_. A package manager is specialized software that lets you install and update modules and packages used in your project.
+Node.js をインストールすると、Node.js の **パッケージマネージャー** である [npm](/docs/glossary#npm) もあわせてインストールされます。パッケージマネージャーとはモジュールやパッケージをあなたのプロジェクトにインストールしたり更新したりするための特別なソフトウェアです。
 
-You'll use npm to install Gatsby and its dependencies. Type `npm install -g gatsby-cli` at a command line prompt to install the Gatsby command line interface or CLI. The `-g` flag installs Gatsby globally, which means that you can use it by typing `gatsby` at a prompt. For example, you can use `gatsby new` to create a new Gatsby site.
+Gatsby とその依存パッケージをインストールするためには npm を使います。Gatsby CLI をインストールするにはコマンドラインに `npm install -g gatsby-cli` と入力してください。`-g` フラグを付けると Gatsby がグローバルにインストールされ、コマンドラインで `gatsby` と入力することで Gatsby を使用できるようになります。例えば `gatsby new` と入力すると新規の Gatsby サイトを作成できます。
 
-## Learn more about Node.js
+## Node.js についてもっと知るには
 
-- [Node.js](https://nodejs.org/en/) official web site
+- [Node.js](https://nodejs.org/en/) 公式ウェブサイト
 
 - [Introduction to Node.js](https://nodejs.dev)
 
-- [NodeSchool](https://nodeschool.io/) offers online and in-person Node.js workshops
+- [NodeSchool](https://nodeschool.io/) オンラインや対面の Node.js のワークショップを提供しています
 
-- [V8](https://v8.dev/) developer blog web site
+- [V8](https://v8.dev/) 開発者ブログ

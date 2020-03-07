@@ -55,9 +55,9 @@ If there are areas of the starter that could be impacted by the user, it may hel
 
 ## Web accessible
 
-In addition to performance, creating a starter free of accessibility issues is a wonderful way to contribute to the Gatsby ecosystem. Here are some tips for creating an inclusive, accessible starter:
+In addition to performance, creating a starter free of accessibility Issues is a wonderful way to contribute to the Gatsby ecosystem. Here are some tips for creating an inclusive, accessible starter:
 
-- Use adequate [color contrast](https://webaim.org/articles/contrast/). (This is the most common accessibility issue on the web!)
+- Use adequate [color contrast](https://webaim.org/articles/contrast/). (This is the most common accessibility Issue on the web!)
 - Preserve [visible keyboard focus indicators](https://webaim.org/techniques/keyboard/).
 - Use [image alt text](https://webaim.org/techniques/alttext/) in your examples.
 - Recommend and use [semantic HTML](https://webaim.org/techniques/semanticstructure/) wherever possible.
@@ -65,12 +65,15 @@ In addition to performance, creating a starter free of accessibility issues is a
 
 For more accessibility help, check out the [A11y Project checklist](https://a11yproject.com/checklist) and [WebAIM](https://webaim.org). You can also check out [tips on creating accessible web apps](https://www.deque.com/blog/accessibility-tips-in-single-page-applications/) heavy on client-side JavaScript.
 
+## Run your starter locally
+
+Since starters are Gatsby projects, you can run `gatsby develop` or `gatsby build` and then `gatsby serve` in order to ensure your starter is working. If you'd like to be extra thorough and make sure the `gatsby new` command works with your starter, you can run `gatsby new project-name ../relative/path/to/your/starter`, replacing the final part of that command with the appropriate relative path.
+
 ## Add your starter to the Gatsby Starter Library
 
 To make sure your starter is easily discoverable, you are welcome (but not required) to add it to the [Gatsby Starter Library](/contributing/submit-to-starter-library/). Add tags to your starter by first checking for existing ones (like `contentful`, `csv`, etc.), and adding more if needed!
 
 ## Further reading:
 
-- [How to create a Gatsby Starter
-  ](https://medium.com/@emasuriano/how-to-create-a-gatsby-starter-e7d53083a880) by Emanuel Suriano
+- [How to create a Gatsby Starter](https://medium.com/@emasuriano/how-to-create-a-gatsby-starter-e7d53083a880) by Emanuel Suriano
 - [Introducing Gatsby Themes](/blog/2018-11-11-introducing-gatsby-themes/) (including info on starters)

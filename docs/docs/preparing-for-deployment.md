@@ -1,46 +1,47 @@
 ---
-title: Preparing a Site for Deployment
+title: ウェブサイトをデプロイする準備
 ---
 
-## Create new Gatsby project
+## 新しい Gatsby プロジェクトを作成する
 
-First thing you need to do is generate and configure your new Gatsby project.
-If you haven't already [set up a Gatsby project](/docs/quick-start) you can do so by first installing Gatsby globally:
+まず、デプロイのためにあなたの Gatsby プロジェクトを作成して設定します。
+もし、あなたがまだ[クイックスタート](/docs/quick-start)を実施していない場合、まずは Gatsby をグローバルインストールしてください。
 
 ```shell
 npm install --global gatsby-cli
 ```
 
-Then generate a project with the following command:
+そして、以下のコマンドで新しいプロジェクトを作成します。
 
 ```shell
 gatsby new your-new-project
 ```
 
-Finally, change into the new site directory:
+最後に新しいディレクトリーへ移動します。
 
 ```shell
 cd your-new-project
 ```
 
-## Generate your site
+## あなたのウェブサイトをビルドする
 
-To generate static files in the simplest way, write
+Gatsby でウェブサイト用の静的ファイルを生成する方法は非常に簡単です。以下のコマンドを実行してください。
 
 ```shell
 gatsby build
 ```
 
-Then in the `public` directory will be files to copy to the server.
+`public` ディレクトリーにサーバーへコピーするための静的ファイルが出力されます。
 
-## Adding a path prefix
+## パスのプレフィックスを追加する
 
-If you want a specific Path Prefix, for example `example.com/blog/` instead of `example.com/` read [adding a path prefix](/docs/path-prefix)
+もし、あなたが特定のパスにデプロイしたい場合、[パスの接頭辞を追加する](/docs/path-prefix)を読んでください。
+（例）`example.com/` の代わりに `example.com/blog/` へデプロイしたい。
 
-## Specific deploy
+## ホスティングサービスへデプロイする
 
-Additional actions may be required depending on which server you use.
-If you have a server from one of the following providers, you should read the individual subpages:
+あなたの使っているホスティングサービスによっては、追加の作業が必要になるかもしれません。
+もし下記のサービスのどれかを使っているなら、それぞれのデプロイ用ドキュメントを読むと良いでしょう。
 
 - [AWS Amplify](/docs/deploying-to-aws-amplify)
 - [S3/Cloudfront](/docs/deploying-to-s3-cloudfront)
@@ -53,5 +54,7 @@ If you have a server from one of the following providers, you should read the in
 - [Surge](/docs/deploying-to-surge)
 - [GitHub Pages](/docs/how-gatsby-works-with-github-pages)
 - [Microsoft Internet Information Server (IIS)](/docs/deploying-to-iis)
+- [Firebase Hosting](/docs/deploying-to-firebase)
+- [KintoHub](/docs/deploying-to-kintohub)
 
-If you don't see the hosting you are interested, it's possible to add other hosting providers through [contributions to the docs](/contributing/docs-contributions).
+もし、あなたのホスティングサービスがリストにない場合は、ドキュメントを追加できます！[ドキュメントの作成に参加する](/contributing/docs-contributions)を参照してください。

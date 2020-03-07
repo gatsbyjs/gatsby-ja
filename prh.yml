@@ -37,6 +37,21 @@ rules:
   - expected: プラットフォーム
     pattern: プラットホーム
 
+  - expected: リポジトリ
+    pattern: レポジトリ
+
+  - expected: ウェブサイト
+    pattern: /Web\s?サイト/i
+
+  - expected: ウェブページ
+    pattern: /Web\s?ページ/i
+
+  - expected: ブログ記事
+    pattern: ブログポスト
+
+  - expected: Markdown
+    pattern: マークダウン
+
   - expected: Issue
     pattern: /issue/
 
@@ -49,3 +64,13 @@ rules:
         to: Pull Request
       - from: pull-request
         to: Pull Request
+
+  - expected: ご覧
+    pattern: 御覧
+
+  - expected: 雛形
+    pattern: ボイラープレート
+
+  - expected: スラッグ
+    pattern:
+      - /[Ss]lug/
