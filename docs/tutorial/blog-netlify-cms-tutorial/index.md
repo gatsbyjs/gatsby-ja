@@ -66,7 +66,7 @@ git push -u origin master
 
 その後 [app.netlify.com](http://app.netlify.com) にアクセスし、"New site from Git" ボタンをクリックしてください。先ほど作成したリポジトリーを選択し、デフォルトの開発設定のまま "Deploy site" をクリックしてください。
 
-> \_ヒント: もしあなたのリポジトリーがリストに現れない場合、GitHub 上の Netlify アプリケーションをインストールもしくは再設定する必要があるかもしれません。
+> \_ヒント: もしあなたのリポジトリーが一覧に現れない場合、GitHub 上の Netlify アプリケーションをインストールもしくは再設定する必要があるかもしれません。
 
 ![Netlify Dashboard for Creating a new site](netlify-dashboard.png)
 
@@ -80,7 +80,7 @@ Netlify CMS が GitHub リポジトリーにアクセスできることを確認
 
 ![Netlify and GitHub Authorization](https://cdn.netlify.com/67edd5b656c432888d736cd40125cb61376905bb/c1cba/img/docs/github-oauth-config.png)
 
-[GitHub OAuth Apps](https://github.com/settings/developers) のリストからあなたのアプリの資格情報をコピーし、それを使って認証プロバイダーを Netlify 上に作成してください。
+[GitHub OAuth Apps](https://github.com/settings/developers) の一覧からあなたのアプリの資格情報をコピーし、それを使って認証プロバイダーを Netlify 上に作成してください。
 
 ![Setting up access control](netlify-install-oauth-provider.png)
 

@@ -65,7 +65,7 @@ gatsby new blog ./Code/my-local-starter
 | スターター                                                                                   | デモ/ドキュメント                                            | 使用例               | 特徴                         |
 | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------ | -------------------- | ---------------------------- |
 | [gatsby-starter-default](https://github.com/gatsbyjs/gatsby-starter-default)                 | [デモ](https://gatsby-starter-default-demo.netlify.com/)     | ほとんどの場合で適切 | 一般的な Gatsby サイト       |
-| [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog)                       | [デモ](https://gatsby-starter-blog-demo.netlify.com/)        | 基本的なブログの作成 | ブログ投稿ページとリスト     |
+| [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog)                       | [デモ](https://gatsby-starter-blog-demo.netlify.com/)        | 基本的なブログの作成 | ブログ投稿ページと一覧     |
 | [gatsby-starter-hello-world](https://github.com/gatsbyjs/gatsby-starter-hello-world)         | [デモ](https://gatsby-starter-hello-world-demo.netlify.com/) | Gatsby を学ぶ        | Gatsby の必須事項            |
 | [gatsby-starter-blog-theme](https://github.com/gatsbyjs/gatsby-starter-blog-theme)           | [ドキュメント](/docs/themes/getting-started/)                | ブログの投稿とページ | Gatsby テーマ                |
 | [gatsby-starter-theme-workspace](https://github.com/gatsbyjs/gatsby-starter-theme-workspace) | [ドキュメント](/docs/themes/building-themes/)                | Gatsby テーマの構築  | 最小限のテーマワークスペース |

@@ -39,11 +39,11 @@ Gatsbyjs.org のコンテンツを複数の言語に翻訳する継続的な取�
 
 ## 新たな翻訳を作成
 
-上記リストにあなたの言語がない場合、新たな翻訳リポジトリーの始め方について[新たな言語を始める](/contributing/translation/new-translations/)を参考にしてください。
+上記の一覧にあなたの言語がない場合、新たな翻訳リポジトリーの始め方について[新たな言語を始める](/contributing/translation/new-translations/)を参考にしてください。
 
 ## 翻訳に貢献
 
-上記リストにあなたの言語がある場合、あなたの言語の翻訳への貢献方法について[翻訳コントリビューターガイド](/contributing/translation/translators/)を参考にしてください。
+上記の一覧にあなたの言語がある場合、あなたの言語の翻訳への貢献方法について[翻訳コントリビューターガイド](/contributing/translation/translators/)を参考にしてください。
 
 ## メンテナー
 
