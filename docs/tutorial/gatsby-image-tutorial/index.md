@@ -35,7 +35,7 @@ npm install gatsby-image gatsby-transformer-sharp gatsby-plugin-sharp
 
 新たにインストールしたプラグインを `gatsby-config.js` ファイルに追加します。ファイルは最終的に以下のようになります（すでに使用されている他のプラグインは省略しています）。
 
-> _ノート: `gatsby-image` はインストール後、`gatsby-config.js` に追加する必要はありません。_
+> _ヒント: `gatsby-image` はインストール後、`gatsby-config.js` に追加する必要はありません。_
 
 ```javascript:title=gatsby-config.js
 plugins: [`gatsby-transformer-sharp`, `gatsby-plugin-sharp`]
