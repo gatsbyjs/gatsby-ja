@@ -75,7 +75,7 @@ plugins: [
 
 ## 単一画像のデータのクエリー
 
-画像ファイルを直接クエリーするために `graphql` を使用します。画像ファイルを相対パスに含めることで、 `gatsby-image` によってそのファイルを処理する方法を指定できます。
+画像ファイルを直接クエリーするために `graphql` を使用します。画像ファイルを相対パスに含めることで、`gatsby-image` によってそのファイルを処理する方法を指定できます。
 
 ```jsx:title=src/pages/index.js
 export const query = graphql`
