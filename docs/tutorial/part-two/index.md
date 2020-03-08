@@ -196,7 +196,7 @@ export default () => (
 
 #### ✋ CSS Modules を使用してコンポーネントのスタイルを設定
 
-このセクションでは、名前、アバターと短いラテン語のプロフィール（Lorem Ipsum - ダミーテキストのこと）を含む人々のリストを作成します。`<User />` コンポーネントと CSS モジュールを使用したスタイルを作成します。
+このセクションでは、名前、アバターと短いラテン語のプロフィール（Lorem Ipsum - ダミーテキストのこと）を含む人々の一覧を作成します。`<User />` コンポーネントと CSS モジュールを使用したスタイルを作成します。
 
 1. `src/pages/about-css-modules.module.css` という名前で CSS ファイルを作成します。
 
@@ -299,7 +299,7 @@ export default () => (
 
 完成したページは次のようになります。
 
-![CSS Modules によるユーザーリストページ](css-modules-userlist.png)
+![CSS Modules によるユーザー一覧ページ](css-modules-userlist.png)
 
 ### CSS-in-JS
 

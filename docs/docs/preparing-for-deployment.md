@@ -57,4 +57,4 @@ gatsby build
 - [Firebase Hosting](/docs/deploying-to-firebase)
 - [KintoHub](/docs/deploying-to-kintohub)
 
-もし、あなたのホスティングサービスがリストにない場合は、ドキュメントを追加できます！[ドキュメントの作成に参加する](/contributing/docs-contributions)を参照してください。
+もし、あなたのホスティングサービスが一覧にない場合は、ドキュメントを追加できます！[ドキュメントの作成に参加する](/contributing/docs-contributions)を参照してください。

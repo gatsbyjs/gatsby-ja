@@ -344,9 +344,9 @@ require("dotenv").config({
 .env.production
 ```
 
-#### SKU をリストするコンポーネントを作成する
+#### SKU を一覧するコンポーネントを作成する
 
-components ディレクトリーに新しく `Products` ファイルを追加します。このファイルには Stripe の SKU と対話するコンポーネントが含まれます。まず第一に、SKU を照会およびリストするコンポーネントが必要です。
+components ディレクトリーに新しく `Products` ファイルを追加します。このファイルには Stripe の SKU と対話するコンポーネントが含まれます。まず第一に、SKU を照会および一覧するコンポーネントが必要です。
 
 ```jsx:title=src/components/Products/Skus.js
 import React from "react"
@@ -404,7 +404,7 @@ const AdvancedExamplePage = () => (
 export default AdvancedExamplePage
 ```
 
-http://localhost:8000/advanced/ に移動すると SKU 名を含む段落のリストが確認できます。
+http://localhost:8000/advanced/ に移動すると SKU 名を含む段落の一覧が確認できます。
 
 #### 単一の SKU を提示するコンポーネントの作成
 

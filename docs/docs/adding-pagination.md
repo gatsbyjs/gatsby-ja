@@ -2,7 +2,7 @@
 title: ページネーションの追加
 ---
 
-コンテンツのリストを表示するページは、コンテンツの量が増えるにつれて長くなります。ページネーションは、コンテンツを複数のページに分ける方法です。
+コンテンツの一覧を表示するページは、コンテンツの量が増えるにつれて長くなります。ページネーションは、コンテンツを複数のページに分ける方法です。
 
 ページネーションのゴールは、単一の[テンプレート](/docs/building-with-components/#page-template-components)から、限られた数のアイテムを表示する複数のページを作成することです。
 
@@ -88,7 +88,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // ...
 
-  // ブログリストページの作成
+  // ブログ一覧ページの作成
   // highlight-start
   const posts = result.data.allMarkdownRemark.edges
   const postsPerPage = 6

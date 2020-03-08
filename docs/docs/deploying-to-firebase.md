@@ -30,7 +30,7 @@ title: Firebase Hosting へのデプロイ
    firebase login
    ```
 
-   Firebase プロジェクトのリストを表示する `firebase projects:list` コマンドを実行することで、Firebase CLI がインストールできているか確認できます。
+   Firebase プロジェクトの一覧を表示する `firebase projects:list` コマンドを実行することで、Firebase CLI がインストールできているか確認できます。
 
 1. Gatsby のプロジェクトディレクトリーに移動して Firebase をセットアップします。
 

@@ -64,7 +64,7 @@ export default typography
 
 Typography.js のすべての要素のフォントサイズは上記で設定した `baseFontSize` に応じて伸ばしたり縮めたりします。この値をいじってみて見た目の変化を見てください。
 
-新たにテーマを見つけるか、作成する場合は[Typography.js](https://kyleamathews.github.io/typography.js/)のサイトにあるオプションのリストを参照してください。
+新たにテーマを見つけるか、作成する場合は[Typography.js](https://kyleamathews.github.io/typography.js/)のサイトにあるオプションの一覧を参照してください。
 
 ## Typography テーマのインストール
 
