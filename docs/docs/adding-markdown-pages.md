@@ -3,7 +3,7 @@ title: Markdownのページを追加する
 ---
 
 Gatsby ではあなたのウェブサイトにページを追加するために Markdown ファイルを利用できます。
-プラグインを追加し、Markdown ファイルのあるフォルダを読み込むよう設定するだけで、自動的に Markdown ファイルからページを生成します。
+プラグインを追加し、Markdown ファイルのあるフォルダーを読み込むよう設定するだけで、自動的に Markdown ファイルからページを生成します。
 
 以下が、Gatsby における上記の処理です。
 
@@ -68,7 +68,7 @@ plugins: [
 
 ## Markdown ファイルを追加する
 
-`/src` ディレクトリ内に、 `markdown-pages` ディレクトリを新しく作成しましょう。
+`/src` ディレクトリー内に、 `markdown-pages` ディレクトリーを新しく作成しましょう。
 そしてその中に `post-1.md` ファイルを作成します。
 
 ### Frontmatter - Markdown ファイルのメタデータ
@@ -87,8 +87,8 @@ title: "My first blog post"
 
 ## Markdown ファイルのためのページテンプレートを作成する
 
-`/src` ディレクトリ内に、 `templates` ディレクトリを新しく作成しましょう。
-`blogTemplate.js` ファイルをこのディレクトリ内に下記の内容で作成します。
+`/src` ディレクトリー内に、 `templates` ディレクトリーを新しく作成しましょう。
+`blogTemplate.js` ファイルをこのディレクトリー内に下記の内容で作成します。
 
 ```jsx:title=src/templates/blogTemplate.js
 import React from "react"
@@ -137,11 +137,11 @@ export const pageQuery = graphql`
 
 ### Gatsby の `createPage` Node.js API を使って静的なページを生成する
 
-Gatsby は強力な Node.js API を用意しており、これによって動的ページの作成などの機能が可能になります。 この API は `gatsby-node.js` 内で利用可能です。ルートディレクトリ、つまり `gatsby-config.js` と同じ階層に配置します。このファイルに書かれたそれぞれのエクスポート設定が Gatsby によって実行されます。詳細は [Node API の詳細](/docs/node-apis/)で確認できます。このセクションでは、 `createPages` のみを利用します。
+Gatsby は強力な Node.js API を用意しており、これによって動的ページの作成などの機能が可能になります。 この API は `gatsby-node.js` 内で利用可能です。ルートディレクトリー、つまり `gatsby-config.js` と同じ階層に配置します。このファイルに書かれたそれぞれのエクスポート設定が Gatsby によって実行されます。詳細は [Node API の詳細](/docs/node-apis/)で確認できます。このセクションでは、 `createPages` のみを利用します。
 
 `graphql` を利用して Markdown ファイルのデータを下記サンプルのように取得します。 次に、 `createPage` を利用して前のステップで作成した `blogTemplate.js` にデータを渡すことでファイルごとに静的なページを生成します。
 
-**ヒント：** Gatsby は `createPages` API をビルド時に呼び出す際、`actions` と `graphql` パラメータを付与しています。
+**ヒント：** Gatsby は `createPages` API をビルド時に呼びだす際、`actions` と `graphql` パラメーターを付与しています。
 
 ```javascript:title=gatsby-node.js
 const path = require(`path`)
@@ -186,7 +186,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
 以上が、あなたの Gatsby ウェブサイトにおける基本的な Markdown ファイル機能です。frotmatter とテンプレートファイルをカスタマイズすることで、思い通りの効果を得ることができます！
 
-実際に動作するコードを Github のサンプルで確認することもできます。 公式リポジトリの [Gatsby examples section](https://github.com/gatsbyjs/gatsby/tree/master/examples)から `using-markdown-pages` ディレクトリを探してください。
+実際に動作するコードを Github のサンプルで確認することもできます。 公式リポジトリーの [Gatsby examples section](https://github.com/gatsbyjs/gatsby/tree/master/examples)から `using-markdown-pages` ディレクトリーを探してください。
 
 ## 他のチュートリアル
 
