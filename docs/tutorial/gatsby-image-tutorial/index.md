@@ -51,7 +51,7 @@ plugins: [`gatsby-transformer-sharp`, `gatsby-plugin-sharp`]
 
 もし、プロジェクトがこのディレクトリー内のコンテンツを表示させる設定をまだ行なっていない場合は、次の 2 つを実行してください。
 
-1.  `gatsby-source-filesystem` をインストールしてください。ノート: プロジェクトを `gatsby new <name>` を使用して作成した場合は、この最初の手順はすでにデフォルトスターターを経由して実行されています。
+1.  `gatsby-source-filesystem` をインストールしてください。ヒント: プロジェクトを `gatsby new <name>` を使用して作成した場合は、この最初の手順はすでにデフォルトスターターを経由して実行されています。
 
 ```bash
 npm install gatsby-source-filesystem
