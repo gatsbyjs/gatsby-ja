@@ -7,11 +7,11 @@ Gatsby ではあなたのウェブサイトにページを追加するために 
 
 以下が、Gatsby における上記の処理です。
 
-1. Gatsby がファイルシステムからファイルを読み込む
-2. Markdown ファイルを HTML に変換し、 [frontmatter](#frontmatter-for-metadata-in-markdown-files) をデータ化します
-3. Markdown ファイルを追加します
-4. Markdown ファイル用のページコンポーネントを作成します
-5. Gatsby の `createPage` Node.js API を使って静的なページが生成されます
+1. ファイルシステムから Gatsby にファイルを読み込む
+2. `gatsby-transformer-remark` を使って Markdown と [frontmatter](#Frontmatter - Markdown ファイルのメタデータ）を変換してデータとして利用する
+3. Markdown ファイルを追加する
+4. Markdown ファイルのためのページテンプレートを作成する
+5. Gatsby の `createPage` Node.js API を使って静的なページを生成する
 
 ## ファイルシステムから Gatsby にファイルを読み込む
 
@@ -41,17 +41,17 @@ plugins: [
 
 この手順を完了することで、Markdown ファイルをファイルシステムからデータソースとして利用できます。Markdown 本文は HTML に変換され、frontmatter の YAML は JSON ファイルとしてデータ化されます。
 
-## Transform Markdown to HTML and frontmatter to data using `gatsby-transformer-remark`
+## `gatsby-transformer-remark` を使って Markdown と Frontmatter を変換してデータとして利用する
 
-You'll use the plugin [`gatsby-transformer-remark`](/packages/gatsby-transformer-remark/) to recognize files which are Markdown and read their content. The plugin will convert the frontmatter metadata part of your Markdown files as `frontmatter` and the content part as HTML.
+[`gatsby-transformer-remark`](/packages/gatsby-transformer-remark/) プラグインを使うことで、Markdown ファイルのコンテンツを認識し、読み込むことができます。このプラグインは Frontmatter のメタデータを `frontmatter` に変換して、コンテンツ部分を HTML に変換します。
 
-### Install transformer plugin
+### `gatsby-transformer-remark` プラグインのインストール
 
 `npm install --save gatsby-transformer-remark`
 
 ### Configure plugin
 
-Add this to `gatsby-config.js` after the previously added `gatsby-source-filesystem`.
+`gatsby-config.js` に下記の記述を追加します。 `gatsby-source-filesystem` より後ろである必要があります。
 
 ```javascript:title=gatsby-config.js
 plugins: [
@@ -66,14 +66,14 @@ plugins: [
 ]
 ```
 
-## Add a Markdown file
+## Markdown ファイルを追加する
 
-Create a folder in the `/src` directory of your Gatsby application called `markdown-pages`.
-Now create a Markdown file inside it with the name `post-1.md`.
+`/src` ディレクトリ内に、 `markdown-pages` ディレクトリを新しく作成しましょう。
+そしてその中に `post-1.md` ファイルを作成します。
 
-### Frontmatter for metadata in Markdown files
+### Frontmatter - Markdown ファイルのメタデータ
 
-When you create a Markdown file, you can include a set of key value pairs that can be used to provide additional data relevant to specific pages in the GraphQL data layer. This data is called frontmatter and is denoted by the triple dashes at the start and end of the block. This block will be parsed by `gatsby-transformer-remark` as `frontmatter`. The GraphQL API will provide the key value pairs as data in your React components.
+Markdown ファイルを作成すると、コンテンツ以外のデータとしてキー・バリュー値のセットを含めることができます。これはコンテンツ以外のデータとして GraphQL のデータレイヤーに追加されます。このデータは frontmatter と呼ばれ、ハイフン 3 つで区切られたブロックで記述されます。このブロック内に書かれたキーバリュー値は `gatsby-transformer-remark` によって `frontmatter` データに変換されます。GraphQL によってこのキーバリュー値のペアが React コンポーネント内で利用できるようになります。
 
 ```markdown:title=src/markdown-pages/post-1.md
 ---
@@ -83,21 +83,21 @@ title: "My first blog post"
 ---
 ```
 
-What is important in this step is the key pair `path`. The value that is assigned to the key `path` is used in order to navigate to your post.
+ここで重要なのは `path` のキーペアです。 `path` の値は、この記事をウェブサイト上で利用されるパスとして機能します。
 
-## Create a page template for the Markdown files
+## Markdown ファイルのためのページテンプレートを作成する
 
-Create a folder in the `/src` directory of your Gatsby application called `templates`.
-Now create a `blogTemplate.js` inside it with the following content:
+`/src` ディレクトリ内に、 `templates` ディレクトリを新しく作成しましょう。
+`blogTemplate.js` ファイルをこのディレクトリ内に下記の内容で作成します。
 
 ```jsx:title=src/templates/blogTemplate.js
 import React from "react"
 import { graphql } from "gatsby"
 
 export default function Template({
-  data, // this prop will be injected by the GraphQL query below.
+  data, // この prop はGraphQLのクエリ結果が注入されます
 }) {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
+  const { markdownRemark } = data // data.markdownRemark が記事データ
   const { frontmatter, html } = markdownRemark
   return (
     <div className="blog-post-container">
@@ -127,21 +127,21 @@ export const pageQuery = graphql`
 `
 ```
 
-Two things are important in the file above:
+ファイルに置いては 2 つの重要なポイントがあります：
 
-1.  A GraphQL query is made in the second half of the file to get the Markdown data. Gatsby has automagically given you all the Markdown metadata and HTML in this query's result.
+1. GraphQL クエリーは Markdown データのファイル取得後半で生成されます。Gatsby は自動的にクエリ結果に含まれるすべての Markdown メタデータと HTML をあなたに渡します。
 
-    **Note: To learn more about GraphQL, consider this [excellent resource](https://www.howtographql.com/)**
+   **ヒント： GraphQL についてさらに知りたい場合は、 こちらをお読みください [How to GraphQL](https://www.howtographql.com/)**
 
-2.  The result of the query is injected by Gatsby into the `Template` component as `data`. `markdownRemark` is the property that you'll find has all the details of the Markdown file. You can use that to construct a template for your blog post view. Since it's a React component, you could style it with any of the [recommended styling systems](/docs/styling/) in Gatsby.
+2. クエリ結果は、Gatsby の `Template` に `data` として渡されます。 `markdownRemark` はクエリした Markdown ファイルに関するすべてのプロパティが含まれます。このデータを使っってテンプレートを構築し、ブログ記事のスタイリングを変更できます。テンプレートは React コンポーネントなので、スタイリングに関しては Gatsby における [推奨されるスタイリング手段](/docs/styling/) を利用できます。
 
-### Create static pages using Gatsby’s Node.js `createPage` API
+### Gatsby の `createPage` Node.js API を使って静的なページを生成する
 
-Gatsby exposes a powerful Node.js API, which allows for functionality such as creating dynamic pages. This API is available in the `gatsby-node.js` file in the root directory of your project, at the same level as `gatsby-config.js`. Each export found in this file will be run by Gatsby, as detailed in its [Node API specification](/docs/node-apis/). However, you should only care about one particular API in this instance, `createPages`.
+Gatsby は強力な Node.js API を用意しており、これによって動的ページの作成などの機能が可能になります。 この API は `gatsby-node.js` 内で利用可能です。ルートディレクトリ、つまり `gatsby-config.js` と同じ階層に配置します。このファイルに書かれたそれぞれのエクスポート設定が Gatsby によって実行されます。詳細は [Node API の詳細](/docs/node-apis/)で確認できます。このセクションでは、 `createPages` のみを利用します。
 
-Use the `graphql` to query Markdown file data as below. Next, use the `createPage` action creator to create a page for each of the Markdown files using the `blogTemplate.js` you created in the previous step.
+`graphql` を利用して Markdown ファイルのデータを下記サンプルのように取得します。 次に、 `createPage` を利用して前のステップで作成した `blogTemplate.js` にデータを渡すことでファイルごとに静的なページを生成します。
 
-**NOTE:** Gatsby calls the `createPages` API (if present) at build time with injected parameters, `actions` and `graphql`.
+**ヒント：** Gatsby は `createPages` API をビルド時に呼び出す際、`actions` と `graphql` パラメータを付与しています。
 
 ```javascript:title=gatsby-node.js
 const path = require(`path`)
@@ -178,20 +178,20 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     createPage({
       path: node.frontmatter.path,
       component: blogPostTemplate,
-      context: {}, // additional data can be passed via context
+      context: {}, // コンテキストとして任意のデータを付与できます
     })
   })
 }
 ```
 
-This should get you started on some basic Markdown functionality in your Gatsby site. You can further customize the frontmatter and the template file to get desired effects!
+以上が、あなたの Gatsby ウェブサイトにおける基本的な Markdown ファイル機能です。frotmatter とテンプレートファイルをカスタマイズすることで、思い通りの効果を得ることができます！
 
-For more information, have a look in the working example `using-markdown-pages`. You can find it in the [Gatsby examples section](https://github.com/gatsbyjs/gatsby/tree/master/examples).
+実際に動作するコードを Github のサンプルで確認することもできます。 公式リポジトリの [Gatsby examples section](https://github.com/gatsbyjs/gatsby/tree/master/examples)から `using-markdown-pages` ディレクトリを探してください。
 
-## Other tutorials
+## 他のチュートリアル
 
-Check out tutorials listed on the [Awesome Gatsby](/docs/awesome-gatsby-resources/#gatsby-tutorials) page for more information on building Gatsby sites with Markdown.
+Markdown ファイルを利用したウェブサイト作成に関して、追加のチュートリアルが [Awesome Gatsby](/docs/awesome-gatsby-resources/#gatsby-tutorials) で紹介されています。
 
-## Gatsby Markdown starters
+## Gatsby Markdown スターター
 
-There are also a number of [Gatsby starters](/starters?c=Markdown) that come pre-configured to work with Markdown.
+Markdown ファイルを利用するための設定がすでに済んだスターターキットを [Gatsby starters](/starters?c=Markdown) から探して利用できます。
