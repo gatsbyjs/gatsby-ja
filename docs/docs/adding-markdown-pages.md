@@ -131,7 +131,7 @@ export const pageQuery = graphql`
 
 1. GraphQL クエリーは Markdown データのファイル取得後半で生成されます。Gatsby は自動的にクエリ結果に含まれるすべての Markdown メタデータと HTML をあなたに渡します。
 
-   **ヒント： GraphQL についてさらに知りたい場合は、 こちらをお読みください [How to GraphQL](https://www.howtographql.com/)**
+   **ヒント： GraphQL についてさらに知りたい場合は、こちらをお読みください [How to GraphQL](https://www.howtographql.com/)**
 
 2. クエリ結果は、Gatsby の `Template` に `data` として渡されます。`markdownRemark` はクエリした Markdown ファイルに関するすべてのプロパティが含まれます。このデータを使っってテンプレートを構築し、ブログ記事のスタイリングを変更できます。テンプレートは React コンポーネントなので、スタイリングに関しては Gatsby における[推奨されるスタイリング手段](/docs/styling/)を利用できます。
 
