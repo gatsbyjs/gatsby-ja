@@ -87,7 +87,7 @@ title: "My first blog post"
 
 ## Markdown ファイルのためのページテンプレートを作成する
 
-`/src` ディレクトリー内に、 `templates` ディレクトリーを新しく作成しましょう。
+`/src` ディレクトリー内に、`templates` ディレクトリーを新しく作成しましょう。
 `blogTemplate.js` ファイルをこのディレクトリー内に下記の内容で作成します。
 
 ```jsx:title=src/templates/blogTemplate.js
