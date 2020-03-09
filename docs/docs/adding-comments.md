@@ -1,51 +1,51 @@
 ---
-title: Adding Comments
+title: コメントの追加
 ---
 
-If you're using Gatsby to run a blog and you've started adding some content to it, the next thing to think about is how to increase engagement among your visitors. A great way to do that is to allow them to ask questions and express their views on what you've written. This will make your blog seem much more lively to anyone visiting it.
+Gatsby でブログを動かしていて、いくつかのコンテンツを追加した場合、次に考えるのは訪問者のエンゲージメントを高めることです。それを実現する素晴らしい方法は、あなたの記事に対して訪問者が質問したり、意見したりできるようにすることです。これにより、あなたのブログは訪問者にとってより活気のあるものになります。
 
-There are many options out there for adding comment functionality, several of them specifically targeted at static sites. While this list is by no means exhaustive, it does serve as a good starting point to illustrate what's available:
+コメントを追加する機能にはたくさんの選択肢がありますが、その中のいくつかは特に静的サイトを対象にしています。このリストが全てを網羅しているわけではありませんが、何が利用可能なのかを説明するための出発点として役に立ちます。
 
 - [Disqus](https://disqus.com)
 - [Commento](https://commento.io)
 - [Facebook Comments](https://www.npmjs.com/package/react-facebook)
 - [Staticman](https://staticman.net)
-- [JustComments](https://just-comments.com) \([official plugin for Gatsby](https://www.gatsbyjs.org/packages/gatsby-plugin-just-comments/)\)
+- [JustComments](https://just-comments.com) \([Gatsby の公式プラグイン](https://www.gatsbyjs.org/packages/gatsby-plugin-just-comments/)\)
 - [TalkYard](https://www.talkyard.io)
 - [Gitalk](https://gitalk.github.io)
 
-You can also [roll your own comment system](/blog/2019-08-27-roll-your-own-comment-system/), as Tania Rascia wrote on the Gatsby blog.
+Tania Rascia が Gatsby ブログで書いたように[独自のコメントシステムを展開する](/blog/2019-08-27-roll-your-own-comment-system/)こともできます。
 
-## Using Disqus for comments
+## コメントに Disqus を使用する
 
-In this guide, you'll learn how to implement Disqus on your blog as it has a number of nice features.
+このガイドでは、ブログに Disqus を実装する方法を学びます。Disqus には、次のような多くの優れた機能があります。
 
-- It is low maintenance, meaning [moderating your comments and maintaining your forum](https://help.disqus.com/moderation/moderating-101) less hassle.
-- It provides official [React support](https://github.com/disqus/disqus-react).
-- It offers a [generous free tier](https://disqus.com/pricing).
-- It [seems to be by far the most widely used service](https://www.datanyze.com/market-share/comment-systems/disqus-market-share).
-- It’s easier to comment: Disqus has a large existing user base and the onboarding experience for new users is fast. You can register with your Google, Facebook or Twitter account and users can more seamlessly share the comments they write through those channels.
-- The Disqus UI has a distinct but unobtrusive look that many users will recognize and trust.
-- All Disqus components are lazy-loaded, meaning they won't negatively impact the load time of your posts.
+- [コメントの管理とフォーラムの維持](https://help.disqus.com/moderation/moderating-101)に手間がかかりません。
+- 公式の [React サポート](https://github.com/disqus/disqus-react)を提供しています。
+- [寛大な無料枠](https://disqus.com/pricing)を提供しています。
+- 数あるコメントシステムの中で、[もっとも広く使用されているサービス](https://www.datanyze.com/market-share/comment-systems/disqus-market-share)のようです。
+- コメントをするまでのハードルが低いです。 Disqus には大規模なユーザー基盤があり、新規ユーザーが慣れるまでがとても早いです。Google、Facebook、Twitter のアカウントを登録でき、これらのチャンネルを介して書いたコメントをシームレスに連携できます。
+- Disqus のユーザーインターフェースは多くのユーザーが認識できる落ち着いた見た目をしています。
+- すべての Disqus コンポーネントは遅延読み込みされるので、投稿の読み込み時間に悪影響を与えません。
 
-Bear in mind, however, that choosing Disqus also incurs a tradeoff. Your site is no longer entirely static but depends on an external platform to deliver your comments through embedded `iframe`s on the fly. Moreover, you should consider the privacy implications of letting a third party store your visitors' comments and potentially track their browsing behavior. You may consult the [Disqus privacy policy](https://help.disqus.com/terms-and-policies/disqus-privacy-policy), the [privacy FAQs](https://help.disqus.com/terms-and-policies/privacy-faq) (specifically the last question on GDPR compliance) and inform your users [how to edit their data sharing settings](https://help.disqus.com/terms-and-policies/how-to-edit-your-data-sharing-settings).
+ただし、Disqus を選択することでトレードオフが発生することも留意しておいてください。もはや、完全な静的サイトではなくなり、埋め込まれた `iframe` を介して即座にコメントを配信するために、外部のプラットフォームに依存しています。さらに、第三者が訪問者のコメントを保存し、潜在的に閲覧行動を追跡することへのプライバシーの影響を考慮する必要があります。[Disqus のプライバシーポリシー](https://help.disqus.com/terms-and-policies/disqus-privacy-policy)、[プライバシーの FAQ](https://help.disqus.com/terms-and-policies/privacy-faq) (特に GDPR コンプライアンスに関する最後の質問）を参照して、ユーザーに[データの共有設定を編集する方法](https://help.disqus.com/terms-and-policies/how-to-edit-your-data-sharing-settings)を通知してください。
 
-If these concerns outweigh the benefits of Disqus, you may want to look into some of the other options above. We welcome Pull Requests to expand this guide with setup instructions for other services.
+これらの懸念が Disqus の利点を上回る場合、上に記載した他の選択肢を調べてみてください。このガイドを他のサービスのセットアップ手順で拡張するためのプルリクエストを歓迎します。
 
-## Implementing Disqus
+## Disqus の実装
 
-![Disqus logo](./images/disqus-logo.svg)
+![Disqus のロゴ](./images/disqus-logo.svg)
 
-Here are the steps for adding Disqus comments to your own blog:
+自身のブログに Disqus コメントを追加する手順は次の通りです。
 
-1. [Sign-up to Disqus](https://disqus.com/profile/signup). During the process you'll have to choose a shortname for your site. This is how Disqus will identify comments coming from your site. Copy that for later.
-2. Install the Disqus React package
+1. [Disqus にサインアップ](https://disqus.com/profile/signup)します。サインアップ処理の間にサイトの短縮名を選択する必要があります。これは Disqus がサイトからのコメントを識別するのに使われます。後ほどコピーして使用します。
+2. Disqus の React パッケージをインストールします。
 
 ```shell
 npm install disqus-react
 ```
 
-3. Add the shortname from step 1 as something like `GATSBY_DISQUS_NAME` to your `.env` and `.env.example` files so that people forking your repo will know that they need to supply this value to get comments to work. (You need to prefix the environment variable with `GATSBY_` in order to [make it available to client-side code](https://www.gatsbyjs.org/docs/environment-variables/#client-side-javascript).)
+3. ステップ 1 で選択した短縮名（ここでは仮に `GATSBY_DISQUS_NAME`）を `.env` ファイルと `.env.example` ファイルに追加して、リポジトリをフォークしている人がコメントを機能させるためには、この値が必要であることを認識できるようにします。([クライアント側のコードで環境変数を使用可能にするためには](https://www.gatsbyjs.org/docs/environment-variables/#client-side-javascript)、環境変数の先頭に `GATSBY_` を付ける必要があります）
 
 ```text:title=.env.example
 # enables Disqus comments for blog posts
@@ -56,7 +56,7 @@ GATSBY_DISQUS_NAME=insertValue
 GATSBY_DISQUS_NAME=yourSiteShortname
 ```
 
-4. In your blog post template (usually `src/templates/post.js`) import the `DiscussionEmbed` component.
+4. ブログ投稿テンプレート（通常は `src/templates/post.js` )で `DiscussionEmbed` コンポーネントをインポートします。
 
 ```js:title=src/templates/post.js
 import React from "react"
@@ -65,7 +65,7 @@ import { graphql } from "gatsby"
 import { DiscussionEmbed } from "disqus-react"
 ```
 
-Then define your Disqus configuration object
+それから Disqus 構成オブジェクトを定義します。
 
 ```js
 const disqusConfig = {
@@ -74,7 +74,7 @@ const disqusConfig = {
 }
 ```
 
-Where `identifier` must be a string or number that uniquely identifies the post. It could be the post's スラッグ、 title or some ID. Finally, add `DiscussionEmbed` to the JSX of your post template.
+`identifier`は投稿を一意に識別する文字列か数値（例えば、投稿のスラッグやタイトル、または何らかの ID）である必要があります。最後に、`DiscussionEmbed`コンポーネントを投稿テンプレートの JSX に追加します。
 
 ```jsx:title=src/templates/post.js
 return (
@@ -87,6 +87,6 @@ return (
 )
 ```
 
-And you're done. You should now see the Disqus comment form appear beneath your blog post [looking like this](https://janosh.io/blog/disqus-comments#disqus_thread). Happy blogging!
+これで完了です。ブログ投稿の下に Disqus のコメントが[このように](https://janosh.io/blog/disqus-comments#disqus_thread)。ハッピーブログ！
 
-[![Disqus comments](./images/disqus-comments.png)](https://janosh.io/blog/disqus-comments#disqus_thread)
+[![Disqus のコメント](./images/disqus-comments.png)](https://janosh.io/blog/disqus-comments#disqus_thread)
