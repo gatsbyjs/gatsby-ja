@@ -133,7 +133,7 @@ export const pageQuery = graphql`
 
    **ヒント： GraphQL についてさらに知りたい場合は、 こちらをお読みください [How to GraphQL](https://www.howtographql.com/)**
 
-2. クエリ結果は、Gatsby の `Template` に `data` として渡されます。 `markdownRemark` はクエリした Markdown ファイルに関するすべてのプロパティが含まれます。このデータを使っってテンプレートを構築し、ブログ記事のスタイリングを変更できます。テンプレートは React コンポーネントなので、スタイリングに関しては Gatsby における[推奨されるスタイリング手段](/docs/styling/) を利用できます。
+2. クエリ結果は、Gatsby の `Template` に `data` として渡されます。`markdownRemark` はクエリした Markdown ファイルに関するすべてのプロパティが含まれます。このデータを使っってテンプレートを構築し、ブログ記事のスタイリングを変更できます。テンプレートは React コンポーネントなので、スタイリングに関しては Gatsby における[推奨されるスタイリング手段](/docs/styling/)を利用できます。
 
 ### Gatsby の `createPage` Node.js API を使って静的なページを生成する
 
