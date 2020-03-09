@@ -7,7 +7,7 @@ title: Algolia を使用した検索機能の追加
 読み始める前に、以下の 2 点をご確認ください：
 
 1. このガイド以外にも、Algolia の [React を使用した開始方法に関するドキュメント](https://www.algolia.com/doc/guides/building-search-ui/getting-started/react)で幅広い情報を確認すると良いでしょう。
-2. ドキュメントサイトに検索機能を追加する場合は、 [Docsearch](https://community.algolia.com/docsearch) 機能を使用して、以下で説明する手順のほとんどを Algolia に処理させることができます。他の種類のサイトや、インデックスを作成するデータをよりきめ細かく制御する場合は、続きをご覧ください。
+2. ドキュメントサイトに検索機能を追加する場合は、[Docsearch](https://community.algolia.com/docsearch) 機能を使用して、以下で説明する手順のほとんどを Algolia に処理させることができます。他の種類のサイトや、インデックスを作成するデータをよりきめ細かく制御する場合は、続きをご覧ください。
 
 ## なぜ Algolia を使うのですか？
 
