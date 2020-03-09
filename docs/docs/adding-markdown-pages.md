@@ -68,7 +68,7 @@ plugins: [
 
 ## Markdown ファイルを追加する
 
-`/src` ディレクトリー内に、 `markdown-pages` ディレクトリーを新しく作成しましょう。
+`/src` ディレクトリー内に、`markdown-pages` ディレクトリーを新しく作成しましょう。
 そしてその中に `post-1.md` ファイルを作成します。
 
 ### Frontmatter - Markdown ファイルのメタデータ
