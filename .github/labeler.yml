@@ -1,0 +1,4 @@
+"status: awaiting review":
+  - .github/**/*
+  - docs/**/*
+  - ./*
