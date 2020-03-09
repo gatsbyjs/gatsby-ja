@@ -25,7 +25,7 @@ Gatsby ではあなたのウェブサイトにページを追加するために 
 
 **ヒント：** `gatsby-config.js` にプラグインを追加する方法は 2 通りあります。プラグイン名の文字列を記述する方法と、オプションを含んだ内容を記述する方法です。後者の場合はオブジェクトとして記述します。
 
-`gatsby-config.js` を開き `gatsby-source-filesystem` プラグインを追加しましょう。この時、 `plugins` 配列の最後の位置にオブジェクトを追加します。`path` キーに、Gatsby が読み込むファイルシステムのパスを指定してください。
+`gatsby-config.js` を開き `gatsby-source-filesystem` プラグインを追加しましょう。この時、`plugins` 配列の最後の位置にオブジェクトを追加します。`path` キーに、Gatsby が読み込むファイルシステムのパスを指定してください。
 
 ```javascript:title=gatsby-config.js
 plugins: [
