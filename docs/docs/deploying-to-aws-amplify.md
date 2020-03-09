@@ -25,7 +25,7 @@ AWS Amplify はクライアントのライブラリー、CLI ツールチェー�
 1. デフォルトのビルド設定を承認します。サービスロールを持つフロントエンドでバックエンドリソースを反映する権限を Amplify Console に与えます。これによりコンソールは、コードをコミットするごとにバックエンドとフロントエンドの両方の変更を察知し、更新を行います。もし、サービスロールがなければ誘導に従い 1 つ作成し、作成したらコンソールに戻り、ドロップダウンから作成したサービスロールを選択します。
    ![Gatsby Amplify2](./images/amplify-build-settings.gif)
 
-1. 変更内容を吟味し、**Save and deploy** を選択します。Amplify Console はリポジトリーからコードを pull して、バックエンドとフロントエンドの変更をビルドし、ビルド成果物を `https://master.unique-id.amplifyapp.com` にデプロイします。おまけ：様々なデバイスでレイアウトの問題を見つけるためのアプリのスクリーンショット 🔥 
+1. 変更内容を吟味し、**Save and deploy** を選択します。Amplify Console はリポジトリーからコードを pull して、バックエンドとフロントエンドの変更をビルドし、ビルド成果物を `https://master.unique-id.amplifyapp.com` にデプロイします。おまけ：様々なデバイスでレイアウトの問題を見つけるためのアプリのスクリーンショット 🔥
    ![Gatsby Amplify2](./images/amplify-gatsby-deploy.gif)
 
 ## 参考資料：
