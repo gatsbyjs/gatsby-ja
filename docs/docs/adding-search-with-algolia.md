@@ -2,34 +2,34 @@
 title: Algolia を使用した検索機能の追加
 ---
 
-あなたのサイトにコンテンツを追加したら、訪問者が探しているものを簡単に見つけられるようにする必要があります。このガイドでは、Gatsby サイトで [Algolia](https://www.algolia.com) を使用したカスタム検索エクスペリエンスをセットアップするプロセスを説明します。React Hooks に依存するファンクショナルコンポーネントを作成するため、このガイドに従うには [React 16.8](https://reactjs.org/blog/2019/02/06/react-v16.8.0) 以降のバージョンを使用する必要があります。
+あなたのサイトにコンテンツを追加したら、訪問者が探しているものを簡単に見つけられるようにするのが望ましいでしょう。このガイドでは、Gatsby サイトで [Algolia](https://www.algolia.com) を使用したカスタム検索エクスペリエンスをセットアップするプロセスを説明します。React Hooks に依存するファンクショナルコンポーネントを作成するため、このガイドに従うには [React 16.8](https://reactjs.org/blog/2019/02/06/react-v16.8.0) 以降のバージョンを使用する必要があります。
 
 読み始める前に、以下の 2 点をご確認ください：
 
-1. このガイド以外にも、Algolia の [React を使用した開始方法に関するドキュメント](https://www.algolia.com/doc/guides/building-search-ui/getting-started/react)で幅広い情報を確認してください
+1. このガイド以外にも、Algolia の [React を使用した開始方法に関するドキュメント](https://www.algolia.com/doc/guides/building-search-ui/getting-started/react)で幅広い情報を確認すると良いでしょう。
 2. ドキュメントサイトに検索機能を追加する場合は、 [Docsearch](https://community.algolia.com/docsearch) 機能を使用して、以下で説明する手順のほとんどを Algolia に処理させることができます。他の種類のサイトや、インデックスを作成するデータをよりきめ細かく制御する場合は、続きをご覧ください。
 
 ## なぜ Algolia を使うのですか？
 
 Algolia はページインデックス情報をホストするサイト検索ホスティングプラットフォームであり、あなたのサイト内のサイト検索機能の設置場所に検索結果を返します。Algolia に、所有しているページ、ページの場所、ページへの移動方法を伝えると、Algolia は、ページが使用する検索ワードに基づいて、検索結果をユーザーに返します。
 
-あなたの Gatsby サイトに Algolia による検索機能を実装するには、プラグインのインストール、クエリの対象となる情報の指定、Algolia のクレデンシャルの提供、そして、その他のいくつかの構成手順を実行する必要があります。これは `gatsby build` 時にクエリが実行された後、Algolia はサイトのインデックス全体を利用可能にし、とても迅速にユーザーに対して結果を提供できることを意味します。Algolia を使用する利点について詳しく知るには、[最近サイト検索を Algolia に切り替えた Netlify のブログ記事をご覧ください](https://www.netlify.com/blog/2017/10/10/replacing-our-search-with-algolia/)。
+あなたの Gatsby サイトに Algolia による検索機能を実装するには、プラグインのインストール、クエリの対象となる情報の指定、Algolia の認証情報の提供、そして、その他のいくつかの構成手順を実行する必要があります。これは `gatsby build` 時にクエリが実行された後、Algolia はサイトのインデックス全体を利用可能にし、とても迅速にユーザーに対して結果を提供できることを意味します。Algolia を使用する利点について詳しく知るには、[最近サイト検索を Algolia に切り替えた Netlify のブログ記事をご覧ください](https://www.netlify.com/blog/2017/10/10/replacing-our-search-with-algolia/)。
 
 ## Algolia プラグインの構成
 
-まず、 [`gatsby-plugin-algolia`](https://github.com/algolia/gatsby-plugin-algolia) と [`react-instantsearch-dom`](https://github.com/algolia/react-instantsearch) をあなたのプロジェクトに追加する必要があります。`react-instantsearch` は多くの作業を節約するためにインポートできる既製の React コンポーネントを含む Algolia のライブラリーです。また、デフォルトで Gatsby に同梱される `dotenv` を使用します。これは、Algolia のアプリ ID と検索 API キーおよび管理 API のキーの両方をバージョン管理システムへコミットすることなく指定するために必要となります。
+まず、[`gatsby-plugin-algolia`](https://github.com/algolia/gatsby-plugin-algolia) と [`react-instantsearch-dom`](https://github.com/algolia/react-instantsearch) をあなたのプロジェクトに追加する必要があります。`react-instantsearch` は多くの作業を節約するためにインポートできる既製の React コンポーネントを含む Algolia のライブラリーです。また、デフォルトで Gatsby に同梱される `dotenv` を使用します。これは、Algolia のアプリ ID と検索 API キーおよび管理 API のキーの両方をバージョン管理システムへコミットすることなく指定するために必要となります。
 
 ```shell
 npm install --save gatsby-plugin-algolia react-instantsearch-dom algoliasearch dotenv
 ```
 
-このガイドでは検索 UI をデザインするため、 `styled-components` を使用しますが、あなたの好みの CSS ソリューションも使用できます。同様に `styled-components` の使用を開始したい場合は、インストールする必要があります。
+このガイドでは検索 UI をデザインするため、`styled-components` を使用しますが、あなたの好みの CSS ソリューションも使用できます。同様に `styled-components` の使用を開始したい場合は、以下のパッケージをインストールする必要があります。
 
 ```shell
 npm install --save styled-components gatsby-plugin-styled-components
 ```
 
-次に、 `gatsby-plugin-algolia` と `gatsby-plugin-styled-components` をあなたの `gatsby-config.js` に追加します。
+次に、`gatsby-plugin-algolia` と `gatsby-plugin-styled-components` をあなたの `gatsby-config.js` に追加します。
 
 ```js:title=gatsby-config.js
 const queries = require("./src/utils/algolia")
@@ -73,7 +73,7 @@ ALGOLIA_ADMIN_KEY=lksa09sadkj1230asd09dfvj12309ajl
 
 上記のコードスニペットのプレースホルダーキーはランダムな文字列ですが、Algolia のプロフィールページからコピーするキーは、プレースホルダーキーと同じ長さでなければなりません。API キーを照会する方法を採用する利点の 1 つは、それらがすべてサーバー上の 1 つのファイルに格納され、クライアント側に公開されないため、セキュリティーが向上することです。
 
-.env ファイルには実際の秘密鍵が含まれているため、実際の `.env` ファイルをコミットすることはセキュリティー上のリスクと見なされます。誰かがリポジトリをフォークした場合に、秘密鍵をコミットすることなく、どの環境変数を提供する必要があるかを知らせるため、 `.env.example` を git または他のバージョン管理システムにコミットすることをおすすめします。
+.env ファイルには実際の秘密鍵が含まれているため、実際の `.env` ファイルをコミットすることはセキュリティー上のリスクと見なされます。誰かがリポジトリをフォークした場合に、秘密鍵をコミットすることなく、どの環境変数を提供する必要があるかを知らせるため、`.env.example` を git または他のバージョン管理システムにコミットすることをおすすめします。
 
 ```text:title=.env.example
 # このファイルの名前を .env に変更し、以下に列挙されている値を指定します。
@@ -307,7 +307,7 @@ export default function Search({ indices, collapse, hitsAsGrid }) {
   })
 ```
 
-`Search` は、引数として渡される `indices` の動的配列をレンダリングする JSX を返します。配列の各要素は、あなたの Algolia アカウントの中でクエリ対象となるインデックスの名前、ユーザーに表示する結果の上に表示するタイトル、および一致箇所ごとに返されるデータをレンダリングするコンポーネント `hitComp` を指定するキー、それぞれ `name`、`title`、 `hitComp` を持つオブジェクトである必要があります。
+`Search` は、引数として渡される `indices` の動的配列をレンダリングする JSX を返します。配列の各要素は、あなたの Algolia アカウントの中でクエリ対象となるインデックスの名前、ユーザーに表示する結果の上に表示するタイトル、および一致箇所ごとに返されるデータをレンダリングするコンポーネント `hitComp` を指定するキー、それぞれ `name`、`title`、`hitComp` を持つオブジェクトである必要があります。
 
 ```jsx:title=src/components/search/index.js
   return (
