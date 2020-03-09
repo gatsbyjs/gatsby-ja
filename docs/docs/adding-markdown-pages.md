@@ -186,7 +186,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
 以上が、あなたの Gatsby ウェブサイトにおける基本的な Markdown ファイル機能です。frotmatter とテンプレートファイルをカスタマイズすることで、思い通りの効果を得ることができます！
 
-実際に動作するコードを Github のサンプルで確認することもできます。 公式リポジトリーの [Gatsby examples section](https://github.com/gatsbyjs/gatsby/tree/master/examples)から `using-markdown-pages` ディレクトリーを探してください。
+実際に動作するコードを Github のサンプルで確認することもできます。公式リポジトリーの [Gatsby examples section](https://github.com/gatsbyjs/gatsby/tree/master/examples) から `using-markdown-pages` ディレクトリーを探してください。
 
 ## 他のチュートリアル
 
