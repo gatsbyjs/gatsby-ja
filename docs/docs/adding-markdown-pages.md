@@ -1,5 +1,5 @@
 ---
-title: Markdownのページを追加する
+title: Markdown のページを追加する
 ---
 
 Gatsby ではあなたのウェブサイトにページを追加するために Markdown ファイルを利用できます。
