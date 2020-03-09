@@ -51,7 +51,7 @@ plugins: [
 
 ### Configure plugin
 
-`gatsby-config.js` に下記の記述を追加します。 `gatsby-source-filesystem` より後ろである必要があります。
+`gatsby-config.js` に下記の記述を追加します。`gatsby-source-filesystem` より後ろである必要があります。
 
 ```javascript:title=gatsby-config.js
 plugins: [
