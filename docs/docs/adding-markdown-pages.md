@@ -139,7 +139,7 @@ export const pageQuery = graphql`
 
 Gatsby は強力な Node.js API を用意しており、これによって動的ページの作成などの機能が可能になります。 この API は `gatsby-node.js` 内で利用可能です。ルートディレクトリー、つまり `gatsby-config.js` と同じ階層に配置します。このファイルに書かれたそれぞれのエクスポート設定が Gatsby によって実行されます。詳細は [Node API の詳細](/docs/node-apis/)で確認できます。このセクションでは、 `createPages` のみを利用します。
 
-`graphql` を利用して Markdown ファイルのデータを下記サンプルのように取得します。 次に、 `createPage` を利用して前のステップで作成した `blogTemplate.js` にデータを渡すことでファイルごとに静的なページを生成します。
+`graphql` を利用して Markdown ファイルのデータを下記サンプルのように取得します。 次に、`createPage` を利用して前のステップで作成した `blogTemplate.js` にデータを渡すことでファイルごとに静的なページを生成します。
 
 **ヒント：** Gatsby は `createPages` API をビルド時に呼びだす際、`actions` と `graphql` パラメーターを付与しています。
 
