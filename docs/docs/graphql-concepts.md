@@ -22,7 +22,7 @@ Gatsby は GraphQL を使用して、[ページおよび StaticQuery コンポ�
 
 詳細については、[Gatsby が GraphQL を使用する理由](/docs/why-gatsby-uses-graphql/)を参照してください。
 
-- フロントエンドのデータボイラープレート — データの要求と待機を心配する必要はありません。 GraphQL クエリーで必要なデータを要求するだけで、必要なときに表示されます
+- フロントエンドのデータの雛形 — データの要求と待機を心配する必要はありません。 GraphQL クエリーで必要なデータを要求するだけで、必要なときに表示されます
 - フロントエンドの複雑さをクエリーに投げる — GraphQL クエリー内の _build-time_ で多くのデータ変換を実行できます
 - モダンなアプリケーションにありがちな、複雑でネストされたデータの依存関係に最適なデータクエリー言語です
 - データの肥大化を除去してパフォーマンスを改善 — GraphQL では、API のレスポンス値ではなく、必要なデータのみを選択し取得できます
@@ -80,7 +80,7 @@ export const query = graphql`
 
 クエリーの結果は、 `data`プロパティの React コンポーネントに自動的に挿入されます。GraphQL と Gatsby を使用すると、データを要求すると即座に使用を開始できます。
 
-**注:** ページ以外のコンポーネントで GraphQL クエリーを実行するには、[Gatsby の静的クエリー機能](/docs/static-query/)を使用する必要があります。
+**注：** ページ以外のコボイラープレートンポーネントで GraphQL クエリーを実行するには、[Gatsby の静的クエリー機能](/docs/static-query/)を使用する必要があります。
 
 ### クエリーを理解する
 
@@ -90,19 +90,19 @@ export const query = graphql`
 
 #### クエリーオペレーションタイプ
 
-図では、`Query`という単語を`Operation type`としてマーキングしています。Gatsby が扱う操作タイプは`Query`のみのため、必要に応じてクエリーから省略できます（上記の例のように）。
+図では、`Query`という単語を `Operation type` としてマーキングしています。Gatsby が扱う操作タイプは `Query` のみのため、必要に応じてクエリーから省略できます（上記の例のように）。
 
 #### オペレーションネーム
 
-`SiteInformation`は`Operation Name`としてマークされます。これは、クエリーに自分で割り当てる一意の名前です。
+`SiteInformation` は `Operation Name` としてマークされます。これは、クエリーに自分で割り当てる一意の名前です。
 
 関数や変数に名前を付ける方法と似ています。関数のように、クエリーを匿名にする場合は省略できます。
 
 #### クエリーフィールド
 
-4 つの単語`site`、`id`、`siteMetadata`、および`title`は"Fields"としてマークされます。
+4 つの単語 `site` 、 `id` 、 `siteMetadata` 、および `title` は"Fields"としてマークされます。
 
-GraphQL クエリーのすべてのフィールドは同じように動作するため、名前は機能上の重要性を意味しませんが、トップレベルのフィールド（図の`site`など）は**ルートレベルのフィールド**と呼ばれることもあります。
+GraphQL クエリーのすべてのフィールドは同じように動作するため、名前は機能上の重要性を意味しませんが、トップレベルのフィールド（図の `site` など）は**ルートレベルのフィールド**と呼ばれることもあります。
 
 ## GraphQL の学び方
 
@@ -121,7 +121,7 @@ GraphQL の優れた点の 1 つは、その柔軟性です。 GraphQL は、[�
 
 ほとんどの人は、サーバーで GraphQL を実行して、クライアントからのデータの要求にライブで応答します。GraphQL サーバーのスキーマ（スキーマはデータの形状を記述する正式な方法です）を定義し、GraphQL リゾルバーがデータベースや他の API からデータを取得します。
 
-Gatsby は、ライブサイトの*build-time*および*not*で GraphQL を使用します。これはユニークであり、実際に動いている Web サイトで GraphQL を使用するためにサービス（データベースや Node.js など）を余計に実行する必要がないことを意味します。
+Gatsby は、ライブサイトの*build-time*および*not*で GraphQL を使用します。これはユニークであり、実際に動いているウェブサイトで GraphQL を使用するためにサービス（データベースや Node.js など）を余計に実行する必要がないことを意味します。
 
 Gatsby はアプリを構築するための優れたフレームワークであるため、ブラウザーからライブの GraphQL サーバーに対して実行される Gatsby のネイティブビルド時に、GraphQL と GraphQL クエリーを組み合わせることが可能です。
 
@@ -165,13 +165,13 @@ GraphQL は、Gatsby の別のユニークな機能を可能にします — ク
 }
 ```
 
-フォーマットオプションの完全なリストは、 [GraphQL reference page](/docs/graphql-reference/#dates)を表示してご覧ください。
+フォーマットオプションの一覧は、 [GraphQL reference page](/docs/graphql-reference/#dates)を表示してご覧ください。
 
-### マークダウン
+### Markdown
 
 Gatsby には、あるフォームから別のフォームにデータを変換できる _transformer_ プラグインがあります。
 
-一般的な例はマークダウンです。 [`gatsby-transformer-remark`](/packages/gatsby-transformer-remark/)をインストールする場合、マークダウンの代わりに、変換された HTML バージョンを使用するかどうかをクエリで指定できます。
+一般的な例は Markdown です。 [`gatsby-transformer-remark`](/packages/gatsby-transformer-remark/)をインストールする場合、Markdown の代わりに、変換された HTML バージョンを使用するかどうかをクエリで指定できます。
 
 ```graphql
 markdownRemark {
@@ -183,7 +183,7 @@ markdownRemark {
 
 Gatsby は、画像の処理を豊富にサポートしています。
 
-レスポンシブ画像は現代のウェブの大部分を占めており、通常、写真ごとに 5 つ以上のサイズのサムネイルを作成する必要があります。 Gatsby の[`gatsby-transformer-sharp`](/packages/gatsby-transformer-sharp/)を使用すると、レスポンシブバージョンの画像を*query*できます。 クエリは、必要なレスポンシブサムネイルをすべて自動的に作成し、 `src`および`srcSet`フィールドを返して、画像要素に追加します。
+レスポンシブ画像は現代のウェブの大部分を占めており、通常、写真ごとに 5 つ以上のサイズのサムネイルを作成する必要があります。 Gatsby の[`gatsby-transformer-sharp`](/packages/gatsby-transformer-sharp/)を使用すると、レスポンシブバージョンの画像を*query*できます。 クエリは、必要なレスポンシブサムネイルをすべて自動的に作成し、 `src` および `srcSet` フィールドを返して、画像要素に追加します。
 
 特別な Gatsby 画像コンポーネント[gatsby-image](/packages/gatsby-image/)と組み合わせることで、画像を含むサイトを構築するための非常に強力なセットを使用できます。
 
