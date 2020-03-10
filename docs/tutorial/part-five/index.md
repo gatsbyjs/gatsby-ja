@@ -1,53 +1,52 @@
 ---
-title: Source Plugins
+title: ソースプラグイン
 typora-copy-images-to: ./
 disableTableOfContents: true
 ---
 
-> This tutorial is part of a series about Gatsby’s data layer. Make sure you’ve gone through [part 4](/tutorial/part-four/) before continuing here.
+> このチュートリアルは Gatsby のデータ層に関する解説の一部です。先に [part 4](/tutorial/part-four/) の内容を完了してください。
 
-## What's in this tutorial?
+## 概要
 
-In this tutorial, you'll be learning about how to pull data into your Gatsby site using GraphQL and source plugins. Before you learn about these plugins, however, you'll want to know how to use something called GraphiQL, a tool that helps you structure your queries correctly.
+このチュートリアルでは、GraphQL とソースプラグインを使ってサイトにデータを取り込む方法を学びます。ただし、これらのプラグインについて学ぶ前に、クエリを正しく作成するのに役立つ GraphiQL というツールの使い方を知っておく必要があります。
 
-## Introducing GraphiQL
+## GraphiQL について
 
-GraphiQL is the GraphQL integrated development environment (IDE). It's a powerful (and all-around awesome) tool you'll use often while building Gatsby websites.
+GraphiQL は GraphQL の統合開発環境（IDE）です。強力で万能なツールであり、Gatsby でサイトを構築する際には頻繁に使用します。
 
-You can access it when your site's development server is running—normally at
-<http://localhost:8000/___graphql>.
+開発サーバーが起動しているときは `http://localhost:8000/___graphql` にアクセスできます。
 
 <video controls="controls" autoplay="true" loop="true">
   <source type="video/mp4" src="/graphiql-explore.mp4"></source>
-  <p>Your browser does not support the video element.</p>
+  <p>お使いのブラウザはこのビデオには対応していません。</p>
 </video>
 
-Poke around the built-in `Site` "type" and see what fields are available on it -- including the `siteMetadata` object you queried earlier. Try opening GraphiQL and play with your data! Press <kbd>Ctrl + Space</kbd> (or use <kbd>Shift + Space</kbd> as an alternate keyboard shortcut) to bring up the autocomplete window and <kbd>Ctrl + Enter</kbd> to run the GraphQL query. You'll be using GraphiQL a lot more through the remainder of the tutorial.
+`Site` を展開して使用できるフィールドを確認します。ここには以前のチュートリアルで使用した `siteMetadata` オブジェクトも含まれています。GraphiQL でデータを操作してみてください！<kbd>Ctrl + Space</kbd>（または <kbd>Shift + Space</kbd>）でオートコンプリートのウィンドウを表示することができ、<kbd>Ctrl + Enter</kbd> で GraphQL クエリを実行することができます。残りのチュートリアルでは、GraphiQL をさらに使用していきます。
 
-## Using the GraphiQL Explorer
+## GraphiQL Explorer の使い方
 
-The GraphiQL Explorer enables you to interactively construct full queries by clicking through available fields and inputs without the repetitive process of typing these queries out by hand.
+GraphiQL Explorer を使うと、クエリを手作業で入力することなく、フィールドやインプットをクリックしていくことによってインタラクティブにクエリを作成することができます。
 
 <EggheadEmbed
   lessonLink="https://egghead.io/lessons/gatsby-build-a-graphql-query-using-gatsby-s-graphiql-explorer"
   lessonTitle="Build a GraphQL Query using Gatsby’s GraphiQL Explorer"
 />
 
-## Source plugins
+## ソースプラグイン
 
-Data in Gatsby sites can come from anywhere: APIs, databases, CMSs, local files, etc.
+サイトのデータは、API、データベース、CMS、ローカルファイルなど、どこからでも取得できます。
 
-Source plugins fetch data from their source. E.g. the filesystem source plugin knows how to fetch data from the file system. The WordPress plugin knows how to fetch data from the WordPress API.
+ソースプラグインはソースの種類ごとに分かれています。例えば、ファイルシステムのソースプラグインはファイルシステムからデータを取得ために使用され、WordPress プラグインは WordPress API からデータを取得するために使用されます。
 
-Add [`gatsby-source-filesystem`](/packages/gatsby-source-filesystem/) and explore how it works.
+[`gatsby-source-filesystem`](/packages/gatsby-source-filesystem/) を追加して、どのように動作するか見てみましょう。
 
-First, install the plugin at the root of the project:
+まず、プロジェクトのルートにプラグインをインストールします。
 
 ```shell
 npm install --save gatsby-source-filesystem
 ```
 
-Then add it to your `gatsby-config.js`:
+次に、`gatsby-config.js` に追加します。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -75,42 +74,35 @@ module.exports = {
 }
 ```
 
-Save that and restart the gatsby development server. Then open up GraphiQL again.
-
-In the explorer pane, you'll see `allFile` and `file` available as selections:
+ファイルを保存し、開発サーバーを再起動します。そして再度 GraphiQL を開くと、Explorer に `allFile` と `file` が表示されているはずです。
 
 ![graphiql-filesystem](graphiql-filesystem.png)
 
-Click the `allFile` dropdown. Position your cursor after `allFile` in the query area, and then type <kbd>Ctrl + Enter</kbd>. This will pre-fill a query for the `id` of each file. Press "Play" to run the query:
+`allFile` のドロップダウンをクリックしてください。カーソルをクエリエリアの `allFile` の後に合わせて、 <kbd>Ctrl + Enter</kbd> を入力すると、各ファイルの `id` がクエリに入力されます。実行ボタンを押してクエリを実行します。
 
 ![filesystem-query](filesystem-query.png)
 
-In the Explorer pane, the `id` field has automatically been selected. Make selections for more fields by checking the field's corresponding checkbox. Press "Play" to run the query again, with the new fields:
+Explorer では `id` フィールドが自動的に選択されています。他のフィールドのチェックボックスもオンにして、いくつかのフィールドを選択し、もう一度実行ボタンを押してください。
 
 ![filesystem-explorer-options](filesystem-explorer-options.png)
 
-Alternatively, you can add fields by using the autocomplete shortcut (<kbd>Ctrl + Space</kbd>). This will show queryable fields on the `File` nodes.
+また、オートコンプリートのショートカット（<kbd>Ctrl + Space</kbd>）を使うことで、`File` の nodes 上に追加可能なフィールドを選択できます。
 
 ![filesystem-autocomplete](filesystem-autocomplete.png)
 
-Try adding a number of fields to your query, press <kbd>Ctrl + Enter</kbd>
-each time to re-run the query. You'll see the updated query results:
+クエリにいくつかのフィールドを追加してみて、その都度 <kbd>Ctrl + Enter</kbd> を押してクエリを再実行してください。クエリ結果が更新されます。
 
 ![allfile-query](allfile-query.png)
 
-The result is an array of `File` "nodes" (node is a fancy name for an object in a
-"graph"). Each `File` node object has the fields you queried for.
+クエリ結果は `File` の「nodes」配列です。node は「graph」内のオブジェクトの仮名です。各 `File` の node オブジェクトはクエリで指定したフィールドをもっています。
 
-## Build a page with a GraphQL query
+## GraphQL クエリを使ってページを作成
 
-Building new pages with Gatsby often starts in GraphiQL. You first sketch out
-the data query by playing in GraphiQL then copy this to a React page component
-to start building the UI.
+Gatsby を使用したページの作成は多くの場合 GraphiQL から始まります。まずは GraphiQL 内で必要なデータのクエリを作成し、これを React のページコンポーネントにコピーして UI の構築を開始します。
 
-Let's try this.
+やってみましょう。
 
-Create a new file at `src/pages/my-files.js` with the `allFile` GraphQL query you just
-created:
+新規ファイルとして `src/pages/my-files.js` を作成し、そこに先ほど作った `allFile` の GraphQL クエリを貼り付けます。
 
 ```jsx:title=src/pages/my-files.js
 import React from "react"
@@ -142,18 +134,15 @@ export const query = graphql`
 `
 ```
 
-The `console.log(data)` line is highlighted above. It's often helpful when
-creating a new component to console out the data you're getting from the GraphQL query
-so you can explore the data in your browser console while building the UI.
+上記のコードでは `console.log(data)` をハイライト表示しています。このように、新しいコンポーネントを作るときに GraphQL クエリで取得したデータをコンソール出力するようにすると、ブラウザのコンソール上でデータを確認しながら UI 構築を進められるため、とても便利です。
 
-If you visit the new page at `/my-files/` and open up your browser console
-you will see something like:
+`/my-files/` の新しいページにアクセスしてブラウザのコンソールを開くと、次のようなものが表示されるはずです。
 
 ![data-in-console](data-in-console.png)
 
-The shape of the data matches the shape of the GraphQL query.
+データの構造は GraphQL クエリの構造と一致します。
 
-Add some code to your component to print out the File data.
+コンポーネントにコードを追加して、ファイルの情報を表示させます。
 
 ```jsx:title=src/pages/my-files.js
 import React from "react"
@@ -209,10 +198,10 @@ export const query = graphql`
 `
 ```
 
-And now visit [http://localhost:8000/my-files](http://localhost:8000/my-files)… 😲
+そして `http://localhost:8000/my-files` にアクセスすると… 😲。
 
 ![my-files-page](my-files-page.png)
 
-## What's coming next?
+## 次は？
 
-Now you've learned how source plugins bring data _into_ Gatsby’s data system. In the next tutorial, you'll learn how transformer plugins _transform_ the raw content brought by source plugins. The combination of source plugins and transformer plugins can handle all data sourcing and data transformation you might need when building a Gatsby site. Learn about transformer plugins in [part six of the tutorial](/tutorial/part-six/).
+これであなたはソースプラグインを使って Gatsby のシステムにデータを**取り込む**方法を学びました。次のチュートリアルでは、ソースプラグインが取得したデータをトランスフォーマープラグインで**変換**する方法を学びます。ソースプラグインとトランスフォーマープラグインの組み合わせによって、Gatsby でサイトを構築するために必要なすべてのデータ取得と変換を処理できます。[チュートリアル part 6](/tutorial/part-six/) に進んでトランスフォーマープラグインについて学びましょう。

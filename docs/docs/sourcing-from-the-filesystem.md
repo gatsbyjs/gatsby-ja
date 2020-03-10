@@ -1,26 +1,26 @@
 ---
-title: Sourcing from the Filesystem
+title: ファイルシステムからデータを取得する
 ---
 
-This guide will walk you through sourcing data from the filesystem.
+このガイドでは、ファイルシステムからデータを取得する方法について説明します。
 
-## Setup
+## セットアップ
 
-This guide assumes that you have a Gatsby project set up. If you need to set up a project, please reference the [Quick Start Guide](/docs/quick-start/).
+このガイドは Gatsby プロジェクトがセットアップされていることを前提としています。プロジェクトをセットアップする必要がある場合、[クイックスタートガイド](/docs/quick-start/)を参照してください。
 
-It will also be useful if you are familiar with [GraphiQL](/docs/introducing-graphiql/), a tool that helps you structure your queries correctly.
+クエリーを正しく構成するのに役立つツールである [GraphiQL](/docs/introducing-graphiql/) を精通している場合も役立ちます。
 
-## Using `gatsby-source-filesystem`
+## `gatsby-source-filesystem` を使う
 
-`gatsby-source-filesystem` is the Gatsby plugin for creating File nodes from the file system.
+`gatsby-source-filesystem` はファイルシステムからファイルノードを作成する Gatsby プラグインです。
 
-Install the plugin at the root of your Gatsby project:
+Gatsby プロジェクトのルートにプラグインをインストールします：
 
 ```shell
 npm install --save gatsby-source-filesystem
 ```
 
-Then add it to your project's `gatsby-config.js` file:
+それから、下記をあなたのプロジェクトの `gatsby-config.js` ファイルに追加します：
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -41,36 +41,61 @@ module.exports = {
 }
 ```
 
-Save the `gatsby-config.js` file, and restart the Gatsby development server.
+`gatsby-config.js` ファイルを保存して、Gatsby 開発サーバーを再起動してください。
 
-Open up GraphiQL.
+GraphiQL を開きます。
 
-If you bring up the autocomplete window, you'll see:
+オートコンプリートウィンドウを表示すると、これが表示されます：
 
 ![graphiql-filesystem](./images/graphiql-filesystem.png)
 
-Hit <kbd>Enter</kbd> on `allFile` then type <kbd>Ctrl + Enter</kbd> to run a
-query.
+`allFile`　で <kbd>Enter</kbd> キーを押し、<kbd>Ctrl + Enter</kbd> を押してクエリーを実行します。
 
 ![filesystem-query](./images/filesystem-query.png)
 
-Delete the `id` from the query and bring up the autocomplete again (<kbd>Ctrl +
-Space</kbd>).
+クエリーから `id` を削除し、オートコンプリートを再度表示します。（<kbd>Ctrl + Space</kbd>）
 
 ![filesystem-autocomplete](./images/filesystem-autocomplete.png)
 
-Try adding a number of fields to your query, pressing <kbd>Ctrl + Enter</kbd>
-each time to re-run the query. You'll see something like this:
+クエリーにいくつかのフィールドを追加して、毎回 <kbd>Ctrl + Enter</kbd> を押してクエリーを再実行してみてください。次のようなものが表示されます：
 
 ![allfile-query](./images/allfile-query.png)
 
-The result is an array of File "nodes" (node is a fancy name for an object in a
-"graph"). Each File object has the fields you queried for.
+結果はファイル「ノード」の配列です。（ノードは「グラフ」内のオブジェクトの仮名です）各ファイルオブジェクトには、クエリーしたフィールドがあります。
 
-## Transforming File nodes
+複数のデータセットがある場合、`gatsby-config.js` の `name` プロパティにて特定のデータをクエリできます。以下の例では、`name` は `src` に設定されています。
 
-Once files have been sourced, various "transformer" plugins in the Gatsby ecosystem can then be used to transform File nodes into various other types of data. For example, a JSON file can be sourced using `gatsby-source-filesystem`, and then the resulting File nodes can be transformed into JSON nodes using `gatsby-transformer-json`.
+```javascript:title=gatsby-config.js
+{
+  resolve: `gatsby-source-filesystem`,
+  options: {
+    path: `${__dirname}/src`,
+    name: `src`,
+  },
+},
+```
 
-## Further reference and examples
+次に、`sourceInstanceName` を使って、先ほど設定した `name` の値でフィルターされたクエリを作成できます。
 
-For further reference, you may be interested in checking out the `gatsby-source-filesystem` [package README](/packages/gatsby-source-filesystem/), and various official and community [starters that use the plugin](/starters/?d=gatsby-source-filesystem).
+```graphql
+{
+  allFile(filter: { sourceInstanceName: { eq: "src" } }) {
+    edges {
+      node {
+        relativePath
+        prettySize
+        extension
+        birthTime
+      }
+    }
+  }
+}
+```
+
+## ファイルノードの変換
+
+ファイルが取得されると、Gatsby エコシステムのさまざまな「トランスフォーマー」プラグインを使用して、ファイルノードを様々な他のタイプのデータに変換できます。例えば、JSON ファイルは `gatsby-source-filesystem` を使用してデータを取得でき、結果であるファイルノードを `gatsby-transformer-json` を使用して JSON ノードに変換できます。
+
+## 詳細なリファレンスと例
+
+さらに使い方を学びたければ、 `gatsby-source-filesystem` [パッケージの README](/packages/gatsby-source-filesystem/) や様々な公式およびコミュニティーが作成した [このプラグインを使用しているスターター](/starters/?d=gatsby-source-filesystem) を確認してください。

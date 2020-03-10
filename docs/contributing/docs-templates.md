@@ -12,6 +12,8 @@ Here are some things to keep in mind when deciding where to contribute to Gatsby
 - [Recipes](#recipes) add concise, discoverable, and easy-to-follow instructions for common Gatsby tasks. They are smaller units than tutorials.
 - [Tutorials](#tutorials) should provide step-by-step guidance for Gatsby workflows, listing all pre-requisites and not assuming knowledge or skipping steps.
 
+When writing (or reviewing) learning materials that show Gatsby users how to complete tasks, you are expected to **test out any code examples or steps to ensure they work**. This can also help with writing in your own words, rather than copying from other sources. If you have a demo project or code example that strengthens docs and you don't know where to put it, mention it to the Gatsby Learning team in a PR.
+
 ### Why use templates?
 
 Here are templates (models) to follow when contributing to Gatsby docs to ensure that the docs accomplish their purpose. If you have a good reason to deviate from the following template structures, mention those reasons in the PR so others can give proper feedback.
@@ -198,6 +200,7 @@ A recipe should list requirements and include a few short instructions to comple
 
 The components of a recipe are:
 
+- Overview link on [`recipes.md`](https://github.com/gatsbyjs/gatsby/blob/master/docs/docs/recipes.md)
 - The name of the recipe, which should describe a single task
 - A 1-2 sentence description motivating what the recipe is for
 - Prerequisites and requirements
@@ -209,13 +212,11 @@ Recipes should be short. This is accomplished by limiting steps to what is uniqu
 
 If you're finding a recipe is becoming too long to fit on the Docs Recipes page due to including many prerequisites or steps, consider writing a tutorial instead.
 
-> Note: If you add a new recipe to the existing sections, be sure to add it to the list on the [`recipes.md` landing page](https://github.com/gatsbyjs/gatsby/blob/master/docs/docs/recipes.md)!
-
 ### Recipe categories
 
 Grouping recipes by topic will allow users to navigate and learn by subject matter. As recipes following the new format are introduced, you might find a section needs an h2 heading added for the group. The older-style recipes should be gradually replaced with actionable recipes following the template below.
 
-Recipes should fall into these categories to start (suggest your idea in a GitHub issue!):
+Recipes should fall into these categories to start (suggest your idea in a GitHub Issue!):
 
 - Pages/Layouts
 - Styling
@@ -234,6 +235,10 @@ Here's a template for a new recipe category:
 ```
 
 ### Recipe parts
+
+#### Overview link
+
+To make sure your recipe is linked from the overview page, you must add it to the appropriate category in [`recipes.md`](https://github.com/gatsbyjs/gatsby/blob/master/docs/docs/recipes.md). Otherwise, it will be difficult for Gatsby users to find it, which isn't good for anyone!
 
 #### Title and description
 
@@ -258,7 +263,7 @@ Prerequisites example:
 
 The steps should list each part of the task in detail (omitting unrelated boilerplate or installation steps), and not skip or gloss over necessary details. Typically these steps are included with an ordered list. It's subjective whether to include a code snippet for each step, and will require your best judgement (ask for help in a PR if you're not sure). For some recipes, listing each individual step in text and including a single code snippet for the recipe makes sense to keep it short.
 
-If a recipe issue recommends a live example such as a CodeSandbox embed, the recipe steps are the best place to include it.
+If a recipe Issue recommends a live example such as a CodeSandbox embed, the recipe steps are the best place to include it.
 
 #### Additional resources
 

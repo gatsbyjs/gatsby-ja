@@ -29,7 +29,7 @@ Gatsby still works with all the `react` packages running in a Create React App p
 
 ### Unified GraphQL data layer
 
-Plugins can also pull in data from any number of sources like APIs, CMSs, or the filesystem. That data is combined into a unified data layer that you can [query with GraphQL](/docs/querying-with-graphql/) throughout your app.
+Plugins can also pull in data from any number of sources like APIs, CMSs, or the filesystem. That data is combined into a unified data layer that you can [query with GraphQL](/docs/graphql-concepts/) throughout your app.
 
 This data layer simplifies the process of pulling data from different sources and providing them in your pages and components. This combination of data from different sources stitched together in a modern workflow is referred to as [the content mesh](/blog/2018-10-04-journey-to-the-content-mesh/).
 
@@ -121,6 +121,7 @@ Some common globals that would need to be protected are:
 
 - `window`
 - `localStorage`
+- `sessionStorage`
 - `navigator`
 - `document`
 
@@ -266,7 +267,7 @@ Create React App will require you to eject or rely on another workaround to edit
 
 #### Context providers
 
-React's context API allows you to share state from a higher component and distribute it to components below it in the component tree without having to deal with issues like [prop drilling](https://kentcdodds.com/blog/prop-drilling).
+React's context API allows you to share state from a higher component and distribute it to components below it in the component tree without having to deal with Issues like [prop drilling](https://kentcdodds.com/blog/prop-drilling).
 
 How do you share state across components like a theme without one top level `App.js` file? Gatsby has a `wrapRootElement` and a `wrapPageElement` API that allow you to wrap the root element or all pages of your Gatsby site with components you want.
 

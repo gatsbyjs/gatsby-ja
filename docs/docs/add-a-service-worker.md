@@ -1,30 +1,30 @@
 ---
-title: Adding a Service Worker
+title: Service Worker を追加する
 ---
 
-## What is a service worker
+## Service Worker とは？
 
-A service worker is a script that your browser runs in the background, separate from a web page, opening the door to features that don't need a web page or user interaction. They increase your site availability in spotty connections, and are essential to making a nice user experience.
+Service Worker はウェブページとは別にバックグラウンドで実行されるスクリプトです。ウェブページやユーザーのインタラクションを必要としない機能を可能にします。不安定な回線でのサイトの使いやすさを向上させ、優れたユーザーエクスペリエンスを実現するには必要不可欠です。
 
-It supports features like push notifications and background sync.
+プッシュ通知やバックグラウンド同期などの機能をサポートします。
 
-## Using service workers in Gatsby with `gatsby-plugin-offline`
+## `gatsby-plugin-offline` を利用して Gatsby で Service Worker を使う
 
-Gatsby provides awesome plugin interface to create and load a service worker into your site [gatsby-plugin-offline](https://www.npmjs.com/package/gatsby-plugin-offline).
+Gatsby は [gatsby-plugin-offline](https://www.npmjs.com/package/gatsby-plugin-offline) という Service Worker の作成、読み込みのための素晴らしいプラグインインターフェースを用意しています。
 
-You can use this plugin together with the [manifest plugin](https://www.npmjs.com/package/gatsby-plugin-manifest). (Don’t forget to list the offline plugin after the manifest plugin so that the manifest file can be included in the service worker).
+このプラグインは [マニフェストプラグイン](https://www.npmjs.com/package/gatsby-plugin-manifest) と共に使うことができます。（Service Worker にマニフェストファイルを含めるために、マニフェストプラグインの後にオフラインプラグインを追加することに注意してください）。
 
-## Installing `gatsby-plugin-offline`
+## `gatsby-plugin-offline` をインストール
 
 `npm install --save gatsby-plugin-offline`
 
-Add this plugin to your `gatsby-config.js`
+プラグインを `gatsby-config.js` に追加します。
 
 ```javascript:title=gatsby-config.js
 plugins: [`gatsby-plugin-offline`]
 ```
 
-## References
+## 参考資料
 
-- [Service Workers: an Introduction](https://developers.google.com/web/fundamentals/primers/service-workers/)
-- [Service Worker API](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
+- [Service Worker の紹介](https://developers.google.com/web/fundamentals/primers/service-workers/?hl=ja)
+- [Service Worker API](https://developer.mozilla.org/ja/docs/Web/API/Service_Worker_API)

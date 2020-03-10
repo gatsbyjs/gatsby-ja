@@ -1,37 +1,36 @@
 ---
-title: Routing
+title: ルーティング
 ---
 
-Part of what makes Gatsby sites so fast is that a lot of the work is done at build time and the running site is using mostly [static content](/docs/adding-app-and-website-functionality/#static-pages). During that process, Gatsby creates paths to access that content, handling [routing](/docs/glossary#routing) for you. Navigating in a Gatsby app requires an understanding of what those paths are and how they're generated.
+Gatsby を使用しているサイトが非常に高速である理由の 1 つに、ビルド時に多くの処理を行うためサイトのほとんどが[静的なコンテンツ](/docs/adding-app-and-website-functionality/#static-pages)として実行されることが挙げられます。ビルド時に Gatsby は[ルーティング](/docs/glossary#routing)処理し、コンテンツへのパスを生成します。 Gatsby を使ったナビゲーションをするためには、パスとは何かということと、パスがどのように生成されるのかについて理解する必要があります。
 
-Alternatively, your application may include functionality that cannot be handled at build time or through [rehydration](/docs/adding-app-and-website-functionality/#how-hydration-makes-apps-possible). This includes things like authentication or retrieving dynamic content. To handle those pages, you can make use of [client-only routes](/docs/client-only-routes-and-user-authentication) using [`@reach/router`](/docs/reach-router-and-gatsby/) which is built into Gatsby.
+場合によっては Gatsby で作ったサイトが、ビルド時またはリハイドレーション時に処理できない機能（認証や動的なコンテンツなど）を持つかもしれません。そのようなページを処理するためには Gatsby に組み込まれている [`@reach/router`](/docs/reach-router-and-gatsby/) を使用した [クライアントサイドルーティング](/docs/client-only-routes-and-user-authentication) を利用できます。
 
-## Creating routes
+## ルートの作成
 
-Gatsby makes it easy to programmatically control your pages. Pages can be created in three ways:
+Gatsby はプログラムによるページの管理を簡単にします。ページは 3 つの方法で作成できます：
 
-- In your site's gatsby-node.js by implementing the API
-  [`createPages`](/docs/node-apis/#createPages)
-- Gatsby core automatically turns React components in `src/pages` into pages
-- Plugins can also implement `createPages` and create pages for you
+- `gatsby-node.js` ファイルに [`createPages`](/docs/node-apis/#createPages) を実装することでページを作成できます。
+- Gatsby は `src/pages` ディレクトリーにある React コンポーネントを自動でページに変換します。
+- プラグインでも `createPages` を実装することでページを作成できます。
 
-See the [Creating and Modifying Pages](/docs/creating-and-modifying-pages) for more detail.
+詳細は[ページの作成と編集](/docs/creating-and-modifying-pages)をご覧ください。
 
-When Gatsby creates pages it automatically generates a path to access them. This path will differ depending on how the page was defined.
+Gatsby がページを生成したとき、そのページにアクセスするためのパスも自動で生成されます。生成されるパスはページがどのように定義されたかによって異なります。
 
-### Pages defined in `src/pages`
+### `src/pages` ディレクトリーによるページの作成
 
-Each `.js` file inside `src/pages` will generate its own page in your Gatsby site. The path for those pages matches the file structure it's found in.
+`src/pages` ディレクトリーに `.js` ファイルを置くことで Gatsby サイト内にページが生成されます。生成されるページのパスは `.js` ファイルがあるディレクトリー構造と一致します。
 
-For example, `contact.js` will be found at `yoursite.com/contact`. And `home.js` will be found at `yoursite.com/home`. This works at whatever level the file is created. If `contact.js` is moved to a directory called `information`, located inside `src/pages`, the page will now be found at `yoursite.com/information/contact`.
+例えば `contact.js` は `yoursite.com/contact` からアクセスできます。また `home.js` は `yoursite.com/home` からアクセスできます。これはファイルがどの階層に作成されていても成立します。もし `contact.js` を `src/pages` 内の `information` ディレクトリーへ移動させた場合、今度は `yoursite.com/information/contact` からページにアクセスできます。
 
-The exception to this rule is any file named `index.js`. Files with this name are matched to the root directory they're found in. That means `index.js` in the root `src/pages` directory is accessed via `yoursite.com`. However, if there is an `index.js` inside the `information` directory, it is found at `yoursite.com/information`.
+このルールは `index.js` という名前のファイルには当てはまりません。この名前がつけられたファイルは、ファイルが存在する場所のルートディレクトリーと一致します。つまり `src/pages` 直下にある `index.js` には `yoursite.com` からアクセスできます。もしも `index.js` が `information` ディレクトリー内にある場合は `yoursite.com/information` からアクセスできます。
 
-Note that if no `index.js` file exists in a particular directory that root page does not exist, and attempts to navigate to it will land you on a [404 page](/docs/add-404-page/). For example, `yoursite.com/information/contact` may exist, but that does not guarantee `yoursite.com/information` exists.
+`index.js` が存在せず、ルートページが設定されていないディレクトリーの場合、ルートのパスにアクセスすると [404 ページ](/docs/add-404-page/) が表示されることに注意してください。つまり `yoursite.com/information/contact` にアクセスできても `yoursite.com/information` にアクセスできる保証はありません。
 
-### Pages created with `createPage` action
+### `createPage` によるページの作成
 
-Another way to create pages is in your `gatsby-node.js` file using the `createPage` action, a JavaScript function. When pages are defined this way, the path is explicitly set. For example:
+ページを作成するもう 1 つの方法は `gatsby-node.js` ファイルの中で `createPage` 関数を使用することです。この方法でページを定義するときは、パスを明示的に設定します。サンプルコード：
 
 ```js:title=gatsby-node.js
 createPage({
@@ -41,30 +40,30 @@ createPage({
 })
 ```
 
-For more information on this action, visit the [`createPage` API documentation](/docs/actions/#createPage).
+詳細は [`createPage` の API ドキュメント](/docs/actions/#createPage) をご覧ください。
 
-## Conflicting Routes
+## ルートの重複
 
-Since there are multiple ways to create a page, different plugins, themes, or sections of code in your `gatsby-node` file may accidentally create multiple pages that are meant to be accessed by the same path. When this happens, Gatsby will show a warning at build time, but the site will still build successfully. In this situation, the page that was built last will be accessible and any other conflicting pages will not be. Changing any conflicting paths to produce unique URLs should clear up the problem.
+Gatsby にはページの作成方法が複数あるため、プラグイン、テーマ、 `gatsby-node` ファイル内のルート定義が、誤って同じパスのページを作成してしまう恐れがあります。ルートの重複が発生すると Gatsby はビルド時に警告を表示しますが、ビルドは正常に完了します。この状態では、最後にビルドされたページのみがアクセス可能となり、ルートが重複したその他のページにはアクセスできません。重複しているパスをページごとに固有の URL となるよう変更することで、この問題を解決できます。
 
-## Nested Routes
+## ネストされたルート
 
-If your goal is to define paths that are multiple levels deep, such as `/portfolio/art/item1`, that can be done directly when creating pages as mentioned in [Creating routes](#creating-routes).
+`/portfolio/art/item1` のように複数階層にわたるパスを定義したいときは[ルートの作成](#creating-routes)で説明されている通り、`src/pages` ディレクトリーの構造をそのままパスに反映させることができます。
 
-Alternatively, if you want to create pages that will display different subcomponents depending on the URL path (such as a specific sidebar widget), Gatsby can handle that at the page level using [layouts](/docs/layout-components/).
+また URL のパスに応じて表示するコンポーネントが異なるページを作成したいとき（ページ固有のサイドバーを表示したい場合など）、[レイアウト](/docs/layout-components/) を使うことでページ単位の表示の切り替えができます。
 
-## Linking between routes
+## ルート間のリンク
 
-In order to link between pages, you can use [`gatsby-link`](/docs/gatsby-link/). Using `gatsby-link` gives you built in [performance benefits](#performance-and-prefetching).
+ルート同士をリンクするために [`gatsby-link`](/docs/gatsby-link/) を使用できます。 `gatsby-link` を使うことで Gatsby による[パフォーマンス向上](#performance-and-prefetching)のメリットを得られます。
 
-Alternatively, you can navigate between pages using standard `<a>` tags, but you won't get the benefit of prefetching in this case.
+一般的な `<a>` タグを使ったナビゲーションも可能ですが、その場合はプリフェッチによるパフォーマンス向上は見込めません。
 
-## Creating authentication-gated links
+## 認証つきリンクの作成
 
-For pages dealing with sensitive information, or other dynamic behavior, you may want to handle that information server-side. Gatsby lets you create [client-only routes](/docs/client-only-routes-and-user-authentication) that live behind an authentication gate, ensuring that the information is only available to authorized users.
+機密情報を扱う場合や、その他の動的な処理が必要なページに対して、サーバサイドでの処理を行いたいと思うかもしれません。 Gatsby では認証を必須とする [クライアントサイドルート](/docs/client-only-routes-and-user-authentication) の作成が可能で、認証されたユーザーのみが情報にアクセスできるよう制限できます。
 
-## Performance and Prefetching
+## パフォーマンスとプリフェッチ
 
-In order to improve performance, Gatsby looks for links that appear on the current page to perform prefetching. Before a user has even clicked on a link, Gatsby has started to fetch the page it points to. [Learn more about prefetching](/docs/how-code-splitting-works/#prefetching-chunks).
+パフォーマンス向上のため Gatsby は表示されたページからプリフェッチ対象となるリンクを探し出します。ユーザーがリンクをクリックする前に Gatsby はリンク先のページの取得を行っています。詳細は[プリフェッチ](/docs/how-code-splitting-works/#prefetching-chunks)をご覧ください。
 
 <GuideList slug={props.slug} />

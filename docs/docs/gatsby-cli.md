@@ -1,19 +1,19 @@
 ---
-title: Commands (Gatsby CLI)
+title: コマンド (Gatsby CLI)
 tableOfContentsDepth: 2
 ---
 
-The Gatsby command line tool (CLI) is the main entry point for getting up and running with a Gatsby application and for using functionality including like running a development server and building out your Gatsby application for deployment.
+Gatsby コマンドラインツール (CLI) は Gatsby のアプリを起動して実行したり、デプロイのために Gatsby アプリをビルドして出力するなどの機能を使うためのエントリーポイントです。
 
-_We provide similar documentation available with the gatsby-cli [README](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-cli/README.md), and our [cheat sheet](/docs/cheat-sheet/) has all the top CLI commands ready to print out._
+_私達はこのドキュメントと同じようなドキュメントを gatsby-cli の [README](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-cli/README.md) や、印刷するためによく使う CLI のコマンドを[チートシート](/docs/cheat-sheet/)として提供してします。_
 
-## How to use gatsby-cli
+## gatsby-cli の使い方
 
-The Gatsby CLI (`gatsby-cli`) is packaged as an executable that can be used globally. The Gatsby CLI is available via [npm](https://www.npmjs.com/) and should be installed globally by running `npm install -g gatsby-cli` to use it locally.
+Gatsby CLI (`gatsby-cli`) はグローバルにインストールして使える実行可能なプログラムです。 Gatsby CLI は [npm](https://www.npmjs.com/) から利用できます。ローカルで使用するために `npm install -g gatsby-cli` コマンドを入力してグローバルインストールしてみましょう。
 
-Run `gatsby --help` for full help.
+`gatsby --help` を入力するとヘルプが表示されます。
 
-You can also use the `package.json` script variant of these commands, typically exposed _for you_ with most [starters](/docs/starters/). For example, if you want to make the [`gatsby develop`](#develop) command available in your application, open up `package.json` and add a script like so:
+ほとんどの [starters](/docs/starters/) で設定されているように、これらのコマンドを `package.json` のスクリプトフィールドで使うこともできます。例えば、もし [`gatsby develop`](#develop) コマンドがアプリで使いたい場合、`package.json` を開き、以下のようなスクリプトを追加してみてください。
 
 ```json:title=package.json
 {
@@ -31,30 +31,30 @@ You can also use the `package.json` script variant of these commands, typically 
 gatsby new [<site-name> [<starter-url>]]
 ```
 
-#### Arguments
+#### 引数
 
-| Argument    | Description                                                                                                                                                                                                     |
-| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| site-name   | Your Gatsby site name, which is also used to create a project directory.                                                                                                                                        |
-| starter-url | A Gatsby starter URL or local file path. Defaults to [gatsby-starter-default](https://github.com/gatsbyjs/gatsby-starter-default); see the [Gatsby starters](/docs/gatsby-starters/) docs for more information. |
+| 引数        | 概要                                                                                                                                                                                                                 |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| site-name   | プロジェクトのディレクトリーを作成するのに使われる Gatsby を用いて作りたいサイトの名前                                                                                                                               |
+| starter-url | Gatsby スターターの URL またはローカルのファイルパス。 デフォルトは [gatsby-starter-default](https://github.com/gatsbyjs/gatsby-starter-default)。 詳細は [Gatsby starters](/docs/gatsby-starters/) をご覧ください。 |
 
-> Note: The `site-name` should only consist of letters and numbers. If you specify a `.`, `./` or a `<space>` in the name, `gatsby new` will throw an error.
+> 注釈: `site-name` には文字と数字の組み合わせしか使えません。 もし、 `.` や `./`、 `<space>` が名前に含まれていた場合、`gatsby new` コマンドはエラーで異常終了します。
 
-#### Examples
+#### 具体例
 
-- Create a Gatsby site named `my-awesome-site` using the default starter:
+- デフォルトのスターターキットを使って `my-awesome-site` という Gatsby のサイトを作ります。
 
 ```shell
 gatsby new my-awesome-site
 ```
 
-- Create a Gatsby site named `my-awesome-blog-site`, using [gatsby-starter-blog](https://www.gatsbyjs.org/starters/gatsbyjs/gatsby-starter-blog/):
+- [gatsby-starter-blog](https://www.gatsbyjs.org/starters/gatsbyjs/gatsby-starter-blog/) を使って、`my-awesome-blog-site` という Gatsby のサイトを作ります。
 
 ```shell
 gatsby new my-awesome-blog-site https://github.com/gatsbyjs/gatsby-starter-blog
 ```
 
-- If you leave out both of the arguments, the CLI will run an interactive shell asking for these inputs:
+- もし、どちらの引数もなければ、CLI は両方の入力をたずねるインタラクティブシェルとして実行されます。
 
 ```shell
 gatsby new
@@ -66,35 +66,34 @@ gatsby new
    (Use a different starter)
 ```
 
-See the [Gatsby starters docs](https://www.gatsbyjs.org/docs/gatsby-starters/) for more details.
+詳細は [Gatsby starters docs](https://www.gatsbyjs.org/docs/gatsby-starters/) をご覧ください。
 
 ### `develop`
 
-Once you've installed a Gatsby site, go to the root directory of your project and start the development server:
+すでに Gatsby のサイトを作っていれば、プロジェクトのルートディレクトリーにて、以下のコマンドで開発用サーバーを起動できます。
 
 `gatsby develop`
 
-#### Options
+#### オプション
 
-|     Option      | Description                                     |
-| :-------------: | ----------------------------------------------- |
-| `-H`, `--host`  | Set host. Defaults to localhost                 |
-| `-p`, `--port`  | Set port. Defaults to env.PORT or 8000          |
-| `-o`, `--open`  | Open the site in your (default) browser for you |
-| `-S`, `--https` | Use HTTPS                                       |
+|   オプション    | 概要                                                    |
+| :-------------: | ------------------------------------------------------- |
+| `-H`, `--host`  | ホストを設定します。デフォルトは localhost。            |
+| `-p`, `--port`  | ポートを設定します。デフォルトは env.PORT または 8000。 |
+| `-o`, `--open`  | サイトをデフォルトブラウザーで開きます。                |
+| `-S`, `--https` | HTTPS を使います。                                      |
 
-Follow the [Local HTTPS guide](/docs/local-https/)
-to find out how you can set up an HTTPS development server using Gatsby.
+Gatsby を使って HTTPS の開発用サーバーをセットアップする方法は [Local HTTPS guide](/docs/local-https/) をご覧ください。
 
-#### Preview changes on other devices
+#### 変更を実機で確認する
 
-You can use the Gatsby develop command with the host option to access your dev environment on other devices on the same network, run:
+以下のように Gatsby develop コマンドへ host オプションを渡すことで、同じネットワークに存在する他の端末から開発用の環境に対してアクセスできるようになります。
 
 ```shell
 gatsby develop -H 0.0.0.0
 ```
 
-Then the terminal will log information as usual, but will additionally include a URL that you can navigate to from a client on the same network to see how the site renders.
+すると、ターミナルのログに普段と同じ情報に加えて、同じネットワークの他のクライアントからサイトがどうなっているかを確認するための URL が表示されます。
 
 ```shell
 You can now view gatsbyjs.org in the browser.
@@ -103,84 +102,84 @@ You can now view gatsbyjs.org in the browser.
   On Your Network:  http://192.168.0.212:8000/ // highlight-line
 ```
 
-**Note**: you can't visit 0.0.0.0:8000 on Windows (but things will work using either localhost:8000 or the "On Your Network" URL on Windows)
+**ヒント**: ローカルにてビルドされた Gatsby サイトには、`localhost:8000` または `On Your Network` に表示された URL からアクセスできます。
 
 ### `build`
 
-At the root of a Gatsby site, compile your application and make it ready for deployment:
+Gatsby サイトのルートディレクトリーにて、アプリをコンパイルし、開発の準備を整えるコマンドです。
 
 `gatsby build`
 
-#### Options
+#### オプション
 
-|            Option            | Description                                                                                               |
-| :--------------------------: | --------------------------------------------------------------------------------------------------------- |
-|       `--prefix-paths`       | Build site with link paths prefixed (set pathPrefix in your config)                                       |
-|        `--no-uglify`         | Build site without uglifying JS bundles (for debugging)                                                   |
-| `--open-tracing-config-file` | Tracer configuration file (OpenTracing compatible). See [Performance Tracing](/docs/performance-tracing/) |
-| `--no-color`, `--no-colors`  | Disables colored terminal output                                                                          |
+|          オプション          | 概要                                                                                                                 |
+| :--------------------------: | -------------------------------------------------------------------------------------------------------------------- |
+|       `--prefix-paths`       | リンクのパスに与えられた引数を追加して、サイトをビルドします。(config に pathPrefix の設定が必要）                   |
+|        `--no-uglify`         | JS バンドルに uglify をかけずに、サイトをビルドします。（デバッグ用）                                                |
+| `--open-tracing-config-file` | トレーサー設定ファイル（OpenTracing 互換）。詳細は[Performance Tracing](/docs/performance-tracing/) をご覧ください。 |
+| `--no-color`, `--no-colors`  | ターミナルの出力の色付けを無効にします。                                                                             |
 
-In addition to these build options, there are some optional [build environment variables](/docs/environment-variables/#build-variables) for more advanced configurations that can adjust how a build runs. For example, setting `CI=true` as an environment variable will tailor output for [dumb terminals](https://en.wikipedia.org/wiki/Computer_terminal#Dumb_terminals).
+上記に加えて、ビルドを最適化するためのより高度な設定のためにいくつかの [build environment variables](/docs/environment-variables/#build-variables) があります。例えば、　`CI=true` を環境変数として設定すると[ダム端末](https://ja.wikipedia.org/wiki/%E7%AB%AF%E6%9C%AB#%E3%83%80%E3%83%A0%E7%AB%AF%E6%9C%AB)向けに出力を調整できます。
 
 ### `serve`
 
-At the root of a Gatsby site, serve the production build of your site for testing:
+Gatsby サイトのルートディレクトリーにて、テストのためにプロダクションビルドをサーブするコマンドです。
 
 `gatsby serve`
 
-#### Options
+#### オプション
 
-|      Option      | Description                                                                              |
-| :--------------: | ---------------------------------------------------------------------------------------- |
-|  `-H`, `--host`  | Set host. Defaults to localhost                                                          |
-|  `-p`, `--port`  | Set port. Defaults to 9000                                                               |
-|  `-o`, `--open`  | Open the site in your (default) browser for you                                          |
-| `--prefix-paths` | Serve site with link paths prefixed (if built with pathPrefix in your gatsby-config.js). |
+|    オプション    | 概要                                                                                                            |
+| :--------------: | --------------------------------------------------------------------------------------------------------------- |
+|  `-H`, `--host`  | ホストを設定します。デフォルトは localhost。                                                                    |
+|  `-p`, `--port`  | ポートを設定します。デフォルトは 9000。                                                                         |
+|  `-o`, `--open`  | サイトをデフォルトブラウザーで開きます。                                                                        |
+| `--prefix-paths` | リンクのパスに引数を前置きして、サイトをサーブする。（gatsby-config.js に pathPrefix が設定されている場合のみ） |
 
 ### `info`
 
-At the root of a Gatsby site, get helpful environment information which will be required when reporting a bug:
+Gatsby サイトのルートディレクトリーにて、バグを報告するのに必要となる環境情報を出力するコマンドです。
 
 `gatsby info`
 
-#### Options
+#### オプション
 
-|       Option        | Description                                             |
-| :-----------------: | ------------------------------------------------------- |
-| `-C`, `--clipboard` | Automagically copy environment information to clipboard |
+|     オプション      | 概要                                             |
+| :-----------------: | ------------------------------------------------ |
+| `-C`, `--clipboard` | 自動的に環境情報をクリップボードにコピーします。 |
 
 ### `clean`
 
-At the root of a Gatsby site, wipe out the cache (`.cache` folder) and public directories:
+Gatsby サイトのルートディレクトリーにて、キャッシュ（`.cache`フォルダー）と public ディレクトリーを削除するコマンドです。
 
 `gatsby clean`
 
-This is useful as a last resort when your local project seems to have issues or content does not seem to be refreshing. Issues this may fix commonly include:
+このコマンドはローカルのプロジェクトに問題があるように思われるときや、コンテンツが更新されていないように見えるときに有効な奥の手です。以下に含まれる問題が解消できるかもしれません。
 
-- Stale data, e.g. this file/resource/etc. isn't appearing
-- GraphQL error, e.g. this GraphQL resource should be present but is not
-- Dependency issues, e.g. invalid version, cryptic errors in console, etc.
-- Plugin issues, e.g. developing a local plugin and changes don't seem to be taking effect
+- State のデータ、 例えば、ある file/resource/etc. が表示されない
+- GraphQL のエラー、例えば、ある GraphQL のリソースが存在するのに、見つからない
+- 依存パッケージの問題、例えば、無効なバージョンや console に表示される不可解なエラーなど
+- プラグインの問題、例えば、ローカルプラグインを開発中に、変更が反映されていない
 
 ### `plugin`
 
-Run commands pertaining to gatsby plugins.
+Gatsby プラグインに関連するコマンドを実行します。
 
 #### `docs`
 
 `gatsby plugin docs`
 
-Directs you to documentation about using and creating plugins.
+プラグインの使用と作成に関するドキュメントを開きます。
 
 ### Repl
 
-Get a Node.js REPL (interactive shell) with context of your Gatsby environment:
+Gatsby 環境のコンテキストを用いて、Node.js REPL（インタラクティブシェル）を起動するコマンドです。
 
 `gatsby repl`
 
-Gatsby will prompt you to type in commands and explore. When it shows this: `gatsby >`
+Gatsby はコマンドを入力して閲覧できるように促してくれます。REPL のときには `gatsby >` が表示されます。
 
-You can type in a command, such as one of these:
+次のいずれかのようなコマンドを入力できます。
 
 `babelrc`
 
@@ -200,17 +199,17 @@ You can type in a command, such as one of these:
 
 `staticQueries`
 
-When combined with the [GraphQL explorer](/docs/introducing-graphiql/), these REPL commands could be very helpful for understanding your Gatsby site's data.
+[GraphQL explorer](/docs/introducing-graphiql/)と組み合わせると、これらの REPL のコマンドは Gatsby サイトのデータを理解するのにとても有用です。
 
-For more information, check out the [Gatsby REPL documentation](/docs/gatsby-repl/).
+詳細は、[Gatsby REPL documentation](/docs/gatsby-repl/) をご覧ください。
 
-### Disabling colored output
+### 出力の色付けを無効にする
 
-In addition to the explicit `--no-color` option, the CLI respects the presence of the `NO_COLOR` environment variable (see [no-color.org](https://no-color.org/)).
+`--no-color` を使う他に、`NO_COLOR` という環境変数を用いることもできます。(詳細は [no-color.org](https://no-color.org/) をご覧ください）
 
-## How to change your default package manager for your next project?
+## デフォルトのパッケージマネージャーを次のプロジェクトで変更する方法
 
-When you use `gatsby new` for the first time to create a new project, you are asked to choose your default package manager between yarn and npm.
+新しくプロジェクトを作成するときに初めて `gatsby new` コマンドを使ったときに、デフォルトのパッケージマネージャーとして yarn と npm のどちらを使うかを質問されます。
 
 ```shell
 Which package manager would you like to use ? › - Use arrow-keys. Return to submit.
@@ -218,12 +217,12 @@ Which package manager would you like to use ? › - Use arrow-keys. Return to su
    npm
 ```
 
-Once you’ve made your choice, the CLI won’t ask for your preference again for any subsequent project.
+一度選択してしまえば、その後のプロジェクトで設定についてもう一度質問されることはありません。
 
-If you want to change this for your next project you have to edit the config file created automatically by the CLI.
-This file is available on your system at: `~/.config/gatsby/config.json`
+もし、パッケージマネージャーを変更したい場合は、CLI によって自動的に作成される設定ファイルを編集する必要があります。
+このファイルは `~/.config/gatsby/config.json` に存在します。
 
-In it you’re going to see something like this.
+設定ファイルを以下のように編集することになるでしょう。
 
 ```json:title=config.json
 {
@@ -233,4 +232,4 @@ In it you’re going to see something like this.
 }
 ```
 
-Edit your `packageManager` value, save and you’re good to go for your next project using `gatsby new`.
+`packageManager` の値を変更し、保存すると、次のプロジェクトから `gatsby new` で使用されるパッケージマネージャーが変更されています。

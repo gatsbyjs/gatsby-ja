@@ -20,7 +20,7 @@ npm install --save gatsby-theme-blog
 
 テーマによっては、`gatsby-config.js`でテーマオプションを設定できます。
 
-例えば、`gatsby-theme-blog`は、4 つのオプションを指定できます: `basePath`、`contentPath`、`assetPath`、`mdx`。これらのオプションは、[テーマの README](/packages/gatsby-theme-blog/)にも記載されています。
+例えば、`gatsby-theme-blog`は、4 つのオプションを指定できます： `basePath`、`contentPath`、`assetPath`、`mdx`。これらのオプションは、[テーマの README](/packages/gatsby-theme-blog/)にも記載されています。
 
 ```javascript:title=gatsby-config.js
 module.exports = {

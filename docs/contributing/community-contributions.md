@@ -1,23 +1,23 @@
 ---
-title: Community Contributions
+title: コミュニティーへの貢献
 ---
 
-A big part of what makes Gatsby great is each and every one of you in the community. Your contributions enrich the Gatsby experience and make it better every day.
+Gatsby が素晴らしいものである大きな理由の 1 つは、すべてのコミュニティーメンバーたちの存在です。あなたの貢献は Gatsby の体験を豊かにし、毎日より良いものにしていきます。
 
-We welcome all contributions from you in the community, and would be thrilled to amplify your voice. Contributions are not limited to code, and can take all shapes and forms:
+私たちはコミュニティー内でのあなたのすべての貢献を歓迎するとともに、あなたの声を大きくしていくことにワクワクしています。貢献はコードに対するものだけでなく、様々な形をもちます。
 
-- Your wonderful Gatsby.js website!
-- Gatsby starters
-- Gatsby plugins
-- Blog posts and case studies
-- Talk and lecture videos
-- Workshop materials
-- GitHub issues and pull requests
+- あなたの素晴らしい Gatsby ウェブサイト！
+- Gatsby スターター
+- Gatsby プラグイン
+- ブログ記事とケーススタディー
+- レクチャー動画
+- ワークショップ記事
+- GitHub Issues とプルリクエスト
 
-...and anything else you can think of. Our showcase and library contribution docs are a great place to start:
+…そしてあなたが考えている、それ以外のすべて。私たちのショーケースとライブラリーへの貢献についてのドキュメントは、最適なスタート地点です。
 
-- [Submit to Site Showcase](/contributing/site-showcase-submissions)
-- [Submit to Starter Library](/contributing/submit-to-starter-library/)
-- [Submit to Plugin Library](/contributing/submit-to-plugin-library/)
+- [サイトショーケースへの投稿](/contributing/site-showcase-submissions)
+- [スターターライブラリーへの投稿](/contributing/submit-to-starter-library/)
+- [プラグインライブラリーへの投稿](/contributing/submit-to-plugin-library/)
 
-Peruse the rest of our contributor docs and reach out to us on [Twitter](https://twitter.com/gatsbyjs), [Discord](https://gatsby.dev/discord), or in a [GitHub issue](/contributing/how-to-file-an-issue/) if you have any questions about contributing!
+もし貢献について何か質問がある場合は、残りのコントリビュータードキュメントについて目を通した上で、[Twitter](https://twitter.com/gatsbyjs)、[Discord](https://gatsby.dev/discord)、もしくは [GitHub の Issues](/contributing/how-to-file-an-issue/) 内で連絡してください。
