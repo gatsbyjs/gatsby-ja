@@ -1,51 +1,51 @@
 ---
-title: Audit with Lighthouse
+title: Lighthouse での監査
 ---
 
-Quoting from the [Lighthouse website](https://developers.google.com/web/tools/lighthouse/):
+[Lighthouse ウェブサイト](https://developers.google.com/web/tools/lighthouse/)から引用します：
 
-> Lighthouse is an open-source, automated tool for improving the quality of web pages. You can run it against any web page, public or requiring authentication. It has audits for performance, accessibility, progressive web apps (PWAs), and more.
+> Lighthouse はオープンソースの、ウェブページの品質を向上するための自動化ツールです。公開されたものや認証を必要とするもの、あらゆるウェブページに対して実行できます。パフォーマンス、アクセシビリティ、プログレッシブウェブアプリ（PWA）などの監査があります。
 
-Lighthouse is included in Chrome DevTools. Running its audit -- and then addressing the errors it finds and implementing the improvements it suggests -- is a great way to prepare your site to go live. It helps give you confidence that your site is as fast and accessible as possible.
+Lighthouse は Chrome 開発ツールに含まれています。監査の実行、見つけたエラーへの対処、提案された改善の実装は、あなたのサイトの稼働を準備するのにすばらしい手法です。あなたのサイトができる限り高速でアクセシブルであると自信を持つ助けになります。
 
-If you haven't yet, you need to create a production build of your Gatsby site. The Gatsby development server is optimized for making development fast, but the site that it generates, while closely resembling a production version of the site, isn't as optimized.
+まだそうしていなければ、あなたの Gatsby サイトの本番ビルドを作る必要があります。Gatsby の開発サーバーは開発を速くするのに最適化されているので、生成されるサイトは、サイトの本番バージョンにかなり近いものの、最適化されていません。
 
-## Create a production build
+## 本番ビルドを作成する
 
-1.  Stop the development server (if it's still running) and run:
+1.  開発サーバーを（もしまだ動いているなら）停止し、以下を実行します：
 
 ```shell
 gatsby build
 ```
 
-> 💡 This does a production build of your site and outputs the built static files into the `public` directory.
+> 💡 これはあなたのサイトの本番ビルドを実行し、`public` ディレクトリにビルドされた静的ファイルを出力します。
 
-2.  View the production site locally. Run:
+2.  ローカルで本番サイトを閲覧します。以下を実行します：
 
 ```shell
 gatsby serve
 ```
 
-Once this starts, you can now view your site at `localhost:9000`.
+一度起動すると、あなたのサイトを `http://localhost:9000` で見れます。
 
-## Run a Lighthouse audit
+## Lighthouse の監査を実行する
 
-Now run your first Lighthouse test.
+初めての Lighthouse のテストを実行します。
 
-1.  Open the site in Chrome (if you didn't already do so) and then open up the Chrome DevTools.
+1.  サイトを（まだ開いてないなら）Chrome で開き、それから Chrome 開発ツールを開きます。
 
-2.  Click on the "Audits" tab where you'll see a screen that looks like:
+2.  "Audits" タブをクリックすると、このような画面が見えるでしょう：
 
-![Lighthouse audit start](./images/lighthouse-audit.png)
+![Lighthouse 監査の開始](./images/lighthouse-audit.png)
 
-3.  Click "Perform an audit..." (All available audit types should be selected by default). Then click "Run audit". (It'll then take a minute or so to run the audit). Once the audit is complete, you should see results that look like this:
+3.  "Perform an audit..." をクリックします（利用できる監査の種類はすべてデフォルトで選択済みです）。それから "Run audit" をクリックします。（監査の実行には 1 分かそこらかかるでしょう）。監査が完了したら、このような結果を見るはずです：
 
-![Lighthouse audit results](./images/lighthouse-audit-results.png)
+![Lighthouse 監査の結果](./images/lighthouse-audit-results.png)
 
-As you can see, Gatsby's performance is excellent out of the box but we're missing some things for PWA, Accessibility, Best Practices, and SEO that will improve your scores (and in the process make your site much more friendly to visitors and search engines). To improve your scores further, see the links under "Next steps" below.
+ご覧のように、Gatsby のパフォーマンスは追加設定のない状態でもすばらしいですが、PWA、アクセシビリティ、ベストプラクティス、そして SEO の分野でスコアを改善する（訪問者や検索エンジンにより一層サイトを使いやすくするプロセス）のに色々なものが足りていません。スコアをさらに上げるためには、以下の "次のステップ" を見てください。
 
-Next steps:
+次のステップ：
 
-- [Add a manifest file](/docs/add-a-manifest-file/)
-- [Add offline support](/docs/add-offline-support-with-a-service-worker/)
-- [Add page metadata](/docs/add-page-metadata/)
+- [マニフェストファイルの追加](/docs/add-a-manifest-file/)
+- [オフラインサポートの追加](/docs/add-offline-support-with-a-service-worker/)
+- [ページのメタデータを追加](/docs/add-page-metadata/)

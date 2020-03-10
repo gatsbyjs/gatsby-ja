@@ -1,71 +1,66 @@
 ---
-title: Deploying to Netlify
+title: Netlify にデプロイする
 ---
 
-This guide walks through how to deploy and host your next Gatsby site on [Netlify](https://www.netlify.com/).
+このガイドはあなたの Gatsby サイトを [Netlify](https://www.netlify.com/) にデプロイし、公開するまでの手順を示したものです。
 
-Netlify is an excellent option for deploying Gatsby sites. Netlify is a unified
-platform that automates your code to create performant, easily maintainable
-sites and web apps. They provide continuous deployment (Git-triggered builds);
-an intelligent, global CDN; full DNS (including custom domains); automated
-HTTPS; asset acceleration; and a lot more.
+Netlify は Gatsby サイトをデプロイするための素晴らしい手段です。Netlify は、高性能でメンテナンスのしやすいウェブサイトやウェブアプリを作成するために、あなたのコードを自動化するための統合プラットフォームです。Git をトリガーとした継続的デプロイをはじめ、インテリジェントなグローバル CDN、DNS 機能、自動 HTTPS 化、コンテンツの高速配信など多くの機能を提供します。
 
-Their free tier includes unlimited personal and commercial projects, HTTPS,
-continuous deployment from public or private repos, and more.
+無料版には、個人・商業に関わらず無制限のプロジェクト、HTTPS 化、公開・非公開リポジトリーからの継続的デプロイなどが含まれます。
 
-## Hosting setup
+## 公開設定
 
-There are two ways you can host your site:
+公開には 2 つの方法があります。
 
-1.) [Git repository setup](#git-repository-setup)
+1.) [Git リポジトリー設定](#Gitリポジトリー設定)
 
-2.) [Upload site folder](#upload-site-folder)
+2.) [フォルダのアップロード](#フォルダのアップロード)
 
-### Git repository setup
+### Git リポジトリー設定
 
-Netlify currently has built in support for [GitHub](https://github.com/), [GitLab](https://about.gitlab.com/) and [Bitbucket](https://bitbucket.org/). This approach allows you to roll back to past versions of the website whenever you want. You also gain the ability to redeploy the site simply by pushing the code to the respective repository, with no need to manually rebuild and upload every time you make changes. Your repository can be private or public.
+Netlify は現在 [GitHub](https://github.com/)、[GitLab](https://about.gitlab.com/)、[Bitbucket](https://bitbucket.org/) を利用したビルドをサポートしています。この場合、あなたはウェブサイトをあなたが指定した過去のバージョンにロールバックすることが可能となります。また、コードをリポジトリにプッシュするだけでウェブサイトを再度デプロイでき、コードの変更ごとに手動でウェブサイトのビルドと公開を行う必要はなくなります。あなたのリポジトリはプライベート・パブリックどちらでも構いません。
 
-Now, login to Netlify and you will see a `New site from git` button at the top right corner of the screen. Click on it and connect with the same git provider that you used to host your website and authorize Netlify to use your account. Choose your website repository and it will take you to deploy settings with the below options.
+Netlify にログインすると、トップ画面に `New site from git` と書かれたボタンがありますね？これをクリックして、ウェブサイトに使われている Git プロバイダーを選択します。そしてあなたのウェブサイトが含まれるリポジトリーを選択すると、下記のデプロイ設定を入力する画面が出てきます。
 
-- Branch to deploy: You can specify a branch to monitor. When you push to that particular branch, only then will Netlify build and deploy the site. The default is `master`.
-- Build Command: You can specify the command you want Netlify to run when you push to the above branch. The default is `npm run build`.
-- Publish directory: You can specify which folder Netlify should use to host the website, e.g., public, dist, build. The default is `public`.
-- Advanced build settings: If the site needs environment variables to build, you can specify them by clicking on `Show advanced` and then the `New Variable` button.
+- Branch to deploy: Netlify が監視するブランチを指定します。ここで入力したブランチにコードをプッシュすると、Netlify はウェブサイトのビルドとデプロイを行います。デフォルト値は `master` です。
+- Build Command: 上記のブランチにコードをプッシュした際に、Netlify がビルドを行うためのコマンドを指定します。 デフォルト値は `npm run build` です。
+- Publish directory: Netlify がウェブサイトの公開に利用するフォルダーを指定します。（例：public, dist, build）デフォルト値は `public`です。
+- Advanced build settings: あなたのウェブサイトが環境変数をビルドに用いる場合、任意で指定できます。 `Show advanced` をクリックして、`New Variable` ボタンから指定します。
 
-Click on the `Deploy site` button and Netlify will start the build and deploy process you have specified. You can go to the `Deploys` tab and see the process unfold in the `Deploy log`. After a few moments, it will give you the live site URL, e.g., `random-name.netlify.com`.
+`Deploy site` ボタンをクリックすると、Netlify はあなたの入力した設定に応じてビルドを開始します。`Deploys` タブに移動して、`Deploy log` にデプロイプロセスが表示されていることを確認しましょう。しばらく待つと、公開ウェブサイトの URL が `random-name.netlify.com` の形で表示されます！
 
-### Upload site folder
+### フォルダーのアップロード
 
-There is also the option to upload your site to Netlify without using git.
+もう 1 つの手段として、あなたのウェブサイトに関するフォルダーを Git を介さずに Netlify へアップロードする方法があります。
 
-For the [production build](/docs/glossary#build), you will need to run the `gatsby build` command; Gatsby will generate the production site in the `public` folder. During the build process CSS, JavaScript, HTML, and images will be optimized and placed into this folder.
+[ビルド](/docs/glossary#ビルド)に従い、`gatsby build` コマンドを実行しましょう。Gatsby は公開用のウェブサイトファイルを `public` フォルダーに出力します。 ビルドプロセスによって CSS ・ Javascript ・ HTML と画像ファイルは最適化され、このフォルダーに配置されています。
 
 ```shell
 gatsby build
 ```
 
-Once the build is complete, you are ready to upload your site to Netlify. Go to [Netlify](https://app.netlify.com/) and login or sign up using any method. After a successful login, you will see the message shown below:
+一度ビルドが完了すれば、Netlify にアップロードする準備は終わりです。[Netlify](https://app.netlify.com/) へアクセスし、ログインか会員登録を実施します。ログインが完了したら次の文章が現れるはずです。
 
 ```text
     Want to deploy a new site without connecting to Git?
           Drag and drop your site folder here
 ```
 
-To start the deploy process, you need only drag and drop the `public` folder over the above area on the Netlify website. Netlify will create a new site with a random name, then start uploading and hosting the application files. After a few moments, it will give you a live site URL e.g. `random-name.netlify.com`.
+デプロイ作業を始めるために、あなたがすべきことは `public` フォルダーをこのエリアにドラッグ＆ドロップするだけです。Netlify はランダムな名前で新しいサイトを作成し、ファイルのアップロードと公開を開始します。しばらく待つと、公開ウェブサイトの URL が `random-name.netlify.com` の形で表示されます！
 
 ![alt text](./images/gatsby-default-starter.png "Gatsby Default Starter")
 
-## Continuous deployment
+## 継続的デプロイ
 
-Now that your site is connected to your repository, Netlify will deploy the site and publish it whenever you push to your Git repo.
+すでにあなたのリポジトリーとウェブサイトは接続済みです！Netlify はリポジトリーにコードがプッシュされるたび、公開用のウェブサイトをビルドして公開します。
 
-## Domain setup
+## ドメイン設定
 
-From the site `Overview`, you can go to `Domain Settings`. By adding a custom domain and setting the `CNAME` record as the Netlify project URL in your DNS provider settings, you should be able to see the Netlify project at your domain URL.
+Netlify の site にある `Overview` から `Domain Settings` に移動します。 カスタムドメインにあなたのドメインを追加して、Netlify プロジェクト URL 全体を `CNAME` レコードとしてあなたの DNS プロバイダーに設定しましょう。 あなたの持っているドメインで Netlify のウェブサイトを表示できるようになります。
 
-## Other resources
+## その他のリソース
 
 - [A Step-by-Step Guide: Gatsby on Netlify](https://www.netlify.com/blog/2016/02/24/a-step-by-step-guide-gatsby-on-netlify/)
-- More [blog posts on Gatsby + Netlify](/blog/tags/netlify)
+- [Gatsby と Netlify に関するブログ記事](/blog/tags/netlify)
 - [Gatsby Netlify CMS](/packages/gatsby-plugin-netlify-cms)
 - [Gatsby + Netlify CMS Starter](https://github.com/netlify-templates/gatsby-starter-netlify-cms)

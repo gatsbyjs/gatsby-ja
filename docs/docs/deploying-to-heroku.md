@@ -1,17 +1,17 @@
 ---
-title: Deploying to Heroku
+title: Heroku へのデプロイ
 ---
 
-You can use the [heroku buildpack static](https://github.com/heroku/heroku-buildpack-static) to handle the static files of your site.
+[heroku buildpack static](https://github.com/heroku/heroku-buildpack-static) を使うことで、サイトを構成する静的ファイルを扱うことができます。
 
-Set the `heroku/node.js` and `heroku-buildpack-static` buildpacks on your application.
+`heroku/node.js` と `heroku-buildpack-static` ビルドパックをアプリケーションに設定してください。
 
 ```shell
 heroku buildpacks:set heroku/nodejs
 heroku buildpacks:add https://github.com/heroku/heroku-buildpack-static.git
 ```
 
-You can optionally add the buildpacks to `app.json` if you want to take advantage of the [heroku platform api](https://devcenter.heroku.com/articles/setting-up-apps-using-the-heroku-platform-api)
+[Heroku プラットフォーム API](https://devcenter.heroku.com/articles/setting-up-apps-using-the-heroku-platform-api) を利用したい場合には、ビルドパックを `app.json` に記述することも可能です。
 
 ```json:title=app.json
 {
@@ -26,7 +26,7 @@ You can optionally add the buildpacks to `app.json` if you want to take advantag
 }
 ```
 
-Heroku will automatically detect and run the `build` script from your `package.json` which should already look like this:
+Heroku は以下のような記述のある `package.json` から、自動的に `build` スクリプトを見つけ出し、実行します。
 
 ```json:title=package.json
 {
@@ -36,9 +36,9 @@ Heroku will automatically detect and run the `build` script from your `package.j
 }
 ```
 
-Finally, add a `static.json` file in the root of your project to define the directory where your static assets will be. You can check all the options for this file in the [heroku-buildpack-static](https://github.com/heroku/heroku-buildpack-static#configuration) configuration.
+最後に、静的ファイル群をどのディレクトリーに配置するかを定義するために、プロジェクトのルートディレクトリーに `static.json` ファイルを追加してください。このファイルに設定可能な全てのオプションは [heroku-buildpack-static](https://github.com/heroku/heroku-buildpack-static#configuration) にて確認できます。
 
-The following configuration will give you a good start point in line with Gatsby's [suggested approach to caching](/docs/caching/).
+Gatsby が[推奨するキャッシングの方法](/docs/caching/)に従うためには、以下の設定が良い出発点となるでしょう。
 
 ```json:title=static.json
 {

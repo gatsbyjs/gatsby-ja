@@ -129,7 +129,7 @@ module.exports = {
 npm run develop
 ```
 
-localhost:8000 と localhost:8000/\_\_\_graphql を開いてください。
+`http://localhost:8000` と `http://localhost:8000/___graphql` を開いてください。
 
 特定の幅と高さの画像を生成する例を次に示します。
 
@@ -195,7 +195,7 @@ localhost:8000 と localhost:8000/\_\_\_graphql を開いてください。
 }
 ```
 
-どちらの場合でも、それぞれのフラグメントの末尾に`_tracedSVG`を追加することで、ベクトル化された SVG サポートを追加できます。_これは GraphQL エクスプローラーでは機能しないことに注意してください。_
+どちらの場合でも、それぞれのフラグメントの末尾に `_tracedSVG` を追加することで、ベクトル化された SVG サポートを追加できます。_これは GraphQL エクスプローラーでは機能しないことに注意してください。_
 
 ### `index.js`に画像を表示させる
 

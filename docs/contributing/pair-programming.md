@@ -11,17 +11,17 @@ The best part of open source is the community, and every community is stronger w
 3.  Sign up for any available slot on [the open pairing calendar][cal]
 4.  You’ll be paired with a Gatsby team member
 5.  Join the video meeting during your time slot (we use [Zoom](https://zoom.us) for meetings)
-6.  We'll help you with your pull request or issue!
+6.  We'll help you with your Pull Request or Issue!
 
 ### What we expect in pair programming sessions
 
-These sessions are intended for people who would like to contribute to Gatsby. We will pair program together to solve an issue or pull request related to Gatsby.
+These sessions are intended for people who would like to contribute to Gatsby. We will pair program together to solve an Issue or Pull Request related to Gatsby.
 
 If you're interested in support for a commercial Gatsby project, please [get in touch via the contact page](https://www.gatsbyjs.com/contact-us/).
 
 We also expect the following from pair programming participants:
 
-- These sessions work best when you have a specific goal for the session. You should choose an issue or pull request that you'd like to work on.
+- These sessions work best when you have a specific goal for the session. You should choose an Issue or Pull Request that you'd like to work on.
 - If you're new to building with Gatsby we recommend [working through the tutorial](https://www.gatsbyjs.org/tutorial/) before your session. If you get stuck part way through that's a great time to book a pairing session.
 - If you're new to contributing to open source we recommend following the ["Setting Up Your Local Dev Environment" guide](https://www.gatsbyjs.org/contributing/setting-up-your-local-dev-environment/) before your session.
 - All participants are expected to adhere to [Gatsby’s code of conduct](/contributing/code-of-conduct/)

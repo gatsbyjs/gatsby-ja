@@ -1,24 +1,24 @@
 ---
-title: Standard Styling with Global CSS Files
+title: グローバル CSS ファイルを用いた標準的なスタイリング
 ---
 
-Traditionally, websites are styled using global CSS files.
+古くよりウェブサイトはグローバル CSS ファイルによってスタイリングが行われてきました。
 
-Globally-scoped CSS rules are declared in external `.css` stylesheets, and [CSS specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) and [the Cascade](https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade) determine how styles are applied.
+グローバルスコープ CSS ルールは外部 `.css` ファイルの中で宣言され、[詳細度](https://developer.mozilla.org/ja/docs/Web/CSS/Specificity)と[カスケード処理](https://developer.mozilla.org/ja/docs/Web/CSS/Cascade)によってスタイルの優先順位が決められ、スタイルが適用されます。
 
-## Adding global styles with a layout component
+## レイアウトコンポーネントにグローバルスタイルを追加する
 
-The best way to add global styles is with a [shared layout component](/tutorial/part-three/#your-first-layout-component). This layout component is used for things that are shared throughout the site, including styles, header components, and other common items.
+グローバルスタイルを追加する最善の方法は[共通レイアウトコンポーネント](/tutorial/part-three/#はじめてのレイアウトコンポーネントの作成)を利用することです。レイアウトコンポーネントはサイト共通の部品として使用されます。たとえば、スタイルやヘッダーコンポーネント、そのほか共通で使われる部品が該当します。
 
-> **NOTE:** This pattern is implemented by default in [the default starter](https://github.com/gatsbyjs/gatsby-starter-default/blob/02324e5b04ea0a66d91c7fe7408b46d0a7eac868/src/layouts/index.js#L6).
+> **ヒント:** このパターンは Gatsby の [the default starter](https://github.com/gatsbyjs/gatsby-starter-default/blob/02324e5b04ea0a66d91c7fe7408b46d0a7eac868/src/layouts/index.js#L6) の中でデフォルトレイアウトとして実装されています。
 
-To create a shared layout with global styles, start by creating a new Gatsby site with the [hello world starter](https://github.com/gatsbyjs/gatsby-starter-hello-world).
+グローバルスタイルを使った共通レイアウトを学ぶために、まず [hello world starter](https://github.com/gatsbyjs/gatsby-starter-hello-world) を使った新しい Gatsby サイトを作成してください。
 
 ```shell
 gatsby new global-styles https://github.com/gatsbyjs/gatsby-starter-hello-world
 ```
 
-Open your new site in your code editor and create a new directory at `/src/components`. Inside, create two new files:
+新規作成したサイトをコードエディターで開きます。`/src/components` ディレクトリーを作成し、新規ファイルを 2 つ作成します：
 
 ```diff
   global-styles/
@@ -31,7 +31,7 @@ Open your new site in your code editor and create a new directory at `/src/compo
           └─  index.js
 ```
 
-Inside `src/components/layout.css`, add some global styles:
+`src/components/layout.css` の中にグローバルスタイルを追加します：
 
 ```css:title=src/components/layout.css
 div {
@@ -40,7 +40,7 @@ div {
 }
 ```
 
-In `src/components/layout.js`, include the stylesheet and export a layout component:
+`src/components/layout.js` の中でスタイルシートを読み込み、レイアウトコンポーネントをエクスポートします：
 
 ```jsx:title=src/components/layout.js
 import React from "react"
@@ -49,7 +49,7 @@ import "./layout.css"
 export default ({ children }) => <div>{children}</div>
 ```
 
-Finally, update `src/pages/index.js` to use the new layout component:
+最後に `src/pages/index.js` を更新して、作成したレイアウトコンポーネントを使用します。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -58,17 +58,17 @@ import Layout from "../components/layout"
 export default () => <Layout>Hello world!</Layout>
 ```
 
-Run `npm run develop` and you’ll see the global styles applied.
+`npm run develop` を実行するとグローバルスタイルが適用されていることを確認できます。
 
 ![Global styles](./images/global-styles.png)
 
-## Adding global styles without a layout component
+## レイアウトコンポーネントを使わずにグローバルスタイルを追加する
 
-In some cases, using a shared layout component is not desirable. In these cases, you can include a global stylesheet using `gatsby-browser.js`.
+場合によっては、共通レイアウトコンポーネント使うことは好ましくありません。このような場合では `gatsby-browser.js` を使ってグローバルスタイルを読み込むこともできます。
 
-> **NOTE:** This approach does _not_ work with CSS-in-JS. Use shared components to share styles in CSS-in-JS.
+> **ヒント:** このアプローチは CSS-in-JS と同時には動作しません。 共通コンポーネントを使って、CSS-in-JS の中でスタイルを割り当ててください。
 
-First, open a new terminal window and run the following commands to create a new default Gatsby site and start the development server:
+はじめに、新しいターミナルウィンドウを開き、下記コマンドを実行して新規に Gatsby サイトを作成し、開発サーバーを起動してください。
 
 ```shell
 gatsby new global-style-tutorial https://github.com/gatsbyjs/gatsby-starter-default
@@ -76,7 +76,7 @@ cd global-style-tutorial
 npm run develop
 ```
 
-Second, create a CSS file and define any styles you wish. An example:
+次に、CSS ファイルを作成し、任意の CSS を定義してください。例：
 
 ```css:title=src/styles/global.css
 html {
@@ -88,10 +88,10 @@ a {
 }
 ```
 
-Then, include the stylesheet in your site's `gatsby-browser.js` file.
+そして、`gatsby-browser.js` の中で CSS ファイルを読み込みます。
 
-> **NOTE:** This solution works when including css as those styles are extracted when building the JavaScript but not for css-in-js.
-> Including styles in a layout component or a global-styles.js is your best bet for that.
+> **ヒント:** この方法は CSS を読み込んだときに実行され、読み込んだスタイルは JavaScript ビルド時に出力されます。 CSS-in-JS のための JavaScript ビルドは行われません。
+> レイアウトコンポーネントまたは global-styles.js の中で CSS ファイルを読み込むことが最善策になります。
 
 ```javascript:title=gatsby-browser.js
 import "./src/styles/global.css"
@@ -100,15 +100,15 @@ import "./src/styles/global.css"
 // require('./src/styles/global.css')
 ```
 
-> _Note: You can use Node.js require or import syntax. Additionally, the placement of the example css file in a `src/styles` folder is arbitrary._
+> _ヒント: Node.js の require、import 構文を使うことができます。さらにつけ加えると、 `src/styles` フォルダの中に置く実例 CSS ファイルの配置は任意です。_
 
-You should see your global styles taking effect across your site:
+グローバルスタイルがサイト全体に反映されているはずです：
 
 ![Global styles example site](./images/global-styles-example.png)
 
-### Importing CSS files into components
+### コンポーネントの中で CSS を読み込む
 
-It is also possible to break up your CSS styles into separate files so that team members can work independently while still using traditional CSS. You can then [import files directly](/docs/importing-assets-into-files/) into pages, templates, or components:
+チームメンバーが従来の CSS (非 CSS-in-JS)を使用している場合でも、個別の CSS ファイルに分割し、独立した作業が行えます。それらの CSS ファイルはページやテンプレート、コンポーネントの中で[直接取り込む](/docs/importing-assets-into-files/)ことができます。
 
 ```css:title=menu.css
 .menu {
@@ -122,11 +122,11 @@ It is also possible to break up your CSS styles into separate files so that team
 import "css/menu.css"
 ```
 
-This approach can simplify integration of CSS or [Sass](/packages/gatsby-plugin-sass/) styles into your Gatsby site by allowing team members to write and consume more traditional, class-based CSS. However, there are [trade-offs](#limitations) that must be considered with regards to web performance and the lack of dead code elimination.
+このアプローチではチームメンバーがより伝統的に使われてきたクラスベースの CSS を使って記述することが可能になり、Gatsby サイトの中で CSS や Sass 記法の統合が簡単に実現できます。ただし、ウェブパフォーマンスや不要になったコードの除去を忘れる事について考えなければならなくなるトレードオフがあります。
 
-### Adding classes to components
+### コンポーネントに CSS クラスを追加する
 
-Since `class` is a reserved word in JavaScript, you'll have to use the `className` prop instead, which will render as the browser-supported `class` attribute in your HTML output.
+`class` は JavaScript において予約語なので、代わりに `className` 属性を使わなければなりません。 HTML に出力されるとブラウザサポートされた `class` 属性としてレンダリングされます。
 
 ```jsx
 <button className="primary">Click me</button>
@@ -138,8 +138,8 @@ Since `class` is a reserved word in JavaScript, you'll have to use the `classNam
 }
 ```
 
-### Limitations
+### 問題解決の限界
 
-The biggest problem with global CSS files is the risk of name conflicts and side effects like unintended inheritance.
+グローバル CSS ファイルのもっとも大きな問題は名前が衝突するリスクと、意図しない継承の影響を受けてしまうことです。
 
-CSS methodologies like BEM can help solve this, but a more modern solution is to write locally-scoped CSS using [CSS Modules](/docs/css-modules/) or [CSS-in-JS](/docs/css-in-js/).
+この問題を解決するための助けとして BEM のような CSS 設計がありますが、より現代的な解決策は [CSS Modules](/docs/css-modules/) や [CSS-in-JS](/docs/css-in-js/) を使用したローカルスコープの CSS を記述することです。

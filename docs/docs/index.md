@@ -1,9 +1,8 @@
 ---
 title: Gatsby.js ドキュメント
+description: Gatsby のチュートリアル、ガイド、ビルド方法などのまとめ。
 disableTableOfContents: true
 ---
-
-import EmailCaptureForm from "../../www/src/components/email-capture-form"
 
 Gatsby は、React のための高速でモダンな静的サイトジェネレーターです。
 
@@ -17,7 +16,7 @@ Gatsby に入門する方法は、大きく分けてふたつあります。
 ## より深く
 
 1. [レシピ](/docs/recipes/): さまざまな典型的タスクを Gatsby で取り扱うためのレシピが揃っています。
-2. 多種多様な項目からあなたにとって必要なものを選んでください:
+2. 多種多様な項目からあなたにとって必要なものを選んでください：
 
    - [リファレンスガイド](/docs/guides/): データの取り込み方、デプロイ方法など、Gatsby で開発する際に遭遇するさまざまなトピックについて学びます。
    - [Gatsby API リファレンス](/docs/api-reference/): Gatsby API について知りましょう。

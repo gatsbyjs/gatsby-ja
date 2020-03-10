@@ -1,41 +1,41 @@
 ---
-title: Sourcing from GraphCMS
+title: GraphCMS からデータを取得する
 ---
 
-## Headless the GraphCMS way
+## GraphCMS 流のヘッドレス CMS
 
-[GraphCMS](https://graphcms.com?ref="gatsby-headless-docs-top") is a headless CMS that is optimized for working with GraphQL. Content structures like posts, authors, products and more are broken down into content types called "models." These models can then be queried with the familiar GraphQL syntax.
+[GraphCMS](https://graphcms.com?ref="gatsby-headless-docs-top") は GraphQL で操作するのに最適化されたヘッドレス CMS です。記事、作成者、プロダクトなどのコンテンツの構造は、モデルと呼ばれるコンテンツタイプに分類されます。これらのモデルはおなじみの GraphQL を使ってクエリーできます。
 
-One of the benefits of GraphCMS when working with Gatsby is that it supports GraphQL natively which allows you to test your content queries before even starting your Gatsby project.
+GraphCMS を Gatsby から使用するときの利点のひとつは、プロジェクトを開始する前にコンテンツのクエリーを試せることです。これは Gatsby が GraphQL をネイティブでサポートしているためです。
 
 ## Getting started
 
-In this guide you'll create a complete project capable of querying data from GraphCMS.
+このガイドでは、 GraphCMS からデータをクエリーできる完全なプロジェクトを作成します。
 
-### Install the boilerplate
+### 雛形をインストールする
 
-To begin, let's create a Gatsby starter site.
+はじめに、Gatsby のスターターサイトを作りましょう。
 
 ```shell
 gatsby new gatsby-site https://github.com/gatsbyjs/gatsby-starter-default
 ```
 
-Navigate inside of the project with `cd gatsby-site`.
+`cd gatsby-site` を実行してプロジェクトのディレクトリーに移動します。
 
-### Add the source plugin
+### ソースプラグインを追加する
 
-Additionally, you need the the `gatsby-source-graphql` library. Because GraphCMS uses GraphQL natively, you will take advantage of Gatsby's ability to simply stitch two GraphQL APIs together, reducing the time required to transform content. There is no need to use a special gatsby-source-x-cms plugin, the GraphQL source plugin is all you need.
+加えて、`gatsby-source-graphql` が必要です。GraphCMS は GraphQL をネイティブで使用するので、Gatsby の機能を利用してふたつの GraphQL API をつなぎ合わせるだけで、コンテンツの変換に必要な時間を短縮できます。gatsby-source-x-cms のような特別なプラグインは必要なく、`gatsby-source-graphql` があれば十分です。
 
-You can install this component with:
+次のコマンドでインストールできます。
 
 ```shell
   # Optionally with `npm install`
   npm install --save gatsby-source-graphql
 ```
 
-### Configure the plugin
+### プラグインの設定
 
-The last step required before you can query your data is to configure the `gatsby-source-graphql` plugin. Open `gatsby-config.js` and add the following object to the plugins array. This example uses an open API from GraphCMS but you will most likely want to replace this with your own API and provide a fieldName that makes the most sense to your project. [Here's more information on working with GraphCMS APIs.](https://docs.graphcms.com/developers/api)
+最後に、データをクエリーする前に `gatsby-source-graphql` プラグインの設定が必要です。`gatsby-config.js` を開いて plugins の配列に次のオブジェクトを追加します。この例では GraphCMS の公開 API を使っていますが、ほとんどの場合あなたのプロジェクトに合わせて API の url や fieldName を置き換えることになります。[GraphCMS API の詳細はこちらをご覧ください。](https://docs.graphcms.com/developers/api)
 
 ```js
 {
@@ -52,17 +52,17 @@ The last step required before you can query your data is to configure the `gatsb
 },
 ```
 
-If everything works correctly, you should now have your GraphCMS data added to the Gatsby source API!
+もしすべてが正常に動いていたら GraphCMS のデータが Gatsby のソース API に追加されているはずです！
 
-### Querying for content
+### コンテンツをクエリーする
 
-From the root of your project, run the development environment with `gatsby develop`. Once the server has started and is error free, you should be able to open the following URL in your browser:
+プロジェクトのルートで `gatsby develop` を実行して開発サーバーを起動します。エラーのない状態でサーバーが起動したら、ブラウザーで次の URL を開けます。
 
-<http://localhost:8000/___graphql>
+`http://localhost:8000/___graphql`
 
-This will show you an interface where you can test your new content API.
+このページには新しいコンテンツ API を試すためのインターフェースが表示されます。
 
-Try running this query:
+このクエリーを実行してください。
 
 ```graphql
 query {
@@ -78,7 +78,7 @@ query {
 }
 ```
 
-Again, if everything is working properly, you should see a successful response in the shape of:
+もしすべてが正常に動いていたら、次のような形のレスポンスが表示されます。
 
 ```json
 {
@@ -106,9 +106,9 @@ Again, if everything is working properly, you should see a successful response i
 }
 ```
 
-### Getting content on the page
+### ページでコンテンツを取得する
 
-For the purpose of this tutorial I've removed all the layout, SEO, link or other components that comprise a page in the Gatsby starter. The components are still there and 99% of users will likely want to put them back in once they understand what's happening in the code. You are just looking at the nails for right now, but the hammers, saws and other tools are still in the toolbox. Open the index file located at `src/pages/index.js` and replace the content with this code:
+このチュートリアルのために、`src/pages/index.js` から layout 、SEO 、link やページコンポーネントを含むすべてのコンポーネントを取り除きました。これらのコンポーネントは存在しており、99% のユーザーはコードの内容を理解したらこれらのコンポーネントを元に戻したいと思うことでしょう。今は釘を見ているだけですが、ハンマーやのこぎりなど、その他のツールがツールボックスに入っています。`src/pages/index.js` にあるインデックスファイルを開いて、コンテンツを次のコードに置き換えます。
 
 ```jsx
 import React from "react"
@@ -148,14 +148,14 @@ const IndexPage = () => (
 export default IndexPage
 ```
 
-With this code, you have:
+このコードで次のことができます。
 
-1. Added the `StaticQuery` component to a page that allows you to fetch content from the GraphQL API.
-2. Fetched some simplified data from the Mountain API, namely the title and elevation.
-3. Rendered the list in the StaticQuery's RenderProp called "render".
+1. ページに `StaticQuery` コンポーネントを追加する。このコンポーネントは GraphQL API でコンテンツをフェッチできます。
+2. title と elevation を含む簡略化されたデータを Mountain API からフェッチする。
+3. `StaticQuery` の "render" で一覧を描画する。
 
-## Summary
+## まとめ
 
-Hopefully you've seen how easy it is to start working with GraphCMS and Gatsby. With projects of all sizes gravitating towards the benefits of the JAM stack, the time has never been better to learn how to work with Gatsby. Adding a content API in the backend with GraphCMS provides a scalable CMS that you can start using within minutes and keep using for the life of your project.
+このチュートリアルから、GraphCMS と Gatsby を使い始めるのがどれだけ簡単かを感じとってもらえることを願っています。昨今、どのようなサイズのプロジェクトも Jamstack の利点へと引き寄せられているので、 Gatsby がどのように動いているかを学ぶには最適なタイミングです。コンテンツ API のバックエンドに GraphCMS を追加することで、プロジェクトの寿命に合わせたスケーラブルな CMS を数分以内で使い始められます。
 
-[Check out GraphCMS today and build "fast websites", fast!](https://graphcms.com?ref="gatsby-headless-docs-bottom")
+[GraphCMS を今すぐチェックして"高速な Web サイト"を高速に構築しましょう！](https://graphcms.com?ref="gatsby-headless-docs-bottom")

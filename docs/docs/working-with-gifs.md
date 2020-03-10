@@ -1,14 +1,14 @@
 ---
-title: Working with GIFs
+title: GIFを使用する
 ---
 
-If you're building a blog with Gatsby, chances are you'll want to include some animated GIFs: who wouldn't want to include a dancing otter or cat GIF?
+Gatsby でブログを作成していると、アニメーション GIF を使いたいときがあるかもしれません。たとえば踊るカワウソや猫の GIF を使いたいときなどです。
 
-## Including GIFs in components
+## コンポーネントに GIF を含める
 
-In Gatsby components and pages, you'll want to import animated GIFs instead of using Gatsby Image because of the way it optimizes image data for the responsive picture element.
+Gatsby のコンポーネントとページではレスポンシブなピクチャ要素の画像データを最適化するために、Gatsby Image を使用せずにアニメーション GIF をインポートする必要があります。
 
-Here's an example:
+以下に例を示します。
 
 ```jsx:title=pages/about.js
 import React from 'react'
@@ -27,23 +27,23 @@ const AboutPage = () => (
 export default AboutPage;
 ```
 
-## Including GIFs in Markdown
+## Markdown に GIF を含める
 
-In Markdown posts and pages, including an animated GIF is the same as a static image:
+Markdown による投稿とページにアニメーション GIF を含める場合は静止画像と同じ方法になります。
 
 ```markdown
-![otter dancing with a fish](./images/dancing-ofter.gif)
+![otter dancing with a fish](./images/dancing-otter.gif)
 ```
 
 ![otter dancing with a fish](./images/dancing-otter.gif)
 
-Animated GIFs can be quite large in size, so be careful not to sabotage your webpages' performance with extremely large files. You could reduce file size by [optimizing the frames](https://skylilies.livejournal.com/244378.html) or converting them to video.
+アニメーション GIF はファイルサイズが非常に大きい場合があるので、ウェブページのパフォーマンスを損なわないように注意してください。[フレームを最適化する](https://skylilies.livejournal.com/244378.html)かビデオに変換するとファイルサイズを小さくできます。
 
-## Accessibility concerns with animated GIFs
+## アニメーション GIF のアクセシビリティに関する問題
 
-Beware that flashing and autoplaying GIFs can cause issues for users who are sensitive to motion. GIFs should not autoplay whenever possible for safety reasons. One technique would be to add controls, such as using a package like [react-gif-player](https://www.npmjs.com/package/react-gif-player) as a [client-only package](/docs/using-client-side-only-packages/).
+GIF の点滅と自動再生は、動きに敏感なユーザーの問題を引き起こす可能性があることに注意してください。安全上の理由から可能な限り GIF の自動再生をするべきではありません。対処法の 1 つとしては、[react-gif-player](https://www.npmjs.com/package/react-gif-player) のようなパッケージを[クライアントサイド専用パッケージ](/docs/using-client-side-only-packages/)として使用して、GIF にコントロールを追加すると良いでしょう。
 
-For more information on accessible motion:
+アクセシビリティにおけるモーションの詳細については以下を参照してください。
 
 - https://source.opennews.org/articles/motion-sick/
 - https://www.w3.org/TR/UNDERSTANDING-WCAG20/time-limits-pause.html
