@@ -80,7 +80,7 @@ export const query = graphql`
 
 クエリーの結果は、 `data`プロパティの React コンポーネントに自動的に挿入されます。GraphQL と Gatsby を使用すると、データを要求すると即座に使用を開始できます。
 
-**注：** ページ以外のコボイラープレートンポーネントで GraphQL クエリーを実行するには、[Gatsby の静的クエリー機能](/docs/static-query/)を使用する必要があります。
+**注：** ページ以外のコンポーネントで GraphQL クエリーを実行するには、[Gatsby の静的クエリー機能](/docs/static-query/)を使用する必要があります。
 
 ### クエリーを理解する
 
