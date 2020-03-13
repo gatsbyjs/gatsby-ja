@@ -4,7 +4,7 @@ title: GraphQLのコンセプト
 
 "../../www/src/components/layer-model"から、LayerModel をインポートします。
 
-React コンポーネントにデータをロードするためのオプションは、数多くあります。なかでももっとも人気があり、かつ強力な技術が[GraphQL](http://graphql.org/)です。
+React コンポーネントにデータをロードするためのオプションは、数多くあります。なかでももっとも人気があり、かつ強力な技術が [GraphQL](http://graphql.org/) です。
 
 GraphQL は、開発者がより楽に React コンポーネントにデータを取り込む（_pull_)ために、Facebook で発明されました。
 
