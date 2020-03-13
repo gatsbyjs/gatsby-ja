@@ -1,5 +1,5 @@
 ---
-タイトル: GraphQLのコンセプト
+title: GraphQLのコンセプト
 ---
 
 "../../www/src/components/layer-model"から、LayerModel をインポートします。
