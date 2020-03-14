@@ -154,7 +154,7 @@ export const pageQuery = graphql`
 
 ## `gatsby-node.js` にテンプレートを利用してタグページをレンダリングする設定を追加する
 
-テンプレートを作成しましたね、素晴らしい！　あなたが [Markdown のページを追加する](/docs/adding-markdown-pages/) をすでに読んでいるなら、その中に含まれている `createPages` が記事ページを作るサンプルはタグページのそれとほぼ同じものです。あなたのウェブサイトにおける `gatsby-node.js` ファイルが `lodash` をインポートして宣言済み (`const _ = require('lodash')`) ならば、 [`createPages`](/docs/node-apis/#createPages) は下記のように使えます。
+テンプレートを作成しましたね、素晴らしい！　あなたが [Markdown のページを追加する](/docs/adding-markdown-pages/) をすでに読んでいるなら、その中に含まれている `createPages` が記事ページを作るサンプルはタグページのそれとほぼ同じものです。あなたのウェブサイトにおける `gatsby-node.js` ファイルが `lodash` をインポートして宣言済み (`const _ = require('lodash')`) ならば、[`createPages`](/docs/node-apis/#createPages) は下記のように使えます。
 
 ```js:title=gatsby-node.js
 const path = require("path")
