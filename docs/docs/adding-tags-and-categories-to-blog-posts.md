@@ -61,7 +61,7 @@ tags: ["animals", "Chicago", "zoos"]
 
 ## タグページのテンプレートを作成する（`/tags/{tag}` のようなページ）
 
-あなたが [Markdown のページを追加する](/docs/adding-markdown-pages/)を済ませていれば、このプロセスと似た作業をすでに実施しているでしょう。タグページのテンプレートを作成し、 `createPages` を `gatsby-node.js` の中で実行して記事に含めたタグごとのページを生成します。
+あなたが [Markdown のページを追加する](/docs/adding-markdown-pages/)を済ませていれば、このプロセスと似た作業をすでに実施しているでしょう。タグページのテンプレートを作成し、`createPages` を `gatsby-node.js` の中で実行して記事に含めたタグごとのページを生成します。
 
 まずは、`src/templates/tags.js` にタグごとのページテンプレートを作成します。
 
