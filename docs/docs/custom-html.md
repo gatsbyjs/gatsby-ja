@@ -1,46 +1,37 @@
 ---
-title: Customizing html.js
+title: html.js をカスタマイズする
 ---
 
-Gatsby uses a React component to server render the `<head>` and other parts of
-the HTML outside of the core Gatsby application.
+Gatsby は React コンポーネントを利用して、コア Gatsby アプリケーションの外部で HTML の `<head>` およびその他のパーツをサーバーレンダリングします。
 
-Most sites should use the default `html.js` shipped with Gatsby. But if you need
-to customize your site's html.js, copy the default one into your source
-tree by running:
+ほとんどのサイトでは Gatsby に同梱されているデフォルトの `html.js` を利用するべきです。しかしサイトの html.js をカスタマイズする必要がある場合には、デフォルトのものをソースツリーにコピーします。
 
 ```shell
 cp .cache/default-html.js src/html.js
 ```
 
-And then make modifications as needed.
+そして、必要に応じて変更を加えます。
 
-If you need to insert custom html into the `<head>` or `<footer>` of each page on your site, you can use `html.js`.
+もしサイト各ページの `<head>` または `<footer>` にカスタム html を挿入する必要がある場合は、`html.js` が利用できます。
 
-> Customizing `html.js` is a workaround solution for when the use of the appropriate APIs is not available in `gatsby-ssr.js`. Consider using [`onRenderBody`](/docs/ssr-apis/#onRenderBody) or [`onPreRenderHTML`](/docs/ssr-apis/#onPreRenderHTML) instead of the method above.
-> As a further consideration, customizing `html.js` is not supported within a Gatsby Theme. Use the API methods mentioned instead.
+> `html.js` のカスタマイズは、`gatsby-ssr.js` で適切な API を利用できない場合の回避策です。上記方法の代わりに [`onRenderBody`](/docs/ssr-apis/#onRenderBody)または [`onPreRenderHTML`](/docs/ssr-apis/#onPreRenderHTML)の利用も検討してください。
+> さらなる考慮事項として、Gatsby テーマ内での `html.js` のカスタマイズはサポートされていません。先述の API メソッドを利用してください。
 
-## Required props
+## 必須のプロップス
 
-Note: the various props that are rendered into pages _are_ required e.g.
-`headComponents`, `preBodyComponents`, `body`, and `postBodyComponents`.
+ヒント： 例えば `headComponents` や `preBodyComponents`、`body`、`postBodyComponents` *など*、ページにレンダリングされる様々なプロップスが必要です。
 
-## Inserting html into the `<head>`
+## `<head>` に html を挿入する
 
-Anything you render in the `html.js` component will _not_ be made "live" in
-the client like other components. If you want to dynamically update your
-`<head>` we recommend using
-[React Helmet](/packages/gatsby-plugin-react-helmet/)
+`html.js` コンポーネントでレンダリングしたものは、他のコンポーネントのようにクライアントで　"ライブ" に*なりません*。もし `<head>` を動的に更新したいときは、[React Helmet](/packages/gatsby-plugin-react-helmet/)の利用を推奨します。
 
-## Inserting html into the `<footer>`
+## `<footer>` に html を挿入する
 
-If you want to insert custom html into the footer, html.js is the preferred way of doing this. If you're writing a plugin, consider using the `setPostBodyComponents` prop in the [Gatsby SSR API](/docs/ssr-apis/).
+もしカスタム html をフッターに挿入したいときは、html.js の利用を推奨します。独自のプラグインを作成している場合は、[Gatsby SSR API](/docs/ssr-apis/)の `setPostBodyComponents` プロップの利用を検討してください。
 
-## Target container
+## ターゲットコンテナ
 
-If you see this error: `Uncaught Error: _registerComponent(...): Target container is not a DOM element.` it means your `html.js` is missing the required
-"target container". Inside your `<body>` you must have a div with an id of
-`___gatsby` like:
+エラー： `Uncaught Error: _registerComponent(...): Target container is not a DOM element.` が表示される場合、`html.js` に必要な "ターゲットコンテナ" が存在しないことを意味します。`<body>` 内に以下のような `___gatsby` の id を持つ div を必要とします。
 
 ```jsx:title=src/html.js
 <div
@@ -50,9 +41,9 @@ If you see this error: `Uncaught Error: _registerComponent(...): Target containe
 />
 ```
 
-## Adding custom JavaScript
+## カスタム JavaScript の追加
 
-You can add custom JavaScript to your HTML document by using React's [dangerouslySetInnerHTML](https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml) attribute.
+React の[dangerouslySetInnerHTML](https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml)属性を利用して、HTML ドキュメントにカスタム JavaScript を追加できます。
 
 ```jsx:title=src/html.js
 <script
