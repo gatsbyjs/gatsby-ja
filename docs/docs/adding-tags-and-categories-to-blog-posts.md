@@ -44,7 +44,7 @@ tags: ["animals", "Chicago", "zoos"]
 
 これらの属性は全てデータレイヤーで利用可能となっています。属性データを使うには `graphql` を使ってこれをクエリします。 `frontmatter` に含まれる全ての属性が GraphQL で取得できます。
 
-まずは、 Graph<em>i</em>QL (`http://localhost:8000/___graphql`) を使ってクエリーを実行してみましょう。`gatsby develop` を実行していない場合は実行してからアクセスしてください！
+まずは、Graph<em>i</em>QL (`http://localhost:8000/___graphql`) を使ってクエリーを実行してみましょう。`gatsby develop` を実行していない場合は実行してからアクセスしてください！
 
 ```graphql
 {
