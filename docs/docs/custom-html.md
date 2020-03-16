@@ -19,7 +19,7 @@ cp .cache/default-html.js src/html.js
 
 ## 必須のプロップス
 
-ヒント： 例えば `headComponents` や `preBodyComponents`、`body`、`postBodyComponents` *など*、ページにレンダリングされる様々なプロップスが必要です。
+ヒント： 例えば `headComponents` や `preBodyComponents`、`body`、`postBodyComponents` _など_、ページにレンダリングされる様々なプロップスが必要です。
 
 ## `<head>` に html を挿入する
 
