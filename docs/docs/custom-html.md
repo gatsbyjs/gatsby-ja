@@ -14,7 +14,7 @@ cp .cache/default-html.js src/html.js
 
 もしサイト各ページの `<head>` または `<footer>` にカスタム html を挿入する必要がある場合は、`html.js` が利用できます。
 
-> `html.js` のカスタマイズは、`gatsby-ssr.js` で適切な API を利用できない場合の回避策です。上記方法の代わりに [`onRenderBody`](/docs/ssr-apis/#onRenderBody)または [`onPreRenderHTML`](/docs/ssr-apis/#onPreRenderHTML)の利用も検討してください。
+> `html.js` のカスタマイズは、`gatsby-ssr.js` で適切な API を利用できない場合の回避策です。上記方法の代わりに [`onRenderBody`](/docs/ssr-apis/#onRenderBody) または [`onPreRenderHTML`](/docs/ssr-apis/#onPreRenderHTML) の利用も検討してください。
 > さらなる考慮事項として、Gatsby テーマ内での `html.js` のカスタマイズはサポートされていません。先述の API メソッドを利用してください。
 
 ## 必須のプロップス
@@ -27,7 +27,7 @@ cp .cache/default-html.js src/html.js
 
 ## `<footer>` に html を挿入する
 
-もしカスタム html をフッターに挿入したいときは、html.js の利用を推奨します。独自のプラグインを作成している場合は、[Gatsby SSR API](/docs/ssr-apis/)の `setPostBodyComponents` プロップの利用を検討してください。
+もしカスタム html をフッターに挿入したいときは、html.js の利用を推奨します。独自のプラグインを作成している場合は、[Gatsby SSR API](/docs/ssr-apis/) の `setPostBodyComponents` プロップの利用を検討してください。
 
 ## ターゲットコンテナ
 
@@ -43,7 +43,7 @@ cp .cache/default-html.js src/html.js
 
 ## カスタム JavaScript の追加
 
-React の[dangerouslySetInnerHTML](https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml)属性を利用して、HTML ドキュメントにカスタム JavaScript を追加できます。
+React の [dangerouslySetInnerHTML](https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml) 属性を利用して、HTML ドキュメントにカスタム JavaScript を追加できます。
 
 ```jsx:title=src/html.js
 <script
