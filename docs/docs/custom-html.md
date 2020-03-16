@@ -23,7 +23,7 @@ cp .cache/default-html.js src/html.js
 
 ## `<head>` に html を挿入する
 
-`html.js` コンポーネントでレンダリングしたものは、他のコンポーネントのようにクライアントで　"ライブ" に*なりません*。もし `<head>` を動的に更新したいときは、[React Helmet](/packages/gatsby-plugin-react-helmet/)の利用を推奨します。
+`html.js` コンポーネントでレンダリングしたものは、他のコンポーネントのようにクライアントで動的に更新されることは*ありません*。もし `<head>` を動的に更新したいときは、[React Helmet](/packages/gatsby-plugin-react-helmet/)の利用を推奨します。
 
 ## `<footer>` に html を挿入する
 
