@@ -86,7 +86,7 @@ GATSBY_ALGOLIA_SEARCH_KEY=insertValue
 ALGOLIA_ADMIN_KEY=insertValue
 ```
 
-`queries` は `src/utils/algolia.js` からエクスポートされる、必須の GraphQL クエリと、任意のインデックス名、トランスフォーマー関数、設定オブジェクトを含むオブジェクトの配列によって、Gatsby の GraphQL レイヤーから Algolia に直接インデックスしてほしいデータを取得できるようにします。
+`queries` は `src/utils/algolia.js` からエクスポートされる、必須の GraphQL クエリと、任意のインデックス名、トランスフォーマー（transformer）関数、設定オブジェクトを含むオブジェクトの配列によって、Gatsby の GraphQL レイヤーから Algolia に直接インデックスしてほしいデータを取得できるようにします。
 
 ```js:title=src/utils/algolia.js
 const pageQuery = `{
