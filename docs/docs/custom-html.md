@@ -17,9 +17,9 @@ cp .cache/default-html.js src/html.js
 > `html.js` のカスタマイズは、`gatsby-ssr.js` で適切な API を利用できない場合の回避策です。上記方法の代わりに [`onRenderBody`](/docs/ssr-apis/#onRenderBody) または [`onPreRenderHTML`](/docs/ssr-apis/#onPreRenderHTML) の利用も検討してください。
 > さらなる考慮事項として、Gatsby テーマ内での `html.js` のカスタマイズはサポートされていません。先述の API メソッドを利用してください。
 
-## 必須のプロップス
+## 必須なプロパティ
 
-ヒント： 例えば `headComponents` や `preBodyComponents`、`body`、`postBodyComponents` _など_、ページにレンダリングされる様々なプロップスが必要です。
+ヒント： 例えば `headComponents` や `preBodyComponents`、`body`、`postBodyComponents` _など_、ページにレンダリングされる様々なプロパティが必要です。
 
 ## `<head>` に html を挿入する
 
