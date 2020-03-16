@@ -1,30 +1,30 @@
 ---
-title: Converting a Starter to a Theme
+title: スターターをテーマに変換する
 ---
 
-Gatsby themes are designed to be easy to create from an existing starter. This guide will walk you through the main steps of converting your starter to a theme.
+Gatsby のテーマは、スターターから簡単に作成できます。このガイドでは、スターターをテーマに変換する方法を説明します。
 
-## What is a starter? What is a theme?
+## スターターとは？　テーマとは？
 
-A starter is a boilerplate Gatsby site that users can copy and [customize](/docs/modifying-a-starter/). Once modified, a starter maintains no connection to its source.
+スターターは、ユーザーがコピーして[カスタマイズ](/docs/modifying-a-starter/)できる Gatsby の雛形です。一度修正すると、元のスターターのソースとの繋がりを維持しなくなります。
 
-A theme is a type of plugin that includes a `gatsby-config.js` file and adds pre-configured functionality, data sourcing, and/or UI code to Gatsby sites. In contrast to starters, themes can be packaged and distributed through a registry like npm, and their versions can be tracked/managed through a `package.json` file.
+テーマは `gatsby-config.js` などを含むプラグインの一種で、あらかじめ設定された機能、データのソース、 UI のコードを Gatsby サイトに追加します。テーマはスターターと違い、パッケージ化して、 npm などのレジストリーを通して配布できます。それらのバージョンは `package.json` で管理できます。
 
-One reason to convert a starter to a theme is to make it easier to push updates out to consumers of your code. With a starter, users would have to try and update their code from the original starter repo and run the risk of overwriting some of their own changes. With a theme, it's much easier for developers to update code through their package manager and rely on a consistent theme API that respects their customizations.
+スターターをテーマにする理由は、ユーザーにとって更新が簡単になるためです。スターターの場合、ユーザーはスターター元のリポジトリーからコードを更新する必要があり、変更の一部を上書きするリスクを伴います。テーマを使用すれば、開発者がパッケージマネージャーを通してコードを更新したり、カスタマイズ可能なテーマ API に依存することがとても簡単になります。
 
-## Prepare Your `package.json`
+## `package.json` の準備
 
-To start converting your starter to a library, get started by updating your `package.json` to use the `gatsby-theme-*` naming convention. If your starter is `gatsby-starter-awesome-blog` you can update the name key to `gatsby-theme-awesome-blog` (and double check that it's available on [npm](https://npmjs.com)).
+スターターの変換をはじめるには、まず `package.json` のパッケージ名を `gatsby-theme-*` の命名規則に変更します。例えばスターターのパッケージ名が `gatsby-starter-awesome-blog` の場合、 `gatsby-theme-awesome-blog` に変更します（名前が [npm]（https://npmjs.com）で利用できるか確認しましょう）。
 
-Specify `gatsby`, `react`, and `react-dom` as `devDependencies` . It's preferable to add them as `peerDependencies` as well. This helps end users determine which versions they want and npm/yarn will be able to resolve them properly.
+次に `gatsby` 、 `react` 、 `react-dom` を `devDependencies` に指定します。これらを `peerDependencies` に追加することも推奨します。どのバージョンが求められるのかをユーザーが判断するのに役立ち、それらを npm や yarn が適切に解決してくれるためです。
 
-In addition to updating your dependencies, you will need to create an `index.js` file in the root of your project. This allows Gatsby to resolve the theme since Node automatically looks for `index.js`.
+依存関係を更新したら、 `index.js` をプロジェクトのルートに作成する必要があります。 Node が自動で `index.js` を探し、 Gatsby がテーマを解決できます。
 
-## Handling path resolution
+## パスを解決する
 
-One of the key differences between themes and starters is that a theme is no longer executed when the Gatsby CLI is being run since it's now a dependency. This often results in errors sourcing content and finding templates since they will look in the end user's directory.
+テーマはスターターと違い dependency で、 Gatsby CLI の起動時に実行されません。これはユーザーのディレクトリーを参照するため、コンテンツの取得やテンプレートの参照でエラーが発生する原因になります。
 
-In order to fix this, consider the following code that works as a starter:
+これを解決するために、スターターで機能する、次のようなコードを考えてみましょう。
 
 ```js
 const createPosts = (createPage, createRedirect, edges) => {
@@ -44,7 +44,7 @@ const createPosts = (createPage, createRedirect, edges) => {
 }
 ```
 
-Since `path.resolve` is being used the starter will resolve `src/templates/post.js` rather than `node_modules/gatsby-theme-awesome-blog/src/templates/post.js`. In order to fix this you can use `require.resolve` which will look relative to the theme so the correct template is found.
+このコードでは `path.resolve` を使用しているため、スターターは `node_modules/gatsby-theme-awesome-blog/src/templates/post.js` ではなく `src/templates/post.js` を解決しようとします。これを修正するには、 `require.resolve` を使用し、テーマからの相対的なパスを見て、正しいテンプレートを見つけられるようにします。
 
 ```js
 const createPosts = (createPage, createRedirect, edges) => {
@@ -64,19 +64,19 @@ const createPosts = (createPage, createRedirect, edges) => {
 }
 ```
 
-There may be other locations where you will need to update the path resolution like your `gatsby-config.js` as well.
+他にも `gatsby-config` などのファイルで、パスの解決を更新する必要があるかもしれません。
 
-## Sourcing pages
+## ページをソースに含める
 
-If your theme provides pages for things like the blog post index and a homepage, you will need to source them.
-Gatsby will only look in the relative `src/pages` directory when `gatsby develop` is run.
-You will need to use the [`gatsby-plugin-page-creator`](/packages/gatsby-plugin-page-creator/).
+テーマが投稿の一覧やホームなどのページを提供する場合、それらをソースに含める必要があります。  
+Gatsby は `gatsby develop` で動作する時のみ、 `src/pages`　の相対パスを見ます。
+[`gatsby-plugin-page-creator`](/packages/gatsby-plugin-page-creator/) を使用します。
 
 ```shell
 npm install --save gatsby-plugin-page-creator
 ```
 
-Then, tell the plugin to look in your theme's `src/pages` directory.
+これで、プラグインに、テーマの `src/pages` ディレクトリーを見るように伝えられます。
 
 ```js:title=gatsby-config.js
 {
@@ -87,18 +87,18 @@ Then, tell the plugin to look in your theme's `src/pages` directory.
 },
 ```
 
-## Publishing to npm
+## npm に公開する
 
-In order to allow others to install your theme you will need to publish it to npm. If this is new for you, learn how [to publish to npm](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry).
+ユーザーがテーマをインストールできるように、 npm に公開する必要があります。公開が初めての場合は、 [to publish to npm](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry) を参考にしてください。
 
-From the root of your newly created theme run `npm publish`.
+新しく作成したテーマのルートフォルダーで、 `npm publish` を実行します。
 
-Once you've published, you can install the theme in your starter.
+テーマが公開されれば、あなたのスターターへインストールできるようになります。
 
 ```shell
 npm install --save gatsby-theme-NAME
 ```
 
-## Walkthrough
+## 詳しい説明
 
 - [Jason Lengstorf converts an existing Gatsby site to a theme](https://www.youtube.com/watch?v=NkW06HK9-aY)
