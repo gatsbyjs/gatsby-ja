@@ -63,7 +63,7 @@ export const query = graphql`
 - `gatsby-config.js`と `index.js` ページがある [Gatsby のサイト](/docs/quick-start)が用意されている。
 - `gatsby-image`、`gatsby-transformer-sharp`、`gatsby-plugin-sharp`のパッケージがインストールされている。
 - `gatsby-source-filesystem` のようなソースプラグインがインストールされている。
-- 画像ファイル(`.jpg`、`.png`、`.gif`、`.svg`、等)が `src/images` フォルダに格納されている。
+- 画像ファイル（`.jpg`、`.png`、`.gif`、`.svg`、等）が `src/images` フォルダに格納されている。
 
 ### 進め方
 
@@ -99,7 +99,7 @@ export const query = graphql`
    }
 ```
 
-ヒント: これらのパラメーターは `http://localhost:8000/__graphql` から閲覧できる GraphQL プレイグラウンドにて確認できます。
+ヒント： これらのパラメーターは `http://localhost:8000/__graphql` から閲覧できる GraphQL プレイグラウンドにて確認できます。
 
 3. 次に "gatsby-image" から `Img` コンポーネントをインポートしてください。これは画像を表示させるために JSX 内で使用します。
 
