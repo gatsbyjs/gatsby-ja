@@ -56,18 +56,18 @@ export const query = graphql`
 - `gatsby-transformer-remark` を使用して、[Markdown を HTML に変換するチュートリアル](/tutorial/part-six/#transformer-plugins)。
 - [Gatsby プラグインライブラリ](/plugins/?=transformer)で利用できるトランスフォーマープラグインを探す。
 
-## Transforming images into grayscale using GraphQL
+## GraphQL を使って画像をグレースケールに変換する
 
-### Prerequisites
+### 前提条件
 
-- A [Gatsby site](/docs/quick-start) with a `gatsby-config.js` file and an `index.js` page
-- The `gatsby-image`, `gatsby-transformer-sharp`, and `gatsby-plugin-sharp` packages installed
-- A source plugin installed, such as `gatsby-source-filesystem`
-- An image (`.jpg`, `.png`, `.gif`, `.svg`, etc.) in the `src/images` folder
+- `gatsby-config.js`と `index.js` ページがある [Gatsby のサイト](/docs/quick-start)が用意されている。
+- `gatsby-image`、`gatsby-transformer-sharp`、`gatsby-plugin-sharp`のパッケージがインストールされている。
+- `gatsby-source-filesystem` のようなソースプラグインがインストールされている。
+- 画像ファイル(`.jpg`、`.png`、`.gif`、`.svg`、等)が `src/images` フォルダに格納されている。
 
-### Directions
+### 進め方
 
-1. Edit your `gatsby-config.js` file to source images and configure plugins for Gatsby's GraphQL data layer. A common approach is to source them from an images directory using the `gatsby-source-filesystem` plugin:
+1. `gatsby-config.js` を編集して、Gatsby 内の GraphQL のデータ層に使用する画像を設定してください。`gatsby-source-filesystem` プラグインを使って画像が含まれているフォルダを組み込むのが一般的です。
 
 ```javascript:title=gatsby-config.js
 
@@ -84,7 +84,7 @@ export const query = graphql`
  ],
 ```
 
-2.  Query your image using GraphQL and apply a grayscale transformation to the image inline. The `relativePath` should be relative to the path you configured in `gatsby-source-filesystem`.
+2. GraphQL を使って画像のクエリを行い、インラインでグレースケール変換を適用させましょう。`relativePath` は `gatsby-source-filesystem` で設定したパスからの相対パスを設定します。
 
 ```graphql
   query {
@@ -99,9 +99,9 @@ export const query = graphql`
    }
 ```
 
-Note: You can find these and other parameters in your GraphQL playground located at `http://localhost:8000/__graphql`
+ヒント: これらのパラメーターは `http://localhost:8000/__graphql` から閲覧できる GraphQL プレイグラウンドにて確認できます。
 
-3. Next import the `Img` component from "gatsby-image". You'll use this inside your JSX to display the image.
+3. 次に "gatsby-image" から `Img` コンポーネントをインポートしてください。これは画像を表示させるために JSX 内で使用します。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -137,12 +137,12 @@ export default () => {
 }
 ```
 
-4. Run `gatsby develop` to start the development server.
+4. `gatsby develop` を起動し、開発サーバーを立ち上げましょう。
 
-5. View your image in the browser: `http://localhost:8000/`
+5. ブラウザ上で `http://localhost:8000/` を開き、画像を確認しましょう。
 
-### Additional resources
+### 追加の資料
 
-- [API docs, including grayscale and duotone query tips](/docs/gatsby-image/#shared-query-parameters)
-- [Gatsby Image docs](/docs/gatsby-image/)
-- [Image processing examples](https://github.com/gatsbyjs/gatsby/tree/master/examples/image-processing)
+- [グレースケールやデュオトーンクエリについて記載されている API ドキュメント](/docs/gatsby-image/#shared-query-parameters)
+- [Gatsby Image ドキュメント](/docs/gatsby-image/)
+- [画像処理のサンプルコード](https://github.com/gatsbyjs/gatsby/tree/master/examples/image-processing)
