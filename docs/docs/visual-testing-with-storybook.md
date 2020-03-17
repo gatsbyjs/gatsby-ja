@@ -13,7 +13,7 @@ title: Storybook を使用した Visual Testing
 
 > 以下の手順は [npx](https://www.npmjs.com/package/npx) を使用しています。`npx` は npm の機能の一つで cli をグローバルインストールしなくても必要なファイルやフォルダを自動で生成してくれます。もし、古いバージョンの `npm` (`<5.2.0`) を使っている場合、代わりに次のコマンドを入力してください。 `npm install -g @storybook/cli`。 そして、Gatsby のプロジェクトルートにて `sb init` を起動することで、Storybook のセットアップが行われます。
 
-Storybook をセットアップするには、まず設定に必要なパッケージをインストールします。あなたの Gatsby プロジェクトのルートディレクトリにて以下のコマンドを入力することで、Storybook のコマンドラインツールが自動的にある程度のセットアップを行います。
+Storybook をセットアップするには、まず設定に必要なパッケージをインストールします。あなたの Gatsby プロジェクトのルートディレクトリーにて以下のコマンドを入力することで、Storybook のコマンドラインツールが自動的にある程度のセットアップを行います。
 
 ```shell
 npx -p @storybook/cli sb init
