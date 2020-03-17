@@ -259,7 +259,7 @@ import { Root, SearchBox, HitsWrapper, PoweredBy } from "./styles"
 import Input from "./Input"
 ```
 
-`PoweredBy` は、「Powered by Algolia」という文字列を小さなロゴとリンクと共にレンダリングします。 Algolia の寛大な無料利用枠を使用している場合は、検索結果の下でこのように表示するよう求められます。`react-instantsearch-dom` はこの目的のために、[`PoweredBy` コンポーネント](https://community.algolia.com/react-instantsearch/widgets/PoweredBy.html)も提供しますが、独自に構築することもできます。`index.js` について読み終えたら、これらのスタイル付きコンポーネントの説明に戻ります。
+`PoweredBy` は、「Powered by Algolia」という文字列を小さなロゴとリンクと共にレンダリングします。Algolia の寛大な無料利用枠を使用している場合は、検索結果の下でこのように表示するよう求められます。`react-instantsearch-dom` はこの目的のために、[`PoweredBy` コンポーネント](https://community.algolia.com/react-instantsearch/widgets/PoweredBy.html)も提供しますが、独自に構築することもできます。`index.js` について読み終えたら、これらのスタイル付きコンポーネントの説明に戻ります。
 
 `Search` コンポーネントが機能するため、最後に必要なのは、あなたがユーザーに表示したいすべての種類の結果を表示するためのヒットコンポーネントです。ヒットコンポーネントは、一致する結果の属性（ブログ投稿の場合は作成者、日付、タグ、タイトルなど）をユーザーに表示する方法を決定します。
 
