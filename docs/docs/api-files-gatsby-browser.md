@@ -6,7 +6,7 @@ title: gatsby-browser.js API ファイル
 
 `wrapPageElement` と `wrapRootElement` API はブラウザー API と[サーバーサイドレンダリング (Server-Side Rendering、SSR) API](/docs/ssr-apis) の両方に存在します。それらのいずれかを使用する場合、Node.js が SSR して生成されたページが、ブラウザーの JavaScript で[ハイドレートされた](/docs/glossary#hydration)後も同じ内容になるように、`gatsby-ssr.js` と `gatsby-browser.js` の両方で実装すべきかどうかを検討してください。
 
-ブラウザー API を使用するためには、あなたのサイトのルートに `gatsby-browser.js` ファイルを作成します。あなたが使用したい各 API をこのファイルからエクスポートします。
+ブラウザー API を使用するためには、あなたのサイトのルートに `gatsby-browser.js` ファイルを作成します。あなたが使用したい各 API をこのファイルからエクスポートしてください。
 
 ```jsx:title=gatsby-browser.js
 const React = require("react")
