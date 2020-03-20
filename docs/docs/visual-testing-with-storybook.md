@@ -11,7 +11,7 @@ title: Storybook を使用した Visual Testing
 
 ## 環境を設定する
 
-> 以下の手順は [npx](https://www.npmjs.com/package/npx) を使用しています。`npx` は npm の機能の一つで cli をグローバルインストールしなくても必要なファイルやフォルダを自動で生成してくれます。もし、古いバージョンの `npm` (`<5.2.0`) を使っている場合、代わりに次のコマンドを入力してください。 `npm install -g @storybook/cli`。 そして、Gatsby のプロジェクトルートにて `sb init` を起動することで、Storybook のセットアップが行われます。
+> 以下の手順は [npx](https://www.npmjs.com/package/npx) を使用しています。`npx` は npm の機能の一つで cli をグローバルインストールしなくても必要なファイルやフォルダを自動で生成してくれます。もし、古いバージョンの `npm` (`<5.2.0`) を使っている場合、代わりに次のコマンドを入力してください。`npm install -g @storybook/cli`。そして、Gatsby のプロジェクトルートにて `sb init` を起動することで、Storybook のセットアップが行われます。
 
 Storybook をセットアップするには、まず設定に必要なパッケージをインストールします。あなたの Gatsby プロジェクトのルートディレクトリーにて以下のコマンドを入力することで、Storybook のコマンドラインツールが自動的にある程度のセットアップを行います。
 
@@ -42,7 +42,7 @@ global.___loader = {
 // Gatsby 内部で使用する変数をモックすることで、Storybook のテスト環境で不必要なエラーが表示されることを防ぎます。
 global.__PATH_PREFIX__ = ""
 
-// この設定は Gatsby が設定している widnow.___navigate 関数を上書きするう設定です。本来は他のページにリンクする為に使用されますが Storybook 上では必要ありません。
+// この設定は Gatsby が設定している widnow.___navigate 関数を上書きします。本来は他のページにリンクする為に使用されますが Storybook 上では必要ありません。
 window.___navigate = pathname => {
   action("NavigateTo:")(pathname)
 }
