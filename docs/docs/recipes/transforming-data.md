@@ -60,8 +60,8 @@ export const query = graphql`
 
 ### 前提条件
 
-- `gatsby-config.js`と `index.js` ページがある [Gatsby のサイト](/docs/quick-start)が用意されている。
-- `gatsby-image`、`gatsby-transformer-sharp`、`gatsby-plugin-sharp`のパッケージがインストールされている。
+- `gatsby-config.js` と `index.js` ページがある [Gatsby のサイト](/docs/quick-start)が用意されている。
+- `gatsby-image`、`gatsby-transformer-sharp`、`gatsby-plugin-sharp` のパッケージがインストールされている。
 - `gatsby-source-filesystem` のようなソースプラグインがインストールされている。
 - 画像ファイル（`.jpg`、`.png`、`.gif`、`.svg`、等）が `src/images` フォルダに格納されている。
 
@@ -139,7 +139,7 @@ export default () => {
 
 4. `gatsby develop` を起動し、開発サーバーを立ち上げましょう。
 
-5. ブラウザ上で `http://localhost:8000/` を開き、画像を確認しましょう。
+5. ブラウザ上で `http://localhost:8000` を開き、画像を確認しましょう。
 
 ### 追加の資料
 
