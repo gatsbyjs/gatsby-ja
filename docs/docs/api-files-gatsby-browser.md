@@ -2,7 +2,7 @@
 title: gatsby-browser.js API ファイル
 ---
 
-`gatsby-browser.js` ファイルを使用すると、ブラウザー内のアクションに応答し、追加のコンポーネントであなたのサイトをラップできます。[Gatsby Browser API](/docs/browser-apis) は Gatsby の[クライアントサイド](/docs/glossary#client-side)と対話するための多くのオプションを提供します。
+`gatsby-browser.js` ファイルを使用すると、ブラウザー内でアクションに応答し、追加のコンポーネントであなたのサイトをラップできます。[Gatsby Browser API](/docs/browser-apis) は Gatsby の[クライアントサイド](/docs/glossary#client-side)と対話するための多くのオプションを提供します。
 
 `wrapPageElement` と `wrapRootElement` API はブラウザー API と[サーバーサイドレンダリング (Server-Side Rendering、SSR) API](/docs/ssr-apis) の両方に存在します。それらのいずれかを使用する場合、Node.js が SSR して生成されたページが、ブラウザーの JavaScript で[ハイドレートされた](/docs/glossary#hydration)後も同じ内容になるように、`gatsby-ssr.js` と `gatsby-browser.js` の両方で実装すべきかどうかを検討してください。
 
