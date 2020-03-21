@@ -4,20 +4,20 @@
 
 React コンポーネントにデータをロードするためのオプションは、数多くあります。
 なかでももっとも人気があり、かつ強力な技術が、
-[GraphQL](http://graphql.org/)です。
+[GraphQL](http://graphql.org/) です。
 
 GraphQL は、Facebook で発明されました。
-開発者がより楽に React コンポーネントにデータを取り込む（_pull_)ためです。
+開発者がより楽に React コンポーネントにデータを取り込む（_pull_ )ためです。
 
 GraphQL はクエリー検索言語です。
-（GraphQL の QL は、Query Language の*QL*)
+（GraphQL の QL は、Query Language の*QL* )
 SQL に精通している開発者であれば、GraphQL を同じように扱うことができます。
 特別な構文を使用して、コンポーネントに必要なデータを記述すれば、そのデータが提供されます。
 
 Gatsby は GraphQL を使用して、[ページおよび StaticQuery コンポーネント](/docs/building-with-components/)で有効になったデータを宣言します。
 そのサブコンポーネントに必要なデータも合わせて宣言します。
 次に Gatsby は、ブラウザーで使用できます。
-コンポーネントにデータが必要となるタイミングで、使用することが可能です。
+コンポーネントにデータが必要となるタイミングで使用可能です。
 
 複数ソースからのデータは、Gatsby の構築プロセスの重要な部分である、統合レイヤーで検索可能になります。
 
@@ -25,7 +25,7 @@ Gatsby は GraphQL を使用して、[ページおよび StaticQuery コンポ�
 
 ## GraphQL はなぜ良いのか
 
-詳細については、[Gatsby が GraphQL を使用する理由](/docs/why-gatsby-uses-graphql/)を参照してください。
+詳細については、 [Gatsby が GraphQL を使用する理由](/docs/why-gatsby-uses-graphql/)を参照してください。
 
 - フロントエンドのデータの雛形 — データの要求と待機を心配する必要はありません。 GraphQL クエリーで必要なデータを要求するだけで、必要なときに表示されます
 - フロントエンドの複雑さをクエリーに投げる — GraphQL クエリー内の _build-time_ で多くのデータ変換を実行できます
@@ -82,11 +82,11 @@ export const query = graphql`
 `
 ```
 
-クエリーの結果は、 `data`プロパティの React コンポーネントに自動的に挿入されます。
+クエリーの結果は、 `data` プロパティの React コンポーネントに自動的に挿入されます。
 
 GraphQL と Gatsby を使用すると、データを要求すると即座に使用を開始できます。
 
-**注：** ページ以外のコ雛形ンポーネントで GraphQL クエリーを実行するには、[Gatsby の静的クエリー機能](/docs/static-query/)を使用する必要があります。
+**注：** ページ以外の雛形コンポーネントで GraphQL クエリーを実行するには、 [Gatsby の静的クエリー機能](/docs/static-query/)を使用する必要があります。
 
 ### クエリーを理解する
 
@@ -96,7 +96,7 @@ GraphQL と Gatsby を使用すると、データを要求すると即座に使�
 
 #### クエリーオペレーションタイプ
 
-図では、`Query`という単語を `Operation type` としてマーキングしています。Gatsby が扱う操作タイプは `Query` のみのため、必要に応じてクエリーから省略できます（上記の例のように）。
+図では、`Query` という単語を `Operation type` としてマーキングしています。 Gatsby が扱う操作タイプは `Query` のみのため、必要に応じてクエリーから省略できます（上記の例のように）。
 
 #### オペレーションネーム
 
@@ -104,7 +104,7 @@ GraphQL と Gatsby を使用すると、データを要求すると即座に使�
 
 #### クエリーフィールド
 
-4 つの単語 `site` 、 `id` 、 `siteMetadata` 、および `title` は"Fields"としてマークされます。GraphQL クエリーのすべてのフィールドは同じように動作するため、名前は機能上の重要性を意味しませんが、トップレベルのフィールド（図の `site` など）は**ルートレベルのフィールド**と呼ばれることもあります。
+4 つの単語 `site` 、 `id` 、 `siteMetadata` 、および `title` は "Fields" としてマークされます。 GraphQL クエリーのすべてのフィールドは同じように動作するため、名前は機能上の重要性を意味しませんが、トップレベルのフィールド（図の `site` など）は**ルートレベルのフィールド**と呼ばれることもあります。
 
 ## GraphQL の学び方
 
@@ -128,7 +128,7 @@ GraphQL は、[多くの異なるプログラミング言語](http://graphql.org
 そして、クライアントからのデータの要求にライブで応答します。
 GraphQL サーバーのスキーマ（スキーマはデータの形状を記述する正式な方法です）を定義し、GraphQL リゾルバーがデータベースや他の API からデータを取得します。
 
-Gatsby は、ライブサイトの*build-time*および*not*で GraphQL を使用します。
+Gatsby は、ライブサイトの _build-time_ および _not_ で GraphQL を使用します。
 これはユニークなことです。
 実際に動いているウェブサイトで GraphQL を使用するためにサービス（データベースや Node.js など）を余計に実行する必要がないことを意味します。
 
@@ -139,7 +139,7 @@ Gatsby はアプリを構築するための優れたフレームワークです�
 
 GraphQL のほとんどの使用法では、GraphQL スキーマを手動で作成します。
 
-Gatsby は、さまざまなソースからデータを取得できるプラグインを使用します。そのデータは、GraphQL スキーマを自動的に推測（_infer_)するために使用されます。
+Gatsby は、さまざまなソースからデータを取得できるプラグインを使用します。そのデータは、GraphQL スキーマを自動的に推測（_infer_ )するために使用されます。
 
 次のような Gatsby データを指定した場合：
 
@@ -163,11 +163,11 @@ title: String
 
 ## 強力なデータ変換
 
-GraphQL は、Gatsby の別のユニークな機能を可能にします — クエリーへの引数でデータ変換を制御できます。 次に例を示します。
+GraphQL は、 Gatsby の別のユニークな機能を可能にします — クエリーへの引数でデータ変換を制御できます。 次に例を示します。
 
 ### 日付のフォーマット
 
-多くの場合、"2018-01-05"のような日付を保存しますが、"2018 年 1 月 5 日"のような他の形式で日付を表示したいと考えています。これを行う 1 つの方法は、日付形式の JavaScript ライブラリをブラウザーにロードすることです。または、Gatsby の GraphQL レイヤーを使用すると、クエリ時にフォーマットを次のように行うことができます。
+多くの場合、 "2018-01-05" のような日付を保存しますが、 "2018 年 1 月 5 日"のような他の形式で日付を表示したいと考えています。これを行う 1 つの方法は、日付形式の JavaScript ライブラリをブラウザーにロードすることです。または、Gatsby の GraphQL レイヤーを使用すると、クエリ時にフォーマットを次のように行うことができます。
 
 ```graphql
 {
@@ -175,11 +175,11 @@ GraphQL は、Gatsby の別のユニークな機能を可能にします — ク
 }
 ```
 
-フォーマットオプションの一覧は、 [GraphQL reference page](/docs/graphql-reference/#dates)を表示してご覧ください。
+フォーマットオプションの一覧は、 [GraphQL reference page](/docs/graphql-reference/#dates) を表示してご覧ください。
 
 ### Markdown
 
-Gatsby には、あるフォームから別のフォームにデータを変換できる _transformer_ プラグインがあります。一般的な例は Markdown です。 [`gatsby-transformer-remark`](/packages/gatsby-transformer-remark/)をインストールする場合、Markdown の代わりに、変換された HTML バージョンを使用するかどうかをクエリで指定できます。
+Gatsby には、あるフォームから別のフォームにデータを変換できる _transformer_ プラグインがあります。一般的な例は Markdown です。 [`gatsby-transformer-remark`](/packages/gatsby-transformer-remark/) をインストールする場合、Markdown の代わりに、変換された HTML バージョンを使用するかどうかをクエリで指定できます。
 
 ```graphql
 markdownRemark {
@@ -189,11 +189,11 @@ markdownRemark {
 
 ### 画像
 
-Gatsby は、画像の処理を豊富にサポートしています。レスポンシブ画像は現代のウェブの大部分を占めており、通常、写真ごとに 5 つ以上のサイズのサムネイルを作成する必要があります。 Gatsby の[`gatsby-transformer-sharp`](/packages/gatsby-transformer-sharp/)を使用すると、レスポンシブバージョンの画像を*query*できます。 クエリは、必要なレスポンシブサムネイルをすべて自動的に作成し、 `src` および `srcSet` フィールドを返して、画像要素に追加します。
+Gatsby は、画像の処理を豊富にサポートしています。レスポンシブ画像は現代のウェブの大部分を占めており、通常、写真ごとに 5 つ以上のサイズのサムネイルを作成する必要があります。 Gatsby の [`gatsby-transformer-sharp`](/packages/gatsby-transformer-sharp/) を使用すると、レスポンシブバージョンの画像を _query_ できます。 クエリは、必要なレスポンシブサムネイルをすべて自動的に作成し、 `src` および `srcSet` フィールドを返して、画像要素に追加します。
 
-特別な Gatsby 画像コンポーネント[gatsby-image](/packages/gatsby-image/)と組み合わせることで、画像を含むサイトを構築するための非常に強力なセットを使用できます。
+特別な Gatsby 画像コンポーネント [gatsby-image](/packages/gatsby-image/) と組み合わせることで、画像を含むサイトを構築するための非常に強力なセットを使用できます。
 
-以下は、 `gatsby-image`を使用するコンポーネントがどのように見えるかです：
+以下は、 `gatsby-image` を使用するコンポーネントがどのように見えるかです：
 
 ```jsx
 import React from "react"
@@ -231,7 +231,7 @@ export const query = graphql`
 
 ### フラグメント
 
-[querying images](#images)の上記の例では、 `... GatsbyImageSharpFixed`を使用したことに注意してください。これは、GraphQL Fragment であり、クエリー作成用の再利用可能なフィールドのセットです。詳細については、[こちら](http://graphql.org/learn/queries/#fragments)をご覧ください。
+[querying images](#images) の上記の例では、 `... GatsbyImageSharpFixed` を使用したことに注意してください。これは、GraphQL Fragment であり、クエリー作成用の再利用可能なフィールドのセットです。詳細については、[こちら](http://graphql.org/learn/queries/#fragments)をご覧ください。
 
 アプリケーションで使用する独自のフラグメントを定義する場合は、名前付きのエクスポートを使用して、任意の JavaScript ファイルにエクスポートできます。それらは GraphQL クエリーで使用するために Gatsby によって自動的に処理されます。
 
@@ -375,4 +375,4 @@ export const query = graphql`
 
 - [GraphQL の仕様](https://facebook.github.io/graphql/October2016/)
 - [インターフェースとユニオン](https://medium.com/the-graphqlhub/graphql-tour-interfaces-and-unions-7dd5be35de0d)
-- [リレーコンパイラ(Gatsby がクエリーを処理するために)](https://facebook.github.io/relay/docs/en/compiler-architecture.html)
+- [リレーコンパイラ (Gatsby がクエリーを処理するために)](https://facebook.github.io/relay/docs/en/compiler-architecture.html)
