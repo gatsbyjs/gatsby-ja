@@ -1,24 +1,24 @@
 ---
-title: The gatsby-browser.js API file
+title: gatsby-browser.js API ファイル
 ---
 
-The file `gatsby-browser.js` lets you respond to actions within the browser, and wrap your site in additional components. The [Gatsby Browser API](/docs/browser-apis) gives you many options for interacting with the [client-side](/docs/glossary#client-side) of Gatsby.
+`gatsby-browser.js` ファイルを使用すると、ブラウザー内でアクションに応答し、追加のコンポーネントであなたのサイトをラップできます。[Gatsby Browser API](/docs/browser-apis) は Gatsby の[クライアントサイド](/docs/glossary#client-side)と対話するための多くのオプションを提供します。
 
-The APIs `wrapPageElement` and `wrapRootElement` exist in both the browser and [Server-Side Rendering (SSR) APIs](/docs/ssr-apis). If you use one of them, consider if you should implement it in both `gatsby-ssr.js` and `gatsby-browser.js` so that pages generated through SSR with Node.js are the same after being [hydrated](/docs/glossary#hydration) with browser JavaScript.
+`wrapPageElement` と `wrapRootElement` API はブラウザー API と[サーバーサイドレンダリング (Server-Side Rendering、SSR) API](/docs/ssr-apis) の両方に存在します。それらのいずれかを使用する場合、Node.js が SSR して生成されたページが、ブラウザーの JavaScript で[ハイドレートされた](/docs/glossary#hydration)後も同じ内容になるように、`gatsby-ssr.js` と `gatsby-browser.js` の両方で実装すべきかどうかを検討してください。
 
-To use Browser APIs, create a file in the root of your site at `gatsby-browser.js`. Export each API you want to use from this file.
+ブラウザー API を使用するためには、あなたのサイトのルートに `gatsby-browser.js` ファイルを作成します。あなたが使用したい各 API をこのファイルからエクスポートしてください。
 
 ```jsx:title=gatsby-browser.js
 const React = require("react")
 const Layout = require("./src/components/layout")
 
-// Logs when the client route changes
+// クライアントのルートが変更されたときにログを記録する
 exports.onRouteUpdate = ({ location, prevLocation }) => {
   console.log("new pathname", location.pathname)
   console.log("old pathname", prevLocation ? prevLocation.pathname : null)
 }
 
-// Wraps every page in a component
+// すべてのページをコンポーネントでラップする
 exports.wrapPageElement = ({ element, props }) => {
   return <Layout {...props}>{element}</Layout>
 }
