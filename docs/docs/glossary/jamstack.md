@@ -35,5 +35,5 @@ Gatsby を使うと、SEO（検索エンジン最適化）とアクセシビリ�
 ### JAMStack アーキテクチャについてもっと学ぶ
 
 - [JAMStack.org](https://jamstack.org/) 公式ウェブサイト
-- [JAMstack WTF](https://jamstack.wtf/) Gatsby で構築されています
+- [JAMstack WTF](https://jamstack.wtf/)、Gatsby で構築されています
 - [デプロイとホスティング](/docs/deploying-and-hosting/) Gatsby ドキュメントより
