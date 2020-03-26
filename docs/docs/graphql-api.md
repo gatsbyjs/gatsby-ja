@@ -6,60 +6,49 @@ tableOfContentsDepth: 2
 import { GraphqlApiQuery } from "../../www/src/components/api-reference/doc-static-queries"
 import APIReference from "../../www/src/components/api-reference"
 
-Gatsby を使う大きな利点は、自身で設定可能な全てのデータソースのデータ層が標準であることです。データは[ビルド時](/docs/glossary#build)に集められ、データをあなたのサイト上でどのように処理するかを定義する[スキーマ](/docs/glossary#schema) として組み立てられます。
-A great advantage of Gatsby is a built-in data layer that combines all data sources you configure. Data is collected at [build time](/docs/glossary#build) and automatically assembled into a [schema](/docs/glossary#schema) that defines how data can be queried throughout your site.
+Gatsby を使う大きな利点は、標準機能としてのデータレイヤーがあり、あなた自身が設定可能な全てのデータソースを含んでいることです。データは[ビルド時](/docs/glossary#build)に集められ、サイト上でデータをどのように処理するかを定義する[スキーマ](/docs/glossary#schema) として組み立てられます。
 
-このページは Gatsby で使用される GraphQL の特長について、クエリーやデータソーシングのやり方や自身のサイトに合わせた GraphQL カスタマイズについてなどの説明になります。
-This doc serves as a reference for GraphQL features built into Gatsby, including methods for querying and sourcing data, and customizing GraphQL for your site's needs。
+このページでは Gatsby で使用される GraphQL の特長について、クエリーやデータをソースする方法・サイトごとに合わせた GraphQL カスタマイズ方法などについて説明します。
 
-## GraphQL を使う　 Getting started with GraphQL
+## GraphQL を使う
 
 Gatsby で GraphQL を使うために、特別なインストールは必要ありません。`gatsby develop` か `gatsby build` コマンドを使ったときに、スキーマは自動で集められて生成されます。サイトがコンパイルされたら、データレイヤーは `http://localhost:8000/___graphql` で [確認ができます](/docs/running-queries-with-graphiql/)。
-GraphQL is available in Gatsby without a special install: a schema is automatically inferred and created when you run `gatsby develop` or `gatsby build`. When the site compiles, the data layer can be [explored](/docs/running-queries-with-graphiql/) at: `http://localhost:8000/___graphql`
 
-## Sourcing data
+## データをソースする
 
-データは GraphQL を使ってクエリーされページに引き込まれるために、[ソース](/docs/content-and-data/)するか、もしくは GraphQL スキーマに追加される必要があります。
-Data needs to be [sourced](/docs/content-and-data/) — or added to the GraphQL schema — to be queried and pulled into pages using GraphQL. Gatsby uses [source plugins](/plugins/?=gatsby-source) to pull in data.
+データは GraphQL によってリクエストされページに読み込まれるために、[ソース](/docs/content-and-data/)するか、もしくは GraphQL スキーマに追加される必要があります。Gatsby はデータを取得するために、[ソースプラグイン](/plugins/?=gatsby-source)を使っています。
 
 **注意**: GraphQL は必須ではありません。Gatsby は [GraphQL 無しで使う](/docs/using-gatsby-without-graphql/)ことができます。
 
-データを既存のプラグインを使ってソースするためには、まず全ての必要なパッケージをインストールします。さらに、そのプラグインは `gatsby-config` 内のプラグイン欄に設定とともに追加する必要があります。あなたがもし、Markdown ファイルや画像など、GraphQL で使うファイルシステムやデータをソースしたければ、[ファイルシステムデータソースドキュメント](/docs/sourcing-from-the-filesystem/) と [レシピ集](/docs/recipes/sourcing-data)をご覧ください。
-To source data with an existing plugin you have to install all needed packages. Furthermore you have to add the plugin to the plugins array in the `gatsby-config` with any optional configurations. If you want to source data from the filesystem for use with GraphQL, such as Markdown files, images, and more, refer to the [filesystem data sourcing docs](/docs/sourcing-from-the-filesystem/) and [recipes](/docs/recipes/sourcing-data).
+データを既存のプラグインを使ってソースするには、まず全ての必要なパッケージをインストールします。さらに、そのプラグインは `gatsby-config` 内のプラグイン欄に設定とともに追加する必要があります。あなたがもし、Markdown ファイルや画像などファイルシステムデータを GraphQL でソースしたければ、[ファイルシステムからデータをソースする](/docs/sourcing-from-the-filesystem/) と [レシピ集](/docs/recipes/sourcing-data)をご覧ください。
 
 npm からプラグインをインストールする方法については、[プラグインを使う](/docs/using-a-plugin-in-your-site/)ドキュメント内の指示をご覧ください。
-For instructions on installing plugins from npm, take a look at the instructions in the docs on [using a plugin](/docs/using-a-plugin-in-your-site/).
 
-また、あなたのプロジェクトにより合ったやり方でデータ取得をしたければ、[カスタムプラグインを作成](/docs/creating-plugins/)することもできます。
-You can also [create custom plugins](/docs/creating-plugins/) to fit your own use cases and pull in data however you want.
+また、あなたのプロジェクトにより合ったやり方でデータを取得したければ、[カスタムプラグインを作成](/docs/creating-plugins/)することもできます。
 
 ## クエリーコンポーネントとフック
 
-以下の方法を使うことで、データをページ内・コンポーネント内・もしくは `gatsby-node.js` ファイル内でクエリーできます。
-Data can be queried inside pages, components, or the `gatsby-node.js` file, using one of these options:
+以下のいずれかの方法を使うことで、ページ内・コンポーネント内・もしくは `gatsby-node.js` ファイル内でデータをクエリーできます。
 
 - `pageQuery` コンポーネント
 - `StaticQuery` コンポーネント
 - `useStaticQuery` フック
 
 **注意**: Gatsby が GraphQL クエリーをどのように処理するかの流れ上、ページクエリーと静的クエリーを同じファイル内で併用することはできません。また、1 つのファイル内で複数のページクエリーや静的クエリーを使うこともできません。
-**Note**: Because of how Gatsby processes GraphQL queries, you can't mix page queries and static queries in the same file. You also can't have multiple page queries or static queries in one file.
 
-クエリーに関連したページコンポーネントもしくは非ページコンポーネントについては、[コンポーネントと立ち上げる](/docs/building-with-components/#how-does-gatsby-use-react-components)ドキュメントのガイドをご覧ください。
-For information on page and non-page components as they relate to queries, check out the docs guide on [building with components](/docs/building-with-components/#how-does-gatsby-use-react-components)
+クエリーに関連したページコンポーネントもしくは非ページコンポーネントについては、[コンポーネントを使う](/docs/building-with-components/#how-does-gatsby-use-react-components)ドキュメントのガイドをご覧ください。
 
 ### `pageQuery`
 
-`pageQuery`は、Gatsby ページ内のデータ層から情報を取得するための、標準コンポーネントです。1 ページごとに 1 クエリー持つことができます。クエリー内変数を GraphQL の引数として取ることができます。
-`pageQuery` is a built-in component that retrieves information from the data layer in Gatsby pages. You can have one page query per page. It can take GraphQL arguments for variables in your queries.
+`pageQuery`は、Gatsby ページ内のデータレイヤーから情報を取得するための標準コンポーネントです。1 ページごとに 1 クエリー持つことができます。GraphQL の引数をクエリー内の変数に使うことができます。
 
-A [page is made in Gatsby](/docs/page-creation/) by any React component in the `src/pages` folder, or by calling the `createPage` action and using a component in the `createPage` options -- meaning a `pageQuery` won't work in any component, only in components which meet this criteria.
+`src/pages` フォルダー内の React コンポーネントを使い [Gatsby で作成されたページ](/docs/page-creation/)、または `createPage` アクションによって `createPage` オプション内のコンポーネントを使用して作成されたページでは、`pageQuery` はどのコンポーネント内でも使えないことになり、上記の制約内のみでしか使えません。
 
-Also, refer to the [guide on querying data in pages with page query](/docs/page-query/).
+[ページクエリーを使ったページ内でのデータクエリーガイド](/docs/page-query/)もご覧ください。
 
 #### Params
 
-A page query isn't a method, but rather an exported variable that's assigned a `graphql` string and a valid query block as its value:
+ページクエリーはメソッドではなく、`graphql` 文字列と有効なクエリーブロックを入れてエクスポートされた変数です。
 
 ```javascript
 export const pageQuery = graphql`
@@ -73,11 +62,11 @@ export const pageQuery = graphql`
 `
 ```
 
-**Note**: the query exported in a `const` doesn't need to be named `pageQuery`. More importantly, Gatsby looks for an exported `graphql` string from the file.
+**注意**: `const` でエクスポートされるクエリーの変数名が `pageQuery` である必要はありません。重要なのは、Gatsby は `graphql` 文字列をファイルから探すということです。
 
 #### Returns
 
-When included in a page component file, a page query returns a data object that is passed automatically to the component as a prop.
+`pageQuery` がページコンポーネントファイルに含まれている場合、ページクエリーは、そのコンポーネントにプロパティとして自動的に渡されたデータオブジェクトを返します。
 
 ```jsx
 // highlight-start
@@ -85,7 +74,7 @@ const HomePage = ({ data }) => {
   // highlight-end
   return (
     <div>
-      Hello!
+      こんにちは！
       {data.site.siteMetadata.description} // highlight-line
     </div>
   )
@@ -94,18 +83,18 @@ const HomePage = ({ data }) => {
 
 ### `StaticQuery`
 
-StaticQuery is a built-in component for retrieving data from Gatsby’s data layer in non-page components, such as a header, navigation, or any other child component.
+StaticQuery は Gatsby の標準コンポーネントで、例えばヘッダー・ナビゲーション・その他の子コンポーネントなど非ページコンポーネント内のデータレイヤーからデータを取得するのに使います。
 
-You can only have one `StaticQuery` per page: in order to include the data you need from multiple sources, you can use one query with multiple [root fields](/docs/graphql-concepts/#query-fields). It cannot take variables as arguments.
+1 ページごとに 1 度だけ `StaticQuery` を使うことが出来ます。複数のソースからのデータが必要な時、複数の[ルートフィールド](/docs/graphql-concepts/#query-fields)を含んだ 1 つのクエリーを使用できます。そのさい引数としての変数を取ることはできません。
 
-Also, refer to the [guide on querying data in components with static query](/docs/static-query/).
+[コンポーネント内で StaticQuery を使うためのガイド](/docs/static-query/)もあわせてご覧ください。
 
 #### Params
 
-The `StaticQuery` component takes two values as props in JSX:
+`StaticQuery` コンポーネントは、2 つの値を JSX 内でプロパティとして取ります。
 
-- `query`: a `graphql` query string
-- `render`: a component with access to the data returned
+- `query`: `graphql` クエリー文字列
+- `render`: 返されたデータを参照できるコンポーネント
 
 ```jsx
 <StaticQuery
@@ -130,8 +119,7 @@ The `StaticQuery` component takes two values as props in JSX:
 
 #### Returns
 
-StaticQuery コンポーネントは、`render` プロップ内の `data` を返します。
-The StaticQuery component returns `data` in a `render` prop:
+StaticQuery コンポーネントは、`render` プロパティ内の `data` を返します。
 
 ```jsx
 <StaticQuery
@@ -148,19 +136,17 @@ The StaticQuery component returns `data` in a `render` prop:
 
 ### `useStaticQuery`
 
-`useStaticQuery` は、どのコンポーネント内・ページ内でも `StaticQuery` と同じように使えますが、そのさいコンポーネントやレンダープロップを使う必要はありません。
-The `useStaticQuery` hook can be used similar to `StaticQuery` in any component or page, but doesn't require the use of a component and render prop.
+`useStaticQuery` フックは、どのコンポーネント内・ページ内でも `StaticQuery` と同じように使えますが、そのさいコンポーネントやレンダープロパティを使う必要はありません。
 
-`useStaticQuery` は React Hook なので、[フックのルール](https://reactjs.org/docs/hooks-rules.html)が適用され、`useStaticQuery` を使うには 16.8.0 かそれ以降のバージョンの React ・ ReactDOM が必要です。
-Because it is a React hook, the [rules of hooks](https://reactjs.org/docs/hooks-rules.html) apply and you'll need to use it with React and ReactDOM version 16.8.0 or later. Because of how queries currently work in Gatsby, only one instance of `useStaticQuery` is supported in each file.
+`useStaticQuery` は React フックなので、[フックのルール](https://reactjs.org/docs/hooks-rules.html)が適用され、`useStaticQuery` を使うには 16.8.0 かそれ以降のバージョンの React ・ ReactDOM が必要です。Gatsby でのクエリーの仕様上、`useStaticQuery` インスタンスは 1 ファイルにつき 1 つだけ使うことができます。
 
-Also, refer to the [guide on querying data in components with useStaticQuery](/docs/use-static-query/).
+あわせて[コンポーネント内で useStaticQuery を使いデータをクエリーするためのガイド](/docs/use-static-query/)もご覧ください。
 
 #### Params
 
-The `useStaticQuery` hook takes one argument:
+`useStaticQuery` フックは引数を 1 つ取ります。
 
-- `query`: a `graphql` query string
+- `query`: `graphql` クエリー文字列
 
 ```javascript
 const data = useStaticQuery(graphql`
@@ -176,7 +162,7 @@ const data = useStaticQuery(graphql`
 
 #### Returns
 
-The `useStaticQuery` hook returns data in an object:
+`useStaticQuery` フックはオブジェクト内のデータを返します。
 
 ```jsx
 const data = useStaticQuery(graphql`
@@ -197,64 +183,59 @@ return (
 )
 ```
 
-## クエリーの構造　 Query structure
+## クエリーの構造
 
-Queries are written in the same shape you want data returned in. How you source data will determine the names of fields that you can query on, based on the nodes they add to the GraphQL schema.
+クエリーは、あなたが戻り値として欲しいデータ形式と同じように記述されます。データがどのようにソースされるかによって、GraphQL スキーマに追加されたノードに基づき、クエリーを実行できるフィールド名が決まります。
 
-For understanding the parts of a query refer to the [conceptual guide](/docs/graphql-concepts/#understanding-the-parts-of-a-query).
+クエリーの各パートについてより詳しく知りたければ、[コンセプトガイド](/docs/graphql-concepts/#understanding-the-parts-of-a-query)をご覧ください。
 
-### GraphQL クエリー引数　 GraphQL query arguments
+### GraphQL クエリー引数
 
-GraphQL クエリーは、返されたデータを変更するための引数を持つことができます。
-GraphQL queries can take arguments to alter how the data is returned. The logic for these arguments is handled internally by Gatsby. Arguments can be passed into fields at any level of the query。
+GraphQL クエリーは、どのようにデータが返されるかを変更する引数を持つことができます。この引数のロジックは、Gatsby 内部で管理されています。引数は、フィールド内クエリーのどの階層にも渡すことができます。
 
-Different nodes can take different arguments based off of the nature of the node.
+異なるノードは、そのノードの性質に合わせて異なる引数を取ることができます。
 
-The arguments you can pass to collections (like arrays or long lists of data - ex. `allFile`, or `allMdx`) are:
+コレクション (配列や長い一覧など。例： `allFile`、`allMdx`) に渡すことが出来る引数
 
 - [`filter`](/docs/graphql-reference#filter)
 - [`limit`](/docs/graphql-reference#limit)
 - [`sort`](/docs/graphql-reference#sort)
 - [`skip`](/docs/graphql-reference#skip)
 
-`date` フィールドに渡すことができる引数：
-The arguments you can pass to a `date` field are:
+`date` フィールドに渡すことができる引数
 
 - [`formatString`](/docs/graphql-reference#dates)
 - [`locale`](/docs/graphql-reference#dates)
 
-`excerpt` フィールドに渡すことができる引数：
-The arguments you can pass to an `excerpt` field are:
+`excerpt` フィールドに渡すことができる引数
 
 - [`pruneLength`](/docs/graphql-reference#excerpt)
 - [`truncate`](/docs/graphql-reference#excerpt)
 
-### GraphQL のクエリー操作　 Graphql query operations
+### GraphQL のクエリー操作
 
 その他、クエリー内で使用できる標準設定
-Other built-in configurations can be used in queries
 
 - [`Alias`](/docs/graphql-reference#alias)
 - [`Group`](/docs/graphql-reference#group)
 
 使用例は、[クエリーレシピ集](/docs/recipes/querying-data) と [GraphQL クエリーオプション参考ガイド](/docs/graphql-reference/)で確認できます。
-For examples, refer to the [query recipes](/docs/recipes/querying-data) and [GraphQL query options reference guide](/docs/graphql-reference/).
 
-## Query fragments
+## Query フラグメント
 
-Fragments allow you to reuse parts of GraphQL queries. They also allow you to split up complex queries into smaller, easier to understand components.
+GraphQL クエリーは、部分ごとにフラグメントとして再利用できます。複雑なクエリーを小さくパーツ分けして、コンポーネントの構造をより分かりやすくするのにも役立ちます。
 
-For more information, check out the docs guide on [using fragments in Gatsby](/docs/using-graphql-fragments/).
+詳しい内容については、[Gatsby でフラグメントを使う](/docs/using-graphql-fragments/)ガイドをご覧ください。
 
-### List of Gatsby fragments
+### Gatsby フラグメント一覧
 
-Some fragments come included in Gatsby plugins, such as fragments for returning optimized image data in various formats with `gatsby-image` and `gatsby-transformer-sharp`, or data fragments with `gatsby-source-contentful`.
+Gatsby プラグインにもともと含まれているフラグメントもあり、`gatsby-image` や `gatsby-transformer-sharp` により様々なフォーマットで最適化された画像データを返すためのフラグメントや、`gatsby-source-contentful` のデータフラグメントなどがあります。
 
-#### Image sharp fragments
+#### Image sharp フラグメント
 
-The following fragments are available in any site with `gatsby-transformer-sharp` installed and included in your `gatsby-config.js`.
+以下のフラグメントは `gatsby-transformer-sharp` がインストールされて `gatsby-config.js` に記述されていれば、どのサイトでも使うことができます。
 
-Information on querying with these fragments is also listed in-depth in the [Gatsby image API docs](/docs/gatsby-image/), including options like resizing and recoloring.
+これらのフラグメントによるクエリーについては、画像のリサイズや色の変更なども含めて [Gatsby 画像 API ドキュメント](/docs/gatsby-image/)に詳しくまとめられています。
 
 <GraphqlApiQuery>
   {data => (
@@ -265,9 +246,9 @@ Information on querying with these fragments is also listed in-depth in the [Gat
   )}
 </GraphqlApiQuery>
 
-#### Contentful fragments
+#### コンテントフルフラグメント
 
-The following fragments are available in any site with `gatsby-source-contentful` installed and included in your `gatsby-config.js`. These fragments generally mirror the fragments outlined in the `gatsby-transformer-sharp` package.
+以下のフラグメントは `gatsby-source-contentful` がインストールされ `gatsby-config.js` に記述されていれば、どのサイトでも使うことができます。これらのフラグメントは基本的に `gatsby-transformer-sharp` パッケージ内で記述されたフラグメントを反映します。
 
 <GraphqlApiQuery>
   {data => (
@@ -278,10 +259,10 @@ The following fragments are available in any site with `gatsby-source-contentful
   )}
 </GraphqlApiQuery>
 
-**Note**: the above fragments are from officially maintained Gatsby starters; other plugins like `gatsby-source-datocms` and `gatsby-source-sanity` ship with fragments of their own. A list of those fragments can be found in the [`gatsby-image` README](/packages/gatsby-image#fragments).
+**注意**: 上記のフラグメントは、公式に管理された Gatsby テンプレートからの引用です。`gatsby-source-datocms` や `gatsby-source-sanity` といった他のプラグインは、そのプラグイン自体のフラグメントも内包しています。そのようなプラグインの一覧は [`gatsby-image` README](/packages/gatsby-image#fragments) で確認できます。
 
-## さらにカスタマイズする　 Advanced customizations
+## さらにカスタマイズする
 
-You can customize sourced data in the GraphQL layer and create relationships between nodes with the [Gatsby Node APIs](/docs/node-apis/).
+ソースされたデータは GraphQL のデータレイヤーでカスタマイズでき、ノード間の関係性を [Gatsby Node APIs](/docs/node-apis/) で構築できます。
 
-The GraphQL schema can be customized for more advanced use cases: read more about it in the [schema customization API docs](/docs/schema-customization/).
+GraphQL のスキーマはさらに複雑なケースにおいてもカスタマイズできます。そちらに関しては[カスタマイズスキーマ API ドキュメント](/docs/schema-customization/)をご覧ください。
