@@ -12,13 +12,13 @@ Gatsby を使う大きな利点は、標準機能としてのデータレイヤ�
 
 ## GraphQL を使う
 
-Gatsby で GraphQL を使うために、特別なインストールは必要ありません。`gatsby develop` か `gatsby build` コマンドを使ったときに、スキーマは自動で集められて生成されます。サイトがコンパイルされたら、データレイヤーは `http://localhost:8000/___graphql` で [確認ができます](/docs/running-queries-with-graphiql/)。
+Gatsby で GraphQL を使うために、特別なインストールは必要ありません。`gatsby develop` か `gatsby build` コマンドを使ったとき、スキーマが自動で集められて生成されます。サイトがコンパイルされたら、データレイヤーは `http://localhost:8000/___graphql` で [確認できます](/docs/running-queries-with-graphiql/)。
 
 ## データをソースする
 
-データは GraphQL によってリクエストされページに読み込まれるために、[ソース](/docs/content-and-data/)するか、もしくは GraphQL スキーマに追加される必要があります。Gatsby はデータを取得するために、[ソースプラグイン](/plugins/?=gatsby-source)を使っています。
+GraphQL でリクエストしたデータをページに読み込むためには、データを[ソース](/docs/content-and-data/)するか、もしくは GraphQL スキーマに追加する必要があります。Gatsby はデータを取得するために、[ソースプラグイン](/plugins/?=gatsby-source)を使っています。
 
-**注意**: GraphQL は必須ではありません。Gatsby は [GraphQL 無しで使う](/docs/using-gatsby-without-graphql/)ことができます。
+**注意**: GraphQL は必須ではありません。Gatsby を [GraphQL 無しで使う](/docs/using-gatsby-without-graphql/)こともできます。
 
 データを既存のプラグインを使ってソースするには、まず全ての必要なパッケージをインストールします。さらに、そのプラグインは `gatsby-config` 内のプラグイン欄に設定とともに追加する必要があります。あなたがもし、Markdown ファイルや画像などファイルシステムデータを GraphQL でソースしたければ、[ファイルシステムからデータをソースする](/docs/sourcing-from-the-filesystem/) と [レシピ集](/docs/recipes/sourcing-data)をご覧ください。
 
@@ -185,7 +185,7 @@ return (
 
 ## クエリーの構造
 
-クエリーは、あなたが戻り値として欲しいデータ形式と同じように記述されます。データがどのようにソースされるかによって、GraphQL スキーマに追加されたノードに基づき、クエリーを実行できるフィールド名が決まります。
+クエリーは、あなたが戻り値としてほしいデータ形式と同じように記述されます。データがどうソースされるかによって、GraphQL スキーマへ追加されたノードを基に、クエリーを実行できるフィールド名が決まります。
 
 クエリーの各パートについてより詳しく知りたければ、[コンセプトガイド](/docs/graphql-concepts/#understanding-the-parts-of-a-query)をご覧ください。
 
@@ -195,26 +195,26 @@ GraphQL クエリーは、どのようにデータが返されるかを変更す
 
 異なるノードは、そのノードの性質に合わせて異なる引数を取ることができます。
 
-コレクション (配列や長い一覧など。例： `allFile`、`allMdx`) に渡すことが出来る引数
+コレクション (配列や長い一覧など。例： `allFile`、`allMdx`) に渡すことができる引数：
 
 - [`filter`](/docs/graphql-reference#filter)
 - [`limit`](/docs/graphql-reference#limit)
 - [`sort`](/docs/graphql-reference#sort)
 - [`skip`](/docs/graphql-reference#skip)
 
-`date` フィールドに渡すことができる引数
+`date` フィールドに渡すことができる引数：
 
 - [`formatString`](/docs/graphql-reference#dates)
 - [`locale`](/docs/graphql-reference#dates)
 
-`excerpt` フィールドに渡すことができる引数
+`excerpt` フィールドに渡すことができる引数：
 
 - [`pruneLength`](/docs/graphql-reference#excerpt)
 - [`truncate`](/docs/graphql-reference#excerpt)
 
 ### GraphQL のクエリー操作
 
-その他、クエリー内で使用できる標準設定
+その他、クエリー内で使用できる標準設定：
 
 - [`Alias`](/docs/graphql-reference#alias)
 - [`Group`](/docs/graphql-reference#group)
