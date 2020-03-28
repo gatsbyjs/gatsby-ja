@@ -152,7 +152,7 @@ export default IndexPage
 
 1. ページに `StaticQuery` コンポーネントを追加する。このコンポーネントは GraphQL API でコンテンツをフェッチできます。
 2. title と elevation を含む簡略化されたデータを Mountain API からフェッチする。
-3. `StaticQuery` の "render" でリストを描画する。
+3. `StaticQuery` の "render" で一覧を描画する。
 
 ## まとめ
 

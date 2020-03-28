@@ -108,6 +108,7 @@ Gatsby では、単一の GraphQL インターフェイスを通じてあらゆ�
 Gatsby でのデータ変換はプラグインによって実現されています。Transformer プラグインは source プラグインを通じてデータを取得し、実際に使う形式へ変換します（例：JSON を JavaScript オブジェクトにする等）。
 
 - [Markdown を HTML に変換する](/docs/recipes/transforming-data#transforming-markdown-into-html)
+- [GraphQL を使って画像をグレースケールに変換する](/docs/recipes/transforming-data#transforming-images-into-grayscale-using-graphql)
 
 ## [9. サイトのデプロイ](/docs/recipes/deploying-your-site)
 

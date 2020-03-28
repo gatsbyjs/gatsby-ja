@@ -4,7 +4,7 @@ title: Gatsby で画像を使用する
 
 画像の最適化は、どんなウェブサイトでも課題です。複数デバイス上でパフォーマンス調整のベストプラクティスを利用するには、各画像に複数のサイズと解像度を用意する必要があります。幸運なことに、Gatsby は [page components](/docs/building-with-components/#page-components) で画像を表示する際に利用できる、いくつかの便利な[プラグイン](/docs/plugins/)を持っています。
 
-その中でも、[GraphQL クエリー](/docs/querying-with-graphql/)を利用して最適なサイズと解像度の画像を取得してから、[`gatsby-image`](/packages/gatsby-image/) コンポーネントで表示する方法を推奨します。
+その中でも、[GraphQL クエリー](/docs/graphql-concepts/)を利用して最適なサイズと解像度の画像を取得してから、[`gatsby-image`](/packages/gatsby-image/) コンポーネントで表示する方法を推奨します。
 
 ## GraphQL で画像をクエリーする
 
@@ -12,7 +12,7 @@ GraphQL で画像をクエリーすると、画像のデータにアクセスで
 
 このためには、いくつかのプラグインが必要となります。
 
-- [`gatsby-source-filesystem`](/packages/gatsby-source-filesystem/) プラグインを利用すると、[GraphQL でファイルをクエリー](/docs/querying-with-graphql/#images)できるようになります。
+- [`gatsby-source-filesystem`](/packages/gatsby-source-filesystem/) プラグインを利用すると、[GraphQL でファイルをクエリー](/docs/graphql-concepts/#images)できるようになります。
 - [`gatsby-plugin-sharp`](/packages/gatsby-plugin-sharp) は Gatsby プラグインと Sharp 間の連携を強化します。
 - [`gatsby-transformer-sharp`](/packages/gatsby-transformer-sharp/) を利用すると、クエリーによって適切なサイズと解像度を持つ複数の画像を生成できるようになります。
 

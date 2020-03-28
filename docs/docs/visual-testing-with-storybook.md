@@ -11,21 +11,15 @@ title: Storybook を使用した Visual Testing
 
 ## 環境を設定する
 
-Storybook をセットアップするには、依存関係をインストールし、カスタム設定を行う必要があります。最初に、 Storybook CLI をインストールします。
+> 以下の手順は [npx](https://www.npmjs.com/package/npx) を使用しています。`npx` は npm の機能の一つで cli をグローバルインストールしなくても必要なファイルやフォルダを自動で生成してくれます。もし、古いバージョンの `npm` (`<5.2.0`) を使っている場合、代わりに次のコマンドを入力してください。`npm install -g @storybook/cli`。そして、Gatsby のプロジェクトルートにて `sb init` を起動することで、Storybook のセットアップが行われます。
 
-```shell
-npm install -g @storybook/cli
-```
-
-CLI をインストールして次にやるべきことは、 Gatsby プロジェクトのルートディレクトリーから `sb init` コマンドを実行することです。
+Storybook をセットアップするには、まず設定に必要なパッケージをインストールします。あなたの Gatsby プロジェクトのルートディレクトリーにて以下のコマンドを入力することで、Storybook のコマンドラインツールが自動的にある程度のセットアップを行います。
 
 ```shell
 npx -p @storybook/cli sb init
 ```
 
-> `npm` (5.2.0+) の最新バージョンで実行する場合、代わりに `npx -p @storybook/cli sb init` コマンドを実行できます。マシンに CLI がインストールされないので、常に最新バージョンの CLI を実行できます。 Storybook も推奨する方法です。
-
-この `sb init` コマンドは、 React プロジェクトの Storybook を実行するために必要な基本設定を作成します。ただし、ストーリー内で Gatsby 固有のコンポーネントを使用しようとした場合にエラーが発生しないように、Gatsby プロジェクト用に、デフォルトの Storybook の設定を少し更新する必要があります。
+このコマンドは、プロジェクトで Storybook を使うのに必要なファイル群を一通り追加します。しかし、今回は Gatsby 用のセットアップが必要なため、ここから少し Storybook の設定を変更します。これで、Gatsby 独自のコンポーネントによって発生するエラーを防ぐことができます。
 
 Storybook の設定を更新するには、 `.storybook/config.js` を開いて以下のように内容を変更します。
 
@@ -33,22 +27,22 @@ Storybook の設定を更新するには、 `.storybook/config.js` を開いて�
 import { configure } from "@storybook/react"
 import { action } from "@storybook/addon-actions"
 
-// automatically import all files ending in *.stories.js
+// 以下の設定は src 内に含まれるすべての *.stories.js ファイルをインポートします。
 // highlight-next-line
 configure(require.context("../src", true, /\.stories\.js$/), module)
 
 // highlight-start
-// Gatsby's Link overrides:
-// Gatsby defines a global called ___loader to prevent its method calls from creating console errors you override it here
+// Gatsby の Link を上書きします。
+// Gatsby は ___loader というグローバル変数を設けています。以下の設定をすることで、___loader がコンソールにエラーを吐くのを防ぎます。
 global.___loader = {
   enqueue: () => {},
   hovering: () => {},
 }
 
-// Gatsby internal mocking to prevent unnecessary errors in storybook testing environment
+// Gatsby 内部で使用する変数をモックすることで、Storybook のテスト環境で不必要なエラーが表示されることを防ぎます。
 global.__PATH_PREFIX__ = ""
 
-// This is to utilized to override the window.___navigate method Gatsby defines and uses to report what path a Link would be taking us to if it wasn't inside a storybook
+// この設定は Gatsby が設定している widnow.___navigate 関数を上書きします。本来は他のページにリンクする為に使用されますが Storybook 上では必要ありません。
 window.___navigate = pathname => {
   action("NavigateTo:")(pathname)
 }

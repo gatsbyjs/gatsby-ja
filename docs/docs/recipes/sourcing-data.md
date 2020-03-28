@@ -421,7 +421,7 @@ Contentful からブログ投稿の titles に対してクエリを投げる場�
 
 Contentful ノードは `createdAt` や `node_locale` の様ないくつかのメタフィールドも含みます。
 
-9. ブログの投稿へのリンクのリストを表示するには、`/src/pages/blog.js` を作成してください。このページでは、すべての投稿が更新日順に表示されます。
+9. ブログの投稿へのリンクの一覧を表示するには、`/src/pages/blog.js` を作成してください。このページでは、すべての投稿が更新日順に表示されます。
 
 ```jsx:title=src/pages/blog.js
 import React from "react"
@@ -470,7 +470,7 @@ export const query = graphql`
 
 [GraphQL の利用を検討すべき理由はいくつかありますが](/docs/why-gatsby-uses-graphql/)、ページ内にデータを内包させる為に、必ずしも GraphQL データレイヤーを用いる必要はありません。GraphQL とソース プラグインを経由せず、`createPages` API を利用して、まだ構築されていないデータを直接 Gatsby サイトに読み込むことができます。
 
-このレシピでは、[PokéAPI’s REST endpoints](https://www.pokeapi.co/) からデータを取得して動的にページを作成していきます。[完全な例](https://github.com/jlengstorf/gatsby-with-unstructured-data/) は Github にあります。
+このレシピでは、[PokéAPI’s REST endpoints](https://www.pokeapi.co/) からデータを取得して動的にページを作成していきます。[完全な例](https://github.com/jlengstorf/gatsby-with-unstructured-data/) は GitHub にあります。
 
 ### 条件
 
@@ -584,7 +584,7 @@ module.exports = {
 }
 ```
 
-4. Drupal データを使うには、Gatsby サイトの `src/pages/drupal.js` に新しいページを作成してください。このページには、すべての Drupal「ページ」ノードがリスト表示されます。
+4. Drupal データを使うには、Gatsby サイトの `src/pages/drupal.js` に新しいページを作成してください。このページには、すべての Drupal「ページ」ノードが一覧表示されます。
 
 **ヒント：** 正確な GraphQL スキーマは、Drupal インスタンスの構造に依存します。
 

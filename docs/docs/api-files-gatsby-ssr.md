@@ -1,23 +1,23 @@
 ---
-title: The gatsby-ssr.js API file
+title: gatsby-ssr.js API ファイル
 ---
 
-The file `gatsby-ssr.js` lets you alter the content of static HTML files as they are being Server-Side Rendered (SSR) by Gatsby and Node.js. To use the [Gatsby SSR APIs](/docs/ssr-apis/), create a file called `gatsby-ssr.js` in the root of your site. Export any of the APIs you wish to use in this file.
+`gatsby-ssr.js` ファイルを使用すると、Gatsby と Node.js によってサーバーサイドレンダリング（SSR）される静的 HTML ファイルの内容を変更できます。[Gatsby SSR APIs](/docs/ssr-apis/) を使用するためには、あなたのサイトのルートに `gatsby-ssr.js`というファイルを作成します。あなたが使用したい API をこのファイルでエクスポートしてください。
 
-The APIs `wrapPageElement` and `wrapRootElement` exist in both the SSR and [browser APIs](/docs/browser-apis). If you use one of them, consider if you should implement it in both `gatsby-ssr.js` and `gatsby-browser.js` so that pages generated through SSR with Node.js are the same after being [hydrated](/docs/glossary#hydration) with browser JavaScript.
+`wrapPageElement` と `wrapRootElement` API は SSR API と[ブラウザー API](/docs/browser-apis) の両方に存在します。それらのいずれかを使用する場合、Node.js が SSR して生成されたページが、ブラウザーの JavaScript で[ハイドレートされた](/docs/glossary#hydration)後も同じ内容になるように、`gatsby-ssr.js` と `gatsby-browser.js` の両方で実装すべきかどうかを検討してください。
 
 ```jsx:title=gatsby-ssr.js
 const React = require("react")
 const Layout = require("./src/components/layout")
 
-// Adds a class name to the body element
+// body 要素にクラス名を追加する
 exports.onRenderBody = ({ setBodyAttributes }, pluginOptions) => {
   setBodyAttributes({
     className: "my-body-class",
   })
 }
 
-// Wraps every page in a component
+// すべてのページをコンポーネントでラップする
 exports.wrapPageElement = ({ element, props }) => {
   return <Layout {...props}>{element}</Layout>
 }

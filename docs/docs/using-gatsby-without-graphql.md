@@ -17,7 +17,7 @@ exports.createPages = async ({ actions: { createPage } }) => {
   // `getPokemonData` はデータ取得の関数です。
   const allPokemon = await getPokemonData(["pikachu", "charizard", "squirtle"])
 
-  // 全ポケモンリストを表示するページを生成します。
+  // 全ポケモン一覧を表示するページを生成します。
   createPage({
     path: `/`,
     component: require.resolve("./src/templates/all-pokemon.js"),

@@ -1,8 +1,8 @@
 ---
-title: Stub List
-description: Find places in the documentation that are still a work in progress, in need of community help
+title: スタブ一覧
+description: コミュニティの支援が必要な進行中のドキュメントの箇所を探す
 ---
 
-There are a variety of pages that are currently stubbed out but do not contain any content yet. If you are interested in helping write any of these pages, head to any of them or head over to [How to Write a Stub](/contributing/how-to-write-a-stub/) to learn more.
+スタブとして作成されていますが、今のところ何も書かれていない様々なページがあります。これらのページの作成を支援することに興味がある場合は、いずれかのページを開くか、[スタブを書く方法](/contributing/how-to-write-a-stub/)を開いて詳細を確認してください。
 
 <StubList />
