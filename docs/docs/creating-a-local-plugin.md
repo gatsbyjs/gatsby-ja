@@ -6,7 +6,7 @@ titie: ローカルプラグインの作成
 
 ## ローカルプラグインのプロジェクト構成
 
-このように、コードをプロジェクトルートの `plugins` フォルダの中に配置します。
+このように、コードをプロジェクトルートの `plugins` フォルダーの中に配置します。
 
 ```
 /my-gatsby-site
@@ -19,7 +19,7 @@ titie: ローカルプラグインの作成
 
 また、プラグインは自動的に検知されないので、 `gatsby-config.js` に追加する必要があります。すでに、設定ファイルに含まれているサードパーティー Gatsby プラグインと同じように追加できます。
 
-`gatsby develop` を実行するとき、プラグインを検知するため、プラグインのルートフォルダーの名前は `gatsby-config.js` で使用しているもの（ `package.json` で使用している名前**ではありません**）と同じにする必要があります。上記の構成では、プラグインを読み込む正しい方法は以下のようになります。
+`gatsby develop` を実行するとき、プラグインを検知するため、プラグインのルートフォルダーの名前は `gatsby-config.js` で使用しているもの（`package.json` で使用している名前**ではありません**）と同じにする必要があります。上記の構成では、プラグインを読み込む正しい方法は以下のようになります。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -34,11 +34,11 @@ module.exports = {
 
 ## プロジェクト外部のローカルプラグインを開発する
 
-プラグインを動作させたりテストするために、必ずプロジェクトに含めないといけないわけではありません。もしプラグインをサイトから [分離](/docs/glossary#decoupled) させたいなら、以下の方法を使用することができます。これはプラグインをパッケージとして公開したいときや、コミュニティが作成したプラグインをフォークしたものをテスト、開発するときに便利です。
+プラグインを動作させたりテストするために、必ずプロジェクトに含めないといけないわけではありません。もしプラグインをサイトから [分離](/docs/glossary#decoupled) させたいなら、以下の方法が使えます。これはプラグインをパッケージとして公開したいときや、コミュニティーが作成したプラグインをフォークしたものをテスト、開発するときに便利です。
 
 ### `require.resolve` とファイルパスを使う
 
-`plugins` フォルダがローカルプラグインを参照する唯一の方法ではありません。ほかに `gatsby-config.js` ファイルで、 `require` を使い直接パス（`gatsby-config.js` からの相対パス）を指定して、プラグインを含めることができます。
+`plugins` フォルダーがローカルプラグインを参照する唯一の方法ではありません。ほかに `gatsby-config.js` ファイルで、 `require` を使い直接パス（`gatsby-config.js` からの相対パス）を指定して、プラグインを含めることができます。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -62,7 +62,7 @@ Gatsby サイトのルートで `npm link ../path/to/my-plugin` を実行する�
 
 これは、Gatsby テーマ開発の yarn ワークスペースを作成するときと同じ工程（テーマを開発する際に推奨される方法）です。[テーマ作成ガイド](/tutorial/buidling-a-theme/#set-up-yarn-workspaces) でサイトを設定する方法を読むことができます。
 
-**ヒント**： `require.resolve` や `npm link` を使って、plugins フォルダからローカルプラグインを使う例として、[こちらのサンプルリポジトリ](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-multiple-local-plugins) をご覧ください。
+**ヒント**： `require.resolve` や `npm link` を使って、plugins フォルダーからローカルプラグインを使う例として、[こちらのサンプルリポジトリ](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-multiple-local-plugins) をご覧ください。
 
 ## Babel を使ってコンパイルする
 
