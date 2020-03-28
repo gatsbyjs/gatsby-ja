@@ -45,7 +45,69 @@ title: Firebase Hosting へのデプロイ
 
    公開するディレクトリーの選択を求められたら、そのまま <kbd>enter</kbd> キーを押してください。デフォルトでは `public` ディレクトリーが設定されますが、Gatsby でビルドしたときのデフォルトも `public` ディレクトリーになります。
 
+<<<<<<< HEAD
 1. サイトをデプロイする準備を整えるために `gatsby build` コマンドを実行してください。このコマンドは `public` ディレクトリーに公開用のコンテンツを生成します。
+=======
+1. Update the `firebase.json` with the following cache settings
+
+```json
+{
+  "hosting": {
+    "public": "public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "headers": [
+      {
+        "source": "**/*",
+        "headers": [
+          {
+            "key": "cache-control",
+            "value": "cache-control: public, max-age=0, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "static/**",
+        "headers": [
+          {
+            "key": "cache-control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(css|js)",
+        "headers": [
+          {
+            "key": "cache-control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "sw.js",
+        "headers": [
+          {
+            "key": "cache-control",
+            "value": "cache-control: public, max-age=0, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "page-data/**",
+        "headers": [
+          {
+            "key": "cache-control",
+            "value": "cache-control: public, max-age=0, must-revalidate"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+1. Prepare your site for deployment by running `gatsby build`. This generates a publishable version of your site in the `public` folder.
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 1. つぎのコマンドでサイトをデプロイします。
 

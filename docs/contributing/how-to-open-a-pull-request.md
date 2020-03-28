@@ -89,7 +89,11 @@ Gatsby エコシステム内の様々な部分への貢献については、そ�
 
 ### Blog posts
 
+<<<<<<< HEAD
 Gatsby ブログに投稿をする場合、記事を投稿する前に、記事のアイデアについて Gatsby チームから承認される必要があります。アイデアの提案方法や、ローカルでブログを走らせる方法など、詳しい説明は[ブログとウェブサイトへの貢献](/contributing/blog-and-website-contributions/)をご覧ください。
+=======
+For the Gatsby blog, it's necessary to run your content idea by the Gatsby team before submitting it. For more information, refer to the page on [blog contributions](/contributing/blog-contributions/), including how to propose an idea and setting up the blog to run locally.
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 ## レビュー・提案によるフォローアップ
 

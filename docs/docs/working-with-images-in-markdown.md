@@ -55,7 +55,11 @@ featuredImage: shiba-inu.png
 
 ### Markdown と画像を別のディレクトリーで管理する場合の設定
 
+<<<<<<< HEAD
 設定する画像を Markdown とは別の `/images` のようなディレクトリーで管理したい場合があると思います。このような場合は別々のソースとして設定する必要があります。
+=======
+There are also occasions when you may want to source images from a different directory than where your Markdown posts or pages are located, such as in an external `/images` folder. You can set this up by specifying two distinct sources, one for the pages and the other for images:
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 ```js:title=gatsby-config.js
 module.exports = {

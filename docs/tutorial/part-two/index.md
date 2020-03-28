@@ -32,7 +32,11 @@ Gatsby チュートリアルのパート 2 へようこそ！
 
 Gatsby サイトを新しく作成することから始めます。とくにコマンドラインを初めて使う方の場合、[パート 1](/tutorial/part-one/) で使用したターミナルウィンドウを閉じて、パート 2 の新しいターミナルセッションを開始しましょう。
 
+<<<<<<< HEAD
 新しいターミナルウィンドウを開き、新しい「hello world」という gatsby サイトを作成して、開発サーバーを起動します。
+=======
+Open a new terminal window, create a new "hello world" Gatsby site in a directory called `tutorial-part-two`, and then move to this new directory:
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 ```shell
 gatsby new tutorial-part-two https://github.com/gatsbyjs/gatsby-starter-hello-world
@@ -48,7 +52,11 @@ Gatsby の「hello world」スターターに基づいた新しい Gatsby が作
 │       └── index.js
 ```
 
+<<<<<<< HEAD
 #### ✋ CSS ファイルにスタイルを追加する
+=======
+#### ✋ Add styles to a CSS file
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 1. 新しいプロジェクトに `.css` ファイルを作成します。
 
@@ -80,7 +88,11 @@ html {
 }
 ```
 
+<<<<<<< HEAD
 > ヒント: 例で使用している css ファイルを `/src/styles/` フォルダーに配置するのは任意です。
+=======
+> Note: The placement of the example CSS file in a `/src/styles/` folder is arbitrary.
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 #### ✋ `gatsby-browser.js` にスタイルシートを含める
 
@@ -130,7 +142,11 @@ gatsby develop
 
 ## コンポーネントスコープの CSS の使用
 
+<<<<<<< HEAD
 ここまでは、従来よくあるアプローチである、標準的な CSS スタイルシートを使用した方法について説明してきました。次に、CSS をモジュール化してコンポーネント指向の方法でスタイリングするためのさまざまな方法について説明します。
+=======
+So far, we've talked about the more traditional approach of using standard CSS stylesheets. Now, we'll talk about various methods of modularizing CSS to tackle styling in a component-oriented way.
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 ### CSS Modules
 
@@ -161,7 +177,11 @@ export default ({ children }) => (
 )
 ```
 
+<<<<<<< HEAD
 `container.module.css` という名前の css module ファイルをインポートしていることに気づいたことでしょう。そのファイルを作成しましょう。
+=======
+You'll notice you imported a CSS module file named `container.module.css`. Let's create that file now.
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 2. 同じディレクトリ（`src/components`）で、`container.module.css` ファイルを作成し、以下をコピーして貼り付けします。
 

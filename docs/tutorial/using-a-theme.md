@@ -183,4 +183,12 @@ export default merge(defaultThemeColors, {
 
 ## まとめ
 
+<<<<<<< HEAD
 今回紹介した内容は、特定の Gatsby テーマを用いてテーマを使用するための順を追った内容でした。テーマにより異なるカスタマイズオプションが存在し、異なるテーマが異なる方法で構築されることに注意してください。さらに深く掘り下げるには、[Gatsby テーマについてのドキュメント](/docs/themes/)をご覧ください。
+=======
+This was a step-by-step introduction to using a Gatsby theme through looking at a specific example. Note that different themes will be built differently, to accept different customization options. To dive deeper, check out the [Gatsby Theme docs](/docs/themes/).
+
+## What's next?
+
+- [Using multiple themes together](/tutorial/using-multiple-themes-together/)
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097

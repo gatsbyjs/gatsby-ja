@@ -6,7 +6,12 @@ Gatsby テーマを作成する方法が定式化および標準化されるよ�
 
 ## 命名
 
+<<<<<<< HEAD
 テーマのプレフィックスとして `gatsby-theme-` をつける必要があります。したがって、テーマに「awesome」という名前を付けたい場合、`gatsby-theme-awesome` と命名し、`package.json` の `name` キーに配置します。`gatsby-theme` で始まるテーマ名を付けることで、Gatsby がコンパイルするテーマパッケージを識別できます。
+=======
+It's required to prefix themes with `gatsby-theme-`. So if you'd like to name your theme "awesome" you
+can name it `gatsby-theme-awesome` and place that as the `name` key in your `package.json`. Prefixing themes with `gatsby-theme-` enables Gatsby in identifying theme packages for compilation.
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 ## 必要なディレクトリーの初期化
 
@@ -33,7 +38,11 @@ exports.onPreBootstrap = ({ store, reporter }) => {
 
 ## クエリーとプレゼンテーショナルコンポーネントの分離
 
+<<<<<<< HEAD
 テーマの作成者として、データの収集とデータをレンダリングするコンポーネントは分離することが望ましいです。これにより、エンドユーザーは [PageQuery](/docs/page-query) や [StaticQuery](/docs/static-query) を記述することなく、`PostList` や `AuthorCard` といったコンポーネントを簡単にオーバーライドできます。
+=======
+As a theme author, it's preferable to separate your data gathering and the components that render the data. This makes it easier for end users to be able to shadow a component like `PostList` or `AuthorCard` without having to write a [pageQuery](/docs/page-query) or [StaticQuery](/docs/static-query).
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 ### PageQuery
 

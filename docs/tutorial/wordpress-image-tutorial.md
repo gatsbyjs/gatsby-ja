@@ -53,10 +53,17 @@ module.exports = {
         baseUrl: `dev-gatbsyjswp.pantheonsite.io`,
         // 使用するプロトコル。http もしくは https が使用可能です。
         protocol: `http`,
+<<<<<<< HEAD
         // サイトが wordpress.com でホストされているかを示します。
         // false の場合、サイトは自ホストであると想定されます。
         // true の場合、プラグインは JSON REST API V2 を使用して wordpress.com から取得します。
         // もし、あなたのサイトが wordpress.org でホストされている場合、false を選択してください。
+=======
+        // Indicates whether the site is hosted on wordpress.com.
+        // If false, then the assumption is made that the site is self hosted.
+        // If true, then the plugin will source its content on wordpress.com using the JSON REST API V2.
+        // If your site is hosted on wordpress.com, then set this to true.
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
         hostingWPCOM: false,
         // useACF が true の場合、ソースプラグインは WordPress ACF プラグインのコンテンツをインポートしようとします。
         // この機能は、wordpress.com でホストされているサイトではテストされていません。

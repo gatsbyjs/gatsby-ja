@@ -9,7 +9,11 @@ tableOfContentsDepth: 1
 
 あなたのプロジェクトで使いたいテーマが見つかりましたか？すばらしい！以下の手順に沿ってテーマを適用できます。
 
+<<<<<<< HEAD
 > もっと他のテーマを探したい場合は、[テーマ一覧](https://www.npmjs.com/search?q=gatsby-theme)を参照。
+=======
+> If you'd like to take a look at more theme options, check out this [list of themes](/plugins?=gatsby-theme).
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 ### 前提条件
 
@@ -32,11 +36,15 @@ cd {your-project-name}
 npm install gatsby-theme-blog
 ```
 
+<<<<<<< HEAD
 3. `gatsby.config.js` にテーマを追加します。
+=======
+3. Add theme to `gatsby-config.js`
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 あなたが使いたいテーマの README に沿って、必要な設定を加えてください。
 
-```shell
+```javascript:title=gatsby-config.js
 module.exports = {
   plugins: [
     {
@@ -55,15 +63,27 @@ module.exports = {
 }
 ```
 
+<<<<<<< HEAD
 4. `gatsby develop` を起動してください。`http://localhost:8000/{basePath}` にて、テーマが適用されたページが表示されるはずです。
 
 > 例で使用した `gatsby-theme-blog` のテーマをさらにカスタマイズしたい場合は、[Gatsby-theme-blog Documentation](https://www.npmjs.com/package/gatsby-theme-blog) に手順が記載されています。
+=======
+4. Run `gatsby develop`, the theme should now be running on your site. In this case with the blog theme configured with the `basePath` to `"/blog"`, it should be available at `http://localhost:8000/blog`.
+
+> To learn how to further customize a theme, check out the available paths on [Gatsby-theme-blog Documentation](/packages/gatsby-theme-blog/#theme-options).
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 ### 追加の資料
 
+<<<<<<< HEAD
 - テーマをさらにカスタマイズしたい場合は、[Gatsby theme shadowing](https://www.gatsbyjs.org/docs/themes/shadowing/) のドキュメントを参照。
 
 - プロジェクトに[複数のテーマを適用](https://www.gatsbyjs.org/docs/themes/using-multiple-gatsby-themes/)することも可能です。
+=======
+- To learn how to further customize a theme, check out the docs on [Gatsby theme shadowing.](/docs/themes/shadowing/)
+
+- You can also [use multiple themes](/docs/themes/using-multiple-gatsby-themes/) on a project.
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 ## テーマスターターを使用して新しくサイトを作成する
 

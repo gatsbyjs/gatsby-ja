@@ -10,7 +10,15 @@ Typography.js はサイトに合うタイプデザインを調査し、カスタ
 
 Gatsby はプロジェクトに Typography.js を導入するため、`gatsby-plugin-typography` というプラグインを用意しています。
 
+<<<<<<< HEAD
 `npm install gatsby-plugin-typography react-typography typography --save` というコマンドを打つことで、プラグインとその peer dependencies のインストールを行うことができます。
+=======
+You can install the plugin and its peer dependencies into your project by running the following command:
+
+```shell
+npm install gatsby-plugin-typography react-typography typography
+```
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 インストールが完了したら、プロジェクトルートにある `gatsby-config.js` ファイルを開き、以下のようにプラグインの設定を足します。
 
@@ -68,7 +76,15 @@ Typography.js のすべての要素のフォントサイズは上記で設定し
 
 ## Typography テーマのインストール
 
+<<<<<<< HEAD
 Typography.js にはサイトのフォントスタイルを決める時間を節約してくれるビルトインテーマがあります。Funston というテーマは Typography によってメンテナンスされているビルトインテーマの 1 つです。この Funston を npm からインストールするには、`npm install typography-theme-funston --save` というコマンドを打ってください。
+=======
+Typography.js has built in themes that can save time when defining your website's font styling. The Funston theme, maintained by Typography, is one of the built in themes. To install the Funston theme from npm, run the command:
+
+```shell
+npm install typography-theme-funston
+```
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 このテーマを使うには、先程作成した `typography.js` ファイルを次のように編集します。
 

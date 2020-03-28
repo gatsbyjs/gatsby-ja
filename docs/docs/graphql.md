@@ -3,7 +3,11 @@ title: GraphQL と Gatsby
 overview: true
 ---
 
+<<<<<<< HEAD
 あなたが Gatsby でページを作る時、データには [GraphQL](http://graphql.org/) という問い合わせ言語を用いてアクセスします。GraphQL によって、あなたがデータに求めるものを宣言的に表現できます。GraphQL は `クエリー` と共に実行されます。クエリーとは、あなたが必要なデータを表したものです。クエリーはこのような見た目になります。
+=======
+When building with Gatsby, you access your data through a query language named [GraphQL](https://graphql.org/). GraphQL allows you to declaratively express your data needs. This is done with `queries`, queries are the representation of the data you need. A query looks like this:
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 ```graphql
 {

@@ -52,6 +52,15 @@ MDX を追加したい Gatsby サイトがあるなら、以下の手順で [gat
 
 > **ヒント:** Frontmatter や エクスポート、`tableOfContents` といったフィールドのデータを取得したいなら、`src/pages` を読み込むよう設定した `gatsby-source-filesystem` をプロジェクトに追加しておくとよいでしょう。
 
+<<<<<<< HEAD
 ## 次は？
+=======
+<EggheadEmbed
+  lessonLink="https://egghead.io/lessons/gatsby-set-up-a-gatsby-site-to-use-mdx-with-gatsby-plugin-mdx-with-a-default-layout"
+  lessonTitle="Set up a Gatsby site to use MDX with gatsby-plugin-mdx with a default layout"
+/>
+
+## What's next?
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 [MDX の書き方](/docs/mdx/writing-pages) に進み、Gatsby と MDX で他にどんなことができるのか見てみましょう！

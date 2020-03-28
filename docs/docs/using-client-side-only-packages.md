@@ -50,7 +50,11 @@ class MyComponent extends Component {
 }
 ```
 
+<<<<<<< HEAD
 ## 3 つ目の回避策： react-loadable を用いてクライアントサイドに依存するコンポーネントを読み込む
+=======
+## Workaround 3: Load client-side dependent components with loadable-components
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 [loadable-components](https://github.com/smooth-code/loadable-components) をインストールして、クライアントサイドでしか実行できないパッケージを利用したいコンポーネントをラップしましょう。
 

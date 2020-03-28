@@ -45,8 +45,13 @@ _ヒント: 繰り返しますが、ここに示すエディターは Visual Stu
 1. "Hello World!" という文字列を "Hello Gatsby!" に変更して、ファイルを保存します。ウィンドウを横に並べている場合、ファイルを保存すると、コードとコンテンツの変更がブラウザーへほぼ即座に反映されることがわかります。
 
 <video controls="controls" autoplay="true" loop="true">
+<<<<<<< HEAD
   <source type="video/mp4" src="./02-demo-hot-reloading.mp4"></source>
   <p>ごめんなさい！お使いのブラウザはこのビデオには対応していません。</p>
+=======
+  <source type="video/mp4" src="./02-demo-hot-reloading.mp4" />
+  <p>Sorry! Your browser doesn't support this video.</p>
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 </video>
 
 > 💡 Gatsby は**ホットリローディング**を使用して開発プロセスをスピードアップします。基本的に、Gatsby 開発サーバーを実行している場合、Gatsby サイトのファイルをバックグラウンドで「監視」しています。ファイルを保存すると、変更がすぐにブラウザへ反映されます。ページをハードリフレッシュしたり、開発サーバーを再起動したりする必要はありません。変更はすぐに表示されます。
@@ -327,8 +332,13 @@ export default () => (
 ファイルを保存すると、"Contact" ページを表示し、ホームページへのリンクをたどることができます。
 
 <video controls="controls" loop="true">
+<<<<<<< HEAD
   <source type="video/mp4" src="./10-linking-between-pages.mp4"></source>
   <p>ごめんなさい！あなたのブラウザはこのビデオをサポートしていません。</p>
+=======
+  <source type="video/mp4" src="./10-linking-between-pages.mp4" />
+  <p>Sorry! Your browser doesn't support this video.</p>
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 </video>
 
 Gatsby の `<Link />` コンポーネントは、サイト内のページ間をリンクするためのものです。Gatsby サイトで処理しない外部へのリンクは、通常の HTML の `<a>` タグを使用します。

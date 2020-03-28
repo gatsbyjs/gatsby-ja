@@ -17,6 +17,12 @@ Gatsby テーマを使うことで、すべてのデフォルトの設定（共�
 
 ## その他の資料
 
+<<<<<<< HEAD
 - [Gatsby テーマのチュートリアル](/tutorial/theme-tutorials/)
 - [テーマに関する Gatsby の記事](/blog/tags/themes)
 - [プラグイン・テーマ・スターター](/docs/plugins-themes-and-starters/)
+=======
+- [Gatsby theme tutorials](/tutorial/plugin-and-theme-tutorials/)
+- [Gatsby blog posts on themes](/blog/tags/themes)
+- [Plugins, Themes, and Starters](/docs/plugins-themes-and-starters/)
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097

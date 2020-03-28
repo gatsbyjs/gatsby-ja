@@ -2,7 +2,11 @@
 title: プラグインとは?
 ---
 
+<<<<<<< HEAD
 Gatsby プラグインは、Gatsby API を実装する Node.js パッケージです。より大規模で複雑なサイトの場合、プラグインを使用するとサイトのカスタマイズをサイト固有のプラグインにモジュール化できます。
+=======
+Gatsby plugins are Node.js packages that implement Gatsby APIs. For larger, more complex sites, plugins let you modularize your site customizations into site-specific functionality.
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 Gatsby に機能を追加するもっとも良い方法の 1 つは、プラグインシステムを使用することです。Gatsby は拡張可能に設計されています。つまり、プラグインは Gatsby が行うほぼすべてを拡張および変更できます。
 

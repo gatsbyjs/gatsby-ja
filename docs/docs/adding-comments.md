@@ -10,7 +10,10 @@ Gatsby でブログを動かしていて、いくつかのコンテンツを追�
 - [Commento](https://commento.io)
 - [Facebook Comments](https://www.npmjs.com/package/react-facebook)
 - [Staticman](https://staticman.net)
+<<<<<<< HEAD
 - [JustComments](https://just-comments.com) \([Gatsby の公式プラグイン](https://www.gatsbyjs.org/packages/gatsby-plugin-just-comments/)\)
+=======
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 - [TalkYard](https://www.talkyard.io)
 - [Gitalk](https://gitalk.github.io)
 
