@@ -16,7 +16,7 @@ Gatsby で GraphQL を使うさい、特別なインストールは必要あり�
 
 ## データをソースする
 
-GraphQL でリクエストしたデータをページに読み込むためには、データを[ソース](/docs/content-and-data/)するか、もしくは GraphQL スキーマに追加する必要があります。Gatsby はデータを取得するために、[ソースプラグイン](/plugins/?=gatsby-source)を使っています。
+GraphQL でリクエストしたデータをページに読み込むためには、データを[ソース](/docs/content-and-data/)する、つまり GraphQL スキーマに追加する必要があります。Gatsby はデータを取得するために、[ソースプラグイン](/plugins/?=gatsby-source)を使っています。
 
 **注意**: GraphQL の使用が必須ということはありません。Gatsby を [GraphQL 無しで使う](/docs/using-gatsby-without-graphql/)こともできます。
 
