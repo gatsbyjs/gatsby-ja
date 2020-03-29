@@ -12,13 +12,13 @@ Gatsby を使う大きな利点は、標準機能としてのデータレイヤ�
 
 ## GraphQL を使う
 
-Gatsby で GraphQL を使うために、特別なインストールは必要ありません。`gatsby develop` か `gatsby build` コマンドを使ったとき、スキーマが自動で集められて生成されます。サイトがコンパイルされたら、データレイヤーは `http://localhost:8000/___graphql` で [確認できます](/docs/running-queries-with-graphiql/)。
+Gatsby で GraphQL を使うさい、特別なインストールは必要ありません。`gatsby develop` か `gatsby build` コマンドを使ったとき、スキーマが自動で集められて生成されます。サイトがコンパイルされたら、データレイヤーは `http://localhost:8000/___graphql` で [確認できます](/docs/running-queries-with-graphiql/)。
 
 ## データをソースする
 
 GraphQL でリクエストしたデータをページに読み込むためには、データを[ソース](/docs/content-and-data/)するか、もしくは GraphQL スキーマに追加する必要があります。Gatsby はデータを取得するために、[ソースプラグイン](/plugins/?=gatsby-source)を使っています。
 
-**注意**: GraphQL は必須ではありません。Gatsby を [GraphQL 無しで使う](/docs/using-gatsby-without-graphql/)こともできます。
+**注意**: GraphQL の使用が必須ということはありません。Gatsby を [GraphQL 無しで使う](/docs/using-gatsby-without-graphql/)こともできます。
 
 データを既存のプラグインを使ってソースするには、まず全ての必要なパッケージをインストールします。さらに、そのプラグインは `gatsby-config` 内のプラグイン欄に設定とともに追加する必要があります。あなたがもし、Markdown ファイルや画像などファイルシステムデータを GraphQL でソースしたければ、[ファイルシステムからデータをソースする](/docs/sourcing-from-the-filesystem/) と [レシピ集](/docs/recipes/sourcing-data)をご覧ください。
 
