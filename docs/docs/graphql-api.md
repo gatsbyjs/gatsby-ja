@@ -12,7 +12,7 @@ Gatsby を使う大きな利点は、標準機能としてのデータレイヤ�
 
 ## GraphQL を使う
 
-Gatsby で GraphQL を使うさい、特別なインストールは必要ありません。`gatsby develop` か `gatsby build` コマンドを使ったとき、スキーマが自動で集められて生成されます。サイトがコンパイルされたら、データレイヤーは `http://localhost:8000/___graphql` で [確認できます](/docs/running-queries-with-graphiql/)。
+Gatsby で GraphQL を使うさい、特別なインストールは必要ありません。`gatsby develop` か `gatsby build` コマンドを使ったとき、スキーマが自動で集められて生成されます。サイトがコンパイルしたあと、データレイヤーは `http://localhost:8000/___graphql` で [確認できます](/docs/running-queries-with-graphiql/)。
 
 ## データをソースする
 
