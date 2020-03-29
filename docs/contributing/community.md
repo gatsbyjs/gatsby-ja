@@ -33,7 +33,11 @@ Gatsby コミュニティーはあなたの貢献を歓迎しています。貢�
 
 Gatsby ニュースレターにサインアップし、 Gatsby コミュニティーの最新情報を購読してください！ニュースレターでは新機能やティップス、ちょっとしたテクニック、そしてほかの人々が何を作っているのかが確認できます。
 
+<<<<<<< HEAD
 [サインアップはこちら](/newsletter/)
+=======
+<EmailCaptureForm signupMessage="Want to keep up with the latest tips &amp; tricks? Subscribe to our newsletter!" />
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 ### Twitter
 

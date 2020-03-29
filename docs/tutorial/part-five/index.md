@@ -17,8 +17,13 @@ GraphiQL は GraphQL の統合開発環境（IDE）です。強力で万能な�
 開発サーバーが起動しているときは `http://localhost:8000/___graphql` にアクセスできます。
 
 <video controls="controls" autoplay="true" loop="true">
+<<<<<<< HEAD
   <source type="video/mp4" src="/graphiql-explore.mp4"></source>
   <p>お使いのブラウザはこのビデオには対応していません。</p>
+=======
+  <source type="video/mp4" src="/graphiql-explore.mp4" />
+  <p>Your browser does not support the video element.</p>
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 </video>
 
 `Site` を展開して使用できるフィールドを確認します。ここには以前のチュートリアルで使用した `siteMetadata` オブジェクトも含まれています。GraphiQL でデータを操作してみてください！<kbd>Ctrl + Space</kbd>（または <kbd>Shift + Space</kbd>）でオートコンプリートのウィンドウを表示することができ、<kbd>Ctrl + Enter</kbd> で GraphQL クエリを実行することができます。残りのチュートリアルでは、GraphiQL をさらに使用していきます。

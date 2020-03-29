@@ -8,9 +8,15 @@ Gatsby の視点からすると、パブリック API とプライベート API 
 
 プライベート API からデータを取得するために使用できる 3 つの方法があります：
 
+<<<<<<< HEAD
 1. プライベート API が GraphQL API である場合、 [`gatsby-source-graphql`](/packages/gatsby-source-graphql/) が利用できます。
 2. プライベート API が GraphQL API ではなく、また GraphQL を利用するのが初めてであれば、ガイド「[GraphQL 外から Gatsby を使用する](/docs/using-gatsby-without-graphql/)」で説明されているように、データを非構造化データとして扱い、ビルドする際に取得します。ただし、ガイドでも強調されているように、この方法にはいくつかのトレードオフが伴います。
 3. チュートリアル「[ソースプラグインチュートリアル](/docs/pixabay-source-plugin-tutorial/)」にしたがって、ソースプラグインを作成します。
+=======
+1. If your private API is a GraphQL API, you can use [`gatsby-source-graphql`](/packages/gatsby-source-graphql/).
+2. If your private API is not a GraphQL API and you are new to GraphQL, treat the data as unstructured data and fetch it during build time, as described by the guide "[Using Gatsby without GraphQL](/docs/using-gatsby-without-graphql/)". However, as highlighted in the guide, this approach comes with some tradeoffs.
+3. Create a source plugin, as described in the tutorial "[Source plugin tutorial](/tutorial/pixabay-source-plugin-tutorial/)".
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 ## その他の考慮事項
 

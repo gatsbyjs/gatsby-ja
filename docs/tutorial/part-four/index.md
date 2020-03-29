@@ -55,7 +55,13 @@ disableTableOfContents: true
 
 ### GraphQL を用いた Gatsby のデータ層でコンポーネントにデータを取り込む方法
 
+<<<<<<< HEAD
 React コンポーネントにデータを取り込む方法にはさまざまな選択肢があります。そのうちのもっとも人気でパワフルな技術のひとつに [GraphQL](http://graphql.org/) があります。
+=======
+There are many options for loading data into React components. One of the most
+popular and powerful of these is a technology called
+[GraphQL](https://graphql.org/).
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 GraphQL は、必要なデータをプロダクトエンジニアがコンポーネントに取り込むのを助けるために Facebook によって開発されました。
 

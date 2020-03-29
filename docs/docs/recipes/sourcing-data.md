@@ -57,10 +57,17 @@ query MyPokemonQuery {
 
 ### 追加資料
 
+<<<<<<< HEAD
 - [チュートリアル パート 5](/tutorial/part-five/#source-plugins) にて、`gatsby-source-filesystem` を用いた例の概略
 - [Gatsby ライブラリ](/plugins/?=source)内で検索可能なデータ取得プラグイン
 - [Pixabay データ取得プラグインのチュートリアル](/docs/pixabay-source-plugin-tutorial/) 内での、データ取得プラグインのハンズオン
 - createNode の[ドキュメント](/docs/actions/#createNode)
+=======
+- Walk through an example using the `gatsby-source-filesystem` plugin in [tutorial part five](/tutorial/part-five/#source-plugins)
+- Search available source plugins in the [Gatsby library](/plugins/?=source)
+- Understand source plugins by building one in the [Pixabay source plugin tutorial](/tutorial/pixabay-source-plugin-tutorial/)
+- The createNode function [documentation](/docs/actions/#createNode)
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 ## GraphQL を用いたブログ投稿やページの為の Markdown データの取得
 

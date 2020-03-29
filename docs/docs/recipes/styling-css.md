@@ -413,6 +413,53 @@ _ヒント: 上記の例の場合、ふさわしい CSS の宣言は `font-famil
 
 ### 追加のリソース
 
+<<<<<<< HEAD
 - [Typography.js](/docs/typography-js/) - Google fonts を Gatsby 製のサイトで使う他のオプション
 - [The Typefaces Project ドキュメント](https://github.com/KyleAMathews/typefaces/blob/master/README.md)
 - [Kyle Mathews' blog による実例](https://www.bricolage.io/typefaces-easiest-way-to-self-host-fonts/)
+=======
+- [Typography.js](/docs/typography-js/) - Another option for using Google fonts on a Gatsby site
+- [The Typefaces Project Docs](https://github.com/KyleAMathews/typefaces/blob/master/README.md)
+- [Live example on Kyle Mathews' blog](https://www.bricolage.io/typefaces-easiest-way-to-self-host-fonts/)
+
+## Using Font Awesome
+
+Using [Font Awesome](https://fontawesome.com/) gives you access to thousands of icons for use on your site. Since Gatsby sites are React sites, it's recommended to use the [react-fontawesome](https://github.com/FortAwesome/react-fontawesome) SVG library.
+
+### Prerequisites
+
+- The [Gatsby CLI](/docs/gatsby-cli/) installed
+- A [Gatsby site](/docs/quick-start)
+
+### Directions
+
+1. Install the `react-fontawesome` dependencies.
+
+```shell
+npm install @fortawesome/fontawesome-svg-core  @fortawesome/free-brands-svg-icons @fortawesome/react-fontawesome
+```
+
+> Note that there are multiple icon libraries within `react-fontawesome`. You may also be interested in `free-regular-svg-icons` and `free-solid-svg-icons` which you would install the same way.
+
+2. Import the `FontAwesomeIcon` component and the icon you want to use. Then use the icon as a component directly in your JSX files:
+
+```jsx:title=index.js
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faReact } from "@fortawesome/free-brands-svg-icons"
+
+const IndexPage = () => (
+  <Layout>
+    <FontAwesomeIcon icon={faReact} /> //highlight-line
+  </Layout>
+)
+
+export default IndexPage
+```
+
+> This example imports a single, specific icon and uses it for improved performance. As an alternative, you can [import the icons and build a library](https://github.com/FortAwesome/react-fontawesome#build-a-library-to-reference-icons-throughout-your-app-more-conveniently).
+
+### Additional resources
+
+- [Font Awesome](https://fontawesome.com/)
+- [react-fontawesome](https://github.com/FortAwesome/react-fontawesome)
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097

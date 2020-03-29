@@ -24,6 +24,7 @@ Gatsby へようこそ！あなたがここにいることを嬉しく思いま�
 7. [データからプログラムによるページ作成](/tutorial/part-seven/): 投稿したブログから一通りのページをプログラムで作成する方法を学びます。
 8. [サイト公開の準備](/tutorial/part-eight/): サイトのパフォーマンスを監査する方法とアクセシビリティや SEO などのベストプラクティスを学びます。
 
+<<<<<<< HEAD
 ## テーマのチュートリアル
 
 Gatsby テーマは、すべてのデフォルト設定（共有機能、データ取得、デザイン）を抽象化して、サイトからインストール可能なパッケージにします。
@@ -31,6 +32,13 @@ Gatsby テーマは、すべてのデフォルト設定（共有機能、デー�
 つまり、構成と機能はプロジェクトに直接書き込むのではなく、バージョン管理し、一元管理して依存関係としてインストールします。テーマをシームレスに更新したり、テーマをまとめて構成したり、あるいは互換性のあるテーマを別のものと交換できます。
 
 テーマの使用と構築に関しては[Gatsby テーマチュートリアル](/tutorial/theme-tutorials/)で詳細を参照してください。
+=======
+## Plugin & Theme tutorials
+
+Gatsby plugins are a way to encapsulate, re-use, and compose functionality, such as data sourcing. Gatsby themes are a type of plugin which abstracts your default configuration (shared functionality, data sourcing, design) out of your site and into an installable package.
+
+Learn how to build and use plugins and themes step-by-step in the [Plugin and Theme Tutorials](/tutorial/plugin-and-theme-tutorials/).
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 ## 追加チュートリアル
 

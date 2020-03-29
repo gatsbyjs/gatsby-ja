@@ -72,4 +72,8 @@ Google は、あらゆる Web や世界中の情報を収集するのはもち�
 
 ## その他の資料
 
+<<<<<<< HEAD
 より詳しく知りたい場合は、[Gatsby における SEO についての記事](/blog/tags/seo/)をご覧ください。
+=======
+You might also be interested in [blog posts about SEO in Gatsby](/blog/tags/seo/) and [an advanced tutorial about SEO and social sharing cards](/tutorial/seo-and-social-sharing-cards-tutorial/).
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097

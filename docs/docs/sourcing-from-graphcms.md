@@ -24,7 +24,11 @@ gatsby new gatsby-site https://github.com/gatsbyjs/gatsby-starter-default
 
 ### ソースプラグインを追加する
 
+<<<<<<< HEAD
 加えて、`gatsby-source-graphql` が必要です。GraphCMS は GraphQL をネイティブで使用するので、Gatsby の機能を利用してふたつの GraphQL API をつなぎ合わせるだけで、コンテンツの変換に必要な時間を短縮できます。gatsby-source-x-cms のような特別なプラグインは必要なく、`gatsby-source-graphql` があれば十分です。
+=======
+Additionally, you need the `gatsby-source-graphql` library. Because GraphCMS uses GraphQL natively, you will take advantage of Gatsby's ability to simply stitch two GraphQL APIs together, reducing the time required to transform content. There is no need to use a special gatsby-source-x-cms plugin, the GraphQL source plugin is all you need.
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 次のコマンドでインストールできます。
 

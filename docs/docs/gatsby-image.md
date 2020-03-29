@@ -8,6 +8,7 @@ Gatsby のサイトが非常に高速である理由のひとつに、私たち�
 
 デモ：[https://using-gatsby-image.gatsbyjs.org/](https://using-gatsby-image.gatsbyjs.org/)
 
+<<<<<<< HEAD
 ## このドキュメントで取り扱うこと
 
 - [Gatsby Image を始める準備](#setting-up-gatsby-image)
@@ -20,6 +21,9 @@ Gatsby のサイトが非常に高速である理由のひとつに、私たち�
 - [Gatsby Image プロパティ](#gatsby-image-props)
 
 ## Gatsby Image を始める準備
+=======
+## Setting up Gatsby Image
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 Gatsby Image を使用するには、`gatsby-image` と共に必要なプラグインである `gatsby-transformer-sharp` と `gatsby-plugin-sharp` をインストールします。あなたの `gatsby-config.js` ファイル内のパッケージを参照してください。また、この設定ファイルで [`gatsby-plugin-sharp`](/packages/gatsby-plugin-sharp/) にオプションを追加することもできます。
 
@@ -129,7 +133,11 @@ file(relativePath: { eq: "images/default.jpg" }) {
 }
 ```
 
+<<<<<<< HEAD
 詳細については、[gatsby-plugin-sharp](/packages/gatsby-plugin-sharp/?=#fixed) をご覧ください。
+=======
+Read more about fixed image queries in the [gatsby-plugin-sharp](/packages/gatsby-plugin-sharp/#fixed) README.
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 ### _可変_ コンテナに合わせて伸縮する画像
 
@@ -175,20 +183,26 @@ export default () => {
 
 - `maxWidth` (int, 初期値：800)
 - `maxHeight`(int)
+<<<<<<< HEAD
 - `quality` (int, 初期値：50)
 - `srcSetBreakpoints` (array of int, 初期値：`[]`)
 - `fit` (string, 初期値：`[sharp.fit.cover][6]`)
 - `background` (string, 初期値：`rgba(0,0,0,1)`)
+=======
+- `quality` (int, default: 50)
+- `srcSetBreakpoints` (array of int, default: [])
+- `background` (string, default: `rgba(0,0,0,1)`)
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 #### 返り値
 
 - `base64` (string)
-- `src` (string)
-- `width` (int)
-- `height` (int)
 - `aspectRatio` (float)
 - `src` (string)
 - `srcSet` (string)
+- `srcSetType` (string)
+- `sizes` (string)
+- `originalImg` (string)
 
 ここでは、クエリーにすべての項目を入力しなくても上記の項目を 1 行ですべて返してくれる `GatsbyImageSharpFluid` のようなフラグメントが便利です。
 
@@ -204,7 +218,11 @@ file(relativePath: { eq: "images/default.jpg" }) {
 }
 ```
 
+<<<<<<< HEAD
 詳細については、[gatsby-plugin-sharp](/packages/gatsby-plugin-sharp/?=#fluid) をご覧ください。
+=======
+Read more about fluid image queries in the [gatsby-plugin-sharp](/packages/gatsby-plugin-sharp/#fluid) README.
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 ### サイズ変更した画像
 
@@ -240,6 +258,7 @@ allImageSharp {
 }
 ```
 
+<<<<<<< HEAD
 ### 共用クエリーパラメーター
 
 `gatsby-config.js` 内の `gatsby-plugin-sharp` の設定に加えて、_固定_ と _可変_ の両方に適用できる追加のクエリーオプションがあります。
@@ -249,6 +268,21 @@ allImageSharp {
 - `toFormat` (string, 初期値：\`\`)
 - `cropFocus` (string, 初期値：`[sharp.strategy.attention][6]`)
 - `pngCompressionSpeed` (int, 初期値：4)
+=======
+Read more about resized image queries in the [gatsby-plugin-sharp](/packages/gatsby-plugin-sharp/#resize) README.
+
+### Shared query parameters
+
+In addition to `gatsby-plugin-sharp` settings in `gatsby-config.js`, there are additional query options that apply to _fluid_, _fixed_, and _resized_ images:
+
+- [`grayscale`](/packages/gatsby-plugin-sharp/#grayscale) (bool, default: false)
+- [`duotone`](/packages/gatsby-plugin-sharp/#duotone) (bool|obj, default: false)
+- [`toFormat`](/packages/gatsby-plugin-sharp/#toformat) (string, default: \`\`)
+- [`cropFocus`](/packages/gatsby-plugin-sharp/#cropfocus) (string, default: `ATTENTION`)
+- [`fit`](/packages/gatsby-plugin-sharp/#fit) (string, default: `COVER`)
+- [`pngCompressionSpeed`](/packages/gatsby-plugin-sharp/#pngcompressionspeed) (int, default: 4)
+- [`rotate`](/packages/gatsby-plugin-sharp/#rotate) (int, default: 0)
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 ここでは、`duotone` オプションを固定画像に適用してみます。
 
@@ -263,10 +297,18 @@ fixed(
 ```
 
 <figure>
+<<<<<<< HEAD
   <img alt="Jay Gatsby holding wine class in normal color and duotone." src="./images/duotone-before-after.png" />
   <figcaption>
     デュオトーン | 適用前 - 適用後
   </figcaption>
+=======
+  <img
+    alt="Jay Gatsby holding wine class in normal color and duotone."
+    src="./images/duotone-before-after.png"
+  />
+  <figcaption>Duotone | Before - After</figcaption>
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 </figure>
 
 そして、`grayscale` オプションを固定画像に適用した例です。
@@ -278,6 +320,7 @@ fixed(
 ```
 
 <figure>
+<<<<<<< HEAD
   <img alt="Jay Gatsby holding wine class in normal color and duotone." src="./images/grayscale-before-after.png" />
   <figcaption>
     グレースケール | 適用前 - 適用後
@@ -285,12 +328,26 @@ fixed(
 </figure>
 
 詳細については、[`gatsby-plugin-sharp`](/packages/gatsby-plugin-sharp) をご覧ください。
+=======
+  <img
+    alt="Jay Gatsby holding wine class in normal color and duotone."
+    src="./images/grayscale-before-after.png"
+  />
+  <figcaption>Grayscale | Before - After</figcaption>
+</figure>
+
+Read more about shared image query parameters in the [`gatsby-plugin-sharp`](/packages/gatsby-plugin-sharp/#shared-options) README.
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 ## 画像のクエリーフラグメント
 
 GraphQL には、「クエリーフラグメント」と呼ばれる考え方があり、これは再利用可能なクエリーの一部です。`gatsby-image` を使った構築を簡単にするため、`gatsby-image` をサポートする Gatsby 画像処理プラグインにはあなたがクエリーに簡単に含めることができるフラグメントが付属しています。
 
+<<<<<<< HEAD
 > ヒント: クエリーでフラグメントを使用するかどうかはあなたが設定したデータソースによって異なります。詳しくは [gatsby-image](/packages/gatsby-image#fragments) をご覧ください。
+=======
+> Note: using fragments in your queries depends on which data source(s) you have configured. Read more about image query fragments in the [gatsby-image](/packages/gatsby-image/#fragments) README.
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 ### `gatsby-transformer-sharp` の共通フラグメント
 

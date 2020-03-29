@@ -33,10 +33,17 @@ gatsby new [<site-name> [<starter-url>]]
 
 #### 引数
 
+<<<<<<< HEAD
 | 引数        | 概要                                                                                                                                                                                                                 |
 | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | site-name   | プロジェクトのディレクトリーを作成するのに使われる Gatsby を用いて作りたいサイトの名前                                                                                                                               |
 | starter-url | Gatsby スターターの URL またはローカルのファイルパス。 デフォルトは [gatsby-starter-default](https://github.com/gatsbyjs/gatsby-starter-default)。 詳細は [Gatsby starters](/docs/gatsby-starters/) をご覧ください。 |
+=======
+| Argument    | Description                                                                                                                                                                                              |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| site-name   | Your Gatsby site name, which is also used to create a project directory.                                                                                                                                 |
+| starter-url | A Gatsby starter URL or local file path. Defaults to [gatsby-starter-default](https://github.com/gatsbyjs/gatsby-starter-default); see the [Gatsby starters](/docs/starters/) docs for more information. |
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 > 注釈: `site-name` には文字と数字の組み合わせしか使えません。 もし、 `.` や `./`、 `<space>` が名前に含まれていた場合、`gatsby new` コマンドはエラーで異常終了します。
 
@@ -112,12 +119,22 @@ Gatsby サイトのルートディレクトリーにて、アプリをコンパ�
 
 #### オプション
 
+<<<<<<< HEAD
 |          オプション          | 概要                                                                                                                 |
 | :--------------------------: | -------------------------------------------------------------------------------------------------------------------- |
 |       `--prefix-paths`       | リンクのパスに与えられた引数を追加して、サイトをビルドします。(config に pathPrefix の設定が必要）                   |
 |        `--no-uglify`         | JS バンドルに uglify をかけずに、サイトをビルドします。（デバッグ用）                                                |
 | `--open-tracing-config-file` | トレーサー設定ファイル（OpenTracing 互換）。詳細は[Performance Tracing](/docs/performance-tracing/) をご覧ください。 |
 | `--no-color`, `--no-colors`  | ターミナルの出力の色付けを無効にします。                                                                             |
+=======
+|            Option            | Description                                                                                                                                  |
+| :--------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------- |
+|       `--prefix-paths`       | Build site with link paths prefixed (set pathPrefix in your config)                                                                          |
+|        `--no-uglify`         | Build site without uglifying JS bundles (for debugging)                                                                                      |
+|         `--profile`          | Build site with react profiling. See [Profiling Site Performance with React Profiler](/docs/profiling-site-performance-with-react-profiler/) |
+| `--open-tracing-config-file` | Tracer configuration file (OpenTracing compatible). See [Performance Tracing](/docs/performance-tracing/)                                    |
+| `--no-color`, `--no-colors`  | Disables colored terminal output                                                                                                             |
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 上記に加えて、ビルドを最適化するためのより高度な設定のためにいくつかの [build environment variables](/docs/environment-variables/#build-variables) があります。例えば、　`CI=true` を環境変数として設定すると[ダム端末](https://ja.wikipedia.org/wiki/%E7%AB%AF%E6%9C%AB#%E3%83%80%E3%83%A0%E7%AB%AF%E6%9C%AB)向けに出力を調整できます。
 

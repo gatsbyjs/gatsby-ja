@@ -6,8 +6,8 @@ disableTableOfContents: true
 Gatsby をはじめたばかりの時は、覚えるべき用語がたくさんあって大変でしょう。この用語集ではよく使われる用語の意味と、Gatsby のサイト上でどのように使われているかを説明します。
 
 <HorizontalNavList
-items={"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")}
-slug={props.slug}
+  items={"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")}
+  slug={props.slug}
 />
 
 ## A
@@ -34,7 +34,11 @@ API とは Application Programming Interface の略で、アプリ間の連絡�
 
 サイトの[表](#public)には出ない、裏で走っている機能のことです。このサイトでは、主に [CMS](#cms) のコントロールパネルのことを指します。これらは、Node.js, PHP, Go, ASP.net, Ruby, Java 等のサーバーサイド言語によって実装されています。
 
+<<<<<<< HEAD
 ### ビルド (Build)
+=======
+### [Build](/docs/glossary/build/)
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 Gatsby では、ビルドとはあなたのコードやコンテンツを 1 つのパッケージとして、ホストしてアクセスるウェブサイトに仕上げる行為を指します。「_ビルド時_」とも呼ばれます。参照：[バックエンド](#backend)、[サーバサイド](#server-side)。
 
@@ -76,7 +80,15 @@ CMS とはコンテンツ・マネジメント・システム (Content Managemen
 
 設定ファイルのこと。Gatsby では `gatsby-config.js` を使って Gatsby にあなたのサイトの設定を行います。よく使われる設定としては、サイトの metadata を設定してあなたのサイトの SEO を向上させるものがあります。
 
+<<<<<<< HEAD
 ### [継続的デプロイ (Continuous Deployment)](/docs/glossary/continuous-deployment)
+=======
+### [Content Delivery Network](/docs/glossary/content-delivery-network)
+
+A content delivery network (CDN) is a highly distributed network of servers that stores copies of your content in locations that are closer to your site's visitors. Content delivery networks improve your site's performance by reducing the time needed to complete a network request.
+
+### [Continuous Deployment](/docs/glossary/continuous-deployment)
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 継続的デプロイ (Continuout Deployment, CD) とは、あなたのプロジェクトのリリースプロセスを自動化するものです。継続的デプロイワークフローは自動的にあなたのプロジェクトのテスト、およびビルドを行い、差分に問題が無いと判断されたら自動的に公開されます。
 
@@ -206,11 +218,11 @@ Linting はコードを解析し、構文エラー等を検出するためのプ
 
 ## M
 
-### MDX
+### [MDX](/docs/glossary/mdx/)
 
 [React](#react) の[コンポーネント](#component)を [Markdown](#markdown) 上でそのまま使用するための拡張機能。
 
-### Markdown
+### [Markdown](/docs/glossary/markdown/)
 
 HTML のコンテンツをプレーンテキストで書くための手法です。コンテンツのタイプを特別な文字列を使って表します。例えば、ハッシュ（#)を使って[見出し](https://developer.mozilla.org/ja/docs/Web/HTML/Element/Heading_Elements)を表したり、下線（\_)やアスタリスク（\*)を使ってテキストの強調を表したりします。
 
@@ -294,7 +306,15 @@ Gatsby に元から用意されてなかった機能を追加するためのコ�
 
 ### サーバーサイド (Server-side)
 
+<<<<<<< HEAD
 [クライアント・サーバモデル](https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%88%E3%82%B5%E3%83%BC%E3%83%90%E3%83%A2%E3%83%87%E3%83%AB)におけるサーバーサイドとは、ネットワーク上のサービスやリソースへとアクセスする為にプログラムによって実行された操作のことです。Gatsby では [Node.js](#nodejs) というサーバーサイドの技術を使ってビルド時にページをコンパイルしています。他のサービスでは[クライアントサイド](#client-side) JavaScript を用いて[ブラウザーのランタイム](#runtime)でページを提供しているサービスもあります。参照：[フロントエンド](#frontend)、[バックエンド](#backend).
+=======
+The server-side part of the [client-server relationship](https://en.wikipedia.org/wiki/Client%E2%80%93server_model) refers to operations performed by a computer program which manages access to a centralized resource or service in a computer network. See also: [frontend](#frontend) and [backend](#backend).
+
+### [Server-side rendering](/docs/glossary/server-side-rendering/)
+
+Using a [Node.js](#nodejs)-based server to generate HTML in response to a request from a user agent such as a browser. Gatsby uses the server-side technology [Node.js](#nodejs) to compile pages at build time, as opposed to serving them at [browser runtime](#runtime) with [client-side](#client-side) JavaScript.
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 ### ソースコード (Source Code)
 
@@ -347,6 +367,10 @@ UI とはユーザーインターフェースの事を指します。HCI (Human 
 ### [webpack](/docs/glossary/webpack)
 
 Gatsby が使用する [JavaScript](#javascript) アプリで、ウェブサイトのコードをバンドルするのに使われます。これは[ビルド時](#build)に自動的に行われます。
+
+### [WPGraphQL](/docs/glossary/wpgraphql)
+
+A WordPress plugin that adds [GraphQL](#graphql) capabilities to WordPress. It's another way that you can use WordPress as a content source for Gatsby.
 
 ## X
 

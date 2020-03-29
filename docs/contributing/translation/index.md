@@ -14,6 +14,7 @@ Gatsbyjs.org のコンテンツを複数の言語に翻訳する継続的な取�
 
 現在、以下の言語が翻訳されています。
 
+<<<<<<< HEAD
 - [アラビア語](https://github.com/gatsbyjs/gatsby-ar)
 - [ベンガル語](https://github.com/gatsbyjs/gatsby-bn)
 - [ドイツ語](https://github.com/gatsbyjs/gatsby-de)
@@ -34,6 +35,9 @@ Gatsbyjs.org のコンテンツを複数の言語に翻訳する継続的な取�
 - [ベトナム語](https://github.com/gatsbyjs/gatsby-vi)
 - [簡体字中国語](https://github.com/gatsbyjs/gatsby-zh-Hans)
 - [繁体字中国語](https://github.com/gatsbyjs/gatsby-zh-Hant)
+=======
+<LangList />
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 > ヒント: 新しい翻訳リポジトリーが作成されたら、PR で自由にここへ追加してください!
 

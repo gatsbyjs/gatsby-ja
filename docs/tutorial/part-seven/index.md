@@ -16,7 +16,16 @@ disableTableOfContents: true
 
 ## ページのスラッグの生成
 
+<<<<<<< HEAD
 ページの生成には 2 つの手順があります。
+=======
+A ‘slug’ is the unique identifying part of a web address,
+such as the `/tutorial/part-seven` part of the page `https://www.gatsbyjs.org/tutorial/part-seven/`.
+
+It is also referred to as the ‘path’ but this tutorial will use the term ‘slug’ for consistency.
+
+Creating new pages has two steps:
+>>>>>>> 8ff6bb09c23261662f47e79a041a92855d517097
 
 1.  ページのパスかスラッグを生成する。
 2.  ページを生成する。
