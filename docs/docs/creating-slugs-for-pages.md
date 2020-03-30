@@ -12,7 +12,7 @@ title: ページのスラッグを作成する
 
 `MarkdownRemark` ノードに新しいスラッグを直接作成しましょう。このノードに追加されたデータは GraphQL によってクエリ可能となります。
 
-作成するには、[`createNodeField`](/docs/actions/#createNodeField) という API を使用します。この関数は他のプラグインによって作成されたノードに新しくフィールドを追加することができます。
+作成するには、[`createNodeField`](/docs/actions/#createNodeField) という API を使用します。この関数は他のプラグインによって作成されたノードに新しくフィールドを追加できます。
 
 ```javascript:title=gatsby-node.js
 const { createFilePath } = require(`gatsby-source-filesystem`)
