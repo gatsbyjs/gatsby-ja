@@ -1,34 +1,18 @@
 ---
-title: Testing Components with GraphQL
+title: GraphQL を用いたコンポーネントのテスト
 ---
 
-If you try to run unit tests on components that use GraphQL queries, you will
-discover that you have no data. Jest can't run your queries, so if you are
-testing components that rely on GraphQL data, you will need to provide the data
-yourself. This is a good thing, as otherwise your tests could break if your data
-changes, and in the case of remote data sources it would need network access to
-run tests.
+あなたが GraphQL のクエリーを用いたテストを行おうとすると、データがないことに気づくでしょう。Jest はあなたのクエリーを実行できないので、あなたが GraphQL のデータに依存したコンポーネントのテストを行いたいのならば、データを自分自身で用意する必要があります。データを変更することでテストが壊れうる場合やテストを実行するためにネットワークアクセスを要するリモートデータを用いる場合に、これは良い方法です。
 
-In general it is best practice to test the smallest components possible, so the
-simplest thing to do is to test the individual page components with mock data,
-rather than trying to test a full page. However, if you do want to test the full
-page you'll need to provide the equivalent data to the component. Luckily
-there's a simple way to get the data you need.
+一般的に、可能な限り小さいコンポーネントでテストすることは、ベストプラクティスとされています。全てのページを一度にテストしようとするよりも、それぞれのページコンポーネントをモックデータと共にテストする方が簡単です。しかしながら、もし全てのページをテストしたいのならば、コンポーネントに対して同じデータを用意する必要があります。幸運にもあなたが必要なデータを手に入れる簡単な方法があります。
 
-First you should make sure you have read
-[the unit testing guide](/docs/unit-testing/) and set up your project as
-described. This guide is based on the same blog starter project. You will be
-writing a simple snapshot test for the index page.
+まず[単体テストの案内](/docs/unit-testing/)を読み、説明されているようにあなたのプロジェクトを準備したか確認してください。この案内では、同じブログスタータープロジェクトを用いています。それでは、index ページに簡単なスナップショットテストを書いていきましょう。
 
-As Jest doesn't run or compile away your GraphQL queries you need to mock the
-`graphql` function to stop it throwing an error. If you set your project up with
-a mock for `gatsby` as described in the unit testing guide then this is already
-done.
+Jest は GraphQL の実行やコンパイルができないので、エラーが起きないように `graphql` 関数のモックを用意する必要があります。単体テストの案内で説明されているように、あなたが `gatsby` のモックと共にプロジェクトを用意したならば、準備はすでに完了しています。
 
-## Testing page queries
+## ページクエリーのテスト
 
-As this is testing a page component you will need to put your tests in another
-folder so that Gatsby doesn't try to turn the tests into pages.
+これはページコンポーネントのテストが目的なので、Gatsby が pages へ取り込もうとしないように、テストのファイルは別のフォルダーに保存する必要があります。
 
 ```js:title=src/pages/__tests__/index.js
 import React from "react"
@@ -42,7 +26,7 @@ describe("Index", () =>
   }))
 ```
 
-If you run this test you will get an error, as the StaticQuery in the `Layout` component is not mocked. You can fix this by mocking it, like so:
+もしこのテストを実行した場合、エラーが起きます。`Layout` コンポーネントの StaticQuery がモックになっていないからです。これは以下のように、StaticQuery のモック化で解消できます。
 
 ```js:title=src/__tests__/index.js
 import React from "react"
@@ -69,13 +53,7 @@ describe("Index", () =>
   }))
 ```
 
-This should fix the `StaticQuery` error, but in a more real-world example you may also be using a page query with the `graphql` helper from Gatsby. In this case, there is no GraphQL data being passed to the component. You can pass this in too,
-but the structure is a little more complicated. Luckily there's a way to
-get some suitable data. Run `npm run develop` and go to
-http://localhost:8000/___graphql to load the GraphiQL IDE. You can now get the
-right data using the same query that you used on the page. If it is a simple
-query with no fragments you can copy it directly. That is the case here, run
-this query copied from the index page:
+これで `StaticQuery` のエラーは解消されました。しかし、もっと現実世界の例に目を向けると、Gatsby の `graphql` ヘルパーも用いてページのクエリーを行っているかもしれません。この場合、コンポーネントに渡される GraphQL のデータはありません。テストの構造は少し複雑になりますが、このような場合もテストできます。幸運にも、このような場合に適したデータを取得する方法があるのです。GraphQL IDE を起動するために、`npm run develop` を実行して、`http://localhost:8000/___graphql` を見てください。あなたは今、ページで用いられているのと同じクエリーで同じデータを取得できます。もしそのクエリーがフラグメントを含まないシンプルなものならば、直接コピーすることもできます。ここでは、index ページからコピーしたこのクエリー実行します。
 
 ```graphql
 query IndexQuery {
@@ -87,8 +65,7 @@ query IndexQuery {
 }
 ```
 
-The output panel should now give you a nice JSON object with the query result.
-Here it is, trimmed to one node for brevity:
+出力結果は、クエリーの結果と共に、JSON オブジェクトをあなたに与えてくれます。ここでは簡潔に表すために 1 つのノードに整えました。
 
 ```json
 {
@@ -102,11 +79,8 @@ Here it is, trimmed to one node for brevity:
 }
 ```
 
-GraphiQL doesn't know about any fragments defined by Gatsby, so if your query
-uses them then you'll need to replace those with the content of the fragment. If
-you're using `gatsby-transformer-sharp` you'll find the fragments in
-[gatsby-transformer-sharp/src/fragments.js](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-transformer-sharp/src/fragments.js).
-So, for example if your query includes:
+GraphiQL は、Gatsby によって定義されたフラグメントについて一切知りません。したがって、もしあなたのクエリーがフラグメントを使用しているのならば、フラグメントの内容と置き換える必要があります。もしあなたが `gatsby-transformer-sharp` を使用しているのならば、[gatsby-transformer-sharp/src/fragments.js](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-transformer-sharp/src/fragments.js) にてフラグメントを見つけることができます。
+例えば、あなたのクエリーが以下を含んでいるとします。
 
 ```graphql
     image {
@@ -118,7 +92,7 @@ So, for example if your query includes:
     }
 ```
 
-...it becomes:
+それが、こうなります。
 
 ```graphql
     image {
@@ -134,13 +108,12 @@ So, for example if your query includes:
     }
 ```
 
-When you have the result, copy the `data` value from the output panel. Good
-practice is to store your fixtures in a separate file, but for simplicity here
-you will be defining it directly inside your test file:
+クエリーの結果がある時、出力から `data` の値をコピーしてください。グッドプラクティスは、フィクスチャとして別ファイルに保存することです。しかし、ここでは簡潔にテストファイルの中に直接定義してしまいましょう。
 
 ```js:title=src/pages/__tests__/index.js
 import React from "react"
 import renderer from "react-test-renderer"
+import { StaticQuery } from "gatsby"
 import Index from "../index"
 
 beforeEach(() => {
@@ -171,26 +144,15 @@ describe("Index", () => {
 })
 ```
 
-Run the tests and they should now pass. Take a look in `__snapshots__` to see
-the output.
+テストを実行してみてください。通過するはずです。テスト結果を確認するために、`__snapshots__` を見てみましょう。
 
-## Testing StaticQuery
+## StaticQuery をテストする
 
-The method above works for page queries, as you can pass the data in directly to
-the component. This doesn't work for components that use `StaticQuery` though,
-as that uses `context` rather than `props` so you need to take a slightly
-different approach to testing these types of components.
+上記の方法は、コンポーネントに直接データを渡すため、ページのクエリーでは機能します。しかし、これは `StaticQuery` を使用しているコンポーネントでは機能しません。なぜならば、`StaticQuery`は `props` ではなく `context` を使用しているためです。このようなタイプのコンポーネントをテストするには少々違った方法が必要となります。
 
-Using `StaticQuery` allows you to make queries in any component, not just pages.
-This gives a lot of flexibility, and avoid having to pass the props down to
-deeply-nested components. The pattern for enabling type checking described in
-the docs is a good starting point for making these components testable, as it
-separates the query from the definition of the component itself. However that
-example doesn't export the inner, pure component, which is what you'll need to
-test.
+`StaticQuery` は、pages だけではなくいかなるコンポーネントでもクエリーを作ることを可能にします。これは、多くの面で柔軟性を与えてくれますし、深くネストされたコンポーネントに props を渡さなくてもよくなります。ドキュメントで説明されたタイプチェックを有効にするパターンは、コンポーネントをテスト可能にする良いスタートラインとなります。なぜならば、コンポーネントそのものの定義とクエリーが別れているからです。しかしながら、この例では、テストする必要のある内部の純粋なコンポーネントをエクスポートされていません。
 
-Here is the example of a header component that queries the page data itself,
-rather than needing it to be passed from the layout:
+この Header コンポーネントの例では、Layout から渡されたデータを用いるのではなく、ページのデータそのものを問い合わせています。
 
 ```jsx:title=src/components/header.js
 import React from "react"
@@ -218,8 +180,7 @@ export default props => (
 )
 ```
 
-This is almost ready: all you need to do is export the pure component that you
-are passing to StaticQuery. Rename it first to avoid confusion:
+これでほとんど完了です。あとは、StaticQuery に渡している純粋なコンポーネントのエクスポートだけ行う必要があります。まずは、名前の衝突を避けるために、名前を変更しましょう。
 
 ```jsx:title=src/components/header.js
 import React from "react"
@@ -249,8 +210,7 @@ export const Header = props => (
 export default Header
 ```
 
-If you prefer to utilize `useStaticQuery` instead, you can rewrite
-the Header component as:
+もしあなたが `useStaticQuery` の方を使うことが好きならば、Header コンポーネントを以下のように書き直すこともできます。
 
 ```jsx:title=src/components/header.js
 import React from "react"
@@ -279,26 +239,13 @@ export const Header = props => {
 export default Header
 ```
 
-Note that because `useStaticQuery` is a React Hook, it is simply a function and so can
-be assigned to `data` which is then passed as a prop to the `PureHeader`. This is only
-possible since we have also made `Header` a function component.
+`useStaticQuery` はただの関数である React Hook のため、prop として `PureHeader` へ渡される `data` に割り当てることが可能と気づいたでしょうか。これは、私たちが `Header` もまた関数コンポーネントとして作ったので可能となります。
 
-Now you have two components exported from the file: the component that includes
-the StaticQuery data which is still the default export, and another component
-that you can test. This means you can test the component independently of the
-GraphQL. In addition, whether you utilize StaticQuery or useStaticQuery, your
-test should still function properly.
+今、あなたは 2 つのエクスポートされているコンポーネントを持っています。1 つは、デフォルトのエクスポートとなっている StaticQuery のデータを含んでいるコンポーネント、もう 1 つは、あなたがテストできるコンポーネントです。これが意味するのは、GraphQL から独立したコンポーネントがテスト可能ということです。加えて、あなたが StaticQuery と useStaticQuery のいずれを使用するにしても、あなたのテストは関数であり続けなければなりません。
 
-This is a good example of the benefits of keeping components "pure", meaning
-they always generate the same output if given the same inputs and have no
-side-effects apart from their return value. This means you can be sure the tests
-are always reproducible and don't fail if, for example, the network is down or
-the data source changes. In this example, `Header` is impure as it makes a
-query, so the output depends on something apart from its props. `PureHeader` is
-pure because its return value is entirely dependent on the props passed to it.
-This means it's easier to test, and a snapshot should never change.
+これはコンポーネントを"純粋"に保つメリットの好例です。"純粋"とは、もし同じ値を入力したのならば、常に同じ結果を生成し、返り値以外の副作用は持たないということです。純粋なコンポーネントであれば、例えばもしネットワークがダウンしたりデータソースが変更したりしてもテストが失敗せず、常に再現可能であることを確実なものとしてくれます。`Header` はクエリーを生成しているため純粋ではなく、出力は props とは別のものに依存しています。`PureHeader` は、純粋です。なぜならば、返り値がコンポーネントに渡される props へ完全に依存しているからです。これは、テストが行いやすく、スナップショットが変わることはないということを意味します。
 
-Here's how:
+こちらがテストの例になります。
 
 ```js:title=src/components/__tests__/header.js
 import React from "react"
@@ -322,8 +269,6 @@ describe("Header", () => {
 })
 ```
 
-## Using TypeScript
+## TypeScript を使った場合
 
-If you are using TypeScript this is a lot easier to get right as the type errors
-will tell you exactly what you should be passing to the components. This is why
-it is a good idea to define type interfaces for all of your GraphQL queries.
+もしあなたが TypeScript を使用しているのならば、タイプエラーはあなたがコンポーネントに渡すべきなものについて正確に教えてくれるため、ずっと簡単にテストを行いやすくなります。これが、あなたの全ての GraphQL クエリーに対して、型のインターフェイスを定義することが良いアイデアとなる理由です。

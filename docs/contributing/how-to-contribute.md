@@ -1,15 +1,15 @@
 ---
-title: How to Contribute
+title: 貢献の方法
 ---
 
-We want contributing to Gatsby to be fun, enjoyable, and educational for anyone and everyone. All contributions are welcome, including issues, new docs as well as updates and tweaks, blog posts, workshops, and more.
+私たちは Gatsby への貢献を、誰にとってもおもしろく、楽しく、そして教育的であることを望んでいます。Issue や新しいドキュメントの作成、ドキュメントの更新や微調整、ブログの投稿、ワークショップなどを含む、あらゆる貢献を歓迎します。
 
-## Not sure how to start contributing?
+## どのように貢献を始めたらいいか分からない？
 
-If you are worried or don't know where to start, check out our [where to participate](/contributing/where-to-participate/) page. You can reach out with questions to [Marcy Sutton (@marcysutton)](https://twitter.com/marcysutton) or [@GatsbyJS](https://twitter.com/gatsbyjs) on Twitter, and anyone from the Gatsby team on [Discord](https://gatsby.dev/discord). You can also [submit an issue](/contributing/how-to-file-an-issue/) and a maintainer can give you guidance!
+心配な場合やどこから始めたらいいか分からない場合は、[どこに参加するか](/contributing/where-to-participate/)のページを確認しましょう。Twitter では [Marcy Sutton (@marcysutton)](https://twitter.com/marcysutton) や [@GatsbyJS](https://twitter.com/gatsbyjs)、[Discord](https://gatsby.dev/discord) では Gatsby チームの誰かに質問できます。また、[Issue を提出](/contributing/how-to-file-an-issue/)することで、メンテナーがガイドしてくれるでしょう。
 
-## Pair programming
+## ペアプログラミング
 
-Gatsby.js offers free [pair programming sessions](/contributing/pair-programming/) to the community, if there's something you'd like to work on together. Get in touch with us if you have a question about contributing or an idea for something to pair on!
+一緒に取り組みたいことがあれば、Gatsby はコミュニティーに無料の[ペアプログラミングセッション](/contributing/pair-programming/)を提供しています。貢献についての質問やペアプログラミングで取り組みたい題材がある場合は、お問い合わせください！
 
 <GuideList slug={props.slug} />

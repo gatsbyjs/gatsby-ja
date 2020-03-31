@@ -1,28 +1,28 @@
 ---
-title: Working with Images in Markdown Posts and Pages
+title: Markdown で書かれているコンテンツで画像を扱う
 ---
 
-When building Gatsby sites composed primarily of Markdown pages or posts, insertion of images can enhance the content. You can add images in multiple ways.
+Markdown を利用してコンテンツを作成する際に、画像を挿入することでより魅力的なコンテンツを作成できます。Markdown で画像を挿入する方法をいくつか紹介します。
 
-## Featured images with Frontmatter metadata
+## Frontmatter メタデータを利用した見出し画像の表示
 
-In sites like a blog, you may want to include a featured image that appears at the top of a page. One way to do this is to grab the image filename from a frontmatter field and then transform it with `gatsby-plugin-sharp` in a GraphQL query.
+ブログを作成する際に、記事の見出し画像を設定したい場合があります。frontmatter に画像のファイル名を設定し、GraphQL のクエリに `gatsby-plugin-sharp` を利用して画像を読み込む方法があります。
 
-This solution assumes you already have programmatically generated pages from Markdown with renderers like `gatsby-transformer-remark` or `gatsby-plugin-mdx`. If not, take a read through up to [Part 7 of the Gatsby Tutorial](/tutorial/part-seven/). This will build upon the tutorial and as such, `gatsby-transformer-remark` will be used for this example.
+この方法は `gatsby-transformer-remark` か `gatsby-plugin-mdx` を利用して、 すでに Markdown を変換してコンテンツとして利用できるよう設定してある場合を想定しています。もし設定をしていない場合は「[プログラムでデータからページを生成する](/tutorial/part-seven/)」を参照してください。チュートリアルは `gatsby-transformer-remark` を利用しています。
 
-> Note: This can be done similarly using [MDX](/docs/mdx/) as well. Instead of the `markdownRemark` nodes in GraphQL, `Mdx` can be swapped in and should work.
+> ヒント: [MDX](/docs/mdx/) を利用した場合も、GraphQL のクエリ内の `markdownRemark` を `Mdx` へ置き換えるだけで動作します。
 
-To start out, download the plugins for Gatsby-image as mentioned in [Using gatsby-image](/docs/using-gatsby-image/).
+まずは [Gatsby の画像 API](/docs/using-gatsby-image/) で紹介されている画像を扱うために必要なプラグインをインストールしましょう。
 
 ```shell
 npm install --save gatsby-image gatsby-transformer-sharp gatsby-plugin-sharp
 ```
 
-You will also want to have `gatsby-source-filesystem` installed. Then, configure the various plugins in the `gatsby-config` file.
+`gatsby-source-filesystem` も必要なのでインストールをしましょう。次にインストールしたプラグインの設定を `gatsby-config` に記述していきます。
 
-### Configuring for images and posts in the same directory
+### Markdown と画像を同じディレクトリーで管理する場合の設定
 
-If your images are in the same directory as the Markdown files, sourcing and resolving the images can be done in one configuration. For example, if your Markdown pages and images are located together in a `/pages` directory, both content types will be automatically picked up by GraphQL as part of Gatsby's data layer.
+Markdown と画像が同じディレクトリーにある場合は、Markdown と画像の設定がひとつのオプションにまとめることができます。例えば Markdown と画像が `/pages` ディレクトリー以下に格納されている場合、両方のコンテンツが Gatsby のデータ構造として自動的に GraphQL で取得できます。
 
 ```js:title=gatsby-config.js
 module.exports = {
@@ -40,22 +40,22 @@ module.exports = {
 }
 ```
 
-Then, in an example Markdown file, add a field called `featuredImage`:
+次に Markdown に `featuredImage` というフィールドを追加しましょう。
 
-```markdown:title=src/pages/my-favorite-doggos.md
+```markdown:title=src/pages/my-favorite-dogs.md
 ---
-title: My Favorite Doggos
-featuredImage: pupperino.png
+title: 私の好きな犬
+featuredImage: shiba-inu.png
 ---
 
-Content goes here!
+以下 Markdown コンテンツを記述
 ```
 
-The next step will be to incorporate the data into a template with a GraphQL query, which can be found later in this guide.
+次のステップとして GraphQL のクエリを利用してテンプレートに見出し画像を設定する必要がありますが、このページ下部で説明します。
 
-### Configuring for images and posts in different directories
+### Markdown と画像を別のディレクトリーで管理する場合の設定
 
-There are also occassions when you may want to source images from a different directory than where your Markdown posts or pages are located, such as in an external `/images` folder. You can set this up by specifying two distinct sources, one for the pages and the other for images:
+設定する画像を Markdown とは別の `/images` のようなディレクトリーで管理したい場合があると思います。このような場合は別々のソースとして設定する必要があります。
 
 ```js:title=gatsby-config.js
 module.exports = {
@@ -79,7 +79,7 @@ module.exports = {
 }
 ```
 
-Then, in a Markdown file, the path to a `featuredImage` would be relative to the page file (in this case, in an `/images` directory up a level):
+次に Markdown に `featuredImage` のパスを相対パスで指定します。この例では Markdown ファイルの親階層に `/images` フォルダーがある場合を想定しています。
 
 ```markdown:title=src/pages/about.md
 ---
@@ -87,14 +87,14 @@ title: About
 featuredImage: ../images/team-cat.png
 ---
 
-Content goes here!
+以下 Markdown コンテンツを記述
 ```
 
-### Querying for images from Frontmatter
+### Frontmatter から画像を取得する
 
-Now that you've sourced Markdown and image data, you can query for featured images in GraphQL. If a filepath points to an actual image, it will be transformed into a `File` node in GraphQL and then you can get the image data out of it by using the `childImageSharp` field.
+ここまでで Markdown での記述と画像の指定方法を理解できたと思います。次に GraphQL のクエリで見出し画像を取得する方法を説明します。ファイルパスに実際の画像が存在するパスを指定している場合、画像は GraphQL の `File` node に格納されます。そして画像のデータを `childImageSharp` から参照します。
 
-This can be added to the GraphQL query in a Markdown template file. In this example, a [Fluid query](/docs/gatsby-image#images-that-stretch-across-a-fluid-container) is used to make a responsive image.
+Markdown のテンプレートファイルに GraphQL のクエリを追加します。以下は[可変クエリー](/docs/gatsby-image#images-that-stretch-across-a-fluid-container)を利用してレスポンシブな画像を取得する例です。
 
 ```jsx:title=src/templates/blog-post.js
 export const query = graphql`
@@ -118,7 +118,7 @@ export const query = graphql`
 `
 ```
 
-Also in the Markdown post template, import the `gatsby-image` package and pass the results of the GraphQL query into an `<Img />` component.
+また Markdown のテンプレート内で `gatsby-image` パッケージを import して、 GraphQL で取得したものを `<Img />` コンポーネントへ渡すことで画像を表示できます。
 
 ```jsx:title=src/templates/blog-post.js
 import React from "react"
@@ -167,27 +167,27 @@ export const query = graphql`
 `
 ```
 
-Your featured image should now appear on the generated page right below the main header. Tada!
+見出し画像が生成されたページのメインヘッダーに表示されたと思います。
 
-## Inline images with `gatsby-remark-images`
+## `gatsby-remark-images` を利用してインラインに画像を表示する
 
-You may also include images in the Markdown body itself. The plugin [gatsby-remark-images](/packages/gatsby-remark-images) comes in handy for this.
+Markdown の body に画像を表示したい場合の説明をします。[gatsby-remark-images](/packages/gatsby-remark-images) プラグインを使うと簡単に実現できます。
 
-Start out by installing `gatsby-remark-images` and `gatsby-plugin-sharp`.
+まずは　`gatsby-remark-images` と `gatsby-plugin-sharp` をインストールしましょう。
 
 ```shell
 npm install --save gatsby-remark-images gatsby-plugin-sharp
 ```
 
-Also make sure that `gatsby-source-filesystem` is installed and points at the directory where your images are located.
+また `gatsby-source-filesystem` がインストールされていること、そして設定で画像のあるフォルダーが指定されていることを確認してください。
 
-Configure the plugins in your `gatsby-config` file. As with the previous example, either `Remark` or `MDX` can be used.
+`gatsby-config` でプラグインの設定をしましょう。先述したように `Remark` か `MDX` を利用します。
 
-### Using the MDX Plugin
+### MDX プラグインを使う
 
-The `gatsby-plugin-mdx` plugin will be used in the example below. Put the `gatsby-remark-images` plugin within the `gatsbyRemarkPlugins` option field of `gatsby-plugin-mdx`.
+`gatsby-plugin-mdx` の使い方を紹介します。 `gatsby-plugin-mdx` の `gatsbyRemarkPlugins` の設定の中に `gatsby-remark-images` の設定を追加します。
 
-> Note: This example configuration assumes your images and Markdown pages are sourced from the same directory. Check out the section on [configuring for different directories](#configuring-for-images-and-posts-in-different-directories) for additional help.
+> ヒント: この例では Markdown と画像が同じディレクトリーにある場合を想定しています。詳しくは[Markdown と画像を別のディレクトリーで管理する場合の設定](#configuring-for-images-and-posts-in-different-directories)を確認してください。
 
 ```js:title=gatsby-config.js
 module.exports = {
@@ -216,9 +216,9 @@ module.exports = {
 }
 ```
 
-### Using the Transformer Remark Plugin
+### Transformer Remark Plugin を使う
 
-Here is a similar example using the `gatsby-transformer-remark` plugin instead of `gatsby-plugin-mdx`. Put the `gatsby-remark-images` plugin within the `plugins` option field of `gatsby-transformer-remark`.
+`gatsby-plugin-mdx` の代わりに `gatsby-transformer-remark` plugin を利用した場合の例です。`gatsby-transformer-remark` の `plugins` の中に `gatsby-remark-images` プラグインの設定をします。
 
 ```js:title=gatsby-config.js
 module.exports = {
@@ -247,7 +247,7 @@ module.exports = {
 }
 ```
 
-With the configurations above, you can use the default Markdown syntax for images. They will be processed by Sharp and appear as if you placed them in a `gatsby-image` component.
+このような設定をすることによっての Markdown の書式で画像を表示できます。 `Sharp` により処理されたものを `gatsby-image` コンポーネントを使うことにより表示できます。
 
 ```markdown
 ![Hopper The Rabbit](./rabbit-friend.png)

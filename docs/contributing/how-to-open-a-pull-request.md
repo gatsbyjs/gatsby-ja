@@ -1,154 +1,154 @@
 ---
-title: How to Open a Pull Request
+title: Pull Request を作成する
 ---
 
-A big part of contributing to open source is submitting changes to a project: improvements to source code or tests, updates to docs content, even typos or broken links. This doc will cover what you need to know to **open a pull request** in Gatsby.
+オープンソースプロジェクトへの貢献をする中で、大きな割合を占めるのが、変更部分の提出です。例えば、ソースコードやテストコードの改善、ドキュメントの更新、文字の打ち間違いやリンク切れの修正などです。このドキュメントでは、Gatsby で **Pull Request を作成する**ために知るべきことをお伝えします。
 
-## What is a Pull Request (PR)?
+## Pull Request (PR) とは？
 
-In case you aren't familiar, here's how the folks at GitHub [define a pull request](https://help.github.com/en/articles/about-pull-requests):
+もしもあなたが Pull Request についてよく知らない場合、以下が GitHub での [Pull Request の定義](https://help.github.com/ja/articles/about-pull-requests)になります。
 
-> Pull requests let you tell others about changes you've pushed to a branch in a repository on GitHub. Once a pull request is opened, you can discuss and review the potential changes with collaborators and add follow-up commits before your changes are merged into the base branch.
+> Pull Request を作成することで、GitHub リポジトリーのブランチに Push したあなたの変更点について、他のユーザーに通知できます。Pull Request が作成されれば、考えうる変更点についてコラボレーター達と議論やレビューを行うことができ、最初の変更部分を元のブランチにマージする前に、更なる変更も追加できます。
 
-Gatsby uses the PR process to review and test changes before they’re added to Gatsby’s GitHub repository. Anyone can open a pull request. The same process is used for all contributors, whether this is your first open source contribution or you’re a core member of the Gatsby team.
+Gatsby では、変更部分を Gatsby リポジトリーにマージする前段階のレビュー＆テストとして、この PR プロセスを使用しています。Pull Request は誰でも作成できます。あなたが初めてオープンソースに貢献する場合でも、あなたが Gatsby チームのコアメンバーである場合でも、この PR プロセスは同じです。
 
-When someone wants to contribute to Gatsby, they open a request to _pull_ their code into the repo. Depending on the type of change, PRs are categorized into:
+Gatsby に貢献したい場合、まず変更したコードを Gatsby リポジトリーに*プル*してもらうためのリクエストを作成します。変更内容のタイプによって、PR は以下のように分類されます。
 
 - [Documentation](#documentation-prs)
 - [Code](#code-changes)
 - [Starters or Site Showcase](#starters-or-site-showcase)
 - [Blog posts](#blog-posts)
 
-Recommendations for different kinds of contributions will follow in this guide and throughout the contributing docs.
+それぞれのタイプでの推奨事項については、以上のドキュメントと Contributing ドキュメント全般の中で記述されています。
 
-## Things to know before opening a PR
+## PR を作成する前に知るべきこと
 
-We typically recommend [opening an issue](/contributing/how-to-file-an-issue/) before a pull request if there isn't already an issue for the problem you'd like to solve. This helps facilitate a discussion before deciding on an implementation.
+Gatsby では、同じ問題に関する Issue がまだ無い場合、Pull Request を作成する前に [Issue を作成する](/contributing/how-to-file-an-issue/)ことが推奨されています。どのような変更を実装するかについて、議論する場を設けるためです。
 
-For some changes, such as typo fixes or broken links, it may be appropriate to open a small PR by itself. This is somewhat subjective so if you have any questions, [feel free to ask us](/contributing/how-to-contribute/#not-sure-how-to-start-contributing).
+文字の打ち間違えやリンク切れなどの修正については、Issue を作成せず PR 作成だけで良いこともあります。こちらに関しては個人の判断になりがちなので、もしもよく分からない場合は[お気軽にご質問ください](/contributing/how-to-contribute/#not-sure-how-to-start-contributing)。
 
-The Gatsby core team uses a triaging process outlined in [Managing Pull Requests](/contributing/managing-pull-requests/), if you're interested in learning more about how that works.
+Gatsby コアチームは、[Pull Request を管理](/contributing/managing-pull-requests/)の中で定められた優先順位に基づいて PR プロセスを進めるので、PR プロセスについて気になる場合は一度ご確認ください。
 
-## Opening PRs in Gatsby
+## Gatsby で PR を作成する
 
-For any kind of change to files in the Gatsby repo, you can follow the below steps. Be sure to check out additional tips for contributing to various parts of the repo later in this doc, such as docs changes, blog posts, starters, or code improvements and tests.
+Gatsby リポジトリーに変更を行うときは、どんな変更内容であっても以下の手順を踏みます。ドキュメントの変更・ブログの投稿・テンプレート・コードの改善やテストなどへの貢献について、追加のヒントがこのページで後ほど説明されているので、そちらも必ずご確認ください。
 
-Some PRs can be done completely from the [GitHub UI](https://help.github.com/en/articles/creating-a-pull-request), such as edits to README files or docs.
+README ファイルやドキュメントの変更など、一部の PR は [GitHub UI](https://help.github.com/ja/articles/creating-a-pull-request) 上で完結できます。
 
-To test changes locally against the Gatsby [site and project files](https://github.com/gatsbyjs/gatsby), you can fork the repo and install parts of it to run on your local machine.
+Gatsby [サイトファイルとプロジェクトファイル](https://github.com/gatsbyjs/gatsby)への変更を自身のローカル環境でテストするには、まずリポジトリーをフォークし、その一部をインストールしてからローカル環境で実行します。
 
-- [Fork and clone the Gatsby repo](/contributing/setting-up-your-local-dev-environment/#gatsby-repo-install-instructions).
-- Install [yarn](https://yarnpkg.com/) to pull in dependencies and build the project.
-- Follow the instructions for the part of the project you want to change. (See specific sections below.)
-- [Create a branch in Git](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) to isolate your changes:
+- [Gatsby リポジトリーをフォークしてクローン](/contributing/setting-up-your-local-dev-environment/#gatsby-repo-install-instructions)します。
+- 全ての依存関係を読み込んでプロジェクトを立ち上げるために、[yarn](https://yarnpkg.com/) をインストールします。
+- 下記のセクションからあなたが変更したいカテゴリーを探し、記述されている指示にしたがってください。
+- あなた専用のブランチを作るために、以下のコードをコマンドライン上で実行して [Git ブランチを作成](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) します。
 
   ```shell
   git checkout -b some-change
   ```
 
-- Once you have changes in Git you want to push, [add them and create a commit](https://help.github.com/en/articles/adding-a-file-to-a-repository-using-the-command-line). For information on how to structure your commits, check out the [Managing PRs](/contributing/managing-pull-requests/#commit-and-pr-title) doc.
-  - Using a dot character `.` will add all untracked files in the current directory and subdirectories.
+- 内容の変更を行い Git からプッシュしたいと思ったら、[変更を追加してコミットを作成](https://help.github.com/ja/articles/adding-a-file-to-a-repository-using-the-command-line)します。コミットをどのように構築するかについては、[PR を管理する](/contributing/managing-pull-requests/#commit-and-pr-title)をご確認ください。
+  - ドット `.` を使えば、現ディレクトリー・サブディレクトリー内の全ての未追跡ファイルを Git に追加できます。
   ```shell
   git add .
   ```
-  - Using a visual tool like [GitHub Desktop](https://desktop.github.com/) or [GitX](https://rowanj.github.io/gitx/) can help for choosing which files and lines to commit.
-- Committing code will run the automated linter using [Prettier](https://prettier.io). To run the linter manually, run an npm script in the project's base directory:
+  - [GitHub Desktop](https://desktop.github.com/) や [GitX](https://rowanj.github.io/gitx/) のようなビジュアルツールを使えば、どのファイルや行をコミットするべきか選ぶのに役立ちます。
+- コードをコミットする際、[Prettier](https://prettier.io) を使った自動校正が行われます。この校正を手動で行いたい場合、プロジェクトのベースディレクトリー内で以下の npm スクリプトを実行します。
   ```shell
   npm run format
   ```
-- Commit any linting changes before pushing by [amending the previous commit](https://help.github.com/en/articles/changing-a-commit-message) or by adding a new commit. For more on linting and tests, visit the [Managing PRs](/contributing/managing-pull-requests/#automated-checks) doc.
+- プッシュをする前に、[1 つ前のコミットを変更 (amend)](https://help.github.com/ja/articles/changing-a-commit-message) して校正に関する変更をコミットするか、もしくはそれ自体を新たなコミットとして作成します。校正とテストに関して詳しく知りたければ、[PR を管理する](/contributing/managing-pull-requests/#automated-checks)をご確認ください。
   ```shell
   git commit --amend
   ```
-- Push your changes to your fork, assuming it is set up as [`origin`](https://www.git-tower.com/learn/git/glossary/origin):
+- あなたのフォークリポジトリーが [`origin`](https://www.git-tower.com/learn/git/glossary/origin) として登録されている場合、以下のコマンドで変更をプッシュします。
   ```shell
   git push origin head
   ```
-- To open a PR with your changes against the Gatsby repo, you can use the [GitHub Pull Request UI](https://help.github.com/en/articles/creating-a-pull-request). Alternatively, you can use the command line: we recommend [hub](https://github.com/github/hub) for that.
+- Gatsby リポジトリーに変更した内容の PR を作成するには、[GitHub Pull Request UI](https://help.github.com/ja/articles/creating-a-pull-request) を使います。他の方法としてコマンドラインから PR を送ることもでき、その場合は [hub](https://github.com/github/hub) の使用が推奨されています。
 
 ### Documentation PRs
 
-The Gatsby.js docs site mostly lives in the [www](https://github.com/gatsbyjs/gatsby/tree/master/www) and [docs](https://github.com/gatsbyjs/gatsby/tree/master/docs) directories on GitHub, including docs and tutorial content. There are also some [examples in the Gatsby repo](https://github.com/gatsbyjs/gatsby/tree/master/examples) referenced in the docs.
+Gatsby のドキュメントサイトは、ドキュメントとチュートリアルを含めてほぼ Github 上の [www](https://github.com/gatsbyjs/gatsby/tree/master/www) ディレクトリーと [docs](https://github.com/gatsbyjs/gatsby/tree/master/docs) ディレクトリー内にあります。また、これらのドキュメントから参照される形で、[サンプル集](https://github.com/gatsbyjs/gatsby/tree/master/examples)も存在します。
 
-Additional docs PR steps:
+以下は、追加ドキュメントの PR 手順です。
 
-- For docs-only changes, consider using `git checkout -b docs/some-change` or `git checkout -b docs-some-change`, as this will short circuit the CI process and only run linting tasks.
+- ドキュメントのみの変更の場合、`git checkout -b docs/some-change` か `git checkout -b docs-some-change` を使うことで、CI プロセスを減らし文字校正のみを行う事ができます。
 
-Further instructions can be found on the [docs contributions](/contributing/docs-contributions/) page.
+より詳しい指示については、[ドキュメントに貢献](/contributing/docs-contributions/)ページをご覧ください。
 
 ### Code changes
 
-Instructions for making changes to the Gatsby source code, tests, internals, APIs, packages, and more can be found in the contributing docs on [setting up your local dev environment](/contributing/setting-up-your-local-dev-environment/). There are also additional details on the [Code contributions](/contributing/code-contributions/) page.
+Gatsby のソースコード・テスト・内部構造・API・パッケージなどの変更に関する指示については、Contributing ドキュメントの[ローカル開発環境を構築する](/contributing/setting-up-your-local-dev-environment/)内に記載されています。更なる説明については、[コードを貢献する](/contributing/code-contributions/)ページもご覧ください。
 
 ### Starters or Site Showcase
 
-There are specific pages about contributing to various parts of the Gatsby ecosystem:
+Gatsby エコシステム内の様々な部分への貢献については、それら専用に記載されたページがあります。
 
-- [Showcase submissions](/contributing/site-showcase-submissions/)
-- [Starter library](/contributing/submit-to-starter-library/)
+- [サイト・ショーケースに提出](/contributing/site-showcase-submissions/)
+- [スターターライブラリ](/contributing/submit-to-starter-library/)
 
 ### Blog posts
 
-For the Gatsby blog, it's necessary to run your content idea by the Gatsby team before submitting it. For more information, refer to the page on [blog and website contributions](/contributing/blog-and-website-contributions/), including how to propose an idea and setting up the blog to run locally.
+Gatsby ブログに投稿をする場合、記事を投稿する前に、記事のアイデアについて Gatsby チームから承認される必要があります。アイデアの提案方法や、ローカルでブログを走らせる方法など、詳しい説明は[ブログとウェブサイトへの貢献](/contributing/blog-and-website-contributions/)をご覧ください。
 
-## Follow up with reviews and suggestions
+## レビュー・提案によるフォローアップ
 
-After a PR is sent to the Gatsby GitHub repo, the Gatsby core team and the community may suggest modifications to the changes that your PR introduces.
+あなたが Gatsyby の GitHub リポジトリーで PR 作成をした後、あなたの変更内容について、Gatsby のコアチームとコミュニティーメンバーが改善提案をすることがあります。
 
-The Gatsby core and learning teams review and approve every PR that the community sends to make sure that it meets the contribution guidelines of the repo, and to find opportunities for improvement to your PR changes.
+Gatsby のコアチーム・ラーニングチームは、コミュニティーで作成された全ての PR に対して、その内容が貢献ガイドラインを満たしているか・その PR 内容がさらに改善できるかのレビューをし、承認します。
 
-These suggestions may also be called "request changes" by the GitHub UI. When a change request is added to your PR, this and the rest of the change requests will appear on the GitHub page for your PR. From this page you can use the suggestions UI to:
+これらの提案は GitHub の UI 上で「request changes」とも呼ばれます。ある提案があなたの PR に追加されたら、以降の提案もあなたの GitHub の PR ページ上で表示され続けます。このページからは、以下のことができます。
 
-- Review the suggested changes using the "View changes" button.
-- [Commit](https://help.github.com/en/articles/incorporating-feedback-in-your-pull-request#applying-suggested-changes) the suggestions.
-- [Discuss suggestions](https://help.github.com/en/articles/about-conversations-on-github) to ask questions about the suggested changes.
-- [Add suggestions to a batch](https://help.github.com/en/articles/incorporating-feedback-in-your-pull-request#applying-suggested-changes) so they can be pushed in a single commit.
+- 「View changes」ボタンを使用し、提案された内容をレビューする
+- 提案内容を[コミットする](https://help.github.com/ja/articles/incorporating-feedback-in-your-pull-request#applying-suggested-changes)
+- 提案された変更について質問するために[話し合う](https://help.github.com/ja/articles/about-conversations-on-github)
+- 1 つのコミットとしてプッシュするために、[バッチに提案を追加する](https://help.github.com/ja/articles/incorporating-feedback-in-your-pull-request#applying-suggested-changes)
 
-For suggestions that may not be resolved using the GitHub UI, remember that you can keep adding related commits to your PR before it is merged and those commits will also be a part of such PR.
+GitHub UI で解決できない提案があっても、PR がマージされる前に関連するコミットをあなたの PR に追加でき、それらのコミットもあなたの PR の一部と見なされます。
 
-After all your questions have been resolved and the requested changes have been committed, you can [mark the conversation as solved](https://help.github.com/en/articles/commenting-on-a-pull-request#resolving-conversations).
+あなたの疑問点が無くなり、全ての変更提案がコミットされたら、その [conversation を solved としてマーキング](https://help.github.com/ja/articles/commenting-on-a-pull-request#resolving-conversations)できます。
 
-This process helps both the Gatsby team and the community to contribute with improvements for your changes before they are merged into the Gatsby GitHub repo.
+Gatsby チームとコミュニティー双方のため、これらのプロセスを行うことで、Gatsby の GitHub リポジトリーへマージする前にあなたの変更内容を改善できます。
 
-## Update your fork with the latest Gatsby changes
+## Gatsby リポジトリーでの更新を、自身のフォークリポジトリーに反映する
 
-The Gatsby GitHub repo is very active, so it's likely you'll need to update your fork with the latest changes to be able to merge in your code. This requires adding Gatsby as an [upstream remote](https://help.github.com/en/articles/configuring-a-remote-for-a-fork):
+Gatsby の GitHub リポジトリーは頻繁に更新されているため、自身の変更を Gatsby リポジトリーにマージするためにも、最新の変更をあなたのフォークリポジトリーに反映させる必要が出てきます。そのためには、Gatsby を[上流リモート](https://help.github.com/ja/articles/configuring-a-remote-for-a-fork)として追加します。
 
-- Set Gatsby's repo URL as a remote source. The name of the remote is arbitrary; this example uses `upstream`.
+- Gatsby のリポジトリー URL をリモートとして設定します。リモートとして設定する名前は何でも構いません。以下の例では "upstream" としています。
   ```shell
   git remote add upstream git@github.com:gatsbyjs/gatsby.git
   ```
-  - _Note: this syntax [uses SSH and keys: you can also use `https`](https://help.github.com/en/articles/which-remote-url-should-i-use) and your username/password._
-- You can verify the remote name and URL at any time:
+  - _注意: この構文は [SSH キーを利用していますが、あなたのユーザーネームとパスワードを使用して `https` 接続をする事もできます。](https://help.github.com/ja/articles/which-remote-url-should-i-use)_
+- リモート名とその URL を確認
   ```shell
   git remote -v
   ```
-- Fetch the latest changes from Gatsby:
+- Gatsby での最新の変更を取得
   ```shell
   git fetch upstream master
   ```
-- [In the branch](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) you want to update, merge any changes from Gatsby into your fork:
+- 自身の更新したい[ブランチ上](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)で、Gatsby での更新を全て自身のフォークリポジトリーにマージ
   ```shell
   git merge upstream/master
   ```
-  - If there are any [merge conflicts](https://help.github.com/en/articles/resolving-a-merge-conflict-on-github), you'll want to address those to get a clean merge.
-- Once your branch is in good working order, push the changes to your fork:
+  - [マージコンフリクト](https://help.github.com/ja/articles/resolving-a-merge-conflict-on-github)があった場合は、クリーンマージを行うために、どこでコンフリクトが起こっているのか確認しましょう。
+- あなたのブランチで特に問題が起きていなければ、変更した内容をフォークリポジトリーにプッシュします。
   ```shell
   git push origin head
   ```
 
-For more information on working with upstream repos, [visit the GitHub docs](https://help.github.com/en/articles/configuring-a-remote-for-a-fork).
+上流リポジトリーについてさらに知りたい場合は、[GitHub ドキュメントをご覧ください](https://help.github.com/ja/articles/configuring-a-remote-for-a-fork)。
 
-_**Note:** as a member of the Gatsby repo, you can also clone it directly (instead of forking and using an upstream remote workflow). You can then push changes to [feature branches](https://git-scm.com/book/en/v1/Git-Branching-Branching-Workflows) to open PRs._
+_**ヒント:** Gatsby リポジトリーのメンバーは、上流リモートリポジトリーをフォークする代わりに、リポジトリーを直接クローンできます。クローンしたリポジトリー内で変更をしたあと、PR を作成するために[フィーチャーブランチ](https://git-scm.com/book/en/v1/Git-Branching-Branching-Workflows)へプッシュします。_
 
-## Additional resources
+## 追加資料
 
-- CSS Tricks: [How to Contribute to an Open Source Project](https://css-tricks.com/how-to-contribute-to-an-open-source-project/)
-- [Creating a pull request](https://help.github.com/en/articles/creating-a-pull-request) from GitHub
-- [Configuring a remote for a fork](https://help.github.com/en/articles/configuring-a-remote-for-a-fork)
-- [Which remote URL should I use?](https://help.github.com/en/articles/which-remote-url-should-i-use)
-- [Git Branching and Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
-- [Feature Branching and Workflows](https://git-scm.com/book/en/v1/Git-Branching-Branching-Workflows)
-- [Resolving merge conflicts](https://help.github.com/en/articles/resolving-a-merge-conflict-on-github)
-- [Managing Pull Requests](/contributing/managing-pull-requests/) on the Gatsby core team
-- [Guide on Markdown Syntax](/docs/mdx/markdown-syntax/)
+- CSS Tricks: [オープンソースプロジェクトに貢献する方法](https://css-tricks.com/how-to-contribute-to-an-open-source-project/)
+- GitHub で [Pull Request を作成する](https://help.github.com/ja/articles/creating-a-pull-request)
+- [フォークリポジトリーのリモートを設定する](https://help.github.com/ja/articles/configuring-a-remote-for-a-fork)
+- [どのリモート URL を使うべき？](https://help.github.com/ja/articles/which-remote-url-should-i-use)
+- [Git でのブランチとマージ](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
+- [フィーチャーブランチとワークフロー](https://git-scm.com/book/en/v1/Git-Branching-Branching-Workflows)
+- [マージコンフリクトを解消する](https://help.github.com/ja/articles/resolving-a-merge-conflict-on-github)
+- Gatsby コアチーム内で [Pull Request を管理する](/contributing/managing-pull-requests/)
+- [マークダウン構文ガイド](/docs/mdx/markdown-syntax/)

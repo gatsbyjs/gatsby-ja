@@ -1,9 +1,8 @@
 ---
-title: Security in Gatsby
+title: Gatsby におけるセキュリティー
 issue: https://github.com/gatsbyjs/gatsby/issues/13305
 ---
 
-This is a stub. Help our community expand it.
+こちらはまだスタブです。私たちのコミュニティーが内容を充実させるのを助けてください。
 
-Please use the [Gatsby Style Guide](/contributing/gatsby-style-guide/) to ensure your
-pull request gets accepted.
+あなたの Pull Request が無事承認されるためにも、是非 [Gatsby スタイルガイド](/contributing/gatsby-style-guide/)をお読みください。

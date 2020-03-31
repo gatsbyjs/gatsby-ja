@@ -1,50 +1,50 @@
 ---
-title: Creating Tags Pages for Blog Posts
+title: ブログ記事のタグ一覧ページを生成する
 ---
 
-Creating tag pages for your blog post is a way to let visitors browse related content.
+ブログ記事のタグ一覧ページを作成することは、訪問者に関連するコンテンツを提供する手段のひとつです。
 
-To add tags to your blog posts, you will first want to have your site set up to turn your markdown pages into blog posts. To get your blog pages set up, see the [tutorial on Gatsby's data layer](/tutorial/part-four/) and [Adding Markdown Pages](/docs/adding-markdown-pages/).
+タグをブログ記事に追加するには、まず Markdown ページをあなたのウェブサイトにブログ記事として設定する必要があります。この設定については、[Gatsby におけるデータ](/tutorial/part-four/) と [Markdown のページを追加する](/docs/adding-markdown-pages/)に記載されています。
 
-The process will essentially look like this:
+タグページ追加の主なプロセスは下記の通りです。
 
-1.  Add tags to your `markdown` files
-2.  Write a query to get all tags for your posts
-3.  Make a tags page template (for `/tags/{tag}`)
-4.  Modify `gatsby-node.js` to render pages using that template
-5.  Make a tags index page (`/tags`) that renders a list of all tags
-6.  _(optional)_ Render tags inline with your blog posts
+1. `markdown` ファイルにタグを追加する
+2. あなたの記事にある全てのタグを取得するクエリーを書く
+3. タグページのテンプレートを作成する (`/tags/{tag}`のようなページ）
+4. `gatsby-node.js` にテンプレートを利用してタグページをレンダリングする設定を追加する
+5. タグインデックスページ (`/tags`)を作成し、全てのタグを一覧化する
+6. _(任意)_ タグ一覧をブログ記事の中に表示させる
 
-## Add tags to your `markdown` files
+## `markdown` ファイルにタグを追加する
 
-You add tags by defining them in the `frontmatter` of your Markdown file. The `frontmatter` is the area at the top surrounded by dashes that includes post data like the title and date.
+タグは Markdown ファイル内の `frontmatter` に追加します。`frontmatter` はハイフンによって区切られたエリアで、記事のタイトルや投稿日時のデータを含む部分です。
 
 ```markdown
 ---
-title: "A Trip To the Zoo"
+title: "動物園への旅行"
 ---
 
-I went to the zoo today. It was terrible.
+今日は動物園に行ってきました！とても楽しかった！
 ```
 
-Fields can be strings, numbers, or arrays. Since a post can usually have many tags, it makes sense to define it as an array. Here you add your new tags field:
+属性は `string`,`number` もしくはその配列である必要があります。記事に複数のタグを付けたい場合は配列にして記載します。新しくタグ属性を追加すると以下のようなファイルになります。
 
 ```markdown
 ---
-title: "A Trip To the Zoo"
+title: "動物園への旅行"
 tags: ["animals", "Chicago", "zoos"]
 ---
 
-I went to the zoo today. It was terrible.
+今日は動物園に行ってきました！とても楽しかった！
 ```
 
-If `gatsby develop` is running, restart it so Gatsby can pick up the new fields.
+`gatsby develop` が実行されている場合、再実行してから新しい `frontmatter` の属性が取得されます。
 
-## Write a query to get all tags for your posts
+## あなたの記事にある全てのタグを取得するクエリーを書く
 
-Now, these fields are available in the data layer. To use field data, query it using `graphql`. All fields are available to query inside `frontmatter`
+これらの属性は全てデータレイヤーで利用可能となっています。属性データを使うには `graphql` を使ってこれをクエリします。 `frontmatter` に含まれる全ての属性が GraphQL で取得できます。
 
-Try running the following query in Graph<em>i</em>QL (`localhost:8000/___graphql`):
+まずは、Graph<em>i</em>QL (`http://localhost:8000/___graphql`) を使ってクエリーを実行してみましょう。`gatsby develop` を実行していない場合は実行してからアクセスしてください！
 
 ```graphql
 {
@@ -57,13 +57,13 @@ Try running the following query in Graph<em>i</em>QL (`localhost:8000/___graphql
 }
 ```
 
-The above query groups posts by `tags`, and returns each `tag` with the number of posts as `totalCount`. As an addition, you could extract some post data in each group if you need to. To keep this tutorial small, you're only using the tag name in your tag pages. Make the tag page template now:
+上記のクエリーは `tags` 属性ごとにグルーピングして、それぞれの `tag` が付いている記事の数を `totalCount` で表示します。 さらに、必要であればそれぞれのグループに含まれるいくつかの記事データを抽出することもできます。このチュートリアルを短く済ませるために、今回はタグ名のみをタグごとのページに表示します。次にタグページのテンプレートを作りましょう。
 
-## Make a tags page template (for `/tags/{tag}`)
+## タグページのテンプレートを作成する（`/tags/{tag}` のようなページ）
 
-If you followed the tutorial for [Adding Markdown Pages](/docs/adding-markdown-pages/), then this process should sound familiar: Make a tag page template, then use it in `createPages` in `gatsby-node.js` to generate individual pages for the tags in your posts.
+あなたが [Markdown のページを追加する](/docs/adding-markdown-pages/)を済ませていれば、このプロセスと似た作業をすでに実施しているでしょう。タグページのテンプレートを作成し、`createPages` を `gatsby-node.js` の中で実行して記事に含めたタグごとのページを生成します。
 
-First, you'll add a tags template at `src/templates/tags.js`:
+まずは、`src/templates/tags.js` にタグごとのページテンプレートを作成します。
 
 ```jsx:title=src/templates/tags.js
 import React from "react"
@@ -94,8 +94,8 @@ const Tags = ({ pageContext, data }) => {
         })}
       </ul>
       {/*
-              This links to a page that does not yet exist.
-              You'll come back to it!
+              このリンクは存在しないページを参照します。
+              チュートリアルの後半で作成するので今は気にしない！
             */}
       <Link to="/tags">All tags</Link>
     </div>
@@ -150,11 +150,11 @@ export const pageQuery = graphql`
 `
 ```
 
-**Note**: `propTypes` are included in this example to help you ensure you're getting all the data you need in the component, and to help serve as a guide while destructuring / using those props.
+**ヒント**: `propTypes` がこのサンプルに含まれています。これはコンポーネントにおける全てのデータを取得するときに、データ階層を参照・利用する際にガイドを表示し、あなたを助けます。
 
-## Modify `gatsby-node.js` to render pages using that template
+## `gatsby-node.js` にテンプレートを利用してタグページをレンダリングする設定を追加する
 
-Now you've got a template. Great! Assuming you followed the tutorial for [Adding Markdown Pages](/docs/adding-markdown-pages/) and provide a sample `createPages` that generates post pages as well as tag pages. In the site's `gatsby-node.js` file, include `lodash` (`const _ = require('lodash')`) and then make sure your [`createPages`](/docs/node-apis/#createPages) looks something like this:
+テンプレートを作成しましたね、素晴らしい！　あなたが [Markdown のページを追加する](/docs/adding-markdown-pages/) をすでに読んでいるなら、その中に含まれている `createPages` が記事ページを作るサンプルはタグページのそれとほぼ同じものです。あなたのウェブサイトにおける `gatsby-node.js` ファイルが `lodash` をインポートして宣言済み (`const _ = require('lodash')`) ならば、[`createPages`](/docs/node-apis/#createPages) は下記のように使えます。
 
 ```js:title=gatsby-node.js
 const path = require("path")
@@ -223,15 +223,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 }
 ```
 
-Some notes:
+いくつかのヒント：
 
-- Your GraphQL query only looks for data you need to generate these pages. Anything else can be queried again later (and, if you notice, you do this above in the tags template for the post title).
-- You have referenced two `allMarkdownRemark` fields in your query. To avoid naming collisions you must [alias](/docs/graphql-reference/#aliasing) one of them. You alias both to make your code more human-readable.
-- While making the tag pages, note that you pass `tag.name` through in the `context`. This is the value that gets used in the `TagPage` query to limit your search to only posts tagged with the tag in the URL.
+- あなたの GraphQL クエリーはページ生成に必要なデータのみを参照しています。他のデータをページ内で利用したくなった場合、再度クエリを実行できます。 (つまりタグ一覧のテンプレートファイルを更新してクエリを再実行する必要があります）
+- あなたはすでにふたつの `allMarkdownRemark` 要素をクエリで利用しています。名前の衝突を避けるために、必ずクエリの [エイリアス](/docs/graphql-reference/#aliasing) を利用しましょう。それぞれのクエリでエイリアスを命名して読みやすいコードにすることを心がけましょう。
+- タグページを作成している際、`context` として `tag.name` を渡していることを覚えておいてください。この値は `TagPage` クエリー内で利用しており、検索対象を指定したタグ名のページのみに限定するために利用しています。
 
-## Make a tags index page (`/tags`) that renders a list of all tags
+## タグインデックスページ (`/tags`)を作成し、全てのタグを一覧化する
 
-Your `/tags` page will simply list out all tags, followed by the number of posts with that tag. You can get the data with the first query you wrote earlier, that groups posts by tags:
+これから作成する `/tags` ページはシンプルにウェブサイト内の全タグを一覧化し、タグごとの記事数を合わせて表示します。このチュートリアルの序盤に作成したクエリを使って、タグごとに記事をグルーピングします。
 
 ```jsx:title=src/pages/tags.js
 import React from "react"
@@ -306,6 +306,6 @@ export const pageQuery = graphql`
 `
 ```
 
-## _(optional)_ Render tags inline with your blog posts
+## _(任意)_ タグをブログ記事の中に表示させる
 
-The home stretch! Anywhere else you'd like to render your tags, simply add them to the `frontmatter` section of your `graphql` query and access them in your component like any other prop.
+もう少し頑張りますか？タグを記事内の任意の位置に表示させたい場合、記事用の `graphql` クエリーに手を加え、`frontmatter` からタグデータを取得するように変更します。これでコンポーネント内からタイトルなどと同じようにタグ情報へアクセスできるようになります。

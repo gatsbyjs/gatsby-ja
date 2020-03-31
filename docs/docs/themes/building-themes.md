@@ -1,21 +1,21 @@
 ---
-title: Building Themes
+title: テーマの作成
 ---
 
-The quickest way to get up and running with a workspace for building themes is to use the official [`gatsby-starter-theme-workspace`](https://github.com/gatsbyjs/gatsby-starter-theme-workspace) starter.
+テーマを作成するためにワークスペースを立ち上げて運用するもっとも手軽な方法は、公式の [`gatsby-starter-theme-workspace`](https://github.com/gatsbyjs/gatsby-starter-theme-workspace) スターターを使用することです。
 
 <EggheadEmbed
   lessonLink="https://egghead.io/lessons/gatsby-use-the-gatsby-theme-workspace-starter-to-begin-building-a-new-theme"
   lessonTitle="Use the Gatsby Theme Workspace Starter to Begin Building a New Theme"
 />
 
-To get started, run:
+始めるためには以下のコマンドを実行します。
 
 ```shell
 gatsby new gatsby-theme-my-theme gatsbyjs/gatsby-starter-theme-workspace
 ```
 
-This will generate a new project for you. The file tree will look like this:
+このコマンドは新しいプロジェクトを作成します。ファイルツリーは以下のような構成になります。
 
 ```text
 .
@@ -37,17 +37,17 @@ This will generate a new project for you. The file tree will look like this:
 └── yarn.lock
 ```
 
-Yarn workspaces are a great way to set up a project for theme development because they support housing multiple packages in a single parent directory and link them together.
+Yarn ワークスペースはテーマの開発プロジェクトを設定するための便利な方法です。単一の親ディレクトリー内に複数のパッケージを収容し、それらをリンクさせることができます。
 
-For Gatsby theme development, that means you can keep multiple themes and example sites together in a single project, and develop them locally.
+Gatsby テーマを開発することは、あなたが複数のテーマとサンプルサイトを単一のプロジェクト内に保有し、それらをローカルで開発することを意味します。
 
-> 💡 If you prefer, you can develop themes as [local plugins](https://www.gatsbyjs.org/docs/creating-a-local-plugin/). Using `yarn link` or `npm link` are also viable alternatives. In general, Gatsby recommends the yarn workspaces approach for building themes, and that's what the starter and this guide will reflect.
+> 💡 もし必要であれば、テーマを [ローカルプラグイン](https://www.gatsbyjs.org/docs/creating-a-local-plugin/) として開発できます。その代わりに `yarn link` もしくは `npm link` を使うことも可能です。一般的に Gatsby はテーマ作成のために yarn ワークスペースを使用することを推奨しており、スターターやこのチュートリアルでも使用しています。
 
-> 💡 The starter takes care of all of the configuration for developing a theme using yarn workspaces. If you're interested in more detail on this setup, check out [this blog post](/blog/2019-05-22-setting-up-yarn-workspaces-for-theme-development/).
+> 💡 スターターは yarn ワークスペースを使用し、てテーマ開発のためのすべての設定を管理しています。もし詳細を知りたい場合は[こちらのブログ記事](/blog/2019-05-22-setting-up-yarn-workspaces-for-theme-development/)をご覧ください。
 
 ### `package.json`
 
-The `package.json` in the root of the new project is primarily responsible for setting up the yarn workspaces. In this case, there are two workspaces, `gatsby-theme-minimal` and `example`.
+新規プロジェクトのルートにある `package.json` は、主に yarn ワークスペースをセットアップする役割を持ちます。以下の例の場合は `gatsby-theme-minimal` と `example` の 2 つのワークスペースが存在することになります。
 
 ```json:title=my-theme/package.json
 {
@@ -67,49 +67,49 @@ The `package.json` in the root of the new project is primarily responsible for s
 
 ### `/gatsby-theme-minimal`
 
-The `/gatsby-theme-minimal` directory is the starting point of the new theme you'll develop.
+`/gatsby-theme-minimal` ディレクトリーは、あなたが開発する新しいテーマの始点となります。
 
-Inside it you'll find:
+ディレクトリー内には以下のファイルがあります。
 
-- `gatsby-config.js`: An empty gatsby-config that you can use as a starting point for building functionality into your theme.
-- `index.js`: Since themes also function as plugins, this is an empty file that Gatsby requires in order to use this theme as a plugin.
-- `package.json`: A file listing the dependencies that your theme will pull in when people install it. Gatsby should be a peer dependency.
+- `gatsby-config.js`: テーマに機能を持たせるための、空の設定ファイル。
+- `index.js`: Gatsby がテーマをプラグインとして使用するために必要となる空のファイル（テーマはプラグインとしても機能します）。
+- `package.json`: 他の人があなたのテーマをインストールした時に、同時にインストールされる依存関係が記述されたファイル。
 
 ### `/example`
 
-The `/example` directory is an example Gatsby site that installs and uses the local theme, `gatsby-theme-minimal`.
+`/example` ディレクトリーは `gatsby-theme-minimal` ローカルテーマを使用した Gatsby のサンプルサイトです。
 
-Inside it you'll find:
+ディレクトリー内には以下のファイルがあります。
 
-- `gatsby-config.js`: Specifies which theme to use and any other one-off configuration a site might need.
-- `/src`: Contains source code such as custom pages or components that might live in a user's site.
+- `gatsby-config.js`: サイトが使用するテーマやその他の一度限りの設定を記述したファイル。
+- `/src`: ユーザーのサイト上で動作するカスタムページやコンポーネントが格納されたディレクトリー。
 
-## Publishing a Theme
+## テーマの公開
 
-After building your theme, you may want to publish it for the Gatsby community. To do so, please [publish your theme plugin to the plugin library](/contributing/submit-to-plugin-library/#publishing-a-plugin-to-the-library).
+テーマを作成した際に、それを Gatsby コミュニティー上で公開したくなるかもしれません。その場合は、プラグインを[プラグイン・ライブラリー上で公開](/contributing/submit-to-plugin-library/#publishing-a-plugin-to-the-library)してください。
 
-## Further resources
+## その他の参考サイト
 
-### Gatsby Theme Authoring (Video course)
+### Gatsby Theme Authoring（動画コース）
 
-Watch the new [Egghead course on Authoring Gatsby Themes](https://egghead.io/courses/gatsby-theme-authoring).
+最新の [Gatsby テーマの開発についての Egghead コース](https://egghead.io/courses/gatsby-theme-authoring)をご覧ください。
 
-### Building a Gatsby Theme (Tutorial)
+### Building a Gatsby Theme（チュートリアル）
 
-Check out the [tutorial for building a Gatsby theme](/tutorial/building-a-theme). The step-by-step tutorial goes into much more detail than this docs guide. It was written as a companion to the [Egghead theme authoring course](https://egghead.io/courses/gatsby-theme-authoring), so they can be used together!
+[Gatsby テーマの構築チュートリアル](/tutorial/building-a-theme)をご覧ください。ステップ・バイ・ステップでこのドキュメントよりもずっと詳細に解説しています。これは [Egghead のテーマ開発コース](https://egghead.io/courses/gatsby-theme-authoring)に沿うように書かれているので、どちらも参考にできます。
 
-### Theme API reference
+### テーマ API リファレンス
 
-Check out the [Theme API documentation](/docs/theme-api/).
+[テーマ API のドキュメント](/docs/theme-api/)をご覧ください。
 
-### Accessibility
+### アクセシビリティ
 
-A Gatsby theme is a Gatsby site, therefore building with accessibility in mind is critical. Check out these [tips on making your sites (and themes!) accessible](/docs/making-your-site-accessible/).
+Gatsby テーマは Gatsby サイトでもあるため、アクセシビリティを意識した開発が必要です。[あなたのサイト（テーマ）をアクセシブルにするための tips](/docs/making-your-site-accessible/)をご覧ください。
 
-### Read through source code
+### ソースコードを読み解く
 
-Check out how some existing themes are built:
+どのように既存のテーマが開発されたかを見るには、以下のサイトを参考にしてください。
 
-- The official [Gatsby blog theme](https://github.com/gatsbyjs/gatsby-starter-blog-theme)
-- The official [Gatsby notes theme](https://github.com/gatsbyjs/gatsby-starter-notes-theme)
-- The [Apollo themes](https://github.com/apollographql/gatsby-theme-apollo/tree/master/packages). (_You might also be interested in the [Apollo case study on themes](https://www.gatsbyjs.org/blog/2019-07-03-using-themes-for-distributed-docs/) on the blog._)
+- 公式の [Gatsby blog テーマ](https://github.com/gatsbyjs/gatsby-starter-blog-theme)
+- 公式の [Gatsby notes テーマ](https://github.com/gatsbyjs/gatsby-starter-notes-theme)
+- [Apollo テーマ](https://github.com/apollographql/gatsby-theme-apollo/tree/master/packages)（_興味がありましたら、[Apollo のテーマについてのケーススタディ](https://www.gatsbyjs.org/blog/2019-07-03-using-themes-for-distributed-docs/)もご覧ください。_)

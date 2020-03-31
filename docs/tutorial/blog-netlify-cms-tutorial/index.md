@@ -1,42 +1,42 @@
 ---
-title: Making a Gatsby Blog with Netlify CMS
+title: Netlify CMS で Gatsby ブログを作成する
 ---
 
 https://youtu.be/JeTqxCJC56Q
 
-This tutorial will use [gatsby-personal-starter-blog](http://t.wang.sh/gatsby-personal-starter-blog), a Gatsby starter based on the official [gatsby-starter-blog](/starters/gatsbyjs/gatsby-starter-blog/). The differences are that `gatsby-personal-starter-blog` is configured to run the blog on a subdirectory, `/blog`, and comes pre-installed with [Netlify CMS](https://www.netlifycms.org/) for content editing. It also adds VS Code highlighting for code blocks.
+このチュートリアルでは、公式の [gatsby-starter-blog](/starters/gatsbyjs/gatsby-starter-blog/) をベースとした [gatsby-personal-starter-blog](http://t.wang.sh/gatsby-personal-starter-blog) スターターを使用します。`gatsby-personal-starter-blog` は `/blog` サブディレクトリーでブログを動作させるように設定されているという点と、コンテンツ編集のために [Netlify CMS](https://www.netlifycms.org/) があらかじめインストールされているという点が異なります。
 
-## Prerequisites
+## 前提条件
 
-- A GitHub account
-- The [Gatsby CLI](/docs/gatsby-cli) installed
+- GitHub アカウントを持っていること
+- [Gatsby CLI](/docs/gatsby-cli) をインストールしていること
 
-## Set up a Netlify CMS-managed Gatsby site in 5 steps:
+## 5 ステップで Netlify CMS で管理された Gatsby サイトを設定する：
 
-### Step 1
+### ステップ 1
 
-Open your Terminal and run the following command from the Gatsby CLI to create a new Gatsby site using [gatsby-personal-starter-blog](http://t.wang.sh/gatsby-personal-starter-blog).
+ターミナルを開き、以下の Gatsby CLI コマンドを実行して [gatsby-personal-starter-blog](http://t.wang.sh/gatsby-personal-starter-blog) を使用したサイトを新規作成します。
 
 ```shell
 gatsby new [your-project-name] https://github.com/thomaswangio/gatsby-personal-starter-blog
 ```
 
-### Step 2
+### ステップ 2
 
-Once the Gatsby site is finished installing all the packages and dependencies, you can now go into the directory and run the site locally.
+Gatsby サイトのパッケージや依存関係がすべてインストールされたら、作成されたディレクトリーに移動し、サイトをローカルで実行します。
 
 ```shell
 cd [your-project-name]
 gatsby develop
 ```
 
-Now you can go to [`localhost:8000`](http://localhost:8000) to see your new site, but what's extra cool is that Netlify CMS is pre-installed and you can access it at [`localhost:8000/admin`](http://localhost:8000/admin).
+これであなたは `http://localhost:8000` から作成されたサイトを見ることができるようになるだけでなく、Netlify CMS がプリインストールされ、`http://localhost:8000/admin` からアクセスできるようになりました。
 
-A CMS, or content management system, is useful because you can add content like blog posts from a dashboard on your site, instead of having to add posts manually with Markdown. However, you'll likely want to be able to access the CMS from a deployed website, not just locally. For that, you'll need to deploy to Netlify through GitHub, set up continuous deployment, and do a few configurations. You'll go over this in [Step-5](#step-5).
+コンテンツマネジメントシステム（CMS）は便利です。あなたは Markdown を使い手動でブログ記事などのコンテンツを追加する代わりに、それらをサイト上のダッシュボードから追加できます。もしかすると、あなたは CMS をローカルだけでなく開発したウェブサイト上からも使いたくなるかもしれません。それを実現するためには、GitHub を通して Netlify にデプロイし、継続的デプロイを設定し、いくつかの設定を変更する必要があります。こちらについては [ステップ 5](#ステップ-5) をご覧ください。
 
-### Step 3
+### ステップ 3
 
-Open the project in your code editor and open `static/admin/config.yml`. Replace `your-username/your-repo-name` with your GitHub username and project name. This step is important for managing and deploying the Netlify CMS interface.
+コードエディターでプロジェクトを開き、 `static/admin/config.yml` を開いてください。`your-username/your-repo-name` をあなたの GitHub のユーザー名とプロジェクト名に置き換えてください。このステップは Netlify CMS インターフェースを管理・デプロイするために重要です。
 
 ```diff
 backend:
@@ -46,15 +46,15 @@ backend:
 +  repo: your-username/your-repo-name
 ```
 
-#### Customizing your site
+#### あなたのサイトをカスタマイズする
 
-Head into `gatsby-config.js` and you can edit your siteMedata, add a Google Analytics tracking ID, and your app icon/favicon. Test out the edits for the deployed build by quitting the development server and running `gatsby build && gatsby serve`.
+`gatsby-config.js` を変更することで、サイトのメタデータ、Google アナリティクスのトラッキング ID や icon/favicon を設定できます。編集がビルドに与える変更を確認するためには、開発サーバーを終了し、`gatsby build && gatsby serve` を実行してください。
 
-You'll likely also want to edit the `README.md` and `package.json` files to include your own project details.
+また、`README.md` や `package.json` を編集することでプロジェクトの詳細情報を含めることもできます。
 
-### Step 4
+### ステップ 4
 
-Open [github.com](http://github.com) and create a new repository, with the same name as your project. Push your new Gatsby site's code to GitHub using the following Terminal commands:
+[github.com](https://github.com) にアクセスし、あなたのプロジェクトと同じ名前のリポジトリーを作成してください。以下のコマンドを使い、あなたの Gatsby サイトのコードを GitHub に push してください。
 
 ```shell
 git init
@@ -64,28 +64,28 @@ git remote add origin https://github.com/[your-username]/[your-repo-name].git
 git push -u origin master
 ```
 
-Then, open [app.netlify.com](http://app.netlify.com) and add a "New site from Git". Choose your newly created repo and click on "Deploy site" with the default deployment settings.
+その後 [app.netlify.com](http://app.netlify.com) にアクセスし、"New site from Git" ボタンをクリックしてください。先ほど作成したリポジトリーを選択し、デフォルトの開発設定のまま "Deploy site" をクリックしてください。
 
-> _Note: if you don't see the correct repo listed, you may need to install or reconfigure the Netlify app on GitHub._
+> \_ヒント: もしあなたのリポジトリーが一覧に現れない場合、GitHub 上の Netlify アプリケーションをインストールもしくは再設定する必要があるかもしれません。
 
 ![Netlify Dashboard for Creating a new site](netlify-dashboard.png)
 
-### Step 5
+### ステップ 5
 
-To make sure that Netlify CMS has access to your GitHub repo, you need to set up an OAuth application on GitHub. The instructions for that are here: [Netlify's Using an Authorization Provider](https://www.netlify.com/docs/authentication-providers/#using-an-authentication-provider).
+Netlify CMS が GitHub リポジトリーにアクセスできることを確認するためには、GitHub 上で OAuth アプリケーションを設定する必要があります。手順については [Netlify's Using an Authorization Provider](https://www.netlify.com/docs/authentication-providers/#using-an-authentication-provider) を参照してください。
 
-For the "Homepage URL" – you can use your Netlify subdomain, `[name-of-your-site].netlify.com`, or you can use a custom domain. To customize the subdomain, look for the "Edit site name" field under "Domain Management" for your project on the [Netlify app](https://app.netlify.com). To connect your Netlify site to your custom domain instead, see [Netlify’s instructions on custom domains](https://www.netlify.com/docs/custom-domains/).
+"Homepage URL" について - あなたは自分の Netlify のサブドメイン（`[name-of-your-site].netlify.com`）を使用するか、カスタムドメインを使用することが出来ます。サブドメインをカスタマイズするためには、[Netlify app](https://app.netlify.com) 上のプロジェクト内の "Domain Management" 内にある "Edit site name" から行います。サブドメインの代わりにカスタムドメインを Netlify サイトと結びつける方法については [Netlify’s instructions on custom domains](https://www.netlify.com/docs/custom-domains/) を参照してください。
 
-Once you've configured an authentication provider then you'll be able to use Netlify CMS at your deployed site to add new posts.
+一度認証プロバイダーの設定を完了すれば、デプロイされたサイト上で Netlify CMS を使用して新しい記事を追加できるようになります。
 
 ![Netlify and GitHub Authorization](https://cdn.netlify.com/67edd5b656c432888d736cd40125cb61376905bb/c1cba/img/docs/github-oauth-config.png)
 
-Copy the credentials of your new app listed on [GitHub oAuth Apps](https://github.com/settings/developers) and install a new auth provider on Netlify using them.
+[GitHub OAuth Apps](https://github.com/settings/developers) の一覧からあなたのアプリの資格情報をコピーし、それを使って認証プロバイダーを Netlify 上に作成してください。
 
 ![Setting up access control](netlify-install-oauth-provider.png)
 
-#### Benefits of Netlify CMS, GitHub, and Netlify Workflow
+#### Netlify CMS や GitHub、Netlify Workflow を使用する利点
 
-Congrats! Now that Netlify CMS is successfully configured to your project, every time you add a new post, the content will be stored in your repository and versioned on GitHub because Netlify CMS is Git-based. Also, thanks to [Netlify's Continuous Deployment](https://www.netlify.com/docs/continuous-deployment/), a new version will be deployed every time you add or edit a post.
+おめでとうございます！これで Netlify CMS がプロジェクトに正しく設定されました。Netlify CMS は Git をベースとしているため、新しい記事を作成するたびに、そのコンテンツは GitHub 上のリポジトリーに保存されます。また、[Netlify's Continuous Deployment](https://www.netlify.com/docs/continuous-deployment/) のおかげで、あなたが記事を追加したり編集したりするたびに、最新のバージョンが自動でデプロイされることになります。
 
-You can learn more about Netlify CMS and how to configure it further in the [Netlify CMS documentation](https://www.netlifycms.org/docs/intro/).
+Netlify CMS の詳しい情報と設定方法については、[Netlify CMS documentation](https://www.netlifycms.org/docs/intro/) で学ぶことができます。

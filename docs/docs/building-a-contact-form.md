@@ -1,22 +1,22 @@
 ---
-title: Building a Contact Form
+title: 問い合わせフォームの作成
 ---
 
-This guide covers how to create a contact form in a Gatsby site, along with an overview of some strategies for handling form data that has been submitted.
+このガイドでは Gatsby サイトで問い合わせフォームを作成する方法と、送信されたデータを処理するいくつかの手法を説明します。
 
-Gatsby is built on top of React. So anything that is possible with a React form is possible in Gatsby. Additional details about how to add forms to gatsby can be found in the [Adding Forms](/docs/adding-forms/) section.
+Gatsby は React で構築されています。そのため React フォームでできることはすべて Gatsby でも可能です。Gatsby にフォームを追加する方法の詳細については、[フォームの追加](/docs/adding-forms/)をご覧ください。
 
-## Creating an Accessible Form
+## 使いやすいフォームを作成する
 
-Faulty forms are a common barrier to a website's accessibility, and can be especially problematic if you use a keyboard and screen reader to navigate the web. Forms should be clearly and intuitively organized into groups of related information, and each form field should be identified with a proper label.
+不完全なフォームは、ウェブサイトの使いやすさに対する一般的な障壁であり、キーボードとスクリーンリーダーを使用してページを操作する場合には特に問題になります。フォームは、関連情報のグループに明確かつ直感的に整理され、各フォームのフィールドは適切なラベルで識別される必要があります。
 
-More information on creating accessible forms can be found in [WebAIM's article](https://webaim.org/techniques/forms/) on the subject.
+使いやすいフォームの作成に関する詳細情報は、[WebAIM の記事](https://webaim.org/techniques/forms/)から参照できます。
 
 ## Sending Form Data
 
-When you submit a form, the corresponding data is typically sent to a server to be handled in some manner. More in-depth information on sending form data can be found [on MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Sending_and_retrieving_form_data).
+フォームを送信すると、対応するデータは何らかの方法で処理されサーバーに送信されます。フォームデータの送信に関する詳細情報は [MDN](https://developer.mozilla.org/ja/docs/Learn/HTML/Forms/Sending_and_retrieving_form_data)を見てください。
 
-Each method detailed below will start with the following contact form:
+これから説明する各手法は、次の問い合わせフォームを元にしています。
 
 ```jsx:title=src/pages/contact.js
 <form method="post" action="#">
@@ -41,11 +41,11 @@ Each method detailed below will start with the following contact form:
 </form>
 ```
 
-## Form submission options in Gatsby
+## Gatsby でフォーム送信をするための選択肢
 
 ### Getform
 
-Getform is a form backend platform which offers a free-plan for handling form submissions on static sites. Begin by creating a form on your Gatsby site that you can receive submissions from. When creating the form, direct the HTTP POST method to the Getform, by placing the `name` attributes for the fields you want to make visible. (name, email, message etc.)
+Getform は静的サイトでフォーム送信を実現するためのフォームバックエンドプラットフォームです。無料プランもあります。問い合わせを受け付けるためのフォームをあなたの Gatsby サイトに設置しましょう。フォームを作成するとき、表示する各フィールドの `name` 属性をつけて、POST メソッドで Getform に送信するように設定します（name, email, message など）。
 
 ```jsx:title=src/pages/contact.js
 <form method="post" action="https://getform.io/{your-unique-getform-endpoint}">
@@ -66,15 +66,15 @@ Getform is a form backend platform which offers a free-plan for handling form su
 </form>
 ```
 
-Once you've made the code changes to your form, you can head over to the contact page on your site and start submitting data to the form. The submissions will then be visible on the Getform dashboard. You can add multiple email addresses to receive email notifications for the forms created, as well as manipulate the data you see on Getform using Zapier and Webhooks options that are offered.
+フォームのコードを変更したら、問い合わせページからフォームを送信することができます。送信したデータは、Getform のダッシュボードに表示されます。作成したフォームのメール通知を複数のメールアドレスで受信したり、Zapier や Webhooks オプションを使用して Getform から送られるデータを操作したりできます。
 
-You can find more info on the registration process and form setup on the [Getform website](https://getform.io/) and find code examples (AJAX, reCAPTCHA etc) on their [Codepen](https://codepen.io/getform).
+Getform への登録と、フォーム設定の詳細は [Getform のウェブサイト](https://getform.io/)を参照してください。また、サンプルコードは [Codepen](https://codepen.io/getform) で見つけられます。
 
 ### Netlify
 
-If you're hosting your site with Netlify, you gain access to their excellent [form handling feature](https://www.netlify.com/docs/form-handling/).
+Netlify でサイトをホストしている場合、Netlify の素晴らしい [フォーム機能](https://www.netlify.com/docs/form-handling/)を利用できます。
 
-Setting this up only involves adding a few form attributes:
+設定は、フォームにいくつかの属性を追加するだけです。
 
 ```diff:title=src/pages/contact.js
 - <form method="post" action="#">
@@ -83,15 +83,15 @@ Setting this up only involves adding a few form attributes:
   ...
 ```
 
-Now, all submissions to your form will appear in the Forms tab of your site dashboard. By adding the form attribute `netlify-honeypot="bot-field"` and a corresponding hidden input, Netlify will know to quietly reject any spam submissions you may receive.
+これで、フォームからのすべての送信が Netlify のダッシュボードのフォームタブに表示されます。Netlify ではフォームの属性の `netlify-honeypot ="bot-field"` と対応する hidden フィールドを追加することで、受信する可能性のあるスパム通知を拒否することもできます。
 
-More information on Netlify Forms can be found [on their website](https://www.netlify.com/docs/form-handling/).
+Netlify フォームの詳細な情報は [Netlify のウェブサイト](https://www.netlify.com/docs/form-handling/)を参照してください。
 
 ### Formspree
 
-Formspree offers a generous free-tier service for handling form submissions on static sites. This makes it a great tool for having form submissions sent directly to an email address of your choosing, with very little setup required.
+Formspree は寛大な無料利用プランを持つ、静的サイトからのフォーム送信をサポートするためのサービスです。ほとんど設定を必要とせずに、フォームが指定したメールアドレスにデータを直接送信する優れたツールとなります。
 
-In order to begin leveraging Formspree's features, you must add a form action directing the http POST method to the Formspree API (substituting your chosen email), as well as changing the `name` attribute of the email input to `name="_replyto"`.
+Formsprees の機能を活用するためには、フォームの POST メソッドのアクションを `Formspree API/ あなたのメールアドレス` の形式に設定します。そして、メールアドレスの入力フィールドの `name` 属性を `name="_replyto"` に変更します。
 
 ```jsx:title=src/pages/contact.js
 <form method="post" action="https://formspree.io/email@domain.tld">
@@ -104,21 +104,21 @@ In order to begin leveraging Formspree's features, you must add a form action di
 </form>
 ```
 
-Once you've made the changes you can submit your own form for the first time and register using the email Formspree will send you, and all subsequent form submissions will be sent to your email address. You can find more information on the registration process or setup [on their website](https://formspree.io/).
+変更後、問い合わせフォームから初めて送信した際に、あなたのメールアドレスに Formspree からメールが届きます。そのメールから Formspree に登録します。その後は、フォームからの送信のすべてがあなたのメールアドレスに送信されます。登録や、設定の詳細については [Formspree のウェブサイト](https://formspree.io/)をご覧ください。
 
-All forms set up in this way come with reCAPTCHA by default, but you can also enable Honeypot spam filtering by adding a hidden input element with the `name="_gotcha"` field.
+Formspree で設定したすべてのフォームは、標準で reCAPTCHA を備えていますが、`name="_gotcha"` という 隠しフィールドを追加することで Honeypot スパムフィルタリングを有効にすることもできます。
 
 ```jsx
 <input type="text" name="_gotcha" style="display:none" />
 ```
 
-Because the input is hidden, Formspree will know that only a bot could have made the submission and it will be silently ignored!
+入力欄が非表示になっているため、Formspree はこのフィールドの値がボットから送信されたことを認識し、無視します。
 
-### Run your own server
+### 独自のサーバーで実行する
 
-If your form data requires a significant amount of business logic to handle, creating your own service might make the most sense. The most popular solution to this is writing an HTTP server - this can be done in many languages including PHP, Ruby, GoLang, or in our case Node.js with [Express](https://expressjs.com/).
+フォームデータの処理に大量のビジネスロジックが必要な場合は、自分でサービスを作成することがもっとも理にかなっています。一般的な解決方法は、HTTP サーバーの作成です。これは、PHP、Ruby、GoLang などの多くの言語で実現できます。また、Node.js で [Express](https://expressjs.com/) を使用して作成することもできます。
 
-An initial implementation of a server using express, body-parser, and nodemailer may look like this:
+express、body-parser、nodemailer を使用したサーバーの初期実装は次のようになります。
 
 ```javascript:title=handleForm.js
 const bodyParser = require("body-parser")
@@ -156,9 +156,9 @@ app.post("/contact", function(req, res) {
 app.listen(3000)
 ```
 
-This initial implementation listens for POST requests to `/contact`, and sends you an email with the submitted form data. You can deploy this server with services such as [Now](https://zeit.co/now).
+この実装では `/contact` への POST リクエストに反応して、POST されたフォームのデータをあなたのメールアドレスに送ります。このサーバーは、[Now](https://zeit.co/now) などのサービスを使ってデプロイすることも出来ます。
 
-Once deployed, note the url of the deployment (something like `my-project-abcd123.now.sh`), and use it as your form action:
+デプロイしたら、公開 URL（`my-project-abcd123.now.sh` のような）をメモしてフォームのアクションで指定します。
 
 ```jsx:title=src/pages/contact.js
 <form method="post" action="my-project-abcd123.now.sh/contact">
@@ -166,12 +166,12 @@ Once deployed, note the url of the deployment (something like `my-project-abcd12
 </form>
 ```
 
-Now, all subsequent form submissions will be sent to your email address!
+これで、フォームからの送信はすべてあなたのメールアドレスに送られます。
 
-For an in-depth guide on running your own mail server, you can refer to [this awesome guide by DataFire](https://medium.com/datafire-io/simple-backends-four-ways-to-implement-a-contact-us-form-on-a-static-website-10fc430984a4).
+独自のメールサーバーでの開発、運用については、[DataFire による素晴らしいガイド](https://medium.com/datafire-io/simple-backends-four-ways-to-implement-a-contact-us-form-on-a-static-website-10fc430984a4) があります。
 
-## Other resources
+## その他の参考資料
 
-If you have any issues or if you want to learn more about implementing your own contact form in Gatsby, check out this tutorial from Scott Tolinski:
+何か問題がある場合や、Gatsby で独自の問い合わせフォームの実装方法について詳しく知りたい場合は、Scott Tolinski のチュートリアルをご覧ください。
 
 https://youtu.be/hF7xJhzrr9s

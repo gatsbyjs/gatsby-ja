@@ -1,10 +1,10 @@
 ---
-title: Adding Forms
+title: フォームの追加
 ---
 
-Gatsby is built on top of React. So anything that is possible with a React form is possible in Gatsby. Additional details about how to create React forms can be found in the [React forms documentation](https://reactjs.org/docs/forms.html) (which happens to be built with Gatsby!)
+Gatsby は React 上に作られています。そのため、React フォームで可能なことは全て Gatsby でも実現出来ます。 React フォームの作成方法に関する詳細は、[React フォームのドキュメント](https://ja.reactjs.org/docs/forms.html)で見つけられます（このドキュメントは Gatsby で作られています！）。
 
-Start with the following page.
+次のページから始めます。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -12,7 +12,7 @@ import React from "react"
 export default () => <div>Hello world!</div>
 ```
 
-This Gatsby page is a React component. When you want to create a form, you need to store the state of the form - what the user has entered. Convert your function (stateless) component to a class (stateful) component.
+この Gatsby ページは React コンポーネントです。フォームを作りたい場合は、ユーザーが入力したフォームの状態を保存する必要があります。そのため、ステートレスな関数コンポーネントをステートフルなクラスコンポーネントに変換します。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -24,7 +24,7 @@ export default class IndexPage extends React.Component {
 }
 ```
 
-Now that you have created a class component, you can add `state` to the component.
+クラスコンポーネントを作成したので、`state` をコンポーネントに追加します。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -41,7 +41,7 @@ export default class IndexPage extends React.Component {
 }
 ```
 
-And now you can add a few input fields:
+いくつかの入力フィールドを追加します。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -70,7 +70,7 @@ export default class IndexPage extends React.Component {
 }
 ```
 
-When a user types into an input box, the state should update. Add an `onChange` prop to update state and add a `value` prop to keep the input up to date with the new state:
+ユーザーが入力ボックスに入力すると、状態が更新されます。`onChange` プロパティを追加して状態を更新し、`value` プロパティを追加して入力の状態を最新に保ちます。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -119,7 +119,7 @@ export default class IndexPage extends React.Component {
 }
 ```
 
-Now that your inputs are working, you want something to happen when you submit the form. Add `onSubmit` props to the form element and add `handleSubmit` to show an alert when the user submits the form:
+これで入力が機能するようになったので、フォームの送信に応じて何かを起動したくなるでしょう。`onSubmit` プロパティをフォーム要素に追加して、`handleSubmit` でユーザーが送信ボタンを押した時にアラートが表示されるようにしましょう。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -173,6 +173,6 @@ export default class IndexPage extends React.Component {
 }
 ```
 
-This form isn't doing anything besides showing the user information that they just entered. At this point, you may want to move this form to a component, send the form state to a backend server, or add robust validation. You can also use fantastic React form libraries like [Formik](https://github.com/jaredpalmer/formik) or [Final Form](https://github.com/final-form/react-final-form) to speed up your development process.
+このフォームは、入力されたユーザー情報を表示する以外は何もしません。この時点で、このフォームをコンポーネントに移動したり、フォームの状態をバックエンドサーバーに送信したり、堅牢なバリデーションを追加したり出来ます。また、[Formik](https://github.com/jaredpalmer/formik) や、[Final Form](https://github.com/final-form/react-final-form) などの素晴らしい React ライブラリーを使用して開発プロセスをスピードアップすることも出来ます。
 
-All of this is possible and more by leveraging the power of Gatsby and the React ecosystem!
+Gatsby のパワーと React のエコシステムを活用することで、これらすべてが実現可能です！
