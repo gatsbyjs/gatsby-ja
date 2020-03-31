@@ -10,7 +10,7 @@ title: ローカル開発環境を構築する
 ## Yarn の利用
 
 Yarn は[NPM](https://www.npmjs.com/)と似たコードのパッケージマネージャーです。NPM は CLI を使って Gatsby サイトの開発に使われますが、Gatsby リポジトリーへの貢献には次の理由から Yarn を必要とします。
-私たちはモノレポにとても便利な Yarn の[workspaces](https://yarnpkg.com/lang/ja/docs/workspaces/)という機能を利用しています。それによって、サブフォルダー内にある複数の`package.json`から依存関係をインストールでき、より早く軽いインストール過程を実現します。
+私たちはモノレポにとても便利な Yarn の[workspaces](https://yarnpkg.com/lang/ja/docs/workspaces/)という機能を利用しています。それによって、サブフォルダー内にある複数の `package.json` から依存関係をインストールでき、より早く軽いインストール過程を実現します。
 
 ```json:title=package.json
 {
@@ -29,7 +29,7 @@ Yarn は[NPM](https://www.npmjs.com/)と似たコードのパッケージマネ�
 ### リポジトリのフォーク、クローン、ブランチ
 
 - [公式の `gatsbyjs/gatsby` リポジトリ](https://github.com/gatsbyjs/gatsby)を[フォークしてください。](https://help.github.com/en/github/getting-started-with-github/fork-a-repo).
-- フォークしたものをクローンしてください: `git clone --depth=1 https://github.com/<your-username>/gatsby.git`
+- フォークしたものをクローンしてください： `git clone --depth=1 https://github.com/<your-username>/gatsby.git`
 - リポジトリのセットアップを行い、依存関係をインストールしてください。: `yarn run bootstrap`
 - テストが通るか確認してください。: `yarn test`
 - トピックブランチを作ってください。: `git checkout -b topics/new-feature-name`
@@ -37,7 +37,7 @@ Yarn は[NPM](https://www.npmjs.com/)と似たコードのパッケージマネ�
 ### ドキュメントのみの変更
 
 - ドキュメントのみの変更は[ドキュメントのセットアップ手順](/contributing/docs-contributions#docs-site-setup-instructions)をご覧ください。
-- リポジトリのルートで`yarn run watch`を実行し、パッケージのソースコードの変更を監視し、それらの変更を即時にコンパイルします。
+- リポジトリのルートで `yarn run watch` を実行し、パッケージのソースコードの変更を監視し、それらの変更を即時にコンパイルします。
 
   - watch コマンドはリソースを激しく使用する可能性があるので注意してください。作業しているパッケージに限定するには、`yarn run watch --scope={gatsby,gatsby-cli}`のように scope フラッグを追加します。
   - ひとつのパッケージのみを監視する場合は、`yarn run watch --scope=gatsby`を実行します。
@@ -50,9 +50,9 @@ Yarn は[NPM](https://www.npmjs.com/)と似たコードのパッケージマネ�
 - [gatsby-dev-cli](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-dev-cli)をインストールしてください。
   - `gatsby-dev -v`を実行し Gatsby Dev CLI がインストールされているか確認してください。
   - 確認できなかった場合は、グローバルにインストールします。`yarn global add gatsby-dev-cli`
-- テストする各サイトで`yarn install`を実行します。
-- テストする各サイトで、テストサイトのディレクトリー内で`gatsby-dev`コマンドを実行し、Gatsby のクローンコピーからビルドされたファイルをコピーします。Gatsby パッケージの変更を監視し、それらをサイトにコピーします。詳細な手順については、[gatsby-dev-cli の README](https://www.npmjs.com/package/gatsby-dev-cli)を確認し、[gatsby-dev-cli のデモ映像](https://www.youtube.com/watch?v=D0SwX1MSuas)をご覧ください。
-  - gatsby から直接エクスポートされたパッケージを変更する場合は、それらを手動でテストサイトに追加して package.json に記述するか (例: `yarn add gatsby-link`)、明示的に `gatsby-dev --packages gatsby-link` で指定する必要があります。
+- テストする各サイトで `yarn install` を実行します。
+- テストする各サイトで、テストサイトのディレクトリー内で `gatsby-dev` コマンドを実行し、Gatsby のクローンコピーからビルドされたファイルをコピーします。Gatsby パッケージの変更を監視し、それらをサイトにコピーします。詳細な手順については、[gatsby-dev-cli の README](https://www.npmjs.com/package/gatsby-dev-cli)を確認し、[gatsby-dev-cli のデモ映像](https://www.youtube.com/watch?v=D0SwX1MSuas)をご覧ください。
+  - gatsby から直接エクスポートされたパッケージを変更する場合は、それらを手動でテストサイトに追加して package.json に記述するか (例： `yarn add gatsby-link`)、明示的に `gatsby-dev --packages gatsby-link` で指定する必要があります。
 
 ### テストの追加
 
