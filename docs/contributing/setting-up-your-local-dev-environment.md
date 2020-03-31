@@ -52,7 +52,8 @@ Yarn は[NPM](https://www.npmjs.com/)と似たコードのパッケージマネ�
   - 確認できなかった場合は、グローバルにインストールします。`yarn global add gatsby-dev-cli`
 - テストする各サイトで `yarn install` を実行します。
 - テストする各サイトで、テストサイトのディレクトリー内で `gatsby-dev` コマンドを実行し、Gatsby のクローンコピーからビルドされたファイルをコピーします。Gatsby パッケージの変更を監視し、それらをサイトにコピーします。詳細な手順については、[gatsby-dev-cli の README](https://www.npmjs.com/package/gatsby-dev-cli)を確認し、[gatsby-dev-cli のデモ映像](https://www.youtube.com/watch?v=D0SwX1MSuas)をご覧ください。
-  - gatsby から直接エクスポートされたパッケージを変更する場合は、それらを手動でテストサイトに追加して package.json に記述するか (例： `yarn add gatsby-link`)、明示的に `gatsby-dev --packages gatsby-link` で指定する必要があります。
+
+  - 注意: gatsby から直接エクスポートされたパッケージを変更する場合は、それらを手動でテストサイトに追加して package.json に記述するか (例： `yarn add gatsby-link`)、明示的に `gatsby-dev --packages gatsby-link` で指定する必要があります。
 
 ### テストの追加
 
