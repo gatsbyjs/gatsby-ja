@@ -38,6 +38,7 @@ Yarn は[NPM](https://www.npmjs.com/)と似たコードのパッケージマネ�
 
 - ドキュメントのみの変更は[ドキュメントのセットアップ手順](/contributing/docs-contributions#docs-site-setup-instructions)をご覧ください。
 - リポジトリのルートで`yarn run watch`を実行し、パッケージのソースコードの変更を監視し、それらの変更を即時にコンパイルします。
+
   - watch コマンドはリソースを激しく使用する可能性があるので注意してください。作業しているパッケージに限定するには、`yarn run watch --scope={gatsby,gatsby-cli}`のように scope フラッグを追加します。
   - ひとつのパッケージのみを監視する場合は、`yarn run watch --scope=gatsby`を実行します。
 
