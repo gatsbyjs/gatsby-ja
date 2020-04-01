@@ -34,7 +34,7 @@ Gatsby のプロジェクト、主に以下のファイルとフォルダーで�
   - **`/templates`** プログラマブルにページを生成するテンプレートが含まれます。詳細は[コンポーネントを利用してビルドする](/docs/building-with-components/#page-template-components) を参照してください。
   - **`html.js`** 標準的な `.cache/default_html.js` のためのカスタム設定です。詳細は [html.js をカスタマイズする](/docs/custom-html/)を参照してください。
 
-- **`/static`** このフォルダーに配置したファイルは、Webpack によってビルドされません。その代わり、 `public` フォルダーに直接コピーされます。詳細は [static フォルダーーを使う](/docs/static-folder/#adding-assets-outside-of-the-module-system) を参照してください。
+- **`/static`** このフォルダーに配置したファイルは、Webpack によってビルドされません。その代わり `public` フォルダーに直接コピーされます。詳細は [static フォルダーーを使う](/docs/static-folder/#adding-assets-outside-of-the-module-system) を参照してください。
 
 ## 設定ファイル
 
@@ -48,4 +48,4 @@ Gatsby のプロジェクト、主に以下のファイルとフォルダーで�
 
 ## その他のフォルダー・ファイル
 
-これらのファイル・フォルダー構成は全て Gatsby プロジェクト固有のものです。そして、Gatsby ウェブサイトは React アプリでもあります、React アプリのプロジェクト構造パターン、 `/components` 、 `/utils` が `/src`の中に含まれています。 これらのフォルダーについては [React のドキュメント](https://reactjs.org/docs/faq-structure.html) に代表的な使用例が記載されています。
+これらのファイル・フォルダー構成は全て Gatsby プロジェクト固有のものです。そして、Gatsby ウェブサイトは React アプリでもあります、React アプリのプロジェクト構造パターン、 `/components` 、`/utils` が `/src` の中に含まれています。 これらのフォルダーについては [React のドキュメント](https://reactjs.org/docs/faq-structure.html) に代表的な使用例が記載されています。
