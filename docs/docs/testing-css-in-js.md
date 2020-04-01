@@ -22,7 +22,7 @@ npm install --save-dev jest-emotion babel-plugin-emotion
 
 ```diff:title=jest-preprocess.js
 const babelOptions = {
-  presets: ["babel-preset-gatsby"],
+~  presets: ["babel-preset-gatsby", "@emotion/babel-preset-css-prop"],
 +  plugins: [
 +    "emotion",
 +  ],

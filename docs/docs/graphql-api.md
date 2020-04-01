@@ -3,9 +3,6 @@ title: GraphQL API
 tableOfContentsDepth: 2
 ---
 
-import { GraphqlApiQuery } from "../../www/src/components/api-reference/doc-static-queries"
-import APIReference from "../../www/src/components/api-reference"
-
 Gatsby を使う大きな利点は、標準機能としてのデータレイヤーがあり、あなた自身が設定可能な全てのデータソースを含んでいることです。データは[ビルド時](/docs/glossary#build)に集められ、サイト上でデータをどのように処理するかを定義する[スキーマ](/docs/glossary#schema) として組み立てられます。
 
 このページでは Gatsby で使用される GraphQL の特長について、クエリーやデータをソースする方法・サイトごとに合わせた GraphQL カスタマイズ方法などについて説明します。
@@ -227,39 +224,9 @@ GraphQL クエリーは、部分ごとにフラグメントとして再利用で
 
 詳しい内容については、[Gatsby でフラグメントを使う](/docs/using-graphql-fragments/)ガイドをご覧ください。
 
-### Gatsby フラグメント一覧
+### Gatsby フラグメント
 
-Gatsby プラグインにもともと含まれているフラグメントもあり、`gatsby-image` や `gatsby-transformer-sharp` により様々なフォーマットで最適化された画像データを返すためのフラグメントや、`gatsby-source-contentful` のデータフラグメントなどがあります。
-
-#### Image sharp フラグメント
-
-以下のフラグメントは `gatsby-transformer-sharp` がインストールされて `gatsby-config.js` に記述されていれば、どのサイトでも使うことができます。
-
-これらのフラグメントによるクエリーについては、画像のリサイズや色の変更なども含めて [Gatsby 画像 API ドキュメント](/docs/gatsby-image/)に詳しくまとめられています。
-
-<GraphqlApiQuery>
-  {data => (
-    <APIReference
-      relativeFilePath={data.transformerSharp.nodes[0].relativePath}
-      docs={data.transformerSharp.nodes[0].childrenDocumentationJs}
-    />
-  )}
-</GraphqlApiQuery>
-
-#### コンテントフルフラグメント
-
-以下のフラグメントは `gatsby-source-contentful` がインストールされ `gatsby-config.js` に記述されていれば、どのサイトでも使うことができます。これらのフラグメントは基本的に `gatsby-transformer-sharp` パッケージ内で記述されたフラグメントを反映します。
-
-<GraphqlApiQuery>
-  {data => (
-    <APIReference
-      relativeFilePath={data.contentfulFragments.nodes[0].relativePath}
-      docs={data.contentfulFragments.nodes[0].childrenDocumentationJs}
-    />
-  )}
-</GraphqlApiQuery>
-
-**注意**: 上記のフラグメントは、公式に管理された Gatsby テンプレートからの引用です。`gatsby-source-datocms` や `gatsby-source-sanity` といった他のプラグインは、そのプラグイン自体のフラグメントも内包しています。そのようなプラグインの一覧は [`gatsby-image` README](/packages/gatsby-image#fragments) で確認できます。
+Gatsby プラグインにもともと含まれているフラグメントもあり、`gatsby-image` や `gatsby-transformer-sharp` により様々なフォーマットで最適化された画像データを返すためのフラグメントや、`gatsby-source-contentful` のデータフラグメントなどがあります。どのプラグインにフラグメントが同梱されているかより詳しく知るには [`gatsby-image` README](/packages/gatsby-image#fragments) を参照してください。
 
 ## さらにカスタマイズする
 

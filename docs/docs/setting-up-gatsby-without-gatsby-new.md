@@ -8,9 +8,8 @@ title: "`gatsby new` コマンドを使わずに Gatsby でサイトを構築す
 
 Gatsby を使うためには、以下のツールがインストールされている必要があります。
 
-1. [Node.js](/tutorial/part-zero/#install-nodejs)
-1. [npm CLI](/tutorial/part-zero/#familiarize-with-npm)
-1. [Gatsby CLI](/tutorial/part-zero/#install-the-gatsby-cli)
+1. [Node.js](/tutorial/part-zero/#install-nodejs-for-your-appropriate-operating-system)
+2. [Gatsby CLI](/tutorial/part-zero/#using-the-gatsby-cli)
 
 これらのソフトウェアとそのインストールについての詳細な説明は、[チュートリアル](/tutorial/part-zero/)にて確認してください。
 
