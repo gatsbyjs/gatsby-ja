@@ -8,7 +8,7 @@ titie: ローカルプラグインの作成
 
 このように、コードをプロジェクトルートの `plugins` フォルダーの中に配置します。
 
-```
+```text
 /my-gatsby-site
 └── gatsby-config.js
 └── /src
@@ -35,6 +35,13 @@ module.exports = {
 ## プロジェクト外部のローカルプラグインを開発する
 
 プラグインを動作させたりテストするために、必ずプロジェクトに含めないといけないわけではありません。もしプラグインをサイトから[分離](/docs/glossary#decoupled)させたいなら、以下の方法が使えます。これはプラグインをパッケージとして公開したいときや、コミュニティーが作成したプラグインをフォークしたものをテスト、開発するときに便利です。
+
+
+`gatsby new`で[プラグインのスターター](https://github.com/gatsbyjs/gatsby/tree/master/starters/gatsby-starter-plugin)を使用すれば、素早くプロジェクト外部のプラグインの開発を始めることができます：
+
+```shell
+gatsby new gatsby-plugin-foo https://github.com/gatsbyjs/gatsby-starter-plugin
+```
 
 ### `require.resolve` とファイルパスを使う
 

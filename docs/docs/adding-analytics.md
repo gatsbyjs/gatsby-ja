@@ -69,3 +69,4 @@ Google Analytics アカウントと Gatsby のプラグインには、共に膨�
 - [Matomo (formerly Piwik)](/packages/gatsby-plugin-matomo/)
 - [Simple Analytics](/packages/gatsby-plugin-simple-analytics)
 - [Parse.ly Analytics](/packages/gatsby-plugin-parsely-analytics/)
+- [GoatCounter](/packages/gatsby-plugin-goatcounter/)

@@ -307,12 +307,13 @@ import { getUser, isLoggedIn, logout } from "../services/auth" // highlight-line
 
 // highlight-start
 export default () => {
-  const content = { message: "", login: true }
+  let greetingMessage = ""
   if (isLoggedIn()) {
     content.message = `こんにちは、${getUser().name}さん`
   } else {
     content.message = "ログインしていません。"
   }
+
   return (
     // highlight-end
     <div
@@ -323,7 +324,7 @@ export default () => {
         borderBottom: "1px solid #d1c1e0",
       }}
     >
-      <span>{content.message}</span> {/* highlight-line */}
+      <span>{greetingMessage}</span> {/* highlight-line */}
       <nav>
         <Link to="/">ホーム</Link>
         {` `}
