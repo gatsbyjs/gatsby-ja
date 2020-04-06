@@ -220,8 +220,20 @@ Module not found: Error: Can't resolve `../..SomeFile.svg`
   ...
 ```
 
-ビルド中に `../..SomeFile.svg` を見つけるのに失敗しているエラーです。もしローカル環境で `gatsby develop` や `gatsby build` や `gatsby serve` が実行できる場合、この問題はあなたをイライラさせるかもしれません。考えられる原因としては、ローカル環境とデプロイ環境の OS が異なることです。大抵のデプロイ先は Linux のディストリビューションやフレーバーで動作しています。
+ビルド中に `../..SomeFile.svg` を見つけるのに失敗しているエラーです。もしローカル環境で `gatsby develop` や `gatsby build` や `gatsby serve` が実行できる場合、この問題はあなたをイライラさせるかもしれません。考えられる原因としては、ローカル環境とデプロイ環境の OS が異なることです。デプロイ先の多くは Linux のディストリビューションやフレーバーで動作しています。
 
 一般的なエラーの原因は、ファイルパスの大文字と小文字が混ざっていることです。例えば上記のようなエラーであれば、実際のファイル名が　`SomeFile.svg` で、 `Somefile.svg` や `somefile.svg` でないか確認してみてください。一部の OS はこの不一致を認識してくれますが、あなたの環境はそうでないかもしれません。
 
-ログに出力されるファイルパスの大文字小文字を確認し、デプロイし直すことが最良のステップです。
+ログに出力されるファイルパスの大文字小文字を確認し、デプロイし直すことが、次の最適なステップです。
+
+### エラー: ENOSPC: System limit for number of file watchers reached
+
+監視可能なファイル数の上限に達していることが考えられます。
+
+修正するためには、次のコマンドを実行し、ファイル監視の上限（あなたのサイトが起動している時に、変更をチェックできるファイルの数です）を増加させてください。
+
+```shell
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+```
+
+[the GitHub issue corresponding to this error](https://github.com/gatsbyjs/gatsby/issues/11406) でより詳細な情報を見つけることもできます。
