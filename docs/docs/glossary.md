@@ -206,11 +206,11 @@ Linting はコードを解析し、構文エラー等を検出するためのプ
 
 ## M
 
-### MDX
+### [MDX](/docs/glossary/mdx/)
 
 [React](#react) の[コンポーネント](#component)を [Markdown](#markdown) 上でそのまま使用するための拡張機能。
 
-### Markdown
+### [Markdown](/docs/glossary/markdown/)
 
 HTML のコンテンツをプレーンテキストで書くための手法です。コンテンツのタイプを特別な文字列を使って表します。例えば、ハッシュ（#)を使って[見出し](https://developer.mozilla.org/ja/docs/Web/HTML/Element/Heading_Elements)を表したり、下線（\_)やアスタリスク（\*)を使ってテキストの強調を表したりします。
 
@@ -347,6 +347,10 @@ UI とはユーザーインターフェースの事を指します。HCI (Human 
 ### [webpack](/docs/glossary/webpack)
 
 Gatsby が使用する [JavaScript](#javascript) アプリで、ウェブサイトのコードをバンドルするのに使われます。これは[ビルド時](#build)に自動的に行われます。
+
+### [WPGraphQL](/docs/glossary/wpgraphql)
+
+A WordPress plugin that adds [GraphQL](#graphql) capabilities to WordPress. It's another way that you can use WordPress as a content source for Gatsby.
 
 ## X
 

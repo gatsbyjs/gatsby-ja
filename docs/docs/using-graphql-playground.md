@@ -14,19 +14,19 @@ GraphQL Playground は、ソースコードやプラグインがスキーマと�
 
 Gatsby で GraphQL Playground にアクセスするためには、以下のように `GATSBY_GRAPHQL_IDE` を `package.json` の `develop` スクリプトに追加します。
 
-```json
+```json:title=package.json
 "develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
 ```
 
 **Windows** を使っている場合、スクリプトを以下のように設定してください。
 
-```
+```json:title=package.json
 "develop": "cross-env GATSBY_GRAPHQL_IDE=playground gatsby develop",
 ```
 
 もし、**cross-env** がインストールされていなかったら以下のコマンドでインストールできます。
 
-```
+```shell
 npm install --save-dev cross-env
 ```
 

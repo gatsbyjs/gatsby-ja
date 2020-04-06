@@ -1,22 +1,28 @@
 name: Lint
 
-on: [push, pull_request]
+on:
+  - push
+  - pull_request
 
 jobs:
   textlint:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+        node-version:
+          - 12.x
 
-    env:
-      node-version: 12.x
+    runs-on: ${{ matrix.os }}
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2.0.0
 
-      - name: Use Node.js ${{ env.node-version }}
-        uses: actions/setup-node@v1.4.0
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1.4.1
         with:
-          node-version: ${{ env.node-version }}
+          node-version: ${{ matrix.node-version }}
 
       - name: Get the number of processors currently available
         id: processors
@@ -30,7 +36,7 @@ jobs:
         uses: actions/cache@v1.1.2
         with:
           path: ${{ steps.yarn.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
 

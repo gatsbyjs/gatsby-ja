@@ -183,12 +183,12 @@ export default () => {
 #### 返り値
 
 - `base64` (string)
-- `src` (string)
-- `width` (int)
-- `height` (int)
 - `aspectRatio` (float)
 - `src` (string)
 - `srcSet` (string)
+- `srcSetType` (string)
+- `sizes` (string)
+- `originalImg` (string)
 
 ここでは、クエリーにすべての項目を入力しなくても上記の項目を 1 行ですべて返してくれる `GatsbyImageSharpFluid` のようなフラグメントが便利です。
 

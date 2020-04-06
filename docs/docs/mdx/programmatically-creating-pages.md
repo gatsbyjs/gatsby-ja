@@ -91,10 +91,10 @@ title: Blog Post 2
 Gatsby is the best
 ```
 
-## Generate slugs
+## Generate スラッグ s
 
 Since MDX posts are being sourced outside of `src/pages`, each post
-needs to be given a slug which tells Gatsby the URL to render to.
+needs to be given a スラッグ which tells Gatsby the URL to render to。
 
 If you want to set the URLs in your frontmatter, you can skip this step.
 
@@ -129,8 +129,8 @@ to set up our page. `/blog${value}` is a [template
 string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 that will result in:
 
-- blog-1.mdx => http://localhost:8000/blog/blog-1/
-- blog-2.mdx => http://localhost:8000/blog/blog-2/
+- `blog-1.mdx` => `http://localhost:8000/blog/blog-1/`
+- `blog-2.mdx` => `http://localhost:8000/blog/blog-2/`
 
 [`createFilePath`](https://www.gatsbyjs.org/packages/gatsby-source-filesystem/?=gatsby-source#createfilepath)
 is a function from `gatsby-source-filesystem` that translates file
@@ -166,7 +166,7 @@ query {
 ```
 
 If you skipped the last step and want to use frontmatter for your
-slugs instead of the generated field, replace `fields` with `frontmatter`.
+スラッグ s instead of the generated field, replace `fields` with `frontmatter`.
 
 ```javascript:title=gatsby-node.js
 const path = require("path")

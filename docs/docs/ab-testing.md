@@ -1,14 +1,14 @@
 ---
-title: A/B Testing
+title: A/B テスト
 overview: true
 ---
 
-A/B or split testing is when you make test changes to a website. Suppose you have two buttons: a green “Buy Now!” button and a red “Buy Now!” button. You want to figure out which button will receive the most clicks. An A/B test would be an ideal way to measure engagement.
+A/B もしくは分割テストはウェブサイトにテスト変更をする際に行われます。緑の「今すぐ買う！」ボタンと赤の「今すぐ買う！」ボタンの 2 つのボタンがあるとします。あなたはどちらのボタンがよりクリックされるか把握したいでしょう。A/B テストは、エンゲージメントを測定する理想的な方法です。
 
-![side-by-side images comparing the Gatsby default starter with a red button on one side and a green button on the other](./images/gatsby-default-starter-image.png)
+![一方の側に赤いボタン、もう一方の側に緑のボタンを設置した Gatsby のデフォルトスターターを比較する並列画像](./images/gatsby-default-starter-image.png)
 
-A/B testing is a data-driven way to figure out what works on your website, and it is a great way to determine how to make impactful improvements. A/B testing has been around for decades and it is an essential tool for web developers, designers and product managers.
+A/B テストは、あなたのウェブサイト上で何がうまくいくかを把握するためのデータ駆動型の方法であり、どのようにインパクトのある改善を行うかを決定するのに最適な方法です。A/B テストは何十年も前から実施されており、ウェブ開発者、デザイナー、製品マネージャーにとって必要不可欠なツールです。
 
-That being said, A/B testing software can be prohibitively expensive. Some platforms can run into the thousands per month. The main advantages of conducting A/B tests with Gatsby are performance and price. If you are leveraging Netlify and Google Analytics, you’re able to set up an A/B test with Gatsby for free! When you’re testing different variations of your website, you are not forced to load heavy and inefficient third party scripts.
+そうは言っても、A/B テストソフトウェアは非常に高価になる可能性があります。一部のプラットフォームでは、一ヶ月で数千円に達することがあります。Gatsby で A/B テストを実施する主な利点は、パフォーマンスと価格です。Netlify と Google アナリティクスを活用している場合は、Gatsby を用いて A/B テストを無料でセットアップできます！ウェブサイトのさまざまなバリエーションをテストする場合、重く非効率的なサードパーティのスクリプトを読み込む必要はありません。
 
 <GuideList slug={props.slug} />

@@ -26,7 +26,7 @@ Contributors should check "allow edits from maintainers" when making Pull Reques
 
 ## Code review process
 
-Translation contributions must be opened as pull requests to provide time for review and comments. If actionable feedback is given on a PR review, the author must acknowledge the review and make changes with their discretion. Ignoring review feedback completely is not allowed (see response templates below for help with this).
+Translation contributions must be opened as Pull Requests to provide time for review and comments. If actionable feedback is given on a PR review, the author must acknowledge the review and make changes with their discretion. Ignoring review feedback completely is not allowed (see response templates below for help with this).
 
 ## Becoming a maintainer
 
@@ -39,4 +39,4 @@ If you would like to be a maintainer of an existing translation repo, submit a P
 
 ## When a contributor will be removed
 
-Consistent with the [Code of Conduct](/docs/code-of-conduct/) the Gatsby team reserves the right to remove a contributor (including translation maintainers) from the Gatsby organization if necessary. Some reasons for being removed include spammy comments, closing PRs or issues without action or productive dialogue, or generally harmful or abusive behavior inconsistent with Gatsby's policies.
+Consistent with the [Code of Conduct](/contributing/code-of-conduct/) the Gatsby team reserves the right to remove a contributor (including translation maintainers) from the Gatsby organization if necessary. Some reasons for being removed include spammy comments, closing PRs or Issues without action or productive dialogue, or generally harmful or abusive behavior inconsistent with Gatsby's policies.

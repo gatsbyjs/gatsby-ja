@@ -333,9 +333,9 @@ exports.sourceNodes = ({ actions }) => {
 2. The `Event` type will implement the typical Gatsby `Node` interface.
 3. You'll use `@dontInfer`, because rather than Gatsby inferring fields, you'll be defining them explicitly.
 4. In addition to an `id` field, you'll create new fields for each data point associated with an event (name, location, startDate, endDate, url). _To read more detail about creating types, check out the [`createTypes` documentation](/docs/actions/#createTypes)_.
-5. You'll also create a `slug` field. You'll notice your event data doesn't include "slug" data. You'll define this in the next step.
+5. You'll also create a `slug` field. You'll notice your event data doesn't include "スラッグ" data. You'll define this in the next step.
 
-### Define resolvers for any custom fields (slug)
+### Define resolvers for any custom fields (スラッグ）
 
 Gatsby provides a `createResolvers` API hook. That gives you a function called `createResolvers`. Inside this function, you will set up a base path.
 
@@ -422,7 +422,7 @@ exports.createResolvers = ({ createResolvers }) => {
 }
 ```
 
-You'll define a helper, `slugify` to help generate the slugs:
+You'll define a helper, `slugify` to help generate the スラッグ s:
 
 ```javascript:title=gatsby-theme-events/gatsby-node.js
 exports.createResolvers = ({ createResolvers }) => {
@@ -486,7 +486,7 @@ Test that this is working by running `gatsby-theme-events` again:
 yarn workspace gatsby-theme-events develop
 ```
 
-If you query this time for `allEvent`, you'll see the `Event` data, including the new slugs:
+If you query this time for `allEvent`, you'll see the `Event` data, including the new スラッグ s:
 
 ![Successful execution of the previously described query, in the GraphiQL explorer](./images/building-a-theme-query-event-type.png)
 
@@ -1146,14 +1146,8 @@ export const theme = {
     default: "90vw",
     max: "540px",
   },
-  styles: {
-    Layout: {
-      color: "gray.2",
-      fontFamily: "body",
-      fontSize: 1,
-      lineHeight: "body",
-    },
-    Header: {
+  text: {
+    heading: {
       backgroundColor: "primary",
       color: "background",
       fontWeight: "bold",
@@ -1165,14 +1159,20 @@ export const theme = {
         color: "inherit",
       },
     },
-    Main: {
+  },
+  layout: {
+    container: {
       margin: "0 auto",
       maxWidth: "max",
       width: "default",
-    },
-    Container: {
       padding: 3,
+      color: "gray.2",
+      fontFamily: "body",
+      fontSize: 1,
+      lineHeight: "body",
     },
+  },
+  styles: {
     h1: {
       color: "gray.3",
       fontSize: 5,
@@ -1220,12 +1220,12 @@ export default theme
 
 Now, refactor the `layout.js` component in `gatsby-theme-events` to actually use Theme UI.
 
-First, import the `Layout`, `Header`, `Main`, and `Container` [components from Theme UI](https://theme-ui.com/layout).
+First, import the `Header`, and `Container` [components from Theme UI](https://theme-ui.com/components).
 
 ```jsx:title=gatsby-theme-events/src/components/layout.js
 import React from "react"
 // highlight-next-line
-import { Layout as ThemeLayout, Header, Main, Container } from "theme-ui"
+import { Heading, Container } from "theme-ui"
 
 const Layout = ({ children }) => (
   <div>
@@ -1241,17 +1241,15 @@ Next, refactor the `layout.js` component to use the Theme UI components:
 
 ```jsx:title=gatsby-theme-events/src/components/layout.js
 import React from "react"
-import { Layout as ThemeLayout, Header, Main, Container } from "theme-ui"
+import { Heading, Container } from "theme-ui"
 
 // highlight-start
 const Layout = ({ children }) => {
   return (
-    <ThemeLayout>
-      <Header>Gatsby Events Theme</Header>
-      <Main>
-        <Container>{children}</Container>
-      </Main>
-    </ThemeLayout>
+    <div>
+      <Heading>Gatsby Events Theme</Heading>
+      <Container>{children}</Container>
+    </div>
   )
 }
 // highlight-end

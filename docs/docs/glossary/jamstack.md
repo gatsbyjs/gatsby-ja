@@ -3,37 +3,37 @@ title: JAMStack
 disableTableOfContents: true
 ---
 
-Learn how to use Gatsby to build websites powered by the JAMStack, a modern architecture that uses JavaScript, APIs and markup without requiring the use of a database or server-side programming language.
+JAMStack を備えたウェブサイトを構築するために Gatsby の使用方法を学びます。JAMStack は、（本来、両立可能ですが）データベース、サーバサイドプログラミング言語の使用を必要としない、JavaScript、API、マークアップを使用するモダンなアーキテクチャです。
 
-## What is the JAMStack?
+## JAMStack とは何ですか？
 
-JAMStack is a modern architecture for building websites and applications. The _<abbr>JAM</abbr>_ in JAMStack stands for [JavaScript](/docs/glossary#javascript), [APIs](/docs/glossary#api), and HTML markup. Unlike websites built using WordPress or Drupal, JAMStack sites do not require a database. You can even skip the webserver, and opt to host your site using an object storage service and a content delivery network (or CDN).
+JAMStack とは、ウェブサイトやアプリケーションを構築するためのモダンなアーキテクチャです。JAMStack の _<abbr>JAM</abbr>_ は [JavaScript](/docs/glossary#javascript)、API、(HTML) Markup の略です。JAMStack サイトは、WordPress や Drupal を使ったウェブサイト構築と違ってデータベースを必要としません。ウェブサーバーすら省略でき、ウェブサイトをオブジェクトストレージサービスや CDN（コンテンツデリバリーネットワーク）にホストすることも選択可能です。
 
-With more traditional websites, such as those built using WordPress or Drupal, content is stored in a database. There's also a presentation layer of template files that mix HTML markup with template tags. Template tags are placeholders for pieces of content, e.g. `{{ title }}` for the title of the page.
+例えば、WordPress や Drupal を使って構築するような、より伝統的なウェブサイトでは、コンテンツはデータベースに保存されます。これらには、HTML マークアップとテンプレートタグを組み合わせた、テンプレートファイルのプレゼンテーション層もあります。テンプレートタグは対応するコンテンツデータを出力する為のプレースホルダーです。例：ページのタイトル `{{ title }}`
 
-A software layer then pulls it all together: it retrieves content from the database, replaces template tags with the appropriate chunks of content, and returns it all to the browser. A single page gets regenerated each time the server receives a request for that URL.
+ソフトウェア層をまとめると：データベースからコンテンツデータを読み込み、テンプレートタグを適切なコンテンツの塊に置き換え、そしてブラウザーに全てを返すことです。サーバーが URL リクエストを受け取るたび、1 つのページが再作成されます。
 
-In this type of architecture, the [frontend](/docs/glossary#frontend) (what you see in the browser) and [backend](/docs/glossary#backend) (the database and software layer) are _tightly coupled_. Both the content and how it's presented are part of the same code base &mdash; sometimes called a _monolithic architecture_. Content is only available as HTML and can only be consumed by clients (e.g. web browsers) that can parse HTML.
+このタイプのアーキテクチャでは、[フロントエンド](/docs/glossary#フロントエンド "Frontend")（ブラウザーで見えるモノ）と[バックエンド](/docs/glossary#バックエンド "Backend")（データベースやソフトウェア層）が**密結合されています**。コンテンツデータと、それをどう表示するかの両方が同一コード上に存在します。&mdash; 時々、**モノリシックアーキテクチャ（一枚岩な機能）**と呼ばれます。コンテンツデータは HTML としてのみ利用可能です。また、HTML を解析できるクライアント（例：ウェブブラウザー）でのみ読み取り可能です。
 
-In a JAMStack architecture, however, the frontend and backend are [decoupled](/docs/glossary#decoupled). A JAMStack frontend consists of JavaScript, HTML, and CSS. Gatsby generates these files during the [build](/docs/glossary#build) process.
+しかし、JAMStack アーキテクチャにおいて、フロントエンドとバックエンドは[分離](/docs/glossary#分離 "Decoupled")されています。JAMStack フロントエンドは JavaScript、HTML、そして CSS から構成されています。Gatsby は[ビルド](/docs/glossary#ビルド (Build）)する過程の中で、これらのファイルを生成します。
 
-A JAMStack backend is a content API that returns JSON or XML. This API can be a [hosted datastore](/docs/sourcing-from-hosted-services/), a [headless CMS](/docs/headless-cms/), or a custom application. It's only concerned with serving JSON or XML, which means you can use the same API for your Gatsby site and native applications.
+JAMStack バックエンドは JSON や XML を返すコンテンツ API です。この API を [ホストされたデータストア](/docs/sourcing-from-hosted-services/)、[ヘッドレス CMS](/docs/headless-cms/) あるいは、カスタムアプリケーションにできます。このことは、JSON や XML を提供することのみ関係があります。すなわち、Gatsby サイトとネイティブアプリケーションで同じ API が使えることを意味します。
 
-### Advantages of a JAMStack architecture
+### JAMStack アーキテクチャの利点
 
-JAMStack sites, such as those created with Gatsby, offer four key advantages over other web site architectures.
+Gatsby で作成されたような JAMStack サイトは、その他のウェブサイトアーキテクチャと比較して、極めて重要な 4 つの利点を提供します。
 
-- **Speed**: JAMStack sites lack the overhead caused by software and database layers. As a result, they render and load more quickly than sites that use monolithic architectures.
-- **Hosting flexibility**: Because they're static files, JAMStack sites can be hosted anywhere. You can use traditional web server software, such as Apache or Nginx. For the best performance and security, you can use an object storage service and content delivery network such as [Netlify](/docs/deploying-to-netlify), [Render](/docs/deploying-to-render), or Amazon Web Services' [S3 and Cloudfront](/docs/deploying-to-s3-cloudfront).
-- **An improved developer experience**: Frontend developers can build sites without needing to know a server-side language. Backend developers can focus on building APIs. Decoupled development teams can work in parallel, allowing each team to focus on what they do best. Using a third-party [CMS](/docs/glossary#cms) service also means that your developer-operations team doesn't have to manage a separate stack for content.
-- **Better security**: No database and no software layer means that JAMStack sites are not vulnerable to [SQL injection](https://www.owasp.org/index.php/SQL_Injection) or server-side [code injection](https://www.owasp.org/index.php/Code_Injection) attacks. Pages are compiled in advance, so they aren't at risk of a [server-side includes injection](<https://www.owasp.org/index.php/Server-Side_Includes_(SSI)_Injection>) attack. Hosting your site on a content delivery network offers protection from [denial of service](https://www.owasp.org/index.php/Denial_of_Service) attacks. Shifting to a JAMStack architecture limits or eliminates entire classes of vulnerabilities.
+- **スピード**： JAMStack サイトはソフトウェア層、データベース層によって引き起こされるオーバーヘッドがありません。結果、レンダリングとロードはモノリシックアーキテクチャを使ったサイトよりも高速です。
+- **ホスティングの柔軟性**： JAMStack サイトは静的ファイルなので、どこにでもホストできます。Apache や Nginx など従来のウェブサーバーソフトウェアを使うこともできます。ベストパフォーマンス、セキュリティーのためにオブジェクトストレージサービスや、[Netlify](/docs/deploying-to-netlify)、[Render](/docs/deploying-to-render) あるいは、Amazon Web Services の [S3 + Cloudfront](/docs/deploying-to-s3-cloudfront) などの CDN を使用できます。
+- **DX（開発者体験）の向上**： フロントエンド開発者たちはサーバーサイド言語の知識を必要とせずサイトを構築できます。バックエンド開発者は API 構築に集中できます。分業された開発チームは平行作業を可能にし、チームがもっとも得意とする領域に集中できます。サードパーティ [CMS](/docs/glossary#cms) サービスを使うということは、開発者と運用チームがばらばらの技術スタックでコンテンツを管理する必要がないことを意味します。
+- **より良いセキュリティ**： JAMStack サイトにデータベース、ソフトウェア層がないということは、[SQL インジェクション](https://www.owasp.org/index.php/SQL_Injection)やサーバーサイド [コード インジェクション](https://www.owasp.org/index.php/Code_Injection) 攻撃による脆弱性を持たないということです。ページは事前にコンパイルされるので、[SSI（サーバーサイド インクルード）インジェクション](<https://www.owasp.org/index.php/Server-Side_Includes_(SSI)_Injection>) 攻撃のリスクがありません。サイトを CDN にホスティングすると [DoS（Denial of Service）](https://www.owasp.org/index.php/Denial_of_Service) 攻撃から保護されます。JAMStack アーキテクチャへの移行は、あらゆる種類の脆弱性を制限、排除します。
 
-> **NOTE:** Gatsby and other JAMStack sites can still be affected by [cross-site scripting](https://www.owasp.org/index.php/Types_of_Cross-Site_Scripting) attacks. They can also be compromised if your API endpoints are compromised.
+> **ヒント：** それでも、Gatsby や他の JAMStack サイトには [XSS（クロスサイトスクリプティング）](https://www.owasp.org/index.php/Types_of_Cross-Site_Scripting) 攻撃を受ける可能性が残っています。もし、API 側の安全性が損なわれていれば、API 利用側も侵害される可能性があります。
 
-Using Gatsby can help you build faster, more secure websites, with search engine optimization and accessibility features already built in. See how Gatsby [compares](/features/) to other frameworks.
+Gatsby を使うと、SEO（検索エンジン最適化）とアクセシビリティの機能が施された、より高速で、より安全なウェブサイトを構築できます。Gatsby を他のフレームワークと[比較](/features/)している様子をご覧ください。
 
-### Learn more about JAMStack architecture
+### JAMStack アーキテクチャについてもっと学ぶ
 
-- [JAMStack.org](https://jamstack.org/) website
-- [JAMstack WTF](https://jamstack.wtf/), built with Gatsby
-- [Deploying and Hosting](/docs/deploying-and-hosting/) from the Gatsby Docs
+- [JAMStack.org](https://jamstack.org/) 公式ウェブサイト
+- [JAMstack WTF](https://jamstack.wtf/)（Gatsby で構築されています）
+- Gatsby ドキュメントより[デプロイとホスティング](/docs/deploying-and-hosting/)
