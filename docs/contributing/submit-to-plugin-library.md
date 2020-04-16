@@ -1,23 +1,23 @@
 ---
-title: Submit to Plugin Library
+title: プラグインライブラリに送信する
 ---
 
-## Publishing a plugin to the library
+## ライブラリにプラグインを公開する
 
-In order to add your plugin to the [Plugin Library](/plugins/), you need to:
+[プラグインライブラリ](/plugins/)にプラグインを追加するためには、以下を行う必要があります。
 
-1.  Publish a package to npm (learn how on the [npm docs](https://docs.npmjs.com/getting-started/publishing-npm-packages)).
-2.  Include the [required files](/docs/files-gatsby-looks-for-in-a-plugin/) in your plugin code.
-3.  **Include a `keywords` field** in your plugin's `package.json`, containing `gatsby` and `gatsby-plugin`. If your plugin is a theme, please also include `gatsby-theme`.
-4.  Document your plugin with a README, there is a [plugin template](/contributing/docs-templates/#plugin-readme-template) available to be used as reference.
+1. パッケージを npm に公開してください（[npm docs](https://docs.npmjs.com/getting-started/publishing-npm-packages) の方法をご覧ください）。
+2. プラグインのコードに[必要なファイル](/docs/files-gatsby-looks-for-in-a-plugin/)を含めてください。
+3. プラグインの `package.json` に `gatsby` と `gatsby-plugin` を含めた **`keyword` フィールドを含めてください**。プラグインがテーマの場合は、`gatsby-theme` も含めてください。
+4. プラグインを README で文書化してください。参考として使用できる[プラグインテンプレート](/contributing/docs-templates/#plugin-readme-template)があります。
 
-After doing so, Algolia will take up to 12 hours to add it to the library search index (the exact time necessary is still unknown), and wait for the daily rebuild of https://gatsbyjs.org to automatically include your plugin page to the website. Then, all you have to do is share your wonderful plugin with the community!
+そうすると、Algolia はそれをライブラリー検索インデックスに追加するのに最大 12 時間（正確な時間はまだ不明）かかるので、https://gatsbyjs.org の毎日の再構築によってプラグインページが自動でウェブサイトに追加されるのを待ってください。その後、素晴らしいプラグインをコミュニティーと共有しましょう！
 
-## Notes
+## ヒント
 
-### Keywords
+### キーワード
 
-You can include other _relevant_ keywords to your `package.json` file to help interested users in finding it. As an example, a Markdown MathJax transformer would include:
+他の _関連_ キーワードを `package.json` ファイルに含めて、関心のあるユーザーが見つけやすくできます。例として、Markdown MathJax transformer には次のものが含まれます。
 
 ```json:title=package.json
 "keywords": [
@@ -29,6 +29,6 @@ You can include other _relevant_ keywords to your `package.json` file to help in
 ]
 ```
 
-### Images
+### 画像
 
-If you include images in your plugin repo's README, please make sure you are referencing the image using an absolute URL in order for the image to show on your plugin page.
+プラグインリポジトリーの README に画像を含める場合は、プラグインページに画像を表示するために、絶対 URL を使用して画像を参照していることを確認してください。
