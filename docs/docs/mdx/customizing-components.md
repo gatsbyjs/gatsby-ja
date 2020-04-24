@@ -2,8 +2,8 @@
 title: コンポーネントをカスタマイズする
 ---
 
-MDX を使えば，Markdown でレンダリングできる全ての HTML 要素をカスタマイズした実装に置き換えることが可能です。
-これによって，デザインシステムで定義されたコンポーネントを利用できるようになります。
+MDX を使えば、Markdown でレンダリングできる全ての HTML 要素をカスタマイズした実装に置き換えることが可能です。
+これによって、デザインシステムで定義されたコンポーネントを利用できるようになります。
 
 ```jsx:title=src/components/layout.js
 import { MDXProvider } from "@mdx-js/react"
@@ -13,11 +13,11 @@ export default function Layout({ children }) {
   return (
     <MDXProvider
       components={{
-        // HTML 要素のタグを，React コンポーネントにマッピングする
+        // HTML 要素のタグを、React コンポーネントにマッピングする
         h1: DesignSystem.H1,
         h2: DesignSystem.H2,
         h3: DesignSystem.H3,
-        // あるいは，インラインでもコンポーネントを定義できます
+        // あるいは、インラインでもコンポーネントを定義できます
         p: props => <p {...props} style={{ color: "rebeccapurple" }} />,
       }}
     >
@@ -27,7 +27,7 @@ export default function Layout({ children }) {
 }
 ```
 
-以下の表は，MDXProvider を用いてカスタマイズできるコンポーネントの一覧です。
+以下の表は、MDXProvider を用いてカスタマイズできるコンポーネントの一覧です。
 
 | Tag             | Name                                                                 | Syntax                                              |
 | --------------- | -------------------------------------------------------------------- | --------------------------------------------------- |
@@ -58,8 +58,8 @@ export default function Layout({ children }) {
 
 ## これはどうやって実現されているのか？
 
-MDXProvider で変換されたコンポーネントは，Markdown が生成する HTML 要素をレンダリングする目的で使用されます。
-この過程では，[React's Context API](https://reactjs.org/docs/context.html)を用いています。
+MDXProvider で変換されたコンポーネントは、Markdown が生成する HTML 要素をレンダリングする目的で使用されます。
+この過程では、[React's Context API](https://reactjs.org/docs/context.html)を用いています。
 
 ## 関連ドキュメント
 
