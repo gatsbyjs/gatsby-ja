@@ -2,8 +2,7 @@
 title: コンポーネントをカスタマイズする
 ---
 
-MDX を使えば、Markdown でレンダリングできる全ての HTML 要素をカスタマイズした実装に置き換えることが可能です。
-これによって、デザインシステムで定義されたコンポーネントを利用できるようになります。
+MDX を使えば、Markdown でレンダリングできる全ての HTML 要素をカスタマイズした実装に置き換えることが可能です。これによって、デザインシステムで定義されたコンポーネントを利用できるようになります。
 
 ```jsx:title=src/components/layout.js
 import { MDXProvider } from "@mdx-js/react"
@@ -60,8 +59,7 @@ export default function Layout({ children }) {
 
 ## これはどうやって実現されているのか？
 
-MDXProvider で変換されたコンポーネントは、Markdown が生成する HTML 要素をレンダリングする目的で使用されます。
-この過程では、[React's Context API](https://reactjs.org/docs/context.html)を用いています。
+MDXProvider で変換されたコンポーネントは、Markdown が生成する HTML 要素をレンダリングする目的で使用されます。この過程では、[React's Context API](https://reactjs.org/docs/context.html)を用いています。
 
 ## 関連ドキュメント
 
