@@ -27,6 +27,8 @@ export default function Layout({ children }) {
 }
 ```
 
+**Note**: MDX を書くときに、グローバルにアクセスできる独自のコンポーネントを `MDXProvider` に定義することもできます。このパターンに関しては、[MDX にコンポーネントを import して使う方法](/docs/mdx/importing-and-using-components/#make-components-available-globally-as-shortcodes) を参照してください。
+
 以下の表は、MDXProvider を用いてカスタマイズできるコンポーネントの一覧です。
 
 | Tag             | Name                                                                 | Syntax                                              |
