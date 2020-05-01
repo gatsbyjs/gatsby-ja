@@ -1,46 +1,46 @@
 ---
-title: Troubleshooting Common Errors
+title: 一般的なエラーのトラブルシューティング
 ---
 
-As you encounter errors while developing with Gatsby, it is likely you'll run into something that other users have already stumbled upon. Some errors may require fixes to Gatsby's core processes, these are best filed as [issues](/contributing/how-to-file-an-issue/). Many errors you encounter will mean adjusting how you've configured a plugin or API in your site.
+Gatsby での開発中に発生したエラーは、すでに他のユーザーが遭遇したものかもしれません。一部のエラーは Gatsby のコアプロセスの修正が必要で、その場合は [issues](/contributing/how-to-file-an-issue/) を作成するのがベストです。多くのエラーでは、プラグインや API の調整が必要になります。
 
-This guide is meant as a reference for common errors that have tripped up other Gatsby users.
+このガイドは、他の Gatsby ユーザーが躓いた一般的なエラーのリファレンスです。
 
-## Problems with the cache
+## キャッシュによる問題
 
-Running a site in `gatsby develop` will set up a server locally that enables features like [hot-module replacement](/docs/glossary#hot-module-replacement). Gatsby keeps a cache of data and rendered assets in the `.cache` folder at the root of a Gatsby site so that it doesn't have to repeat work processing optimized resources. If you see errors about not being able to find a resource in the cache it may be enough to clear your cache and restart your server. You can clear Gatsby's cache by running:
+`gatsby develop` を実行すると、 [ホット・モジュール・リプレイスメント](/docs/glossary#hot-module-replacement)などの機能がローカルのサーバーに設定されます。 Gatsby はサイトのルートフォルダーで、データやレンダーされたアセットを `.chache` フォルダーに保持するので、リソースの最適化を繰り返し処理する必要がありません。もしキャッシュのリソースが見つからないというエラーなら、キャッシュを削除してサーバーを再起動すれば解決できるかもしれません。以下のコマンドを実行することで、キャッシュを削除できます。
 
 ```shell
 gatsby clean
 ```
 
-This will delete the `.cache` folder, as well as the `public` folder for you. Running `gatsby develop` will recreate the cache and process all resources again.
+これで `.cache` フォルダーと `public` フォルダーが削除されます。 `gatsby develop` を実行すると、再びリソースの処理とキャッシュ化が始まります。
 
-You may also want to refer to the dedicated guide on [Debugging Cache Issues](/docs/debugging-cache-issues/).
+[キャッシュの問題のデバッグ](/docs/debugging-cache-Issues/)も参照してください。
 
-> For additional discussion on caching and persistence issues, refer to the [umbrella issue](https://github.com/gatsbyjs/gatsby/issues/11747).
+> キャッシュと永続化についての更なる議論が必要であれば、 次の[起点 Issue](https://github.com/gatsbyjs/gatsby/issues/11747) を参照してください。
 
-## Errors with common plugin configurations
+## プラグインの設定によるエラー
 
-Plugins [extend Gatsby's functionality](/docs/what-is-a-plugin/), because they introduce new behavior it's possible that an installed plugin introduces errors.
+プラグインは [Gatsby の機能を拡張します](/docs/what-is-a-plugin/)が、インストールすることで新しいふるまいを追加するため、エラーを発生させる可能性があります。
 
-### Installing plugins for styling results in Generating SSR bundle failed
+### CSS スタイル用のプラグインをインストールしたら、SSR バンドルの生成に失敗した
 
-If you encounter a webpack error that says `Generating SSR bundle failed` after installing a plugin and trying to run `gatsby develop` or `gatsby build`, it's possible you haven't yet installed all the packages you need.
+プラグインをインストールして `gatsby develop` または `gatsby build` コマンドを実行し、 webpack が `Generating SSR bundle failed` エラーを出力した場合、プラグインに必要なパッケージがインストールされていない可能性があります。
 
-For some plugins like emotion, styled-components, or SASS, it won't be enough to only install the plugin, you also need to install libraries they rely on. The official installation instructions should guide you to install all needed libraries when you install the plugin, but some tutorials or blog posts you find at other sources may not.
+emotion, styled-components, SASS などのプラグインは、依存ライブラリーのインストールが必要です。公式のガイドでは、必要な全てのライブラリーをインストールするための手順が書かれていますが、ブログの記事やチュートリアルなど、他所に記載されたものはそうでないかもしれません。
 
-Here are some examples of plugins that require you to install more than just the plugin:
+以下は、他ライブラリーのインストールが必要なプラグインの例です。
 
-- [gatsby-plugin-emotion](/packages/gatsby-plugin-emotion/): `@emotion/core`, and `@emotion/styled`
-- [gatsby-plugin-styled-components](/packages/gatsby-plugin-styled-components/): `styled-components`, and `babel-plugin-styled-components`
-- [gatsby-plugin-sass](/packages/gatsby-plugin-sass/): `node-sass`, or `dart-sass`
+- [gatsby-plugin-emotion](/packages/gatsby-plugin-emotion/): `@emotion/core` と `@emotion/styled`
+- [gatsby-plugin-styled-components](/packages/gatsby-plugin-styled-components/): `styled-components` と `babel-plugin-styled-components`
+- [gatsby-plugin-sass](/packages/gatsby-plugin-sass/): `node-sass` か `dart-sass`
 - [gatsby-plugin-material-ui](/packages/gatsby-plugin-material-ui/): `@material-ui/styles`
-- [gatsby-image](/packages/gatsby-image/): `gatsby-transformer-sharp`, and `gatsby-plugin-sharp`
+- [gatsby-image](/packages/gatsby-image/): `gatsby-transformer-sharp` と `gatsby-plugin-sharp`
 
-Rather than packaging up the other dependent libraries alongside these plugins, they can stay smaller in size when they are published and are able to rely on alternative implementations. One example is `gatsby-plugin-sass` that can use either the Node.js or Dart implementations of SASS.
+プラグインと一緒に他の依存ライブラリーをパッケージ化せず、公開時にサイズを削減して、代わりの実装に依存させることもできます。例えば `gatsby-plugin-sass` は、 SASS を Node.js か　 Dart の実装に使用できます。
 
-To resolve these errors, identify the packages that haven't been installed, the error message might look like this:
+このようなエラーを解決するために、インストールされていないパッケージを調べます。エラーメッセージが以下のようなものだとします。
 
 ```shell
 ...
@@ -55,37 +55,37 @@ Can't resolve '@emotion/core' in '/Users/you/tmp/gatsby-site/.cache' // highligh
 File: .cache/develop-static-entry.js
 ```
 
-This error is a result of Gatsby having failed to find `@emotion/core` because `gatsby-plugin-emotion` has been installed and added to the `gatsby-config`, without installing the emotion library. Install it like this:
+このエラーは Gatsby が `@emotion/core` を見つけられなかったものです。原因は emotion をインストールせずに `gatsby-plugin-emotion` をインストールし、 `gatsby-config` に追加したためです。以下のように emotion をインストールします。
 
 ```shell
 npm install --save @emotion/core
 ```
 
-Or replace `@emotion/core` with the name of the library that is missing. Installing the plugin and any necessary libraries as well as adding the plugin to your `gatsby-config` should resolve this error.
+見つからなかったライブラリーが `@emotion/core` 以外の場合でも、プラグインと関連するライブラリーをインストールし、 `gatsby-config` に追加することでエラーが解消されます。
 
-## Errors in styling
+## スタイリングによるエラー
 
-The following errors are related to styles in your site, using CSS, preprocessors, or CSS-in-JSS solutions.
+次のようなエラーは、CSS やプリプロセッサー、 CSS-in-JS を使用したサイトのスタイリングで起こることがあります。
 
-### Inconsistent CSS styles between develop and build using styled-components or emotion
+### styled-components または emotion で、 develop と build のスタイルが異なる
 
-A common problem that trips up users that install and begin to use styled-components or emotion is not including the related plugin in the config. Because `gatsby develop` doesn't run server-side rendering, the build may look different if the plugin is not included to tell Gatsby to server-side render the styles for the CSS-in-JS solution being used.
+styled-components や emotion を使用し始めたユーザーを躓かせる一般的な問題は、設定に依存プラグインが含まれていないことです。 `gatsby develop` コマンドはサーバーサイドレンダリングを実行しないので、 CSS-in-JS をサーバー側で解決するためのプラグインが含まれていないと、ビルド時にスタイルが異なって見えてしまうことがあります。
 
-Adding `gatsby-plugin-styled-components` (in the case of styled-components) or `gatsby-plugin-emotion` (in the case of emotion) to `gatsby-config.js` will inform Gatsby to process the styles server-side so they display correctly in the final build.
+使用するライブラリーが styled-components の場合は `gatsby-plugin-styled-components` を、 emotion の場合は `gatsby-plugin-emotion` を `gatsby-config.js` に追加すると、 Gatsby にサーバー側でのスタイルを処理するよう伝えられ、最終的なビルドでまさしく表示されるようになります。
 
-## Errors with GraphQL
+## GraphQL のエラー
 
-Gatsby's GraphQL data layer provides access to build time data, there are sometimes errors you may encounter while implementing plugins that are sourcing data or adding nodes to the schema yourself.
+Gatsby の GraphQL のデータレイヤーは、ビルド時のデータへのアクセスを提供しています。スキーマからデータを取得したり、ノードを追加するようなプラグインを実装する時、エラーとなる可能性があります。
 
 ### Unknown field 'A' on type 'B'
 
-If the data you are requesting in a GraphQL query differs from what has been [sourced](/docs/content-and-data/) in the GraphQL schema you might encounter an error like `Unknown field 'A' on type 'B'`. As the error suggests, a field you are asking for is not defined under the type that is listed. If your site is still building okay, you can open up `http://localhost:8000/___graphql` and examine your schema, which includes the definition of what fields are included on the type provided by the error. This can help you identify what fields aren't being created and locate where those fields should be created, whether by a plugin or in your code.
+GraphQL スキーマのソースと異なる GraphQL クエリーを要求すると、`Unknown field 'A' on type 'B'` のようなエラーに遭遇することがあります。エラーが示す通り、要求するフィールドがタイプの中で定義されていません。サイトが正常に動作していれば、`http://localhost:8000/___graphql` を開いて、エラーの対象となるタイプが有しているフィールドを確認できます。これはどのフィールドが作成されていないのかを調べたり、プラグインやコードの中で、フィールドを作成すべき場所を発見するのに役立ちます。
 
-If the error is describing an `Unknown field 'X' on type 'Query'`, the content type you are trying to source is likely not processing correctly. The `Query` type represents the top-level root queries that are included in the GraphQL schema. Source plugins will often create root nodes that you can query like `mdx` (created by `gatsby-plugin-mdx`) or for a collection of root nodes like `allFile` (created by `gatsby-source-filesystem`).
+エラーが `Unknown field 'X' on type 'Query'` のように示している場合は、取得しようとしているコンテンツが正しく処理されていません。 `Query` は GraphQL スキーマに含まれる最上位のルートクエリーです。ソースプラグインは多くの場合、`mdx`（`gatsby-plugin-mdx` から作られます）のようなクエリ可能なルートノードや、`allFile`（`gatsby-source-filesystem` から作られます）のようなルートノードのコレクションを作成します。
 
-Some ideas for debugging these errors include verifying the following:
+エラーのデバッグや検証には、いくつかの方法が考えられます。
 
-- if you are using a transformer plugin (like `gatsby-transformer-yaml`), the data you need is pulled in using a source plugin (like `gatsby-source-filesystem`)
+- `gatsby-transformer-yaml` のような変換プラグインを使用している場合、 必要なデータは `gatsby-source-filesystem` のようなソースプラグインから取り込まれています。
 
 ```javascript:title=gatsby-config.js
 {
@@ -94,28 +94,29 @@ Some ideas for debugging these errors include verifying the following:
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `./src/data/`, // location of yaml files
+        path: `./src/data/`, // yaml ファイルの場所
       },
     },
   ]
 }
 ```
 
-- the structure of your content being sourced matches your GraphQL schema as well as the way you are querying the data
+- コンテンツの構造は、GraphQL スキーマとデータの取得方法に一致します。
 
-Comparing your GraphQL query to your site's schema in `http://localhost:8000/___graphql` and whatever plugin or code you are using to source data is a great way to find these errors as they should all express the data in the same shape.
+クエリーを `http://localhost:8000/___graphql` のスキーマや、データの取得に使われるプラグインまたはコードと比較するのは、どれも同じ sharp でデータを表現する必要があるため、エラーを検出するのに良い方法です。
 
-- neither any source plugins you are using nor your own implementation of the [`sourceNodes` API](/docs/node-apis/#sourceNodes) are misconfigured
+- ソースプラグインと[ソースノード API](/docs/node-apis/#sourceNodes)のどちらもまさしく設定されていません。
 
-## Errors using gatsby-image and sharp
+## gatsby-image と sharp のエラー
 
-Gatsby's image processing is broken up into different packages which need to work together to source images and transform them into different optimized versions. You might run into these errors getting them to play together nicely.
+Gatsby の画像処理は、画像を最適化したバージョンに変換する必要があるため、それぞれ異なるパッケージに分割されます。
+これらのパッケージを連携させる際に、以下のようなエラーとなることがあります。
 
 ### Field "image" must not have a selection since type "String" has no subfields
 
-This errror message `Field "image" must not have a selection since type "String" has no subfields.` comes up when a GraphQL query is trying to query a field for subfields, but none exist. This generally happens when plugins that are used together are added in the `gatsby-config` in the wrong order, or haven't been added at all.
+`Field "image" must not have a selection since type "String" has no subfields.` は、GraphQL がサブフィールドでフィールドを取得しようとしたが、存在しなかった時のエラーです。これは関連プラグインが `gatsby-config` に追加されていないか、間違った順番で追加されている場合に起こります。
 
-The query is trying to access fields that don't exist because they weren't set up at build time. In the following code, a query is looking to find the subfield `childImageSharp` of the `image` field, like the error states. The problematic GraphQL schema looks like this:
+クエリーはビルド時に設定されていないフィールドにアクセスしようとしています。以下のコードは、クエリーが `image` のサブフィールドである `childImageSharp` を見つけようとしている、エラー例のような状態です。問題の GraphQL スキーマはこの通りです。
 
 ```graphql
 allMdx {
@@ -127,7 +128,7 @@ allMdx {
 }
 ```
 
-And the expected GraphQL schema looks this:
+期待される GraphQL スキーマは以下のとおりです。
 
 ```graphql
 allMdx {
@@ -145,33 +146,33 @@ allMdx {
 }
 ```
 
-In the first code example, the `image` field was not transformed (_modified_) by a plugin to add subfields, so it would only return a string. `gatsby-plugin-sharp` and `gatsby-transformer-sharp` can be included before other plugins that would manipulate or create image nodes (like `gatsby-source-filesystem` or `gatsby-source-contentful`) to ensure that they are present before Gatsby tries to modify them and add the needed fields like `childImageSharp`.
+最初の例では、サブフィールドを追加するためのプラグインによって `image` が変換（_修正_）されていないので、文字列だけが返りました。`gatsby-plugin-sharp` と `gatsby-transformer-sharp` は、画像ノードを制御または作成する他のプラグイン（`gatsby-source-filesystem` や `gatsby-source-contentful` など）より前に含めることで、Gatsby がそれらを修正し、`childImageSharp` を追加する前に、フィールドの存在を確認できます。
 
-You can read more about how images are added to the GraphQL schema in the guide on [processing external images](/docs/preprocessing-external-images/).
+GraphQL スキーマに画像を追加する詳細な方法については、[外部画像の処理に関するガイド](/docs/preprocessing-external-images/)で知ることができます。
 
-Another possibility that could cause this Issue is from empty strings used for image paths somewhere in your site. If this is the case, when Gatsby constructs a GraphQL schema it may [infer](/docs/glossary#inference) the wrong type because the empty string doesn't look like a file path.
+考えられる他の原因は、空の文字列がサイト内の画像パスに使用されていることです。その場合は Gatsby が GraphQL スキーマを構築する際に空の文字列がファイル名と認識できず、間違ったタイプを[推論](/docs/glossary#inference)している可能性があります。
 
-### Problems installing `sharp` with `gatsby-plugin-sharp` - gyp ERR! build error
+### `gatsby-plugin-sharp` で `sharp` をインストールする時のエラー - gyp ERR! build error
 
-If you see an error message in the console when installing dependencies that look related to sharp like `gyp ERR! build error` and `npm ERR! Failed at the sharp@x.x.x install script`, they can often be resolved by deleting the `node_nodules` folder in the root of your project and installing dependencies again:
+`gyp ERR! build error` や `npm ERR! Failed at the sharp@x.x.x install script` のように、sharp に関する依存関係のインストール中にエラーが発生した場合、プロジェクトのルートフォルダーにある `node_modules` フォルダーを削除して、再度インストールすると解決できます。
 
 ```shell
-# be careful as this command will delete all files recursively in
-# the folder you provide, in this case, node_modules
+# このコマンドは、指定したフォルダー内の全てのファイルを再帰的に削除するので注意してください。
+# この例では node_modules フォルダーです。
 rm -rf node_modules
 
-# this command will install libraries from your package.json file
-# and place them in the node_modules folder
+# このコマンドは package.json からライブラリーをインストールして、
+# node_modules フォルダーに設置します。
 npm install
 ```
 
-The version of Node.js that's used to install sharp needs to match the version of Node.js that is run, so clearing `node_modules` and reinstalling often resolves the problem.
+sharp のインストールと実行に使用する Node.js のバージョンは同じでなければならないので、`node_modules` フォルダーを削除して再度インストールすると、大抵は問題が解決します。
 
-> For more discussion around problems with sharp installation and image processing, refer to [this issue](https://github.com/gatsbyjs/gatsby/issues/10841).
+> sharp のインストールと画像処理の問題についての意見がさらに必要な時は、[こちらの Issue](https://github.com/gatsbyjs/gatsby/issues/10841) を参照してください。
 
 ### Incompatible library version: sharp.node requires version X or later, but Y provides version Z
 
-The error `Incompatible library version: sharp.node requires version X or later, but Y provides version Z` means that there are multiple incompatible versions of the `sharp` package installed in `node_modules`. Your error may look something like this:
+`Incompatible library version: sharp.node requires version X or later, but Y provides version Z` エラーは、`node_modules` にインストールされている `sharp` パッケージと互換性のないバージョンが複数存在する時に発生します。メッセージは以下のように表示されます。
 
 ```shell
 Something went wrong installing the "sharp" module
@@ -180,7 +181,7 @@ dlopen(/Users/you/gatsby-site/node_modules/sharp/build/Release/sharp.node, 1): L
   Reason: Incompatible library version: sharp.node requires version 6001.0.0 or later, but libglib-2.0.dylib provides version 5801.0.0
 ```
 
-To fix this, you'll need to update all Gatsby plugins in the current project that depend on the `sharp` package. Here's a list of official plugins that you might need to update in case your project uses them:
+修正するには、`sharp` パッケージに依存する全ての Gatsby プラグインを更新する必要があります。その必要があるプラグインは以下のとおりです。
 
 - `gatsby-plugin-sharp`
 - `gatsby-plugin-manifest`
@@ -189,29 +190,29 @@ To fix this, you'll need to update all Gatsby plugins in the current project tha
 - `gatsby-transformer-sharp`
 - `gatsby-transformer-sqip`
 
-To update these packages, run:
+パッケージをアップデートしたら、以下のコマンドを実行します。
 
 ```shell
 npm install gatsby-plugin-sharp gatsby-plugin-manifest gatsby-remark-images-contentful gatsby-source-contentful gatsby-transformer-sharp gatsby-transformer-sqip
 ```
 
-If updating these doesn't fix the Issue, your project probably uses other plugins from the community that depend on a different version of `sharp`. Try running `npm list sharp` or `yarn why sharp` to see all packages in the current project that use `sharp` and try updating them as well.
+それでも問題が解決しない場合、他のプラグインが、バージョン違いの `sharp` パッケージに依存しているかもしれません。`npm list sharp` や `yarn why sharp` を実行して `sharp` を使用するパッケージを確認し、それらを更新してみてください。
 
-## Errors building and deploying
+## ビルド、デプロイ中のエラー
 
-The process of building your site [varies slightly from the development process](/docs/overview-of-the-gatsby-build-process/). Some errors can arise when you build your site if you include references to the browser, though almost all problems should be caught by error messages in `develop` mode.
+サイトのビルドプロセスは、[開発プロセスとは若干異なります](/docs/overview-of-the-gatsby-build-process/)。ビルド時には、ブラウザーを参照する時にエラーとなることがありますが、ほとんどの問題は `develop` モードで捉えることができます。
 
-For more information on common problems while building your site, refer to the [Debugging HTML Builds](/docs/debugging-html-builds/) guide.
+サイトのビルド時に発生する問題については、[HTML ビルドのデバッグ](/docs/debugging-html-builds/)を参照してください。
 
-### Error: ReferenceError: window is not defined when running `gatsby build`
+### エラー: ReferenceError: window is not defined when running `gatsby build`
 
-You may encounter an error like `Error: ReferenceError: window is not defined` that you didn't see in development if you reference browser globals like `window` or `document` in your code. Because the build is not running in a browser, it will not have access to a browser, which is why objects like `window` will not be defined.
+ブラウザーのグローバルである `window` や `document` を参照すると、開発時にはなかった `Error: ReferenceError: window is not defined` のようなエラーをあります。ビルドはブラウザーで実行されず、`window` などのオブジェクトが定義されないためです。
 
-Exact steps for fixing this Issue can be found on in the Debugging HTML Builds guide in the section on [checking if `window` is defined](/docs/debugging-html-builds/#how-to-check-if-window-is-defined).
+この問題を解決するためには、[`window` が定義されているかを確認する](/docs/debugging-html-builds/#how-to-check-if-window-is-defined)を参照してください。
 
-### Build problems from Field 'browser' doesn't contain a valid alias configuration
+### ビルド時の問題： Field 'browser' doesn't contain a valid alias configuration
 
-If you are seeing an error like:
+以下のようなエラーを表示することがあります。
 
 ```shell
 Module not found: Error: Can't resolve `../..SomeFile.svg`
@@ -219,20 +220,20 @@ Module not found: Error: Can't resolve `../..SomeFile.svg`
   ...
 ```
 
-The build is failing to find the file at `../..SomeFile.svg`. This can be frustrating if your site works when you when run it locally with `gatsby develop`, and even works when you run `gatsby build` and `gatsby serve` locally. A likely problem is that the operating system you are running locally is different than the one where your site is deployed. Oftentimes your deployment target is running some distribution and flavor of Linux.
+ビルド中に `../..SomeFile.svg` を見つけるのに失敗しているエラーです。もしローカル環境で `gatsby develop` や `gatsby build` や `gatsby serve` が実行できる場合、この問題はあなたをイライラさせるかもしれません。考えられる原因としては、ローカル環境とデプロイ環境の OS が異なることです。デプロイ先の多くは Linux のディストリビューションやフレーバーで動作しています。
 
-The most common culprit to prompt this Issue is with filepaths having mixed capitalization. In the example above, check to make sure that the file is actually named `SomeFile.svg` and not something different like `Somefile.svg` or `somefile.svg`. Some operating systems will pick up on this discrepancy for you and find the image without any problems. Your deployment environment may not.
+一般的なエラーの原因は、ファイルパスの大文字と小文字が混ざっていることです。例えば上記のようなエラーであれば、実際のファイル名が　`SomeFile.svg` で、 `Somefile.svg` や `somefile.svg` でないか確認してみてください。一部の OS はこの不一致を認識してくれますが、あなたの環境はそうでないかもしれません。
 
-Checking the capitalization of files output in your build logs and redeploying is the best next step.
+ログに出力されるファイルパスの大文字小文字を確認し、デプロイし直すことが、次の最適なステップです。
 
-### Error: ENOSPC: System limit for number of file watchers reached
+### エラー: ENOSPC: System limit for number of file watchers reached
 
-You may have encountered a system limit on the number of files you can monitor.
+監視可能なファイル数の上限に達していることが考えられます。
 
-To fix it, increase your system's file watchers limit (which is the number of processes that check for changes to files in your site while it's running) with the following command:
+修正するためには、次のコマンドを実行し、ファイル監視の上限（あなたのサイトが起動している時に、変更をチェックできるファイルの数です）を増加させてください。
 
 ```shell
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 ```
 
-You may be able to find more information for your circumstances in [the GitHub issue corresponding to this error](https://github.com/gatsbyjs/gatsby/issues/11406).
+[the GitHub issue corresponding to this error](https://github.com/gatsbyjs/gatsby/issues/11406) でより詳細な情報を見つけることもできます。
