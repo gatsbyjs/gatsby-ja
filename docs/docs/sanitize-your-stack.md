@@ -1,15 +1,15 @@
 ---
-title: Sanitize Your Stack
+title: あなたのスタックのサニタイズ
 ---
 
-Websites come in a thousand different flavors. Timeframes, budgets, interactivity requirements, and content systems can vary wildly from one project to the next.
+ウェブサイト制作には非常に多くの加味すべき要素があります。期間、予算、インタラクション要件、およびコンテンツシステム。これらはプロジェクトごとに大きく異なります。
 
-This variety puts agency website teams between a rock and a hard place. They often have to maintain frontends built in multiple development systems, stretching their developers’ skill sets. Implementing the same dropdown in five different frameworks can be a huge headache. But what’s the alternative — turn down good client projects?
+この多様さによって、ウェブサイトエージェントチームは非常に困難な状況に置かれてしまいます。多くの場合彼らは、複数の開発システムに組み込まれたフロントエンド保守しなくてはならず、そのために開発者のスキルセットを拡張します。5 つの異なるフレームワークで同じドロップダウンを開発することは、とても大きな頭痛の種になるのです。しかし、代替案には何があるでしょうか？良好なクライアントプロジェクトを拒否しますか？
 
-To add to the difficulty, when your UI development framework is coupled to your client’s CMS backend, it doesn’t just cause technical problems; it causes people problems. It makes your team’s staffing plans dependent on specific projects. It hamstrings your ability to respond to changing client requirements by shifting resources around.
+さらに困難なことに、あなたの UI 開発フレームワークが、クライアント CMS のバックエンドに結合されている場合、技術的な問題だけでなく人的な問題を引き起こします。これにより、あなたのチームの人員配置計画を特定のプロジェクトに依存させてしまいます。リソースを移動させることによって、クライアントの要件に対応する能力は弱化します。
 
-Gatsby solves this -- because Gatsby pulls your data from wherever it lives and exposes it in a uniform GraphQL interface, agency teams can build all their UIs in React — no matter where their content is coming from.
+Gatsby を使えばこういった問題は解決できます。Gatsby はどこからでもデータをプルし、統一された GraphQL インターフェースで公開する為、エージェントチームは、コンテンツがどこからきてたとしても、すべての UI を React で構築可能です。
 
-Gatsby lets agencies stop reinventing the wheel and makes agency developers more productive. Teams can use the best tool for the job, without creating a hodgepodge of technologies to maintain.
+Gatsby はエージェントに車輪の再発明を止めさせ、エージェント開発者をより生産的にします。チームは、保守の為の技術の寄せ集めを作成することなく、仕事に最適なツールを使用できます。
 
-Sanitize your stack, with Gatsby.
+Gatsby で、あなたのスタックをサニタイズしましょう。

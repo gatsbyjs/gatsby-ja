@@ -114,18 +114,16 @@ GraphQL を初めて見たのは、Gatsby での開発経験です！
 GraphQL を使用する場合、次の 2 つのチュートリアルをお勧めします。
 
 - https://www.howtographql.com/
-- http://graphql.org/learn/
+- https://graphql.org/learn/
 
 [Gatsby 公式チュートリアル](/tutorial/part-four/)には、特に Gatsby で GraphQL を使用するための紹介も含まれています。
 
 ## GraphQL と Gatsby はどう連携するか
 
 GraphQL の優れた点の 1 つは、その柔軟性です。
-GraphQL は、[多くの異なるプログラミング言語](http://graphql.org/code/)で、Web アプリとネイティブアプリに使用されます。
+GraphQL は、[多くの異なるプログラミング言語](https://graphql.org/code/)で、Web アプリとネイティブアプリに使用されます。
 
-ほとんどの人は、サーバーで GraphQL を実行します。
-
-そして、クライアントからのデータの要求にライブで応答します。
+ほとんどの人は、サーバーで GraphQL を実行します。そして、クライアントからのデータの要求にライブで応答します。
 GraphQL サーバーのスキーマ（スキーマはデータの形状を記述する正式な方法です）を定義し、GraphQL リゾルバーがデータベースや他の API からデータを取得します。
 
 Gatsby は、ライブサイトの _build-time_ および _not_ で GraphQL を使用します。
@@ -151,7 +149,7 @@ Gatsby は、さまざまなソースからデータを取得できるプラグ�
 
 Gatsby は、次のようなスキーマを作成します。
 
-```
+```text
 title: String
 ```
 
@@ -231,7 +229,7 @@ export const query = graphql`
 
 ### フラグメント
 
-[querying images](#images) の上記の例では、 `... GatsbyImageSharpFixed` を使用したことに注意してください。これは、GraphQL Fragment であり、クエリー作成用の再利用可能なフィールドのセットです。詳細については、[こちら](http://graphql.org/learn/queries/#fragments)をご覧ください。
+[querying images](#images) の上記の例では、 `...GatsbyImageSharpFixed` を使用したことに注意してください。これは、GraphQL Fragment であり、クエリー作成用の再利用可能なフィールドのセットです。詳細については、[こちら](https://graphql.org/learn/queries/#fragments)をご覧ください。
 
 アプリケーションで使用する独自のフラグメントを定義する場合は、名前付きのエクスポートを使用して、任意の JavaScript ファイルにエクスポートできます。それらは GraphQL クエリーで使用するために Gatsby によって自動的に処理されます。
 
@@ -366,7 +364,7 @@ export const query = graphql`
 
 ### GraphQL をはじめてみよう
 
-- http://graphql.org/learn/
+- https://graphql.org/learn/
 - https://www.howtographql.com/
 - https://reactjs.org/blog/2015/05/01/graphql-introduction.html
 - https://services.github.com/on-demand/graphql/

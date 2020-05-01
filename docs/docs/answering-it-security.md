@@ -1,19 +1,19 @@
 ---
-title: Answering IT & Security Questions
+title: ITとセキュリティ質問への回答
 ---
 
-At larger companies, such as the Fortune 500, there are Security teams that audit new technologies being used inside the company.
+Fortune500 のような大企業においては、社内で利用する新技術について監査を行うセキュリティーチームが会社内にいます。
 
-If security engineers are interested in your project, some talking points that can help answer their questions include:
+もしセキュリティエンジニアがあなたのプロジェクトに興味を持った場合、これらのポイントがあなたの回答を助けるでしょう。
 
-- Because Gatsby compiles your site to flat files, rather than having running app servers and databases users are targeting, it reduces the attack surface of the site to outsiders.
-- Gatsby adds a layer of indirection which obscures your CMS -- so even if your CMS _is_ vulnerable, bad actors have no idea where to find it. This is in contrast to systems where bad actors can easily locate the admin dashboard at, e.g., `/wp-admin` and attempt to hack in.
-- Gatsby lets you serve your site from a global CDN, likely whatever CDN your company is using (e.g. Akamai, Cloudflare, Fastly...), which effectively eliminates the risk of DDOS attacks.
+- Gatsby はウェブサイトを静的ファイルでコンパイルしているため、アプリケーションサーバーとデータベースを実行することに比べ、外部からの攻撃対象を減らすことができます。
+- Gatsby は間接的に CMS を覆い隠すレイヤーを提供します -- そのため、もし CMS _が_ 脆弱性を持っていた場合でも、攻撃者はそれを発見できません。これは、攻撃者が `/wp-admin` のような管理ダッシュボードを簡単に探り当ててハッキングできるようなシステムとの大きな違いです。
+- Gatsby はグローバルな CDN からウェブサイトをホストできます。おそらく、あなたの会社が利用している CDN (Akamai, Cloudflare, Fastly など）が効果的に DDoS アタックのリスクから防いでくれるでしょう。
 
-It's helpful to emphasize to security personnel that these benefits were a factor in why Gatsby was selected for the project. You chose Gatsby, in part, because it is _more_ secure.
+セキュリティエンジニアにメリットを強調することは有用です。これらの利点は、「なぜ Gatsby をプロジェクトに採用したか」に対する回答となります。つまり、選択した理由の 1 つに「_より_ 安全性が高いから」と答えることができます。
 
-Read about security in Gatsby: [https://www.gatsbyjs.org/blog/2019-04-06-security-for-modern-web-frameworks/](/blog/2019-04-06-security-for-modern-web-frameworks/)
+Gatsby におけるセキュリティーについて、さらに知りたい場合はこちらの記事を参照してください： [https://www.gatsbyjs.org/blog/2019-04-06-security-for-modern-web-frameworks/](/blog/2019-04-06-security-for-modern-web-frameworks/)
 
 --
 
-**Note:** do you have additional ideas on how to answer IT and security questions for Gatsby projects? We welcome contributions to the Gatsby docs. Find out [how to contribute](/contributing/docs-contributions/).
+**ヒント：** Gatsby プロジェクトに対する IT とセキュリティー担当の質問に答えるための追加の意見がありますか？Gatsby ドキュメントの貢献を常に募集しています。[貢献の方法](/contributing/docs-contributions/)をご覧ください。

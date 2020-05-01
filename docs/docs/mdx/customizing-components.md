@@ -1,10 +1,8 @@
 ---
-title: Customizing Markdown Components
+title: コンポーネントをカスタマイズする
 ---
 
-Using MDX, you can replace every HTML element that Markdown renders with a
-custom implementation. This allows you to use a set of design system components
-when rendering.
+MDX を使えば、Markdown でレンダリングできる全ての HTML 要素をカスタマイズした実装に置き換えることが可能です。これによって、デザインシステムで定義されたコンポーネントを利用できるようになります。
 
 ```jsx:title=src/components/layout.js
 import { MDXProvider } from "@mdx-js/react"
@@ -14,11 +12,11 @@ export default function Layout({ children }) {
   return (
     <MDXProvider
       components={{
-        // Map HTML element tag to React component
+        // HTML 要素のタグを、React コンポーネントにマッピングする
         h1: DesignSystem.H1,
         h2: DesignSystem.H2,
         h3: DesignSystem.H3,
-        // Or define component inline
+        // あるいは、インラインでもコンポーネントを定義できます
         p: props => <p {...props} style={{ color: "rebeccapurple" }} />,
       }}
     >
@@ -28,9 +26,9 @@ export default function Layout({ children }) {
 }
 ```
 
-**Note**: you can also provide your own custom components to the `MDXProvider` that make them globally available while writing MDX. You can find more details about this pattern in the [Importing and Using Components in MDX guide](/docs/mdx/importing-and-using-components/#make-components-available-globally-as-shortcodes).
+**Note**: MDX を書くときに、グローバルにアクセスできる独自のコンポーネントを `MDXProvider` に定義することもできます。このパターンに関しては、[MDX にコンポーネントを import して使う方法](/docs/mdx/importing-and-using-components/#make-components-available-globally-as-shortcodes) を参照してください。
 
-The following components can be customized with the MDXProvider:
+以下の表は、MDXProvider を用いてカスタマイズできるコンポーネントの一覧です。
 
 | Tag             | Name                                                                 | Syntax                                              |
 | --------------- | -------------------------------------------------------------------- | --------------------------------------------------- |
@@ -59,12 +57,10 @@ The following components can be customized with the MDXProvider:
 | `a`             | [Link](https://github.com/syntax-tree/mdast#link)                    | `<https://mdxjs.com>` or `[MDX](https://mdxjs.com)` |
 | `img`           | [Image](https://github.com/syntax-tree/mdast#image)                  | `![alt](https://mdx-logo.now.sh)`                   |
 
-## How does this work?
+## これはどうやって実現されているのか？
 
-Components passed to the MDXProvider are used to render the HTML elements
-that Markdown creates. It uses
-[React's Context API](https://reactjs.org/docs/context.html).
+MDXProvider で変換されたコンポーネントは、Markdown が生成する HTML 要素をレンダリングする目的で使用されます。この過程では、[React's Context API](https://reactjs.org/docs/context.html)を用いています。
 
-## Related
+## 関連ドキュメント
 
 - [MDX components](https://mdxjs.com/getting-started/)

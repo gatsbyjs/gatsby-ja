@@ -1,35 +1,35 @@
 ---
-title: Adding Search with Algolia
+title: Algolia を使用した検索機能の追加
 ---
 
-Once you've added some content to your site, you'll want to make it easy for your visitors to find what they're looking for. This guide will run you through the process of setting up a custom search experience powered by [Algolia](https://www.algolia.com) on any Gatsby site. You'll be writing functional components that rely on React Hooks so following this guide requires you to be using [React 16.8](https://reactjs.org/blog/2019/02/06/react-v16.8.0) or higher.
+あなたのサイトにコンテンツを追加したら、訪問者が探しているものを簡単に見つけられるようにするのが望ましいでしょう。このガイドでは、Gatsby サイトで [Algolia](https://www.algolia.com) を使用したカスタム検索エクスペリエンスをセットアップするプロセスを説明します。React Hooks に依存するファンクショナルコンポーネントを作成するため、このガイドに従うには [React 16.8](https://reactjs.org/blog/2019/02/06/react-v16.8.0) 以降のバージョンを使用する必要があります。
 
-Two things before you begin:
+読み始める前に、以下の 2 点をご確認ください：
 
-1. Beyond this guide, you may also want to checkout Algolia's extensive [docs on how to get started in React](https://www.algolia.com/doc/guides/building-search-ui/getting-started/react).
-2. If you're looking to add search to a documentation site, you can let Algolia handle most of the steps outlined below by using their [Docsearch](https://community.algolia.com/docsearch) functionality. For other types of sites and more fine-grained control over exactly what data should be indexed, read on.
+1. このガイド以外にも、Algolia の [React を使用した開始方法に関するドキュメント](https://www.algolia.com/doc/guides/building-search-ui/getting-started/react)で幅広い情報を確認すると良いでしょう。
+2. ドキュメントサイトに検索機能を追加する場合は、[Docsearch](https://community.algolia.com/docsearch) 機能を使用して、以下で説明する手順のほとんどを Algolia に処理させることができます。他の種類のサイトや、インデックスを作成するデータをよりきめ細かく制御する場合は、続きをご覧ください。
 
-## Why Use Algolia?
+## なぜ Algolia を使うのですか？
 
-Algolia is a site search hosting platform that hosts page index information for you, and then returns the results to wherever you have the site search located on your site. You tell Algolia what pages you have, where they are, and how to navigate to them, and Algolia returns those results to the user based on whatever search terms they use.
+Algolia はページインデックス情報をホストするサイト検索ホスティングプラットフォームであり、あなたのサイト内のサイト検索機能の設置場所に検索結果を返します。Algolia に、所有しているページ、ページの場所、ページへの移動方法を伝えると、Algolia は、ページが使用する検索ワードに基づいて、検索結果をユーザーに返します。
 
-To implement Algolia search on your Gatsby site, you'll need to install the plugin, tell it what information to query, provide your Algolia credentials, and a few other configuration steps. This means that after the queries have run when you `gatsby build`, Algolia will have the entire index of your site available and can serve results to users very quickly. To learn more about the benefits of using Algolia, [check out this blog post from Netlify, who recently switched their site search to Algolia](https://www.netlify.com/blog/2017/10/10/replacing-our-search-with-algolia/).
+あなたの Gatsby サイトに Algolia による検索機能を実装するには、プラグインのインストール、クエリの対象となる情報の指定、Algolia の認証情報の提供、そして、その他のいくつかの構成手順を実行する必要があります。これは `gatsby build` 時にクエリが実行された後、Algolia はサイトのインデックス全体を利用可能にし、とても迅速にユーザーに対して結果を提供できることを意味します。Algolia を使用する利点について詳しく知るには、[最近サイト検索を Algolia に切り替えた Netlify のブログ記事をご覧ください](https://www.netlify.com/blog/2017/10/10/replacing-our-search-with-algolia/)。
 
-## Configuring the Algolia plugin
+## Algolia プラグインの構成
 
-First, you'll need to add [`gatsby-plugin-algolia`](https://github.com/algolia/gatsby-plugin-algolia) and [`react-instantsearch-dom`](https://github.com/algolia/react-instantsearch) to your project. `react-instantsearch` is Algolia's library containing off-the-shelf React components which you can import to save yourself a lot of work. You'll also be using `dotenv` which gets shipped with Gatsby by default. You're going to need it to specify your Algolia app ID and both the search and admin API keys without committing them to version control.
+まず、[`gatsby-plugin-algolia`](https://github.com/algolia/gatsby-plugin-algolia) と [`react-instantsearch-dom`](https://github.com/algolia/react-instantsearch) をあなたのプロジェクトに追加する必要があります。`react-instantsearch` は多くの作業を節約するためにインポートできる既製の React コンポーネントを含む Algolia のライブラリーです。また、デフォルトで Gatsby に同梱される `dotenv` を使用します。これは、Algolia のアプリ ID と検索 API キーおよび管理 API のキーの両方をバージョン管理システムへコミットすることなく指定するために必要となります。
 
 ```shell
 npm install --save gatsby-plugin-algolia react-instantsearch-dom algoliasearch dotenv
 ```
 
-You will be using `styled-components` to design the search UI in this guide but you can use whichever CSS solution you prefer. If you'd like to start using `styled-components` as well, you also need to install
+このガイドでは検索 UI をデザインするため、`styled-components` を使用しますが、あなたの好みの CSS ソリューションも使用できます。同様に `styled-components` の使用を開始したい場合は、以下のパッケージをインストールする必要があります。
 
 ```shell
 npm install --save styled-components gatsby-plugin-styled-components
 ```
 
-Next, add `gatsby-plugin-algolia` and `gatsby-plugin-styled-components` to your `gatsby-config.js`.
+次に、`gatsby-plugin-algolia` と `gatsby-plugin-styled-components` をあなたの `gatsby-config.js` に追加します。
 
 ```js:title=gatsby-config.js
 const queries = require("./src/utils/algolia")
@@ -49,7 +49,7 @@ module.exports = {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
         apiKey: process.env.ALGOLIA_ADMIN_KEY,
         queries,
-        chunkSize: 10000, // default: 1000
+        chunkSize: 10000, // デフォルト: 1000
       },
     },
     `gatsby-plugin-styled-components`,
@@ -57,13 +57,13 @@ module.exports = {
 }
 ```
 
-Notice that you're loading `queries` from a file at `./src/utils/algolia.js` (you can of course put it wherever you like) and your Algolia ID and API key from `.env` so add those files.
+`./src/utils/algolia.js` ファイルから `queries` をロードし（もちろん、好きな場所に配置できます）、Algolia ID と API キーを `.env` からロードしているので、それらのファイルを追加します。
 
-For this, you will need to navigate to [the 'API Keys' section of your Algolia profile](https://www.algolia.com/api-keys). If you already have an account, you will find your API keys here. If not, you will need to sign up for one and then navigate to this link. It should look something like this screenshot, only with actual numbers instead of redacted ones:
+このためには、[あなたの Algolia のプロフィールページの「API キー」セクション](https://www.algolia.com/api-keys)に移動する必要があります。あなたがすでにアカウントをお持ちの場合は、ここで API キーを取得できます。そうでない場合は、サインアップしてからこのリンクに移動する必要があります。スクリーンショットのような表示になります。黒塗りされた箇所に実際の番号が表示されます：
 
-![algolia api key screenshot](./images/algolia-api-keys.png)
+![Algolia の API キーのスクリーンショット](./images/algolia-api-keys.png)
 
-Once you have your App ID, Search-Only API Key, and Admin API Key, place the following code into your `.env` file, replacing the placeholder keys with your keys:
+あなたの App ID、Search-Only API Key、および Admin API Key を取得したら、次のコードを `.env`ファイルに配置し、プレースホルダーキーをあなたのキーに置き換えます。
 
 ```text:title=.env
 GATSBY_ALGOLIA_APP_ID=KA4OJA9KAS
@@ -71,22 +71,22 @@ GATSBY_ALGOLIA_SEARCH_KEY=lkjas987ef923ohli9asj213k12n59ad
 ALGOLIA_ADMIN_KEY=lksa09sadkj1230asd09dfvj12309ajl
 ```
 
-The placeholder keys in the previous code snippet are random character sequences but the ones you copy from your Algolia profile should be the same length. One of the benefits of using this method of querying your API keys is that they all get stored in one file, on the server, and are therefore never exposed to the client-side, which increases security.
+上記のコードスニペットのプレースホルダーキーはランダムな文字列ですが、Algolia のプロフィールページからコピーするキーは、プレースホルダーキーと同じ長さでなければなりません。API キーを照会する方法を採用する利点の 1 つは、それらがすべてサーバー上の 1 つのファイルに格納され、クライアント側に公開されないため、セキュリティーが向上することです。
 
-Since your .env file contains your real private API keys, it is considered a security risk to commit your actual `.env` file. It's good practice to commit a `.env.example` to git or other version control so that if someone forks your repo, they know which environment variables they need to supply, without committing your private keys.
+.env ファイルには実際の秘密鍵が含まれているため、実際の `.env` ファイルをコミットすることはセキュリティー上のリスクと見なされます。誰かがリポジトリをフォークした場合に、秘密鍵をコミットすることなく、どの環境変数を提供する必要があるかを知らせるため、`.env.example` を git または他のバージョン管理システムにコミットすることをおすすめします。
 
 ```text:title=.env.example
-# rename this file to .env and supply the values listed below
-# also make sure they are available to the build tool (e.g. Netlify)
-# warning: variables prefixed with GATSBY_ will be made available to client-side code
-# be careful not to expose sensitive data (in this case your Algolia admin key)
+# このファイルの名前を .env に変更し、以下に列挙されている値を指定します。
+# また、ビルドツールで使用できることを確認してください（例： Netlify）
+# 警告： GATSBY_ で始まる変数は、クライアント側のコードで利用可能になります
+# 機密データを公開しないように注意してください（この場合は Algolia 管理キー）
 
 GATSBY_ALGOLIA_APP_ID=insertValue
 GATSBY_ALGOLIA_SEARCH_KEY=insertValue
 ALGOLIA_ADMIN_KEY=insertValue
 ```
 
-The `queries` allow you to grab the data you want Algolia to index directly from Gatsby's GraphQL layer by exporting from `src/utils/algolia.js` an array of objects, each containing a required GraphQL query and an optional index name, transformer function and settings object.
+`queries` は `src/utils/algolia.js` からエクスポートされる、必須の GraphQL クエリと、任意のインデックス名、トランスフォーマー（transformer）関数、設定オブジェクトを含むオブジェクトの配列によって、Gatsby の GraphQL レイヤーから Algolia に直接インデックスしてほしいデータを取得できるようにします。
 
 ```js:title=src/utils/algolia.js
 const pageQuery = `{
@@ -153,26 +153,26 @@ const queries = [
 module.exports = queries
 ```
 
-It might look a little intimidating at first, but basically you're just letting `gatsby-plugin-algolia` know how to acquire the data with which to populate your indices on their servers. The example above uses separate queries passing data to separate indices for pages and blog posts.
+最初は少し怖いかもしれませんが、基本的には `gatsby-plugin-algolia` に、サーバーにインデックスを設定するためのデータ取得方法を知らせるだけです。上記の例では、ページとブログ投稿のインデックスを分けるためにデータを渡す個別のクエリを使用しています。
 
-Transformers allow you to modify the data returned by the queries to bring it into a format ready for searching. All you're doing here is 'flattening' posts and pages to 'unnest' the frontmatter fields (such as `author`, `date`, `tags`) but transformers could do much more for you if required. This makes the whole process of indexing your data really flexible and powerful. You could for instance use them to filter the results of your queries, format fields, add or merge them, etc.
+トランスフォーマーはクエリで返されたデータを変更して、検索可能な形式へ変換できるようにします。ここで行っていることは、投稿とページを「フラット化」して frontmatter フィールド（`author`、`date`、`tags` など）の「ネスト解除」をすることだけですが、必要に応じてトランスフォーマーはずっと多くのことができます。これにより、データのインデックス作成プロセス全体が非常に柔軟で強力になります。たとえば、クエリの結果のフィルタリング、フィールドの書式設定、追加またはマージなどに使用できます。
 
-If you've come this far, then the "backend" is done. You should now be able to run `gatsby build` and see your indices in Algolia's web interface be flooded with your data.
+ここまで来たら、「バックエンド」は完了です。これで、`gatsby build` を実行して、Algolia の Web インターフェースのインデックスがあなたのデータであふれているのを確認できるはずです。
 
-## Adding a search interface to your site
+## サイトへの検索インターフェースの追加
 
-Next, build a user-facing search interface for your site. It needs a way for the user to enter a search string, send that string to Algolia, receive matching results (_hits_ in Algolia speak) from your indices and finally display those to the user.
+次に、あなたのサイトのユーザー向けの検索インターフェイスを構築します。ユーザーが検索文字列を入力し、その文字列を Algolia に送信し、インデックスから一致する結果（Algolia では _hits_ と呼びます）を受信し、最終的にそれらをユーザーに表示する方法が必要です。
 
-You're going to assemble everything you need into a React `Search` component that you call from anywhere on your site where you want the user to be able to search. Even though design varies strongly from site to site, you'll note the styles implemented with [`styled-components`](https://styled-components.com) in this guide since working out the CSS transitions to have the search field slide out as the user clicks on it and the results pane to appear once Algolia returns matches took some time.
+あなたのサイト上でユーザーが検索できるようにしたい任意の場所から呼びだす React の `Search` コンポーネントにあなたが必要なものをすべて集めます。デザインはサイトごとに大きく異なりますが、検索フィールドをユーザーがクリックした際にスライドアウトさせるための CSS トランジションや Algoria が返す一致結果を表示するための結果ペインについて前もって考えるのは時間がかかるので、このガイドの [`styled-components`](https://styled-components.com) を使用した実装が参考になるでしょう。
 
-The `Search` components is made up of the following files:
+`Search` コンポーネントは以下のファイルで構成されています：
 
-- **`index.js`**: the main component
-- **`input.js`**: the text input field
-- **`hitComps.js`**: the components that will render matching posts/pages
-- **`styles.js`**: the styled components
+- **`index.js`**: メインのコンポーネント
+- **`input.js`**: テキスト入力フィールド
+- **`hitComps.js`**: 一致する投稿/ページをレンダリングするコンポーネント
+- **`styles.js`**: スタイル付きコンポーネント
 
-There's quite a lot happening in these files so break them down one by one and piece by piece.
+これらのファイルでは非常に多くのことが起きているので、ファイルを 1 つずつ分割します。
 
 ### `index.js`
 
@@ -250,24 +250,24 @@ export default function Search({ indices, collapse, hitsAsGrid }) {
 }
 ```
 
-At the top, you import `InstantSearch` from [`react-instantsearch-dom`](https://community.algolia.com/react-instantsearch) which is the root component that allows your whole search experience to connect to Algolia's service. As the name suggests, `Index` allows you to tap into an individual index and `Hits` provides you with the data returned for a user's search input. Finally [`connectStateResults`](https://community.algolia.com/react-instantsearch/connectors/connectStateResults.html) wraps around custom React components and provides them with high-level stats about the current search state such as the query, the number of results and how long it took to fetch them.
+上部で、`InstantSearch` を [`react-instantsearch-dom`](https://community.algolia.com/react-instantsearch) からインポートします。これは、検索エクスペリエンス全体が Algolia のサービスへ接続できるようにするルートコンポーネントです。名前が示唆するように、`Index` はあなたが個々のインデックスを利用できるようにし、`Hits` はユーザーの検索入力に対して返されるデータを提供します。最後に、[`connectStateResults`](https://community.algolia.com/react-instantsearch/connectors/connectStateResults.html) はカスタム React コンポーネントをラップし、クエリ、結果の数、取得にかかった時間など、現在の検索状態に関する高レベルの統計情報を提供します。
 
-You then import the styled components that make up the UI and the `Input` component into which the user enters the query.
+次に、UI を構成するスタイル付きコンポーネントと、ユーザーがクエリを入力する `Input` コンポーネントをインポートします。
 
 ```jsx:title=src/components/search/index.js
 import { Root, SearchBox, HitsWrapper, PoweredBy } from "./styles"
 import Input from "./Input"
 ```
 
-`PoweredBy` renders the string "Powered by Algolia" with a small logo and link. If you're using Algolia's generous free tier, they ask you to acknowledge them in this way below the search results. `react-instantsearch-dom` also provides a [`PoweredBy` component](https://community.algolia.com/react-instantsearch/widgets/PoweredBy.html) specifically for this purpose, but you can build your own. You'll get back to these styled components once you're done with `index.js`.
+`PoweredBy` は、「Powered by Algolia」という文字列を小さなロゴとリンクと共にレンダリングします。Algolia の寛大な無料利用枠を使用している場合は、検索結果の下でこのように表示するよう求められます。`react-instantsearch-dom` はこの目的のために、[`PoweredBy` コンポーネント](https://community.algolia.com/react-instantsearch/widgets/PoweredBy.html)も提供しますが、独自に構築することもできます。`index.js` について読み終えたら、これらのスタイル付きコンポーネントの説明に戻ります。
 
-The last thing you need for the `Search` component to work are hit components for every type of result you want to display to the user. The hit component determines how attributes of matching results (such as author, date, tags and title in the case of a blog post) are displayed to the user.
+`Search` コンポーネントが機能するため、最後に必要なのは、あなたがユーザーに表示したいすべての種類の結果を表示するためのヒットコンポーネントです。ヒットコンポーネントは、一致する結果の属性（ブログ投稿の場合は作成者、日付、タグ、タイトルなど）をユーザーに表示する方法を決定します。
 
 ```jsx:title=src/components/search/index.js
 import * as hitComps from "./hitComps"
 ```
 
-Next you define two connected components. `Results` informs the user that no matches could be found for a query unless the number of hits is positive, i.e. `searchResults.nbHits > 0`. `Stats` just displays `searchResults.nbHits`.
+次に、2 つの接続されたコンポーネントを定義します。`Results` は、ヒット数が正の数でない限り、つまり `searchResults.nbHits> 0` である場合、クエリに一致するものが見つからないことをユーザーに通知します。`Stats` は `searchResults.nbHits` を表示するだけです。
 
 ```jsx:title=src/components/search/index.js
 const Results = connectStateResults(
@@ -281,7 +281,7 @@ const Stats = connectStateResults(
 )
 ```
 
-Now comes the actual `Search` component. It starts off with some state initialization, defining handler functions and event listeners to trigger them. All they do is make the search input slide out when the user clicks a search icon and disappear again when the user clicks or touches (on mobile) anywhere.
+さて、実際の `Search` コンポーネントが登場します。状態の初期化から始まり、ハンドラー関数とそれらをトリガーするイベントリスナーを定義します。ユーザーが検索アイコンをクリックすると検索入力がスライドアウトし、ユーザーがどこかをクリックまたはタッチ（モバイルの場合）すると再び非表示になります。
 
 ```jsx:title=src/components/search/index.js
 export default function Search({ indices, collapse, hitsAsGrid }) {
@@ -307,7 +307,7 @@ export default function Search({ indices, collapse, hitsAsGrid }) {
   })
 ```
 
-`Search` returns JSX that renders a dynamic array of `indices` passed as a prop. Each array item should be an object with keys `name`, `title`, `hitComp` that specifies the name of the index in your Algolia account to be queried, the title to display above the results shown to the user and the component `hitComp` that renders the data returned for each match.
+`Search` は、引数として渡される `indices` の動的配列をレンダリングする JSX を返します。配列の各要素は、あなたの Algolia アカウントの中でクエリ対象となるインデックスの名前、ユーザーに表示する結果の上に表示するタイトル、および一致箇所ごとに返されるデータをレンダリングするコンポーネント `hitComp` を指定するキー、それぞれ `name`、`title`、`hitComp` を持つオブジェクトである必要があります。
 
 ```jsx:title=src/components/search/index.js
   return (
@@ -337,9 +337,9 @@ export default function Search({ indices, collapse, hitsAsGrid }) {
 }
 ```
 
-Passing this `indices` array as a prop allows you to reuse the same `Search` component in different parts of your site and have each of them query different indices. As an example, besides a primary search box in the header used for finding pages and/or posts, your site might have a wiki and you want to offer your visitors a second search box that displays only wiki articles.
+この `indices` 配列を引数として渡すことで、サイトのさまざまな部分で同じ `Search` コンポーネントを再利用し、それぞれに異なるインデックスを照会させることができます。例として、ページや投稿の検索に使用されるヘッダーのプライマリー検索ボックスに加えて、サイトにウィキがあり、訪問者にウィキ記事のみを表示する 2 番目の検索ボックスを提供したい場合があります。
 
-Note that you fed `algoliasearch` with the same app ID you specified in our `.env` file and used in `src/utils/algolia.js` as well as with your search-only API key to generate a search client which connects to your backend. _Don't paste in your Algolia admin API key here!_ `algoliasearch` only needs to _read_ your indices. Pasting your admin key here would allow others to obtain it once your site is deployed. They could then start messing with your indexed data on Algolia.
+`.env` ファイルで指定し、`src/utils/algolia.js` で使用されているものと同じアプリケーション ID とバックエンドと接続する検索クライアントを生成するための検索専用 API キーを `algoliasearch` へ提供することに注意してください。_ここに Algolia 管理 API キーを貼り付けないでください！_ `algoliasearch` はインデックスを _read_ する必要があるだけです。ここに管理キーを貼り付けると、サイトがデプロイされた後、他人がそれを取得できるようになります。すると、Algolia のインデックスデータを改ざんされる可能性があります。
 
 ### `input.js`
 
@@ -363,9 +363,9 @@ export default connectSearchBox(({ refine, ...rest }) => (
 ))
 ```
 
-The `Input` component is where the user enters the search string. It is quite short since the grunt work is done by Algolia's [`connectSearchBox`](https://community.algolia.com/react-instantsearch/connectors/connectSearchBox.html) function.
+`Input` コンポーネントは、ユーザーが検索文字列を入力する場所です。単調な作業は Algolia の [`connectSearchBox`](https://community.algolia.com/react-instantsearch/connectors/connectSearchBox.html) 関数によって行われるため、かなり短いです。
 
-Now look at the styled components `SearchIcon`, `Form`, `Input` as well as the ones imported in `index.js`.
+次に、スタイル付きコンポーネント `SearchIcon`、`Form`、`Input`、および `index.js` にインポートされたスタイル付きコンポーネントを確認します。
 
 ### `styles.js`
 
@@ -503,9 +503,9 @@ export const PoweredBy = () => (
 )
 ```
 
-Styles will of course be different from one site to the next so these components are listed here for completeness and because they implement the dynamic behavior of the search interface, i.e. that the input field only slides out once the user clicks the `SearchIcon` (a magnifier) and that the pane displaying search (`HitsWrapper`) results only appears once Algolia's server returned matches, both of you which you might want to keep.
+もちろん、スタイルはサイトごとに異なるため、完全を期すため、および検索インターフェイスの動的な動作を実装するため、つまり、ユーザーが `SearchIcon`（拡大鏡）をクリックすると入力フィールドがスライドアウトし、検索結果を表示するペイン（`HitsWrapper`）を Algolia のサーバーが一致箇所を返した後にのみ表示するため、これらのコンポーネントを並べています。
 
-Now you're almost done, two small steps remain. First you need to put together a hit component for every type of result you want to display. In this example, these are blog posts and pages. And second, you need to call your `Search` component somewhere on your site. Here are the hit components.
+これでほぼ完了です。2 つの小さなステップが残っています。最初に、表示するすべての種類の結果のヒットコンポーネントをまとめる必要があります。この例では、これらはブログの投稿とページです。次に、サイトのどこかで `Search` コンポーネントを呼びだす必要があります。ヒットコンポーネントは次のとおりです。
 
 ### `hitComps.js`
 
@@ -553,11 +553,11 @@ export const PostHit = clickHandler => ({ hit }) => (
 )
 ```
 
-`Highlight` and `Snippet` imported from `react-instantsearch-dom` both display attributes of matching search results to the user. Their distinction is that the former renders it in full (e.g. a title, date or list of tags) whereas the latter only shows a snippet, i.e. a text passage of given length surrounding the matching string (e.g. for body texts). In each case the `attribute` prop should be the name of the property as it was assigned in `src/utils/algolia.js` and as it appears in your Aloglia indices.
+`react-instantsearch-dom` からインポートされた `Highlight` と `Snippet` は両方とも、一致する検索結果の属性をユーザーに表示します。それらの違いは、前者はそれを完全にレンダリングする（例えば、タイトル、日付またはタグの一覧）のに対し、後者はスニペット、つまり一致する文字列を囲む特定の長さのテキスト部分（例えば、本文テキスト）のみを表示することです。それぞれの場合、`attribute` 引数は、`src/utils/algolia.js` で割り当てられたプロパティ名と、Aloglia インデックスに表示されるプロパティ名である必要があります。
 
 ## Usage
 
-Now all you need to do is import `Search` somewhere. The obvious place is the `Header` component so add it there.
+これで、`Search` をどこかにインポートするだけです。一目瞭然な場所は `Header` コンポーネントなので、そこに追加します。
 
 ```jsx:title=src/components/Header/index.js
 import React from "react"
@@ -582,16 +582,16 @@ const Header = ({ site, transparent }) => (
 export default Header
 ```
 
-Note that this is where you define your array of search indices and pass it as a prop to `Search`.
+ここで検索インデックスの配列を定義し、それを `Search` の引数として渡すことに注意してください。
 
-If everything works as expected, running `gatsby develop` should now give you some instant search magic looking something like in the video below! You can also play around with it [here](https://janosh.io/blog).
+すべてが期待どおりに機能する場合、`gatsby developer` を実行すると、以下のビデオのようなインスタント検索マジックが得られます！また、[こちら](https://janosh.io/blog)で試してみることもできます。
 
 https://youtu.be/Amsub4xJ3Jc
 
 ## Additional Resources
 
-If you have any Issues or if you want to learn more about using Algolia for search, check out this tutorial from Jason Lengstorf:
+問題がある場合、または検索に Algolia を使用する方法について詳しく知りたい場合は、Jason Lengstorf のこのチュートリアルをご覧ください。
 
 https://youtu.be/VSkXyuXzwlc
 
-You can also find stories of companies using Gatsby + Algolia together [in the Algolia section of the blog](/blog/tags/algolia).
+また、Gatsby + Algolia を一緒に使用している企業のストーリーを[ブログの Algolia セクションで](/blog/tags/algolia)ご覧いただくこともできます。
