@@ -1,40 +1,40 @@
 ---
-title: GraphQL Concepts
+title: GraphQLのコンセプト
 ---
 
-There are many options for loading data into React components. One of the most
-popular and powerful of these is a technology called
-[GraphQL](https://graphql.org/).
+React コンポーネントにデータをロードするためのオプションは、数多くあります。
+なかでももっとも人気があり、かつ強力な技術が、
+[GraphQL](http://graphql.org/) です。
 
-GraphQL was invented at Facebook to help product engineers _pull_ needed data into
-React components.
+GraphQL は、Facebook で発明されました。
+開発者がより楽に React コンポーネントにデータを取り込む（_pull_ )ためです。
 
-GraphQL is a **q**uery **l**anguage (the _QL_ part of its name). If you're
-familiar with SQL, it works in a very similar way. Using a special syntax, you describe
-the data you want in your component and then that data is given
-to you.
+GraphQL はクエリー検索言語です。
+（GraphQL の QL は、Query Language の*QL* )
+SQL に精通している開発者であれば、GraphQL を同じように扱うことができます。
+特別な構文を使用して、コンポーネントに必要なデータを記述すれば、そのデータが提供されます。
 
-Gatsby uses GraphQL to enable [page and StaticQuery
-components](/docs/building-with-components/) to declare what data they and their
-sub-components need. Then, Gatsby makes that data available in
-the browser when needed by your components.
+Gatsby は GraphQL を使用して、[ページおよび StaticQuery コンポーネント](/docs/building-with-components/)で有効になったデータを宣言します。
+そのサブコンポーネントに必要なデータも合わせて宣言します。
+次に Gatsby は、ブラウザーで使用できます。
+コンポーネントにデータが必要となるタイミングで使用可能です。
 
-Data from any number of sources is made queryable in one unified layer, a key part of the Gatsby building process:
+複数ソースからのデータは、Gatsby の構築プロセスの重要な部分である、統合レイヤーで検索可能になります。
 
 <LayerModel initialLayer="Data" />
 
-## Why is GraphQL so cool?
+## GraphQL はなぜ良いのか
 
-For a more in-depth look, read [why Gatsby uses GraphQL](/docs/why-gatsby-uses-graphql/).
+詳細については、 [Gatsby が GraphQL を使用する理由](/docs/why-gatsby-uses-graphql/)を参照してください。
 
-- Eliminate frontend data boilerplate — no need to worry about requesting & waiting for data. Just ask for the data you need with a GraphQL query and it'll show up when you need it
-- Push frontend complexity into queries — many data transformations can be done at _build-time_ within your GraphQL queries
-- It's the perfect data querying language for the often complex/nested data dependencies of modern applications
-- Improve performance by removing data bloat — GraphQL enables you to select only the data you need, not whatever an API returns
+- フロントエンドのデータの雛形 — データの要求と待機を心配する必要はありません。 GraphQL クエリーで必要なデータを要求するだけで、必要なときに表示されます
+- フロントエンドの複雑さをクエリーに投げる — GraphQL クエリー内の _build-time_ で多くのデータ変換を実行できます
+- モダンなアプリケーションにありがちな、複雑でネストされたデータの依存関係に最適なデータクエリー言語です
+- データの肥大化を除去してパフォーマンスを改善 — GraphQL では、API のレスポンス値ではなく、必要なデータのみを選択し取得できます
 
-## What does a GraphQL query look like?
+## GraphQL はどんな感じか
 
-GraphQL lets you ask for the exact data you need. Queries look like JSON:
+GraphQL では、必要なる正しいデータを要求できます。クエリーは JSON ライクです。
 
 ```graphql
 {
@@ -46,7 +46,7 @@ GraphQL lets you ask for the exact data you need. Queries look like JSON:
 }
 ```
 
-Which returns this:
+このように返ってきます。
 
 ```json
 {
@@ -58,7 +58,7 @@ Which returns this:
 }
 ```
 
-A basic page component with a GraphQL query might look like this:
+GraphQL クエリーを含む基本的なページコンポーネントは、次のようになります。
 
 ```jsx
 import React from "react"
@@ -82,67 +82,64 @@ export const query = graphql`
 `
 ```
 
-The result of the query is automatically inserted into your React component
-on the `data` prop. GraphQL and Gatsby let you ask for data and then
-immediately start using it.
+クエリーの結果は、 `data` プロパティの React コンポーネントに自動的に挿入されます。
 
-**Note:** To run GraphQL queries in non-page components you'll need to use [Gatsby's Static Query feature](/docs/static-query/).
+GraphQL と Gatsby を使用すると、データを要求すると即座に使用を開始できます。
 
-### Understanding the parts of a query
+**注：** ページ以外の雛形コンポーネントで GraphQL クエリーを実行するには、 [Gatsby の静的クエリー機能](/docs/static-query/)を使用する必要があります。
 
-The following diagram shows a GraphQL query, with each word highlighted in a color corresponding to its name on the legend:
+### クエリーを理解する
+
+図は、凡例の名前に、対応する色で強調された各単語を含む GraphQL クエリーを示しています。
 
 ![GraphQL query diagram](./images/basic-query.png)
 
-#### Query operation type
+#### クエリーオペレーションタイプ
 
-The diagram marks the word `query` as the "Operation Type", for Gatsby's uses the only operation type you will deal with is `query`, this can be omitted from your queries if you prefer (like in the above example).
+図では、`Query` という単語を `Operation type` としてマーキングしています。 Gatsby が扱う操作タイプは `Query` のみのため、必要に応じてクエリーから省略できます（上記の例のように）。
 
-#### Operation name
+#### オペレーションネーム
 
-`SiteInformation` is marked as the "Operation Name", which is a unique name that you assign to a query yourself. This is similar to how you would name a function or a variable, and like a function this can be omitted if you would rather the query be anonymous.
+`SiteInformation` は `Operation Name` としてマークされます。これは、クエリーに自分で割り当てる一意の名前です。関数や変数に名前を付ける方法と似ています。関数のように、クエリーを匿名にする場合は省略できます。
 
-#### Query fields
+#### クエリーフィールド
 
-The four words `site`, `id`, `siteMetadata`, and `title` are marked as "Fields". Any top-level fields -- like `site` in the diagram -- are sometimes referred to as **root level fields**, though the name doesn't signify functional significance as all fields in GraphQL queries behave the same.
+4 つの単語 `site` 、 `id` 、 `siteMetadata` 、および `title` は "Fields" としてマークされます。 GraphQL クエリーのすべてのフィールドは同じように動作するため、名前は機能上の重要性を意味しませんが、トップレベルのフィールド（図の `site` など）は**ルートレベルのフィールド**と呼ばれることもあります。
 
-## How to learn GraphQL
+## GraphQL の学び方
 
-Your experience developing with Gatsby might be the first time you've seen GraphQL! We hope you love it as much
-as we do and find it useful for all your projects.
+GraphQL を初めて見たのは、Gatsby での開発経験です！
+あなたがそれを愛することを願っています。すべてのプロジェクトに役立つと思います。
 
-When starting out with GraphQL, we recommend the following two tutorials:
+GraphQL を使用する場合、次の 2 つのチュートリアルをお勧めします。
 
 - https://www.howtographql.com/
 - https://graphql.org/learn/
 
-[The official Gatsby tutorial](/tutorial/part-four/) also includes an introduction to using GraphQL specifically with Gatsby.
+[Gatsby 公式チュートリアル](/tutorial/part-four/)には、特に Gatsby で GraphQL を使用するための紹介も含まれています。
 
-## How do GraphQL and Gatsby work together?
+## GraphQL と Gatsby はどう連携するか
 
-One of the great things about GraphQL is how flexible it is. People use GraphQL
-with [many different programming languages](https://graphql.org/code/) and for web and native apps.
+GraphQL の優れた点の 1 つは、その柔軟性です。
+GraphQL は、[多くの異なるプログラミング言語](https://graphql.org/code/)で、Web アプリとネイティブアプリに使用されます。
 
-Most people run GraphQL on a server to respond live to requests for
-data from clients. You define a schema (a schema is a formal way of describing
-the shape of your data) for your GraphQL server and then your GraphQL resolvers
-retrieve data from databases and/or other APIs.
+ほとんどの人は、サーバーで GraphQL を実行します。そして、クライアントからのデータの要求にライブで応答します。
+GraphQL サーバーのスキーマ（スキーマはデータの形状を記述する正式な方法です）を定義し、GraphQL リゾルバーがデータベースや他の API からデータを取得します。
 
-Gatsby uses GraphQL at _build-time_ and _not_ for live
-sites. This is unique, and it means you don't need to run additional services (e.g. a database
-and Node.js service) to use GraphQL for production websites.
+Gatsby は、ライブサイトの _build-time_ および _not_ で GraphQL を使用します。
+これはユニークなことです。
+実際に動いているウェブサイトで GraphQL を使用するためにサービス（データベースや Node.js など）を余計に実行する必要がないことを意味します。
 
-Gatsby is a great framework for building apps so it's possible and encouraged
-to pair Gatsby's native build-time GraphQL with GraphQL queries running against
-a live GraphQL server from the browser.
+Gatsby はアプリを構築するための優れたフレームワークです。
+そのため、ブラウザーからライブの GraphQL サーバーに対して実行される Gatsby のネイティブビルド時に、GraphQL と GraphQL クエリーを組み合わせることが可能です。
 
-## Where does Gatsby's GraphQL schema come from?
+## Gatsby の GraphQL スキーマはどこから来るのか
 
-Most usages of GraphQL involve manually creating a GraphQL schema.
+GraphQL のほとんどの使用法では、GraphQL スキーマを手動で作成します。
 
-Gatsby uses plugins which can fetch data from different sources. That data is used to automatically _infer_ a GraphQL schema.
+Gatsby は、さまざまなソースからデータを取得できるプラグインを使用します。そのデータは、GraphQL スキーマを自動的に推測（_infer_ )するために使用されます。
 
-If you give Gatsby data that looks like this:
+次のような Gatsby データを指定した場合：
 
 ```json
 {
@@ -150,25 +147,25 @@ If you give Gatsby data that looks like this:
 }
 ```
 
-Gatsby will create a schema that looks something like this:
+Gatsby は、次のようなスキーマを作成します。
 
 ```text
 title: String
 ```
 
-This makes it easy to pull data from anywhere and immediately start writing
-GraphQL queries against your data.
+これにより、どこからでも簡単にデータを要求できます。
+また、データに対する GraphQL クエリーの作成をすぐに開始できます。
 
-This _can_ cause confusion as some data sources allow you to define
-a schema even when there's not any data added for parts or all of the schema. If parts of the data haven't been added, then those parts of the schema might not be recreated in Gatsby.
+この _can_ は、いくつかのデータソースで定義できるため、混乱を引き起こします。
+スキーマの一部またはすべてにデータが追加されていない場合でも、スキーマのこれらの部分は Gatsby で再作成されない可能性があります。
 
-## Powerful data transformations
+## 強力なデータ変換
 
-GraphQL enables another unique feature of Gatsby — it lets you control data transformations with arguments to your queries. Some examples follow.
+GraphQL は、 Gatsby の別のユニークな機能を可能にします — クエリーへの引数でデータ変換を制御できます。 次に例を示します。
 
-### Formatting dates
+### 日付のフォーマット
 
-People often store dates like "2018-01-05" but want to display the date in some other form like "January 5th, 2018". One way of doing this is to load a date-formatting JavaScript library into the browser. Or, with Gatsby's GraphQL layer, you can do the formatting at query-time like:
+多くの場合、 "2018-01-05" のような日付を保存しますが、 "2018 年 1 月 5 日"のような他の形式で日付を表示したいと考えています。これを行う 1 つの方法は、日付形式の JavaScript ライブラリをブラウザーにロードすることです。または、Gatsby の GraphQL レイヤーを使用すると、クエリ時にフォーマットを次のように行うことができます。
 
 ```graphql
 {
@@ -176,11 +173,11 @@ People often store dates like "2018-01-05" but want to display the date in some 
 }
 ```
 
-See the full list of formatting options by viewing our [GraphQL reference page](/docs/graphql-reference/#dates).
+フォーマットオプションの一覧は、 [GraphQL reference page](/docs/graphql-reference/#dates) を表示してご覧ください。
 
 ### Markdown
 
-Gatsby has _transformer_ plugins which can transform data from one form to another. A common example is markdown. If you install [`gatsby-transformer-remark`](/packages/gatsby-transformer-remark/), then in your queries, you can specify if you want the transformed HTML version instead of markdown:
+Gatsby には、あるフォームから別のフォームにデータを変換できる _transformer_ プラグインがあります。一般的な例は Markdown です。 [`gatsby-transformer-remark`](/packages/gatsby-transformer-remark/) をインストールする場合、Markdown の代わりに、変換された HTML バージョンを使用するかどうかをクエリで指定できます。
 
 ```graphql
 markdownRemark {
@@ -188,13 +185,13 @@ markdownRemark {
 }
 ```
 
-### Images
+### 画像
 
-Gatsby has rich support for processing images. Responsive images are a big part of the modern web and typically involve creating 5+ sized thumbnails per photo. With Gatsby's [`gatsby-transformer-sharp`](/packages/gatsby-transformer-sharp/), you can _query_ your images for responsive versions. The query automatically creates all the needed responsive thumbnails and returns `src` and `srcSet` fields to add to your image element.
+Gatsby は、画像の処理を豊富にサポートしています。レスポンシブ画像は現代のウェブの大部分を占めており、通常、写真ごとに 5 つ以上のサイズのサムネイルを作成する必要があります。 Gatsby の [`gatsby-transformer-sharp`](/packages/gatsby-transformer-sharp/) を使用すると、レスポンシブバージョンの画像を _query_ できます。 クエリは、必要なレスポンシブサムネイルをすべて自動的に作成し、 `src` および `srcSet` フィールドを返して、画像要素に追加します。
 
-Combined with a special Gatsby image component, [gatsby-image](/packages/gatsby-image/), you have a very powerful set of primitives for building sites with images.
+特別な Gatsby 画像コンポーネント [gatsby-image](/packages/gatsby-image/) と組み合わせることで、画像を含むサイトを構築するための非常に強力なセットを使用できます。
 
-This is what a component using `gatsby-image` looks like:
+以下は、 `gatsby-image` を使用するコンポーネントがどのように見えるかです：
 
 ```jsx
 import React from "react"
@@ -223,20 +220,20 @@ export const query = graphql`
 `
 ```
 
-See also the following blog posts:
+こちらのブログもご覧ください。
 
 - [Making Website Building Fun](/blog/2017-10-16-making-website-building-fun/)
 - [Image Optimization Made Easy with Gatsby.js](https://medium.com/@kyle.robert.gill/ridiculously-easy-image-optimization-with-gatsby-js-59d48e15db6e)
 
-## Advanced
+## 上級者向け
 
-### Fragments
+### フラグメント
 
-Notice that in the above example for [querying images](#images), we used `...GatsbyImageSharpFixed`, which is a GraphQL Fragment, a reusable set of fields for query composition. You can read more about them [here](https://graphql.org/learn/queries/#fragments).
+[querying images](#images) の上記の例では、 `...GatsbyImageSharpFixed` を使用したことに注意してください。これは、GraphQL Fragment であり、クエリー作成用の再利用可能なフィールドのセットです。詳細については、[こちら](https://graphql.org/learn/queries/#fragments)をご覧ください。
 
-If you wish to define your own fragments for use in your application, you can use named exports to export them in any JavaScript file, and they will be automatically processed by Gatsby for use in your GraphQL queries.
+アプリケーションで使用する独自のフラグメントを定義する場合は、名前付きのエクスポートを使用して、任意の JavaScript ファイルにエクスポートできます。それらは GraphQL クエリーで使用するために Gatsby によって自動的に処理されます。
 
-For example, if I put a fragment in a helper component, I can use that fragment in any other query:
+たとえば、ヘルパーコンポーネントにフラグメントを配置すると、他のクエリーでそのフラグメントを使用できます。
 
 ```jsx:title=src/components/PostItem.js
 export const markdownFrontmatterFragment = graphql`
@@ -250,7 +247,7 @@ export const markdownFrontmatterFragment = graphql`
 `
 ```
 
-They can then be used in any GraphQL query after that!
+それらはその後、GraphQL クエリーで使用できます！
 
 ```graphql
 query($path: String!) {
@@ -260,7 +257,7 @@ query($path: String!) {
 }
 ```
 
-It’s good practice for your helper components to define and export a fragment for the data they need. For example, on your index page you might map over all of your posts to show them in a list.
+ヘルパーコンポーネントは、必要なデータのフラグメントを定義してエクスポートすることをお勧めします。 たとえば、インデックスページで、すべての投稿をマップして一覧に表示できます。
 
 ```jsx:title=src/pages/index.jsx
 import React from "react"
@@ -300,7 +297,7 @@ export const query = graphql`
 `
 ```
 
-If the index component becomes too large, you might want to refactor it into smaller components.
+インデックスコンポーネントが大きくなりすぎた場合は、小さなコンポーネントにリファクタリングすることをお勧めします。
 
 ```jsx:title=src/components/IndexPost.jsx
 import React from "react"
@@ -324,7 +321,7 @@ export const query = graphql`
 `
 ```
 
-Now, you can use the component together with the exported fragment in your index page.
+これで、インデックスページでエクスポートされたフラグメントとともにコンポーネントを使用できます。
 
 ```jsx:title=src/pages/index.jsx
 import React from "react"
@@ -360,20 +357,20 @@ export const query = graphql`
 `
 ```
 
-## Further reading
+## 参考文献
 
-- [Why Gatsby Uses GraphQL](/docs/why-gatsby-uses-graphql/)
-- [The Anatomy of a GraphQL Query](https://blog.apollographql.com/the-anatomy-of-a-graphql-query-6dffa9e9e747)
+- [Gatsby が GraphQL を使う理由](/docs/why-gatsby-uses-graphql/)
+- [GraphQL クエリーの構造](https://blog.apollographql.com/the-anatomy-of-a-graphql-query-6dffa9e9e747)
 
-### Getting started with GraphQL
+### GraphQL をはじめてみよう
 
 - https://graphql.org/learn/
 - https://www.howtographql.com/
 - https://reactjs.org/blog/2015/05/01/graphql-introduction.html
 - https://services.github.com/on-demand/graphql/
 
-### Advanced readings on GraphQL
+### GraphQL をより理解するために
 
-- [GraphQL specification](https://facebook.github.io/graphql/October2016/)
-- [Interfaces and Unions](https://medium.com/the-graphqlhub/graphql-tour-interfaces-and-unions-7dd5be35de0d)
-- [Relay Compiler (which Gatsby uses to process queries)](https://facebook.github.io/relay/docs/en/compiler-architecture.html)
+- [GraphQL の仕様](https://facebook.github.io/graphql/October2016/)
+- [インターフェースとユニオン](https://medium.com/the-graphqlhub/graphql-tour-interfaces-and-unions-7dd5be35de0d)
+- [リレーコンパイラ (Gatsby がクエリーを処理するために)](https://facebook.github.io/relay/docs/en/compiler-architecture.html)
