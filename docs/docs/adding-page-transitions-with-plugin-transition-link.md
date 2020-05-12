@@ -67,7 +67,6 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
 ページ遷移を作成する方法は、次の 2 つがあります。
 
 1. `exit`/`entry` プロパティに定義された `trigger` 関数を使用します。詳細は「[`trigger` 関数を使う](#using-the-trigger-function)」のサブセクションをご覧ください。
-
 2. `TransitionLink` から渡されたプロパティを使用して遷移を定義します。詳細は「[渡されたプロパティを使う](#using-passed-props)」のサブセクションをご覧ください。
 
 さらに、`TransitionLink` コンポーネントでは `length` や `delay` のような様々なプロパティやオプションを指定できます。オプションの詳細は [TransitionLink のドキュメント](https://transitionlink.tylerbarnes.ca/docs/transitionlink/)をご覧ください。その他の使用例は [プラグインの GitHub リポジトリー](https://github.com/TylerBarnes/gatsby-plugin-transition-link)をご覧ください。
