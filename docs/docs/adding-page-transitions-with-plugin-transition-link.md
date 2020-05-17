@@ -1,26 +1,26 @@
 ---
-title: Adding Page Transitions with gatsby-plugin-transition-link
+title: gatsby-plugin-transition-link によるページ遷移の追加
 ---
 
-This guide will cover how to use `gatsby-plugin-transition-link` to animate transitions between pages on your Gatsby site.
+このガイドでは、`gatsby-plugin-transition-link` を使用して、Gatsby サイトのページ遷移をアニメーション化する方法を説明します。
 
-## Overview
+## 概要
 
-The `TransitionLink` component provides a way of describing a page transition via props on a Link component. It works with many animation libraries, like [react-pose](https://popmotion.io/pose/), [gsap](https://greensock.com/), [animejs](https://animejs.com/), and many others.
+`TransitionLink` コンポーネントは、Link コンポーネントのプロパティを介して、ページ遷移を記述する方法を提供します。これは [react-pose](https://popmotion.io/pose/)、[gsap](https://greensock.com/)、[animejs](https://animejs.com/) などの多くのアニメーションライブラリーで動作します。
 
-Note that currently, as the plugin is based on link navigation, transitions when navigating with the browser buttons are not supported.
+現在のところ、プラグインはリンクナビゲーションをベースにしているため、ブラウザボタンでの遷移はサポートされていません。
 
-For other page transition options, see the [overview on adding page animations](/docs/adding-page-transitions).
+その他のページ遷移オプションについては、[ページアニメーションの追加に関する概要](/docs/adding-page-transitions)をご覧ください。
 
-## Getting started
+## はじめに
 
-First, install the plugin:
+まず、プラグインをインストールします。
 
 ```shell
 npm install --save gatsby-plugin-transition-link
 ```
 
-Make sure to add the plugin to your `gatsby-config.js`:
+そして、`gatsby-config.js` にプラグインを追加します。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -30,29 +30,29 @@ module.exports = {
 ];
 ```
 
-Finally, import the `TransitionLink` component wherever you want to use it:
+最後に、`TransitionLink` を使用するコンポーネントにインポートします。
 
 ```javascript
 import TransitionLink from "gatsby-plugin-transition-link"
 ```
 
-## Predefined transitions
+## 定義済みの遷移
 
-You can use the `AniLink` component to add page transitions without having to define your own custom transitions. It's a wrapper around `TransitionLink` that provides 4 predefined transitions: `fade`, `swipe`, `cover`, and `paintDrip`. You can preview them at [this demo site](https://gatsby-plugin-transition-link.netlify.com/).
+`AniLink` コンポーネントを使用することで、独自のカスタム遷移を定義することなく、ページ遷移を追加できます。これは `TransitionLink` のラッパーで、`fade`、`swipe`、`cover`、`paintDrip`といった 4 つのあらかじめ定義された遷移を提供します。[こちらのデモサイト](https://gatsby-plugin-transition-link.netlify.com/)でプレビューできます。
 
-To use AniLink, you will need to install the `gsap` animation library:
+AniLink を利用するためには、 `gsap` アニメーションライブラリをインストールする必要があります。
 
 ```shell
 npm install --save gsap
 ```
 
-Then, import the AniLink component:
+次に、AniLink コンポーネントをインポートします。
 
 ```jsx
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 ```
 
-Finally, make sure you provide your desired animation's name as a blank prop to `AniLink`:
+最後に、利用したいアニメーション名を空のプロパティとして `AniLink` に指定してください。
 
 ```jsx
 <AniLink paintDrip to="page-4">
@@ -60,20 +60,20 @@ Finally, make sure you provide your desired animation's name as a blank prop to 
 </AniLink>
 ```
 
-Options like transition duration, direction, and more are customizable with props. See [the documentation of AniLink](https://transitionlink.tylerbarnes.ca/docs/anilink/) for more details.
+遷移に掛かる時間や遷移の方向などのオプションはプロパティによりカスタマイズできます。詳細は[AniLink のドキュメント](https://transitionlink.tylerbarnes.ca/docs/anilink/)をご覧ください。
 
-## Custom transitions
+## カスタム遷移
 
-You have two main methods of creating page transitions:
+ページ遷移を作成する方法は、次の 2 つがあります。
 
-1. Use the `trigger` function defined in your `exit`/`entry` prop. More details in the '[Using the `trigger` function](#using-the-trigger-function)' subsection.
-2. Use the props passed by `TransitionLink` to define your transitions. More details in the '[Using passed props](#using-passed-props)' subsection.
+1. `exit`/`entry` プロパティに定義された `trigger` 関数を使用します。詳細は「[`trigger` 関数を使う](#using-the-trigger-function)」のサブセクションをご覧ください。
+2. `TransitionLink` から渡されたプロパティを使用して遷移を定義します。詳細は「[渡されたプロパティを使う](#using-passed-props)」のサブセクションをご覧ください。
 
-Additionally, you can specify a number of props and options on the `TransitionLink` component, like `length`, `delay`, and more. For more options and details, see [the documentation of TransitionLink](https://transitionlink.tylerbarnes.ca/docs/transitionlink/). For further examples of usage, visit the [plugin's GitHub repository.](https://github.com/TylerBarnes/gatsby-plugin-transition-link)
+さらに、`TransitionLink` コンポーネントでは `length` や `delay` のような様々なプロパティやオプションを指定できます。オプションの詳細は [TransitionLink のドキュメント](https://transitionlink.tylerbarnes.ca/docs/transitionlink/)をご覧ください。その他の使用例は [プラグインの GitHub リポジトリー](https://github.com/TylerBarnes/gatsby-plugin-transition-link)をご覧ください。
 
-### Using the trigger function
+### トリガー関数を使う
 
-You can specify a `trigger` function that will handle the animation. This is useful for _imperative_ animation libraries like [animejs](https://animejs.com/) or [GSAP](https://greensock.com/gsap) that specify animations with function calls.
+アニメーションを処理する `trigger` 関数を指定できます。これは、[animejs](https://animejs.com/) や [GSAP](https://greensock.com/gsap)といった関数呼び出しでアニメーションを指定する _命令型_ アニメーションライブラリーに役立ちます。
 
 ```jsx
 <TransitionLink
@@ -95,9 +95,9 @@ You can specify a `trigger` function that will handle the animation. This is use
 </TransitionLink>
 ```
 
-### Using passed props
+### 渡されたプロパティを使う
 
-The exiting and entering pages/templates involved in the transition will receive props indicating the current transition status, as well as the `exit` or `enter` props defined on the `TransitionLink`.
+遷移に関する開始と終了のページ／テンプレートでは、現在の遷移状態を示すプロパティーと `TransitionLink` で定義された `enter` または `exit`プロパティーを受け取ります。
 
 ```jsx
 const PageOrTemplate = ({ children, transitionStatus, entry, exit }) => {
@@ -106,11 +106,11 @@ const PageOrTemplate = ({ children, transitionStatus, entry, exit }) => {
 }
 ```
 
-You can combine these props with a _declarative_ state-based animation libraries like [react-pose](https://popmotion.io/pose/) or [react-spring](http://react-spring.surge.sh/) to specify transitions for exiting and entering a page.
+これらのプロパティを [react-pose](https://popmotion.io/pose/) や [react-spring](http://react-spring.surge.sh/) のような _宣言的_ ステートベースのアニメーションライブラリーと組み合わせることで、ページ遷移の開始や終了を指定できます。
 
-If you want to access these props in one of your components instead of a page/template, you should wrap your component in the `TransitionState` component. This component takes a function that will have access to the same props as above, which you can then use in your component.
+ページ／テンプレートの代わりに、コンポーネントでこれらのプロパティにアクセスする場合は、 `TransitionState` コンポーネントでコンポーネントをラップする必要があります。このコンポーネントは上記と同じプロパティにアクセスするための関数を受けとり、使用することができます。
 
-Here's an example using `TransitionState` and `react-pose` to trigger enter/exit transitions for a `Box` component.
+ここでは `TransitionState` と `react-pose` を使用して `Box` コンポーネントに遷移の開始／終了をトリガーする例を示します。
 
 ```jsx
 import { TransitionState } from "gatsby-plugin-transition-link"
@@ -140,11 +140,11 @@ const Box = posed.div({
 </TransitionState>
 ```
 
-Now, the `Box` component will be aware of whether the page it's a child of is mounting or unmounting, and it will fade in/out accordingly.
+これで、`Box` コンポーネントは、子ページのマウント／アンマウントに応じてフェードイン／フェードアウトします。
 
-## Excluding elements from page transitions
+## ページ遷移から要素を除外する
 
-You may want to have elements on a page that persist throughout the page transition (_ex. a site-wide header_). This can be accomplished by wrapping elements in a persistent layout component by using the following plugin option in your `gatsby-config.js`.
+ページ遷移の全体を通して持続する要素（たとえば、サイト全体のヘッダー）が必要な場合もあります。これは、 `gatsby-config.js` で次のプラグインオプションを使用して、持続的なレイアウトコンポーネントの要素をラップすることで実現できます。
 
 ```javascript
 module.exports = {
@@ -159,12 +159,12 @@ module.exports = {
 ];
 ```
 
-As always, check out [the installation docs](https://transitionlink.tylerbarnes.ca/docs/transitionportal/) for more information.
+いつものように、詳細は[インストールのドキュメント](https://transitionlink.tylerbarnes.ca/docs/transitionportal/)をご覧ください。
 
-## Further reading
+## 参考文献
 
-- [Official documentation](https://transitionlink.tylerbarnes.ca/docs/)
-- [Source code for plugin](https://github.com/TylerBarnes/gatsby-plugin-transition-link)
-- [Demo site](https://gatsby-plugin-transition-link.netlify.com/)
-- [Blog post: 'Per-Link Gatsby page transitions with TransitionLink'](/blog/2018-12-04-per-link-gatsby-page-transitions-with-transitionlink/)
-- [Using transition-link with react-spring](https://github.com/TylerBarnes/gatsby-plugin-transition-link/issues/34)
+- [公式ドキュメント](https://transitionlink.tylerbarnes.ca/docs/)
+- [プラグインのソースコード](https://github.com/TylerBarnes/gatsby-plugin-transition-link)
+- [デモサイト](https://gatsby-plugin-transition-link.netlify.com/)
+- [ブログ記事: 「TransitionLink を用いたリンクごとの Gatsby のページ遷移」](/blog/2018-12-04-per-link-gatsby-page-transitions-with-transitionlink/)
+- [react-spring を用いた transition-link の使用](https://github.com/TylerBarnes/gatsby-plugin-transition-link/issues/34)
