@@ -11,16 +11,16 @@ jobs:
         os:
           - ubuntu-latest
         node-version:
-          - 12.x
+          - 14.x
 
     runs-on: ${{ matrix.os }}
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2.0.0
+        uses: actions/checkout@v2
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1.4.1
+        uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -33,7 +33,7 @@ jobs:
         run: echo "::set-output name=dir::$(yarn cache dir)"
 
       - name: Restore yarn cache
-        uses: actions/cache@v1.1.2
+        uses: actions/cache@v2
         with:
           path: ${{ steps.yarn.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
