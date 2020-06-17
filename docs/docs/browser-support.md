@@ -2,7 +2,7 @@
 title: ブラウザーサポート
 ---
 
-Gatsby は[現在の安定バージョンの React.js と同じブラウザー](https://reactjs.org/docs/react-dom.html#browser-support)をサポートしています。それらは現在では IE9+ およびその他の有名ブラウザーの最新バージョンとなります。
+Gatsby は[現在の安定バージョンの React.js と同じブラウザー](https://ja.reactjs.org/docs/react-dom.html#browser-support)をサポートしています。それらは現在では IE9+ およびその他の有名ブラウザーの最新バージョンとなります。
 
 ## ポリフィル
 
