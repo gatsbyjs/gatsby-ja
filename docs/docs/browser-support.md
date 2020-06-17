@@ -1,24 +1,24 @@
 ---
-title: Browser Support
+title: ブラウザーサポート
 ---
 
-Gatsby supports [the same browsers as the current stable version of React.js](https://reactjs.org/docs/react-dom.html#browser-support) which is currently IE9+ as well as the most recent versions of other popular browsers.
+Gatsby は[現在の安定バージョンの React.js と同じブラウザー](https://reactjs.org/docs/react-dom.html#browser-support)をサポートしています。現在では IE9+ およびその他の有名ブラウザーの最新バージョンとなります。
 
-## Polyfills
+## ポリフィル
 
-Gatsby leverages Babel 7's ability to automatically add polyfills for your target browsers.
+Gatsby は Babel 7 を利用して自動的にあなたの対象ブラウザーへのポリフィルを追加します。
 
-Newer browsers support more JavaScript APIs than older browsers. For older versions, Gatsby (via Babel) automatically adds the minimum "polyfills" necessary for your code to work in those browsers.
+新しいブラウザーは古いブラウザーより多くの JavaScript API をサポートしています。古いバージョンに対応するため、 Gatsby は（Babel によって）自動的にあなたのコードがそれらのブラウザーで動くために必要最小限の "ポリフィル" を追加します。
 
-If you start using a newer JavaScript API like `[].includes` that isn't supported by some of your targeted browsers, you won't have to worry about it breaking the older browsers as Babel will automatically add the needed polyfill `core-js/modules/es7.array.includes`.
+もしあなたが `[].includes` のようなあなたの対象ブラウザーのいくつかがサポートしていない新しい JavaScript API を使い始める場合でも、 Babel が必要なポリフィル `core-js/modules/es7.array.includes` を自動的に追加するため、古いブラウザーを壊してしまう心配をする必要はありません。
 
-## Specify what browsers your project supports using "Browserslist"
+## "Browserslist" を使ってあなたのプロジェクトでサポートするブラウザーを特定する
 
-You may customize your list of supported browser versions by declaring a [`"browserslist"`](https://github.com/ai/browserslist) key within your `package.json`. Changing these values will modify your JavaScript (via[`babel-preset-env`](https://github.com/babel/babel-preset-env#targetsbrowsers)) and your CSS (via [`autoprefixer`](https://github.com/postcss/autoprefixer)) output.
+あなたの `package.json` 内で [`"browserslist"`](https://github.com/ai/browserslist) キーを宣言することで、あなたのサポートするブラウザーバージョンの一覧を編集できます。それらの値を変えることで（[`babel-preset-env`](https://github.com/babel/babel-preset-env#targetsbrowsers) によって）JavaScript と（[`autoprefixer`](https://github.com/postcss/autoprefixer) によって）CSS の出力を変えることができます。
 
-This article is a good introduction to the growing community of tools around Browserslist — https://css-tricks.com/browserlist-good-idea/
+この記事は Browserslist を取り巻くツールに関する成長中のコミュニティーへの良い導入となるでしょう —— https://css-tricks.com/browserlist-good-idea/ 。
 
-By default, Gatsby emulates the following config:
+デフォルトで、 Gatsby は下記の設定を行います。
 
 ```json:title=package.json
 {
@@ -26,4 +26,4 @@ By default, Gatsby emulates the following config:
 }
 ```
 
-If you only support newer browsers, make sure to specify this in your `package.json`. This will often enable you to ship smaller JavaScript files.
+もしあなたが新しいブラウザーのみをサポートするなら、あなたの `package.json` でその設定をするのを忘れないでください。この設定によって多くの場合あなたはより小さな JavaScript ファイルを生成できます。
