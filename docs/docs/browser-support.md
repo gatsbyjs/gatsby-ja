@@ -10,13 +10,13 @@ Gatsby は Babel 7 を利用して自動的にあなたの対象ブラウザー�
 
 新しいブラウザーは古いブラウザーより多くの JavaScript API をサポートしています。古いバージョンに対応するため、 Gatsby は（Babel によって）自動的にあなたのコードがそれらのブラウザーで動くために必要最小限の "ポリフィル" を追加します。
 
-もしあなたが `[].includes` のようなあなたの対象ブラウザーのいくつかがサポートしていない新しい JavaScript API を使い始める場合でも、 Babel が必要なポリフィル `core-js/modules/es7.array.includes` を自動的に追加するため、古いブラウザーを壊してしまう心配をする必要はありません。
+もしあなたが `[].includes` のようなあなたの対象ブラウザーのいくつかがサポートしていない新しい JavaScript API を使い始める場合でも、 Babel が必要なポリフィル `core-js/modules/es7.array.includes` を自動的に追加するため、古いブラウザーを壊してしまう心配はありません。
 
 ## "Browserslist" を使ってあなたのプロジェクトでサポートするブラウザーを特定する
 
 あなたの `package.json` 内で [`"browserslist"`](https://github.com/ai/browserslist) キーを宣言することで、あなたのサポートするブラウザーバージョンの一覧を編集できます。それらの値を変えることで（[`babel-preset-env`](https://github.com/babel/babel-preset-env#targetsbrowsers) によって）JavaScript と（[`autoprefixer`](https://github.com/postcss/autoprefixer) によって）CSS の出力を変えることができます。
 
-この記事は Browserslist を取り巻くツールに関する成長中のコミュニティーへの良い導入となるでしょう —— https://css-tricks.com/browserlist-good-idea/ 。
+この記事は Browserslist を取り巻くツールに関する成長中のコミュニティーへの良い導入です —— https://css-tricks.com/browserlist-good-idea/ 。
 
 デフォルトで、 Gatsby は下記の設定を行います。
 
