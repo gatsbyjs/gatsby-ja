@@ -16,7 +16,7 @@ Gatsby は Babel 7 を利用して自動的にあなたの対象ブラウザー�
 
 `package.json` 内で [`"browserslist"`](https://github.com/ai/browserslist) キーを宣言することで、サポートしたいブラウザーバージョンの一覧を指定できます。それらの値を変えることで（[`babel-preset-env`](https://github.com/babel/babel-preset-env#targetsbrowsers) によって）JavaScript と（[`autoprefixer`](https://github.com/postcss/autoprefixer) によって）CSS の出力を変えることができます。
 
-この記事は Browserslist を取り巻くツールに関する成長中のコミュニティーへの良い導入です —— https://css-tricks.com/browserlist-good-idea/ 。
+この記事は Browserslist を取り巻くツールに関する成長中のコミュニティーへの良い導入です： https://css-tricks.com/browserlist-good-idea/
 
 Gatsby はデフォルトで下記の設定を行います。
 
