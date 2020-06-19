@@ -1,22 +1,14 @@
 ---
-title: Theme Composition
+title: テーマ構成
 ---
 
-When building themes, it's often worthwhile to consider how your theme can compose with others.
-In some cases you might want to break your theme into modular parts, like `gatsby-theme-blog`
-and `gatsby-theme-ecommerce`.
+テーマを作成する際、あなたのテーマがどのように他のテーマと構成されるのかを検討するのは一考に値します。
+場合によっては `gatsby-theme-blog` や `gatsby-theme-ecommerce` のように、テーマをモジュール化したいこともあるでしょう。
 
-Since themes are still early, we recommend getting started by building themes that are more
-monolithic. It's less overhead to get started and a theme can always be broken up into smaller
-themes later.
+テーマはまだ始まったばかりですので、分割数の少ないモノリシックなテーマの構築からスタートすることをおすすめします。始めるハードルも低いですし、後からでもテーマをより小さいテーマ群に分割できます。
 
-## Layouts
+## レイアウト
 
-In Gatsby themes you can apply global layouts by using [`wrapRootElement`](/docs/browser-apis/#wrapRootElement)
-or [`wrapPageElement`](/docs/browser-apis/#wrapPageElement). For better theme
-composition it's recommended to use this feature sparingly. It's a great fit for setting up any
-necessary [React Context](https://reactjs.org/docs/context.html) providers. You shouldn't typically
-add any layout components, such as headers or footers, because it will be applied globally which
-could cause Issues with other themes.
+Gatsby テーマでは、[`wrapRootElement`](/docs/browser-apis/#wrapRootElement)もしくは[`wrapPageElement`](/docs/browser-apis/#wrapPageElement)を利用することでグローバルレイアウトに適用できます。より良いテーマ構成のためにはこの機能の利用を控えめにすることをおすすめします。必要となるあらゆる[React Context](https://reactjs.org/docs/context.html) プロバイダーの設定に最適でしょう。ヘッダーやフッターといったレイアウトコンポーネントは通常追加しない方が良いです。なぜならグローバルに適用され、他のテーマとの間に問題を引き起こす恐れがあるからです。
 
-[Read more on layouts and Gatsby Themes](https://www.christopherbiscardi.com/post/layouts-in-gatsby-themes)
+[レイアウトや Gatsby テーマについてもっと読む](https://www.christopherbiscardi.com/post/layouts-in-gatsby-themes)
