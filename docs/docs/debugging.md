@@ -1,8 +1,8 @@
 ---
-title: Debugging
+title: デバッグ
 overview: true
 ---
 
-While building your site, you’ll sometimes encounter bugs. These guides help you set up debugging in Gatsby so you can spot and squash bugs more easily.
+サイトを構築していると、バグに遭遇することがあります。このガイドでは Gatsby でのデバッグ設定の手助けをし、バグをより簡単に発見し潰せるようにします。
 
 <GuideList slug={props.slug} />
