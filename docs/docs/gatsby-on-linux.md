@@ -183,7 +183,7 @@ sudo apt update && sudo apt -y upgrade && sudo apt install build-essential && su
 
 ### 追加のリンクと情報
 
-- [VSCode のドキュメントウェブサイトより、VSCode を ESL で動作させるための大変詳細なガイド](https://code.visualstudio.com/docs/remote/wsl)
+- [VSCode のドキュメントウェブサイトより、VSCode を ESL で動作させるためのとても詳細なガイド](https://code.visualstudio.com/docs/remote/wsl)
 - [Windows で Ubuntu をダウンロードするための Microsoft ストアページ](https://www.microsoft.com/ja-jp/p/ubuntu/9nblggh4msv6)
 - [n](https://github.com/tj/n)
 - [nvm](https://github.com/creationix/nvm)
