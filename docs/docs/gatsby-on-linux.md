@@ -27,7 +27,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
 
 > これは nvm の現時点での安定版リリースであることに注意してください。完全なインストール手順とトラブルシューティングは [nvm GitHub page](https://github.com/nvm-sh/nvm) で見つけることができます。
 
-`nvm` がインストールされても、デフォルトでは特定の `node` バージョンにはなりません。必要なバージョンをインストールして、それを使うよう `nvm` に指示する必要があります。この例ではバージョン `10` の最新リリースを使っていますが、代わりにもっと新しいバージョンを使っても構いません。
+`nvm` がインストールされても、デフォルトでは特定の `node` バージョンにはなりません。必要なバージョンをインストールして、それを使うよう `nvm` に指示する必要があります。この例ではバージョン `10` の最新リリースを使っていますが、代わりにより新しいバージョンを使っても構いません。
 
 ```shell
 nvm install 10
@@ -58,7 +58,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
 
 > これは nvm の現時点での安定版リリースであることに注意してください。完全なインストール手順とトラブルシューティングは [nvm GitHub page](https://github.com/nvm-sh/nvm) で見つけることができます。
 
-`nvm` がインストールされても、デフォルトでは特定の `node` バージョンにはなりません。必要なバージョンをインストールして、それを使うよう `nvm` に指示する必要があります。この例ではバージョン `10` の最新リリースを使っていますが、代わりにもっと新しいバージョンを使っても構いません。
+`nvm` がインストールされても、デフォルトでは特定の `node` バージョンにはなりません。必要なバージョンをインストールして、それを使うよう `nvm` に指示する必要があります。この例ではバージョン `10` の最新リリースを使っていますが、代わりにより新しいバージョンを使っても構いません。
 
 ```shell
 nvm install 10
@@ -101,7 +101,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
 sudo pacman -S grep awk tar git
 ```
 
-`nvm` がインストールされても、デフォルトでは特定の `node` バージョンにはなりません。必要なバージョンをインストールして、それを使うよう `nvm` に指示する必要があります。この例ではバージョン `10` の最新リリースを使っていますが、代わりにもっと新しいバージョンを使っても構いません。
+`nvm` がインストールされても、デフォルトでは特定の `node` バージョンにはなりません。必要なバージョンをインストールして、それを使うよう `nvm` に指示する必要があります。この例ではバージョン `10` の最新リリースを使っていますが、代わりにより新しいバージョンを使っても構いません。
 
 ```shell
 nvm install 10
@@ -118,9 +118,9 @@ node -v
 
 ## Windows Subsystem Linux (WSL)
 
-このガイドは、すでにあなたのマシンに WSL が有効な Linux ディストロと一緒にインストールされていることを前提としています。もしそうでないなら、[マイクロソフトのサイトにあるこのガイド](https://docs.microsoft.com/ja-jp/windows/wsl/install-win10) を読んで WSL とあなたの選ぶ Linux ディストロをインストールしてください。
+このガイドは、すでにあなたのマシンに WSL が有効な Linux ディストロと一緒にインストールされていることを前提としています。もしそうでないなら、[Microsoft のサイトにあるこのガイド](https://docs.microsoft.com/ja-jp/windows/wsl/install-win10) を読んで WSL と任意の Linux ディストロをインストールしてください。
 
-2017 年 10 月 17 日、Windows 10 で WSL が公開され、マイクロソフトストアを通じて Linux ディストリビューションを利用できるようになりました。もし複数のディストリビューションをインストールしている場合、`wslconfig` によっていくつかの異なったディストリビューションを利用するよう設定できます。
+2017 年 10 月 17 日、Windows 10 で WSL が公開され、Microsoft ストアを通じて Linux ディストリビューションを利用できるようになりました。もし複数のディストリビューションをインストールしている場合、`wslconfig` によっていくつかの異なったディストリビューションを利用するよう設定できます。
 
 ```shell
 # Ubuntu をデフォルトディストリビューションに設定する
@@ -184,7 +184,7 @@ sudo apt update && sudo apt -y upgrade && sudo apt install build-essential && su
 ### 追加のリンクと情報
 
 - [VSCode のドキュメントウェブサイトより、VSCode を ESL で動作させるための大変詳細なガイド](https://code.visualstudio.com/docs/remote/wsl)
-- [Windows で Ubuntu をダウンロードするためのマイクロソフトストアページ](https://www.microsoft.com/ja-jp/p/ubuntu/9nblggh4msv6)
+- [Windows で Ubuntu をダウンロードするための Microsoft ストアページ](https://www.microsoft.com/ja-jp/p/ubuntu/9nblggh4msv6)
 - [n](https://github.com/tj/n)
 - [nvm](https://github.com/creationix/nvm)
 - [n-install](https://github.com/mklement0/n-install)
