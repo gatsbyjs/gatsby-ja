@@ -118,7 +118,7 @@ node -v
 
 ## Windows Subsystem Linux (WSL)
 
-このガイドは、すでにあなたのマシンに WSL が有効な Linux ディストロと一緒にインストールされていることを前提としています。もしそうでないなら、[this guide from Microsoft's site](https://docs.microsoft.com/en-us/windows/wsl/install-win10) を読んで WSL とあなたの選ぶ Linux ディストロをインストールしてください。
+このガイドは、すでにあなたのマシンに WSL が有効な Linux ディストロと一緒にインストールされていることを前提としています。もしそうでないなら、[マイクロソフトのサイトにあるこのガイド](https://docs.microsoft.com/ja-jp/windows/wsl/install-win10) を読んで WSL とあなたの選ぶ Linux ディストロをインストールしてください。
 
 2017 年 10 月 17 日、Windows 10 で WSL が公開され、マイクロソフトストアを通じて Linux ディストリビューションを利用できるようになりました。もし複数のディストリビューションをインストールしている場合、`wslconfig` によっていくつかの異なったディストリビューションを利用するよう設定できます。
 
@@ -154,7 +154,7 @@ nodejs.org のインストール手順に従った場合、少し壊れたイン
 curl -L https://git.io/n-install | bash
 ```
 
-node をバージョン管理するには [nvm] のような他の方法もありますが、これは WSL の [bash startup] を遅くすることが知られています。
+node をバージョン管理するには [nvm] のような他の方法もありますが、これは WSL の [bash 起動] を遅くすることが知られています。
 
 ### Windows Subsystem Linux を利用する： Debian
 
@@ -167,7 +167,6 @@ sudo apt update
 sudo apt -y upgrade
 ```
 
-Additional dependencies need to be installed as well. `build-essential` is a package that allows other packages to compile to a Debian package. `git` installs a package to work with version control. `linbpng-dev` installs a package that allows the project to manipulate images.
 追加の依存パッケージもインストールする必要があります。`build-essential` は他のパッケージが Debian パッケージにコンパイルするためのパッケージです。`git` はバージョン管理をするためのパッケージをインストールします。`linbpng-dev` はプロジェクトが画像を操作するためのパッケージをインストールします。
 
 ```shell
@@ -184,9 +183,9 @@ sudo apt update && sudo apt -y upgrade && sudo apt install build-essential && su
 
 ### 追加のリンクと情報
 
-- [Super detailed guide to making VSCode work with ESL from VSCode's docs website](https://code.visualstudio.com/docs/remote/wsl)
-- [Microsoft Store page for downloading Ubuntu on Windows](https://www.microsoft.com/en-us/store/p/ubuntu/9nblggh4msv6)
+- [VSCode のドキュメントウェブサイトより、VSCode を ESL で動作させるための大変詳細なガイド](https://code.visualstudio.com/docs/remote/wsl)
+- [Windows で Ubuntu をダウンロードするためのマイクロソフトストアページ](https://www.microsoft.com/ja-jp/p/ubuntu/9nblggh4msv6)
 - [n](https://github.com/tj/n)
 - [nvm](https://github.com/creationix/nvm)
 - [n-install](https://github.com/mklement0/n-install)
-- [bash startup](https://github.com/Microsoft/WSL/issues/776#issuecomment-266112578)
+- [bash 起動](https://github.com/Microsoft/WSL/issues/776#issuecomment-266112578)
