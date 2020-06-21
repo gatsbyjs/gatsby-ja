@@ -4,7 +4,7 @@ title: チートシート
 
 Gatsby チームは Gatsby サイトの構築にきっと役立つリソースを用意しています。それはよく使うコマンドと開発のヒントが載っているチートシートです！ご自由にダウンロードして印刷してください（そして、あなたの仕事場にテープで貼りましょう！）。関連するオンライン情報については [クイックスタート](/docs/quick-start/) と [コマンド (Gatsby CLI)](/docs/gatsby-cli/) をご覧ください。
 
-PDF はこちらから： <a href="/gatsby-cheat-sheet.pdf" download>gatsby-cheat-sheet.pdf</a>
+PDF をダウンロードする： <a href="/gatsby-cheat-sheet.pdf" download>gatsby-cheat-sheet.pdf</a>
 
 <figure aria-labelledby="cheat_sheet-text">
   <h2>Page 1</h2>
