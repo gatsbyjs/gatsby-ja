@@ -57,4 +57,4 @@ jobs:
         env:
           FILES: README.md docs/**/*.md
           LEVEL: error
-          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ github.token }}
