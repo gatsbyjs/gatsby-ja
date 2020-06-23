@@ -40,9 +40,9 @@ title: スターターライブラリーに送信する
     - (required)
 ```
 
-例として[`starters.yml`](https://github.com/gatsbyjs/gatsby/blob/master/docs/starters.yml)ファイルをご覧ください。
+例として[`starters.yml`](https://github.com/gatsbyjs/gatsby/blob/master/docs/starters.yml)ファイルを確認してください。
 
-Pull Request は `chore(starters): add my-starter-name-here` のようなタイトルが好ましいです。
+Pull Request は `chore(starters): add my-starter-name-here` のような形式のタイトルが好ましいです。
 もし PR のリンティングに問題があれば、`npm run format` を実行することで修正できます。
 
 ### 詳細を変更する必要がありますか？
