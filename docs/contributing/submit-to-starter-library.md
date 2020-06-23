@@ -45,7 +45,7 @@ title: スターターライブラリーに送信する
 Pull Request は `chore(starters): add my-starter-name-here` のような形式のタイトルが好ましいです。
 もし PR のリンティングに問題があれば、`npm run format` を実行することで修正できます。
 
-### 詳細を変更する必要がありますか？
+### 詳細を変更する必要がある？
 
 もしサイトの送信内容を後で編集したければ、別の PR を送信して .yml ファイルを編集するだけです。 GitHub のデータ（スターなど）は自動的にプルされて更新されますが、スターターの description、tags、および features はあなた次第です！
 
