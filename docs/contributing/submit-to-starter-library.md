@@ -10,7 +10,7 @@ title: スターターライブラリーに送信する
 
 1.  もしこれが Gatsby オープンソースリポジトリーへの最初の貢献であれば、[貢献ガイドライン](/contributing/code-contributions/)をご覧ください。
 
-2.  スターター情報を一覧の最後に以下の形式で追加して、[`starters.yml`](https://github.com/gatsbyjs/gatsby/blob/master/docs/starters.yml)を編集してください。
+2.  スターター情報を一覧の最後に以下の形式で追加して、[`starters.yml`](https://github.com/gatsbyjs/gatsby/blob/master/docs/starters.yml)ファイルを編集してください。
 
 ```yaml:title=docs/starters.yml
 - url: Link to a demo of your starter
@@ -51,4 +51,4 @@ Pull Request は `chore(starters): add my-starter-name-here` のような形式�
 
 ### 新しいタグを追加する
 
-もしタグの一覧に何か足りないと思ったら、[`categories.yml`](https://github.com/gatsbyjs/gatsby/blob/master/docs/categories.yml)を更新して新しいタグを追加してください。ただし、既存のタグを利用することをお勧めしています。
+もしタグの一覧に不足があると思ったら、[`categories.yml`](https://github.com/gatsbyjs/gatsby/blob/master/docs/categories.yml)ファイルを更新して新しいタグを追加してください。ただし、既存のタグを利用することをお勧めしています。
