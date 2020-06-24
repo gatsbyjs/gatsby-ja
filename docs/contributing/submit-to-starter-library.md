@@ -2,7 +2,7 @@
 title: スターターライブラリーに送信する
 ---
 
-[スターターライブラリ](/starters/)に追加したい Gatsby スターターを作成しましたか？以下の手順をご覧ください。
+[スターターライブラリー](/starters/)に追加したい Gatsby スターターを作成しましたか？以下の手順をご覧ください。
 
 ## ステップ
 
@@ -17,7 +17,7 @@ title: スターターライブラリーに送信する
   repo: Link to GitHub repo
   description: Your starter description
 
-  # これらはライブラリのカテゴリフィルターに対応しています。
+  # これらはライブラリーのカテゴリフィルターに対応しています。
   # 有効なタグは docs/categories.yml をご覧ください。
   tags:
     - Redux
