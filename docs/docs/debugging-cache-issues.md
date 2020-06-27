@@ -1,13 +1,15 @@
 ---
-title: Debugging Cache Issues
----
 
-There can be certain scenarios in which the Gatsby caching mechanism appears to fail, which can lead to Issues like:
+## title: キャッシュに関する問題のデバッグ
 
-- Content not appearing when it should
-- Changes to plugin source code not appearing to be invoked appropriately
+Gatsby のキャッシュ機構が失敗しているように見える場合、次のような問題が考えられます。
 
-and more! If you've found yourself writing a script like:
+- コンテンツが表示されるべきときに表示されない
+- プラグインのソースコードの変更が適切に呼び出されていない
+
+など。
+
+次のようなスクリプトを書いている場合は、キャッシュ問題の解決に役立つ `gatsby clean` コマンドの利用を検討してください。
 
 ```json:title=package.json
 {
@@ -17,9 +19,7 @@ and more! If you've found yourself writing a script like:
 }
 ```
 
-consider utilizing the `gatsby clean` command which can help resolve caching Issues for you.
-
-First make sure the version of `gatsby` specified in your `package.json` dependencies is _at least_ `2.1.1`, and then make the following change to `package.json`:
+まず、 `package.json` の dependencies で指定されている `gatsby` のバージョンが `2.1.1` 以上であることを確認し、 `package.json` に次の変更を加えます。
 
 ```json:title=package.json
 {
@@ -29,8 +29,8 @@ First make sure the version of `gatsby` specified in your `package.json` depende
 }
 ```
 
-Now when Issues arise that seem to be related to caching, you can use `npm run clean` to wipe out the cache and start from a fresh slate.
+キャッシュに関する問題が発生していると考えられる場合、 `npm run clean` でキャッシュを削除して新たに開始します。
 
-_Note: If you find yourself using this command regularly, consider helping us out and [responding to our GitHub Issue][github-issue] with clear reproduction steps._
+_注意: もしこのコマンドを定期的に利用している場合、私達への支援と明確な再現手順を書いて[GitHub Issue へ報告すること][github-issue]を検討してください。_
 
 [github-issue]: https://github.com/gatsbyjs/gatsby/issues/11747
