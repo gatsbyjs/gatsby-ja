@@ -4,7 +4,7 @@ title: Gatsby Config API
 
 Gatsby におけるウェブサイトの設定オプションは、プロジェクトのルートにある `gatsby-config.js` で行います。
 
-_Note: このページに、設定の違いを確認するための有用なサンプルがあります。[Gatsby Example Websites](https://github.com/gatsbyjs/gatsby/tree/master/examples)._
+_ヒント: このページに、設定の違いを確認するための有用なサンプルがあります。[Gatsby Example Websites](https://github.com/gatsbyjs/gatsby/tree/master/examples)._
 
 ## 設定オプション
 
@@ -87,7 +87,7 @@ module.exports = {
 
 Gatsby には、上級者向け機能として node タイプのマッピングを作成する機能があります。
 
-> ヒント: Gatsby v2.2 以降では node タイプにおけるは外部キーリレーションを提供します。 [`@link` GraphQL 拡張](/docs/schema-customization/#foreign-key-fields).
+> ヒント: Gatsby v2.2 以降では node タイプにおける外部キーのリレーションを提供します。 [`@link` GraphQL 拡張](/docs/schema-customization/#foreign-key-fields).
 
 例えば、複数の編集者で作成する Markdown 製のブログがあり、各ブログの投稿から著者情報にアクセスしたいとします。著者ごとの情報は `author.yaml` に記載されているものとします。
 
