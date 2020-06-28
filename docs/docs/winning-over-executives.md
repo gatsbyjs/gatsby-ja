@@ -39,7 +39,7 @@ Gatsby のサイトには、[Web とモバイル向けの組み込みのパフ�
 実のところ、Gatsby を使ってパフォーマンスが悪くなるようにするほうが苦労するくらいです。
 詳しくは Moz の[ページ速度が SEO に与える影響](https://moz.com/learn/seo/page-speed) をご参照ください。
 
-### Increase productivity
+### 生産性の向上
 
 [Gatsby ユーザー調査の結果](/blog/2019-03-05-dot-org-messaging-survey/#productive-from-the-start)、によれば、「Gatsby はまさに使い始めたときから生産性を向上させてくれます。
 gatsby は時間のかかる開発、ビルドツールのセットアップや設定というオーバーヘッドを取り去り、イテレーションを早めてくれます」。
