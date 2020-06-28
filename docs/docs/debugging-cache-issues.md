@@ -19,7 +19,7 @@ Gatsby のキャッシュ機構が失敗しているように見える場合、�
 }
 ```
 
-まず、 `package.json` の dependencies で指定されている `gatsby` のバージョンが `2.1.1` 以上であることを確認し、 `package.json` に次の変更を加えます。
+まず、`package.json` の dependencies で指定されている `gatsby` のバージョンが `2.1.1` 以上であることを確認し、`package.json` に次の変更を加えます。
 
 ```json:title=package.json
 {
