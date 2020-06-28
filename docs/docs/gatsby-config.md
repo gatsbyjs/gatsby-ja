@@ -194,7 +194,7 @@ module.exports = {
 }
 ```
 
-この設定により、 `tech` の内容を `experience` からクエリできるようになります。
+この設定により、`tech` の内容を `experience` からクエリできるようになります。
 
 ```graphql
 query {
