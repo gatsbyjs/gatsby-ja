@@ -183,7 +183,7 @@ query($slug: String!) {
 ]
 ```
 
-前の例と同じく、 `gatsby-config.js` にリレーションを記述します。
+前の例と同じく、`gatsby-config.js` にリレーションを記述します。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
