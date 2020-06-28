@@ -232,7 +232,7 @@ twitter: "@kylemathews"
 Founder @ GatsbyJS. Likes tech, reading/writing, founding things. Blogs at bricolage.io.
 ```
 
-今回も、 `gatsby-config.js` にリレーションを記述します。
+今回も、`gatsby-config.js` にリレーションを記述します。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
