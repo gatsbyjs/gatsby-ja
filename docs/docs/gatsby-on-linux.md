@@ -158,7 +158,7 @@ node をバージョン管理するには [nvm] のような他の方法もあ�
 
 ### Windows Subsystem Linux を利用する： Debian
 
-Debian のセットアップはほとんど Ubuntu と同じですが、 `git` と `libpng-dev` を追加でインストールする必要があります。
+Debian のセットアップはほとんど Ubuntu と同じですが、`git` と `libpng-dev` を追加でインストールする必要があります。
 
 まずアップデートとアップグレードから始めましょう。
 
