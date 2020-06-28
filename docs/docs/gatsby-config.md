@@ -2,7 +2,7 @@
 title: Gatsby Config API
 ---
 
-Gatsby におけるウェブサイトの設定オプションは、プロジェクトのルートにある `gatsby-config.js` で行います
+Gatsby におけるウェブサイトの設定オプションは、プロジェクトのルートにある `gatsby-config.js` で行います。
 
 _Note: このページに、設定の違いを確認するための有用なサンプルがあります。 [Gatsby Example Websites](https://github.com/gatsbyjs/gatsby/tree/master/examples)._
 
@@ -71,7 +71,7 @@ module.exports = {
 
 ## Polyfill
 
-Gatsby は ES6 Promise API を利用します。いくつかのブラウザは ES6 構文をサポートしていないため、Gatsby はデフォルトで polyfill を含めています。
+Gatsby は ES6 Promise API を利用します。いくつかのブラウザーは ES6 構文をサポートしていないため、Gatsby はデフォルトで polyfill を含めています。
 
 もし、デフォルト以外の Promise polyfill を使いたい場合は `polyfill` を false に設定してください。
 
@@ -81,7 +81,7 @@ module.exports = {
 }
 ```
 
-詳細は [ブラウザーサポート](/docs/browser-support/#polyfills) を参照してください
+詳細は [ブラウザーサポート](/docs/browser-support/#polyfills) を参照してください。
 
 ## node タイプマッピング
 
@@ -221,7 +221,7 @@ query {
 }
 ```
 
-また、マッピング機能は Markdown ファイル同士でもマッピングを行うことが出来ます。例として、すべての著者情報を YAML ファイルに含める代わりに、各著者に関する情報を個別の Markdown ファイルに含める場合を示します。
+また、マッピング機能は Markdown ファイル同士でもマッピングを行うことが出来ます。例として、すべての著者情報を YAML ファイルへ含める代わりに、各著者に関する情報を個別の Markdown ファイルに含める場合を示します。
 
 ```markdown
 ---
