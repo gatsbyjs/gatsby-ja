@@ -67,7 +67,7 @@ module.exports = {
 }
 ```
 
-詳細は [Adding a Path Prefix](/docs/path-prefix/) を参照してください。
+詳細は [パスの接頭辞を追加する](/docs/path-prefix/) を参照してください。
 
 ## Polyfill
 
@@ -81,7 +81,7 @@ module.exports = {
 }
 ```
 
-詳細は [Browser Support](/docs/browser-support/#polyfills) を参照してください
+詳細は [ブラウザーサポート](/docs/browser-support/#polyfills) を参照してください
 
 ## node タイプマッピング
 
