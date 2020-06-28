@@ -4,7 +4,7 @@ title: Gatsby Config API
 
 Gatsby におけるウェブサイトの設定オプションは、プロジェクトのルートにある `gatsby-config.js` で行います。
 
-_Note: このページに、設定の違いを確認するための有用なサンプルがあります。 [Gatsby Example Websites](https://github.com/gatsbyjs/gatsby/tree/master/examples)._
+_Note: このページに、設定の違いを確認するための有用なサンプルがあります。[Gatsby Example Websites](https://github.com/gatsbyjs/gatsby/tree/master/examples)._
 
 ## 設定オプション
 
