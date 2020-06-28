@@ -117,7 +117,7 @@ module.exports = {
 }
 ```
 
-この機能を利用する場合、適切な file trasformer の拡張機能をインストーする必要があります。 ( YAML を利用してマッピングを行う場合は [gatsby-transformer-yaml](/packages/gatsby-transformer-yaml/)) と [gatsby-source-filesystem](/packages/gatsby-source-filesystem/) をインストールします。 後に説明する他のファイルタイプによるマッピングの場合は、そのファイルに対応した拡張機能をインストールしてください。
+この機能を利用する場合、適切な file trasformer の拡張機能をインストーする必要があります。(YAML を利用してマッピングを行う場合は [gatsby-transformer-yaml](/packages/gatsby-transformer-yaml/)) と [gatsby-source-filesystem](/packages/gatsby-source-filesystem/) をインストールします。後に説明する他のファイルタイプによるマッピングの場合は、そのファイルに対応した拡張機能をインストールしてください。
 
 マッピングを設定すると、Gatsby は、GraphQL スキーマを作成するときにこのマッピングを使用して、両方のソースからデータをクエリできるようにします。
 
