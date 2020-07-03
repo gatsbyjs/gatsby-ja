@@ -36,7 +36,7 @@ npm install gatsby-theme-blog
 
 あなたが使いたいテーマの README に沿って、必要な設定を加えてください。
 
-```shell
+```javascript:title=gatsby-config.js
 module.exports = {
   plugins: [
     {
