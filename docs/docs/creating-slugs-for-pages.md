@@ -1,18 +1,18 @@
 ---
-title: Creating Slugs for Pages
+title: ページのスラッグを作成する
 ---
 
-The logic for creating slugs from file names can get tricky, the `gatsby-source-filesystem` plugin ships with a function for creating them.
+ファイル名からスラッグを作成するロジックは時おり複雑になり得ます。`gatsby-source-filesystem` プラグインは、そのための関数を用意しています。
 
-## Install
+## インストール
 
 `npm install --save gatsby-source-filesystem`
 
-## Create slugs in gatsby-node.js
+## gatsby-node.js を使ったスラッグの作成
 
-Add your new slugs directly onto the `MarkdownRemark` nodes. Any data you add to nodes is available to query later with GraphQL.
+`MarkdownRemark` ノードに新しいスラッグを直接作成しましょう。このノードに追加されたデータは GraphQL によってクエリ可能となります。
 
-To do so, you'll use a function passed to our API implementation called [`createNodeField`](/docs/actions/#createNodeField). This function allows you to create additional fields on nodes created by other plugins.
+作成するには、[`createNodeField`](/docs/actions/#createNodeField) という API を使用します。この関数は他のプラグインによって作成されたノードに新しくフィールドを追加できます。
 
 ```javascript:title=gatsby-node.js
 const { createFilePath } = require(`gatsby-source-filesystem`)
@@ -34,9 +34,9 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 }
 ```
 
-## Query created slugs
+## 作成されたスラッグの確認
 
-Open refresh GraphiQL, then run this GraphQL query to see all your slugs:
+GraphiQL を開き、以下の GraphQL クエリを実行することで、全てのスラッグが確認できます。
 
 ```graphql
 {

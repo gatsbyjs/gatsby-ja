@@ -3,7 +3,7 @@ title: ローカル開発環境を構築する
 ---
 
 このページでは Gatsby のコアとそのエコシステムに貢献するためのセットアップ方法の概要を説明します。
-ドキュメントへの作業手順は[ドキュメントの貢献](/contributing/docs-contributions/)ページを見てください。ブログとウェブサイトのセットアップ手順は[ブログ・ウェブサイトへの貢献](/contributing/blog-and-website-contributions/)ページをご覧ください。
+ドキュメントへの作業手順は[ドキュメントの貢献](/contributing/docs-contributions/)ページを見てください。ブログとウェブサイトのセットアップ手順は[ブログ・ウェブサイトへの貢献](/contributing/website-contributions/)ページをご覧ください。
 
 > Gatsby は多くの依存関係を管理するために 「モノレポ」パターンを使用し、アクティブな開発とドキュメントの基盤の変更のためにリポジトリを設定するために Lerna と Yarn に依存しています。
 

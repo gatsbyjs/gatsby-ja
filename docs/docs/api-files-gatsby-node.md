@@ -1,18 +1,18 @@
 ---
-title: The gatsby-node.js API file
+title: gatsby-node.js API ファイル
 ---
 
-Code in the file `gatsby-node.js` is run once in the process of building your site. You can use it to create pages dynamically, add nodes in GraphQL, or respond to events during the build lifecycle. To use the [Gatsby Node APIs](/docs/node-apis/), create a file named `gatsby-node.js` in the root of your site. Export any of the APIs you wish to use in this file.
+`gatsby-node.js` ファイルのコードは、サイトをビルドする過程で 1 回実行されます。`gatsby-node.js` を使うと、ページを動的に生成したり、GraphQL にノードを追加したり、ビルドライフサイクル上のイベントに対して実行したりできます。[Gatsby Node API](/docs/node-apis/) を使うためには、まずサイトのルートに `gatsby-node.js` という名前のファイルを作成します。そして、利用したい API をこのファイルからエクスポートしてください。
 
-Every Gatsby Node API passes a [set of Node API helpers](/docs/node-api-helpers/). These let you access several methods like reporting, or perform actions like creating new pages.
+あらゆる Gatsby Node API は [Node API のヘルパー一式](/docs/node-api-helpers/)を提供します。これらを利用して、レポートの作成といったメソッドにアクセスしたり、新しいページの作成のようなアクションを行えます。
 
 ```js:title=gatsby-node.js
 const path = require(`path`)
-// Log out information after a build is done
+// ビルドが終了したら情報をログに記録する
 exports.onPostBuild = ({ reporter }) => {
-  reporter.info(`Your Gatsby site has been built!`)
+  reporter.info(`Gatsby サイト、構築完了！`)
 }
-// Create blog pages dynamically
+// 動的にブログのページを生成する
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const blogPostTemplate = path.resolve(`src/templates/blog-post.js`)

@@ -107,8 +107,7 @@ module.exports = {
 
 Stripe は JavaScript ライブラリーを提供します。これにより、Stripe がホストする支払いページに顧客を安全にリダイレクトできます。Gatsby プラグインの `gatsby-plugin-stripe` は全てのページで `<body>` タグの末尾に次のスニペットを追加します：
 
-```html
-<script src="https://js.stripe.com/v3/"></script>
+const stripe = await loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx")
 ```
 
 これにより、Stripe の[不正検出](https://stripe.com/docs/stripe-js/reference#including-stripejs)]が容易になります
@@ -159,6 +158,7 @@ Stripe ダッシュボードでテスト SKU と本番 SKU の両方を作成す
 
 ```jsx:title=src/components/checkout.js
 import React from "react"
+import { loadStripe } from "@stripe/stripe-js"
 
 const buttonStyles = {
   fontSize: "13px",
@@ -180,29 +180,26 @@ const Checkout = class extends React.Component {
     this.stripe = window.Stripe("pk_test_jG9s3XMdSjZF9Kdm5g59zlYd")
   }
 
-  async redirectToCheckout(event) {
-    event.preventDefault()
-    const { error } = await this.stripe.redirectToCheckout({
-      items: [{ sku: "sku_DjQJN2HJ1kkvI3", quantity: 1 }],
-      successUrl: `http://localhost:8000/page-2/`,
-      cancelUrl: `http://localhost:8000/`,
-    })
+const redirectToCheckout = async event => {
+  event.preventDefault()
+  const stripe = await stripePromise
+  const { error } = await stripe.redirectToCheckout({
+    items: [{ sku: "sku_DjQJN2HJ1kkvI3", quantity: 1 }],
+    successUrl: `http://localhost:8000/page-2/`,
+    cancelUrl: `http://localhost:8000/`,
+  })
 
-    if (error) {
-      console.warn("Error:", error)
-    }
+  if (error) {
+    console.warn("Error:", error)
   }
+}
 
-  render() {
-    return (
-      <button
-        style={buttonStyles}
-        onClick={event => this.redirectToCheckout(event)}
-      >
-        BUY MY BOOK
-      </button>
-    )
-  }
+const Checkout = () => {
+  return (
+    <button style={buttonStyles} onClick={redirectToCheckout}>
+      BUY MY BOOK
+    </button>
+  )
 }
 
 export default Checkout
@@ -213,41 +210,35 @@ export default Checkout
 React をインポートし、いくつかの style のボタンを追加し、React 関数を導入しました。`componentDidMount()`や、`redirectToCheckout()` といった関数は Stripe の機能の中で最も重要です。`componentDidMount()` 関数はコンポーネントが最初に DOM にマウントされた時に起動する React のライフサイクルメソッドであり、Stripe.js クライアントを初期化するのに適した場所です。コードは以下のようになります。
 
 ```jsx:title=src/components/checkout.js
-  componentDidMount() {
-    this.stripe = window.Stripe("pk_test_jG9s3XMdSjZF9Kdm5g59zlYd")
-  }
+const stripePromise = loadStripe("pk_test_jG9s3XMdSjZF9Kdm5g59zlYd")
 ```
 
 これによって Stripe プラットフォームが識別され、製品とセキュリティの設定に対して支払いリクエストが検証され、Stripe アカウントの支払いが処理されます。
 
 ```jsx:title=src/components/checkout.js
-  async redirectToCheckout(event) {
-    event.preventDefault()
-    const { error } = await this.stripe.redirectToCheckout({
-      items: [{ sku: "sku_DjQJN2HJ1kkvI3", quantity: 1 }],
-      successUrl: `http://localhost:8000/page-2/`,
-      cancelUrl: `http://localhost:8000/`,
-    })
+const redirectToCheckout = async event => {
+  event.preventDefault()
+  const stripe = await stripePromise
+  const { error } = await stripe.redirectToCheckout({
+    items: [{ sku: "sku_DjQJN2HJ1kkvI3", quantity: 1 }],
+    successUrl: `http://localhost:8000/page-2/`,
+    cancelUrl: `http://localhost:8000/`,
+  })
 
-    if (error) {
-      console.warn("Error:", error)
-    }
+  if (error) {
+    console.warn("Error:", error)
   }
+}
 ```
 
 `redirectToCheckout()` 関数は支払いのリクエストを検証し、Stripe がホストする支払いページにリダイレクトするか、エラーオブジェクトで解決します。`successUrl` と `cancelUrl` を適切な URL に置き換えてください。
 
 ```jsx:title=src/components/checkout.js
-  render() {
-    return (
-      <button
-        style={buttonStyles}
-        onClick={event => this.redirectToCheckout(event)}
-      >
-        BUY MY BOOK
-      </button>
-    )
-  }
+return (
+  <button style={buttonStyles} onClick={redirectToCheckout}>
+    BUY MY BOOK
+  </button>
+)
 ```
 
 `render()` 関数は style をボタンに適用し、`redirectToCheckout()` 関数をボタンの onclick イベントにバインドします。
@@ -302,17 +293,16 @@ npm install gatsby-source-stripe
 ```js:title=gatsby-config.js
 module.exports = {
   siteMetadata: {
-    title: `Gatsby e-commerce Starter`,
+    title: `Gatsby E-commerce Starter`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    "gatsby-plugin-stripe",
     {
       resolve: `gatsby-source-stripe`,
       options: {
         objects: ["Sku"],
         secretKey: process.env.STRIPE_SECRET_KEY,
-        downloadFiles: true,
+        downloadFiles: false,
       },
     },
   ],
@@ -447,13 +437,14 @@ const formatPrice = (amount, currency) => {
   return numberFormat.format(price)
 }
 
-const SkuCard = class extends React.Component {
-  async redirectToCheckout(event, sku, quantity = 1) {
+const SkuCard = ({ sku, stripePromise }) => {
+  const redirectToCheckout = async (event, sku, quantity = 1) => {
     event.preventDefault()
-    const { error } = await this.props.stripe.redirectToCheckout({
+    const stripe = await stripePromise
+    const { error } = await stripe.redirectToCheckout({
       items: [{ sku, quantity }],
-      successUrl: `http://localhost:8000/page-2/`,
-      cancelUrl: `http://localhost:8000/advanced`,
+      successUrl: `${window.location.origin}/page-2/`,
+      cancelUrl: `${window.location.origin}/advanced`,
     })
 
     if (error) {
@@ -485,9 +476,10 @@ export default SkuCard
 最後に、`Skus` コンポーネントをリファクタリングして Stripe.js クライアントを初期化し、`props` で Stripe.js クライアントを伝えながら `SkuCards` をレンダリングする必要があります。
 
 ```jsx:title=src/components/Products/Skus.js
-import React, { Component } from "react"
+import React from "react"
 import { graphql, StaticQuery } from "gatsby"
-import SkuCard from "./SkuCard" // highlight-line
+import SkuCard from "./SkuCard"
+import { loadStripe } from "@stripe/stripe-js"
 
 const containerStyles = {
   display: "flex",
@@ -497,50 +489,36 @@ const containerStyles = {
   padding: "1rem 0 1rem 0",
 }
 
-class Skus extends Component {
-  // Initialise Stripe.js with your publishable key.
-  // You can find your key in the Dashboard:
-  // https://dashboard.stripe.com/account/apikeys
-  // highlight-start
-  state = {
-    stripe: null,
-  }
+const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY)
 
-  componentDidMount() {
-    const stripe = window.Stripe(process.env.GATSBY_STRIPE_PUBLIC_KEY)
-    this.setState({ stripe })
-  }
-  // highlight-end
-
-  render() {
-    return (
-      <StaticQuery
-        query={graphql`
-          query SkusForProduct {
-            skus: allStripeSku {
-              edges {
-                node {
-                  id
-                  currency
-                  price
-                  attributes {
-                    name
-                  }
+const Skus = () => {
+  return (
+    <StaticQuery
+      query={graphql`
+        query SkusForProduct {
+          skus: allStripeSku(sort: { fields: [price] }) {
+            edges {
+              node {
+                id
+                currency
+                price
+                attributes {
+                  name
                 }
               }
             }
           }
-        `}
-        render={({ skus }) => (
-          <div style={containerStyles}>
-            {skus.edges.map(({ node: sku }) => (
-              <SkuCard key={sku.id} sku={sku} stripe={this.state.stripe} /> {/* highlight-line */}
-            ))}
-          </div>
-        )}
-      />
-    )
-  }
+        }
+      `}
+      render={({ skus }) => (
+        <div style={containerStyles}>
+          {skus.edges.map(({ node: sku }) => (
+            <SkuCard key={sku.id} sku={sku} stripePromise={stripePromise} />
+          ))}
+        </div>
+      )}
+    />
+  )
 }
 
 export default Skus

@@ -83,29 +83,29 @@ GraphiQL は、Gatsby によって定義されたフラグメントについて�
 例えば、あなたのクエリーが以下を含んでいるとします。
 
 ```graphql
-    image {
-        childImageSharp {
-            fluid(maxWidth: 1024) {
-                ...GatsbyImageSharpFluid
-            }
-        }
+image {
+  childImageSharp {
+    fluid(maxWidth: 1024) {
+      ...GatsbyImageSharpFluid
     }
+  }
+}
 ```
 
 それが、こうなります。
 
 ```graphql
-    image {
-        childImageSharp {
-            fluid(maxWidth: 1024) {
-                base64
-                aspectRatio
-                src
-                srcSet
-                sizes
-            }
-        }
+image {
+  childImageSharp {
+    fluid(maxWidth: 1024) {
+      base64
+      aspectRatio
+      src
+      srcSet
+      sizes
     }
+  }
+}
 ```
 
 クエリーの結果がある時、出力から `data` の値をコピーしてください。グッドプラクティスは、フィクスチャとして別ファイルに保存することです。しかし、ここでは簡潔にテストファイルの中に直接定義してしまいましょう。
