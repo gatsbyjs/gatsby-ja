@@ -2,15 +2,13 @@
 title: ローカル開発環境を構築する
 ---
 
-このページでは Gatsby のコアとそのエコシステムに貢献するためのセットアップ方法の概要を説明します。
-ドキュメントへの作業手順は[ドキュメントの貢献](/contributing/docs-contributions/)ページを見てください。ブログとウェブサイトのセットアップ手順は[ブログ・ウェブサイトへの貢献](/contributing/website-contributions/)ページをご覧ください。
+このページでは Gatsby のコアとそのエコシステムに貢献するためのセットアップ方法の概要を説明します。ドキュメントへの作業手順は[ドキュメントの貢献](/contributing/docs-contributions/)ページを見てください。ブログとウェブサイトのセットアップ手順は[ブログ・ウェブサイトへの貢献](/contributing/website-contributions/)ページをご覧ください。
 
-> Gatsby は多くの依存関係を管理するために 「モノレポ」パターンを使用し、アクティブな開発とドキュメントの基盤の変更のためにリポジトリを設定するために Lerna と Yarn に依存しています。
+> Gatsby は多くの依存関係を管理するために 「モノレポ」パターンを使用し、アクティブな開発とドキュメントの基盤の変更のためにリポジトリを設定するために [Lerna](https://lerna.js.org/) と [Yarn](https://yarnpkg.com/en/) に依存しています。
 
 ## Yarn の利用
 
-Yarn は[NPM](https://www.npmjs.com/)と似たコードのパッケージマネージャーです。NPM は CLI を使って Gatsby サイトの開発に使われますが、Gatsby リポジトリーへの貢献には次の理由から Yarn を必要とします。
-私たちはモノレポにとても便利な Yarn の[workspaces](https://yarnpkg.com/lang/ja/docs/workspaces/)という機能を利用しています。それによって、サブフォルダー内にある複数の `package.json` から依存関係をインストールでき、より早く軽いインストール過程を実現します。
+Yarn は[NPM](https://www.npmjs.com/)と似たコードのパッケージマネージャーです。NPM は CLI を使って Gatsby サイトの開発に使われますが、Gatsby リポジトリーへの貢献には次の理由から Yarn を必要とします。私たちはモノレポにとても便利な Yarn の[workspaces](https://yarnpkg.com/lang/ja/docs/workspaces/)という機能を利用しています。それによって、サブフォルダー内にある複数の `package.json` から依存関係をインストールでき、より早く軽いインストール過程を実現します。
 
 ```json:title=package.json
 {
