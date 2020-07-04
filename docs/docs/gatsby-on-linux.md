@@ -2,172 +2,172 @@
 title: Gatsby on Linux
 ---
 
-This guide assumes you already have a native installation of Linux on your machine. The following steps walk through how to install Node.js and associated dependencies.
+このガイドは、すでにあなたのマシンに Linux がネイティブインストールされていることを前提としています。以下のステップでは、Node.js および関連する依存パッケージをインストールする方法を説明します。
 
-## Ubuntu, Debian, and other `apt` based distros
+## Ubuntu, Debian, その他の `apt` ベースのディストロ
 
-Begin by updating and upgrading.
+まずアップデートとアップグレードから始めましょう。
 
 ```shell
 sudo apt update
 sudo apt -y upgrade
 ```
 
-Install cURL which allows you to transfer data and download additional dependencies.
+データの転送および追加の依存パッケージのダウンロードをするため、cURL をインストールします。
 
 ```shell
 sudo apt install curl
 ```
 
-Once `curl` is installed, you can use it to install `nvm`, which will manage `node` and all its associated versions.
+`curl` をインストールしたら、さらに `nvm` をインストールすることで `node` とその関連するすべてのバージョンを管理できるようになります。
 
 ```shell
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
 ```
 
-> Note that this is the current stable release of nvm. Full installation instructions and troubleshooting can be found at the [nvm GitHub page](https://github.com/nvm-sh/nvm)
+> これは nvm の現時点での安定版リリースであることに注意してください。完全なインストール手順とトラブルシューティングは [nvm GitHub page](https://github.com/nvm-sh/nvm) で見つけることができます。
 
-When `nvm` is installed, it does not default to a particular `node` version. You'll need to install the version you want and give `nvm` instructions to use it. This example uses the latest release of version `10`, but more recent version numbers can be used instead.
+`nvm` がインストールされても、デフォルトでは特定の `node` バージョンにはなりません。必要なバージョンをインストールして、それを使うよう `nvm` に指示する必要があります。この例ではバージョン `10` の最新リリースを使っていますが、代わりにより新しいバージョンを使っても構いません。
 
 ```shell
 nvm install 10
 nvm use 10
 ```
 
-To confirm this has worked, use the following command.
+以下のコマンドを使って、これが正しく動作しているかを確認できます。
 
 ```shell
 node -v
 ```
 
-> Note that `npm` comes packaged with `node`
+> `npm` は `node` と一緒にパッケージ化されていることに注意してください。
 
-Finally, install `git` which will be necessary for creating your first Gatsby project based on a starter.
+最後に、`git` をインストールします。これはスターターをベースに Gatsby プロジェクトを作るために必要となります。
 
 ```shell
 sudo apt install git
 ```
 
-## Fedora, RedHat, and other `dnf` based distros
+## Fedora, RedHat, その他の `dnf` ベースのディストロ
 
-These distros come installed with `curl`, so you can use that to download `nvm`.
+これらのディストロには `curl` が一緒にインストールされているため、それを使って `nvm` をダウンロードできます。
 
 ```shell
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
 ```
 
-> Note that this is the current stable release of nvm. Full installation instructions and troubleshooting can be found at the [nvm GitHub page](https://github.com/nvm-sh/nvm)
+> これは nvm の現時点での安定版リリースであることに注意してください。完全なインストール手順とトラブルシューティングは [nvm GitHub page](https://github.com/nvm-sh/nvm) で見つけることができます。
 
-When `nvm` is installed, it does not default to a particular `node` version. You'll need to install the version you want and give `nvm` instructions to use it. This example uses the latest release of version `10`, but more recent version numbers can be used instead.
+`nvm` がインストールされても、デフォルトでは特定の `node` バージョンにはなりません。必要なバージョンをインストールして、それを使うよう `nvm` に指示する必要があります。この例ではバージョン `10` の最新リリースを使っていますが、代わりにより新しいバージョンを使っても構いません。
 
 ```shell
 nvm install 10
 nvm use 10
 ```
 
-To confirm this has worked, use the following command.
+以下のコマンドを使って、これが正しく動作しているかを確認できます。
 
 ```shell
 node -v
 ```
 
-> Note that `npm` comes packaged with `node`
+> `npm` は `node` と一緒にパッケージ化されていることに注意してください。
 
-Finally, install `git` which will be necessary for creating your first Gatsby project based on a starter.
+最後に、`git` をインストールします。これはスターターをベースに Gatsby プロジェクトを作るために必要となります。
 
 ```shell
 sudo dnf install git
 ```
 
-## Archlinux and other `pacman` based distros
+## Archlinux およびその他の `pacman` ベースのディストロ
 
-Begin by updating.
+まずアップデートから始めます。
 
 ```shell
 sudo pacman -Sy
 ```
 
-These distros come installed with `curl`, so you can use that to download `nvm`.
+これらのディストロには `curl` が一緒にインストールされているため、それを使って `nvm` をダウンロードできます。
 
 ```shell
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
 ```
 
-> Note that this is the current stable release of nvm. Full installation instructions and troubleshooting can be found at the [nvm GitHub page](https://github.com/nvm-sh/nvm)
+> これは nvm の現時点での安定版リリースであることに注意してください。完全なインストール手順とトラブルシューティングは [nvm GitHub page](https://github.com/nvm-sh/nvm) で見つけることができます。
 
-Before using `nvm`, you need to install additional dependencies.
+`nvm` を使う前に、追加の依存パッケージをインストールする必要があります。
 
 ```shell
 sudo pacman -S grep awk tar git
 ```
 
-When `nvm` is installed, it does not default to a particular `node` version. You'll need to install the version you want and give `nvm` instructions to use it. This example uses the latest release of version `10`, but more recent version numbers can be used instead.
+`nvm` がインストールされても、デフォルトでは特定の `node` バージョンにはなりません。必要なバージョンをインストールして、それを使うよう `nvm` に指示する必要があります。この例ではバージョン `10` の最新リリースを使っていますが、代わりにより新しいバージョンを使っても構いません。
 
 ```shell
 nvm install 10
 nvm use 10
 ```
 
-To confirm this has worked, use the following command.
+以下のコマンドを使って、これが正しく動作しているかを確認できます。
 
 ```shell
 node -v
 ```
 
-> Note that `npm` comes packaged with `node`
+> `npm` は `node` と一緒にパッケージ化されていることに注意してください。
 
 ## Windows Subsystem Linux (WSL)
 
-This guide assumes that you already have WSL installed with a working Linux distro. If you don't, follow [this guide from Microsoft's site](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to install WSL and a Linux distro of your choice.
+このガイドは、すでにあなたのマシンに WSL が有効な Linux ディストロと一緒にインストールされていることを前提としています。もしそうでないなら、[Microsoft のサイトにあるこのガイド](https://docs.microsoft.com/ja-jp/windows/wsl/install-win10) を読んで WSL と任意の Linux ディストロをインストールしてください。
 
-As of October 17th 2017, Windows 10 ships with WSL and Linux distributions are available via the Microsoft Store, there are several different distributions to use which can be configured via `wslconfig` if you have more than one distribution installed.
+2017 年 10 月 17 日、Windows 10 で WSL が公開され、Microsoft ストアを通じて Linux ディストリビューションを利用できるようになりました。もし複数のディストリビューションをインストールしている場合、`wslconfig` によっていくつかの異なったディストリビューションを利用するよう設定できます。
 
 ```shell
-# set default distribution to Ubuntu
+# Ubuntu をデフォルトディストリビューションに設定する
 wslconfig /setdefault ubuntu
 ```
 
-> Please note that if you have used the [Gatsby on Windows](/docs/gatsby-on-windows/) setup without WSL, then you have to delete any existing `node_modules` folder in your project and re-install the dependencies in your WSL environment.
+> もし [Gatsby on Windows](/docs/gatsby-on-windows/) によるセットアップを WSL なしで使っていた場合、あなたのプロジェクトに存在しているすべての `node_modules` フォルダを削除し、WSL 環境内ですべての依存パッケージを再インストールする必要があることに注意してください。
 
-### Using Windows Subsystem Linux: Ubuntu
+### Windows Subsystem Linux を利用する： Ubuntu
 
-If you have a fresh install of Ubuntu then update and upgrade:
+新しく Ubuntu をインストールした場合、アップデートとアップグレードを行ってください。
 
 ```shell
 sudo apt update
 sudo apt -y upgrade
 ```
 
-**Build tools**
+**ビルドツール**
 
-To compile and install native addons from npm you may also need to install build tools for `node-gyp`:
+npm を使ってネイティブのアドオンをコンパイルしてインストールするために、さらに `node-gyp` 用のビルドツールをインストールする必要があるかもしれません。
 
 ```shell
 sudo apt install -y build-essential
 ```
 
-**Install node**
+**node のインストール**
 
-Following the install instructions on nodejs.org leaves a slightly broken install (i.e. permission errors when trying to `npm install`). Instead try installing node versions using [n] which you can install with [n-install]:
+nodejs.org のインストール手順に従った場合、少し壊れたインストールになってしまいます（例えば `npm install` をしようとしたときのパーミッションエラー）。代わりに `n` を使って node バージョンをインストールしてみます。これは `n-install` を使ってインストールできます。
 
 ```shell
 curl -L https://git.io/n-install | bash
 ```
 
-There are other alternatives for managing your node versions such as [nvm] but this is known to slow down [bash startup] on WSL.
+node をバージョン管理するには `nvm` のような他の方法もありますが、これは WSL の `bash startup` を遅くすることが知られています。
 
-### Using Windows Subsystem Linux: Debian
+### Windows Subsystem Linux を利用する： Debian
 
-Debian setup is nearly identical to Ubuntu except for the additional installs of `git` and `libpng-dev`.
+Debian のセットアップはほとんど Ubuntu と同じですが、`git` と `libpng-dev` を追加でインストールする必要があります。
 
-Begin by updating and upgrading.
+まずアップデートとアップグレードから始めましょう。
 
 ```shell
 sudo apt update
 sudo apt -y upgrade
 ```
 
-Additional dependencies need to be installed as well. `build-essential` is a package that allows other packages to compile to a Debian package. `git` installs a package to work with version control. `linbpng-dev` installs a package that allows the project to manipulate images.
+追加の依存パッケージもインストールする必要があります。`build-essential` は他のパッケージが Debian パッケージにコンパイルするためのパッケージです。`git` はバージョン管理をするためのパッケージをインストールします。`linbpng-dev` はプロジェクトが画像を操作するためのパッケージをインストールします。
 
 ```shell
 sudo apt install build-essential
@@ -175,17 +175,17 @@ sudo apt install git
 sudo apt install libpng-dev
 ```
 
-Or to install all at the same time and approve `(y)` all installs:
+もしくはすべてを同時にインストールして、すべてのインストールを承認 `(y)` してください。
 
 ```shell
 sudo apt update && sudo apt -y upgrade && sudo apt install build-essential && sudo apt install git && sudo apt install libpng-dev
 ```
 
-### Additional links and resources
+### 追加のリンクと情報
 
-- [Super detailed guide to making VSCode work with ESL from VSCode's docs website](https://code.visualstudio.com/docs/remote/wsl)
-- [Microsoft Store page for downloading Ubuntu on Windows](https://www.microsoft.com/en-us/store/p/ubuntu/9nblggh4msv6)
+- [VSCode のドキュメントウェブサイトより、VSCode を ESL で動作させるためのとても詳細なガイド](https://code.visualstudio.com/docs/remote/wsl)
+- [Windows で Ubuntu をダウンロードするための Microsoft ストアページ](https://www.microsoft.com/ja-jp/p/ubuntu/9nblggh4msv6)
 - [n](https://github.com/tj/n)
 - [nvm](https://github.com/creationix/nvm)
 - [n-install](https://github.com/mklement0/n-install)
-- [bash startup](https://github.com/Microsoft/WSL/issues/776#issuecomment-266112578)
+- [bash 起動](https://github.com/Microsoft/WSL/issues/776#issuecomment-266112578)
