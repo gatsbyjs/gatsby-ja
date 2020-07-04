@@ -1,34 +1,34 @@
 ---
-title: Submit to Starter Library
+title: スターターライブラリーに送信する
 ---
 
-Have you created a Gatsby starter you'd like to add to the [Starter Library](/starters/)? Follow these instructions.
+[スターターライブラリー](/starters/)に追加したい Gatsby スターターを作成しましたか？以下の手順をご覧ください。
 
-## Steps
+## ステップ
 
-To get your site added to the starter library, follow the two steps below.
+あなたのサイトをスターターライブラリーに追加するには、以下の 2 つのステップをご覧ください。
 
-1.  If this is your first contribution to the Gatsby open source repo, follow the [Contribution guidelines](/contributing/code-contributions/).
+1.  もしこれが Gatsby オープンソースリポジトリーへの最初の貢献であれば、[貢献ガイドライン](/contributing/code-contributions/)をご覧ください。
 
-2.  Edit the [`starters.yml`](https://github.com/gatsbyjs/gatsby/blob/master/docs/starters.yml) file by adding your starter information to the bottom of the list in the following format:
+2.  スターター情報を一覧の最後に以下の形式で追加して、[`starters.yml`](https://github.com/gatsbyjs/gatsby/blob/master/docs/starters.yml)ファイルを編集してください。
 
 ```yaml:title=docs/starters.yml
 - url: Link to a demo of your starter
   repo: Link to GitHub repo
   description: Your starter description
 
-  # These correspond to the category filters in the library
-  # See docs/categories.yml for valid tags.
+  # これらはライブラリーのカテゴリフィルターに対応しています。
+  # 有効なタグは docs/categories.yml をご覧ください。
   tags:
     - Redux
 
-  # Add your site features
-  # These will be included on your starter's detail page.
+  # サイトの機能を追加します。
+  # これらはあなたのスターターの詳細ページに含まれます。
   features:
     - Blog post listing with previews (image + summary) for each blog post
 ```
 
-Use the following template to ensure required fields are filled:
+必須項目を確実に入力するために以下のテンプレートを使用してください。
 
 ```yaml:title=docs/starters.yml
 - url: (required)
@@ -40,16 +40,15 @@ Use the following template to ensure required fields are filled:
     - (required)
 ```
 
-Check out the [`starters.yml`](https://github.com/gatsbyjs/gatsby/blob/master/docs/starters.yml) file for examples.
+例として[`starters.yml`](https://github.com/gatsbyjs/gatsby/blob/master/docs/starters.yml)ファイルを確認してください。
 
-We prefer Pull Requests with the title in the following format:
-`chore(starters): add my-starter-name-here`
-If there are linting Issues with your PR, you can fix them by running `npm run format`.
+Pull Request は `chore(starters): add my-starter-name-here` のような形式のタイトルが好ましいです。
+もし PR のリンティングに問題があれば、`npm run format` を実行することで修正できます。
 
-### Need to change details?
+### 詳細を変更する必要がある？
 
-If you want to edit anything in your site submission later, simply edit the .yml file by submitting another PR. GitHub data (like stars) will be automatically pulled and updated, but your starter description, tags, and feature list are up to you!
+もしサイトの送信内容を後で編集したければ、別の PR を送信して .yml ファイルを編集するだけです。GitHub のデータ（スターなど）は自動的にプルされて更新されますが、スターターの description、tags、および features はあなた次第です！
 
-### Adding new tag
+### 新しいタグを追加する
 
-If you think that there is something missing in the tag list, you can update [`categories.yml`](https://github.com/gatsbyjs/gatsby/blob/master/docs/categories.yml) and add a new one. However, we encourage you to use existing tags.
+もしタグの一覧に不足があると思ったら、[`categories.yml`](https://github.com/gatsbyjs/gatsby/blob/master/docs/categories.yml)ファイルを更新して新しいタグを追加してください。ただし、既存のタグを利用することをお勧めしています。
