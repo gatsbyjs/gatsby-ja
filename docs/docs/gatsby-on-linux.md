@@ -148,13 +148,13 @@ sudo apt install -y build-essential
 
 **node のインストール**
 
-nodejs.org のインストール手順に従った場合、少し壊れたインストールになってしまいます（例えば `npm install` をしようとしたときのパーミッションエラー）。代わりに [n] を使って node バージョンをインストールしてみます。これは [n-install] を使ってインストールできます。
+nodejs.org のインストール手順に従った場合、少し壊れたインストールになってしまいます（例えば `npm install` をしようとしたときのパーミッションエラー）。代わりに `n` を使って node バージョンをインストールしてみます。これは `n-install` を使ってインストールできます。
 
 ```shell
 curl -L https://git.io/n-install | bash
 ```
 
-node をバージョン管理するには [nvm] のような他の方法もありますが、これは WSL の [bash 起動] を遅くすることが知られています。
+node をバージョン管理するには `nvm` のような他の方法もありますが、これは WSL の `bash startup` を遅くすることが知られています。
 
 ### Windows Subsystem Linux を利用する： Debian
 
