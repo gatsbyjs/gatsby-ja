@@ -2,13 +2,13 @@
 title: Gatsby Config API
 ---
 
-Site configuration options for a Gatsby site are placed in a file at the root of the project folder called `gatsby-config.js`.
+Gatsby におけるウェブサイトの設定オプションは、プロジェクトのルートにある `gatsby-config.js` で行います。
 
-_Note: There are many sample configs which may be helpful to reference in the different [Gatsby Example Websites](https://github.com/gatsbyjs/gatsby/tree/master/examples)._
+_ヒント: このページに、設定の違いを確認するための有用なサンプルがあります。[Gatsby Example Websites](https://github.com/gatsbyjs/gatsby/tree/master/examples)._
 
-## Configuration options
+## 設定オプション
 
-Options available to set within `gatsby-config.js` include:
+`gatsby-config.js` において利用可能なオプションは以下を含みます。
 
 1.  [siteMetadata](#sitemetadata) (object)
 2.  [plugins](#plugins) (array)
@@ -20,7 +20,7 @@ Options available to set within `gatsby-config.js` include:
 
 ## siteMetadata
 
-When you want to reuse common pieces of data across the site (for example, your site title), you can store that data in `siteMetadata`:
+あなたがサイト全体を横断して再利用したいデータ（サイト名など）は `siteMetadata` に保存します。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -32,13 +32,13 @@ module.exports = {
 }
 ```
 
-This way you can store it in one place, and pull it whenever you need it. If you ever need to update the info, you only have to change it here.
+ここにデータを保管すると、あなたの使いたい場所でこれらのデータを利用できます。データを更新したい場合はこの設定ファイルを更新するだけです。
 
-See a full description and sample usage in [Gatsby.js Tutorial Part Four](/tutorial/part-four/#data-in-gatsby).
+すべての説明は [Gatsby.js Tutorial Part Four](/tutorial/part-four/#data-in-gatsby) を参照してください。
 
 ## Plugins
 
-Plugins are Node.js packages that implement Gatsby APIs. The config file accepts an array of plugins. Some plugins may need only to be listed by name, while others may take options (see the docs for individual plugins).
+プラグインは、Gastby の API を利用して作られる Node.js のパッケージです。設定ファイルはプラグインの配列で記述します。いくつかのプラグインはプラグイン名を記述するだけで利用でき、その他のプラグインはいくつかのオプションを明記します。（オプションについてはそれぞれのプラグインのドキュメントを参照してください）
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -55,11 +55,11 @@ module.exports = {
 }
 ```
 
-See more about [Plugins](/docs/plugins/) for more on utilizing plugins, and to see available official and community plugins.
+プラグインの利用についてさらに知りたい場合は、[Plugins](/docs/plugins/)　を参照してください。公式プラグインとコミュニティーによって作成されたプラグインが利用できます。
 
 ## pathPrefix
 
-It's common for sites to be hosted somewhere other than the root of their domain. Say you have a Gatsby site at `example.com/blog/`. In this case, you would need a prefix (`/blog`) added to all paths on the site.
+ウェブサイトがドメインのルート以外の URL でホストされることは一般的です（例：  `example.com/blog/`）。この場合、プレフィックスとして `/blog` を追加することで、サイト内のすべてのパスにプレフィックスパスを追加することが出来ます。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -67,13 +67,13 @@ module.exports = {
 }
 ```
 
-See more about [Adding a Path Prefix](/docs/path-prefix/).
+詳細は [パスの接頭辞を追加する](/docs/path-prefix/) を参照してください。
 
 ## Polyfill
 
-Gatsby uses the ES6 Promise API. Because some browsers don't support this, Gatsby includes a Promise polyfill by default.
+Gatsby は ES6 Promise API を利用します。いくつかのブラウザーは ES6 構文をサポートしていないため、Gatsby はデフォルトで polyfill を含めています。
 
-If you'd like to provide your own Promise polyfill, you can set `polyfill` to false.
+もし、デフォルト以外の Promise polyfill を使いたい場合は `polyfill` を false に設定してください。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -81,15 +81,15 @@ module.exports = {
 }
 ```
 
-See more about [Browser Support](/docs/browser-support/#polyfills) in Gatsby.
+詳細は [ブラウザーサポート](/docs/browser-support/#polyfills) を参照してください。
 
-## Mapping node types
+## node タイプマッピング
 
-Gatsby includes an advanced feature that lets you create "mappings" between node types.
+Gatsby には、上級者向け機能として node タイプのマッピングを作成する機能があります。
 
-> Note: Gatsby v2.2 introduced a new way to create foreign-key relations between node types with [the `@link` GraphQL field extension](/docs/schema-customization/#foreign-key-fields).
+> ヒント: Gatsby v2.2 以降では node タイプにおける外部キーのリレーションを提供します。 [`@link` GraphQL 拡張](/docs/schema-customization/#foreign-key-fields).
 
-For instance, imagine you have a multi-author markdown blog where you want to "link" from each blog post to the author information stored in a yaml file named `author.yaml`:
+例えば、複数の編集者で作成する Markdown 製のブログがあり、各ブログの投稿から著者情報にアクセスしたいとします。著者ごとの情報は `author.yaml` に記載されているものとします。
 
 ```markdown
 ---
@@ -106,7 +106,7 @@ A treatise on the efficacy of bezoar for treating agricultural pesticide poisoni
   twitter: "@kylemathews"
 ```
 
-You can map between the `author` field in `frontmatter` to the id in the `author.yaml` objects by adding to your `gatsby-config.js`:
+このようなデータを作成して、Markdown ファイルの frontmatter に記載されている `author` フィールドと `author.yaml` の id にリレーションをもたせます。キーのマッピングは `gatsby-config.js` に以下のように記載します。
 
 ```javascript
 module.exports = {
@@ -117,9 +117,9 @@ module.exports = {
 }
 ```
 
-You may need to install the appropriate file transformer (in this case [YAML](/packages/gatsby-transformer-yaml/)) and set up [gatsby-source-filesystem](/packages/gatsby-source-filesystem/) properly for Gatsby to pick up the mapping files. This applies to other file types later mentioned in this segment as well.
+この機能を利用する場合、適切な file trasformer の拡張機能をインストーする必要があります。(YAML を利用してマッピングを行う場合は [gatsby-transformer-yaml](/packages/gatsby-transformer-yaml/)) と [gatsby-source-filesystem](/packages/gatsby-source-filesystem/) をインストールします。後に説明する他のファイルタイプによるマッピングの場合は、そのファイルに対応した拡張機能をインストールしてください。
 
-Gatsby then uses this mapping when creating the GraphQL schema to enable you to query data from both sources:
+マッピングを設定すると、Gatsby は、GraphQL スキーマを作成するときにこのマッピングを使用して、両方のソースからデータをクエリできるようにします。
 
 ```graphql
 query($slug: String!) {
@@ -131,7 +131,7 @@ query($slug: String!) {
     frontmatter {
       title
       author {
-        # This now links to the author object
+        # 以下はリンクされた author.yaml のデータ
         id
         bio
         twitter
@@ -141,8 +141,8 @@ query($slug: String!) {
 }
 ```
 
-Mapping can also be used to map an array of ids to any other collection of data. For example, if you have two JSON files
-`experience.json` and `tech.json` as follows:
+マッピング機能は、id の一覧を使って他のデータコレクションとマッピングを行うことも出来ます。例として、2 つの json ファイルをリンクする場合を示します。
+下記のような `experience.json` と `tech.json` のデータをマッピングします。
 
 ```json:title=experience.json
 [
@@ -183,7 +183,7 @@ Mapping can also be used to map an array of ids to any other collection of data.
 ]
 ```
 
-And then add the following rule to your `gatsby-config.js`:
+前の例と同じく、`gatsby-config.js` にリレーションを記述します。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -194,7 +194,7 @@ module.exports = {
 }
 ```
 
-You can query the `tech` object via the referred ids in `experience`:
+この設定により、`tech` の内容を `experience` からクエリできるようになります。
 
 ```graphql
 query {
@@ -221,7 +221,7 @@ query {
 }
 ```
 
-Mapping also works between Markdown files. For example, instead of having all authors in a YAML file, you could have info about each author in a separate Markdown file:
+また、マッピング機能は Markdown ファイル同士でもマッピングを行うことが出来ます。例として、すべての著者情報を YAML ファイルへ含める代わりに、各著者に関する情報を個別の Markdown ファイルに含める場合を示します。
 
 ```markdown
 ---
@@ -232,7 +232,7 @@ twitter: "@kylemathews"
 Founder @ GatsbyJS. Likes tech, reading/writing, founding things. Blogs at bricolage.io.
 ```
 
-And then add the following rule to your `gatsby-config.js`:
+今回も、`gatsby-config.js` にリレーションを記述します。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -243,11 +243,11 @@ module.exports = {
 }
 ```
 
-Similarly to YAML and JSON files, mapping between Markdown files can also be used to map an array of ids.
+YAML および JSON ファイルと同様に、Markdown ファイル間のマッピングも、ID の配列をマッピングのために使用できます。
 
 ## Proxy
 
-Setting the proxy config option will tell the develop server to proxy any unknown requests to your specified server. For example:
+Proxy オプションを設定すると、開発サーバーに不明なリクエストが来た場合に、特定のサイトへ通信をプロキシできます、下記は一例です。
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -258,8 +258,8 @@ module.exports = {
 }
 ```
 
-See more about [Proxying API Requests in Develop](/docs/api-proxy/).
+より詳しく知りたい場合は [Proxying API Requests in Develop](/docs/api-proxy/) を参照してください。
 
-## Advanced proxying with `developMiddleware`
+## `developMiddleware` を利用した、詳細なプロキシ設定
 
-See more about [adding develop middleware](/docs/api-proxy/#advanced-proxying).
+より詳しく知りたい場合は [adding develop middleware](/docs/api-proxy/#advanced-proxying) を参照してください。
