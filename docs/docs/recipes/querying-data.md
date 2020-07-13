@@ -1,5 +1,5 @@
 ---
-title: " レシピ: データのクエリ"
+title: "レシピ: データのクエリ"
 tableOfContentsDepth: 1
 ---
 
@@ -17,7 +17,7 @@ Gatsby では GraphQL インターフェイスを用いてあらゆるソース�
 
 3. コンポーネントの引数に `data` を渡す。
 
-4. `data` 変数はクエリ後のデータを保持しており、 そのデータを JSX にて参照して HTML を出力できます。
+4. `data` 変数はクエリ後のデータを保持しており、そのデータを JSX にて参照して HTML を出力できます。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -109,7 +109,7 @@ Gatsby v2.1.0 以降では、コンポーネントの代わりに `useStaticQuer
 
 1. データをクエリするフックを使うために、`useStaticQuery` と `gatsby` から `graphql` をインポートする。
 
-2. ステートレス関数コンポーネントの始めにて、 `graphql` クエリを引数に渡した `useStaticQuery` の値に変数を用意します。
+2. ステートレス関数コンポーネントの始めにて、`graphql` クエリを引数に渡した `useStaticQuery` の値に変数を用意します。
 
 3. コンポーネントの返り値である JSX コード内では、その変数を参照してフックで得たデータを処理できます。
 
@@ -236,7 +236,7 @@ GraphQL を用いてデータをクエリする際、返却されるデータ数
 }
 ```
 
-4. `allSitePage` フィールドに引数 `sort` を追加して、 `fields` と `order` 属性を持つオブジェクトを渡します。 `fields` の値にはソート対象のフィールドかフィールドの配列（この例では `path` フィールドを指定しています）を、 `order` の値には昇順 `ASC` もしくは降順 `DESC` を指定できます。
+4. `allSitePage` フィールドに引数 `sort` を追加して、`fields` と `order` 属性を持つオブジェクトを渡します。`fields` の値にはソート対象のフィールドかフィールドの配列（この例では `path` フィールドを指定しています）を、`order` の値には昇順 `ASC` もしくは降順 `DESC` を指定できます。
 
 ```graphql
 {
@@ -271,7 +271,7 @@ GraphQL を用いてデータをクエリする際、返却されるデータ数
 
 クエリ結果は指定したフィールドにて `eq`（等号）や `ne`（不等号）、`in`、`regex` などの演算子を用いてフィルタリングができます。
 
-このレシピでは GraphQL データレイヤーにてフィルタリングするためのノードのコレクションを持つサイトが必要です。全てのサイトは自動的に生成された `allSitePage` のようなノードを持っています。なお、 `gatsby-source-filesystem`や `allMarkdownRemark` を追加するための `gatsby-config.js` における `gatsby-transformer-remark` といったソースプラグインをインストールすることでより多くのノードを追加できます。
+このレシピでは GraphQL データレイヤーにてフィルタリングするためのノードのコレクションを持つサイトが必要です。全てのサイトは自動的に生成された `allSitePage` のようなノードを持っています。なお、`gatsby-source-filesystem`や `allMarkdownRemark` を追加するための `gatsby-config.js` における `gatsby-transformer-remark` といったソースプラグインをインストールすることでより多くのノードを追加できます。
 
 ### 前提条件
 
@@ -443,13 +443,13 @@ export const pageQuery = graphql`
 
 ### 使い方
 
-1. `src/pages` やレイアウトコンポーネントのような React コンポーネントとして定義されたファイルにて、 `useState` と `useEffect` の React フックをインポートします。
+1. `src/pages` やレイアウトコンポーネントのような React コンポーネントとして定義されたファイルにて、`useState` と `useEffect` の React フックをインポートします。
 
 ```jsx:title=src/pages/index.js
 import React, { useState, useEffect } from "react"
 ```
 
-2. ブラウザでコンポーネントのマウント時に非同期でデータを取得するよう、コンポーネント内のデータを取得する関数を `useEffect` フックでラップします。　次に `fetch` API を利用して得る結果を `await` し、得られたデータを状態変数（`starsCount`）に保持するため、 `useState` フックで定義した状態更新用の関数（この例では `setStarsCount`）を呼び出します。
+2. ブラウザでコンポーネントのマウント時に非同期でデータを取得するよう、コンポーネント内のデータを取得する関数を `useEffect` フックでラップします。次に `fetch` API を利用して得る結果を `await` し、得られたデータを状態変数（`starsCount`）に保持するため、`useState` フックで定義した状態更新用の関数（この例では `setStarsCount`）を呼び出します。
 
 ```jsx:title=src/pages/index.js
 import React, { useState, useEffect } from "react"
