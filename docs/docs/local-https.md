@@ -1,57 +1,58 @@
 ---
-title: Local HTTPS
+title: ローカル HTTPS
 ---
 
-Gatsby provides an easy way to use a local HTTPS server during development, thanks to [devcert](https://github.com/davewasmer/devcert). When you enable the `https` option, a private key and certificate file will be created for your project and used by the development server.
+Gatsby は [devcert](https://github.com/davewasmer/devcert) で開発中にローカル HTTPS サーバーを使用する簡易な方法を提供します。あなたが `https` オプションを有効にすると、プロジェクト用に秘密鍵と証明書ファイルが生成され、開発用サーバーによって使用されます。
 
-## Usage (Automatic HTTPS)
+## 使用方法 (自動 HTTPS)
 
-Start the development server using `npm run develop` as usual, and add either the `-S` or `--https` flag.
+通常通り、 `npm run develop` で開発サーバーを起動し、 `-S` もしくは `--https` フラグを追加してください。
 
     $ npm run develop -- --https
 
-## Setup
+## セットアップ
 
-When setting up a development SSL certificate for the first time, you may be asked to type in your password after starting the development environment:
+あなたが初めて SSL 証明書を設定する場合、開発環境の起動後にパスワードの入力を求められる事があります：
 
     info setting up SSL certificate (may require sudo)
 
     Password:
 
-This is _only_ required the first time you are using Gatsby's HTTPS feature on your machine. After that, certificates will be created on the fly.
+これは、最初にマシンで Gatsby の HTTPS 機能を使用するときのみ必要です。その後、証明書はその場で作成されます。
 
-After typing in your password, `devcert` will attempt to install some software necessary to tell Firefox (and Chrome, only on Linux) to trust your development certificates.
+パスワード入力後、 `devcert` は Firefox と Chrome、Linux のみ）にあなたの開発証明書を信頼するように指示するために必要ないくつかのソフトウェアをインストールしようとします。
 
     Unable to automatically install SSL certificate - please follow the
     prompts at http://localhost:52175 in Firefox to trust the root certificate
     See https://github.com/davewasmer/devcert#how-it-works for more details
     -- Press <Enter> once you finish the Firefox prompts --
 
-If you wish to support Firefox (or Chrome on Linux), visit `http://localhost:52175` in Firefox and follow the point-and-click wizard. Otherwise, you may press enter without following the prompts. **Reminder: you'll only need to do this once per machine.**
+Firefox(または Linux の Chrome)をサポートしたい場合は、Firefox の `http://localhost:52175` にアクセスし、ポイントアンドクリックウィザードにしたがってください。
+それ以外の場合は、プロンプトに従わず Enter キーを押しても構いません。  
+**注意： この操作は 1 台のマシンにつき、1 回だけ必要になります。**
 
-Now open the development server at `https://localhost:8000` and enjoy the HTTPS goodness ✨. Of course, you may change the port according to your setup.
+あとは開発サーバーを `https://localhost:8000` で開いて、HTTPS の良さを堪能してください ✨。もちろん、設定に応じてポートを変更しても構いません。
 
-Find out more about [how devcert works](https://github.com/davewasmer/devcert#how-it-works).
+詳細はこちらを参照してください [how devcert works](https://github.com/davewasmer/devcert#how-it-works)
 
-## Custom Key and Certificate Files
+## カスタムキーと証明書ファイル
 
-You may find that you need a custom key and certificate file for https if you use multiple
-machines for development (or if your dev environment is containerized in Docker).
+あなたが開発に複数のマシンを使用している場合（または開発環境が Docker でコンテナ化されている場合）、https 用のカスタムキーと証明書ファイルが必要になることがあるかもしれません。
 
-If you need to use a custom https setup, you can pass the `--https`, `--key-file` and
-`--cert-file` flags to `npm run develop`.
+カスタム https 設定を使用する必要がある場合は、`--https`, `--key-file` および
+`--cert-file` フラグを `npm run develop` に加えてください。
 
-- `--cert-file` [relative path to ssl certificate file]
-- `--key-file` [relative path to ssl key file]
+- `--cert-file` [ssl 証明書ファイルへの相対パス]
+- `--key-file` [ssl 鍵ファイルへの相対パス]
 
-See the example command:
+例のコマンドを参照してください：
 
 ```shell
 gatsby develop --https --key-file ../relative/path/to/key.key --cert-file ../relative/path/to/cert.crt
 ```
 
-in most cases, the `--https` passed by itself is easier and more convenient to get local https.
+ほとんどの場合、`--https`を渡すこと自体は、ローカルの https を取得するためにより簡単で便利です。
 
 ---
 
-Keep in mind that the automatic certificates Issued with the `--https` flag are explicitly Issued to `localhost` and will only be accepted there. Using it together with the `--host` option will likely result in browser warnings.
+`https` フラグによって発行される自動証明書は明示的に `localhost` に発行され、そこでのみ受け入れられることを覚えておいてください。このフラグを `--host` オプションと併用すると、ブラウザーの警告が高い確率で表示されます。
