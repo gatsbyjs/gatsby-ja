@@ -145,7 +145,7 @@ export default NonPageComponent
 - [コンポーネント内での Static Query によるデータクエリの理解を深める](/docs/static-query/)
 - [静的クエリとページクエリの違い](/docs/static-query/#how-staticquery-differs-from-page-query)
 - [useStaticQuery フックの理解を深める](/docs/use-static-query/)
-- [GraphQL を用いてデータを可視化する](/docs/introducing-graphiql/)
+- [GraphiQL を用いてデータを可視化する](/docs/introducing-graphiql/)
 
 ## GraphQL を使った制限
 
@@ -159,8 +159,8 @@ GraphQL を用いてデータをクエリする際、返却されるデータ数
 
 ### 使い方
 
-1. `gatsby develop` コマンドにて開発用サーバーを立ち上げます。
-2. ブラウザーにて `http://localhost:8000/___graphql` にアクセスします。
+1. `gatsby develop` コマンドで開発用サーバーを立ち上げます。
+2. ブラウザー上で `http://localhost:8000/___graphql` にアクセスします。
 3. 最初に、エディターを使って `allSitePage` に次のフィールドを持つクエリを追加します。
 
 ```graphql
