@@ -1,15 +1,14 @@
 ---
-title: Setting Up Your Local Dev Environment
+title: ローカル開発環境を構築する
 ---
 
-This page outlines how to get set up to contribute to Gatsby core and its ecosystem. For instructions on working with docs, visit the [docs contributions](/contributing/docs-contributions/) page. For website setup instructions, visit the [website contributions](/contributing/website-contributions/) page.
+このページでは Gatsby のコアとそのエコシステムに貢献するためのセットアップ方法の概要を説明します。ドキュメントへの作業手順は[ドキュメントの貢献](/contributing/docs-contributions/)ページを見てください。ブログとウェブサイトのセットアップ手順は[ブログ・ウェブサイトへの貢献](/contributing/website-contributions/)ページをご覧ください。
 
-> Gatsby uses a "monorepo" pattern to manage its many dependencies and relies on
-> [Lerna](https://lerna.js.org/) and [Yarn](https://yarnpkg.com/en/) to configure the repository for both active development and documentation infrastructure changes.
+> Gatsby は多くの依存関係を管理するために 「モノレポ」パターンを使用し、アクティブな開発とドキュメントの基盤の変更のためにリポジトリを設定するために [Lerna](https://lerna.js.org/) と [Yarn](https://yarnpkg.com/en/) に依存しています。
 
-## Using Yarn
+## Yarn の利用
 
-Yarn is a package manager for your code, similar to [NPM](https://www.npmjs.com/). While NPM is used to develop Gatsby sites with the CLI, contributing to the Gatsby repo requires Yarn for the following reason: we use Yarn's [workspaces](https://yarnpkg.com/lang/en/docs/workspaces/) feature that comes really handy for monorepos. It allows us to install dependencies from multiple `package.json` files in sub-folders, enabling a faster and lighter installation process.
+Yarn は[NPM](https://www.npmjs.com/)と似たコードのパッケージマネージャーです。NPM は CLI を使って Gatsby サイトの開発に使われますが、Gatsby リポジトリーへの貢献には次の理由から Yarn を必要とします。私たちはモノレポにとても便利な Yarn の[workspaces](https://yarnpkg.com/lang/ja/docs/workspaces/)という機能を利用しています。それによって、サブフォルダー内にある複数の `package.json` から依存関係をインストールでき、より早く軽いインストール過程を実現します。
 
 ```json:title=package.json
 {
@@ -17,60 +16,57 @@ Yarn is a package manager for your code, similar to [NPM](https://www.npmjs.com/
 }
 ```
 
-## Gatsby repo install instructions
+## Gatsby リポジトリのインストール手順
 
-### Install Node and Yarn
+### Node と Yarn のインストール
 
-- Ensure you have the latest **LTS** version of Node installed (>= 10.16.0). `node --version`
-- [Install](https://yarnpkg.com/en/docs/install) the Yarn package manager.
-- Ensure you have the latest version of Yarn installed (>= 1.0.2). `yarn --version`
+- インストールされている Node.js が最新の LTS バージョンになっているか確認してください。 `node --version`
+- Yarn パッケージマネージャーを[インストールしてください。](https://yarnpkg.com/en/docs/install)
+- Yarn の最新版がインストールされていることを確認してください。（>= 1.0.2）`yarn --version`
 
-### Fork, clone, and branch the repository
+### リポジトリのフォーク、クローン、ブランチ
 
-- [Fork](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) the [official `gatsbyjs/gatsby` repository](https://github.com/gatsbyjs/gatsby).
-- Clone your fork: `git clone --depth=1 https://github.com/<your-username>/gatsby.git`
-- Set up repo and install dependencies: `yarn run bootstrap`
-- Make sure tests are passing for you: `yarn test`
-- Create a topic branch: `git checkout -b topics/new-feature-name`
+- [公式の `gatsbyjs/gatsby` リポジトリ](https://github.com/gatsbyjs/gatsby)を[フォークしてください。](https://help.github.com/en/github/getting-started-with-github/fork-a-repo).
+- フォークしたものをクローンしてください： `git clone --depth=1 https://github.com/<your-username>/gatsby.git`
+- リポジトリのセットアップを行い、依存関係をインストールしてください。: `yarn run bootstrap`
+- テストが通るか確認してください。: `yarn test`
+- トピックブランチを作ってください。: `git checkout -b topics/new-feature-name`
 
-### Docs only changes
+### ドキュメントのみの変更
 
-- See [docs setup instructions](/contributing/docs-contributions#docs-site-setup-instructions) for docs-only changes.
-- Run `yarn run watch` from the root of the repo to watch for changes to packages' source code and compile these changes on-the-fly as you work.
+- ドキュメントのみの変更は[ドキュメントのセットアップ手順](/contributing/docs-contributions#docs-site-setup-instructions)をご覧ください。
+- リポジトリのルートで `yarn run watch` を実行し、パッケージのソースコードの変更を監視し、それらの変更を即時にコンパイルします。
 
-  - Note that the watch command can be resource intensive. To limit it to the packages you're working on, add a scope flag, like `yarn run watch --scope={gatsby,gatsby-cli}`.
-  - To watch just one package, run `yarn run watch --scope=gatsby`.
+  - watch コマンドはリソースを激しく使用する可能性があるので注意してください。作業しているパッケージに限定するには、`yarn run watch --scope={gatsby,gatsby-cli}`のように scope フラッグを追加します。
+  - ひとつのパッケージのみを監視する場合は、`yarn run watch --scope=gatsby`を実行します。
 
-### Gatsby functional changes
+### Gatsby の機能的な変更
 
-- Install [gatsby-cli](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-cli):
-  - Make sure you have the Gatsby CLI installed with `gatsby -v`,
-  - if not, install globally: `yarn global add gatsby-cli`
-- Install [gatsby-dev-cli](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-dev-cli):
-  - Make sure you have the Gatsby Dev CLI installed with `gatsby-dev -v`
-  - if not, install globally: `yarn global add gatsby-dev-cli`
-- Run `yarn install` in each of the sites you're testing.
-- For each of your Gatsby test sites, run the `gatsby-dev` command inside the test site's directory to copy
-  the built files from your cloned copy of Gatsby. It'll watch for your changes
-  to Gatsby packages and copy them into the site. For more detailed instructions
-  see the [gatsby-dev-cli README](https://www.npmjs.com/package/gatsby-dev-cli) and check out the [gatsby-dev-cli demo video](https://www.youtube.com/watch?v=D0SwX1MSuas).
+- [gatsby-cli](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-cli)をインストールしてください。
+  - `gatsby -v`を実行し Gatsby CLI がインストールされているか確認してください。
+  - 確認できなかった場合は、グローバルにインストールします。`yarn global add gatsby-cli`
+- [gatsby-dev-cli](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-dev-cli)をインストールしてください。
+  - `gatsby-dev -v`を実行し Gatsby Dev CLI がインストールされているか確認してください。
+  - 確認できなかった場合は、グローバルにインストールします。`yarn global add gatsby-dev-cli`
+- テストする各サイトで `yarn install` を実行します。
+- テストする各サイトで、テストサイトのディレクトリー内で `gatsby-dev` コマンドを実行し、Gatsby のクローンコピーからビルドされたファイルをコピーします。Gatsby パッケージの変更を監視し、それらをサイトにコピーします。詳細な手順については、[gatsby-dev-cli の README](https://www.npmjs.com/package/gatsby-dev-cli)を確認し、[gatsby-dev-cli のデモ映像](https://www.youtube.com/watch?v=D0SwX1MSuas)をご覧ください。
 
-  - Note: if you plan to modify packages that are exported from `gatsby` directly, you need to either add those manually to your test sites so that they are listed in `package.json` (e.g. `yarn add gatsby-link`), or specify them explicitly with `gatsby-dev --packages gatsby-link`).
+  - 注意：`gatsby` から直接エクスポートされたパッケージを変更する場合は、それらを手動でテストサイトに追加して package.json に記述するか (例： `yarn add gatsby-link`)、明示的に `gatsby-dev --packages gatsby-link` で指定する必要があります。
 
-### Add tests
+### テストの追加
 
-- Add tests and code for your changes.
-- Once you're done, make sure all tests still pass: `yarn test`.
+- 変更に対して、テストとコードを追加してください。
+- 完了したら、テストが通ることを確認してください。: `yarn test`
 
-  - To run tests for a single package you can run: `yarn jest <package-name>`.
-  - To run a single test file you can run: `yarn jest <file-path>`.
+  - 1 つのパッケージのテストを実行する場合、次のコマンドを実行してください。 `yarn jest <package-name>`
+  - 1 つのファイルファイルを実行する場合、次のコマンドを実行してください。 `yarn jest <file-path>`
 
-### Commits and Pull Requests
+### コミットとプルリクエスト
 
-- Commit and push to your fork.
-- Create a Pull Request from your branch.
+- コミットし、フォークに対してプッシュしてください。
+- ブランチからプルリクエストを作成してください。
 
-### Sync your fork
+### フォークの同期
 
-- GitHub Help Page [Syncing a fork](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork)
-- GitHub Help Page [Merging an upstream repository into your fork](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/merging-an-upstream-repository-into-your-fork)
+- GitHub ヘルプページ [フォークを同期する](https://help.github.com/ja/github/collaborating-with-issues-and-pull-requests/syncing-a-fork)
+- GitHub ヘルプページ [上流リポジトリをフォークにマージする](https://help.github.com/ja/github/collaborating-with-issues-and-pull-requests/merging-an-upstream-repository-into-your-fork)
