@@ -53,7 +53,7 @@ export default IndexPage
 
 - [GraphQL と Gatsby](/docs/graphql/): データの予想される形を理解する
 - [GraphQL によるページ内データクエリの理解を深める](/docs/page-query/)
-- [タグ付きテンプレートリテラルにおける MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) GraphQL で使われているように
+- [GraphQL で使用されているようなタグ付きテンプレートリテラルに関する MDN 上のドキュメント](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) 
 
 ## StaticQuery コンポーネントを用いたデータクエリ
 
