@@ -1,8 +1,8 @@
 ---
-title: Reference Guides
+title: リファレンスガイド
 overview: true
 ---
 
-Dive deeper into different topics around building with Gatsby, like sourcing data, building and styling pages, deployment, and more. While the [tutorials](/tutorial/) are step-by-step instructions, reference guides are resources about the various Gatsby development techniques.
+データの収集やページのビルド・スタイリング、デプロイといった、Gatsby を使ったビルドに関するさまざまなトピックに深く飛び込んでみましょう。[チュートリアル](/tutorial/)は段階的な説明であるのに対し、リファレンスガイドは Gatsby の様々な開発技術に関するリソースです。
 
 <GuideList slug={props.slug} />
