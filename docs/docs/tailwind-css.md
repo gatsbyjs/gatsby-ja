@@ -2,55 +2,55 @@
 title: Tailwind CSS
 ---
 
-Tailwind is a utility-first CSS framework for rapidly building custom user interfaces. This guide will show you how to get started with Gatsby and [Tailwind CSS](https://tailwindcss.com/).
+Tailwind CSS はカスタムユーザーインターフェースを早く構築するためのユーティリティファーストな CSS フレームワークです。このガイドでは、Gatsby と [Tailwind CSS](https://tailwindcss.com/) を組み合わせて使用する場合の手順をご紹介します。
 
-## Overview
+## 概要
 
-There are three ways you can use Tailwind with Gatsby:
+Tailwind と Gatsby を組み合わせて使用する方法は 3 つあります。
 
-1. Standard: Use PostCSS to generate Tailwind classes, then you can apply those classes using `className`.
-2. CSS-in-JS: Integrate Tailwind classes into Styled Components.
-3. SCSS: Use [gatsby-plugin-sass](/packages/gatsby-plugin-sass) to support Tailwind classes in your SCSS files.
+1. 通常： Tailwind のクラスを生成するために PostCSS を使用してください。そうすると `className` を使ってそれらのクラスを反映できます。
+2. CSS-in-JS: Tailwind のクラスを Styled Components に統合してください。
+3. SCSS: SCSS ファイルで Tailwind のクラスをサポートする[gatsby-plugin-sass](/packages/gatsby-plugin-sass)を使用してください。
 
-You have to install and configure Tailwind for all of these methods, so this guide will walk through that step first, then you can follow the instructions for PostCSS, CSS-in-JS or SCSS.
+これらの方法を使用するために Tailwind のインストールと設定をしなければいけません。このガイトではまずその手順を説明するので、PostCSS、CSS-in-JS、SCSS それぞれの指示にしたがってください。
 
-## Installing and configuring Tailwind
+## Tailwind のインストールと設定
 
-This guide assumes that you have a Gatsby project set up. If you need to set up a project, head to the [**Quick Start guide**](/docs/quick-start), then come back.
+このガイドでは Gatsby プロジェクトをセットアップしている必要があります。もしまだプロジェクトをセットアップしていないなら、 まず [**Quick Start guide**](/docs/quick-start)を読んでから戻ってきてください。
 
-1. Install Tailwind
+1. Tailwind のインストール
 
 ```shell
 npm install tailwindcss --save-dev
 ```
 
-2. Generate Tailwind config file (optional)
+2. Tailwind 設定ファイルの生成（オプション）
 
-**Note**: A config file isn't required for Tailwind 1.0.0+
+**ヒント：** Tailwind 1.0.0+では設定ファイルは不要です。
 
-To configure Tailwind, you'll need to add a Tailwind configuration file. Luckily, Tailwind has a built-in script to do this. Just run the following command:
+Tailwind を設定するためには Tailwind 設定ファイルを追加する必要があるでしょう。幸運なことに Tailwind はそれを行うためのビルド用スクリプトがあります。次のコマンドを実行するだけです。
 
 ```shell
 npx tailwindcss init
 ```
 
-### Option #1: PostCSS
+### オプション #1: PostCSS
 
-1.  Install the Gatsby PostCSS plugin [**gatsby-plugin-postcss**](/packages/gatsby-plugin-postcss).
+1.  Gatsby PostCSS プラグイン [**gatsby-plugin-postcss**](/packages/gatsby-plugin-postcss)をインストールしてください。
 
 ```shell
 npm install --save gatsby-plugin-postcss
 ```
 
-2.  Include the plugin in your `gatsby-config.js` file.
+2.  `gatsby-config.js` ファイルにプラグインを記載してください。
 
 ```javascript:title=gatsby-config.js
 plugins: [`gatsby-plugin-postcss`],
 ```
 
-3. Configure PostCSS to use Tailwind
+3. Tailwind を使用するために必要な PostCSS を設定してください。
 
-Create a `postcss.config.js` in your project's root folder with the following contents.
+プロジェクトのルートフォルダーに `postcss.config.js` を作成し、次の内容を記載します。
 
 ```javascript:title=postcss.config.js
 module.exports = () => ({
@@ -58,35 +58,35 @@ module.exports = () => ({
 })
 ```
 
-4. Use the Tailwind Directives in your CSS
+4. CSS ファイルで Tailwind ディレクティブを使用してください
 
-You can now use the `@tailwind` directives to add Tailwind's utilities, preflight, and components into your CSS. You can also use `@apply` and all of Tailwind's other directives and functions!
+これで `@tailwind` ディレクティブを使用して、CSS ファイルに Tailwind のユーティリティ、プリフライト、コンポーネントを追加出来ます。また `@apply` やその他すべての Tailwind ディレクティブも使用できるようになります！
 
-To learn more about how to use Tailwind in your CSS, visit the [Tailwind Documentation](https://tailwindcss.com/docs/installation#3-use-tailwind-in-your-css)
+もっと Tailwind CSS の使い方をもう少し学びたいなら、 [Tailwind Documentation](https://tailwindcss.com/docs/installation#3-use-tailwind-in-your-css)を訪問してみてください。
 
-### Option #2: CSS-in-JS
+### オプション #2: CSS-in-JS
 
-These steps assume you have a CSS-in-JS library already installed, and the examples are based on Styled Components.
+次の手順は CSS-in-JS ライブラリーがすでにインストールされていることを前提としており、Styled Components を例としています。
 
-1. Install Tailwind Babel Macro
+1. Tailwind Babel Macro をインストール
 
-**Note**: `tailwind.macro` isn't currently compatible with Tailwind 1.0.0+. However, a new forked project can be found at `twin.macro` that supports Tailwindcss v1.2 classes. It's currently in pre-release so not all plugins are supported at the time of writing. Alternatively, you can revert to Tailwind 0.7.4.
+**ヒント**: 現在 `tailwind.macro` は Tailwind 1.0.0+と互換性がありません。しかし、新しいフォークされたプロジェクトが `twin.macro` にあり、Tailwindcss v1.2 クラスをサポートしています。 現在はプレリリース中なので、本記事の記載時点ではすべてのプラグインのサポートは保証できません。あるいは、Tailwind 0.7.4 に戻しての使用もできます。
 
-**Option 1**: Install `twin.macro` and use Tailwind 1.2.0+
+**オプション 1**: `twin.macro` をインストールし、Tailwind 1.2.0+を使用する。
 
-1. Install Twin and Emotion
+1. Twin と Emotion をインストール
 
 ```shell
 npm install -D twin.macro @emotion/core @emotion/styled gatsby-plugin-emotion
 ```
 
-2. Import the Tailwind base styles
+2. Tailwind base styles をインポート
 
 ```javascript:title=gatsby-browser.js
 import "tailwindcss/dist/base.css"
 ```
 
-3. Enable the Gatsby emotion plugin
+3. Gatsby emotion プラグインを使用可能にする
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -94,18 +94,18 @@ module.exports = {
 }
 ```
 
-**Option 2**: Install stable `tailwind.macro` and use Tailwind 0.7.4
+**オプション 2**: 安定版 `tailwind.macro` をインストールし、 Tailwind 0.7.4 を使用する。
 
 ```bash
-// Remove tailwind 1.0.0+ if you've already installed it
+// もしインストール済みならtailwind 1.0.0+を削除
 npm uninstall tailwindcss
 
-// Install tailwind 0.7.4 and stable tailwind.macro
+// tailwind 0.7.4と安定版tailwind.macroをインストール
 npm install tailwindcss@0.7.4
 npm install tailwind.macro
 ```
 
-2. Use the Babel Macro (`tailwind.macro`) in your styled component
+2. styled component で Babel Macro (`tailwind.macro`)を使用する
 
 ```javascript
 import styled from "styled-components"
@@ -122,15 +122,15 @@ const Button = tw.button`
 `
 ```
 
-### Option #3: SCSS
+### オプション #3: SCSS
 
-1. Install the Gatsby SCSS plugin [**gatsby-plugin-sass**](/packages/gatsby-plugin-sass) and `node-sass`.
+1. Gatsby SCSS プラグイン [**gatsby-plugin-sass**](/packages/gatsby-plugin-sass) と `node-sass` をインストールしてください。
 
 ```shell
 npm install --save node-sass gatsby-plugin-sass
 ```
 
-2. To be able to use Tailwind classes in your SCSS files, add the `tailwindcss` package into the `postCSSPlugins` parameter in your `gatsby-config.js`.
+2. SCSS ファイルで Tailwind クラスを使用できるようにするため、 `postCSSPlugins` パラメーターに `tailwindcss` パッケージを `gatsby-config.js` で追加してください。
 
 ```javascript:title=gatsby-config.js
 plugins: [
@@ -139,18 +139,18 @@ plugins: [
     options: {
       postCssPlugins: [
         require("tailwindcss"),
-        require("./tailwind.config.js"), // Optional: Load custom Tailwind CSS configuration
+        require("./tailwind.config.js"), // オプション： Tailwind CSS カスタム設定を読み込む
       ],
     },
   },
 ],
 ```
 
-**Note:** Optionally you can add a corresponding configuration file (by default it will be `tailwind.config.js`).
-If you are adding a custom configuration, you will need to load it after `tailwindcss`.
+**ヒント：** 場合によっては、対応設定ファイルの追加もできます（デフォルトでは `tailwind.config.js` というファイル名になります）。
+もしカスタム設定を追加しているなら、`tailwindcss` の後に読む込む必要があります。
 
-## Other resources
+## その他の資料
 
-- [Introduction to PostCSS](https://www.smashingmagazine.com/2015/12/introduction-to-postcss/)
-- [Tailwind Documentation](https://tailwindcss.com/)
-- [Gatsby starters that use Tailwind](/starters/?c=Styling%3ATailwind&v=2)
+- [PostCSS イントロダクション](https://www.smashingmagazine.com/2015/12/introduction-to-postcss/)
+- [Tailwind ドキュメント](https://tailwindcss.com/)
+- [Tailwind を使用した Gatsby スターター集](/starters/?c=Styling%3ATailwind&v=2)
