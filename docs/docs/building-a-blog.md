@@ -1,8 +1,7 @@
 ---
-title: Building a Blog
+title: ブログ構築
 ---
 
-This is a stub. Help our community expand it.
+このドキュメントは書きかけです。私たちのコミュニティーの発展を手伝ってください。
 
-Please use the [Gatsby Style Guide](/contributing/gatsby-style-guide/) to ensure your
-Pull Request gets accepted.
+あなたの PullRequest が承認されるためにも[翻訳スタイルガイド](/contributing/gatsby-style-guide/) を一読してください。
