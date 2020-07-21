@@ -1,44 +1,44 @@
 ---
-title: Configuring CA Certificates
+title: CA証明書の設定
 ---
 
-If you're using a private (typically a corporate) package registry that requires a certificate from a CA (certificate authority), you may need to setup the certificate in your `npm`, `yarn`, and `node` config.
+もしあなたが CA（認証局）による認証が必要となるプライベートな（典型的には企業の）パッケージレジストリーを使っている場合、あなたは `npm`、`yarn`、そして `node` の設定で証明書のセットアップをする必要があるかもしれません。
 
-## Common errors from misconfigured certificates
+## 証明書の設定ミスが原因のよくあるエラー
 
-If you're seeing errors like `unable to get local issuer certificate` in the console output while trying to install a Gatsby plugin, a misconfigured certificate might be the problem. This occurs particularly with plugins or themes that need to be built as native Node.js modules (e.g. `gatsby-plugin-sharp`). It may happen when installing packages from a private registry (via `npm install` or `yarn install`) without an appropriately setup certificate in config.
+もしあなたが Gatsby プラグインをインストールする際にコンソール出力で `unable to get local issuer certificate` のようなエラーを見たなら、証明書の設定ミスが原因かもしれません。このエラーは特にネイティブ Node.js モジュールとしてビルドされる必要のあるプラグインやテーマ（例えば　`gatsby-plugin-sharp`）で発生します。このエラーは設定ファイルで証明書を適切にセットアップせずにプライベートレジストリーから（`npm install` や `yarn install` によって）パッケージをインストールしようとしたときに発生します。
 
-## cafile config option
+## cafile 設定オプション
 
-Both [npm](https://docs.npmjs.com/misc/config#cafile) and [yarn](https://yarnpkg.com/lang/en/docs/cli/config/), support a `cafile` config option. You'll have to add `cafile` as the key, and set the path to your certificate as the value.
+[npm](https://docs.npmjs.com/misc/config#cafile) と [yarn](https://yarnpkg.com/lang/en/docs/cli/config/) は両方とも、`cafile` 設定オプションをサポートしています。 あなたは `cafile` をキーとして追加し、あなたの証明書へのパスを値として設定する必要があります。
 
-### Using npm to set cafile
+### npm を使って cafile を設定する
 
 ```shell
 npm config set cafile "path-to-my-cert.pem"
 ```
 
-To check the value of the certificate path at the `cafile` key, use the following command to list all keys in your npm config:
+`cafile` キーに設定されている証明書へのパスの値を確認するために、次のコマンドを使ってあなたの npm config のすべてのキーの一覧を表示してください：
 
 ```shell
 npm config ls -l
 ```
 
-### Using yarn to set cafile
+### yarn を使って cafile を設定する
 
 ```shell
 yarn config set cafile "path-to-my-cert.pem"
 ```
 
-You can now check values in your yarn config with the following command:
+次のコマンドを使ってあなたの yarn config の値を確認できます：
 
 ```shell
 yarn config list
 ```
 
-### Using Node.js
+### Node.js を使う
 
-Alternatively, you can also configure this for Node.js on your machine. Export the path to your certificate with the `NODE_EXTRA_CA_CERTS` variable:
+代わりに、あなたのマシンの Node.js を使ってこの設定をすることもできます。`NODE_EXTRA_CA_CERTS` 変数であなたの証明書へのパスを export してください。
 
 ```shell
 export NODE_EXTRA_CA_CERTS=["path-to-my-cert.pem"]
