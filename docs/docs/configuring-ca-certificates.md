@@ -38,7 +38,7 @@ yarn config list
 
 ### Node.js を使う
 
-代わりに、あなたのマシンの Node.js を使ってこの設定をすることもできます。`NODE_EXTRA_CA_CERTS` 変数であなたの証明書へのパスを export してください。
+代わりに、あなたのマシンの Node.js を使ってもこれを設定できます。`NODE_EXTRA_CA_CERTS` 変数であなたの証明書へのパスを export してください。
 
 ```shell
 export NODE_EXTRA_CA_CERTS=["path-to-my-cert.pem"]
