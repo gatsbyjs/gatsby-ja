@@ -24,9 +24,7 @@ Gatsby で作られたサイトは、Gatsby に組み込まれた特徴と最適
 
 ### リードジェネレーションと顧客エンゲージメントの改善
 
-サイトのスピードとパフォーマンスは、売上や顧客エンゲージメントに絶大な影響を与えます。
-[最近の Akamai の研究](https://www.akamai.com/uk/en/about/news/press/2017-press/akamai-releases-spring-2017-state-of-online-retail-performance-report.jsp)によれば、サイトのロードが 100 ミリ秒遅くなるとコンバージョンレートが 7%下がり、またモバイルユーザーの 53%はロードに 3 秒以上かかるページから離脱します。
-Gatsby のサイトは、他のツールで作られた同様のサイトよりも常に 2〜3 倍早く、サイトの所有者は[Gatsby にサイトを移行したあとで、リードジェネレーションが最大 60%増加した](/blog/2018-11-16-youfit-case-study/)という経験があります。
+> サイトのスピードとパフォーマンスは、売上や顧客エンゲージメントに絶大な影響を与えます。[最近の Akamai の研究](https://www.akamai.com/uk/en/about/news/press/2017-press/akamai-releases-spring-2017-state-of-online-retail-performance-report.jsp)によれば、サイトのロードが 100 ミリ秒遅くなるとコンバージョンレートが 7%下がり、またモバイルユーザーの 53%はロードに 3 秒以上かかるページから離脱します。Gatsby のサイトは、他のツールで作られた同様のサイトよりも常に 2〜3 倍早く、サイトの所有者は[Gatsby にサイトを移行したあとで、リードジェネレーションが最大 60%増加した](/blog/2018-11-16-youfit-case-study/)という経験があります。
 
 ### 検索トラフィックの増加
 
