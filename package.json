@@ -27,7 +27,7 @@
     "lint-staged": "10.2.11",
     "prettier": "2.0.5",
     "pretty-quick": "2.0.1",
-    "textlint": "11.6.3",
+    "textlint": "11.7.6",
     "textlint-filter-rule-comments": "1.2.2",
     "textlint-filter-rule-whitelist": "2.0.0",
     "textlint-rule-ja-hiragana-fukushi": "1.2.0",
