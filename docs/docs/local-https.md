@@ -20,7 +20,7 @@ Gatsby は [devcert](https://github.com/davewasmer/devcert) で開発中にロ�
 
 これは、最初にマシンで Gatsby の HTTPS 機能を使用するときのみ必要です。その後、証明書はその場で作成されます。
 
-パスワード入力後、 `devcert` は Firefox と Chrome、Linux のみ）にあなたの開発証明書を信頼するように指示するために必要ないくつかのソフトウェアをインストールしようとします。
+パスワード入力後、`devcert` は Firefox と Chrome、Linux のみ）にあなたの開発証明書を信頼するように指示するために必要ないくつかのソフトウェアをインストールしようとします。
 
     Unable to automatically install SSL certificate - please follow the
     prompts at http://localhost:52175 in Firefox to trust the root certificate
