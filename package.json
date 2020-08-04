@@ -36,7 +36,7 @@
     "textlint-rule-ja-no-space-around-parentheses": "2.0.1",
     "textlint-rule-ja-space-around-code": "2.0.1",
     "textlint-rule-preset-ja-spacing": "2.0.1",
-    "textlint-rule-preset-ja-technical-writing": "4.0.0",
+    "textlint-rule-preset-ja-technical-writing": "4.0.1",
     "textlint-rule-preset-jtf-style": "2.3.4"
   }
 }
