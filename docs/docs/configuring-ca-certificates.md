@@ -10,7 +10,7 @@ title: CA証明書の設定
 
 ## cafile 設定オプション
 
-[npm](https://docs.npmjs.com/misc/config#cafile) と [yarn](https://yarnpkg.com/lang/en/docs/cli/config/) は両方とも、`cafile` 設定オプションをサポートしています。 あなたは `cafile` をキーとして追加し、あなたの証明書へのパスを値として設定する必要があります。
+[npm](https://docs.npmjs.com/misc/config#cafile) と [yarn](https://yarnpkg.com/lang/en/docs/cli/config/) は両方とも、`cafile` 設定オプションをサポートしています。あなたは `cafile` をキーとして追加し、あなたの証明書へのパスを値として設定する必要があります。
 
 ### npm を使って cafile を設定する
 
