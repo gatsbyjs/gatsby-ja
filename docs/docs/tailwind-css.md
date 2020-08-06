@@ -94,7 +94,7 @@ module.exports = {
 }
 ```
 
-**オプション 2**: 安定版 `tailwind.macro` をインストールし、 Tailwind 0.7.4 を使用する。
+**オプション 2**: 安定版 `tailwind.macro` をインストールし、Tailwind 0.7.4 を使用する。
 
 ```bash
 // もしインストール済みならtailwind 1.0.0+を削除
