@@ -16,7 +16,7 @@ Tailwind と Gatsby を組み合わせて使用する方法は 3 つあります
 
 ## Tailwind のインストールと設定
 
-このガイドでは Gatsby プロジェクトをセットアップしている必要があります。もしまだプロジェクトをセットアップしていないなら、 まず [**Quick Start guide**](/docs/quick-start)を読んでから戻ってきてください。
+このガイドでは Gatsby プロジェクトをセットアップしている必要があります。もしまだプロジェクトをセットアップしていないなら、まず [**Quick Start guide**](/docs/quick-start)を読んでから戻ってきてください。
 
 1. Tailwind のインストール
 
