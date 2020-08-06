@@ -130,7 +130,7 @@ const Button = tw.button`
 npm install --save node-sass gatsby-plugin-sass
 ```
 
-2. SCSS ファイルで Tailwind クラスを使用できるようにするため、 `postCSSPlugins` パラメーターに `tailwindcss` パッケージを `gatsby-config.js` で追加してください。
+2. SCSS ファイルで Tailwind クラスを使用できるようにするため、`postCSSPlugins` パラメーターに `tailwindcss` パッケージを `gatsby-config.js` で追加してください。
 
 ```javascript:title=gatsby-config.js
 plugins: [
