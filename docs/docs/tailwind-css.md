@@ -36,7 +36,7 @@ npx tailwindcss init
 
 ### オプション #1: PostCSS
 
-1.  Gatsby PostCSS プラグイン [**gatsby-plugin-postcss**](/packages/gatsby-plugin-postcss)をインストールしてください。
+1.  Gatsby PostCSS プラグイン [**gatsby-plugin-postcss**](/packages/gatsby-plugin-postcss) をインストールしてください。
 
 ```shell
 npm install --save gatsby-plugin-postcss
@@ -62,7 +62,7 @@ module.exports = () => ({
 
 これで `@tailwind` ディレクティブを使用して、CSS ファイルに Tailwind のユーティリティ、プリフライト、コンポーネントを追加出来ます。また `@apply` やその他すべての Tailwind ディレクティブも使用できるようになります！
 
-もっと Tailwind CSS の使い方をもう少し学びたいなら、[Tailwind Documentation](https://tailwindcss.com/docs/installation#3-use-tailwind-in-your-css)を訪問してみてください。
+もっと Tailwind CSS の使い方をもう少し学びたいなら、[Tailwind Documentation](https://tailwindcss.com/docs/installation#3-use-tailwind-in-your-css) を訪問してみてください。
 
 ### オプション #2: CSS-in-JS
 
@@ -70,9 +70,9 @@ module.exports = () => ({
 
 1. Tailwind Babel Macro をインストール
 
-**ヒント**: 現在 `tailwind.macro` は Tailwind 1.0.0+と互換性がありません。しかし、新しいフォークされたプロジェクトが `twin.macro` にあり、Tailwindcss v1.2 クラスをサポートしています。現在はプレリリース中なので、本記事の記載時点ではすべてのプラグインのサポートは保証できません。あるいは、Tailwind 0.7.4 に戻しての使用もできます。
+**ヒント**: 現在 `tailwind.macro` は Tailwind 1.0.0+ と互換性がありません。しかし、新しいフォークされたプロジェクトが `twin.macro` にあり、Tailwindcss v1.2 クラスをサポートしています。現在はプレリリース中なので、本記事の記載時点ではすべてのプラグインのサポートは保証できません。あるいは、Tailwind 0.7.4 に戻しての使用もできます。
 
-**オプション 1**: `twin.macro` をインストールし、Tailwind 1.2.0+を使用する。
+**オプション 1**: `twin.macro` をインストールし、Tailwind 1.2.0+ を使用する。
 
 1. Twin と Emotion をインストール
 
@@ -97,15 +97,15 @@ module.exports = {
 **オプション 2**: 安定版 `tailwind.macro` をインストールし、Tailwind 0.7.4 を使用する。
 
 ```bash
-// もしインストール済みならtailwind 1.0.0+を削除
+// もしインストール済みなら tailwind 1.0.0+ を削除
 npm uninstall tailwindcss
 
-// tailwind 0.7.4と安定版tailwind.macroをインストール
+// tailwind 0.7.4 と安定版 tailwind.macro をインストール
 npm install tailwindcss@0.7.4
 npm install tailwind.macro
 ```
 
-2. styled component で Babel Macro (`tailwind.macro`)を使用する
+2. styled component で Babel Macro (`tailwind.macro`) を使用する
 
 ```javascript
 import styled from "styled-components"
