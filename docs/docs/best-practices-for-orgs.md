@@ -11,4 +11,4 @@ issue: https://github.com/gatsbyjs/gatsby/issues/14042
 
 このドキュメントは書きかけです。私たちのコミュニティーの発展を手伝ってください。
 
-あなたの PullRequest が承認されるためにも[翻訳スタイルガイド](/contributing/gatsby-style-guide/) を一読してください。
+あなたの Pull Request が承認されるためにも[翻訳スタイルガイド](/contributing/gatsby-style-guide/) を一読してください。
