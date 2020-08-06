@@ -62,7 +62,7 @@ module.exports = () => ({
 
 これで `@tailwind` ディレクティブを使用して、CSS ファイルに Tailwind のユーティリティ、プリフライト、コンポーネントを追加出来ます。また `@apply` やその他すべての Tailwind ディレクティブも使用できるようになります！
 
-もっと Tailwind CSS の使い方をもう少し学びたいなら、 [Tailwind Documentation](https://tailwindcss.com/docs/installation#3-use-tailwind-in-your-css)を訪問してみてください。
+もっと Tailwind CSS の使い方をもう少し学びたいなら、[Tailwind Documentation](https://tailwindcss.com/docs/installation#3-use-tailwind-in-your-css)を訪問してみてください。
 
 ### オプション #2: CSS-in-JS
 
