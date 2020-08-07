@@ -139,7 +139,7 @@ plugins: [
     options: {
       postCssPlugins: [
         require("tailwindcss"),
-        require("./tailwind.config.js"), // オプション： Tailwind CSS カスタム設定を読み込む
+        require("./tailwind.config.js"), // 任意：Tailwind CSS カスタム設定を読み込む
       ],
     },
   },
