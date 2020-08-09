@@ -58,7 +58,7 @@ JAMStack アプローチと Gatsby とは、ここ数年で急速に人気を集
 - [Gatsby Fuels Content and Sales in Design+Code Rebuild](/blog/2019-03-15-design-code-blog-post/)
 - [Growing Housecall Pro by 973% with Gatsby](/blog/2019-05-02-growing-housecall-pro-by-973-percent/)
 
-gatsby サイトの例をもっと見たい場合は、[ショーケースをご覧ください](/showcase/)。
+Gatsby サイトの例をもっと見たい場合は、[ショーケースをご覧ください](/showcase/)。
 
 ## おわりに
 
