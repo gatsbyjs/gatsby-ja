@@ -44,7 +44,7 @@ Gatsby で作られたサイトは、Gatsby に組み込まれた特徴と最適
 
 > Gatsby は、[JAMStack](https://jamstack.org/)として知られるウェブとアプリケーション開発の新たなアプローチの最前線のテクノロジーの 1 つです。
 JAMStack は、CMS 中心のサイトの限界と、サーバーサイドコードの失敗点から、高速かつ軽量でモジュール式のサイト構築へと転換することを示しています。
-JAMStack アプローチと gatsby とは、ここ数年で急速に人気を集め、成長が鈍化する兆しもありません。（[Google Trends における Gatsby と JAMStack](https://trends.google.com/trends/explore?date=today%205-y&geo=JP&q=jamstack,gatsby%20js)をチェックしてみてください）技術トレンドにおいてリーダーになりたい会社と、サイトパフォーマンスのような重要な要素で自社を差別化したい会社にとっては、絶好の機会でしょう。[gatsby とパートナーになる](/docs/partnering-with-gatsby/)方法をご参照ください。
+JAMStack アプローチと Gatsby とは、ここ数年で急速に人気を集め、成長が鈍化する兆しもありません。（[Google Trends における Gatsby と JAMStack](https://trends.google.com/trends/explore?date=today%205-y&geo=JP&q=jamstack,gatsby%20js)をチェックしてみてください）技術トレンドにおいてリーダーになりたい会社と、サイトパフォーマンスのような重要な要素で自社を差別化したい会社にとっては、絶好の機会でしょう。[Gatsby とパートナーになる](/docs/partnering-with-gatsby/)方法をご参照ください。
 
 <!-- Google トレンド検索のリンク先は、URLの地域指定のUSをJPに変更しました。あまり検索結果で上昇トレンドがわかりにくいのですが。 -->
 
