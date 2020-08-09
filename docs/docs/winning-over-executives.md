@@ -50,7 +50,7 @@ JAMStack アプローチと gatsby とは、ここ数年で急速に人気を集
 
 ## ケーススタディ
 
-ケーススタディは、重役たちが gatsby の潜在能力を理解し gatsby の利益への実践的な洞察を得るための、素晴らしい方法です。
+ケーススタディは、重役たちが Gatsby の潜在能力を理解し Gatsby の利益への実践的な洞察を得るための、素晴らしい方法です。
 以下のケーススタディをシェアしたほうがいいかもしれません：
 
 - [Youfit uses Gatsby to increase lead generation by 60%](/blog/2018-11-16-youfit-case-study/)
