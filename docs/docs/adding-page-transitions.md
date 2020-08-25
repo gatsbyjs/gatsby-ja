@@ -1,8 +1,8 @@
 ---
-title: Adding Page Transitions
+title: ページ遷移の追加
 overview: true
 ---
 
-Page transitions give users a better experience when navigating between pages. There are a number of ways to add them to your Gatsby site.
+ページ遷移はユーザーがページ間を移動する際に良い体験を与えます。Gatsby のサイトにページ遷移を加える方法はいくつかあります。
 
 <GuideList slug={props.slug} />
