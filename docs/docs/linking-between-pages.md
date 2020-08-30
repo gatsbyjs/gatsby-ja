@@ -2,17 +2,17 @@
 title: ページ間のハイパーリンク
 ---
 
-This guide covers how to link between pages in a Gatsby site.
+このガイドは Gatsby におけるページ間のリンクを作成する方法について説明します。
 
-## The Gatsby link component
+## Gatsby のリンクコンポーネント
 
-The Gatsby `<Link />` component is for linking between pages within your site. For external links to pages not handled by your Gatsby site, use the regular HTML `<a>` tag.
+Gatsby においては `<Link />` コンポーネントをサイト内部のページ間リンクに使用します。外部リンク（Gatsby 外で管理しているウェブサイト）へのリンクを作成する場合は一般滝な HTML における `<a>` タグを使用します。
 
-## Using the `<Link />` component for internal links
+## 内部リンクに `<Link />` コンポーネントを利用する
 
-Here's an example of creating a link between two pages in a Gatsby site.
+下記が、Gatsby サイト内の 2 ページをリンクするコードサンプルです。
 
-Open a page component (e.g. `src/pages/index.js`) in your Gatsby site. Import the `Link` component from Gatsby, which makes it available in the component. Add a `<Link />` component below the header, and give it a `to` property with the value of `"/contact/"` for the pathname:
+ページコンテンツ(例： `src/pages/index.js`)を開くと、 `Link` コンポーネントが Gatsby からインポートされています。 `<Link />` コンポーネントは `to` プロパティに記載されているパス、ここでは `"/contact/"` へのリンクを生成します。
 
 ```jsx
 import React from "react"
@@ -25,15 +25,15 @@ export default () => (
 )
 ```
 
-The above code will add a link to the contact page, automatically rendered in HTML as `<a href="/contact/">` but with added performance benefits. The link's value is based off of the page's filename which in this case would be `contact.js`.
+このコードは contact ページへのリンクを生成し、ビルド時に `<a href="/contact/">` に置き換わります。さらに、Link コンポーネントによって追加されたリンクはパフォーマンス上のメリットを得ることができます。 `to` 要素はファイルネームで記載します。この場合、リンクは `/contact.jsx` へ向いています。
 
-> **Note:** the value `"/"` for the `to` property will take users to the home page.
+> **ヒント:** `"/"` を `to` 要素に指定することでホームページに遷移できます。
 
-## Using `<a>` for external links
+## `<a>` タグを外部リンクとして設定する
 
-If you are linking to pages not handled by your Gatsby site (such as on a different domain), you should use the native HTML `<a>` tag instead of Gatsby Link.
+もし、あなたの Gatsby ウェブサイト外にリンクを作成したい場合(違うドメインなど)、 HTML の `<a>` タグを Link コンポーネントの代わりに使う必要があります。
 
-Additionally, if you wish to have an external link open in new window using the `target` attribute, use the `rel` attribute as seen below to avoid a vulnerability in which the [referrer page](https://developer.mozilla.org/en-US/docs/Web/Security/Referer_header:_privacy_and_security_concerns) can be replaced dynamically in JavaScript with a different page:
+さらに、外部リンクを別ウィンドウで開きたい場合は `target` 要素を設定し、 `rel` 要素に脆弱性対応として [Referer ヘッダーのプライバシーとセキュリティの考慮事項](https://developer.mozilla.org/ja/docs/Web/Security/Referer_header:_privacy_and_security_concerns) を参考にいくつかの値を設定する必要があります。
 
 ```jsx
 import React from "react"
@@ -47,9 +47,9 @@ export default () => (
 )
 ```
 
-It is also recommended to include a [visual icon](https://thenounproject.com/term/new-window/2864/) or some kind of indicator differentiating external links from internal ones.
+[外部リンクを示すアイコン](https://thenounproject.com/term/new-window/2864/) を追加するか、その他の外部リンクであることを示す仕組みを提供することを推奨しています。
 
-## Other resources
+## 追加リソース
 
-- For the complete example of how to link between pages, see [Part One](/tutorial/part-one/#linking-between-pages/) in the Tutorial
-- Check out more detail on routing in Gatsby in the [API doc for Gatsby Link](/docs/gatsby-link/).
+- チュートリアル [Part 1](/tutorial/part-one/#linking-between-pages/) にコードサンプルがあります
+- ルーティングについて詳しく知りたい場合は [API doc for Gatsby Link](/docs/gatsby-link/) を参照して下さい
