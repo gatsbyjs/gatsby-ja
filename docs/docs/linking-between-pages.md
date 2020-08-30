@@ -12,7 +12,7 @@ Gatsby においては `<Link />` コンポーネントをサイト内部のペ�
 
 下記が、Gatsby サイト内の 2 ページをリンクするコードサンプルです。
 
-ページコンテンツ(例： `src/pages/index.js`)を開くと、 `Link` コンポーネントが Gatsby からインポートされています。 `<Link />` コンポーネントは `to` プロパティに記載されているパス、ここでは `"/contact/"` へのリンクを生成します。
+ページコンテンツ（例： `src/pages/index.js`）を開くと、 `Link` コンポーネントが Gatsby からインポートされています。 `<Link />` コンポーネントは `to` プロパティに記載されているパス、ここでは `"/contact/"` へのリンクを生成します。
 
 ```jsx
 import React from "react"
@@ -25,13 +25,13 @@ export default () => (
 )
 ```
 
-このコードは contact ページへのリンクを生成し、ビルド時に `<a href="/contact/">` に置き換わります。さらに、Link コンポーネントによって追加されたリンクはパフォーマンス上のメリットを得ることができます。 `to` 要素はファイルネームで記載します。この場合、リンクは `/contact.jsx` へ向いています。
+このコードは contact ページへのリンクを生成し、ビルド時に `<a href="/contact/">` へ置き換わります。さらに、Link コンポーネントによって追加されたリンクはパフォーマンス上のメリットを得ることができます。 `to` 要素はファイルネームで記載します。この場合、リンクは `/contact.jsx` へ向いています。
 
 > **ヒント:** `"/"` を `to` 要素に指定することでホームページに遷移できます。
 
 ## `<a>` タグを外部リンクとして設定する
 
-もし、あなたの Gatsby ウェブサイト外にリンクを作成したい場合(違うドメインなど)、 HTML の `<a>` タグを Link コンポーネントの代わりに使う必要があります。
+もし、あなたの Gatsby ウェブサイト外にリンクを作成したい場合（違うドメインなど）、 HTML の `<a>` タグを Link コンポーネントの代わりに使う必要があります。
 
 さらに、外部リンクを別ウィンドウで開きたい場合は `target` 要素を設定し、 `rel` 要素に脆弱性対応として [Referer ヘッダーのプライバシーとセキュリティの考慮事項](https://developer.mozilla.org/ja/docs/Web/Security/Referer_header:_privacy_and_security_concerns) を参考にいくつかの値を設定する必要があります。
 
@@ -52,4 +52,4 @@ export default () => (
 ## 追加リソース
 
 - チュートリアル [Part 1](/tutorial/part-one/#linking-between-pages/) にコードサンプルがあります
-- ルーティングについて詳しく知りたい場合は [API doc for Gatsby Link](/docs/gatsby-link/) を参照して下さい
+- ルーティングについて詳しく知りたい場合は [API doc for Gatsby Link](/docs/gatsby-link/) を参照してください
