@@ -10,13 +10,13 @@ Tailwind と Gatsby を組み合わせて使用する方法は 3 つあります
 
 1. 通常： Tailwind のクラスを生成するために PostCSS を使用してください。そうすると `className` を使ってそれらのクラスを反映できます。
 2. CSS-in-JS: Tailwind のクラスを Styled Components に統合してください。
-3. SCSS: SCSS ファイルで Tailwind のクラスをサポートする[gatsby-plugin-sass](/packages/gatsby-plugin-sass)を使用してください。
+3. SCSS: SCSS ファイルで Tailwind のクラスをサポートする [gatsby-plugin-sass](/packages/gatsby-plugin-sass) を使用してください。
 
 これらの方法を使用するために Tailwind のインストールと設定をしなければいけません。このガイトではまずその手順を説明するので、PostCSS、CSS-in-JS、SCSS それぞれの指示にしたがってください。
 
 ## Tailwind のインストールと設定
 
-このガイドでは Gatsby プロジェクトをセットアップしている必要があります。もしまだプロジェクトをセットアップしていないなら、まず [**Quick Start guide**](/docs/quick-start)を読んでから戻ってきてください。
+このガイドでは Gatsby プロジェクトをセットアップしている必要があります。もしまだプロジェクトをセットアップしていないなら、まず [**Quick Start guide**](/docs/quick-start) を読んでから戻ってきてください。
 
 1. Tailwind のインストール
 
@@ -26,7 +26,7 @@ npm install tailwindcss --save-dev
 
 2. Tailwind 設定ファイルの生成（オプション）
 
-**ヒント：** Tailwind 1.0.0+では設定ファイルは不要です。
+**ヒント：** Tailwind 1.0.0+ では設定ファイルは不要です。
 
 Tailwind を設定するためには Tailwind 設定ファイルを追加する必要があるでしょう。幸運なことに Tailwind はそれを行うためのビルド用スクリプトがあります。次のコマンドを実行するだけです。
 
