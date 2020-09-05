@@ -1,8 +1,8 @@
 ---
-title: Gatsby API Reference
+title: Gatsby API リファレンス
 overview: true
 ---
 
-Learn more about Gatsby API methods and options, common files, and customizations.
+Gatsby API のメソッドやオプション、共通ファイル、カスタマイズについて詳しく学びましょう。
 
 <GuideList slug={props.slug} />
