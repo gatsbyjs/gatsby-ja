@@ -46,7 +46,7 @@
 
 - [Japanese Translation Progress](https://github.com/gatsbyjs/gatsby-ja/issues/1)
 - [翻訳スタイルガイド](/style-guide.md)
-- [Gatsby 翻訳ガイド](https://www.gatsbyjs.org/contributing/gatsby-docs-translation-guide/)
+- [Gatsby 翻訳ガイド](https://www.gatsbyjs.com/contributing/gatsby-docs-translation-guide/)
 - [Gatsby Discord](https://gatsby.dev/discord)
 
 ## メンテナー
