@@ -1,58 +1,65 @@
 ---
-title: Winning Over Executives
+title: 重役を説得する
 ---
 
-Before you speak to executives about Gatsby, make sure you understand their strategic goals, and align your argument for Gatsby with those specific goals. Focus on the results of Gatsby's features rather than the specifics of how they work. If some of the big ideas behind Gatsby fit in with the executive's strategic goals, don't be afraid to include them in your conversation.
+重役に対して Gatsby のことを話す前に、彼らの戦略的目標を必ず理解しておき、Gatsby を導入しようという意見を、その具体的な目標と合致させることを確認してください。重視すべきことは、Gatsby の特徴がどのように動作するかの詳細ではなく、Gatsby の特徴がどのような結果をもたらすかです。もし、Gatsby の背後にある意図の中に、重役の戦略的目標にうまく合っているものがあれば、恐れずに会話の中で戦略的目標に言及していきましょう。
 
-Some things executives care about include:
+重役たちが関心を持っていることには、以下のようなものがあります：
 
-- **Brand visibility** Making sure people are learning about your company by showing up in all the right places. This can be accomplished through things like SEO (search engine optimization), buying ad space, and gaining influence through content creation and/or event participation.
-- **Customer experience** Do your customers like using your site and products? Can they find what they need? Do they have a positive impression of your company?
-- **Innovation** Creating and adopting new technology and business models, preferably ones that will have long-term success.
-- **Competitive edge** Distinguishing yourself from your competitors by delivering unique value that helps you claim a greater share of the market.
-- **Growing the business** For most executives, success means gaining clients, leads, users, purchases and awareness - getting more orders moving through that sales funnel.
+- **ブランドの知名度** 適切な場所全てにあなたの会社が登場することで、人々があなたの会社について知ることを確実にすること。これを達成するためには、SEO（検索エンジン最適化）、広告スペースを買うこと、コンテンツを作成して影響力を得ること、イベントに参加すること、などが必要です。
+- **顧客体験** 顧客は、あなたの会社のサイトや製品を使うのが好きでしょうか？　自分の必要なものを見つけられるでしょうか？　あなたの会社に対して良い印象を抱くでしょうか？
+- **イノベーション** 新たな技術とビジネスモデル、できれば長期的な成功を収めるものを創造して採用すること。
+- **競争上の優位性** 市場のより大きなシェアを獲得できるような独自の価値を顧客に提供することによって、あなたの会社を競合と差別化すること。
+- **事業の成長** 多くの重役にとって成功が意味するのは、顧客を得ること、リードを得ること、ユーザーを得ること、購買を得ること、気づきを得ることーーすなわち、セールスファネルの中を、より多くの注文が通り抜けるようにすることです。
 
-## Basic explanation
+## 基本的な説明
 
-Here's an example of a basic explanation of Gatsby for executives:
+重役に対して Gatsby の基本を説明するには、例えばこのようにすればよいでしょう：
 
-> Gatsby is a new way to build websites and applications with exceptional performance, reduced risk of downtime, fewer security vulnerabilities, and the flexibility to work with the best tools for your business. Companies that have moved their sites to Gatsby have seen significant improvements in their lead conversion, organic search traffic, and team productivity.
+> Gatsby は、ウェブサイトとアプリケーションを作成する新しい方法です。並外れたパフォーマンスを持ち、故障のリスクを減らし、セキュリティの脆弱性を減らし、柔軟性があるので私たちの事業の最良のツールと一緒に動作できます。自社のサイトを Gatsby に移行した会社は、リードコンバージョン、自然検索トラフィック、チームの生産性に関して、大幅に改善しました。
 
-## Specific benefits
+## 具体的な利点
 
-Sites built with Gatsby have experienced major sales and engagement benefits as a direct result of Gatsby's built-in features and optimizations. Here are some examples.
+Gatsby で作られたサイトは、Gatsby に組み込まれた特徴と最適化のおかげで、売上や契約の大きな恩恵を受けています。以下にいくつかの例を挙げます。
 
-### Better lead generation and customer engagement
+### リードジェネレーションと顧客エンゲージメントの改善
 
-> Site speed and performance has a huge impact on sales and customer engagement. A [recent Akamai study](https://www.akamai.com/uk/en/about/news/press/2017-press/akamai-releases-spring-2017-state-of-online-retail-performance-report.jsp) showed that a 100 millisecond delay in a site's load time hurt conversion rates by 7%, and 53% of mobile users will leave pages that take more than 3 seconds to load. Gatsby sites are consistently 2-3x faster than similar sites built with different tools, and site owners have seen their [lead generation increase by up to 60% after transitioning to Gatsby](/blog/2018-11-16-youfit-case-study/).
+> サイトのスピードとパフォーマンスは、売上や顧客エンゲージメントに絶大な影響を与えます。[最近の Akamai の研究](https://www.akamai.com/uk/en/about/news/press/2017-press/akamai-releases-spring-2017-state-of-online-retail-performance-report.jsp)によれば、サイトのロードが 100 ミリ秒遅くなるとコンバージョンレートが 7%下がり、またモバイルユーザーの 53%はロードに 3 秒以上かかるページから離脱します。Gatsby のサイトは、他のツールで作られた同様のサイトよりも常に 2〜3 倍早く、サイトの所有者は[Gatsby にサイトを移行したあとで、リードジェネレーションが最大 60%増加した](/blog/2018-11-16-youfit-case-study/)という経験があります。
 
-### Improved search traffic
+### 検索トラフィックの増加
 
-> Site speed is one of the factors Google uses in its search ranking algorithm, and slow site speeds can have a negative snowball effect on your SEO. Slower sites take longer to be crawled and indexed by search engines, they have higher bounce rates, and lower conversion rates, all of which will hurt your rankings. Gatsby sites have [built-in web and mobile performance optimizations](/blog/2018-11-07-gatsby-for-apps/#why-gatsby-for-apps). It actually takes _more_ effort to make a Gatsby site perform badly. Learn more about [the impact of page speed on SEO](https://moz.com/learn/seo/page-speed) on Moz.
+> サイトのスピードは、Google が検索ランキングのアルゴリズムの中で使っている要素の 1 つで、サイトが遅いと SEO への悪影響が少しずつ増えていきます。
+サイトが遅ければ、検索エンジンがクロールやインデックスをするのに時間がかかりますし、ユーザーの直帰率が上がり、コンバージョンレートが下がります。
+そしてそれら全てがサイトの検索順位を下げるのです。Gatsby のサイトには、[Web とモバイル向けの組み込みのパフォーマンス最適化](/blog/2018-11-07-gatsby-for-apps/#why-gatsby-for-apps)があります。実のところ、Gatsby を使ってパフォーマンスが悪くなるようにするほうが苦労するくらいです。詳しくは Moz の[ページ速度が SEO に与える影響](https://moz.com/learn/seo/page-speed) をご参照ください。
 
-### Increase productivity
+### 生産性の向上
 
-> According to [Gatsby user survey results](/blog/2019-03-05-dot-org-messaging-survey/#productive-from-the-start), "Gatsby makes you productive right from the start — it takes away the overhead of time-consuming dev and build tooling setup and configuration which leads to faster iterations." Without the burden of complicated tooling, your development team is more focused, more productive, and more satisfied with their work.
+> [Gatsby ユーザー調査の結果](/blog/2019-03-05-dot-org-messaging-survey/#productive-from-the-start)、によれば、「Gatsby はまさに使い始めたときから生産性を向上させてくれます。gatsby は時間のかかる開発、ビルドツールのセットアップや設定というオーバーヘッドを取り去り、イテレーションを早めてくれます」。複雑なツールという重荷がないので、開発チームはより集中し、より生産的になり、自分の仕事により満足するでしょう。
 
-### Lower costs
+### 低いコスト
 
-> Gatsby sites can be entirely deployed to a CDN which is much less expensive than traditional hosting costs. Plus, CDN hosting basically eliminates your risk of downtime during traffic spikes so you don't miss out on those lead-conversion opportunities. Finally, Gatsby is open source, so you're also saving on software licensing costs.
+> Gatsby のサイトは、CDN に完全にデプロイされるので、従来のホスティングよりも費用が大幅に削減できます。さらに、CDN にホストすることで、トラフィックが急増したときの故障のリスクが根本的に無くなるので、リードコンバージョンの機会を逃すことがなくなります。最後に、Gatsby はオープンソースなので、ソフトウェアのライセンス費用も節約できます。
 
-### Keep your applications ahead of the curve
+### あなたのアプリケーションを、時代の先に
 
-> Gatsby is one of the technologies at the forefront of a new approach to web and application development known as the [JAMStack](https://jamstack.org/). The JAMStack represents a shift away from the limitations of CMS-centered sites and failure points of server-side code towards faster, light-weight, modular site construction. The JAMStack approach and Gatsby have been rapidly gaining popularity in the last few years with no sign of slowing down. (Check out [Gatsby and JAMStack on Google Trends](https://trends.google.com/trends/explore?date=today%205-y&geo=US&q=jamstack,gatsby%20js).) For companies that want to be leaders in technology trends and that want to differentiate themselves on important factors like site performance, this is a prime window of opportunity. Learn how you can [partner with Gatsby](/docs/partnering-with-gatsby/).
+> Gatsby は、[JAMStack](https://jamstack.org/)として知られるウェブとアプリケーション開発の新たなアプローチの最前線のテクノロジーの 1 つです。
+JAMStack は、CMS 中心のサイトの限界と、サーバーサイドコードの失敗点から、高速かつ軽量でモジュール式のサイト構築へと転換することを示しています。
+JAMStack アプローチと Gatsby とは、ここ数年で急速に人気を集め、成長が鈍化する兆しもありません。（[Google Trends における Gatsby と JAMStack](https://trends.google.com/trends/explore?date=today%205-y&geo=JP&q=jamstack,gatsby%20js)をチェックしてみてください）技術トレンドにおいてリーダーになりたい会社と、サイトパフォーマンスのような重要な要素で自社を差別化したい会社にとっては、絶好の機会でしょう。[Gatsby とパートナーになる](/docs/partnering-with-gatsby/)方法をご参照ください。
 
-## Case studies
+<!-- Google トレンド検索のリンク先は、URLの地域指定のUSをJPに変更しました。あまり検索結果で上昇トレンドがわかりにくいのですが。 -->
 
-Case studies are a great way to help executives see Gatsby's potential and gain more practical insight into its benefits. Here are some case studies you might want to share:
+## ケーススタディ
+
+ケーススタディは、重役たちが Gatsby の潜在能力を理解し Gatsby の利益への実践的な洞察を得るための、素晴らしい方法です。
+以下のケーススタディをシェアしたほうがいいかもしれません：
 
 - [Youfit uses Gatsby to increase lead generation by 60%](/blog/2018-11-16-youfit-case-study/)
 - [IBM Uses Gatsby to Manage Enterprise-Level Content](/blog/2018-12-17-ibm-case-study/#big-company-big-website)
 - [Gatsby Fuels Content and Sales in Design+Code Rebuild](/blog/2019-03-15-design-code-blog-post/)
 - [Growing Housecall Pro by 973% with Gatsby](/blog/2019-05-02-growing-housecall-pro-by-973-percent/)
 
-For even more examples of Gatsby sites, [check out the Showcase](/showcase/)
+Gatsby サイトの例をもっと見たい場合は、[ショーケースをご覧ください](/showcase/)。
 
-## Conclusion
+## おわりに
 
-Executives are always looking for ways to improve their business's efficiency, profits, and to grow their organization. Pointing out the financial benefits of Gatsby will help your case, but be sure to go into the many other ways Gatsby will help move your business forward. If you can show your executive(s) how the benefits of Gatsby significantly outweigh the risks and costs involved in adopting it, odds are good that they'll be very receptive to the idea.
+重役は、自社のビジネスの効率や利益を向上させ、組織を成長させる方法を常に探しています。Gatsby の金銭的利益を指摘すれば、あなたの主張は通るでしょうが、しかし Gatsby が他の多くの点においてもあなたの会社のビジネスを前進させることを、詳しく述べることをわすれないでください。もしも重役に、Gatsby のもたらす利益が、採用することによるリスクやコストを大きく上回ることを示せたら、彼らが導入を前向きに検討してくれる見込みは大きいでしょう。
