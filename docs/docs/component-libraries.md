@@ -1,34 +1,34 @@
 ---
-title: Creating Component Libraries
+title: コンポーネントライブラリー
 ---
 
-Component libraries are often used in component-based UI systems like React and Vue. They are typically versioned repositories of components.
+コンポーネントライブラリーは、React や Vue のようなコンポーネントベースの UI システムでよく使われています。通常はバージョン管理されたリポジトリーです。
 
-IBM's [Carbon Design System](https://www.carbondesignsystem.com/) and Palantir's [Blueprint](https://blueprintjs.com/) are both good examples.
+IBM 社の [Carbon Design System](https://www.carbondesignsystem.com/)  や Palantir 社の [Blueprint](https://blueprintjs.com/) はどちらも良い例です。
 
-## Why component libraries
+## なぜコンポーネントライブラリーなのでしょうか？
 
-There are several rationales for creating component libraries.
+コンポーネントライブラリーを作成するのには、いくつか理由があります。
 
-- **Create unified design**. In large web properties and web apps, the look and feel can diverge across different sections maintained by different teams. Component libraries are often used to implement a [design system](https://www.designsystems.com/).
-- **Avoid reinventing the wheel**. Component libraries include common elements like carousels or dropdowns to avoid the need for individual teams to reimplement these components.
+- **統一されたデザインを作成するため**。 大規模なウェブサービスやウェブアプリケーションでは、 外観や使い心地はデザインを担当するチームが異なるため、セクションごとに変わる場合があります。コンポーネントライブラリーは [design system](https://www.designsystems.com/) の実装によく利用されます。
+- **車輪の再発明を避けるため**。 コンポーネントライブラリーには個々のチームがあらためて開発しなくて良いように、カーソルやドロップダウンのようなよく利用される要素が含まれています。
 
-## Tooling & team setups
+## ツールとチームのセットアップ
 
-Component libraries are typically maintained by one individual or a design team that acts as a curator; when a website team or feature team needs a component, it is typically available ready for them to use, so they can move faster.
+コンポーネントライブラリーは典型的には、キュレーターとしての動きをする一人の個人か 1 つのデザインチームにより維持管理されます。ウェブサイトチームや機能実装チームがコンポーネントを必要とした際に素早く動けるよう、通常コンポーネントライブラリーはすぐに使える状態になっています。
 
-Component libraries are typically stored in a separate repository. Individual apps or websites then specify in their dependencies (in `package.json`) which version of each component they are using.
+コンポーネントライブラリーは通常、別個のリポジトリーに格納されます。各アプリやウェブサイトはそれぞれの `package.json` の dependencies に、各コンポーネントのどのバージョンを使っているかを指定します。
 
-One drawback of using component libraries is the additional complexity of cross-repository dependencies.
+コンポーネントライブラリーを使用する欠点の 1 つは、コンポーネント間の依存関係の複雑性が増すことです。
 
-For example, if a feature developer need to change a library component, that developer's workflow typically involves two Pull Requests; one to the component repository repo to make the changes, and one to the website repository to bump the component version.
+例えば、もし機能開発者がライブラリーコンポーネントを変更する必要がある場合、その開発者のワークフローは一般に 2 つのプルリクエストを含みます。 1 つはコンポーネントリポジトリーに対して変更を加えるため、もう 1 つはウェブサイトリポジトリーのコンポーネントバージョンを上げるためです。
 
-## Different versioning approaches
+## 異なったバージョン管理のアプローチ
 
-There are two different approaches for versioning component libraries.
+バージョン管理手法には 2 つの異なるアプローチがあります。
 
-The first is to version on globally across the component library. At any given commit, the library has one version number (e.g. `30.3.1`). Any commit updating a component will then bump the version number accordingly. Both Carbon Design System and Blueprint take this approach.
+1 つ目のアプローチはコンポーネントライブラリー全体に渡り、グローバルにバージョン管理をする方法です。どんなコミットにおいても、ライブラリーはバージョン番号（例えば `30.3.1`）を持ちます。コンポーネントをアップデートするコミットはどんなものでも、それに伴ってバージョン番号を上げます。Carbon Design System や Blueprint もこの手法を取っています。
 
-The second approach is to version each component in the component library. This was used, for example, [by Walmart.com](https://medium.com/walmartlabs/how-to-achieve-reusability-with-react-components-81edeb7fb0e0) -- they built their component library as React components, and created every component as a separate, versioned npm package.
+2 つ目のアプローチはコンポーネントライブラリー内の各コンポーネントのバージョンを管理する方法です。この手法は例えば[by Walmart.com](https://medium.com/walmartlabs/how-to-achieve-reusability-with-react-components-81edeb7fb0e0) で使われています。こちらではコンポーネントライブラリーを React コンポーネントとして生成し、各コンポーネントを別個のバージョン管理された npm パッケージとして作成しています。
 
-This approach allows more granularity -- _what if you want an older version of one component, but a newer version of another one?_ -- but requires additional tooling to make developer workflows pleasant.
+この手法によって、より粒度を細かくできます（もしあなたがあるコンポーネントの古いバージョンが必要だけれど、もう 1 つのコンポーネントについてはより新しいバージョンが必要な場合どうなるでしょうか？）。しかし、開発者のワークフローを快適にするためには、追加のツールが必要となります。
