@@ -2552,15 +2552,7 @@ textlint-rule-ja-no-redundant-expression@^3.0.2:
     textlint-rule-helper "^2.1.1"
     textlint-util-to-string "^3.1.1"
 
-textlint-rule-ja-no-space-around-parentheses@2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/textlint-rule-ja-no-space-around-parentheses/-/textlint-rule-ja-no-space-around-parentheses-2.0.1.tgz#556a60e679da9b4c98244c67e7961ac2e540bec1"
-  integrity sha1-VWpg5nnam0yYJExn55YawuVAvsE=
-  dependencies:
-    match-index "^1.0.1"
-    textlint-rule-helper "^2.0.0"
-
-textlint-rule-ja-no-space-around-parentheses@^2.0.2:
+textlint-rule-ja-no-space-around-parentheses@2.0.2, textlint-rule-ja-no-space-around-parentheses@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/textlint-rule-ja-no-space-around-parentheses/-/textlint-rule-ja-no-space-around-parentheses-2.0.2.tgz#0f628c4cbfa7b8e918e1e650b55faf5c77b438ad"
   integrity sha512-GYjwujWlY6AEuTRrusCv3MPnim8DcPXF4J+l3YL8P17DuxFI0/yhR3t1L2UNErvxf0Uv4ymg4gHHN4RAkbRdyw==
