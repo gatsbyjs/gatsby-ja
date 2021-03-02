@@ -1,8 +1,7 @@
 ---
-title: Building a Portfolio
+title: ポートフォリオの作成
 ---
 
-This is a stub. Help our community expand it.
+このドキュメントは書きかけです。私たちのコミュニティーの発展を手伝ってください。
 
-Please use the [Gatsby Style Guide](/contributing/gatsby-style-guide/) to ensure your
-Pull Request gets accepted.
+あなたの Pull Request が承認されるように[スタイルガイド](/contributing/gatsby-style-guide/) に目を通してください。
