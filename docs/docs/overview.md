@@ -1,8 +1,7 @@
 ---
-title: Overview of the Docs
+title: ドキュメントの概要
 ---
 
-This is a stub. Help our community expand it.
+これは、私たちのコミュニティを拡大するのを助ける一部です。
 
-Please use the [Gatsby Style Guide](/contributing/gatsby-style-guide/) to ensure your
-Pull Request gets accepted.
+この [Gatsby スタイルガイド](/contributing/gatsby-style-guide/) に従って Pull Request を承認します。
