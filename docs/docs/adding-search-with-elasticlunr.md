@@ -1,9 +1,8 @@
 ---
-title: Adding Search with Elasticlunr
+title: Elasticlunr による検索の追加
 issue: https://github.com/gatsbyjs/gatsby/issues/21066
 ---
 
-This is a stub. Help our community expand it.
+これらのドキュメントは、私たちのコミュニティーを拡大するのを助ける一部です。
 
-Please use the [Gatsby Style Guide](/contributing/gatsby-style-guide/) to ensure your
-Pull Request gets accepted.
+この [Gatsby スタイルガイド](/contributing/gatsby-style-guide/) にしたがって Pull Request を承認します。
