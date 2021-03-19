@@ -1,8 +1,8 @@
 ---
-title: Conceptual Guide
+title: コンセプトガイド
 overview: true
 ---
 
-Read high-level overviews of important Gatsby concepts and philosophies.
+Gatsby の重要なコンセプトと哲学の概要を読んでください。
 
 <GuideList slug={props.slug} />
