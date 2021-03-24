@@ -1,9 +1,8 @@
 ---
-title: Gatsby's Governance Model
+title: Gatsbyのガバナンスモデル
 issue: https://github.com/gatsbyjs/gatsby/issues/11805
 ---
 
-This is a stub. Help our community expand it.
+これはスタブです。コミュニティーの拡大に貢献してください。
 
-Please use the [Gatsby Style Guide](/contributing/gatsby-style-guide/) to ensure your
-Pull Request gets accepted.
+[Gatsby スタイルガイド](/contributing/gatsby-style-guide/)を使って Pull Request がアクセプトされるようにしてください。
