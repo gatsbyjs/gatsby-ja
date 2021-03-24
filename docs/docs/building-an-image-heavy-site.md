@@ -1,9 +1,8 @@
 ---
-title: Building an Image Heavy Site
+title: 容量の大きい画像を利用したサイトの構築
 issue: https://github.com/gatsbyjs/gatsby/issues/18423
 ---
 
-This is a stub. Help our community expand it.
+これらのドキュメントは、私たちのコミュニティーを拡大するのを助ける一部です。
 
-Please use the [Gatsby Style Guide](/contributing/gatsby-style-guide/) to ensure your
-Pull Request gets accepted.
+この [Gatsby スタイルガイド](/contributing/gatsby-style-guide/) にしたがって Pull Request を承認します。
