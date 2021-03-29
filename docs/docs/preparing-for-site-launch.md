@@ -1,12 +1,12 @@
 ---
-title: Preparing Your Site for Launch
+title: ウェブサイトをローンチする準備
 overview: true
 ---
 
-So your Gatsby site is done, and you're ready to share it with the world, **congratulations**! 🎉
+これであなたのウェブサイトが完成し、世界中に共有する準備ができました。**おめでとうございます**! 🎉
 
-Before you hit that deploy button though, there are a few things you can do to make sure your site is configured properly to be searchable, shareable, and properly navigable.
+ただし、デプロイする前に、ウェブサイトが検索可能、共有可能、そして適切にナビゲート可能な設定になっていることを確認するためにできることがあります。
 
-In this section you learn how to add a 404 page for when your users land somewhere unexpected, add search and categorization to your content, and a few other nifty things to ensure your site is crawl-able and index-able to all those fancy bots out there. 🤖
+このセクションでは、ユーザーの予期しないページへのアクセスに備えて 404 ページを追加する方法、ウェブサイトのコンテンツに検索と分類、またウェブサイトがそれらのボットに対してクロール可能・インデックス可能であることを保証する気の利いた機能を追加する方法を学習します。
 
 <GuideList slug={props.slug} />
