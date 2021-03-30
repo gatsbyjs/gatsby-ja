@@ -1,52 +1,50 @@
 ---
-title: Using Gitpod, an Online Dev Environment
+title: オンライン開発環境のGitpodを使う
 ---
 
-This page outlines how to use Gitpod, a free online dev environment, to contribute to Gatsby core and its ecosystem. For instructions on setting up a dev environment locally, visit the [local set-up](/contributing/setting-up-your-local-dev-environment/) page.
+このページでは Gitpod の使い方を説明します。Gitpod は Gatsby のコアとそのエコシステムに貢献するための無料のオンライン開発環境です。ローカルに開発環境をセットアップする方法については、[ローカル開発環境を構築する](/contributing/setting-up-your-local-dev-environment/)をご覧ください。
 
-## About Gitpod
+## Gitpod について
 
-Gitpod makes contributions on GitHub easier, by allowing automated development environment setups. Instead of writing lengthy
-documentation of what to install and configure and letting every contributor go through this adventure, the setup is automated and reproducible.
+Gitpod は開発環境を自動的にセットアップでき、GitHub への貢献を簡単にします。インストールや設定に関する長いドキュメントを書いたり貢献者にセットアップ作業をさせる代わりに、セットアップを自動的に行い再現可能にします。
 
-Furthermore, Gitpod prebuilds any branch of a repository so that you don't need to wait for installation, cloning and building.
+さらに Gitpod は、インストール、クローン、ビルドの実行で待たせないようにするため、リポジトリーの各ブランチを事前ビルドします。
 
-## Get Started
+## はじめに
 
-To start a fresh dev environment you can prefix any GitHub URL with `gitpod.io/#`.
+新しい開発環境で始めるために、GitHub の URL の頭に `gitpod.io/#` をつけて開きます。
 
-> Example: https://gitpod.io/#https://github.com/gatsbyjs/gatsby
+> 例： https://gitpod.io/#https://github.com/gatsbyjs/gatsby
 
-The started dev environment will open with a ready-built gatsby core project as well as one built example (gatsbygram).
-Three terminals are started side-by-side running the following processes:
+起動した開発環境は、用意されている gatsby コアプロジェクトの gatsbygram サンプルを開きます。また並行して 3 つのターミナルで次のプロセスが開始されます：
 
 - `yarn run watch --scope={gatsby,gatsby-image,gatsby-link}`
-  Watches and rebuilds the gatsby core code on any changes
+  gatsby コアコードを監視して、変更があると再ビルドします。
 - `gatsby-dev`
-  Copies over the changes from core to the example
+  コアの変更をサンプルにコピーします。
 - `gatsby develop`
-  Serves the example in development mode
+  開発モードでサンプルを起動します。
 
-The running example app is shown on the right in a preview window.
+起動しているサンプルは、右側のプレビューウィンドウに表示されます。
 
-## Working on an Issue
+## Issue の対応作業
 
-To start working on an Issue, you can prefix the Issue URL with `gitpod.io/#`.
+Issue の対応作業を開始するために、Issue の URL に `gitpod.io/#` をつけて開きます。
 
-> Example: https://gitpod.io/#https://github.com/gatsbyjs/gatsby/issues/1199
+> 例： https://gitpod.io/#https://github.com/gatsbyjs/gatsby/issues/1199
 
-This will open a fresh environment with a local branch named after the Issue.
-You can now code, test, commit, push and create a PR from within the workspace.
+こうすると、Issue に対応するブランチで新しい開発環境が開きます。
+この環境で、コーディング、テスト、コミット、プッシュ、PR 作成できます。
 
-## Code Reviews
+## コードレビュー
 
-Some code changes need a deeper review than what is possible on GitHub. Prefixing a PR with `gitpod.io/#` will open that branch in code review mode.
+いくつかのコード変更は GitHub でできること以上に、より慎重なレビューが必要です。そのため PR の前に `gitpod.io/#` をつけて開き、コードレビューモードでブランチを開いてレビューします。
 
-In this mode you see the list of file changes on the left and can navigate through them. You can run the app and use the editing features to explore the changed code base. You can see existing comments or add new comments in the editor and submit your review result as well.
+このモードでは、ウインドウの左側に変更されたファイルの一覧が表示され、操作できます。アプリケーションを実行でき、編集機能でコード変更を探索できます。すでにあるレビューコメントや追加した新しいコメント、そして投稿したレビュー結果も確認できます。
 
-## How to Run Another Example
+## 他のサンプルの動作方法
 
-If you want to run another example you can open a terminal or use an existing one and run the following commands:
+もし他のサンプルを動かしたい場合は、新しいターミナルもしくはすでに開いているターミナルで次のコマンドを入力してください：
 
 ```shell
 yarn install
