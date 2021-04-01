@@ -2781,10 +2781,10 @@ textlint-rule-preset-ja-technical-writing@4.0.1:
     textlint-rule-preset-jtf-style "^2.3.4"
     textlint-rule-sentence-length "^2.2.0"
 
-textlint-rule-preset-jtf-style@2.3.6, textlint-rule-preset-jtf-style@^2.3.4:
-  version "2.3.6"
-  resolved "https://registry.yarnpkg.com/textlint-rule-preset-jtf-style/-/textlint-rule-preset-jtf-style-2.3.6.tgz#57f54100388d64f878e1dd4dca9515c9359ff219"
-  integrity sha512-hun0dMmGM7WWQxu0XlndswNnXS6WqW5TEHeu7NLadZEwZQHYoaClFx0IPgpsmF64rnSLgJ7aq/5L56RkWYp2Ug==
+textlint-rule-preset-jtf-style@2.3.8, textlint-rule-preset-jtf-style@^2.3.4:
+  version "2.3.8"
+  resolved "https://registry.yarnpkg.com/textlint-rule-preset-jtf-style/-/textlint-rule-preset-jtf-style-2.3.8.tgz#0fa50f0a41e347e04552b1ca5e588a5a06df02dd"
+  integrity sha512-zysw3LxrnPyaJz25H6Qs715E91RpKSQ/4hjXg23UNAtTPii1a+RMHlbWlcpuxzF17Km0/X6iVQFFTvzMBhAxkg==
   dependencies:
     analyze-desumasu-dearu "^2.1.2"
     japanese-numerals-to-number "^1.0.2"
