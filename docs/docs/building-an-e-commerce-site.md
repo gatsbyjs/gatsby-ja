@@ -1,11 +1,11 @@
 ---
-title: Building an E-commerce Site
+title: E コマースサイトの作成
 ---
 
-The speed and performance of sites built with Gatsby make it a great tool for building e-commerce sites. There are existing plugins for connecting services like [Shopify](/packages/gatsby-source-shopify/) and [Snipcart](/packages/gatsby-plugin-snipcart/) to Gatsby, and this section contains reference guides to help get things setup.
+Gatsby で作成されたサイトの速度と性能は、E コマースサイトを作成する上での強力なツールとなります。[Shopify](/packages/gatsby-source-shopify/)や[Snipcart](/packages/gatsby-plugin-snipcart/)のようなサービスを Gatsby と連携するためのプラグインが存在し、このセクションにはセットアップに役立つリファレンスガイドが含まれています。
 
-To see examples of e-commerce sites built with Gatsby, check out the [showcase](/showcase/?filters%5B0%5D=eCommerce).
+Gatsby で作成された E コマースサイトの例を確認するには、[showcase](/showcase/?filters%5B0%5D=eCommerce)を見てください。
 
 <GuideList slug={props.slug} />
 
-_You can also check out the ["Making an E-commerce Site with Stripe" tutorial](/tutorial/ecommerce-tutorial/) for more information._
+_より詳細な情報については[「 Stripe を用いた E コマースサイトの作成」チュートリアル](/tutorial/ecommerce-tutorial/)で確認できます。_
