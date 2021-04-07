@@ -1,7 +1,7 @@
 ---
-title: "Coming from React to Gatsby: What You Need to Know"
+title: 「React から Gatsby へ：知っておくべきこと」
 ---
 
-This is a stub. Help our community expand it.
+このドキュメントは作成途中です。私たちのコミュニティー発展を手伝ってください。
 
-Please use the [Gatsby Style Guide](/contributing/gatsby-style-guide/) to ensure your Pull Request gets accepted.
+あなたの Pull Request が承認されるためにも[翻訳スタイルガイド](/contributing/gatsby-style-guide/)を一読ください。
