@@ -1,7 +1,7 @@
 ---
-title: How to Add a List of Markdown Blog Posts
+title: Markdown ブログ記事のリストを追加する方法
 ---
 
-This is a stub. Help our community expand it.
+このドキュメントは作成途中です。私たちのコミュニティー発展を手伝ってください。
 
-The [Gatsby Style Guide](/contributing/gatsby-style-guide/) will help ensure your Pull Request gets accepted.
+あなたの Pull Request が承認されるためにも[翻訳スタイルガイド](/contributing/gatsby-style-guide/)を一読ください。
