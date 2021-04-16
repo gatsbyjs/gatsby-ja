@@ -1,11 +1,11 @@
 ---
-title: Gatsby Browser APIs
-description: Documentation about leveraging standard browser APIs within Gatsby
+title: Gatsby ブラウザ API
+description: Gatsby における標準ブラウザAPI活用についてのドキュメント
 jsdoc: ["gatsby/src/utils/api-browser-docs.js"]
 apiCalls: BrowserAPI
 showTopLevelSignatures: true
 ---
 
-## Usage
+## 使い方
 
-Implement any of these APIs by exporting them from a file named `gatsby-browser.js` in the root of your project.
+プロジェクトのルートにある`gatsby-browser.js`という名のファイルからこれらの API をエクスポートして実装してください。
