@@ -1,15 +1,15 @@
 ---
-title: Creating Plugins
+title: プラグインの作成
 ---
 
-You may be looking to build and perhaps publish a plugin that doesn't exist yet, or you may just be curious to know more about the anatomy of a Gatsby plugin (file structure, etc).
+まだ存在しないプラグインをビルドして公開しようとしたり、Gatsby プラグインの構造（ファイル構造など）についてもっと知りたいということがあると思います。
 
-## Core concepts
+## コアコンセプト
 
-- Each Gatsby plugin can be created as an npm package or as a [local plugin](/docs/creating-a-local-plugin/)
-- A `package.json` is required
-- Plugins implement the Gatsby APIs for [Node](/docs/node-apis/), [server-side rendering](/docs/ssr-apis/), and the [browser](/docs/browser-apis/)
+- 各 Gatsby プラグインは npm パッケージ、または[ローカルプラグイン](/docs/creating-a-local-plugin/)として作成できます。
+- `package.json` が必要です。
+- プラグインは[ノード](/docs/node-apis/)、[サーバーサイドレンダリング](/docs/ssr-apis/)、および[ブラウザ](/docs/browser-apis/)用の Gatsby API を実装します。
 
-This section of the docs includes the following guides:
+ドキュメントのこのセクションでは以下のガイドを含んでいます：
 
 <GuideList slug={props.slug} />
