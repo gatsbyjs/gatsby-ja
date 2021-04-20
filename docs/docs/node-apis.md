@@ -1,33 +1,33 @@
 ---
-title: Gatsby Node APIs
-description: Documentation on Node APIs used in Gatsby build process for common uses like creating pages
+title: Gatsby Node API
+description: ページ作成のような一般的利用におけるGatsbyのビルド処理で使用されるNode APIに関するドキュメント
 jsdoc: ["gatsby/src/utils/api-node-docs.js"]
 apiCalls: NodeAPI
 ---
 
-Gatsby gives plugins and site builders many APIs for controlling your site's data in the GraphQL data layer.
+Gatsby では GraphQL データ層でサイトのデータを扱うための多くの API を、プラグインとサイトビルダーに提供します。
 
-## Async plugins
+## 非同期プラグイン
 
-If your plugin performs async operations (disk I/O, database access, calling remote APIs, etc.) you must either return a promise or use the callback passed to the 3rd argument. Gatsby needs to know when plugins are finished as some APIs, to work correctly, require previous APIs to be complete first. See [Debugging Async Lifecycles](/docs/debugging-async-lifecycles/) for more info.
+プラグインが非同期操作（ディスク I/O、データベースアクセス、リモート API の呼び出しなど）を実行する場合は、Promise を返すか、第 3 引数に渡されたコールバック関数を使用する必要があります。正常に動作するためには、以前の API がまず先に終了している必要があるため、Gatsby はプラグインが一部の API としていつ終了するのかを知る必要があります。詳細については[非同期ライフサイクルのデバッグ](/docs/debugging-async-lifecycles/)をご覧ください。
 
 ```javascript
 // Promise API
 exports.createPages = () => {
   return new Promise((resolve, reject) => {
-    // do async work
+    // 非同期処理を行う
   })
 }
 
 // Callback API
 exports.createPages = (_, pluginOptions, cb) => {
-  // do Async work
+  // 非同期処理を行う
   cb()
 }
 ```
 
-If your plugin does not do async work, you can just return directly.
+プラグインが非同期処理を行わない場合は、直接戻ることができます。
 
-## Usage
+## 使い方
 
-Implement any of these APIs by exporting them from a file named `gatsby-node.js` in the root of your project.
+プロジェクトのルートディレクトリーにある `gatsby-node.js` という名前のファイルからエクスポートして、これらの API を実装してください。
