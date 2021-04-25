@@ -1,8 +1,7 @@
 ---
-title: Interactive Pages
+title: インタラクティブページ
 ---
 
-This is a stub. Help our community expand it.
+これらのドキュメントは、私たちのコミュニティーを拡大するのを助ける一部です。
 
-Please use the [Gatsby Style Guide](/contributing/gatsby-style-guide/) to ensure your
-Pull Request gets accepted.
+Pull Request が承認されることを確実にするために [Gatsby スタイルガイド](/contributing/gatsby-style-guide/) にしたがって Pull Request を作成してください。
