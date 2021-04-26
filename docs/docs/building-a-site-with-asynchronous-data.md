@@ -1,9 +1,8 @@
 ---
-title: Building a Site with Asynchronous Data
+title: 非同期データを使用したサイト構築
 issue: https://github.com/gatsbyjs/gatsby/issues/18484
 ---
 
-This is a stub. Help our community expand it.
+これらのドキュメントは、私たちのコミュニティーを拡大するのを助ける一部です。
 
-Please use the [Gatsby Style Guide](/contributing/gatsby-style-guide/) to ensure your
-Pull Request gets accepted.
+Pull Request が承認されることを確実にするため [Gatsby スタイルガイド](/contributing/gatsby-style-guide/) に沿って Pull Request を作成してください。
