@@ -1,22 +1,22 @@
 ---
-title: Layout Components
+title: レイアウトコンポーネント
 ---
 
-In this guide, you'll learn Gatsby's approach to layouts, how to create and use layout components, and how to prevent layout components from unmounting.
+このガイドでは、Gatsby のレイアウトに対するアプローチと、レイアウトコンポーネントの作成方法と使用方法、さらにレイアウトコンポーネントのアンマウントを防ぐ方法について説明します。
 
-## Gatsby's approach to layouts
+## Gatsby のレイアウトに対するアプローチ
 
-Gatsby does not, by default, automatically apply layouts to pages (there are, however, ways to do so which will be covered in a later section). Instead, Gatsby follows React's compositional model of importing and using components. This makes it possible to create multiple levels of layouts, e.g. a global header and footer, and then on some pages, a sidebar menu. It also makes it easy to pass data between layout and page components.
+Gatsby は、デフォルトではページにレイアウトを自動的に適用しません（ただし、後のセクションで説明する通り、レイアウトを自動的に適用させる方法もあります）。その代わりに、 Gatsby は React と同じようにコンポーネントのインポートと使用ができます。これにより、例えば全ページに共通するヘッダーとフッター、そしていくつかのページに適用されるサイドバーメニューなど、複数のレベルのレイアウトを作成できます。また、レイアウトコンポーネントとページコンポーネントの間でデータを受け渡すことも簡単にできます。
 
-## What are layout components?
+## レイアウトコンポーネントとは？
 
-Layout components are for sections of your site that you want to share across multiple pages. For example, Gatsby sites will commonly have a layout component with a shared header and footer. Other common things to add to layouts are a sidebar and/or navigation menu. On this page for example, the header at the top is part of gatsbyjs.org’s layout component.
+レイアウトコンポーネントは、複数のページ間で共有したいサイトのセクションに使用します。例えば、 Gatsby のサイトは通常では全ページ共通のヘッダーフッターのレイアウトコンポーネントを持ちます。その他、一般的にレイアウトに追加するものといえば、サイドバーやナビゲーションメニューがあります。このページでは、一番上にあるヘッダーが gatsbyjs.org で使用するレイアウトコンポーネントです。
 
-## How to create layout components
+## レイアウトコンポーネントの作り方
 
-It is recommended to create your layout components alongside the rest of your components (e.g. into `src/components/`).
+レイアウトコンポーネントは、その他のコンポーネントと同じ場所にまとめて作成することをお勧めします（例： `src/components/`）。
 
-Here is an example of a very basic layout component at `src/components/layout.js`:
+以下は、 `src/components/layout.js` に作成する一般的なコンポーネントの例です。
 
 ```jsx:title=src/components/layout.js
 import React from "react"
@@ -28,9 +28,9 @@ export default ({ children }) => (
 )
 ```
 
-## How to import and add layout components to pages
+## レイアウトコンポーネントの読み込みとページへの追加方法
 
-If you want to apply a layout to a page, you will need to include the `Layout` component and wrap your page in it. For example, here is how you would apply your layout to the front page:
+ページにレイアウトを適用する場合、 `Layout` コンポーネントをインポートしてラップする必要があります。以下は、フロントページにレイアウトを適用する場合の例です。
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -43,17 +43,17 @@ export default () => (
 )
 ```
 
-Repeat for every page and template that needs this layout.
+これは、このレイアウトを使用する全てのページとテンプレートに必要です。
 
-## How to prevent layout components from unmounting
+## レイアウトコンポーネントのアンマウントを防ぐ方法
 
-As mentioned earlier, Gatsby does not, by default, automatically wrap pages in a layout component. The "top level" component is the page itself. As a result, when the "top level" component changes between pages, React will re-render all children. This means that shared components like navigations will unmount and remount. This will break CSS transitions or React state within those shared components.
+先に述べた通り、Gatsby はデフォルトではページをレイアウトコンポーネントでラップしません。「トップレベル」のコンポーネントは、そのページ自身です。その結果、ページにまたがって「トップレベル」のコンポーネントが変更されると、React はすべての子コンポーネントを再レンダリングします。これは、ナビゲーションのような共有コンポーネントがアンマウントと再マウントを繰り返してしまうということを意味します。これにより、それらの共有コンポーネント内の CSS トランジションや、コンポーネントの状態が壊されてしまいます。
 
-If you need to set a wrapper component around page components that won't get unmounted on page changes, use the **`wrapPageElement`** [browser API](/docs/browser-apis/#wrapPageElement) and the [SSR equivalent](/docs/ssr-apis/#wrapPageElement).
+ページが変更されてもマウントが解除されないようなページのラッパーコンポーネントを設定する必要がある場合は、 [ブラウザ API](/docs/browser-apis/#wrapPageElement) または [SSR equivalent](/docs/ssr-apis/#wrapPageElement) の **`wrapPageElement`** を使用します。
 
-Alternatively, you can prevent your layout component from unmounting by using [gatsby-plugin-layout](/packages/gatsby-plugin-layout/), which implements the `wrapPageElement` APIs for you.
+また、 `wrapPageElement` が実装された [gatsby-plugin-layout](/packages/gatsby-plugin-layout/) を使っても、レイアウトコンポーネントがアンマウントされることを防ぐことができます。
 
-## Other resources
+## その他の資料
 
 - [Creating nested layout components in Gatsby](/tutorial/part-three/)
 - [Life after layouts in Gatsby V2](/blog/2018-06-08-life-after-layouts/)
