@@ -14,9 +14,9 @@ Gatsby は、デフォルトではページにレイアウトを自動的に適�
 
 ## レイアウトコンポーネントの作り方
 
-レイアウトコンポーネントは、その他のコンポーネントと同じ場所にまとめて作成することをお勧めします（例：`src/components/`）。
+レイアウトコンポーネントは、その他のコンポーネントと同じ場所にまとめて作成することをお勧めします（例： `src/components/`）。
 
-以下は、`src/components/layout.js` に作成する一般的なコンポーネントの例です。
+以下は、 `src/components/layout.js` に作成する一般的なコンポーネントの例です。
 
 ```jsx:title=src/components/layout.js
 import React from "react"
