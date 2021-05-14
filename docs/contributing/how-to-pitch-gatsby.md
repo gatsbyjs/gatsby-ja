@@ -1,24 +1,21 @@
 ---
-title: How to Pitch Gatsby
+title: ギャツビーを売り込む方法
 ---
 
-If you love Gatsby as much as we do, you might want to pitch your colleagues, managers or anyone in your life about its value. As such, we've put together some talking points that could help you make a case for building with Gatsby:
+私たちと同じくらいギャツビーを愛しているなら、同僚、マネージャー、またはあなたの人生の誰かにその価値について売り込みたいと思うかもしれません。 そのため、Gatsbyを使用して構築するためのケースを作成するのに役立ついくつかの論点をまとめました。
 
-Build blazing-fast websites without the hosting hassles of managing complex, costly infrastructure or fear that your site might go down. **Gatsby is a website development tool for React, the most modern way to build reliable, lightning fast websites.**
+複雑でコストのかかるインフラストラクチャを管理する煩わしさや、サイトがダウンする恐れのない、非常に高速なWebサイトを構築します。 ** Gatsbyは、信頼性が高く、超高速のWebサイトを構築するための最新の方法であるReactのWebサイト開発ツールです。**
 
-## A website built with Gatsby is:
+## Gatsbyで構築されたWebサイトは次のとおりです。
 
-- **Fast:** Think rocket ship vs. Winnebago. Gatsby takes fast to a whole new level with
-  websites that live on the edge—right where your customers are. Pages load in milliseconds
-  rather than seconds. Gatsby lets teams create lightning-fast, content-driven websites without
-  needing to become performance experts.
+- **速い：**ロケット船とウィネベーゴを考えてみてください。 Gatsbyは、顧客がいる場所の端にあるWebサイトで、まったく新しいレベルにすばやく到達します。 ページは秒単位ではなくミリ秒単位で読み込まれます。 Gatsbyを使用すると、チームはパフォーマンスの専門家になることなく、超高速のコンテンツ駆動型Webサイトを作成できます。
 
-- **Simple:** No servers. No databases. Traditional hosting is time consuming, costly, complex, and puts your site at risk of crashing if your content goes viral. Avoid the pitfalls of hosting with a serverless architecture. A site that never goes down because it’s built on the edge, instantly scaling for traffic spikes.
+- **シンプル：**サーバーはありません。 データベースはありません。 従来のホスティングは、時間とコストがかかり、複雑であり、コンテンツが口コミで広まるとサイトがクラッシュするリスクがあります。 サーバーレスアーキテクチャでホスティングする際の落とし穴を避けてください。 エッジ上に構築されているためダウンすることのないサイトで、トラフィックの急増に即座に対応します。
 
-- **Trusted:** Leverage the power of the latest web technologies including React, Webpack, GraphQL, modern JavaScript, and more. Get the best of both worlds—all the power and conveniences from React and its ecosystem with a really slick and responsive user experience.
+- **信頼できる：** React、Webpack、GraphQL、最新のJavaScriptなどを含む最新のWebテクノロジーのパワーを活用します。 Reactとそのエコシステムのすべてのパワーと利便性を、非常に洗練された応答性の高いユーザーエクスペリエンスで、両方の長所を活用してください。
 
-- **Flexible with the Content Mesh:** Build websites quickly and deploy them safely, no matter where your content lives. Load data from your CMS, static files, a database, or from multiple places at once. Your marketing team is happy because they can use the content management tools they’re familiar with (WordPress, Drupal, Contentful, Shopify).
+- **コンテンツメッシュによる柔軟性：**コンテンツがどこにあるかに関係なく、Webサイトを迅速に構築し、安全に展開します。 CMS、静的ファイル、データベース、または複数の場所から一度にデータをロードします。 マーケティングチームは、使い慣れたコンテンツ管理ツール（WordPress、Drupal、Contentful、Shopify）を使用できるので満足しています。
 
-- **Secure:** Gatsby websites are inherently more secure because there are no servers involved. All your content is compiled ahead of time so hackers can’t get to your database or into your CMS. And your site is more resilient to DDoS attacks because the biggest point of failure — a server — is no longer part of the equation.
+- **安全性：**サーバーが関与していないため、ギャツビーのWebサイトは本質的により安全です。 すべてのコンテンツは事前にコンパイルされているため、ハッカーはデータベースやCMSにアクセスできません。 また、最大の障害点であるサーバーはもはや方程式の一部ではないため、サイトはDDoS攻撃に対してより回復力があります。
 
-Want more? Check out this [blog post from Linda Watkins](/blog/2018-06-08-gatsby-marketers-managers-agencies-teams/), Gatsby's inimitable marketing director, on why she loves Gatsby (including a one-page overview for you to share).
+もっと欲しい？ これをチェックしてください [リンダワトキンスからのブログ投稿](/blog/2018-06-08-gatsby-marketers-managers-agencies-teams/), ギャツビーの比類のないマーケティングディレクター、彼女がギャツビーを愛する理由について（あなたが共有するための1ページの概要を含む）。
