@@ -1,46 +1,46 @@
 ---
-title: Build Caching
+title: ビルドキャッシュ
 ---
 
-Plugins can cache data as JSON objects and retrieve them on consecutive builds.
+プラグインはデータを JSON オブジェクトとしてキャッシュし、後続のビルドの際にこれを取得できます。
 
-Caching is already used by Gatsby and plugins for example:
+このキャッシュ機構は、すでにいくつかのプラグインと Gatsby 本体によって利用されています。
 
-- any nodes created by source/transformer plugins are cached
-- `gatsby-plugin-sharp` caches built thumbnails
+- プラグイン `source/transformer` によって作成された node は全てキャッシュされます
+- `gatsby-plugin-sharp` はビルドしたサムネイルをキャッシュします
 
-Build outputs are stored in the `.cache` and `public` directories relative to your project root.
+ビルド出力は、ルートディレクトリー以下の `.cache` と `public` に保存されます。
 
-## The cache API
+## キャッシュ API
 
-The cache API is passed to [Gatsby's Node APIs](/docs/node-apis/) which is typically implemented by plugins.
+キャッシュ API は [Gatsby's Node APIs](/docs/node-apis/) に渡され、通常プラグインによって実装されます。
 
 ```js
-exports.onPostBootstrap = async function({ cache, store, graphql }) {}
+exports.onPostBootstrap = async function ({ cache, store, graphql }) {}
 ```
 
-The two functions you would want to use are:
+キャッシュのやり取りには、以下の 2 つの関数を利用します。
 
 ### `set`
 
-Cache value
+キャッシュの埋め込み。
 
 `cache.set(key: string, value: any) => Promise<any>`
 
 ### `get`
 
-Retrieve cached value
+キャッシュの取り出し。
 
 `cache.get(key: string) => Promise<any>`
 
-The [Node API helpers](/docs/node-api-helpers/#cache) documentation offers more detailed information on the API.
+この API のより詳細な情報は、[Node API helpers](/docs/node-api-helpers/#cache) を参照してください。
 
-## Plugin Example
+## プラグインの例
 
-In your plugin's `gatsby-node.js` file, you can access the `cache` argument like so:
+プラグインの `gatsby-node.js` ファイルでは、以下のように `cache` 引数にアクセス出来ます。
 
 ```js:title=gatsby-node.js
-exports.onPostBuild = async function({ cache, store, graphql }, { query }) {
+exports.onPostBuild = async function ({ cache, store, graphql }, { query }) {
   const cacheKey = "some-key-name"
   let obj = await cache.get(cacheKey)
 
@@ -49,7 +49,7 @@ exports.onPostBuild = async function({ cache, store, graphql }, { query }) {
     const data = await graphql(query)
     obj.data = data
   } else if (Date.now() > obj.lastChecked + 3600000) {
-    /* Reload after a day */
+    /* 一日後にリロード */
     const data = await graphql(query)
     obj.data = data
   }
@@ -58,19 +58,19 @@ exports.onPostBuild = async function({ cache, store, graphql }, { query }) {
 
   await cache.set(cacheKey, obj)
 
-  /* Do something with data ... */
+  /* データにより処理を行う ... */
 }
 ```
 
-## Clearing cache
+## キャッシュの消去
 
-Since cache files are stored within the `.cache` directory, simply deleting it will clear all cache. You can also use [`gatsby clean`](/docs/gatsby-cli/#clean) to delete the `.cache` and `public` folders.
-The cache is also invalidated by Gatsby in a few cases, specifically:
+キャッシュは `.cache` ディレクトリーに格納されているため、このディレクトリーを削除することで消去可能です。[`gatsby clean`](/docs/gatsby-cli/#clean) を用いて、`.cache` と `public` を削除しても、同様にキャッシュを削除できます。
+また Gatsby は、以下に示すようにいくつかのケースでキャッシュを無効化しています。
 
-- If `package.json` changes, for example a dependency is updated or added
-- If `gatsby-config.js` changes, for example a plugin is added or modified
-- If `gatsby-node.js` changes, for example if you invoke a new Node API, or change a `createPage` call
+- `package.json` に変更がある場合、具体的には依存関係に更新や追加など
+- `gatsby-config.js` に変更がある場合、具体的にはプラグインの追加や変更など
+- `gatsby-node.js` に変更がある場合、具体的には新しい Node API の呼び出し、createPage 呼び出しの変更など
 
 ## Conclusion
 
-With the cache API you're able to persist data between builds, which is really helpful while developing a site with Gatsby (as you re-run `gatsby develop` really often). Performance-heavy operations (like image transformations) or downloading data can slow down the bootstrap of Gatsby significantly and adding this optimization to your plugin can be a huge improvement to your end users. You can also have a look at the following examples who implemented the cache API: [gatsby-source-contentful](https://github.com/gatsbyjs/gatsby/blob/7f5b262d7b5323f1a387b8b7278d9a81ee227258/packages/gatsby-source-contentful/src/download-contentful-assets.js), [gatsby-source-shopify](https://github.com/gatsbyjs/gatsby/blob/7f5b262d7b5323f1a387b8b7278d9a81ee227258/packages/gatsby-source-shopify/src/nodes.js#L23-L54), [gatsby-source-wordpress](https://github.com/gatsbyjs/gatsby/blob/7f5b262d7b5323f1a387b8b7278d9a81ee227258/packages/gatsby-source-wordpress/src/normalize.js#L471-L537), [gatsby-transformer-remark](https://github.com/gatsbyjs/gatsby/blob/7f5b262d7b5323f1a387b8b7278d9a81ee227258/packages/gatsby-transformer-remark/src/extend-node-type.js), [gatsby-source-tmdb](https://github.com/LekoArts/gatsby-source-tmdb/blob/e12c19af5e7053bfb7737e072db9e24acfa77f49/src/add-local-image.js).
+キャッシュ API を用いることで、ビルド間でデータを使い回すことが出来ます。これは `gatsby develop` を頻繁に再実行する、Gatsby を用いたサイト開発では非常に便利です。パフォーマンスの高い操作（画像変換など）やデータのダウンロードは、Gatsby の起動を大幅に遅くする可能性があるため、キャッシュによるビルドプロセスの最適化は、エンドユーザーにとって大幅な速度改善効果が期待できます。キャッシュ API を実装した例は以下を参考にしてください。[gatsby-source-contentful](https://github.com/gatsbyjs/gatsby/blob/7f5b262d7b5323f1a387b8b7278d9a81ee227258/packages/gatsby-source-contentful/src/download-contentful-assets.js), [gatsby-source-shopify](https://github.com/gatsbyjs/gatsby/blob/7f5b262d7b5323f1a387b8b7278d9a81ee227258/packages/gatsby-source-shopify/src/nodes.js#L23-L54), [gatsby-source-wordpress](https://github.com/gatsbyjs/gatsby/blob/7f5b262d7b5323f1a387b8b7278d9a81ee227258/packages/gatsby-source-wordpress/src/normalize.js#L471-L537), [gatsby-transformer-remark](https://github.com/gatsbyjs/gatsby/blob/7f5b262d7b5323f1a387b8b7278d9a81ee227258/packages/gatsby-transformer-remark/src/extend-node-type.js), [gatsby-source-tmdb](https://github.com/LekoArts/gatsby-source-tmdb/blob/e12c19af5e7053bfb7737e072db9e24acfa77f49/src/add-local-image.js).
