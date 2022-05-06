@@ -1,20 +1,20 @@
 ---
-title: Write Out Pages
+title: ページの書き出し
 ---
 
-> This documentation isn't up to date with the latest version of Gatsby.
+> このドキュメントは Gatsby の最新バージョンに対応していません。
 >
-> Outdated areas are:
+> 更新されていない箇所は以下のとおりです。
 >
-> - `data.json` should be replaced with `page-data.json`
-> - remove mentions of `pages.json`
-> - describe `match-paths.json`
+> - `data.json` は `page-data.json` に置き換える必要があります。
+> - `pages.json` の記述を削除しました。
+> - `match-paths.json` について記述する。
 >
-> You can help by making a PR to [update this documentation](https://github.com/gatsbyjs/gatsby/issues/14228).
+> [このドキュメントを更新する](https://github.com/gatsbyjs/gatsby/issues/14228) に PR することで、手助けができます。
 
-This is one of the last bootstrap stages before we hand off to webpack to perform code optimization and code splitting. Webpack builds a web bundle. It has no knowledge of Gatsby's core code. Instead, it operates only on files in the `.cache` directory. It also doesn't have access to all the Redux information that was built up during bootstrap. So instead, we create dynamic JavaScript and JSON files that are dependent on by the webpack application in the `.cache` directory (see [Building the JavaScript App](/docs/production-app/)).
+これは、コードの最適化とコード分割をするために webpack へ渡す前の、Bootstrap の最後の段階の 1 つです。Webpack は Web バンドルを構築します。Webpack は Gatsby のバックエンドコードに関する知識を持っていません。その代わり、`.cache`ディレクトリーにあるファイルのみを操作します。また、Bootstrap で構築されたすべての Redux の情報へアクセスはできません。そこで、webpack アプリケーションに依存する動的な JavaScript と JSON ファイルを作成します (詳しくはこちらを参照してください [ JavaScript アプリの構築 ](/docs/production-app/))。
 
-You can think of this step as taking all the data that was generated during bootstrap and saving it to disk for consumption by webpack.
+今回は、 Bootstrap 中に生成されたすべてのデータを webpack へと使わせるため、ディスクへと保存することだと考えることができます。
 
 ```dot
 digraph {
@@ -48,9 +48,9 @@ digraph {
 }
 ```
 
-Most of the code backing this section is in [pages-writer.js](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/internal-plugins/query-runner/pages-writer.js)
+今回のコードを裏付けるものは [pages-writer.js](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/internal-plugins/query-runner/pages-writer.js) にあります。
 
-The dynamic files that are created are (all under the `.cache` directory).
+作成される動的ファイルは以下のとおりです（以下は全て `.cache` ディレクトリーの下にあります）。
 
 - [pages.json](#pagesjson)
 - [sync-requires.js](#sync-requiresjs)
@@ -59,16 +59,18 @@ The dynamic files that are created are (all under the `.cache` directory).
 
 ## pages.json
 
-This is a collection of page objects, created from redux `pages` namespace. For each page it includes the
+これは、redux の `pages` 名前空間から作成された、ページオブジェクトの一覧です。各ページには、
 
 - [componentChunkName](/docs/gatsby-internals-terminology/#componentchunkname)
 - [jsonName](/docs/gatsby-internals-terminology/#jsonname)
 - [path](/docs/gatsby-internals-terminology/#path)
 - [matchPath](/docs/gatsby-internals-terminology/#matchpath)
 
-The pages are sorted such that those with `matchPath`s come before those without. This is to assist [find-page.js](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/cache-dir/find-page.js) in selecting pages via regex before trying explicit paths. See [matchPaths](/docs/gatsby-internals-terminology/#matchpath) for more info.
+があります。
 
-e.g
+ページは `matchPath` を持つものが持たない物の前に来るように並び替えられます。これは、[find-page.js](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/cache-dir/find-page.js) が明示的にパスを試す前に正規表現でページを選択させるためです。詳しくは [matchPaths](/docs/gatsby-internals-terminology/#matchpath) をご覧ください。
+
+例えば、
 
 ```javascript
 ;[
@@ -77,34 +79,32 @@ e.g
     jsonName: "blog-c06",
     path: "/blog",
   },
-  // more pages
+  // 中略
 ]
 ```
 
-`pages.json` is generated for `gatsby develop` purposes only. In `npm run build`, we use [data.json](/docs/write-pages/#datajson) (below) which includes the pages info plus more.
+この `pages.json` は `gatsby develop` 用にのみ生成されます。`npm run build` では、ページの情報とその他の情報を含む[data.json](/docs/write-pages/#datajson)を使用します。
 
 ## sync-requires.js
 
-This is a dynamically generated JavaScript file that exports `components`. It is an object created by iterating over the `components` redux namespace. The keys are the [componentChunkName](/docs/gatsby-internals-terminology/#componentchunkname) (e.g. `component---src-blog-2-js`), and the values are expressions that require the component. E.g. `/home/site/src/blog/2.js`. The file will look something like this:
+これは `components` をエクスポートして動的に生成される JavaScript ファイルです。それは `components` redux の名前空間をイテレートして生成されるオブジェクトになります。キーは [componentChunkName](/docs/gatsby-internals-terminology/#componentchunkname)（例： `component---src-blog-2-js`）で、値はそのコンポーネントを必要とする表現です（例： `/home/site/src/blog/2.js`）。ファイルは以下のような感じになります。
 
 ```javascript
 exports.components = {
   "component---src--blog-2-js": require("/home/site/src/blog/2.js"),
-  // more components
+  // 中略
 }
 ```
-
-It is used during [static-entry.js](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/cache-dir/static-entry.js) so that it can map componentChunkNames to their component implementations. Whereas the [production-app.js](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/cache-dir/production-app.js) must use `async-requires.js` (below) since it performs [code splitting](/docs/how-code-splitting-works/).
 
 ## async-requires.js
 
 ---
 
-`async-requires.js` is very similar to `sync-requires.js`, in that it is a dynamically generated JavaScript file. The difference is that it is written to be used for code splitting via webpack. So, instead of using `require` with the component's path, it uses `import` and adds a `webpackChunkName` hint so that we can eventually link the componentChunkName to its resulting file (more info in [Code Splitting](/docs/how-code-splitting-works/) docs). `components` is a function, so that it can be lazily initialized.
+`async-requires.js` は動的に生成される JavaScript ファイルという点では `sync-requires.js` とかなりよく似ています。違いは、webpack でのコード分割に使用するため、書かれていることです。そのため、コンポーネントのパスを指定して `require` を使用する代わり、 `import` を使用し、`webpackChunkName` ヒントを追加して、最終的には componentChunkName と結果のファイルを連携させます（詳細は[コード分割](/docs/how-code-splitting-works/)ドキュメントにあります）。`components` は関数なので、遅延して初期化できます。
 
-`async-requires.js` also exports a `data` function that imports `data.json` ([see below](/docs/write-pages/#datajson))
+`async-requires.js` は `data.json` をインポートする `data` 関数もエクスポートします（[参照](/docs/write-pages/#datajson)）。
 
-An example of async-requires is:
+async-requires の例としては、以下のようなものがあります。
 
 ```javascript
 exports.components = {
@@ -112,17 +112,17 @@ exports.components = {
     import(
       "/home/site/src/blog/2.js" /* webpackChunkName: "component---src-blog-2-js" */
     ),
-  // more components
+  // 中略
 }
 
 exports.data = () => import("/home/site/.cache/data.json")
 ```
 
-Remember, `sync-requires.js` is used during [Page HTML Generation](/docs/html-generation/). And `async-requires.js` is used by [Building the JavaScript App](/docs/production-app/).
+`sync-requires.js` は[HTML ページの生成](/docs/html-generation/)で使われることを覚えておいてください。また、`async-requires.js` は[JavaScript アプリの構築](/docs/production-app/)で使用されます。
 
 ## data.json
 
-This is a generated json file. It contains the entire `pages.json` contents ([as above](/docs/write-pages/#pagesjson)), and the entire redux `jsonDataPaths` which was created at the end of the [Query Execution](/docs/query-execution/#save-query-results-to-redux-and-disk) stage. So, it looks like:
+これは、生成された json ファイルです。このファイルには、[前述の通り](/docs/write-pages/#pagesjson)`pages.json`の内容と、[クエリの実行](/docs/query-execution/#save-query-results-to-redux-and-disk)の段階で最後に生成した redux `jsonDataPaths` 全体が含まれています。つまり、下記のような感じです。
 
 ```javascript
 {
@@ -132,21 +132,21 @@ This is a generated json file. It contains the entire `pages.json` contents ([as
         "jsonName": "blog-2-c06",
         "path": "/blog/2"
     },
-    // more pages
+    // ページ省略
  ],
 
  // jsonName -> dataPath
  dataPaths: {
    "blog-2-c06":"952/path---blog-2-c06-meTS6Okzenz0aDEeI6epU4DPJuE",
-   // more pages
+   // ページ省略
  }
 ```
 
-`data.json` is used in two places. First, it's lazily imported by `async-requires.js` (above), which in turn is used by `production-app` to [load json results](/docs/production-app/#load-page-resources) for a page.
+`data.json` は 2 つの場所で使用されています。まず、`async-requires.js` ( 上記 ) で遅延してインポートされ、`production-app` でページの[JSON を読み込む](/docs/production-app/#load-page-resources)に使用されます。
 
-It is also used by [Page HTML Generation](/docs/html-generation/) in two ways:
+また、[HTML ページ生成](/docs/html-generation/) でも以下の 2 つの方法で使用されることがあります。
 
-1. `static-entry.js` produces a `page-renderer.js` webpack bundle that generates the HTML for a path. It requires `data.json` and uses the `pages` to lookup the page for the page.
-2. To get the `jsonName` from the page object, and uses it to construct a resource path for the actual json result by looking it up in `data.json.dataPaths[jsonName]`.
+1、 `static-entry.js` は、パスに対応する HTML を生成する `page-renderer.js` という webpack のバンドルを生成します。これは `data.json` を必要とし、`pages` を使ってページを探します。
+2、 ページオブジェクトから `jsonName` を取得し、それを使って `data.json.dataPaths[jsonName]` で検索し、実際の json 結果のリソースパスを構築しています。
 
-Now that Gatsby has written out page data, it can start on the [Webpack section](/docs/webpack-and-ssr/).
+Gatsby がページの情報を書き出したので、[Webpack の章](/docs/webpack-and-ssr/)で起動できます。
